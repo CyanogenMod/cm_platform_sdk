@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 # ============================================================
 include $(CLEAR_VARS)
 
-cyanogenmod_app_src := src/java/
+cyanogenmod_src := src/java/
 library_src := cm/lib/java/org/cyanogenmod/platform/internal
 
 LOCAL_MODULE := org.cyanogenmod.platform
@@ -27,7 +27,7 @@ LOCAL_JAVA_LIBRARIES := services
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
-           $(call all-java-files-under, $(cyanogenmod_app_src)) \
+           $(call all-java-files-under, $(cyanogenmod_src)) \
            $(call all-java-files-under, $(library_src))
 
 ## READ ME: ########################################################
@@ -41,9 +41,9 @@ LOCAL_SRC_FILES := \
 ##
 ## READ ME: ########################################################
 LOCAL_SRC_FILES += \
-           $(call all-Iaidl-files-under, $(cyanogemod_app_src))
+           $(call all-Iaidl-files-under, $(cyanogemod_src))
 
-# Include aidl files from cyanogenmod.app namespace as well as internal src aidl files
+# Include aidl files from cyanogenmod namespace as well as internal src aidl files
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
 include $(BUILD_JAVA_LIBRARY)
@@ -75,10 +75,10 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
-           $(call all-java-files-under, $(cyanogenmod_app_src)) \
-           $(call all-Iaidl-files-under, $(cyanogenmod_app_src))
+           $(call all-java-files-under, $(cyanogenmod_src)) \
+           $(call all-Iaidl-files-under, $(cyanogenmod_src))
 
-# Included aidl files from cyanogenmod.app namespace
+# Included aidl files from cyanogenmod namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
 $(full_target): $(cm_framework_built) $(gen)
@@ -87,8 +87,8 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 # ===========================================================
 # Common Droiddoc vars
 cmplat.docs.src_files := \
-    $(call all-java-files-under, $(cyanogenmod_app_src)) \
-    $(call all-html-files-under, $(cyanogenmod_app_src))
+    $(call all-java-files-under, $(cyanogenmod_src)) \
+    $(call all-html-files-under, $(cyanogenmod_src))
 cmplat.docs.java_libraries := \
     org.cyanogenmod.platform.sdk
 

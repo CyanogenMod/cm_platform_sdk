@@ -31,12 +31,20 @@ public class CMContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link cyanogenmod.app.CMStatusBarManager} for informing the user of
-     * background events.
+     * {@link cyanogenmod.app.CMStatusBarManager}
      *
      * @see android.content.Context#getSystemService
      * @see cyanogenmod.app.CMStatusBarManager
      */
     public static final String CM_STATUS_BAR_SERVICE = "cmstatusbar";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.net.CMProxyManager}
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.net.CMProxyManager
+     */
+    public static final String CM_PROXY_SERVICE = "cmproxy";
 
 }
