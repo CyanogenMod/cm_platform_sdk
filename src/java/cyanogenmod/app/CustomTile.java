@@ -18,6 +18,7 @@ package cyanogenmod.app;
 
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -38,6 +39,14 @@ public class CustomTile implements Parcelable {
      * that you take care of task management
      **/
     public PendingIntent onClick;
+
+    /**
+     * An optional settings intent to execute when the custom tile's detail is shown
+     * If this is an activity, it must include the
+     * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
+     * that you take care of task management
+     */
+    public Intent onSettingsClick;
 
     /**
      * An optional Uri to be parsed and broadcast on tile click
@@ -66,6 +75,9 @@ public class CustomTile implements Parcelable {
     {
         if (parcel.readInt() != 0) {
             this.onClick = PendingIntent.CREATOR.createFromParcel(parcel);
+        }
+        if (parcel.readInt() != 0) {
+            this.onSettingsClick = Intent.CREATOR.createFromParcel(parcel);
         }
         if (parcel.readInt() != 0) {
             this.onClickUri = Uri.CREATOR.createFromParcel(parcel);
@@ -106,6 +118,9 @@ public class CustomTile implements Parcelable {
         if (onClick != null) {
             b.append("onClick=" + onClick.toString() + NEW_LINE);
         }
+        if (onSettingsClick != null) {
+            b.append("onSettingsClick=" + onSettingsClick.toString() + NEW_LINE);
+        }
         if (!TextUtils.isEmpty(label)) {
             b.append("label=" + label + NEW_LINE);
         }
@@ -122,6 +137,7 @@ public class CustomTile implements Parcelable {
      */
     public void cloneInto(CustomTile that) {
         that.onClick = this.onClick;
+        that.onSettingsClick = this.onSettingsClick;
         that.onClickUri = this.onClickUri;
         that.label = this.label;
         that.contentDescription = this.contentDescription;
@@ -138,6 +154,12 @@ public class CustomTile implements Parcelable {
         if (onClick != null) {
             out.writeInt(1);
             onClick.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
+        if (onSettingsClick != null) {
+            out.writeInt(1);
+            onSettingsClick.writeToParcel(out, 0);
         } else {
             out.writeInt(0);
         }
@@ -189,6 +211,7 @@ public class CustomTile implements Parcelable {
      *         .setLabel("custom label")
      *         .setContentDescription("custom description")
      *         .setOnClickIntent(pendingIntent)
+     *         .setOnSettingsClickIntent(intent)
      *         .setOnClickUri(Uri.parse("custom uri"))
      *         .setIcon(R.drawable.ic_launcher)
      *         .build();
@@ -196,6 +219,7 @@ public class CustomTile implements Parcelable {
      */
     public static class Builder {
         private PendingIntent mOnClick;
+        private Intent mOnSettingsClick;
         private Uri mOnClickUri;
         private String mLabel;
         private String mContentDescription;
@@ -260,6 +284,17 @@ public class CustomTile implements Parcelable {
         }
 
         /**
+         * Set a settings {@link android.content.Intent} to be fired on custom
+         * tile detail pane click
+         * @param intent
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder setOnSettingsClickIntent(Intent intent) {
+            mOnSettingsClick = intent;
+            return this;
+        }
+
+        /**
          * Set a {@link android.net.Uri} to be broadcasted in an intent on custom tile click
          * @param uri
          * @return {@link cyanogenmod.app.CustomTile.Builder}
@@ -286,6 +321,7 @@ public class CustomTile implements Parcelable {
         public CustomTile build() {
             CustomTile tile = new CustomTile();
             tile.onClick = mOnClick;
+            tile.onSettingsClick = mOnSettingsClick;
             tile.onClickUri = mOnClickUri;
             tile.label = mLabel;
             tile.contentDescription = mContentDescription;
