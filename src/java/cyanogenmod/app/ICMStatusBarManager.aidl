@@ -34,4 +34,5 @@ interface ICMStatusBarManager {
     // You need the BIND_QUICK_SETTINGS_TILE_LISTENER permission
     void registerListener(in ICustomTileListener listener, in ComponentName component, int userid);
     void unregisterListener(in ICustomTileListener listener, int userid);
+    void removeCustomTileFromListener(in ICustomTileListener listener, String pkg, String tag, int id);
 }

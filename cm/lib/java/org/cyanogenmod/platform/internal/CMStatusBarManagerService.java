@@ -98,7 +98,7 @@ public class CMStatusBarManagerService extends SystemService {
             userId = ActivityManager.handleIncomingUser(Binder.getCallingPid(),
                     Binder.getCallingUid(), userId, true, false, "cancelCustomTileWithTag", pkg);
             removeCustomTileWithTagInternal(Binder.getCallingUid(),
-                    Binder.getCallingPid(), pkg, tag, id, userId);
+                    Binder.getCallingPid(), pkg, tag, id, userId, null);
         }
 
         /**
@@ -123,6 +123,29 @@ public class CMStatusBarManagerService extends SystemService {
         public void unregisterListener(ICustomTileListener listener, int userid) {
             enforceBindCustomTileListener();
             mCustomTileListeners.unregisterService(listener, userid);
+        }
+
+        /**
+         * Allow an ICustomTileListener to simulate clearing (dismissing) a single customTile.
+         *
+         * @param token The binder for the listener, to check that the caller is allowed
+         */
+        @Override
+        public void removeCustomTileFromListener(ICustomTileListener token, String pkg,
+               String tag, int id) {
+            final int callingUid = Binder.getCallingUid();
+            final int callingPid = Binder.getCallingPid();
+            long identity = Binder.clearCallingIdentity();
+            try {
+                synchronized (mQSTileList) {
+                    final ManagedServices.ManagedServiceInfo info
+                            = mCustomTileListeners.checkServiceTokenLocked(token);
+                    removeCustomTileFromListenerLocked(info, callingUid, callingPid,
+                            pkg, tag, id, info.userid);
+                }
+            } finally {
+                Binder.restoreCallingIdentity(identity);
+            }
         }
     };
 
@@ -281,8 +304,14 @@ public class CMStatusBarManagerService extends SystemService {
                         || r.getUserId() == userId;
     }
 
+    private void removeCustomTileFromListenerLocked(ManagedServices.ManagedServiceInfo info,
+            int callingUid, int callingPid, String pkg, String tag, int id, int userId) {
+        removeCustomTileWithTagInternal(callingUid, callingPid, pkg, tag, id, userId, info);
+    }
+
     void removeCustomTileWithTagInternal(final int callingUid, final int callingPid,
-            final String pkg, final String tag, final int id, final int userId) {
+            final String pkg, final String tag, final int id, final int userId,
+            final ManagedServices.ManagedServiceInfo listener) {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
