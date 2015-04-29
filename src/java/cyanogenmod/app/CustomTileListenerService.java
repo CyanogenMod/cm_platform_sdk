@@ -191,4 +191,37 @@ public class CustomTileListenerService extends Service {
     public void onListenerConnected() {
         // optional
     }
+
+    /**
+     * Inform the {@link cyanogenmod.app.CMStatusBarManager} about dismissal of a single custom tile.
+     * <p>
+     * Use this if your listener has a user interface that allows the user to dismiss individual
+     * custom tiles, similar to the behavior of Android's status bar and notification panel.
+     * It should be called after the user dismisses a single custom tile using your UI;
+     * upon being informed, the cmstatusbar manager will actually remove the custom tile
+     * and you will get an {@link #onCustomTileRemoved(StatusBarPanelCustomTile)} callback.
+     * <P>
+     *
+     * @param pkg Package of the notifying app.
+     * @param tag Tag of the custom tile as specified by the notifying app
+     * @param id  ID of the notification as specified by the notifying app
+     * <p>
+     */
+    public final void removeCustomTile(String pkg, String tag, int id) {
+        if (!isBound()) return;
+        try {
+            getStatusBarInterface().removeCustomTileFromListener(
+                    mWrapper, pkg, tag, id);
+        } catch (android.os.RemoteException ex) {
+            Log.v(TAG, "Unable to contact cmstautusbar manager", ex);
+        }
+    }
+
+    private boolean isBound() {
+        if (mWrapper == null) {
+            Log.w(TAG, "CustomTile listener service not yet bound.");
+            return false;
+        }
+        return true;
+    }
 }
