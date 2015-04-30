@@ -19,7 +19,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 cyanogenmod_app_src := src/java/
-library_src := cm/lib/java/org/cyanogenmod/platform/internal
+library_src := cm/lib/main/java
 
 LOCAL_MODULE := org.cyanogenmod.platform
 LOCAL_MODULE_TAGS := optional
@@ -127,5 +127,3 @@ include $(BUILD_DROIDDOC)
 cmplat.docs.src_files :=
 cmplat.docs.java_libraries :=
 intermediates.COMMON :=
-
-include $(call all-makefiles-under, $(LOCAL_PATH))
