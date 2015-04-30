@@ -36,7 +36,9 @@ public class CustomTile implements Parcelable {
      * An optional intent to execute when the custom tile entry is clicked.  If
      * this is an activity, it must include the
      * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
-     * that you take care of task management
+     * that you take care of task management.
+     *
+     * This takes priority over the onClickUri.
      **/
     public PendingIntent onClick;
 
@@ -49,7 +51,8 @@ public class CustomTile implements Parcelable {
     public Intent onSettingsClick;
 
     /**
-     * An optional Uri to be parsed and broadcast on tile click
+     * An optional Uri to be parsed and broadcast on tile click, if an onClick pending intent
+     * is specified, it will take priority over the uri to be broadcasted.
      **/
     public Uri onClickUri;
 
