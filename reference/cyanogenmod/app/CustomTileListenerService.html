@@ -2036,6 +2036,29 @@ android.content.ComponentCallbacks2
   </td></tr>
 
 
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html#removeCustomTile(java.lang.String, java.lang.String, int)">removeCustomTile</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> pkg, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</nobr>
+        
+        <div class="jd-descrdiv">
+          Inform the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> about dismissal of a single custom tile.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
 
 </table>
 
@@ -6101,6 +6124,64 @@ From interface
  the status bar manager.
  at this time.
 </p></div>
+
+    </div>
+</div>
+
+
+<A NAME="removeCustomTile(java.lang.String, java.lang.String, int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">removeCustomTile</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> pkg, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Inform the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> about dismissal of a single custom tile.
+ <p>
+ Use this if your listener has a user interface that allows the user to dismiss individual
+ custom tiles, similar to the behavior of Android's status bar and notification panel.
+ It should be called after the user dismisses a single custom tile using your UI;
+ upon being informed, the cmstatusbar manager will actually remove the custom tile
+ and you will get an <code><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html#onCustomTileRemoved(cyanogenmod.app.StatusBarPanelCustomTile)">onCustomTileRemoved(StatusBarPanelCustomTile)</a></code> callback.
+ <P></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pkg</td>
+          <td>Package of the notifying app.</td>
+        </tr>
+        <tr>
+          <th>tag</td>
+          <td>Tag of the custom tile as specified by the notifying app</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>ID of the notification as specified by the notifying app
+ <p>
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
