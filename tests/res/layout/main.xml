@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center_horizontal"
+        >
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST PUBLISH TILE"
+            android:onClick="testPublishTile"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST PUBLISH SETTINGS TILE"
+            android:onClick="testPublishTileWithSettings"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST UPDATE TILE"
+            android:onClick="testUpdateTile"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST REMOVE TILE"
+            android:onClick="testRemoveTile"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST PUBLISH MULTIPLE"
+            android:onClick="testMultipleTilePublish"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST REMOVE MULTIPLE"
+            android:onClick="testMultipleTileRemove"/>
+</LinearLayout>
+
