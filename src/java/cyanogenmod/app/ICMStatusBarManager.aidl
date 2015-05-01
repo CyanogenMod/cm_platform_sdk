@@ -25,7 +25,7 @@ import cyanogenmod.app.ICustomTileListener;
 interface ICMStatusBarManager {
     // --- Methods below are for use by 3rd party applications to publish quick
     // settings tiles to the status bar panel
-    // You need the PUBLISH_QUICK_SETTINGS_TILE permission
+    // You need the PUBLISH_CUSTOM_TILE permission
     void createCustomTileWithTag(String pkg, String opPkg, String tag, int id,
             in CustomTile tile, inout int[] idReceived, int userId);
     void removeCustomTileWithTag(String pkg, String tag, int id, int userId);

@@ -337,15 +337,15 @@ public class CMStatusBarManagerService extends SystemService {
     }
 
     private void enforceCustomTilePublish() {
-        //mContext.enforceCallingOrSelfPermission(
-        //        android.Manifest.permission.PUBLISH_QUICK_SETTINGS_TILE,
-        //        "StatusBarManagerService");
+        mContext.enforceCallingOrSelfPermission(
+                android.Manifest.permission.PUBLISH_CUSTOM_TILE,
+                "StatusBarManagerService");
     }
 
     private void enforceBindCustomTileListener() {
-        //mContext.enforceCallingOrSelfPermission(
-        //        android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
-        //        "StatusBarManagerService");
+        mContext.enforceCallingOrSelfPermission(
+                android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
+                "StatusBarManagerService");
     }
 
     private boolean isVisibleToListener(StatusBarPanelCustomTile sbc,
@@ -368,10 +368,10 @@ public class CMStatusBarManagerService extends SystemService {
             c.serviceInterface = CustomTileListenerService.SERVICE_INTERFACE;
             //TODO: Implement this in the future
             //c.secureSettingName = Settings.Secure.ENABLED_CUSTOM_TILE_LISTENERS;
-            //c.bindPermission = android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE;
+            c.bindPermission = android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE;
             //TODO: Implement this in the future
             //c.settingsAction = Settings.ACTION_CUSTOM_TILE_LISTENER_SETTINGS;
-            //c.clientLabel = R.string.custom_tile_listener_binding_label;
+            c.clientLabel = R.string.custom_tile_listener_binding_label;
             return c;
         }
 
