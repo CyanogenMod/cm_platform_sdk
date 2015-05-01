@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Custom Tile Sample</string>
+    <string name="custom_tile_publish">Publish tile</string>
+</resources>
