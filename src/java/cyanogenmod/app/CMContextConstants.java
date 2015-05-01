@@ -39,4 +39,9 @@ public class CMContextConstants {
      */
     public static final String CM_STATUS_BAR_SERVICE = "cmstatusbar";
 
+    /**
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.CMStatusBarManager
+     */
+    public static final String CM_PROFILE_PLUGIN_SERVICE = "cmprofileplugin";
 }
