@@ -39,4 +39,6 @@ public class CMContextConstants {
      */
     public static final String CM_STATUS_BAR_SERVICE = "cmstatusbar";
 
+    public static final String CM_DYNAMIC_LAUNCHABLES_SERVICE = "cmdynamiclaunchables";
+
 }
