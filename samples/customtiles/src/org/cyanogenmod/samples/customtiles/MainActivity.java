@@ -59,7 +59,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         PendingIntent pendingIntent =
                 PendingIntent.getBroadcast(this, 0,
-                        intent ,PendingIntent.FLAG_CANCEL_CURRENT);
+                        intent , PendingIntent.FLAG_UPDATE_CURRENT);
 
         mCustomTile = new CustomTile.Builder(this)
                 .setOnClickIntent(pendingIntent)
