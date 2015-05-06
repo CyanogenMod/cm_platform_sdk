@@ -14,6 +14,19 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Generate our resource packages
+include $(call all-makefiles-under, $(LOCAL_PATH/cm/res))
+
+# We have a special case here where we build the library's resources
+# independently from its code, so we need to find where the resource
+# class source got placed in the course of building the resources.
+# Thus, the magic here.
+# Also, this module cannot depend directly on the R.java file; if it
+# did, the PRIVATE_* vars for R.java wouldn't be guaranteed to be correct.
+# Instead, it depends on the R.stamp file, which lists the corresponding
+# R.java file as a prerequisite.
+cm_platform_res := APPS/org.cyanogenmod.platform-res_intermediates/src
+
 # The CyanogenMod Platform Framework Library
 # ============================================================
 include $(CLEAR_VARS)
@@ -27,8 +40,8 @@ LOCAL_JAVA_LIBRARIES := services
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
-           $(call all-java-files-under, $(cyanogenmod_app_src)) \
-           $(call all-java-files-under, $(library_src))
+      $(call all-java-files-under, $(cyanogenmod_app_src)) \
+      $(call all-java-files-under, $(library_src)) \
 
 ## READ ME: ########################################################
 ##
@@ -41,13 +54,26 @@ LOCAL_SRC_FILES := \
 ##
 ## READ ME: ########################################################
 LOCAL_SRC_FILES += \
-           $(call all-Iaidl-files-under, $(cyanogemod_app_src))
+      $(call all-Iaidl-files-under, $(cyanogenmod_app_src))
+
+LOCAL_INTERMEDIATE_SOURCES := \
+      $(cm_platform_res)/cyanogenmod/R.java \
+      $(cm_platform_res)/cyanogenmod/Manifest.java \
+      $(cm_platform_res)/org/cyanogenmod/platform/internal/R.java
 
 # Include aidl files from cyanogenmod.app namespace as well as internal src aidl files
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
 include $(BUILD_JAVA_LIBRARY)
-framework_module := $(LOCAL_INSTALLED_MODULE)
+cm_framework_module := $(LOCAL_INSTALLED_MODULE)
+
+# Make sure that R.java and Manifest.java are built before we build
+# the source for this library.
+cm_framework_res_R_stamp := \
+      $(call intermediates-dir-for,APPS,org.cyanogenmod.platform-res,,COMMON)/src/R.stamp
+$(full_classes_compiled_jar): $(cm_framework_res_R_stamp)
+
+$(cm_framework_module): | $(dir $(cm_framework_module))/org.cyanogenmod.platform-res/org.cyanogenmod.platform-res.apk
 
 cm_framework_built := $(call java-lib-deps, org.cyanogenmod.platform)
 

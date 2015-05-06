@@ -45,7 +45,7 @@ import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
 
 import java.util.ArrayList;
 
-import com.android.internal.R;
+import org.cyanogenmod.platform.internal.R;
 
 /**
  * Internal service which manages interactions with system ui elements
@@ -338,13 +338,13 @@ public class CMStatusBarManagerService extends SystemService {
 
     private void enforceCustomTilePublish() {
         mContext.enforceCallingOrSelfPermission(
-                android.Manifest.permission.PUBLISH_CUSTOM_TILE,
+                cyanogenmod.Manifest.permission.PUBLISH_CUSTOM_TILE,
                 "StatusBarManagerService");
     }
 
     private void enforceBindCustomTileListener() {
         mContext.enforceCallingOrSelfPermission(
-                android.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
+                cyanogenmod.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
                 "StatusBarManagerService");
     }
 
