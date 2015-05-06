@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright 2015, CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cyanogenmod"
+    coreApp="true" android:sharedUserId="android.uid.system"
+    android:sharedUserLabel="@string/cyanogenmod_system_label">
+
+    <!-- Must be required by an, to ensure that only the system can bind to it.
+         @hide -->
+    <permission android:name="cyanogenmod.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE"
+                android:label="@string/permlab_bindCustomTileListenerService"
+                android:description="@string/permdesc_bindCustomTileListenerService"
+                android:protectionLevel="signature" />
+
+    <!-- Allows a 3rd party application to publish or unpublish a quick settings tile -->
+    <permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
+                android:label="@string/permlab_publishCustomTile"
+                android:description="@string/permdesc_publishCustomTile"
+                android:protectionLevel="normal" />
+
+    <application android:process="system"
+                 android:persistent="true"
+                 android:hasCode="false"
+                 android:label="@string/cyanogenmod_system_label"
+                 android:allowClearUserData="false"
+                 android:killAfterRestore="false"
+                 android:supportsRtl="true"/>
+
+</manifest>
