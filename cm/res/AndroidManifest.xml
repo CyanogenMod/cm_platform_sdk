@@ -17,7 +17,7 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.cyanogenmod.platform"
+    package="cyanogenmod.platform"
     coreApp="true" android:sharedUserId="android.uid.system"
     android:sharedUserLabel="@string/cyanogenmod_system_label">
 
