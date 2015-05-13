@@ -338,13 +338,13 @@ public class CMStatusBarManagerService extends SystemService {
 
     private void enforceCustomTilePublish() {
         mContext.enforceCallingOrSelfPermission(
-                cyanogenmod.Manifest.permission.PUBLISH_CUSTOM_TILE,
+                org.cyanogenmod.platform.Manifest.permission.PUBLISH_CUSTOM_TILE,
                 "StatusBarManagerService");
     }
 
     private void enforceBindCustomTileListener() {
         mContext.enforceCallingOrSelfPermission(
-                cyanogenmod.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
+                org.cyanogenmod.platform.Manifest.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE,
                 "StatusBarManagerService");
     }
 
