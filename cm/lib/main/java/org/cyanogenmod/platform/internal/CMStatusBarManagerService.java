@@ -355,8 +355,6 @@ public class CMStatusBarManagerService extends SystemService {
 
     public class CustomTileListeners extends ManagedServices {
 
-        private final ArraySet<ManagedServiceInfo> mLightTrimListeners = new ArraySet<>();
-
         public CustomTileListeners() {
             super(CMStatusBarManagerService.this.mContext, mHandler, mQSTileList, mUserProfiles);
         }
@@ -393,7 +391,6 @@ public class CMStatusBarManagerService extends SystemService {
 
         @Override
         protected void onServiceRemovedLocked(ManagedServiceInfo removed) {
-            mLightTrimListeners.remove(removed);
         }
 
 
