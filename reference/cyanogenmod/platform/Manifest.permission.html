@@ -106,7 +106,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>CMStatusBarManager | Android Developers</title>
+<title>Manifest.permission | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -472,7 +472,7 @@ type="text/css">
       <a class="top" href="#top"></a>
       <ul class="breadcrumb">
         
-        <li class="current">CMStatusBarManager</li>
+        <li class="current">Manifest.permission</li>
       </ul>
     </div>
   </div>
@@ -508,9 +508,9 @@ type="text/css">
 
               <ul>
                 
-    <li class="selected api apilevel-">
-  <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="selected api apilevel-">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-">
   <a href="../../../reference/org/cyanogenmod/platform/internal/package-summary.html">org.cyanogenmod.platform.internal</a></li>
@@ -528,12 +528,11 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CMContextConstants.html">CMContextConstants</a></li>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.html">Manifest</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html">Manifest.permission</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.html">R</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.attr.html">R.attr</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.string.html">R.string</a></li>
       </ul>
     </li>
               
@@ -607,14 +606,17 @@ Summary:
 
 
 
-
-
-
-
-
-
-  <a href="#pubmethods">Methods</a>
+  <a href="#constants">Constants</a>
   
+
+
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
 
 
 
@@ -636,11 +638,11 @@ Summary:
 
 <div id="jd-header">
     public
-     
-     
+    static 
+    final 
     
     class
-<h1 itemprop="name">CMStatusBarManager</h1>
+<h1 itemprop="name">Manifest.permission</h1>
 
 
 
@@ -676,7 +678,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CMStatusBarManager</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.platform.Manifest.permission</td>
     </tr>
     
 
@@ -691,33 +693,8 @@ Summary:
 <div class="jd-descr">
 
 
-<h2>Class Overview</h2>
-<p itemprop="articleBody">The CMStatusBarManager allows you to publish and remove CustomTiles within the
- Quick Settings Panel.
-
- <p>
- Each of the publish methods takes an int id parameter and optionally a
- <code><a href="http://developer.android.com/reference/java/lang/String.html">String</a></code> tag parameter, which may be <code>null</code>.  These parameters
- are used to form a pair (tag, id), or (<code>null</code>, id) if tag is
- unspecified.  This pair identifies this custom tile from your app to the
- system, so that pair should be unique within your app.  If you call one
- of the publish methods with a (tag, id) pair that is currently active and
- a new set of custom tile parameters, it will be updated.  For example,
- if you pass a new custom tile icon, the old icon in the panel will
- be replaced with the new one.  This is also the same tag and id you pass
- to the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(int)">removeTile(int)</a></code> or <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile(String, int)</a></code> method to clear
- this custom tile.
-
- <p>
- To get the instance of this class, utilize CMStatusBarManager#getInstance(Context context)</p>
 
 
-
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code></li>
-      </ul>
-  </div>
 
 
 </div><!-- jd-descr -->
@@ -754,69 +731,41 @@ Summary:
 
 
 
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ========== METHOD SUMMARY =========== -->
-<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
-
-
-
-	 
+    
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            static
-            
-            <a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#getInstance(android.content.Context)">getInstance</a></span>(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context)</nobr>
-        
-        <div class="jd-descrdiv">
-          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code>
+        <td class="jd-typecol"><a href="http://developer.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#PUBLISH_CUSTOM_TILE">PUBLISH_CUSTOM_TILE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows a 3rd party application to publish or unpublish a quick settings tile 
+
           
     
 
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
         </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(java.lang.String, int, cyanogenmod.app.CustomTile)">publishTile</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</nobr>
-        
-        <div class="jd-descrdiv">
-          Post a custom tile to be shown in the status bar panel.
-          
+    </tr>
+    
     
 
-        </div>
-  
-  </td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
 
 
 	 
@@ -827,123 +776,20 @@ Summary:
             
             
             
-            void</nobr>
+            </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile</a></span>(int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#Manifest.permission()">Manifest.permission</a></span>()</nobr>
         
-        <div class="jd-descrdiv">
-          Post a custom tile to be shown in the status bar panel.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTileAsUser(java.lang.String, int, cyanogenmod.app.CustomTile, android.os.UserHandle)">publishTileAsUser</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</nobr>
-        
-        <div class="jd-descrdiv">
-          Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>,
- however lets you specify a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
-
- You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
- to utilize this functionality.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(int)">removeTile</a></span>(int id)</nobr>
-        
-        <div class="jd-descrdiv">
-          Remove a custom tile that's currently published to the StatusBarPanel.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</nobr>
-        
-        <div class="jd-descrdiv">
-          Remove a custom tile that's currently published to the StatusBarPanel.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTileAsUser(java.lang.String, int, android.os.UserHandle)">removeTileAsUser</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</nobr>
-        
-        <div class="jd-descrdiv">
-          Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile(String, int)</a></code>
- however lets you specific a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
-
- You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
- to utilize this functionality.
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
 
 </table>
+
+
+
+
 
 
 
@@ -1181,10 +1027,97 @@ From class
 <!-- Constants -->
 
 
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="PUBLISH_CUSTOM_TILE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        PUBLISH_CUSTOM_TILE
+    </h4>
+      <div class="api-level">
+        
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows a 3rd party application to publish or unpublish a quick settings tile 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
 <!-- Fields -->
 
 
 <!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="Manifest.permission()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">Manifest.permission</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 
 
 
@@ -1195,366 +1128,6 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
-
-<h2>Public Methods</h2>
-
-
-
-<A NAME="getInstance(android.content.Context)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-         
-         
-         
-        <a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a>
-      </span>
-      <span class="sympad">getInstance</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code>
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="publishTile(java.lang.String, int, cyanogenmod.app.CustomTile)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">publishTile</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Post a custom tile to be shown in the status bar panel. If a custom tile with
- the same tag and id has already been posted by your application and has not yet been
- removed, it will be replaced by the updated information.
-
- You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>tag</td>
-          <td>A string identifier for this custom tile.  May be <code>null</code>.</td>
-        </tr>
-        <tr>
-          <th>id</td>
-          <td>An identifier for this custom tile.  The pair (tag, id) must be unique
-        within your application.</td>
-        </tr>
-        <tr>
-          <th>customTile</td>
-          <td>A <code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> object describing what to
-        show the user. Must not be null.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="publishTile(int, cyanogenmod.app.CustomTile)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">publishTile</span>
-      <span class="normal">(int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Post a custom tile to be shown in the status bar panel. If a custom tile with
- the same id has already been posted by your application and has not yet been removed, it
- will be replaced by the updated information.
-
- You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>id</td>
-          <td>An identifier for this customTile unique within your
-        application.</td>
-        </tr>
-        <tr>
-          <th>customTile</td>
-          <td>A <code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> object describing what to show the user.
-                   Must not be null.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="publishTileAsUser(java.lang.String, int, cyanogenmod.app.CustomTile, android.os.UserHandle)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">publishTileAsUser</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>,
- however lets you specify a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
-
- You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>tag</td>
-          <td>A string identifier for this custom tile.  May be <code>null</code>.</td>
-        </tr>
-        <tr>
-          <th>id</td>
-          <td>An identifier for this custom tile.  The pair (tag, id) must be unique
-        within your application.</td>
-        </tr>
-        <tr>
-          <th>customTile</td>
-          <td>A <code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> object describing what to
-        show the user. Must not be null.</td>
-        </tr>
-        <tr>
-          <th>user</td>
-          <td>A user handle to publish the tile as.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="removeTile(int)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">removeTile</span>
-      <span class="normal">(int id)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Remove a custom tile that's currently published to the StatusBarPanel.
-
- You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>id</td>
-          <td>The identifier for the custom tile to be removed.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="removeTile(java.lang.String, int)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">removeTile</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Remove a custom tile that's currently published to the StatusBarPanel.
-
- You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>tag</td>
-          <td>The string identifier for the custom tile to be removed.</td>
-        </tr>
-        <tr>
-          <th>id</td>
-          <td>The identifier for the custom tile to be removed.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="removeTileAsUser(java.lang.String, int, android.os.UserHandle)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">removeTileAsUser</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile(String, int)</a></code>
- however lets you specific a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
-
- You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
- to utilize this functionality.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>tag</td>
-          <td>The string identifier for the custom tile to be removed.</td>
-        </tr>
-        <tr>
-          <th>id</td>
-          <td>The identifier for the custom tile to be removed.</td>
-        </tr>
-        <tr>
-          <th>user</td>
-          <td>The user handle to remove the tile from.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
 
 
 

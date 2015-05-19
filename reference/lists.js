@@ -5,6 +5,16 @@ var DATA = [
       { id:3, label:"cyanogenmod.app.CustomTile", link:"reference/cyanogenmod/app/CustomTile.html", type:"class", deprecated:"false" },
       { id:4, label:"cyanogenmod.app.CustomTile.Builder", link:"reference/cyanogenmod/app/CustomTile.Builder.html", type:"class", deprecated:"false" },
       { id:5, label:"cyanogenmod.app.CustomTileListenerService", link:"reference/cyanogenmod/app/CustomTileListenerService.html", type:"class", deprecated:"false" },
-      { id:6, label:"cyanogenmod.app.StatusBarPanelCustomTile", link:"reference/cyanogenmod/app/StatusBarPanelCustomTile.html", type:"class", deprecated:"false" }
+      { id:6, label:"cyanogenmod.app.StatusBarPanelCustomTile", link:"reference/cyanogenmod/app/StatusBarPanelCustomTile.html", type:"class", deprecated:"false" },
+      { id:7, label:"cyanogenmod.platform", link:"reference/cyanogenmod/platform/package-summary.html", type:"package", deprecated:"false" },
+      { id:8, label:"cyanogenmod.platform.Manifest", link:"reference/cyanogenmod/platform/Manifest.html", type:"class", deprecated:"false" },
+      { id:9, label:"cyanogenmod.platform.Manifest.permission", link:"reference/cyanogenmod/platform/Manifest.permission.html", type:"class", deprecated:"false" },
+      { id:10, label:"cyanogenmod.platform.R", link:"reference/cyanogenmod/platform/R.html", type:"class", deprecated:"false" },
+      { id:11, label:"cyanogenmod.platform.R.attr", link:"reference/cyanogenmod/platform/R.attr.html", type:"class", deprecated:"false" },
+      { id:12, label:"cyanogenmod.platform.R.string", link:"reference/cyanogenmod/platform/R.string.html", type:"class", deprecated:"false" },
+      { id:13, label:"org.cyanogenmod.platform.internal", link:"reference/org/cyanogenmod/platform/internal/package-summary.html", type:"package", deprecated:"false" },
+      { id:14, label:"org.cyanogenmod.platform.internal.R", link:"reference/org/cyanogenmod/platform/internal/R.html", type:"class", deprecated:"false" },
+      { id:15, label:"org.cyanogenmod.platform.internal.R.attr", link:"reference/org/cyanogenmod/platform/internal/R.attr.html", type:"class", deprecated:"false" },
+      { id:16, label:"org.cyanogenmod.platform.internal.R.string", link:"reference/org/cyanogenmod/platform/internal/R.string.html", type:"class", deprecated:"false" }
 
     ];
