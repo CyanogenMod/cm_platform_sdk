@@ -134,7 +134,7 @@ LOCAL_ADDITONAL_JAVA_DIR := $(intermediates.COMMON)/src
 
 LOCAL_SDK_VERSION := 21
 LOCAL_IS_HOST_MODULE := false
-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := build/tools/droiddoc/templates-sdk
+LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := vendor/cm/build/tools/droiddoc/templates-cmsdk
 LOCAL_ADDITIONAL_DEPENDENCIES := \
         services
 
