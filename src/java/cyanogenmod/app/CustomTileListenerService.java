@@ -35,12 +35,12 @@ import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
  * A service that receives calls from the system when new custom tiles are
  * posted or removed.
  * <p>To extend this class, you must declare the service in your manifest file with
- * the TODO: add permission
+ * the cyanogenmod.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE
  * and include an intent filter with the {@link #SERVICE_INTERFACE} action. For example:</p>
  * <pre>
  * &lt;service android:name=".CustomTileListener"
  *          android:label="&#64;string/service_name"
- *          android:permission="TODO: Add me">
+ *          android:permission="cyanogenmod.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE">
  *     &lt;intent-filter>
  *         &lt;action android:name="cyanogenmod.app.CustomTileListenerService" />
  *     &lt;/intent-filter>
