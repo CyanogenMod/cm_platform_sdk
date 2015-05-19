@@ -3,8 +3,6 @@ var NAVTREE_DATA =
 , null ] ]
 , null ], [ "cyanogenmod.platform", "reference/cyanogenmod/platform/package-summary.html", [ [ "Classes", null, [ [ "Manifest", "reference/cyanogenmod/platform/Manifest.html", null, null ], [ "Manifest.permission", "reference/cyanogenmod/platform/Manifest.permission.html", null, null ], [ "R", "reference/cyanogenmod/platform/R.html", null, null ], [ "R.attr", "reference/cyanogenmod/platform/R.attr.html", null, null ], [ "R.string", "reference/cyanogenmod/platform/R.string.html", null, null ] ]
 , null ] ]
-, null ], [ "org.cyanogenmod.platform.internal", "reference/org/cyanogenmod/platform/internal/package-summary.html", [ [ "Classes", null, [ [ "R", "reference/org/cyanogenmod/platform/internal/R.html", null, null ], [ "R.attr", "reference/org/cyanogenmod/platform/internal/R.attr.html", null, null ], [ "R.string", "reference/org/cyanogenmod/platform/internal/R.string.html", null, null ] ]
-, null ] ]
 , null ] ]
 
 ;

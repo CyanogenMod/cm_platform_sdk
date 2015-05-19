@@ -238,7 +238,7 @@ type="text/css">
               ja-lang="開発"
               es-lang="Desarrollar"
               >Develop</a></li>
-            <li class="distribute last"><a href="../../../distribute/googleplay/index.html"
+            <li class="distribute last"><a href="../../../distribute/index.html"
               zh-tw-lang="發佈"
               zh-cn-lang="分发"
               ru-lang="Распространение"
@@ -512,8 +512,6 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
-    <li class="api apilevel-">
-  <a href="../../../reference/org/cyanogenmod/platform/internal/package-summary.html">org.cyanogenmod.platform.internal</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -645,7 +643,7 @@ Summary:
 
 
   
-    extends <a href="http://developer.android.com/reference/java/lang/Object.html">Object</a><br/>
+    extends Object<br/>
   
   
   
@@ -668,7 +666,7 @@ Summary:
 
     <tr>
          	
-        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/java/lang/Object.html">java.lang.Object</a></td>
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -697,7 +695,7 @@ Summary:
 
  <p>
  Each of the publish methods takes an int id parameter and optionally a
- <code><a href="http://developer.android.com/reference/java/lang/String.html">String</a></code> tag parameter, which may be <code>null</code>.  These parameters
+ <code><a href="../../../reference/java/lang/String.html">String</a></code> tag parameter, which may be <code>null</code>.  These parameters
  are used to form a pair (tag, id), or (<code>null</code>, id) if tag is
  unspecified.  This pair identifies this custom tile from your app to the
  system, so that pair should be unique within your app.  If you call one
@@ -784,7 +782,7 @@ Summary:
             <a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#getInstance(android.content.Context)">getInstance</a></span>(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
         
         <div class="jd-descrdiv">
           Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code>
@@ -807,7 +805,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(java.lang.String, int, cyanogenmod.app.CustomTile)">publishTile</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(java.lang.String, int, cyanogenmod.app.CustomTile)">publishTile</a></span>(String tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</nobr>
         
         <div class="jd-descrdiv">
           Post a custom tile to be shown in the status bar panel.
@@ -853,11 +851,11 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTileAsUser(java.lang.String, int, cyanogenmod.app.CustomTile, android.os.UserHandle)">publishTileAsUser</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTileAsUser(java.lang.String, int, cyanogenmod.app.CustomTile, android.os.UserHandle)">publishTileAsUser</a></span>(String tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user)</nobr>
         
         <div class="jd-descrdiv">
           Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>,
- however lets you specify a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
+ however lets you specify a <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code>
 
  You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
  to utilize this functionality.
@@ -903,7 +901,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile</a></span>(String tag, int id)</nobr>
         
         <div class="jd-descrdiv">
           Remove a custom tile that's currently published to the StatusBarPanel.
@@ -926,11 +924,11 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTileAsUser(java.lang.String, int, android.os.UserHandle)">removeTileAsUser</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTileAsUser(java.lang.String, int, android.os.UserHandle)">removeTileAsUser</a></span>(String tag, int id, UserHandle user)</nobr>
         
         <div class="jd-descrdiv">
           Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile(String, int)</a></code>
- however lets you specific a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
+ however lets you specific a <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code>
 
  You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
  to utilize this functionality.
@@ -965,7 +963,7 @@ Summary:
           class="jd-expando-trigger-img" /></a>
 From class
 
-  <a href="http://developer.android.com/reference/java/lang/Object.html">java.lang.Object</a>
+  java.lang.Object
 
 <div id="inherited-methods-java.lang.Object">
   <div id="inherited-methods-java.lang.Object-list"
@@ -984,7 +982,7 @@ From class
             
             
             
-            <a href="http://developer.android.com/reference/java/lang/Object.html">Object</a></nobr>
+            Object</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">clone</span>()</nobr>
@@ -1003,7 +1001,7 @@ From class
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">equals</span>(<a href="http://developer.android.com/reference/java/lang/Object.html">Object</a> arg0)</nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
         
   </td></tr>
 
@@ -1032,7 +1030,7 @@ From class
             final
             
             
-            <a href="http://developer.android.com/reference/java/lang/Class.html">Class</a>&lt;?&gt;</nobr>
+            Class&lt;?&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">getClass</span>()</nobr>
@@ -1096,7 +1094,7 @@ From class
             
             
             
-            <a href="http://developer.android.com/reference/java/lang/String.html">String</a></nobr>
+            String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad">toString</span>()</nobr>
@@ -1213,7 +1211,7 @@ From class
         <a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a>
       </span>
       <span class="sympad">getInstance</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context)</span>
+      <span class="normal">(Context context)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1250,7 +1248,7 @@ From class
         void
       </span>
       <span class="sympad">publishTile</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</span>
+      <span class="normal">(String tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1360,7 +1358,7 @@ From class
         void
       </span>
       <span class="sympad">publishTileAsUser</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</span>
+      <span class="normal">(String tag, int id, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1374,7 +1372,7 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p>Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>,
- however lets you specify a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
+ however lets you specify a <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code>
 
  You will need the cyanogenmod.permission.PUBLISH_CUSTOM_TILE
  to utilize this functionality.</p></div>
@@ -1465,7 +1463,7 @@ From class
         void
       </span>
       <span class="sympad">removeTile</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id)</span>
+      <span class="normal">(String tag, int id)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1514,7 +1512,7 @@ From class
         void
       </span>
       <span class="sympad">removeTileAsUser</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> tag, int id, <a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a> user)</span>
+      <span class="normal">(String tag, int id, UserHandle user)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1528,7 +1526,7 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p>Similar to <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#removeTile(java.lang.String, int)">removeTile(String, int)</a></code>
- however lets you specific a <code><a href="http://developer.android.com/reference/android/os/UserHandle.html">UserHandle</a></code>
+ however lets you specific a <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code>
 
  You will need the cyanogenmod.platform.PUBLISH_CUSTOM_TILE
  to utilize this functionality.</p></div>
