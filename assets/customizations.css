@@ -1,7 +1,14 @@
-#header {
-  border-bottom: 3px solid #b6223c;
+#masthead-title {
+    color: #373332;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
 }
 
-#search_filtered .jd-selected {
-  background-color:#b6223c;
+#headerLeft a {
+    text-decoration: none;
+}
+
+#header {
+    border-bottom: 4px solid rgb(1, 125, 187);
 }
