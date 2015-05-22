@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package cyanogenmod.app.profiles;
+package cyanogenmod.app;
 
-import cyanogenmod.app.profiles.Trigger.State;
 import android.app.PendingIntent;
 import android.os.Bundle;
 import android.os.Parcel;
