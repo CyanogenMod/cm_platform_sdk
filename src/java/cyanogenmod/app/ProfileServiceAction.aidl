@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
-package cyanogenmod.app.profiles;
+package cyanogenmod.app;
 
-parcelable Action;
+parcelable ProfileServiceAction;
+
