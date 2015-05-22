@@ -16,8 +16,8 @@
 
 package cyanogenmod.app.profiles;
 
-import cyanogenmod.app.profiles.Trigger;
-import cyanogenmod.app.profiles.Action;
+import cyanogenmod.app.Trigger;
+import cyanogenmod.app.Action;
 
 /** @hide */
 interface IProfilePluginService {

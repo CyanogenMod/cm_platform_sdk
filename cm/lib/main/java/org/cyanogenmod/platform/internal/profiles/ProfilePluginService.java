@@ -16,9 +16,9 @@ import android.os.RemoteException;
 import com.android.server.SystemService;
 
 import cyanogenmod.app.CMContextConstants;
-import cyanogenmod.app.profiles.Action;
+import cyanogenmod.app.Action;
 import cyanogenmod.app.profiles.IProfilePluginService;
-import cyanogenmod.app.profiles.Trigger;
+import cyanogenmod.app.Trigger;
 
 import java.util.List;
 
