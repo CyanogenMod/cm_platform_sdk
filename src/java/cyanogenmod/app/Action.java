@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package cyanogenmod.app.profiles;
+package cyanogenmod.app;
 
-import cyanogenmod.app.profiles.Trigger.State;
 import android.app.PendingIntent;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -26,22 +25,26 @@ import android.os.Parcelable;
  * An action that can be invoked when a CyanogenMod profile is activated.
  */
 public class Action implements Parcelable {
-    private String mKey;
     private String mTitle;
     private String mDescription;
     private PendingIntent mAction;
-    private String mPackageName;
     private Bundle mStates = new Bundle();
 
-    public Action() {}
+    /**
+     * Constructs an Action object with default values.
+     */
+    public Action() {
+        // Empty constructor
+    }
 
+    /**
+     * Unflatten the Action from a parcel.
+     */
     public Action(Parcel in) {
-        mKey = in.readString();
         mTitle = in.readString();
         mDescription = in.readString();
         mAction = in.readParcelable(PendingIntent.class.getClassLoader());
         mStates = in.readBundle(State.class.getClassLoader());
-        mPackageName = in.readString();
     }
 
     public static final class State implements Parcelable {
@@ -60,6 +63,12 @@ public class Action implements Parcelable {
         public String getDescription() {
             return mDescription;
         }
+
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
+
         public void setDescription(String mDescription) {
             this.mDescription = mDescription;
         }
@@ -86,14 +95,6 @@ public class Action implements Parcelable {
         };
     }
 
-    public String getKey() {
-        return mKey;
-    }
-
-    public void setKey(String mKey) {
-        this.mKey = mKey;
-    }
-
     public String getTitle() {
         return mTitle;
     }
@@ -118,19 +119,6 @@ public class Action implements Parcelable {
         this.mAction = mAction;
     }
 
-    /**
-     * @hide
-     * Overridden by service to ensure
-     * package name is not spoofed 
-     */
-    public void setPackage(String packageName) {
-        mPackageName = packageName;
-    }
-
-    public String getPackageName() {
-        return mPackageName;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -138,12 +126,28 @@ public class Action implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int i) {
-        dest.writeString(mKey);
         dest.writeString(mTitle);
         dest.writeString(mDescription);
         dest.writeParcelable(mAction, 0);
         dest.writeBundle(mStates);
-        dest.writeString(mPackageName);
+    }
+
+    @Override
+    protected Action clone() {
+        Action that = new Action();
+        cloneInto(that);
+        return that;
+    }
+
+    /**
+     * Copy all of this into that
+     * @hide
+     */
+    public void cloneInto(Action that) {
+        that.mTitle = this.mTitle;
+        that.mDescription = this.mDescription;
+        that.mAction = this.mAction;
+        that.mStates = this.mStates;
     }
 
     public static final Parcelable.Creator<Action> CREATOR
