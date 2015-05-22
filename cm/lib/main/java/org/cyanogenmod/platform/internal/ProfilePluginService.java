@@ -1,4 +1,4 @@
-package org.cyanogenmod.platform.internal.profiles;
+package org.cyanogenmod.platform.internal;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,16 +16,18 @@ import android.os.RemoteException;
 import com.android.server.SystemService;
 
 import cyanogenmod.app.CMContextConstants;
-import cyanogenmod.app.profiles.Action;
-import cyanogenmod.app.profiles.IProfilePluginService;
-import cyanogenmod.app.profiles.Trigger;
+import cyanogenmod.app.Action;
+import cyanogenmod.app.IProfilePluginService;
+import cyanogenmod.app.Trigger;
 
 import java.util.List;
 
 public class ProfilePluginService extends SystemService {
 
-    private Map<String, Trigger> mTriggers = Collections.synchronizedMap(new HashMap<String, Trigger>());
-    private Map<String, Action> mActions = Collections.synchronizedMap(new HashMap<String, Action>());
+    private Map<String, Trigger> mTriggers =
+            Collections.synchronizedMap(new HashMap<String, Trigger>());
+    private Map<String, Action> mActions =
+            Collections.synchronizedMap(new HashMap<String, Action>());
     private PackageManager mPackageManager;
 
     public ProfilePluginService(Context context) {
@@ -47,13 +49,15 @@ public class ProfilePluginService extends SystemService {
     }
 
     private final IBinder mService = new IProfilePluginService.Stub() {
+
+        @Override
         public void registerTrigger(Trigger trigger) {
             trigger.setPackage(getPackageNameForCaller());
             String triggerKey = constructMapKey(trigger.getTriggerId());
             mTriggers.put(triggerKey, trigger);
-            System.out.println("registerTrigger " + trigger);
         }
 
+        @Override
         public void registerAction(Action action) {
             action.setPackage(getPackageNameForCaller());
             String actionKey = constructMapKey(action.getKey());

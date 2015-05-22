@@ -14,6 +14,17 @@
  * limitations under the License.
  */
 
-package cyanogenmod.app.profiles;
+package cyanogenmod.app;
 
-parcelable Action;
+import cyanogenmod.app.Trigger;
+import cyanogenmod.app.Action;
+
+/** @hide */
+interface IProfilePluginService {
+    oneway void registerTrigger(in Trigger trigger);
+    oneway void registerAction(in Action action);
+    List getRegisteredTriggers();
+    List getRegisteredActions();
+    oneway void sendTrigger(in String triggerId, in String state);
+    oneway void fireAction(in String actionId, in String state);
+}
