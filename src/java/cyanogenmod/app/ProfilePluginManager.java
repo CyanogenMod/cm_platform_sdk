@@ -1,14 +1,42 @@
-package cyanogenmod.app.profiles;
+/**
+ * Copyright (c) 2015, The CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package cyanogenmod.app;
 
 import android.content.Context;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import cyanogenmod.app.CMContextConstants;
-import cyanogenmod.app.profiles.IProfilePluginService;
+
+import android.os.UserHandle;
+
+import cyanogenmod.app.IProfilePluginService;
 
 import java.util.List;
 
+/**
+ * The ProfilePluginManager allows you to register {@link Action}s and {@link Trigger}s
+ * with the Profile plugin service.
+ *
+ * <p>
+ * <p>
+ * To get the instance of this class, utilize ProfilePluginManager#getInstance(Context context)
+ *
+ * @see cyanogenmod.app.Trigger and cyanogenmod.app.Action
+ */
 public class ProfilePluginManager {
     private static IProfilePluginService sService;
     private static ProfilePluginManager sProfilePluginManagerInstance;
@@ -25,9 +53,9 @@ public class ProfilePluginManager {
     }
 
     /**
-     * Get or create an instance of the {@link cyanogenmod.app.ProfilePluginManager}
+     * Get or create an instance of the {@link ProfilePluginManager}
      * @param context
-     * @return {@link cyanogenmod.app.profiles.ProfilePluginManager}
+     * @return {@link ProfilePluginManager}
      */
     public static ProfilePluginManager getInstance(Context context) {
         if (sProfilePluginManagerInstance == null) {
@@ -36,26 +64,37 @@ public class ProfilePluginManager {
         return sProfilePluginManagerInstance;
     }
 
+    /**
+     * Register a {@link Trigger} with the Profile plugin service.
+     * @param trigger
+     */
     public void registerTrigger(Trigger trigger) {
         IProfilePluginService service = getService();
         try {
-            service.registerTrigger(trigger);
+            String pkg = mContext.getPackageName();
+            service.registerTrigger(pkg, mContext.getOpPackageName(), trigger,
+                    UserHandle.myUserId());
         } catch (RemoteException e) {
             //Unable to get service, fail
         }
     }
 
+    /**
+     * Register an {@link Action} with the Profile plugin service.
+     * @param action
+     */
     public void registerAction(Action action) {
         IProfilePluginService service = getService();
         try {
-            service.registerAction(action);
+            String pkg = mContext.getPackageName();
+            service.registerAction(pkg, mContext.getOpPackageName(), action, UserHandle.myUserId());
         } catch (RemoteException e) {
             //Unable to get service, fail
         }
     }
 
     /** hide */
-    public List<Action> getRegisteredActions() {
+    public List<ProfileServiceAction> getRegisteredActions() {
         IProfilePluginService service = getService();
         try {
             return service.getRegisteredActions();
@@ -66,7 +105,7 @@ public class ProfilePluginManager {
     }
 
     /** hide */
-    public List<Trigger> getRegisteredTriggers() {
+    public List<ProfileServiceTrigger> getRegisteredTriggers() {
         IProfilePluginService service = getService();
         try {
             return service.getRegisteredTriggers();
