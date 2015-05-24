@@ -16,10 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">CyanogenMod sistema</string>
-  <string name="permlab_publishCustomTile">lauza pertsonalizatu bat sortu ezarpen azkarrerako lauzen artean</string>
-  <string name="permdesc_publishCustomTile">Ezarpen azkarretako lauza bat argitaratzea ahalbidetzen dio aplikazioari</string>
-  <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
-  <string name="permdesc_bindCustomTileListenerService">Jabeari lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfaze batetara lotzea ahalbidetzen dio.</string>
-  <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
+  <string name="cyanogenmod_system_label">Systém CyanogenMod</string>
+  <string name="permlab_publishCustomTile">vytvoriť vlastnú dlaždicu v rýchlych nastaveniach</string>
+  <string name="permdesc_publishCustomTile">Umožňuje aplikácii vytvoriť dlaždicu v rýchlych nastaveniach</string>
+  <string name="permlab_bindCustomTileListenerService">viazať službu na vlastnú dlaždicu</string>
+  <string name="permdesc_bindCustomTileListenerService">Umožňuje nadviazať rozhranie najvyššej úrovne na službu dlaždice.</string>
+  <string name="custom_tile_listener_binding_label">Služba vlastnej dlaždice</string>
 </resources>
