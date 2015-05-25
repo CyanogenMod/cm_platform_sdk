@@ -18,11 +18,11 @@
     <!-- Label for the CyanogenMod system components when they are shown to the user. -->
     <string name="cyanogenmod_system_label">CyanogenMod System</string>
 
-    <string name="permlab_publishCustomTile">create a custom tile within qs tiles</string>
-    <string name="permdesc_publishCustomTile">Allows an app to publish a quick settings tile</string>
+    <string name="permlab_publishCustomTile">create a custom tile within quick settings panel</string>
+    <string name="permdesc_publishCustomTile">Allows an app to publish a quick settings tile.</string>
 
     <string name="permlab_bindCustomTileListenerService">bind to a custom tile listener service</string>
-    <string name="permdesc_bindCustomTileListenerService">Allows the holder to bind to the top-level interface of a custom tile listener service.</string>
+    <string name="permdesc_bindCustomTileListenerService">Allows the app to bind to the top-level interface of a custom tile listener service.</string>
 
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
