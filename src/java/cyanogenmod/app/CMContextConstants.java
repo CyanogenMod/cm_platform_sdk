@@ -16,6 +16,8 @@
 
 package cyanogenmod.app;
 
+import android.content.Context;
+
 /**
  * Constants to be used with {@link android.content.Context#getSystemService}
  * to retrieve published system services
@@ -38,5 +40,7 @@ public class CMContextConstants {
      * @see cyanogenmod.app.CMStatusBarManager
      */
     public static final String CM_STATUS_BAR_SERVICE = "cmstatusbar";
+
+    public static final String CM_TORCH_SERVICE = "torch";
 
 }
