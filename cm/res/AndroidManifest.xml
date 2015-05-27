@@ -34,6 +34,12 @@
                 android:description="@string/permdesc_publishCustomTile"
                 android:protectionLevel="normal" />
 
+    <!-- Allows an application to use the system Torch service -->
+    <permission android:name="cyanogenmod.permission.ACCESS_TORCH_SERVICE"
+                android:label="@string/permlab_accessTorchService"
+                android:description="@string/permdesc_accessTorchService"
+                android:protectionLevel="dangerous" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
