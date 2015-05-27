@@ -20,4 +20,8 @@
     <private-symbols package="org.cyanogenmod.platform.internal" />
 
     <java-symbol type="string" name="custom_tile_listener_binding_label" />
+
+    <java-symbol type="string" name="flashlight_not_title" />
+    <java-symbol type="string" name="flashlight_not_summary" />
+    <java-symbol type="drawable" name="ic_signal_flashlight_disable" />
 </resources>
