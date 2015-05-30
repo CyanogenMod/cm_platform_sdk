@@ -231,7 +231,10 @@ public class CMStatusBarManager {
             return sService;
         }
         IBinder b = ServiceManager.getService(CMContextConstants.CM_STATUS_BAR_SERVICE);
-        sService = ICMStatusBarManager.Stub.asInterface(b);
-        return sService;
+        if (b != null) {
+            sService = ICMStatusBarManager.Stub.asInterface(b);
+            return sService;
+        }
+        return null;
     }
 }

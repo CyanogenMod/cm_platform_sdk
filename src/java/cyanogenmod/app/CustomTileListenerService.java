@@ -91,12 +91,15 @@ public class CustomTileListenerService extends Service {
      */
     public void registerAsSystemService(Context context, ComponentName componentName,
                                         int currentUser) throws RemoteException {
-        if (mWrapper == null) {
-            mWrapper = new ICustomTileListenerWrapper();
+        if (isBound()) {
+            return;
         }
-        ICMStatusBarManager statusBarInterface = getStatusBarInterface();
-        statusBarInterface.registerListener(mWrapper, componentName, currentUser);
-        mCurrentUser = currentUser;
+        ICMStatusBarManager statusBarInterface = mStatusBarService;
+        if (mStatusBarService != null) {
+            mWrapper = new ICustomTileListenerWrapper();
+            statusBarInterface.registerListener(mWrapper, componentName, currentUser);
+            mCurrentUser = currentUser;
+        }
     }
 
     /**
@@ -107,9 +110,11 @@ public class CustomTileListenerService extends Service {
      * @hide
      */
     public void unregisterAsSystemService() throws RemoteException {
-        if (mWrapper != null) {
-            ICMStatusBarManager statusBarInterface = getStatusBarInterface();
+        if (isBound()) {
+            ICMStatusBarManager statusBarInterface = mStatusBarService;
             statusBarInterface.unregisterListener(mWrapper, mCurrentUser);
+            mWrapper = null;
+            mStatusBarService = null;
         }
     }
 
@@ -210,7 +215,7 @@ public class CustomTileListenerService extends Service {
     public final void removeCustomTile(String pkg, String tag, int id) {
         if (!isBound()) return;
         try {
-            getStatusBarInterface().removeCustomTileFromListener(
+            mStatusBarService.removeCustomTileFromListener(
                     mWrapper, pkg, tag, id);
         } catch (android.os.RemoteException ex) {
             Log.v(TAG, "Unable to contact cmstautusbar manager", ex);
@@ -218,7 +223,7 @@ public class CustomTileListenerService extends Service {
     }
 
     private boolean isBound() {
-        if (mWrapper == null) {
+        if (mWrapper == null || getStatusBarInterface() == null) {
             Log.w(TAG, "CustomTile listener service not yet bound.");
             return false;
         }
