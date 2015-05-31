@@ -17,9 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
-  <string name="permlab_publishCustomTile">eng eege Kachel bei de séieren Astellungen dobäisetzen</string>
-  <string name="permdesc_publishCustomTile">Erlaabt der App, eng Kachel bei déi séier Astellungen dobäizesetzen</string>
   <string name="permlab_bindCustomTileListenerService">en eegenene Kachel-Lauschter-Service ubannen</string>
-  <string name="permdesc_bindCustomTileListenerService">Erlaabt der App, sech op ieweschtem Niveau un d\'Schnëttstell vun engem Kachel-Lauschter-Service unzebannen.</string>
   <string name="custom_tile_listener_binding_label">Eegene Kachel-Lauschter-Service</string>
 </resources>

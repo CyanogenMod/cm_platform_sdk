@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
-  <string name="permlab_publishCustomTile">Crea un toggle personalizzato nelle impostazioni rapide</string>
-  <string name="permdesc_publishCustomTile">Consenti ad un\'app di pubblicare un toggle personalizzato</string>
-  <string name="permlab_bindCustomTileListenerService">associare ad un servizio listener di toggle personalizzati</string>
-  <string name="permdesc_bindCustomTileListenerService">Consenti all\'holder di collegarsi con l\'interfaccia principale per un sistema di listener per toggle personalizzati.</string>
-  <string name="custom_tile_listener_binding_label">Listener toggle personalizzati</string>
+  <string name="permlab_publishCustomTile">creare un tile personalizzato all\'interno del pannello Impostazioni rapide</string>
+  <string name="permdesc_publishCustomTile">Consente ad un\'app di pubblicare un tile personalizzato.</string>
+  <string name="permlab_bindCustomTileListenerService">associare ad un servizio listener di tile personalizzato</string>
+  <string name="permdesc_bindCustomTileListenerService">Consente ad un\'app di collegarsi ad un interfaccia di un servizio listener di tile personalizzato.</string>
+  <string name="custom_tile_listener_binding_label">Listener tile personalizzato</string>
 </resources>

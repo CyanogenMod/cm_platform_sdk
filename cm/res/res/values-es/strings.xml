@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistema de CyanogenMod</string>
-  <string name="permlab_publishCustomTile">crear un control personalizado en los ajustes rápidos</string>
-  <string name="permdesc_publishCustomTile">Permitir que la aplicación pueda publicar un control personalizado en los ajustes rápidos.</string>
+  <string name="permlab_publishCustomTile">crear un control personalizado en el panel de ajustes rápidos</string>
+  <string name="permdesc_publishCustomTile">Permitir que la aplicación pueda publicar un control en los ajustes rápidos.</string>
   <string name="permlab_bindCustomTileListenerService">unirse a un servicio de escucha de controles personalizados</string>
-  <string name="permdesc_bindCustomTileListenerService">Permitir que el propietario pueda unirse a un interfaz de alto nivel de un servicio de escucha de un control personalizado.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permitir que la aplicación pueda unirse a un interfaz de alto nivel de un servicio de escucha de un control.</string>
   <string name="custom_tile_listener_binding_label">Escucha de control personalizado</string>
 </resources>

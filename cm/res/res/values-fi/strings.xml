@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod Järjestelmä</string>
-  <string name="permlab_publishCustomTile">luo mukautettuja tiiliä qs tiiliin</string>
-  <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pika-asetustiiliä</string>
+  <string name="permlab_publishCustomTile">luo mukautettu tiili pika-asetuspaneeliin</string>
+  <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pika-asetustiiliä.</string>
   <string name="permlab_bindCustomTileListenerService">kiinnitä mukautettu tiili kuuntelupalveluun</string>
   <string name="permdesc_bindCustomTileListenerService">Sallii haltijan kiinnittää mukautetun tiilen kuuntelupalvelun käyttöliittymään.</string>
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>

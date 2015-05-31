@@ -16,7 +16,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">سیستەمی ساینەجنمۆد</string>
-  <string name="permlab_bindCustomTileListenerService">گرێدانی دروستکراو لە خزمەتگوزاری گوێگر</string>
-  <string name="custom_tile_listener_binding_label">کاشی دروستکراوی گوێگر</string>
+  <string name="cyanogenmod_system_label">System CyanogenMod</string>
 </resources>

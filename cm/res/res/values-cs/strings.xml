@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Systém CyanogenMod</string>
-  <string name="permlab_publishCustomTile">vytvoření vlastní dlaždice v rychlém nastavení</string>
-  <string name="permdesc_publishCustomTile">Umožní vytvoření vlastní dlaždice v rychlém nastavení</string>
+  <string name="permlab_publishCustomTile">vytvoření vlastní dlaždice do panelu rychlého nastavení</string>
+  <string name="permdesc_publishCustomTile">Umožní vytvořit vlastní dlaždici v panelu rychlého nastavení.</string>
   <string name="permlab_bindCustomTileListenerService">vázat službu na vlastní dlaždici</string>
   <string name="permdesc_bindCustomTileListenerService">Umožní navázat rozhraní nejvyšší úrovně na službu dlaždice.</string>
   <string name="custom_tile_listener_binding_label">Služba vlastní dlaždice</string>

@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
-  <string name="permlab_publishCustomTile">criar um botão personalizado dentro dos botões de definição rápida</string>
-  <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um botão de definições rápidas</string>
+  <string name="permlab_publishCustomTile">criar um botão personalizado no painel de definições rápidas</string>
+  <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um botão de definições rápidas.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite ao titular ligar a um interface de nível superior de um serviço de escuta de botão personalizado.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permite à aplicação ligar a um interface de nível superior de um serviço de escuta de botão personalizado.</string>
   <string name="custom_tile_listener_binding_label">Escuta de botão personalizado</string>
 </resources>

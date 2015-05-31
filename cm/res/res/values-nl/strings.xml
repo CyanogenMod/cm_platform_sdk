@@ -17,9 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-systeem</string>
-  <string name="permlab_publishCustomTile">aangepaste tegel maken binnen de tegels van snelle instellingen</string>
-  <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen</string>
   <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
-  <string name="permdesc_bindCustomTileListenerService">Hiermee kan de houder koppelen aan de interface op het hoogste niveau van de aangepaste tegel-service.</string>
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
 </resources>

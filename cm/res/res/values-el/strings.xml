@@ -17,4 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Σύστημα CyanogenMod</string>
+  <string name="permlab_publishCustomTile">δημιουργία προσαρμοσμένου πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων</string>
+  <string name="permdesc_publishCustomTile">Επιτρέπει σε μία εφαρμογή τη δημιουργία πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων.</string>
+  <string name="permlab_bindCustomTileListenerService">σύνδεση σε ένα listener υπηρεσίας προσαρμοσμένων πλακιδίων</string>
+  <string name="permdesc_bindCustomTileListenerService">Επιτρέπει στην εφαρμογή τη σύνδεση στο ανώτατο επίπεδο διασύνδεσης ενός listener υπηρεσίας προσαρμοσμένων πλακιδίων.</string>
+  <string name="custom_tile_listener_binding_label">Listener προσαρμοσμένων πλακιδίων</string>
 </resources>

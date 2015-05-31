@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod Sistemi</string>
-  <string name="permlab_publishCustomTile">H.A. kareleri içinde özel kare oluştur</string>
-  <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir</string>
+  <string name="permlab_publishCustomTile">hızlı ayarlar paneli içinde özel bir kare oluştur</string>
+  <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir.</string>
   <string name="permlab_bindCustomTileListenerService">özel bir kare takip hizmetine bağla</string>
-  <string name="permdesc_bindCustomTileListenerService">Tutucunun özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
+  <string name="permdesc_bindCustomTileListenerService">Uygulamaya özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
   <string name="custom_tile_listener_binding_label">Özel kare takipçisi</string>
 </resources>

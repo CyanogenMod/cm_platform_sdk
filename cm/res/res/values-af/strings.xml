@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod Stelsel</string>
-  <string name="permlab_publishCustomTile">Skep a persoonlike teël binne VI teëls</string>
-  <string name="permdesc_publishCustomTile">Laat \'n program toe om a vinnige instellings teël te publiseer</string>
+  <string name="permlab_publishCustomTile">Skep \'n persoonlike teël binne die vinnige instellings paneel</string>
+  <string name="permdesc_publishCustomTile">Laat \'n program toe om \'n vinnige instellings teël te publiseer.</string>
   <string name="permlab_bindCustomTileListenerService">Verbind aan a pasgemaakte teël luisteraar diens</string>
-  <string name="permdesc_bindCustomTileListenerService">Laat toe die houer om te bind aan a top vlak koppevlak van \'n pasgemaakte teël luister diens.</string>
+  <string name="permdesc_bindCustomTileListenerService">Laat toe die program om te bind aan a top vlak koppelvlak van \'n pasgemaakte teël luister diens.</string>
   <string name="custom_tile_listener_binding_label">Pasgemaakte teël luisteraar</string>
 </resources>

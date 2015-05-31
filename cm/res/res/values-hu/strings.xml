@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod rendszer</string>
-  <string name="permlab_publishCustomTile">hozzon létre egy egyéni csempét a gyors beállítások panelen</string>
-  <string name="permdesc_publishCustomTile">Lehetővé teszi egy alkalmazás számára, hogy gyors beállítások csempét hozzon létre</string>
+  <string name="permlab_publishCustomTile">egy egyedi csempe létrehozása a gyors beállítások panelen</string>
+  <string name="permdesc_publishCustomTile">Lehetővé teszi az alkalmazás számára, hogy gyors beállítások csempét hozzon létre.</string>
   <string name="permlab_bindCustomTileListenerService">egyéni csempe figyelőszolgáltatáshoz kötés</string>
-  <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
+  <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazás számára, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
   <string name="custom_tile_listener_binding_label">Egyéni csempe figyelőszolgáltatás</string>
 </resources>

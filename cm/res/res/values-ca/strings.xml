@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistema de CyanogenMod</string>
-  <string name="permlab_publishCustomTile">crea una cel·la personalitzada en les cel·les qs</string>
-  <string name="permdesc_publishCustomTile">Permet a una aplicació publicar una cel·la en els ajustaments ràpids</string>
+  <string name="permlab_publishCustomTile">crea una cel·la personalitzada al panell d\'ajustos ràpids</string>
+  <string name="permdesc_publishCustomTile">Permet a una aplicació publicar una cel·la d\'ajustos ràpids.</string>
   <string name="permlab_bindCustomTileListenerService">uneix-te a un servei d\'escolta de cel·les personalitzades</string>
-  <string name="permdesc_bindCustomTileListenerService">Permet al titular unir-se a una interfície d\'alt nivell d\'un servei d\'escolta de cel·les personalitzades.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permet a l\'aplicació unir-se a una interfície d\'alt nivell d\'un servei d\'escolta de cel·les personalitzades.</string>
   <string name="custom_tile_listener_binding_label">Escolta de cel·les personalitzades</string>
 </resources>

@@ -17,9 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Система CyanogenMod</string>
-  <string name="permlab_publishCustomTile">Створити власну плитку швидких налаштувань</string>
-  <string name="permdesc_publishCustomTile">Дозволяє додатку створювати плитки швидкого налаштування</string>
   <string name="permlab_bindCustomTileListenerService">прив’язати до власної служби</string>
-  <string name="permdesc_bindCustomTileListenerService">Дозволяє власникові прив\'язувати плитки до інтерфесу високого рівня служб.</string>
   <string name="custom_tile_listener_binding_label">Власна служба обробки плиток</string>
 </resources>
