@@ -24,6 +24,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
+import java.util.ArrayList;
+
 /**
  * A class that represents a quick settings tile
  *
@@ -71,6 +73,8 @@ public class CustomTile implements Parcelable {
      */
     public int icon;
 
+    public ExpandedStyle expandedStyle;
+
     /**
      * Unflatten the CustomTile from a parcel.
      */
@@ -88,11 +92,14 @@ public class CustomTile implements Parcelable {
         if (parcel.readInt() != 0) {
             this.label = parcel.readString();
         }
-
         if (parcel.readInt() != 0) {
             this.contentDescription = parcel.readString();
         }
+        if (parcel.readInt() != 0) {
+            this.expandedStyle = ExpandedStyle.CREATOR.createFromParcel(parcel);
+        }
         this.icon = parcel.readInt();
+        System.out.println("CustomTile read " + this.toString());
     }
 
     /**
@@ -130,6 +137,9 @@ public class CustomTile implements Parcelable {
         if (!TextUtils.isEmpty(contentDescription)) {
             b.append("contentDescription=" + contentDescription + NEW_LINE);
         }
+        if (expandedStyle != null) {
+            b.append("expandedStyle=" + expandedStyle + NEW_LINE);
+        }
         b.append("icon=" + icon + NEW_LINE);
         return b.toString();
     }
@@ -154,6 +164,7 @@ public class CustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        System.out.println("CustomTile write " + this.toString());
         if (onClick != null) {
             out.writeInt(1);
             onClick.writeToParcel(out, 0);
@@ -184,7 +195,234 @@ public class CustomTile implements Parcelable {
         } else {
             out.writeInt(0);
         }
+        if (expandedStyle != null) {
+            out.writeInt(1);
+            expandedStyle.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
         out.writeInt(icon);
+    }
+
+    public static class ExpandedStyle implements Parcelable {
+        public static final int NO_STYLE = -1;
+        public static final int GRID_STYLE = 0;
+        public static final int LIST_STYLE = 1;
+
+        public ExpandedStyle() {
+            styleId = NO_STYLE;
+        }
+
+        private ExpandedItem[] expandedItems;
+        private int styleId;
+
+        private ExpandedStyle(Parcel parcel) {
+            if (parcel.readInt() != 0) {
+                expandedItems = parcel.createTypedArray(ExpandedItem.CREATOR);
+            }
+            styleId = parcel.readInt();
+        }
+
+        public void setBuilder(Builder builder) {
+            if (builder != null) {
+                builder.setExpandedStyle(this);
+            }
+        }
+
+        protected void internalSetExpandedItems(ArrayList<? extends ExpandedItem> items) {
+            expandedItems = new ExpandedItem[items.size()];
+            items.toArray(expandedItems);
+        }
+
+        protected void internalStyleId(int id) {
+            styleId = id;
+        }
+
+        public ExpandedItem[] getExpandedItems() {
+            return expandedItems;
+        }
+
+        public int getStyle() {
+            return styleId;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel parcel, int i) {
+            if (expandedItems != null) {
+                parcel.writeInt(1);
+                parcel.writeTypedArray(expandedItems, 0);
+            } else {
+                parcel.writeInt(0);
+            }
+            parcel.writeInt(styleId);
+        }
+
+        public static final Parcelable.Creator<ExpandedStyle> CREATOR =
+                new Parcelable.Creator<ExpandedStyle>() {
+                    public ExpandedStyle createFromParcel(Parcel in) {
+                        return new ExpandedStyle(in);
+                    }
+                    public ExpandedStyle[] newArray(int size) {
+                        return new ExpandedStyle[size];
+                    }
+                };
+    }
+
+    public static class GridExpandedStyle extends ExpandedStyle {
+        public GridExpandedStyle() {
+            internalStyleId(GRID_STYLE);
+        }
+
+        public GridExpandedStyle(Builder builder) {
+            setBuilder(builder);
+        }
+
+        public void setGridItems(ArrayList<ExpandedGridItem> expandedGridItems) {
+            internalSetExpandedItems(expandedGridItems);
+        }
+    }
+
+    public static class ListExpandedStyle extends ExpandedStyle {
+        public ListExpandedStyle() {
+            internalStyleId(LIST_STYLE);
+        }
+
+        public ListExpandedStyle(Builder builder) {
+            setBuilder(builder);
+        }
+
+        public void setListItems(ArrayList<ExpandedListItem> expandedListItems) {
+            internalSetExpandedItems(expandedListItems);
+        }
+    }
+
+    public static class ExpandedItem implements Parcelable {
+
+        public PendingIntent mOnClickPendingIntent;
+
+        public int mItemDrawableResourceId;
+
+        public String mItemTitle;
+
+        private ExpandedItem() {
+            // Don't want to have this baseclass be instantiable
+        }
+
+        public String mItemSummary = null;
+
+        protected void internalSetItemDrawable(int resourceId) {
+            mItemDrawableResourceId = resourceId;
+        }
+
+        protected void internalSetItemSummary(String resourceId) {
+            mItemSummary = resourceId;
+        }
+
+        protected void internalSetItemTitle(String title) {
+            mItemTitle = title;
+        }
+
+        protected void internalSetOnClickPendingIntent(PendingIntent pendingIntent) {
+            mOnClickPendingIntent = pendingIntent;
+        }
+
+        protected ExpandedItem(Parcel parcel) {
+            if (parcel.readInt() != 0) {
+                mOnClickPendingIntent = PendingIntent.CREATOR.createFromParcel(parcel);
+            }
+            if (parcel.readInt() != 0) {
+                mItemTitle = parcel.readString();
+            }
+            if (parcel.readInt() != 0) {
+                mItemSummary = parcel.readString();
+            }
+            mItemDrawableResourceId = parcel.readInt();
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            if (mOnClickPendingIntent != null) {
+                out.writeInt(1);
+                mOnClickPendingIntent.writeToParcel(out, 0);
+            } else {
+                out.writeInt(0);
+            }
+            if (!TextUtils.isEmpty(mItemTitle)) {
+                out.writeInt(1);
+                out.writeString(mItemTitle);
+            } else {
+                out.writeInt(0);
+            }
+            if (!TextUtils.isEmpty(mItemSummary)) {
+                out.writeInt(1);
+                out.writeString(mItemSummary);
+            } else {
+                out.writeInt(0);
+            }
+            out.writeInt(mItemDrawableResourceId);
+        }
+
+        @SuppressWarnings("unused")
+        public static final Parcelable.Creator<ExpandedItem>
+                CREATOR = new Parcelable.Creator<ExpandedItem>() {
+            @Override
+            public ExpandedItem createFromParcel(Parcel in) {
+                return new ExpandedItem(in);
+            }
+
+            @Override
+            public ExpandedItem[] newArray(int size) {
+                return new ExpandedItem[size];
+            }
+        };
+    }
+
+    public static class ExpandedGridItem extends ExpandedItem {
+        public ExpandedGridItem() {
+        }
+
+        public void setExpandedGridItemTitle(String title) {
+            internalSetItemTitle(title);
+        }
+
+        public void setExpandedGridItemOnClickIntent(PendingIntent intent) {
+            internalSetOnClickPendingIntent(intent);
+        }
+
+        public void setExpandedGridItemDrawable(int resourceId) {
+            internalSetItemDrawable(resourceId);
+        }
+    }
+
+    public static class ExpandedListItem extends ExpandedItem {
+        public ExpandedListItem() {
+        }
+
+        public void setExpandedListItemTitle(String title) {
+            internalSetItemTitle(title);
+        }
+
+        public void setExpandedListItemSummary(String subText) {
+            internalSetItemSummary(subText);
+        }
+
+        public void setExpandedListItemOnClickIntent(PendingIntent intent) {
+            internalSetOnClickPendingIntent(intent);
+        }
+
+        public void setExpandedListItemDrawable(int resourceId) {
+            internalSetItemDrawable(resourceId);
+        }
     }
 
     /**
@@ -228,6 +466,7 @@ public class CustomTile implements Parcelable {
         private String mContentDescription;
         private int mIcon;
         private Context mContext;
+        private ExpandedStyle mExpandedStyle;
 
         /**
          * Constructs a new Builder with the defaults:
@@ -317,6 +556,16 @@ public class CustomTile implements Parcelable {
             return this;
         }
 
+        public Builder setExpandedStyle(ExpandedStyle expandedStyle) {
+            if (mExpandedStyle != expandedStyle) {
+                mExpandedStyle = expandedStyle;
+                if (mExpandedStyle != null) {
+                    expandedStyle.setBuilder(this);
+                }
+            }
+            return this;
+        }
+
         /**
          * Create a {@link cyanogenmod.app.CustomTile} object
          * @return {@link cyanogenmod.app.CustomTile}
@@ -328,6 +577,7 @@ public class CustomTile implements Parcelable {
             tile.onClickUri = mOnClickUri;
             tile.label = mLabel;
             tile.contentDescription = mContentDescription;
+            tile.expandedStyle = mExpandedStyle;
             tile.icon = mIcon;
             return tile;
         }

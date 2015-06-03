@@ -31,6 +31,8 @@ import cyanogenmod.app.CustomTile;
 
 import org.cyanogenmod.samples.customtiles.R;
 
+import java.util.ArrayList;
+
 /**
  * Example sample activity to publish a tile with a toggle state
  */
@@ -61,10 +63,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 PendingIntent.getBroadcast(this, 0,
                         intent , PendingIntent.FLAG_UPDATE_CURRENT);
 
+        ArrayList<CustomTile.ExpandedListItem> expandedGridItems =
+                new ArrayList<CustomTile.ExpandedListItem>();
+        for (int i = 0; i < 4; i++) {
+            CustomTile.ExpandedListItem expandedGridItem = new CustomTile.ExpandedListItem();
+            expandedGridItem.setExpandedListItemDrawable(R.drawable.ic_launcher);
+            expandedGridItem.setExpandedListItemTitle("Test: " + i);
+            expandedGridItem.setExpandedListItemSummary("FUUCK YAAAAHH");
+            expandedGridItems.add(expandedGridItem);
+        }
+
+        CustomTile.ListExpandedStyle gridExpandedStyle = new CustomTile.ListExpandedStyle();
+        gridExpandedStyle.setListItems(expandedGridItems);
+
         mCustomTile = new CustomTile.Builder(this)
-                .setOnClickIntent(pendingIntent)
                 .setContentDescription("Generic content description")
                 .setLabel("CustomTile " + States.STATE_OFF)
+                .setExpandedStyle(gridExpandedStyle)
                 .setIcon(R.drawable.ic_launcher)
                 .build();
     }
