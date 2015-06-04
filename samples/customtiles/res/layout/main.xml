@@ -10,5 +10,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/custom_tile_publish"/>
+
+    <Button
+            android:id="@+id/custom_tile_list_expanded_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_tile_list_publish"/>
+
+    <Button
+            android:id="@+id/custom_tile_grid_expanded_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_tile_grid_publish"/>
 </LinearLayout>
 

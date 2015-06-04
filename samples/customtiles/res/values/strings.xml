@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Custom Tile Sample</string>
-    <string name="custom_tile_publish">Publish tile</string>
+    <string name="custom_tile_publish">Publish standard tile</string>
+    <string name="custom_tile_list_publish">Publish standard tile with listview</string>
+    <string name="custom_tile_grid_publish">Publish standard tile with gridview</string>
 </resources>
