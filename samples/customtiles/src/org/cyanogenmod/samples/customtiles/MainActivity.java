@@ -31,18 +31,24 @@ import cyanogenmod.app.CustomTile;
 
 import org.cyanogenmod.samples.customtiles.R;
 
+import java.util.ArrayList;
+
 /**
  * Example sample activity to publish a tile with a toggle state
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
     public static final int REQUEST_CODE = 0;
-    public static final int CUSTOM_TILE_ID = 23;
+    public static final int CUSTOM_TILE_ID = 1;
+    public static final int CUSTOM_TILE_LIST_ID = 2;
+    public static final int CUSTOM_TILE_GRID_ID = 3;
     public static final String ACTION_TOGGLE_STATE =
             "org.cyanogenmod.samples.customtiles.ACTION_TOGGLE_STATE";
     public static final String STATE = "state";
 
     private Button mCustomTileButton;
+    private Button mCustomTileButtonExpandedStyleList;
+    private Button mCustomTileButtonExpandedStyleGrid;
     private CustomTile mCustomTile;
 
     @Override
@@ -51,8 +57,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.main);
 
         mCustomTileButton = (Button) findViewById(R.id.custom_tile_button);
-
         mCustomTileButton.setOnClickListener(this);
+
+        mCustomTileButtonExpandedStyleList =
+                (Button) findViewById(R.id.custom_tile_list_expanded_button);
+        mCustomTileButtonExpandedStyleList.setOnClickListener(this);
+
+        mCustomTileButtonExpandedStyleGrid =
+                (Button) findViewById(R.id.custom_tile_grid_expanded_button);
+        mCustomTileButtonExpandedStyleGrid.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
         Intent intent = new Intent();
         intent.setAction(ACTION_TOGGLE_STATE);
         intent.putExtra(MainActivity.STATE, States.STATE_OFF);
@@ -61,17 +78,63 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 PendingIntent.getBroadcast(this, 0,
                         intent , PendingIntent.FLAG_UPDATE_CURRENT);
 
-        mCustomTile = new CustomTile.Builder(this)
-                .setOnClickIntent(pendingIntent)
-                .setContentDescription("Generic content description")
-                .setLabel("CustomTile " + States.STATE_OFF)
-                .setIcon(R.drawable.ic_launcher)
-                .build();
-    }
+        switch (v.getId()) {
+            case R.id.custom_tile_button:
+                mCustomTile = new CustomTile.Builder(this)
+                        .setOnClickIntent(pendingIntent)
+                        .setContentDescription("Generic content description")
+                        .setLabel("CustomTile " + States.STATE_OFF)
+                        .setIcon(R.drawable.ic_launcher)
+                        .build();
+                CMStatusBarManager.getInstance(this)
+                        .publishTile(CUSTOM_TILE_ID, mCustomTile);
+                break;
+            case R.id.custom_tile_list_expanded_button:
+                ArrayList<CustomTile.ExpandedListItem> expandedListItems =
+                        new ArrayList<CustomTile.ExpandedListItem>();
+                for (int i = 0; i < 100; i++) {
+                    CustomTile.ExpandedListItem expandedListItem = new CustomTile.ExpandedListItem();
+                    expandedListItem.setExpandedListItemDrawable(R.drawable.ic_launcher);
+                    expandedListItem.setExpandedListItemTitle("Test: " + i);
+                    expandedListItem.setExpandedListItemSummary("Test item summary " + i);
+                    expandedListItem.setExpandedListItemOnClickIntent(pendingIntent);
+                    expandedListItems.add(expandedListItem);
+                }
 
-    @Override
-    public void onClick(View v) {
-        CMStatusBarManager.getInstance(this)
-                .publishTile(CUSTOM_TILE_ID, mCustomTile);
+                CustomTile.ListExpandedStyle listExpandedStyle = new CustomTile.ListExpandedStyle();
+                listExpandedStyle.setListItems(expandedListItems);
+
+                mCustomTile = new CustomTile.Builder(this)
+                        .setExpandedStyle(listExpandedStyle)
+                        .setContentDescription("Generic content description")
+                        .setLabel("CustomTile Expanded List")
+                        .setIcon(R.drawable.ic_launcher)
+                        .build();
+                CMStatusBarManager.getInstance(this)
+                        .publishTile(CUSTOM_TILE_LIST_ID, mCustomTile);
+                break;
+            case R.id.custom_tile_grid_expanded_button:
+                ArrayList<CustomTile.ExpandedGridItem> expandedGridItems =
+                        new ArrayList<CustomTile.ExpandedGridItem>();
+                for (int i = 0; i < 8; i++) {
+                    CustomTile.ExpandedGridItem expandedGridItem = new CustomTile.ExpandedGridItem();
+                    expandedGridItem.setExpandedGridItemDrawable(R.drawable.ic_launcher);
+                    expandedGridItem.setExpandedGridItemTitle("Test: " + i);
+                    expandedGridItem.setExpandedGridItemOnClickIntent(pendingIntent);
+                    expandedGridItems.add(expandedGridItem);
+                }
+
+                CustomTile.GridExpandedStyle gridExpandedStyle = new CustomTile.GridExpandedStyle();
+                gridExpandedStyle.setGridItems(expandedGridItems);
+                mCustomTile = new CustomTile.Builder(this)
+                        .setExpandedStyle(gridExpandedStyle)
+                        .setContentDescription("Generic content description")
+                        .setLabel("CustomTile Expanded Grid")
+                        .setIcon(R.drawable.ic_launcher)
+                        .build();
+                CMStatusBarManager.getInstance(this)
+                        .publishTile(CUSTOM_TILE_GRID_ID, mCustomTile);
+                break;
+        }
     }
 }
