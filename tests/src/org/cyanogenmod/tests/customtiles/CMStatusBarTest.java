@@ -27,6 +27,8 @@ import org.cyanogenmod.tests.R;
 
 import org.cyanogenmod.tests.TestActivity;
 
+import java.util.ArrayList;
+
 public class CMStatusBarTest extends TestActivity {
 
     private static final int CUSTOM_TILE_ID = 1337;
@@ -121,5 +123,72 @@ public class CMStatusBarTest extends TestActivity {
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
                 }
             },
+
+            new Test("test publish tile with expanded list") {
+                public void run() {
+                    PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
+                            new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0);
+                    ArrayList<CustomTile.ExpandedListItem> expandedListItems =
+                            new ArrayList<CustomTile.ExpandedListItem>();
+                    for (int i = 0; i < 100; i++) {
+                        CustomTile.ExpandedListItem expandedListItem =
+                                new CustomTile.ExpandedListItem();
+                        expandedListItem.setExpandedListItemDrawable(R.drawable.ic_launcher);
+                        expandedListItem.setExpandedListItemTitle("Test: " + i);
+                        expandedListItem.setExpandedListItemSummary("Test item summary " + i);
+                        expandedListItem.setExpandedListItemOnClickIntent(intent);
+                        expandedListItems.add(expandedListItem);
+                    }
+
+                    CustomTile.ListExpandedStyle listExpandedStyle =
+                            new CustomTile.ListExpandedStyle();
+                    listExpandedStyle.setListItems(expandedListItems);
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setLabel("Test Expanded List Style From SDK")
+                            .setIcon(R.drawable.ic_launcher)
+                            .setExpandedStyle(listExpandedStyle)
+                            .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
+                                    DummySettings.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                            .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            },
+
+            new Test("test publish tile with expanded grid") {
+                public void run() {
+                    PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
+                            new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0);
+                    ArrayList<CustomTile.ExpandedGridItem> expandedGridItems =
+                            new ArrayList<CustomTile.ExpandedGridItem>();
+                    for (int i = 0; i < 8; i++) {
+                        CustomTile.ExpandedGridItem expandedGridItem =
+                                new CustomTile.ExpandedGridItem();
+                        expandedGridItem.setExpandedGridItemDrawable(R.drawable.ic_launcher);
+                        expandedGridItem.setExpandedGridItemTitle("Test: " + i);
+                        expandedGridItem.setExpandedGridItemOnClickIntent(intent);
+                        expandedGridItems.add(expandedGridItem);
+                    }
+
+                    CustomTile.GridExpandedStyle gridExpandedStyle =
+                            new CustomTile.GridExpandedStyle();
+                    gridExpandedStyle.setGridItems(expandedGridItems);
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setLabel("Test Expanded Grid Style From SDK")
+                            .setIcon(R.drawable.ic_launcher)
+                            .setExpandedStyle(gridExpandedStyle)
+                            .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
+                                    DummySettings.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                            .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            }
     };
 }
