@@ -73,6 +73,10 @@ public class CustomTile implements Parcelable {
      */
     public int icon;
 
+    /**
+     * An expanded style for when the CustomTile is clicked, can either be
+     * a {@link GridExpandedStyle} or a {@link ListExpandedStyle}
+     */
     public ExpandedStyle expandedStyle;
 
     /**
@@ -202,12 +206,27 @@ public class CustomTile implements Parcelable {
         out.writeInt(icon);
     }
 
+    /**
+     * An object that can apply an expanded view style to a {@link CustomTile.Builder}
+     * object.
+     */
     public static class ExpandedStyle implements Parcelable {
+        /**
+         * @hide
+         */
         public static final int NO_STYLE = -1;
+
+        /**
+         * Identifier for a grid style expanded view
+         */
         public static final int GRID_STYLE = 0;
+
+        /**
+         * Identifier for a list style expanded view
+         */
         public static final int LIST_STYLE = 1;
 
-        public ExpandedStyle() {
+        private ExpandedStyle() {
             styleId = NO_STYLE;
         }
 
@@ -221,25 +240,42 @@ public class CustomTile implements Parcelable {
             styleId = parcel.readInt();
         }
 
+        /**
+         * @hide
+         */
         public void setBuilder(Builder builder) {
             if (builder != null) {
                 builder.setExpandedStyle(this);
             }
         }
 
+        /**
+         * @hide
+         */
         protected void internalSetExpandedItems(ArrayList<? extends ExpandedItem> items) {
             expandedItems = new ExpandedItem[items.size()];
             items.toArray(expandedItems);
         }
 
+        /**
+         * @hide
+         */
         protected void internalStyleId(int id) {
             styleId = id;
         }
 
+        /**
+         * Retrieve the {@link ExpandedItem}s that have been set on this expanded style
+         * @return array of {@link ExpandedItem}
+         */
         public ExpandedItem[] getExpandedItems() {
             return expandedItems;
         }
 
+        /**
+         * Retrieve the style id associated with the {@link ExpandedStyle}
+         * @return id for style
+         */
         public int getStyle() {
             return styleId;
         }
@@ -290,56 +326,112 @@ public class CustomTile implements Parcelable {
                 };
     }
 
+    /**
+     * An instance of {@link ExpandedStyle} that shows the {@link ExpandedGridItem}s in a
+     * non-scrollable grid.
+     */
     public static class GridExpandedStyle extends ExpandedStyle {
+        /**
+         * Constructs a GridExpandedStyle object with default values.
+         */
         public GridExpandedStyle() {
             internalStyleId(GRID_STYLE);
         }
 
+        /**
+         * Sets an {@link ArrayList} of {@link ExpandedGridItem}'s to be utilized by
+         * the PseudoGridView for presentation.
+         * @param expandedGridItems an array list of {@link ExpandedGridItem}'s
+         */
         public void setGridItems(ArrayList<ExpandedGridItem> expandedGridItems) {
             internalSetExpandedItems(expandedGridItems);
         }
     }
 
+    /**
+     * An instance of {@link ExpandedStyle} that shows the {@link ExpandedListItem}'s in a
+     * scrollable ListView.
+     */
     public static class ListExpandedStyle extends ExpandedStyle {
+        /**
+         * Constructs a ListExpandedStyle object with default values.
+         */
         public ListExpandedStyle() {
             internalStyleId(LIST_STYLE);
         }
 
+        /**
+         * Sets an {@link ArrayList} of {@link ExpandedListItem}s to be utilized by
+         * the ListView for presentation.
+         * @param expandedListItems an array list of {@link ExpandedListItem}s
+         */
         public void setListItems(ArrayList<ExpandedListItem> expandedListItems) {
             internalSetExpandedItems(expandedListItems);
         }
     }
 
+    /**
+     * A container object that is utilized by {@link ExpandedStyle} to show specific items in either
+     * a PseudoGridView or a ListView via {@link GridExpandedStyle} and {@link ListExpandedStyle}
+     */
     public static class ExpandedItem implements Parcelable {
 
+        /**
+         * A {@link PendingIntent} associated with the item.
+         * Triggers a {@link PendingIntent#send()} when the item is clicked.
+         */
         public PendingIntent onClickPendingIntent;
 
+        /**
+         * A drawable resource id associated with the {@link ExpandedItem}
+         */
         public int itemDrawableResourceId;
 
+        /**
+         * The title of the item
+         */
         public String itemTitle;
 
+        /**
+         * The summary associated with the item, may be null
+         */
         public String itemSummary = null;
 
         private ExpandedItem() {
             // Don't want to have this baseclass be instantiable
         }
 
+        /**
+         * @hide
+         */
         protected void internalSetItemDrawable(int resourceId) {
             itemDrawableResourceId = resourceId;
         }
 
+        /**
+         * @hide
+         */
         protected void internalSetItemSummary(String resourceId) {
             itemSummary = resourceId;
         }
 
+        /**
+         * @hide
+         */
         protected void internalSetItemTitle(String title) {
             itemTitle = title;
         }
 
+        /**
+         * @hide
+         */
         protected void internalSetOnClickPendingIntent(PendingIntent pendingIntent) {
             onClickPendingIntent = pendingIntent;
         }
 
+        /**
+         * Unflatten the ExpandedItem from a parcel.
+         */
         protected ExpandedItem(Parcel parcel) {
             if (parcel.readInt() != 0) {
                 onClickPendingIntent = PendingIntent.CREATOR.createFromParcel(parcel);
@@ -398,54 +490,93 @@ public class CustomTile implements Parcelable {
             return b.toString();
         }
 
-        @SuppressWarnings("unused")
         public static final Creator<ExpandedItem> CREATOR =
                 new Creator<ExpandedItem>() {
                     @Override
                     public ExpandedItem createFromParcel(Parcel in) {
-                return new ExpandedItem(in);
-            }
+                        return new ExpandedItem(in);
+                    }
 
                     @Override
                     public ExpandedItem[] newArray(int size) {
-                return new ExpandedItem[size];
-            }
+                        return new ExpandedItem[size];
+                    }
                 };
     }
 
+    /**
+     * An instance of {@link ExpandedItem} to be utilized within a {@link GridExpandedStyle}
+     */
     public static class ExpandedGridItem extends ExpandedItem {
+        /**
+         * Constructor for the ExpandedGridItem
+         */
         public ExpandedGridItem() {
         }
 
+        /**
+         * Sets the title for the {@link ExpandedGridItem}
+         * @param title a string title
+         */
         public void setExpandedGridItemTitle(String title) {
             internalSetItemTitle(title);
         }
 
+        /**
+         * Sets the {@link PendingIntent} associated with the {@link ExpandedGridItem}
+         * @param intent a pending intent to be triggered on click
+         */
         public void setExpandedGridItemOnClickIntent(PendingIntent intent) {
             internalSetOnClickPendingIntent(intent);
         }
 
+        /**
+         * Sets the drawable resource id associated with the {@link ExpandedGridItem}
+         * @param resourceId a resource id that maps to a drawable
+         */
         public void setExpandedGridItemDrawable(int resourceId) {
             internalSetItemDrawable(resourceId);
         }
     }
 
+    /**
+     * An instance of {@link ExpandedItem} to be utilized within a {@link ListExpandedStyle}
+     */
     public static class ExpandedListItem extends ExpandedItem {
+        /**
+         * Constructor fot the ExpandedListItem
+         */
         public ExpandedListItem() {
         }
 
+        /**
+         * Sets the title for the {@link ExpandedListItem}
+         * @param title a string title
+         */
         public void setExpandedListItemTitle(String title) {
             internalSetItemTitle(title);
         }
 
-        public void setExpandedListItemSummary(String subText) {
-            internalSetItemSummary(subText);
+        /**
+         * Sets the title for the {@link ExpandedListItem}
+         * @param summary a string summary
+         */
+        public void setExpandedListItemSummary(String summary) {
+            internalSetItemSummary(summary);
         }
 
+        /**
+         * Sets the {@link PendingIntent} associated with the {@link ExpandedListItem}
+         * @param intent a pending intent to be triggered on click
+         */
         public void setExpandedListItemOnClickIntent(PendingIntent intent) {
             internalSetOnClickPendingIntent(intent);
         }
 
+        /**
+         * Sets the drawable resource id associated with the {@link ExpandedListItem}
+         * @param resourceId a resource id that maps to a drawable
+         */
         public void setExpandedListItemDrawable(int resourceId) {
             internalSetItemDrawable(resourceId);
         }
@@ -582,6 +713,11 @@ public class CustomTile implements Parcelable {
             return this;
         }
 
+        /**
+         * Set an {@link ExpandedStyle} to to be displayed when a user clicks the custom tile
+         * @param expandedStyle
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
         public Builder setExpandedStyle(ExpandedStyle expandedStyle) {
             if (mExpandedStyle != expandedStyle) {
                 mExpandedStyle = expandedStyle;
