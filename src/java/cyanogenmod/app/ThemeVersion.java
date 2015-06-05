@@ -21,6 +21,9 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @hide
+ */
 public class ThemeVersion {
     private static final String THEME_VERSION_CLASS_NAME = "android.content.ThemeVersion";
     private static final String THEME_VERSION_FIELD_NAME = "THEME_VERSION";
