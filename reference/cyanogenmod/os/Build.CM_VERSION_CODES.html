@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Manifest.permission | Android Developers</title>
+<title>Build.CM_VERSION_CODES | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -210,9 +210,9 @@ type="text/css">
                 
     <li class="api apilevel-">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-">
-  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="selected api apilevel-">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
               </ul><br/>
 
@@ -228,11 +228,9 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.html">Manifest</a></li>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html">Manifest.permission</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.html">R</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.attr.html">R.attr</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.string.html">R.string</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
       </ul>
     </li>
               
@@ -339,10 +337,10 @@ Summary:
 <div id="jd-header">
     public
     static 
-    final 
+     
     
     class
-<h1 itemprop="name">Manifest.permission</h1>
+<h1 itemprop="name">Build.CM_VERSION_CODES</h1>
 
 
 
@@ -378,7 +376,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.platform.Manifest.permission</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.os.Build.CM_VERSION_CODES</td>
     </tr>
     
 
@@ -392,6 +390,12 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Enumeration of the currently known SDK version codes.  These are the
+ values that can be found in <code><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html#SDK_INT">SDK_INT</a></code>.  Version numbers
+ increment monotonically with each official platform release.
+</p>
 
 
 
@@ -437,10 +441,10 @@ Summary:
 
     
     <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#PUBLISH_CUSTOM_TILE">PUBLISH_CUSTOM_TILE</a></td>
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html#APRICOT">APRICOT</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows a 3rd party application to publish or unpublish a quick settings tile 
+          June 2015: The first version of the platform sdk for CyanogenMod
 
           
     
@@ -479,7 +483,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#Manifest.permission()">Manifest.permission</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html#Build.CM_VERSION_CODES()">Build.CM_VERSION_CODES</a></span>()</nobr>
         
   </td></tr>
 
@@ -733,7 +737,7 @@ From class
 
 
 
-<A NAME="PUBLISH_CUSTOM_TILE"></A>
+<A NAME="APRICOT"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -741,9 +745,9 @@ From class
         public 
         static 
         final 
-        String
+        int
       </span>
-        PUBLISH_CUSTOM_TILE
+        APRICOT
     </h4>
       <div class="api-level">
         
@@ -756,7 +760,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows a 3rd party application to publish or unpublish a quick settings tile 
+  <div class="jd-tagdata jd-tagdescr"><p>June 2015: The first version of the platform sdk for CyanogenMod
 </p></div>
 
     
@@ -764,7 +768,8 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
+                1
+                (0x00000001)
             
         </span>
         </div>
@@ -786,7 +791,7 @@ From class
 
 
 
-<A NAME="Manifest.permission()"></A>
+<A NAME="Build.CM_VERSION_CODES()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -798,7 +803,7 @@ From class
          
         
       </span>
-      <span class="sympad">Manifest.permission</span>
+      <span class="sympad">Build.CM_VERSION_CODES</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">

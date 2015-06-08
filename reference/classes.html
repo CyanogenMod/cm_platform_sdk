@@ -210,6 +210,8 @@ type="text/css">
     <li class="api apilevel-">
   <a href="../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-">
+  <a href="../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-">
   <a href="../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
               </ul><br/>
 
@@ -274,6 +276,7 @@ type="text/css">
 <div id="jd-content">
 <p>These are the CyanogenMod Platform API classes. See all <a href="packages.html">API packages</a>.</p>
 <div class="jd-letterlist">
+    <a href="#letter_B">B</a>&nbsp;&nbsp;
     <a href="#letter_C">C</a>&nbsp;&nbsp;
     <a href="#letter_M">M</a>&nbsp;&nbsp;
     <a href="#letter_R">R</a>&nbsp;&nbsp;
@@ -282,16 +285,14 @@ type="text/css">
 
 
 
-<h2 id="letter_C">C</h2>
+<h2 id="letter_B">B</h2>
 <table class="jd-sumtable">
     
     
         <tr class="alt-color api apilevel-" >
-            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CMContextConstants.html">CMContextConstants</a></td>
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/os/Build.html">Build</a></td>
             <td class="jd-descrcol" width="100%">
-              Constants to be used with <code><a href="../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code>
- to retrieve published system services
-&nbsp;
+              Information about the current CyanogenMod build, extracted from system properties.&nbsp;
               
     
 
@@ -300,6 +301,35 @@ type="text/css">
     
     
         <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></td>
+            <td class="jd-descrcol" width="100%">
+              Various version strings.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></td>
+            <td class="jd-descrcol" width="100%">
+              Enumeration of the currently known SDK version codes.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_C">C</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></td>
             <td class="jd-descrcol" width="100%">
               The CMStatusBarManager allows you to publish and remove CustomTiles within the
@@ -311,7 +341,7 @@ type="text/css">
         </tr>
     
     
-        <tr class="alt-color api apilevel-" >
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></td>
             <td class="jd-descrcol" width="100%">
               A class that represents a quick settings tile
@@ -325,7 +355,7 @@ type="text/css">
         </tr>
     
     
-        <tr class=" api apilevel-" >
+        <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></td>
             <td class="jd-descrcol" width="100%">
               Builder class for <code><a href="../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> objects.&nbsp;
@@ -336,7 +366,80 @@ type="text/css">
         </tr>
     
     
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></td>
+            <td class="jd-descrcol" width="100%">
+              An instance of <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></code> to be utilized within a <code><a href="../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></code>
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
         <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></td>
+            <td class="jd-descrcol" width="100%">
+              A container object that is utilized by <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></code> to show specific items in either
+ a PseudoGridView or a ListView via <code><a href="../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></code> and <code><a href="../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></code>
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></td>
+            <td class="jd-descrcol" width="100%">
+              An instance of <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></code> to be utilized within a <code><a href="../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></code>
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></td>
+            <td class="jd-descrcol" width="100%">
+              An object that can apply an expanded view style to a <code><a href="../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></code>
+ object.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></td>
+            <td class="jd-descrcol" width="100%">
+              An instance of <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></code> that shows the <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code>s in a
+ non-scrollable grid.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></td>
+            <td class="jd-descrcol" width="100%">
+              An instance of <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></code> that shows the <code><a href="../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></code>'s in a
+ scrollable ListView.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></td>
             <td class="jd-descrcol" width="100%">
               A service that receives calls from the system when new custom tiles are

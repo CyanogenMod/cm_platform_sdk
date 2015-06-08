@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Manifest.permission | Android Developers</title>
+<title>Build | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -210,9 +210,9 @@ type="text/css">
                 
     <li class="api apilevel-">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-">
-  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="selected api apilevel-">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
               </ul><br/>
 
@@ -228,11 +228,9 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.html">Manifest</a></li>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html">Manifest.permission</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.html">R</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.attr.html">R.attr</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/platform/R.string.html">R.string</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
       </ul>
     </li>
               
@@ -302,11 +300,14 @@ type="text/css">
 
 Summary:
 
+  <a href="#nestedclasses">Nested Classes</a>
+  
 
 
 
 
-  <a href="#constants">Constants</a>
+
+  &#124; <a href="#constants">Constants</a>
   
 
 
@@ -317,6 +318,9 @@ Summary:
   
 
 
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
 
 
 
@@ -338,11 +342,11 @@ Summary:
 
 <div id="jd-header">
     public
-    static 
-    final 
+     
+     
     
     class
-<h1 itemprop="name">Manifest.permission</h1>
+<h1 itemprop="name">Build</h1>
 
 
 
@@ -378,7 +382,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.platform.Manifest.permission</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.os.Build</td>
     </tr>
     
 
@@ -392,6 +396,10 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Information about the current CyanogenMod build, extracted from system properties.
+</p>
 
 
 
@@ -421,6 +429,48 @@ Summary:
 
 
 
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
+
+
+  
+    <tr class="alt-color api apilevel-" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></td>
+      <td class="jd-descrcol" width="100%">
+        Various version strings.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></td>
+      <td class="jd-descrcol" width="100%">
+        Enumeration of the currently known SDK version codes.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+
+
+
 
 
 
@@ -438,10 +488,9 @@ Summary:
     
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#PUBLISH_CUSTOM_TILE">PUBLISH_CUSTOM_TILE</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.html#UNKNOWN">UNKNOWN</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows a 3rd party application to publish or unpublish a quick settings tile 
-
+          Value used for when a build property is unknown.
           
     
 
@@ -479,7 +528,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#Manifest.permission()">Manifest.permission</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#Build()">Build</a></span>()</nobr>
         
   </td></tr>
 
@@ -490,6 +539,38 @@ Summary:
 
 
 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#getNameForSDKInt(int)">getNameForSDKInt</a></span>(int sdkInt)</nobr>
+        
+        <div class="jd-descrdiv">
+          Retrieve the name for the SDK int
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -733,7 +814,7 @@ From class
 
 
 
-<A NAME="PUBLISH_CUSTOM_TILE"></A>
+<A NAME="UNKNOWN"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -743,7 +824,7 @@ From class
         final 
         String
       </span>
-        PUBLISH_CUSTOM_TILE
+        UNKNOWN
     </h4>
       <div class="api-level">
         
@@ -756,15 +837,14 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows a 3rd party application to publish or unpublish a quick settings tile 
-</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Value used for when a build property is unknown. </p></div>
 
     
         <div class="jd-tagdata">
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
+                "unknown"
             
         </span>
         </div>
@@ -786,7 +866,7 @@ From class
 
 
 
-<A NAME="Manifest.permission()"></A>
+<A NAME="Build()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -798,7 +878,7 @@ From class
          
         
       </span>
-      <span class="sympad">Manifest.permission</span>
+      <span class="sympad">Build</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -828,6 +908,48 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getNameForSDKInt(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getNameForSDKInt</span>
+      <span class="normal">(int sdkInt)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Retrieve the name for the SDK int</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>name of the SDK int
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 
 
 

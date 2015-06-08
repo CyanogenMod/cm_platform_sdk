@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>StatusBarPanelCustomTile | Android Developers</title>
+<title>CustomTile.ExpandedGridItem | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -231,14 +231,14 @@ type="text/css">
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
           <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
       </ul>
     </li>
               
@@ -301,6 +301,15 @@ type="text/css">
   
   
   
+   
+  
+  
+
+  
+   
+  
+  
+  
   
 
   
@@ -326,9 +335,9 @@ Summary:
   
 
 
-  &#124; <a href="#lfields">Fields</a>
-  
 
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
 
 
   &#124; <a href="#pubctors">Ctors</a>
@@ -359,26 +368,25 @@ Summary:
 
 <div id="jd-header">
     public
-     
+    static 
      
     
     class
-<h1 itemprop="name">StatusBarPanelCustomTile</h1>
+<h1 itemprop="name">CustomTile.ExpandedGridItem</h1>
 
 
 
-  
-    extends Object<br/>
   
   
   
 
   
+    extends <a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a><br/>
   
-      implements 
-      
-        Parcelable 
-      
+  
+  
+
+  
   
   
 
@@ -396,7 +404,7 @@ Summary:
 
     <tr>
          	
-        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
     </tr>
     
 
@@ -404,7 +412,17 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.StatusBarPanelCustomTile</td>
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">cyanogenmod.app.CustomTile.ExpandedItem</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CustomTile.ExpandedGridItem</td>
     </tr>
     
 
@@ -420,8 +438,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Class encapsulating a Custom Tile. Sent by the StatusBarManagerService to clients including
- the status bar panel and any <code><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></code> clients.
+<p itemprop="articleBody">An instance of <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></code> to be utilized within a <code><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></code>
 </p>
 
 
@@ -469,6 +486,8 @@ Summary:
 <table id="inhconstants" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Constants</div></th></tr>
+
+
 
 
 
@@ -525,9 +544,30 @@ android.os.Parcelable
 
 
 
-<!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
 
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-cyanogenmod.app.CustomTile.ExpandedItem" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-cyanogenmod.app.CustomTile.ExpandedItem-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">cyanogenmod.app.CustomTile.ExpandedItem</a>
+<div id="inherited-fields-cyanogenmod.app.CustomTile.ExpandedItem">
+  <div id="inherited-fields-cyanogenmod.app.CustomTile.ExpandedItem-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-cyanogenmod.app.CustomTile.ExpandedItem-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
 
     
       <tr class="alt-color api apilevel-" >
@@ -535,8 +575,8 @@ android.os.Parcelable
           public
           static
           final
-          Creator&lt;<a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a>&gt;</nobr></td>
-          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#CREATOR">CREATOR</a></td>
+          Creator&lt;<a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a>&gt;</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#CREATOR">CREATOR</a></td>
           <td class="jd-descrcol" width="100%">
             
             
@@ -546,11 +586,84 @@ android.os.Parcelable
       </tr>
       
     
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemDrawableResourceId">itemDrawableResourceId</a></td>
+          <td class="jd-descrcol" width="100%">
+            A drawable resource id associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></code>
+
+            
+    
+
+          </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemSummary">itemSummary</a></td>
+          <td class="jd-descrcol" width="100%">
+            The summary associated with the item, may be null
+
+            
+    
+
+          </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemTitle">itemTitle</a></td>
+          <td class="jd-descrcol" width="100%">
+            The title of the item
+
+            
+    
+
+          </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          PendingIntent</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#onClickPendingIntent">onClickPendingIntent</a></td>
+          <td class="jd-descrcol" width="100%">
+            A <code><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a></code> associated with the item.
+            
+    
+
+          </td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
 
 </table>
-
-
-
 
 
 
@@ -571,40 +684,16 @@ android.os.Parcelable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#StatusBarPanelCustomTile(java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle)">StatusBarPanelCustomTile</a></span>(String pkg, String opPkg, int id, String tag, int uid, int initialPid, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html#CustomTile.ExpandedGridItem()">CustomTile.ExpandedGridItem</a></span>()</nobr>
         
-  </td></tr>
+        <div class="jd-descrdiv">
+          Constructor for the ExpandedGridItem
 
+          
+    
 
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#StatusBarPanelCustomTile(java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle, long)">StatusBarPanelCustomTile</a></span>(String pkg, String opPkg, int id, String tag, int uid, int initialPid, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user, long postTime)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#StatusBarPanelCustomTile(android.os.Parcel)">StatusBarPanelCustomTile</a></span>(Parcel in)</nobr>
-        
+        </div>
+  
   </td></tr>
 
 
@@ -629,46 +718,13 @@ android.os.Parcelable
             
             
             
-            <a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#clone()">clone</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#describeContents()">describeContents</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getCustomTile()">getCustomTile</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html#setExpandedGridItemDrawable(int)">setExpandedGridItemDrawable</a></span>(int resourceId)</nobr>
         
         <div class="jd-descrdiv">
-          The <code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> supplied to
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>.
+          Sets the drawable resource id associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code>
           
     
 
@@ -685,151 +741,13 @@ android.os.Parcelable
             
             
             
-            int</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getId()">getId</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html#setExpandedGridItemOnClickIntent(android.app.PendingIntent)">setExpandedGridItemOnClickIntent</a></span>(PendingIntent intent)</nobr>
         
         <div class="jd-descrdiv">
-          The id supplied to CMStatusBarManager 
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getKey()">getKey</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          A unique instance key for this notification record.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getPackage()">getPackage</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          The package of the app that posted the notification 
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            long</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getPostTime()">getPostTime</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          The time (in <code><a href="../../../reference/java/lang/System.html#currentTimeMillis()">currentTimeMillis()</a></code> time) the CustomTile was published, 
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getTag()">getTag</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          The tag supplied to CMStatusBarManager or null if no tag was specified.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            UserHandle</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getUser()">getUser</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          The <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code> for whom this CustomTile is intended.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#getUserId()">getUserId</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          Returns a userHandle for the instance of the app that posted this notification.
+          Sets the <code><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a></code> associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code>
           
     
 
@@ -849,8 +767,15 @@ android.os.Parcelable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel out, int flags)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html#setExpandedGridItemTitle(java.lang.String)">setExpandedGridItemTitle</a></span>(String title)</nobr>
         
+        <div class="jd-descrdiv">
+          Sets the title for the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code>
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
@@ -867,6 +792,80 @@ android.os.Parcelable
 <table id="inhmethods" class="jd-sumtable"><tr><th>
   <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
   <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-cyanogenmod.app.CustomTile.ExpandedItem" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-cyanogenmod.app.CustomTile.ExpandedItem-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">cyanogenmod.app.CustomTile.ExpandedItem</a>
+
+<div id="inherited-methods-cyanogenmod.app.CustomTile.ExpandedItem">
+  <div id="inherited-methods-cyanogenmod.app.CustomTile.ExpandedItem-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-cyanogenmod.app.CustomTile.ExpandedItem-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#describeContents()">describeContents</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#toString()">toString</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel out, int flags)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 
 <tr class="api apilevel-" >
@@ -1154,44 +1153,6 @@ From interface
 <!-- Fields -->
 
 
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
-
-
-
-
-<A NAME="CREATOR"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        Creator&lt;<a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a>&gt;
-      </span>
-        CREATOR
-    </h4>
-      <div class="api-level">
-        
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-    </div>
-</div>
-
-
-
-
 <!-- Public ctors -->
 
 
@@ -1200,7 +1161,7 @@ From interface
 
 
 
-<A NAME="StatusBarPanelCustomTile(java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle)"></A>
+<A NAME="CustomTile.ExpandedGridItem()"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1212,8 +1173,8 @@ From interface
          
         
       </span>
-      <span class="sympad">StatusBarPanelCustomTile</span>
-      <span class="normal">(String pkg, String opPkg, int id, String tag, int uid, int initialPid, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user)</span>
+      <span class="sympad">CustomTile.ExpandedGridItem</span>
+      <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1226,71 +1187,8 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="StatusBarPanelCustomTile(java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle, long)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">StatusBarPanelCustomTile</span>
-      <span class="normal">(String pkg, String opPkg, int id, String tag, int uid, int initialPid, <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a> customTile, UserHandle user, long postTime)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="StatusBarPanelCustomTile(android.os.Parcel)"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">StatusBarPanelCustomTile</span>
-      <span class="normal">(Parcel in)</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor for the ExpandedGridItem
+</p></div>
 
     </div>
 </div>
@@ -1311,332 +1209,7 @@ From interface
 
 
 
-<A NAME="clone()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a>
-      </span>
-      <span class="sympad">clone</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="describeContents()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        int
-      </span>
-      <span class="sympad">describeContents</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getCustomTile()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a>
-      </span>
-      <span class="sympad">getCustomTile</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The <code><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></code> supplied to
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html#publishTile(int, cyanogenmod.app.CustomTile)">publishTile(int, cyanogenmod.app.CustomTile)</a></code>.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getId()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        int
-      </span>
-      <span class="sympad">getId</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The id supplied to CMStatusBarManager </p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getKey()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getKey</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>A unique instance key for this notification record.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getPackage()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getPackage</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The package of the app that posted the notification </p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getPostTime()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        long
-      </span>
-      <span class="sympad">getPostTime</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The time (in <code><a href="../../../reference/java/lang/System.html#currentTimeMillis()">currentTimeMillis()</a></code> time) the CustomTile was published, </p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getTag()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getTag</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The tag supplied to CMStatusBarManager or null if no tag was specified. </p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getUser()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        UserHandle
-      </span>
-      <span class="sympad">getUser</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>The <code><a href="../../../reference/android/os/UserHandle.html">UserHandle</a></code> for whom this CustomTile is intended.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getUserId()"></A>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        int
-      </span>
-      <span class="sympad">getUserId</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Returns a userHandle for the instance of the app that posted this notification.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="writeToParcel(android.os.Parcel, int)"></A>
+<A NAME="setExpandedGridItemDrawable(int)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1648,8 +1221,8 @@ From interface
          
         void
       </span>
-      <span class="sympad">writeToParcel</span>
-      <span class="normal">(Parcel out, int flags)</span>
+      <span class="sympad">setExpandedGridItemDrawable</span>
+      <span class="normal">(int resourceId)</span>
     </h4>
       <div class="api-level">
         <div></div>
@@ -1662,7 +1235,101 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the drawable resource id associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>resourceId</td>
+          <td>a resource id that maps to a drawable
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setExpandedGridItemOnClickIntent(android.app.PendingIntent)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExpandedGridItemOnClickIntent</span>
+      <span class="normal">(PendingIntent intent)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the <code><a href="../../../reference/android/app/PendingIntent.html">PendingIntent</a></code> associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>intent</td>
+          <td>a pending intent to be triggered on click
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setExpandedGridItemTitle(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExpandedGridItemTitle</span>
+      <span class="normal">(String title)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the title for the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>title</td>
+          <td>a string title
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
