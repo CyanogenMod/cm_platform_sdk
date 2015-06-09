@@ -9914,20 +9914,20 @@ package android.util {
     ctor public DisplayMetrics();
     method public boolean equals(android.util.DisplayMetrics);
     method public boolean equalsPhysical(android.util.DisplayMetrics);
-    method public void forcePersistedDensity();
-    method public static int getDeviceDensity();
+    method public void setDensity(int);
     method public void setTo(android.util.DisplayMetrics);
     method public void setToDefaults();
     field public static final int DENSITY_280 = 280; // 0x118
     field public static final int DENSITY_400 = 400; // 0x190
     field public static final int DENSITY_560 = 560; // 0x230
-    field public static int DENSITY_CURRENT;
     field public static final int DENSITY_DEFAULT = 160; // 0xa0
     field public static final float DENSITY_DEFAULT_SCALE = 0.00625f;
     field public static deprecated int DENSITY_DEVICE;
+    field public static int DENSITY_DEVICE_DEFAULT;
     field public static final int DENSITY_HIGH = 240; // 0xf0
     field public static final int DENSITY_LOW = 120; // 0x78
     field public static final int DENSITY_MEDIUM = 160; // 0xa0
+    field public static int DENSITY_PREFERRED;
     field public static final int DENSITY_TV = 213; // 0xd5
     field public static final int DENSITY_XHIGH = 320; // 0x140
     field public static final int DENSITY_XXHIGH = 480; // 0x1e0
@@ -15311,7 +15311,6 @@ package cyanogenmod.app {
     method public void removeTile(int);
     method public void removeTile(java.lang.String, int);
     method public void removeTileAsUser(java.lang.String, int, android.os.UserHandle);
-    method public void utilizeButtSex(java.lang.String);
   }
 
   public class CustomTile implements android.os.Parcelable {
@@ -15322,6 +15321,7 @@ package cyanogenmod.app {
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile> CREATOR;
     field public java.lang.String contentDescription;
+    field public cyanogenmod.app.CustomTile.ExpandedStyle expandedStyle;
     field public int icon;
     field public java.lang.String label;
     field public android.app.PendingIntent onClick;
@@ -15334,12 +15334,59 @@ package cyanogenmod.app {
     method public cyanogenmod.app.CustomTile build();
     method public cyanogenmod.app.CustomTile.Builder setContentDescription(java.lang.String);
     method public cyanogenmod.app.CustomTile.Builder setContentDescription(int);
+    method public cyanogenmod.app.CustomTile.Builder setExpandedStyle(cyanogenmod.app.CustomTile.ExpandedStyle);
     method public cyanogenmod.app.CustomTile.Builder setIcon(int);
     method public cyanogenmod.app.CustomTile.Builder setLabel(java.lang.String);
     method public cyanogenmod.app.CustomTile.Builder setLabel(int);
     method public cyanogenmod.app.CustomTile.Builder setOnClickIntent(android.app.PendingIntent);
     method public cyanogenmod.app.CustomTile.Builder setOnClickUri(android.net.Uri);
     method public cyanogenmod.app.CustomTile.Builder setOnSettingsClickIntent(android.content.Intent);
+  }
+
+  public static class CustomTile.ExpandedGridItem extends cyanogenmod.app.CustomTile.ExpandedItem {
+    ctor public CustomTile.ExpandedGridItem();
+    method public void setExpandedGridItemDrawable(int);
+    method public void setExpandedGridItemOnClickIntent(android.app.PendingIntent);
+    method public void setExpandedGridItemTitle(java.lang.String);
+  }
+
+  public static class CustomTile.ExpandedItem implements android.os.Parcelable {
+    ctor protected CustomTile.ExpandedItem(android.os.Parcel);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile.ExpandedItem> CREATOR;
+    field public int itemDrawableResourceId;
+    field public java.lang.String itemSummary;
+    field public java.lang.String itemTitle;
+    field public android.app.PendingIntent onClickPendingIntent;
+  }
+
+  public static class CustomTile.ExpandedListItem extends cyanogenmod.app.CustomTile.ExpandedItem {
+    ctor public CustomTile.ExpandedListItem();
+    method public void setExpandedListItemDrawable(int);
+    method public void setExpandedListItemOnClickIntent(android.app.PendingIntent);
+    method public void setExpandedListItemSummary(java.lang.String);
+    method public void setExpandedListItemTitle(java.lang.String);
+  }
+
+  public static class CustomTile.ExpandedStyle implements android.os.Parcelable {
+    method public int describeContents();
+    method public cyanogenmod.app.CustomTile.ExpandedItem[] getExpandedItems();
+    method public int getStyle();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile.ExpandedStyle> CREATOR;
+    field public static final int GRID_STYLE = 0; // 0x0
+    field public static final int LIST_STYLE = 1; // 0x1
+  }
+
+  public static class CustomTile.GridExpandedStyle extends cyanogenmod.app.CustomTile.ExpandedStyle {
+    ctor public CustomTile.GridExpandedStyle();
+    method public void setGridItems(java.util.ArrayList<cyanogenmod.app.CustomTile.ExpandedGridItem>);
+  }
+
+  public static class CustomTile.ListExpandedStyle extends cyanogenmod.app.CustomTile.ExpandedStyle {
+    ctor public CustomTile.ListExpandedStyle();
+    method public void setListItems(java.util.ArrayList<cyanogenmod.app.CustomTile.ExpandedListItem>);
   }
 
   public class CustomTileListenerService extends android.app.Service {
@@ -15368,6 +15415,26 @@ package cyanogenmod.app {
     method public int getUserId();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.StatusBarPanelCustomTile> CREATOR;
+  }
+
+}
+
+package cyanogenmod.os {
+
+  public class Build {
+    ctor public Build();
+    method public static java.lang.String getNameForSDKInt(int);
+    field public static final java.lang.String UNKNOWN = "unknown";
+  }
+
+  public static class Build.CM_VERSION {
+    ctor public Build.CM_VERSION();
+    field public static final int SDK_INT;
+  }
+
+  public static class Build.CM_VERSION_CODES {
+    ctor public Build.CM_VERSION_CODES();
+    field public static final int APRICOT = 1; // 0x1
   }
 
 }
