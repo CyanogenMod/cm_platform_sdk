@@ -17,4 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
+  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
+  <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
 </resources>

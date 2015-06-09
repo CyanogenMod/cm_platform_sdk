@@ -16,9 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">CyanogenMod-systeem</string>
-  <string name="permlab_publishCustomTile">een aangepaste tegel aanmaken in het snelle instellingenpaneel</string>
-  <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen.</string>
-  <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
-  <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
+  <string name="cyanogenmod_system_label">CyanogenMod 系統</string>
+  <string name="permlab_publishCustomTile">於快速設定面板中建立自訂標題</string>
+  <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
 </resources>

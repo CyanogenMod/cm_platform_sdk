@@ -17,6 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">„CyanogenMod“ sistema</string>
-  <string name="permlab_bindCustomTileListenerService">surišti su tinkintos plytelės klausančia paslauga</string>
+  <string name="permlab_publishCustomTile">sukurti tinkintą plytelę per greitųjų nustatymų skydelį</string>
+  <string name="permdesc_publishCustomTile">Leidžia programai paskelbti greitųjų nustatymų plytelę.</string>
+  <string name="permlab_bindCustomTileListenerService">susieti su tinkintos plytelės klausančia paslauga</string>
+  <string name="permdesc_bindCustomTileListenerService">Leidžia programai susieti aukščiausio lygio sąsają su tinkintos plytelės klausančia paslauga.</string>
   <string name="custom_tile_listener_binding_label">Tinkintos plytelės klausytojas</string>
 </resources>
