@@ -21,7 +21,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * TODO: Comment me
+ * An trigger that can be utilized for a CyanogenMod profile.
  */
 public class Trigger implements Parcelable {
 
@@ -31,23 +31,16 @@ public class Trigger implements Parcelable {
     private State mCurrentState;
 
     /**
-     *
+     * {@link State} object for the {@link Trigger} which allows actions to be fired
      */
     public static final class State implements Parcelable {
-        /**
-         *
-         */
         private String mKey;
-
-        /**
-         *
-         */
         private String mDescription;
 
         /**
          *
-         * @param key
-         * @param description
+         * @param key an identifier key to be used for the state
+         * @param description a description to be used for the state
          */
         public State(String key, String description) {
             mKey = key;
@@ -55,7 +48,7 @@ public class Trigger implements Parcelable {
         }
 
         /**
-         *
+         * Unflatten the State from a parcel.
          * @param in
          */
         public State(Parcel in) {
@@ -64,7 +57,7 @@ public class Trigger implements Parcelable {
         }
 
         /**
-         *
+         * Get the key associated with the {@link State}
          * @return
          */
         public String getKey() {
@@ -72,27 +65,27 @@ public class Trigger implements Parcelable {
         }
 
         /**
-         *
-         * @param mKey
+         * Set a key for the {@link State} to be used as a state identifier
+         * @param key
          */
-        public void setKey(String mKey) {
-            this.mKey = mKey;
+        public void setKey(String key) {
+            this.mKey = key;
         }
 
         /**
-         *
-         * @return
+         * Get the description associated with the {@link State}
+         * @return a description
          */
         public String getDescription() {
             return mDescription;
         }
 
         /**
-         *
-         * @param mDescription
+         * Set the description associated with the {@link State}
+         * @param description
          */
-        public void setDescription(String mDescription) {
-            this.mDescription = mDescription;
+        public void setDescription(String description) {
+            this.mDescription = description;
         }
 
         @Override
@@ -120,14 +113,17 @@ public class Trigger implements Parcelable {
         };
     }
 
+    /**
+     * Constructs an Trigger object with default values.
+     */
     public Trigger() {
-
+        // Empty constructor
     }
 
     /**
-     *
-     * @param triggerId
-     * @param triggerDisplayname
+     * Construct a Trigger object with specific default values
+     * @param triggerId a unique identifier that can be referenced
+     * @param triggerDisplayname title text for the Trigger
      */
     public Trigger(String triggerId, String triggerDisplayname) {
         this.mTriggerId = triggerId;
@@ -135,31 +131,7 @@ public class Trigger implements Parcelable {
     }
 
     /**
-     *
-     * @param state
-     */
-    public void addState(State state) {
-        mStates.putParcelable(state.getKey(), state);
-    }
-
-    /**
-     *
-     * @return
-     */
-    public State getCurrentState() {
-        return mCurrentState;
-    }
-
-    /**
-     *
-     * @param mCurrentState
-     */
-    public void setCurrentState(State state) {
-        this.mCurrentState = mCurrentState;
-    }
-
-    /**
-     *
+     * Unflatten a {@link Trigger} object from a parcel
      * @param in
      */
     public Trigger(Parcel in) {
@@ -214,7 +186,31 @@ public class Trigger implements Parcelable {
     };
 
     /**
-     *
+     * Add a {@link State} to the {@link Trigger}
+     * @param state
+     */
+    public void addState(State state) {
+        mStates.putParcelable(state.getKey(), state);
+    }
+
+    /**
+     * Get the current state of the {@link Trigger}
+     * @return
+     */
+    public State getCurrentState() {
+        return mCurrentState;
+    }
+
+    /**
+     * Set the current state for the {@link Trigger}
+     * @param currentState
+     */
+    public void setCurrentState(State currentState) {
+        this.mCurrentState = currentState;
+    }
+
+    /**
+     * Get the string identifier associated with the {@link Trigger}
      * @return
      */
     public String getTriggerId() {
@@ -222,7 +218,7 @@ public class Trigger implements Parcelable {
     }
 
     /**
-     *
+     * Set an identifier for the {@link Trigger}
      * @param triggerId
      */
     public void setTriggerId(String triggerId) {
@@ -230,7 +226,7 @@ public class Trigger implements Parcelable {
     }
 
     /**
-     *
+     * Get the title text associated with the {@link Trigger}
      * @return
      */
     public String getTriggerDisplayName() {
@@ -238,7 +234,7 @@ public class Trigger implements Parcelable {
     }
 
     /**
-     *
+     * Set the title text to be displayed to the user in Settings for this trigger
      * @param triggerDisplayName
      */
     public void setTriggerDisplayName(String triggerDisplayName) {
@@ -246,8 +242,8 @@ public class Trigger implements Parcelable {
     }
 
     /**
-     *
-     * @return
+     * Get the {@link State}s associated with the {@link Trigger}
+     * @return states
      */
     public Bundle getStates() {
         return mStates;
