@@ -32,17 +32,19 @@ import java.util.List;
  * with the Profile plugin service.
  *
  * <p>
+ *     TODO: Details!
  * <p>
  * To get the instance of this class, utilize ProfilePluginManager#getInstance(Context context)
  *
- * @see cyanogenmod.app.Trigger and cyanogenmod.app.Action
+ * @see Trigger
+ * @see Action
  */
 public class ProfilePluginManager {
     private static IProfilePluginService sService;
     private static ProfilePluginManager sProfilePluginManagerInstance;
     private Context mContext;
 
-    public ProfilePluginManager(Context context) {
+    private ProfilePluginManager(Context context) {
         Context appContext = context.getApplicationContext();
         if (appContext != null) {
             mContext = appContext;
@@ -93,7 +95,7 @@ public class ProfilePluginManager {
         }
     }
 
-    /** hide */
+    /** @hide */
     public List<ProfileServiceAction> getRegisteredActions() {
         IProfilePluginService service = getService();
         try {
@@ -104,7 +106,7 @@ public class ProfilePluginManager {
         }
     }
 
-    /** hide */
+    /** @hide */
     public List<ProfileServiceTrigger> getRegisteredTriggers() {
         IProfilePluginService service = getService();
         try {
@@ -115,6 +117,7 @@ public class ProfilePluginManager {
         }
     }
 
+    /** @hide **/
     public void sendTrigger(String triggerId, String state) {
         IProfilePluginService service = getService();
         try {
