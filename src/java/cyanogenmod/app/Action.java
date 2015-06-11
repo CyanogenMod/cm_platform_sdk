@@ -47,42 +47,67 @@ public class Action implements Parcelable {
         mStates = in.readBundle(State.class.getClassLoader());
     }
 
+    /**
+     * {@link State} object for the {@link Action} which allows toggling between descriptions when
+     * the {@link Action} is fired and cycles.
+     */
     public static final class State implements Parcelable {
         private String mKey;
         private String mDescription;
+
+        /**
+         * Unflatten the State from a parcel.
+         * @param in
+         */
         public State(Parcel in) {
             mKey = in.readString();
             mDescription = in.readString();
         }
+
+        /**
+         * Get the key associated with the {@link State}
+         * @return
+         */
         public String getKey() {
             return mKey;
         }
-        public void setKey(String mKey) {
-            this.mKey = mKey;
+
+        /**
+         * Set a key for the {@link State} to be used as a state identifier
+         * @param key
+         */
+        public void setKey(String key) {
+            this.mKey = key;
         }
+
+        /**
+         * Get the description associated with the {@link State}
+         * @return a description
+         */
         public String getDescription() {
             return mDescription;
         }
 
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            return super.clone();
+        /**
+         * Set the description associated with the {@link State}
+         * @param description
+         */
+        public void setDescription(String description) {
+            this.mDescription = description;
         }
 
-        public void setDescription(String mDescription) {
-            this.mDescription = mDescription;
-        }
         @Override
         public int describeContents() {
             return 0;
         }
+
         @Override
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(mKey);
             dest.writeString(mDescription);
         }
-        public static final Parcelable.Creator<State> CREATOR
-        = new Parcelable.Creator<State>() {
+
+        public static final Parcelable.Creator<State> CREATOR = new Parcelable.Creator<State>() {
             @Override
             public State createFromParcel(Parcel in) {
                 return new State(in);
@@ -95,28 +120,53 @@ public class Action implements Parcelable {
         };
     }
 
+    /**
+     * Get the title associated with the {@link Action}
+     * @return title
+     */
     public String getTitle() {
         return mTitle;
     }
 
-    public void setTitle(String mTitle) {
-        this.mTitle = mTitle;
+    /**
+     * Set the title associated with the {@link Action}
+     * @param title
+     */
+    public void setTitle(String title) {
+        this.mTitle = title;
     }
 
+    /**
+     * Get the description associated with the {@link Action}
+     * @return
+     */
     public String getDescription() {
         return mDescription;
     }
 
-    public void setDescription(String mDescription) {
-        this.mDescription = mDescription;
+    /**
+     * Set the description associated with the {@link Action}
+     * @param description
+     */
+    public void setDescription(String description) {
+        this.mDescription = description;
     }
 
+    /**
+     * Get the {@link PendingIntent} associated with the {@link Action}
+     * @return pending intent to be fired
+     */
     public PendingIntent getAction() {
         return mAction;
     }
 
-    public void setAction(PendingIntent mAction) {
-        this.mAction = mAction;
+    /**
+     * Set the {@link PendingIntent} that will be fired when the {@link Action} is
+     * fired.
+     * @param action
+     */
+    public void setAction(PendingIntent action) {
+        this.mAction = action;
     }
 
     @Override
@@ -163,10 +213,18 @@ public class Action implements Parcelable {
         }
     };
 
+    /**
+     * Add a {@link State} to the {@link Action}
+     * @param state
+     */
     public void addState(State state) {
         mStates.putParcelable(state.getKey(), state);
     }
 
+    /**
+     * Get the {@link State}s associated with the {@link Action}
+     * @return states
+     */
     public Bundle getStates() {
         return mStates;
     }
