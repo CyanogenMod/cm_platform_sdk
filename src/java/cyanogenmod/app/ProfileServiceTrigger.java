@@ -20,6 +20,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
 
+/**
+ * Class encapsulating an {@link Trigger}. Sent by the ProfilePluginService to the Settings
+ * application's instance of Profiles.
+ * @hide
+ */
 public class ProfileServiceTrigger implements Parcelable {
     private final String pkg;
     private final String key;
