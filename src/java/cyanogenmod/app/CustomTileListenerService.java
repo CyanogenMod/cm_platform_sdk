@@ -223,7 +223,7 @@ public class CustomTileListenerService extends Service {
     }
 
     private boolean isBound() {
-        if (mWrapper == null || getStatusBarInterface() == null) {
+        if (getStatusBarInterface() == null || mWrapper == null) {
             Log.w(TAG, "CustomTile listener service not yet bound.");
             return false;
         }
