@@ -34,6 +34,8 @@ import java.util.ArrayList;
  */
 public class CustomTile implements Parcelable {
 
+    private String resourcesPackageName = "";
+
     /**
      * An optional intent to execute when the custom tile entry is clicked.  If
      * this is an activity, it must include the
@@ -83,6 +85,7 @@ public class CustomTile implements Parcelable {
      * Unflatten the CustomTile from a parcel.
      */
     public CustomTile(Parcel parcel) {
+        resourcesPackageName = parcel.readString();
         if (parcel.readInt() != 0) {
             this.onClick = PendingIntent.CREATOR.createFromParcel(parcel);
         }
@@ -113,6 +116,11 @@ public class CustomTile implements Parcelable {
         // Empty constructor
     }
 
+    /** @hide **/
+    public String getResourcesPackageName() {
+        return resourcesPackageName;
+    }
+
     @Override
     public CustomTile clone() {
         CustomTile that = new CustomTile();
@@ -124,6 +132,7 @@ public class CustomTile implements Parcelable {
     public String toString() {
         StringBuilder b = new StringBuilder();
         String NEW_LINE = System.getProperty("line.separator");
+        b.append("resourcesPackageName=" + resourcesPackageName + NEW_LINE);
         if (onClickUri != null) {
             b.append("onClickUri=" + onClickUri.toString() + NEW_LINE);
         }
@@ -151,6 +160,7 @@ public class CustomTile implements Parcelable {
      * @hide
      */
     public void cloneInto(CustomTile that) {
+        that.resourcesPackageName = this.resourcesPackageName;
         that.onClick = this.onClick;
         that.onSettingsClick = this.onSettingsClick;
         that.onClickUri = this.onClickUri;
@@ -167,6 +177,7 @@ public class CustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        out.writeString(resourcesPackageName);
         if (onClick != null) {
             out.writeInt(1);
             onClick.writeToParcel(out, 0);
@@ -734,6 +745,7 @@ public class CustomTile implements Parcelable {
          */
         public CustomTile build() {
             CustomTile tile = new CustomTile();
+            tile.resourcesPackageName = mContext.getPackageName();
             tile.onClick = mOnClick;
             tile.onSettingsClick = mOnSettingsClick;
             tile.onClickUri = mOnClickUri;

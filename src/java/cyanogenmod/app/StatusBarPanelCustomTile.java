@@ -32,25 +32,27 @@ public class StatusBarPanelCustomTile implements Parcelable {
     private final String key;
 
     private final int uid;
+    private final String resPkg;
     private final String opPkg;
     private final int initialPid;
     private final CustomTile customTile;
     private final UserHandle user;
     private final long postTime;
 
-    public StatusBarPanelCustomTile(String pkg, String opPkg, int id, String tag, int uid,
-                                 int initialPid, CustomTile customTile, UserHandle user) {
-        this(pkg, opPkg, id, tag, uid, initialPid, customTile, user,
+    public StatusBarPanelCustomTile(String pkg, String resPkg, String opPkg, int id, String tag,
+                                 int uid, int initialPid, CustomTile customTile, UserHandle user) {
+        this(pkg, resPkg, opPkg, id, tag, uid, initialPid, customTile, user,
                 System.currentTimeMillis());
     }
 
-    public StatusBarPanelCustomTile(String pkg, String opPkg, int id, String tag, int uid,
-                                 int initialPid, CustomTile customTile, UserHandle user,
+    public StatusBarPanelCustomTile(String pkg, String resPkg, String opPkg, int id, String tag,
+                                 int uid, int initialPid, CustomTile customTile, UserHandle user,
                                  long postTime) {
         if (pkg == null) throw new NullPointerException();
         if (customTile == null) throw new NullPointerException();
 
         this.pkg = pkg;
+        this.resPkg = resPkg;
         this.opPkg = opPkg;
         this.id = id;
         this.tag = tag;
@@ -65,6 +67,7 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
     public StatusBarPanelCustomTile(Parcel in) {
         this.pkg = in.readString();
+        this.resPkg = in.readString();
         this.opPkg = in.readString();
         this.id = in.readInt();
         if (in.readInt() != 0) {
@@ -113,6 +116,7 @@ public class StatusBarPanelCustomTile implements Parcelable {
     @Override
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(this.pkg);
+        out.writeString(this.resPkg);
         out.writeString(this.opPkg);
         out.writeInt(this.id);
         if (this.tag != null) {
@@ -130,7 +134,7 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
     @Override
     public StatusBarPanelCustomTile clone() {
-        return new StatusBarPanelCustomTile(this.pkg, this.opPkg,
+        return new StatusBarPanelCustomTile(this.pkg, this.resPkg, this.opPkg,
                 this.id, this.tag, this.uid, this.initialPid,
                 this.customTile.clone(), this.user, this.postTime);
     }
@@ -167,6 +171,11 @@ public class StatusBarPanelCustomTile implements Parcelable {
     /** The notifying app's calling uid. @hide */
     public int getUid() {
         return uid;
+    }
+
+    /** The package used for load resources from. @hide */
+    public String getResPkg() {
+        return resPkg;
     }
 
     /** The package used for AppOps tracking. @hide */
