@@ -113,6 +113,15 @@ public class CMStatusBarManagerService extends SystemService {
                                      final ComponentName component, final int userid) {
             enforceBindCustomTileListener();
             mCustomTileListeners.registerService(listener, component, userid);
+
+            // Notify registered tiles
+            try {
+                for (ExternalQuickSettingsRecord qsTile : mQSTileList) {
+                    listener.onCustomTilePosted(new StatusBarCustomTileHolder(qsTile.sbTile));
+                }
+            } catch (RemoteException re) {
+                // Ignore
+            }
         }
 
         /**
