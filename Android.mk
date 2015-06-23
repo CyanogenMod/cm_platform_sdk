@@ -225,6 +225,7 @@ LOCAL_DROIDDOC_OPTIONS := \
         -hdf sdk.version $(cmplat_docs_docs_SDK_VERSION) \
         -hdf sdk.rel.id $(cmplat_docs_docs_SDK_REL_ID) \
         -hdf sdk.preview 0 \
+        -since $(CM_SRC_API_DIR)/1.txt 1
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
