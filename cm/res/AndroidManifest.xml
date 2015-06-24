@@ -32,6 +32,7 @@
     <permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
                 android:label="@string/permlab_publishCustomTile"
                 android:description="@string/permdesc_publishCustomTile"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
     <application android:process="system"
