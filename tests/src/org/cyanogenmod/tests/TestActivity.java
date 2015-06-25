@@ -56,7 +56,7 @@ public abstract class TestActivity extends ListActivity
     public void onListItemClick(ListView l, View v, int position, long id)
     {
         Test t = mTests[position];
-        android.util.Log.d(tag(), "Test: " + t.name);
+        android.util.Log.d(tag(), "Swagger " + t.name);
         t.run();
     }
 

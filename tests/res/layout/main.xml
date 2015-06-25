@@ -7,28 +7,27 @@
         >
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST PUBLISH TILE"
+            android:text="TEST PUBLISH SWAGGER TILE"
             android:onClick="testPublishTile"/>
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST PUBLISH SETTINGS TILE"
+            android:text="TEST PUBLISH SWAGGER SETTINGS TILE"
             android:onClick="testPublishTileWithSettings"/>
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST UPDATE TILE"
+            android:text="TEST UPDATE SWAGGER TILE"
             android:onClick="testUpdateTile"/>
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST REMOVE TILE"
+            android:text="TEST REMOVE SWAG TILE - DON'T DO IT"
             android:onClick="testRemoveTile"/>
 
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST PUBLISH MULTIPLE"
+            android:text="TEST PUBLISH MULTIPLE SWAGGERS"
             android:onClick="testMultipleTilePublish"/>
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TEST REMOVE MULTIPLE"
+            android:text="TEST REMOVE MULTIPLE SWAGGERS"
             android:onClick="testMultipleTileRemove"/>
 </LinearLayout>
-

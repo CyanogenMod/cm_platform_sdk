@@ -51,8 +51,8 @@ public class VersioningTest extends TestActivity {
                                 Toast.LENGTH_LONG).show();
                     } else{
                         Toast.makeText(VersioningTest.this,
-                                "Current API version is below target SKD version "
-                                        + Build.CM_VERSION_CODES.APRICOT,
+                                "Current API version is below target SKD version. Need moar swag... ",
+//                                        + Build.CM_VERSION_CODES.APRICOT,
                                 Toast.LENGTH_SHORT).show();
                     }
                 }

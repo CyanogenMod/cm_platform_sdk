@@ -50,22 +50,22 @@ public class CMStatusBarTest extends TestActivity {
     }
 
     private Test[] mTests = new Test[] {
-            new Test("test publish tile") {
+            new Test("test publish swagger") {
                 public void run() {
                     PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
                             new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0);
                     mCustomTile = new CustomTile.Builder(CMStatusBarTest.this)
-                            .setLabel("Test From SDK")
-                            .setIcon(R.drawable.ic_launcher)
+                            .setLabel("Swagger")
+                            .setIcon(R.drawable.ic_swagger)
                             .setOnClickIntent(intent)
-                            .setContentDescription("Content description")
+                            .setContentDescription("Swag description")
                             .build();
                     mCMStatusBarManager.publishTile(CUSTOM_TILE_ID, mCustomTile);
                 }
             },
 
-            new Test("test publish tile in 3 seconds") {
+            new Test("test publish swagger in 3 seconds") {
                 public void run() {
                     mHandler.postDelayed(new Runnable() {
                         public void run() {
@@ -73,10 +73,10 @@ public class CMStatusBarTest extends TestActivity {
                                     new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
                                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0);
                             mCustomTile = new CustomTile.Builder(CMStatusBarTest.this)
-                                    .setLabel("Test 3 seconds")
-                                    .setIcon(R.drawable.ic_launcher)
+                                    .setLabel("Swag 3 seconds")
+                                    .setIcon(R.drawable.ic_swagger)
                                     .setOnClickIntent(intent)
-                                    .setContentDescription("Content description")
+                                    .setContentDescription("Swag description")
                                     .build();
                             mCMStatusBarManager.publishTile(CUSTOM_TILE_ID, mCustomTile);
                         }
@@ -93,13 +93,13 @@ public class CMStatusBarTest extends TestActivity {
                 }
             },
 
-            new Test("test remove tile") {
+            new Test("test remove swagger - NO. DON\'T PRESS THIS") {
                 public void run() {
                     mCMStatusBarManager.removeTile(CUSTOM_TILE_ID);
                 }
             },
 
-            new Test("test remove tile in 3 seconds") {
+            new Test("test remove swagger in 3 seconds") {
                 public void run() {
                     mHandler.postDelayed(new Runnable() {
                         public void run() {
@@ -109,22 +109,22 @@ public class CMStatusBarTest extends TestActivity {
                 }
             },
 
-            new Test("test publish tile with settings") {
+            new Test("test publish swagger with settings") {
                 public void run() {
                     CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
-                            .setLabel("Test Settings From SDK")
-                            .setIcon(R.drawable.ic_launcher)
+                            .setLabel("Test Swag Settings From SDK")
+                            .setIcon(R.drawable.ic_swagger)
                             .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
                                     DummySettings.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-                            .setContentDescription("Content description")
+                            .setContentDescription("Swag description")
                             .build();
                     CMStatusBarManager.getInstance(CMStatusBarTest.this)
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
                 }
             },
 
-            new Test("test publish tile with expanded list") {
+            new Test("test publish swagger with expanded list") {
                 public void run() {
                     PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
                             new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
@@ -134,9 +134,12 @@ public class CMStatusBarTest extends TestActivity {
                     for (int i = 0; i < 100; i++) {
                         CustomTile.ExpandedListItem expandedListItem =
                                 new CustomTile.ExpandedListItem();
-                        expandedListItem.setExpandedListItemDrawable(R.drawable.ic_launcher);
-                        expandedListItem.setExpandedListItemTitle("Test: " + i);
-                        expandedListItem.setExpandedListItemSummary("Test item summary " + i);
+                        expandedListItem.setExpandedListItemDrawable(R.drawable.ic_swagger);
+                        expandedListItem.setExpandedListItemTitle("Swag level: " + i);
+                        if (i==99)
+                            expandedListItem.setExpandedListItemSummary("Set the swaggest swag level");
+                        else
+                            expandedListItem.setExpandedListItemSummary("Set swag level to " + i);
                         expandedListItem.setExpandedListItemOnClickIntent(intent);
                         expandedListItems.add(expandedListItem);
                     }
@@ -145,31 +148,34 @@ public class CMStatusBarTest extends TestActivity {
                             new CustomTile.ListExpandedStyle();
                     listExpandedStyle.setListItems(expandedListItems);
                     CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
-                            .setLabel("Test Expanded List Style From SDK")
-                            .setIcon(R.drawable.ic_launcher)
+                            .setLabel("Swagger")
+                            .setIcon(R.drawable.ic_swagger)
                             .setExpandedStyle(listExpandedStyle)
                             .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
                                     DummySettings.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-                            .setContentDescription("Content description")
+                            .setContentDescription("Swag description")
                             .build();
                     CMStatusBarManager.getInstance(CMStatusBarTest.this)
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
                 }
             },
 
-            new Test("test publish tile with expanded grid") {
+            new Test("test publish swagger with expanded grid") {
                 public void run() {
                     PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
                             new Intent(CMStatusBarTest.this, CMStatusBarTest.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0);
                     ArrayList<CustomTile.ExpandedGridItem> expandedGridItems =
                             new ArrayList<CustomTile.ExpandedGridItem>();
-                    for (int i = 0; i < 8; i++) {
+                    for (int i = 0; i < 6; i++) {
                         CustomTile.ExpandedGridItem expandedGridItem =
                                 new CustomTile.ExpandedGridItem();
-                        expandedGridItem.setExpandedGridItemDrawable(R.drawable.ic_launcher);
-                        expandedGridItem.setExpandedGridItemTitle("Test: " + i);
+                        expandedGridItem.setExpandedGridItemDrawable(R.drawable.ic_swagger);
+                        if (i==5)
+                            expandedGridItem.setExpandedGridItemTitle("No moar swag icons :( ");
+                        else
+                            expandedGridItem.setExpandedGridItemTitle("Swag icon: " + i);
                         expandedGridItem.setExpandedGridItemOnClickIntent(intent);
                         expandedGridItems.add(expandedGridItem);
                     }
@@ -178,13 +184,13 @@ public class CMStatusBarTest extends TestActivity {
                             new CustomTile.GridExpandedStyle();
                     gridExpandedStyle.setGridItems(expandedGridItems);
                     CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
-                            .setLabel("Test Expanded Grid Style From SDK")
-                            .setIcon(R.drawable.ic_launcher)
+                            .setLabel("Swagger Grid")
+                            .setIcon(R.drawable.ic_swagger)
                             .setExpandedStyle(gridExpandedStyle)
                             .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
                                     DummySettings.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-                            .setContentDescription("Content description")
+                            .setContentDescription("Swag description")
                             .build();
                     CMStatusBarManager.getInstance(CMStatusBarTest.this)
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
