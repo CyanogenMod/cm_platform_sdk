@@ -39,4 +39,15 @@ public final class CMContextConstants {
      */
     public static final String CM_STATUS_BAR_SERVICE = "cmstatusbar";
 
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.app.ProfileManager} for informing the user of
+     * background events.
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.ProfileManager
+     *
+     * @hide
+     */
+    public static final String CM_PROFILE_SERVICE = "profile";
 }
