@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2014-2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.app.NotificationGroup;
 import android.content.Context;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.ParcelUuid;
 import android.os.RemoteException;
@@ -36,7 +35,23 @@ import com.android.internal.R;
 
 
 /**
- * @hide
+ * <p>
+ * The ProfileManager allows you to create {@link Profile}s and {@link ProfileGroup}s to create
+ * specific behavior states depending on triggers from hardware devices changing states, such as:
+ *
+ * WiFi being enabled
+ * WiFi connecting to a certain AP
+ * Bluetooth connecting to a certain device
+ * Bluetooth disconnecting to a certain device
+ * NFC tag being scanned
+ *
+ * etc
+ *<p>
+ *
+ * To get the instance of this class, utilize ProfileManager#getInstance(Context context)
+ *
+ * @see cyanogenmod.app.Profile
+ * @see cyanogenmod.app.ProfileGroup
  */
 public class ProfileManager {
 
@@ -51,48 +66,42 @@ public class ProfileManager {
     /**
      * <p>Broadcast Action: A new profile has been selected. This can be triggered by the user
      * or by calls to the ProfileManagerService / Profile.</p>
-     * @hide
      */
     public static final String INTENT_ACTION_PROFILE_SELECTED =
-            "android.intent.action.PROFILE_SELECTED";
+            "cyanogenmod.platform.intent.action.PROFILE_SELECTED";
 
     /**
-     * Extra for {@link INTENT_ACTION_PROFILE_SELECTED} and {@link INTENT_ACTION_PROFILE_UPDATED}:
+     * <p>Broadcast Action: Current profile has been updated. This is triggered every time the
+     * currently active profile is updated, instead of selected.</p>
+     * <p> For instance, this includes profile updates caused by a locale change, which doesn't
+     * trigger a profile selection, but causes its name to change.</p>
+     */
+    public static final String INTENT_ACTION_PROFILE_UPDATED =
+            "cyanogenmod.platform.intent.action.PROFILE_UPDATED";
+
+    /**
+     * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED} and {@link #INTENT_ACTION_PROFILE_UPDATED}:
      * The name of the newly activated or updated profile
-     * @hide
      */
     public static final String EXTRA_PROFILE_NAME = "name";
 
     /**
-     * Extra for {@link INTENT_ACTION_PROFILE_SELECTED} and {@link INTENT_ACTION_PROFILE_UPDATED}:
+     * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED} and {@link #INTENT_ACTION_PROFILE_UPDATED}:
      * The string representation of the UUID of the newly activated or updated profile
-     * @hide
      */
     public static final String EXTRA_PROFILE_UUID = "uuid";
 
     /**
-     * Extra for {@link INTENT_ACTION_PROFILE_SELECTED}:
+     * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED}:
      * The name of the previously active profile
-     * @hide
      */
     public static final String EXTRA_LAST_PROFILE_NAME = "lastName";
 
     /**
-     * Extra for {@link INTENT_ACTION_PROFILE_SELECTED}:
+     * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED}:
      * The string representation of the UUID of the previously active profile
-     * @hide
      */
     public static final String EXTRA_LAST_PROFILE_UUID = "uuid";
-
-    /**
-    * <p>Broadcast Action: Current profile has been updated. This is triggered every time the
-    * currently active profile is updated, instead of selected.</p>
-    * <p> For instance, this includes profile updates caused by a locale change, which doesn't
-    * trigger a profile selection, but causes its name to change.</p>
-    * @hide
-    */
-    public static final String INTENT_ACTION_PROFILE_UPDATED =
-            "android.intent.action.PROFILE_UPDATED";
 
     /**
      * Activity Action: Shows a profile picker.
@@ -101,13 +110,13 @@ public class ProfileManager {
      * {@link #EXTRA_PROFILE_TITLE}.
      * <p>
      * Output: {@link #EXTRA_PROFILE_PICKED_UUID}.
-     * @hide
      */
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_PROFILE_PICKER = "android.intent.action.PROFILE_PICKER";
+    public static final String ACTION_PROFILE_PICKER =
+            "cyanogenmod_platform.intent.action.PROFILE_PICKER";
 
     /**
-     * @hide
+     * Constant for NO_PROFILE
      */
     public static final UUID NO_PROFILE =
             UUID.fromString("00000000-0000-0000-0000-000000000000");
@@ -118,7 +127,6 @@ public class ProfileManager {
      * {@link #EXTRA_PROFILE_PICKED_UUID} will be {@link #NO_PROFILE}.
      *
      * @see #ACTION_PROFILE_PICKER
-     * @hide
      */
     public static final String EXTRA_PROFILE_SHOW_NONE =
             "android.intent.extra.profile.SHOW_NONE";
@@ -127,11 +135,10 @@ public class ProfileManager {
      * Given to the profile picker as a {@link UUID} string representation. The {@link UUID}
      * representation of the current profile, which will be used to show a checkmark next to
      * the item for this {@link UUID}. If the item is {@link #NO_PROFILE} then "None" item
-     * is selected if {@link EXTRA_PROFILE_SHOW_NONE} is enabled. Otherwise, the current
+     * is selected if {@link #EXTRA_PROFILE_SHOW_NONE} is enabled. Otherwise, the current
      * profile is selected.
      *
      * @see #ACTION_PROFILE_PICKER
-     * @hide
      */
     public static final String EXTRA_PROFILE_EXISTING_UUID =
             "android.intent.extra.profile.EXISTING_UUID";
@@ -142,9 +149,9 @@ public class ProfileManager {
      * in most cases.
      *
      * @see #ACTION_PROFILE_PICKER
-     * @hide
      */
-    public static final String EXTRA_PROFILE_TITLE = "android.intent.extra.profile.TITLE";
+    public static final String EXTRA_PROFILE_TITLE =
+            "cyanogenmod.platform.intent.extra.profile.TITLE";
 
     /**
      * Returned from the profile picker as a {@link UUID} string representation.
@@ -154,29 +161,26 @@ public class ProfileManager {
      * <li> null if the "None" item was picked.
      *
      * @see #ACTION_PROFILE_PICKER
-     * @hide
      */
     public static final String EXTRA_PROFILE_PICKED_UUID =
-            "android.intent.extra.profile.PICKED_UUID";
-
+            "cyanogenmod.platform.intent.extra.profile.PICKED_UUID";
 
     /**
      * Broadcast intent action indicating that Profiles has been enabled or disabled.
      * One extra provides this state as an int.
      *
      * @see #EXTRA_PROFILES_STATE
-     * @hide
      */
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String PROFILES_STATE_CHANGED_ACTION =
-        "android.app.profiles.PROFILES_STATE_CHANGED";
+        "cyanogenmod.platform.app.profiles.PROFILES_STATE_CHANGED";
+
     /**
      * The lookup key for an int that indicates whether Profiles are enabled or
      * disabled. Retrieve it with {@link android.content.Intent#getIntExtra(String,int)}.
      *
      * @see #PROFILES_STATE_DISABLED
      * @see #PROFILES_STATE_ENABLED
-     * @hide
      */
     public static final String EXTRA_PROFILES_STATE = "profile_state";
 
@@ -185,23 +189,21 @@ public class ProfileManager {
      * The default theme is <code>com.android.internal.R.Theme_Holo_Dialog_Alert</code>.
      *
      * @see #ACTION_PROFILE_PICKER
-     * @hide
      */
     public static final String EXTRA_PROFILE_DIALOG_THEME =
-            "android.intent.extra.profile.DIALOG_THEME";
+            "cyanogenmod.platform.intent.extra.profile.DIALOG_THEME";
 
     /**
      * Profiles are disabled.
      *
      * @see #PROFILES_STATE_CHANGED_ACTION
-     * @hide
      */
     public static final int PROFILES_STATE_DISABLED = 0;
+
     /**
      * Profiles are enabled.
      *
      * @see #PROFILES_STATE_CHANGED_ACTION
-     * @hide
      */
     public static final int PROFILES_STATE_ENABLED = 1;
 
@@ -223,7 +225,7 @@ public class ProfileManager {
     /**
      * Get or create an instance of the {@link cyanogenmod.app.ProfileManager}
      * @param context
-     * @return {@link cyanogenmod.app.ProfileManager}
+     * @return {@link ProfileManager}
      */
     public static ProfileManager getInstance(Context context) {
         if (sProfileManagerInstance == null) {
@@ -255,6 +257,10 @@ public class ProfileManager {
         }
     }
 
+    /**
+     * Set the active {@link Profile} by {@link UUID}
+     * @param profileUuid the {@link UUID} associated with the profile
+     */
     public void setActiveProfile(UUID profileUuid) {
         if (Settings.System.getInt(mContext.getContentResolver(),
                 SYSTEM_PROFILES_ENABLED, 1) == 1) {
@@ -267,6 +273,10 @@ public class ProfileManager {
         }
     }
 
+    /**
+     * Get the active {@link Profile}
+     * @return active {@link Profile}
+     */
     public Profile getActiveProfile() {
         if (Settings.System.getInt(mContext.getContentResolver(),
                 SYSTEM_PROFILES_ENABLED, 1) == 1) {
@@ -285,7 +295,10 @@ public class ProfileManager {
 
     }
 
-    /** @hide */
+    /**
+     * Add a {@link Profile} that can be selected by the user
+     * @param profile a {@link Profile} object
+     */
     public void addProfile(Profile profile) {
         try {
             getService().addProfile(profile);
@@ -294,7 +307,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Remove a {@link Profile} from user selection
+     * @param profile a {@link Profile} object
+     */
     public void removeProfile(Profile profile) {
         try {
             getService().removeProfile(profile);
@@ -303,7 +319,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Update a {@link Profile} object
+     * @param profile a {@link Profile} object
+     */
     public void updateProfile(Profile profile) {
         try {
             getService().updateProfile(profile);
@@ -312,6 +331,11 @@ public class ProfileManager {
         }
     }
 
+    /**
+     * Get the {@link Profile} object by its literal name
+     * @param profileName name associated with the profile
+     * @return profile a {@link Profile} object
+     */
     @Deprecated
     public Profile getProfile(String profileName) {
         try {
@@ -322,6 +346,11 @@ public class ProfileManager {
         return null;
     }
 
+    /**
+     * Get a {@link Profile} via {@link UUID}
+     * @param profileUuid {@link UUID} associated with the profile
+     * @return {@link Profile}
+     */
     public Profile getProfile(UUID profileUuid) {
         try {
             return getService().getProfile(new ParcelUuid(profileUuid));
@@ -331,6 +360,10 @@ public class ProfileManager {
         return null;
     }
 
+    /**
+     * Get the profile names currently available to the user
+     * @return {@link String[]} of profile names
+     */
     public String[] getProfileNames() {
         try {
             Profile[] profiles = getService().getProfiles();
@@ -345,6 +378,10 @@ public class ProfileManager {
         return null;
     }
 
+    /**
+     * Get the {@link Profile}s currently available to the user
+     * @return {@link Profile[]}
+     */
     public Profile[] getProfiles() {
         try {
             return getService().getProfiles();
@@ -354,6 +391,11 @@ public class ProfileManager {
         return null;
     }
 
+    /**
+     * Check if a {@link Profile} exists via its literal name
+     * @param profileName a profile name
+     * @return whether or not the profile exists
+     */
     public boolean profileExists(String profileName) {
         try {
             return getService().profileExistsByName(profileName);
@@ -365,6 +407,11 @@ public class ProfileManager {
         }
     }
 
+    /**
+     * Check if a {@link Profile} exists via its {@link UUID}
+     * @param profileUuid the profiles {@link UUID}
+     * @return whether or not the profile exists
+     */
     public boolean profileExists(UUID profileUuid) {
         try {
             return getService().profileExists(new ParcelUuid(profileUuid));
@@ -376,6 +423,11 @@ public class ProfileManager {
         }
     }
 
+    /**
+     * Check if a {@link NotificationGroup} exists
+     * @param notificationGroupName the name of the notification group
+     * @return whether or not the notification group exists
+     */
     public boolean notificationGroupExists(String notificationGroupName) {
         try {
             return getService().notificationGroupExistsByName(notificationGroupName);
@@ -387,7 +439,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Get the currently available {@link NotificationGroup}s
+     * @return {@link NotificationGroup[]}
+     */
     public NotificationGroup[] getNotificationGroups() {
         try {
             return getService().getNotificationGroups();
@@ -397,7 +452,10 @@ public class ProfileManager {
         return null;
     }
 
-    /** @hide */
+    /**
+     * Add a {@link NotificationGroup} to the available list
+     * @param group {@link NotificationGroup}
+     */
     public void addNotificationGroup(NotificationGroup group) {
         try {
             getService().addNotificationGroup(group);
@@ -406,7 +464,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Remove a {@link NotificationGroup} from the available list
+     * @param group {@link NotificationGroup}
+     */
     public void removeNotificationGroup(NotificationGroup group) {
         try {
             getService().removeNotificationGroup(group);
@@ -415,7 +476,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Update a {@link NotificationGroup} from the available list
+     * @param group {@link NotificationGroup}
+     */
     public void updateNotificationGroup(NotificationGroup group) {
         try {
             getService().updateNotificationGroup(group);
@@ -424,7 +488,10 @@ public class ProfileManager {
         }
     }
 
-    /** @hide */
+    /**
+     * Get a {@link NotificationGroup} for a specific package
+     * @param pkg name of the package
+     */
     public NotificationGroup getNotificationGroupForPackage(String pkg) {
         try {
             return getService().getNotificationGroupForPackage(pkg);
@@ -434,7 +501,10 @@ public class ProfileManager {
         return null;
     }
 
-    /** @hide */
+    /**
+     * Get a {@link NotificationGroup} from the available list via {@link UUID}
+     * @param uuid {@link UUID} of the notification group
+     */
     public NotificationGroup getNotificationGroup(UUID uuid) {
         try {
             return getService().getNotificationGroup(new ParcelUuid(uuid));
@@ -444,7 +514,11 @@ public class ProfileManager {
         return null;
     }
 
-    /** @hide */
+    /**
+     * Get an active {@link ProfileGroup} via its package name
+     * @param packageName the package name associated to the profile group
+     * @return {@link ProfileGroup}
+     */
     public ProfileGroup getActiveProfileGroup(String packageName) {
         NotificationGroup notificationGroup = getNotificationGroupForPackage(packageName);
         if (notificationGroup == null) {
@@ -454,7 +528,9 @@ public class ProfileManager {
         return getActiveProfile().getProfileGroup(notificationGroup.getUuid());
     }
 
-    /** @hide */
+    /**
+     * Reset all profiles, groups, and notification groups to default state
+     */
     public void resetAll() {
         try {
             getService().resetAll();
