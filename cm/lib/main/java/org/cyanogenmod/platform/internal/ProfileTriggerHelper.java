@@ -126,7 +126,7 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
 
     private void checkTriggers(int type, String id, int newState) {
         for (Profile p : mManagerService.getProfileList()) {
-            if (newState != p.getTrigger(type, id)) {
+            if (newState != p.getTriggerState(type, id)) {
                 continue;
             }
 
