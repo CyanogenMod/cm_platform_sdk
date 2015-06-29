@@ -31,6 +31,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.internal.annotations.VisibleForTesting;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -44,7 +45,13 @@ import java.util.Map.Entry;
 import java.util.UUID;
 
 /**
- * @hide
+ * A class that represents a device profile.
+ *
+ * A {@link Profile} can serve a multitude of purposes, allowing the creator(user)
+ * to set overrides for streams, triggers, screen lock, brightness, various other
+ * settings.
+ *
+ * To
  */
 public final class Profile implements Parcelable, Comparable {
 
@@ -68,10 +75,6 @@ public final class Profile implements Parcelable, Comparable {
 
     private int mProfileType;
 
-    private static final int CONDITIONAL_TYPE = 1;
-
-    private static final int TOGGLE_TYPE = 0;
-
     private Map<Integer, StreamSettings> streams = new HashMap<Integer, StreamSettings>();
 
     private Map<String, ProfileTrigger> mTriggers = new HashMap<String, ProfileTrigger>();
@@ -90,40 +93,40 @@ public final class Profile implements Parcelable, Comparable {
 
     private int mDozeMode = DozeMode.DEFAULT;
 
-    /** @hide */
     public static class LockMode {
         public static final int DEFAULT = 0;
         public static final int INSECURE = 1;
         public static final int DISABLE = 2;
     }
 
-    /** @hide */
     public static class ExpandedDesktopMode {
         public static final int DEFAULT = 0;
         public static final int ENABLE = 1;
         public static final int DISABLE = 2;
     }
 
-    /** @hide */
     public static class DozeMode {
         public static final int DEFAULT = 0;
         public static final int ENABLE = 1;
         public static final int DISABLE = 2;
     }
 
-    /** @hide */
     public static class TriggerType {
         public static final int WIFI = 0;
         public static final int BLUETOOTH = 1;
     }
 
-    /** @hide */
     public static class TriggerState {
         public static final int ON_CONNECT = 0;
         public static final int ON_DISCONNECT = 1;
         public static final int DISABLED = 2;
         public static final int ON_A2DP_CONNECT = 3;
         public static final int ON_A2DP_DISCONNECT = 4;
+    }
+
+    public static class Type {
+        public static final int TOGGLE = 0;
+        public static final int CONDITIONAL = 1;
     }
 
     public static class ProfileTrigger implements Parcelable {
@@ -244,16 +247,16 @@ public final class Profile implements Parcelable, Comparable {
         }
     };
 
-    /** @hide */
     public Profile(String name) {
         this(name, -1, UUID.randomUUID());
     }
 
-    private Profile(String name, int nameResId, UUID uuid) {
+    /** @hide */
+    public Profile(String name, int nameResId, UUID uuid) {
         mName = name;
         mNameResId = nameResId;
         mUuid = uuid;
-        mProfileType = TOGGLE_TYPE;  //Default to toggle type
+        mProfileType = Type.TOGGLE;  //Default to toggle type
         mDirty = false;
     }
 
@@ -472,11 +475,11 @@ public final class Profile implements Parcelable, Comparable {
     }
 
     public boolean isConditionalType() {
-        return(mProfileType == CONDITIONAL_TYPE ? true : false);
+        return(mProfileType == Type.CONDITIONAL ? true : false);
     }
 
     public void setConditionalType() {
-        mProfileType = CONDITIONAL_TYPE;
+        mProfileType = Type.CONDITIONAL;
         mDirty = true;
     }
 
@@ -603,7 +606,7 @@ public final class Profile implements Parcelable, Comparable {
         builder.append("</uuids>\n");
 
         builder.append("<profiletype>");
-        builder.append(getProfileType() == TOGGLE_TYPE ? "toggle" : "conditional");
+        builder.append(getProfileType() == Type.TOGGLE ? "toggle" : "conditional");
         builder.append("</profiletype>\n");
 
         builder.append("<statusbar>");
@@ -745,7 +748,7 @@ public final class Profile implements Parcelable, Comparable {
                 }
                 if (name.equals("profiletype")) {
                     profile.setProfileType(xpp.nextText().equals("toggle")
-                            ? TOGGLE_TYPE : CONDITIONAL_TYPE);
+                            ? Type.TOGGLE : Type.CONDITIONAL);
                 }
                 if (name.equals("ringModeDescriptor")) {
                     RingModeSettings smd = RingModeSettings.fromXml(xpp, context);
