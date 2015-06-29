@@ -36,7 +36,6 @@ import com.android.internal.R;
 
 
 /**
- * @hide
  */
 public class ProfileManager {
 
