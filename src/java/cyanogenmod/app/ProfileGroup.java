@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2014-2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * @hide
  */
 public final class ProfileGroup implements Parcelable {
     private static final String TAG = "ProfileGroup";
