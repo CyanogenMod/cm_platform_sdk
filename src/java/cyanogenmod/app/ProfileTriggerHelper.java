@@ -35,7 +35,6 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
     private static final String TAG = "ProfileTriggerHelper";
 
     private Context mContext;
-    private ProfileManager mManager;
 
     private WifiManager mWifiManager;
     private String mLastConnectedSSID;
@@ -50,9 +49,8 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
         }
     };
 
-    public ProfileTriggerHelper(Context context, ProfileManager manager) {
+    public ProfileTriggerHelper(Context context) {
         mContext = context;
-        mManager = manager;
 
         mWifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
         mLastConnectedSSID = getActiveSSID();

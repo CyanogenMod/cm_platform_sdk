@@ -16,6 +16,7 @@
 
 package org.cyanogenmod.platform.internal;
 
+import cyanogenmod.app.ProfileTriggerHelper;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -82,6 +83,7 @@ public class ProfileManagerService extends SystemService {
     private Context mContext;
     private boolean mDirty;
     private BackupManager mBackupManager;
+    private ProfileTriggerHelper mTriggerHelper;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -105,6 +107,7 @@ public class ProfileManagerService extends SystemService {
     @Override
     public void onStart() {
         mBackupManager = new BackupManager(mContext);
+        mTriggerHelper = new ProfileTriggerHelper(mContext);
 
         mWildcardGroup = new NotificationGroup(
                 mContext.getString(com.android.internal.R.string.wildcardProfile),
