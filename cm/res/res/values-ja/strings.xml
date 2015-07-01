@@ -16,8 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">CyanogenMod-System</string>
-  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
-  <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
-  <string name="permdesc_bindCustomTileListenerService">Ermöglicht der App, sich an einen Listener-Service für benutzerdefinierte Kacheln zu binden.</string>
+  <string name="cyanogenmod_system_label">CyanogenModシステム</string>
+  <string name="permlab_publishCustomTile">クイック設定パネルでのカスタムタイルの作成</string>
+  <string name="permdesc_publishCustomTile">クイック設定タイルの作成をアプリに許可します</string>
+  <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
+  <string name="permdesc_bindCustomTileListenerService">カスタムタイルリスナーサービスのトップレベルインターフェースへのバインドをアプリに許可します</string>
+  <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
 </resources>
