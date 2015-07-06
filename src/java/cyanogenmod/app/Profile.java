@@ -703,7 +703,8 @@ public final class Profile implements Parcelable, Comparable {
         String profileName = null;
 
         if (value != null) {
-            profileNameResId = context.getResources().getIdentifier(value, "string", "android");
+            profileNameResId = context.getResources().getIdentifier(value, "string",
+                    "cyanogenmod.platform");
             if (profileNameResId > 0) {
                 profileName = context.getResources().getString(profileNameResId);
             }

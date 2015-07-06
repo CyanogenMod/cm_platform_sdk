@@ -108,8 +108,8 @@ public class ProfileManagerService extends SystemService {
         mBackupManager = new BackupManager(mContext);
 
         mWildcardGroup = new NotificationGroup(
-                mContext.getString(com.android.internal.R.string.wildcardProfile),
-                com.android.internal.R.string.wildcardProfile,
+                mContext.getString(org.cyanogenmod.platform.internal.R.string.wildcardProfile),
+                org.cyanogenmod.platform.internal.R.string.wildcardProfile,
                 mWildcardUUID);
 
         initialize();
@@ -536,7 +536,7 @@ public class ProfileManagerService extends SystemService {
 
     private void initialiseStructure() throws XmlPullParserException, IOException {
         XmlResourceParser xml = mContext.getResources().getXml(
-                com.android.internal.R.xml.profile_default);
+                org.cyanogenmod.platform.internal.R.xml.profile_default);
         try {
             loadXml(xml, mContext);
             mDirty = true;

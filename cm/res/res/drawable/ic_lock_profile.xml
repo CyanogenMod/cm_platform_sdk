@@ -14,15 +14,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <!-- We don't want to publish private symbols in cyanogenmod.R as part of the
-         SDK.  Instead, put them here. -->
-    <private-symbols package="org.cyanogenmod.platform.internal" />
-
-    <java-symbol type="string" name="custom_tile_listener_binding_label" />
-
-    <!-- Profiles -->
-    <java-symbol type="xml" name="profile_default" />
-    <java-symbol type="string" name="wildcardProfile" />
-
-</resources>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_settings_profiles"
+    android:tint="?android:attr/colorControlNormal" />
