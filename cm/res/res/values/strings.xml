@@ -26,4 +26,8 @@
 
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
+
+    <!-- Labels for the VIEW_MODIFY_PHONE_STATE permission. -->
+    <string name="permlab_viewModifyPhoneState">view and change the phone state and data connection with support to multiple SIMs</string>
+    <string name="permdesc_viewModifyPhoneState">Allows an app to view and modify the phone state and data connection with support to multiple SIMs.</string>
 </resources>
