@@ -19,13 +19,16 @@ include $(CLEAR_VARS)
 
 LOCAL_PACKAGE_NAME := org.cyanogenmod.platform-res
 LOCAL_CERTIFICATE := platform
-LOCAL_AAPT_FLAGS := --auto-add-overlay
 
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
+framework_res_package_export := \
+    $(call intermediates-dir-for,APPS,framework-res,,COMMON)/package-export.apk
 
 # Tell aapt to create "extending (non-application)" resource IDs,
 # since these resources will be used by many apps.
-LOCAL_AAPT_FLAGS := -x
+
+# 0x7e/one less than app id
+LOCAL_AAPT_FLAGS += -x 126
 
 LOCAL_MODULE_TAGS := optional
 
