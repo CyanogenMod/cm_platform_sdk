@@ -112,6 +112,8 @@ public class ProfileManagerService extends SystemService {
                 org.cyanogenmod.platform.internal.R.string.wildcardProfile,
                 mWildcardUUID);
 
+        System.out.println("ADNAN Checking wildcard " + mWildcardGroup);
+
         initialize();
 
         IntentFilter filter = new IntentFilter();
@@ -537,6 +539,7 @@ public class ProfileManagerService extends SystemService {
     private void initialiseStructure() throws XmlPullParserException, IOException {
         XmlResourceParser xml = mContext.getResources().getXml(
                 org.cyanogenmod.platform.internal.R.xml.profile_default);
+        System.out.println("ADNAN Checking xml " + xml.toString());
         try {
             loadXml(xml, mContext);
             mDirty = true;
