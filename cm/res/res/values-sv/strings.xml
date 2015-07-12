@@ -17,4 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
+  <string name="permlab_publishCustomTile">skapa en anpassad bricka inom snabbinställningspanelen</string>
+  <string name="permdesc_publishCustomTile">Ger en app tillåtelse att publicera en snabbinställningsbricka.</string>
+  <string name="permlab_bindCustomTileListenerService">bind till en anpassad tjänst som lyssnar efter brickor</string>
+  <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad tjänst som lyssnar efter brickor.</string>
+  <string name="custom_tile_listener_binding_label">Anpassad tjänst som lyssnar efter brickor</string>
 </resources>

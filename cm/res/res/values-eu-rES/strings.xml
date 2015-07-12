@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
+  <string name="profileNameDefault">Lehenetsia</string>
+  <string name="profileNameWork">Lanean</string>
+  <string name="profileNameHome">Etxean</string>
+  <string name="profileNameSilent">Isilik</string>
+  <string name="profileNameNight">Gaua</string>
+  <string name="profileNameAutomobile">Kotxean</string>
+  <string name="profileGroupPhone">Telefonoa</string>
+  <string name="profileGroupCalendar">Egutegia</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Eposta</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Beste bat</string>
 </resources>

@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">susieti su tinkintos plytelės klausančia paslauga</string>
   <string name="permdesc_bindCustomTileListenerService">Leidžia programai susieti aukščiausio lygio sąsają su tinkintos plytelės klausančia paslauga.</string>
   <string name="custom_tile_listener_binding_label">Tinkintos plytelės klausytojas</string>
+  <string name="profileNameDefault">Numatytasis</string>
+  <string name="profileNameWork">Darbas</string>
+  <string name="profileNameHome">Namai</string>
+  <string name="profileNameSilent">Tylus</string>
+  <string name="profileNameNight">Naktis</string>
+  <string name="profileNameAutomobile">Automobilis</string>
+  <string name="profileGroupPhone">Telefonas</string>
+  <string name="profileGroupCalendar">Kalendorius</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">El. paštas</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Kita</string>
 </resources>

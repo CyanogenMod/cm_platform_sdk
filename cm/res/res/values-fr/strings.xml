@@ -20,4 +20,6 @@
   <string name="permlab_publishCustomTile">crée un raccourci personnalisé dans le volet des raccourcis</string>
   <string name="permdesc_publishCustomTile">Autorise une application à déclarer un raccourci pour le volet des raccourcis.</string>
   <string name="permlab_bindCustomTileListenerService">lié au service d\'écoute d\'un raccourci personnalisé</string>
+  <string name="permdesc_bindCustomTileListenerService">Permet à l’application de se lier au service d\'écoute d\'un raccourci personnalisé.</string>
+  <string name="custom_tile_listener_binding_label">Service d\'écoute d\'un raccourci personnalisé</string>
 </resources>

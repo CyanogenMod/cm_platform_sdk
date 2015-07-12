@@ -17,6 +17,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
+  <string name="permlab_publishCustomTile">eng Kachel an de séieren Astellungen uweisen</string>
+  <string name="permdesc_publishCustomTile">Erlaabt der App, eng Kachel an de séieren Astellungen uweisen.</string>
   <string name="permlab_bindCustomTileListenerService">en eegenene Kachel-Lauschter-Service ubannen</string>
+  <string name="permdesc_bindCustomTileListenerService">Erlaabt der App, sech op dem ieweschtem Niveau un d\'Schnëttstell vun engem Kachel-Lauschter-Service unzebannen.</string>
   <string name="custom_tile_listener_binding_label">Eegene Kachel-Lauschter-Service</string>
+  <string name="profileNameDefault">Standard</string>
+  <string name="profileNameWork">Aarbecht</string>
+  <string name="profileNameHome">Doheem</string>
+  <string name="profileNameSilent">Roueg</string>
+  <string name="profileNameNight">Nuecht</string>
+  <string name="profileNameAutomobile">Auto</string>
+  <string name="profileGroupPhone">Telefon</string>
+  <string name="profileGroupCalendar">Kalenner</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-Mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Aner</string>
 </resources>

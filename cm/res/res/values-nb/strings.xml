@@ -17,6 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
+  <string name="permlab_publishCustomTile">opprett en egendefinert flis i hurtiginnstillingspanelet</string>
   <string name="permlab_bindCustomTileListenerService">binde til en egendefinert flis-lyttertjeneste</string>
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
 </resources>

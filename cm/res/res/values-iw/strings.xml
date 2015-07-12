@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
   <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
+  <string name="profileNameDefault">ברירת מחדל</string>
+  <string name="profileNameWork">עבודה</string>
+  <string name="profileNameHome">בית</string>
+  <string name="profileNameSilent">שקט</string>
+  <string name="profileNameNight">לילה</string>
+  <string name="profileNameAutomobile">רכב</string>
+  <string name="profileGroupPhone">טלפון</string>
+  <string name="profileGroupCalendar">לוח שנה</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">דוא\"ל</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">אחר</string>
 </resources>
