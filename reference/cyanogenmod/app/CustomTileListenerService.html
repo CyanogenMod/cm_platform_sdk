@@ -167,7 +167,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1' ];
+        var SINCE_DATA = [ '1', '2' ];
         buildApiLevelSelector();
       </script>
                   
@@ -184,6 +184,8 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -208,6 +210,15 @@ type="text/css">
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
           <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
       </ul>
     </li>
@@ -1494,18 +1505,6 @@ android.content.Context
     
     <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol">PROFILE_SERVICE</td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
         <td class="jd-linkcol">RESTRICTIONS_SERVICE</td>
         <td class="jd-descrcol" width="100%">
           
@@ -1516,7 +1515,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">SEARCH_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1528,7 +1527,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">SENSOR_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1540,7 +1539,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">SERIAL_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1552,7 +1551,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">SIP_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1564,7 +1563,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">STATUS_BAR_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1576,7 +1575,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">STORAGE_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1588,7 +1587,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TELECOM_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1600,7 +1599,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TELEPHONY_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1612,7 +1611,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TELEPHONY_SUBSCRIPTION_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1624,7 +1623,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TEXT_SERVICES_MANAGER_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1636,7 +1635,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">THEME_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1648,7 +1647,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TORCH_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1660,7 +1659,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TRUST_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1672,7 +1671,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">TV_INPUT_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1684,7 +1683,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">UI_MODE_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1696,7 +1695,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">UPDATE_LOCK_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1708,7 +1707,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">USAGE_STATS_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1720,7 +1719,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">USB_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1732,7 +1731,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">USER_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1744,7 +1743,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">VIBRATOR_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1756,7 +1755,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">VOICE_INTERACTION_MANAGER_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1768,7 +1767,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WALLPAPER_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1780,7 +1779,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WIFI_P2P_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1792,7 +1791,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WIFI_PASSPOINT_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1804,7 +1803,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WIFI_RTT_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1816,7 +1815,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WIFI_SCANNING_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1828,7 +1827,7 @@ android.content.Context
     </tr>
     
     
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WIFI_SERVICE</td>
         <td class="jd-descrcol" width="100%">
@@ -1840,7 +1839,7 @@ android.content.Context
     </tr>
     
     
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol">WINDOW_SERVICE</td>
         <td class="jd-descrcol" width="100%">

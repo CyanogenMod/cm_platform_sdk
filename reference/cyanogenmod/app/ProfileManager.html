@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>ProfileManager | Android Developers</title>
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet"
+href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
+  title="roboto">
+<link href="../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
+
+
+<!-- FULLSCREEN STYLESHEET -->
+<link href="../../../assets/css/fullscreen.css" rel="stylesheet" class="fullscreen"
+type="text/css">
+
+
+<!-- JAVASCRIPT -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="../../../assets/js/android_3p-bundle.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var toRoot = "../../../";
+  var metaTags = [];
+  var devsite = false;
+</script>
+<script src="../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5831155-1', 'android.com');
+  ga('create', 'UA-49880327-2', 'android.com', {'name': 'universal'});  // New tracker);
+  ga('send', 'pageview');
+  ga('universal.send', 'pageview'); // Send page view for new tracker.
+</script>
+
+</head>
+
+<body class="gc-documentation 
+  develop reference" itemscope itemtype="http://schema.org/Article">
+  <div id="doc-api-level" class="2" style="display:none"></div>
+  <a name="top"></a>
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../reference/packages.html" tabindex="-1"><img
+              src="../../../assets/cid_smart.png" alt="CID" width="50" height="50"/>
+          <span id="masthead-title">CyanogenMod Platform SDK</span></a>
+      </div>
+  </div><!-- header -->
+
+
+  <div class="wrap clearfix" id="body-content">
+    <div class="col-4" id="side-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <div id="devdoc-nav">
+      <div id="api-nav-header">
+        <div id="api-level-toggle">
+          <label for="apiLevelCheckbox" class="disabled"
+            title="Select your target API level to dim unavailable APIs">API level: </label>
+          <div class="select-wrapper">
+            <select id="apiLevelSelector">
+              <!-- option elements added by buildApiLevelSelector() -->
+            </select>
+          </div>
+        </div><!-- end toggle -->
+        <div id="api-nav-title">CyanogenMod APIs</div>
+        </div><!-- end nav header -->
+      <script>
+        var SINCE_DATA = [ '1', '2' ];
+        buildApiLevelSelector();
+      </script>
+                  
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav" class="scroll-pane">
+
+              <ul>
+                
+    <li class="selected api apilevel-1">
+  <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+              </ul><br/>
+
+            </div> <!-- end packages-nav -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav" class="scroll-pane">
+
+
+
+            <ul>
+              
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+      </ul>
+    </li>
+              
+              
+              
+            </ul><br/>
+        
+
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none" class="scroll-pane">
+          <div id="tree-list"></div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+      <div id="nav-swap">
+      <a class="fullscreen">fullscreen</a>
+      <a href='#' onclick='swapNav();return false;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>
+      </div>
+    </div> <!-- end devdoc-nav -->
+    </div> <!-- end side-nav -->
+    <script type="text/javascript">
+      // init fullscreen based on user pref
+      var fullscreen = readCookie("fullscreen");
+      if (fullscreen != 0) {
+        if (fullscreen == "false") {
+          toggleFullscreen(false);
+        } else {
+          toggleFullscreen(true);
+        }
+      }
+      // init nav version for mobile
+      if (isMobile) {
+        swapNav(); // tree view should be used on mobile
+        $('#nav-swap').hide();
+      } else {
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        }
+      }
+      // scroll the selected page into view
+      $(document).ready(function() {
+        scrollIntoView("packages-nav");
+        scrollIntoView("classes-nav");
+        });
+    </script>
+
+     
+
+
+
+<div class="col-12"  id="doc-col">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+Summary:
+
+
+
+
+
+  <a href="#constants">Constants</a>
+  
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1 itemprop="name">ProfileManager</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+    
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-2">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.ProfileManager</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody"><p>
+ The ProfileManager allows you to create <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>s and ProfileGroups to create
+ specific behavior states depending on triggers from hardware devices changing states, such as:
+
+ WiFi being enabled
+ WiFi connecting to a certain AP
+ Bluetooth connecting to a certain device
+ Bluetooth disconnecting to a certain device
+ NFC tag being scanned
+
+ Depending on these triggers, you can override connection settings, lockscreen modes, media
+ stream volumes and various other settings.
+<p>
+
+ To get the instance of this class, utilize ProfileManager#getInstance(Context context)
+
+ This manager requires the android.permission.WRITE_SETTINGS permission.</p>
+
+
+
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code></li><li>ProfileGroup</li>
+      </ul>
+  </div>
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></td>
+        <td class="jd-descrcol" width="100%">
+          Activity Action: Shows a profile picker.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_LAST_PROFILE_NAME">EXTRA_LAST_PROFILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code>:
+ The name of the previously active profile
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_LAST_PROFILE_UUID">EXTRA_LAST_PROFILE_UUID</a></td>
+        <td class="jd-descrcol" width="100%">
+          Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code>:
+ The string representation of the UUID of the previously active profile
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILES_STATE">EXTRA_PROFILES_STATE</a></td>
+        <td class="jd-descrcol" width="100%">
+          The lookup key for an int that indicates whether Profiles are enabled or
+ disabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_DIALOG_THEME">EXTRA_PROFILE_DIALOG_THEME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Set the resource id theme to use for the dialog picker activity.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_EXISTING_UUID">EXTRA_PROFILE_EXISTING_UUID</a></td>
+        <td class="jd-descrcol" width="100%">
+          Given to the profile picker as a <code><a href="../../../reference/java/util/UUID.html">UUID</a></code> string representation.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_NAME">EXTRA_PROFILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code> and <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_UPDATED">INTENT_ACTION_PROFILE_UPDATED</a></code>:
+ The name of the newly activated or updated profile
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_PICKED_UUID">EXTRA_PROFILE_PICKED_UUID</a></td>
+        <td class="jd-descrcol" width="100%">
+          Returned from the profile picker as a <code><a href="../../../reference/java/util/UUID.html">UUID</a></code> string representation.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_SHOW_NONE">EXTRA_PROFILE_SHOW_NONE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Given to the profile picker as a boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_TITLE">EXTRA_PROFILE_TITLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Given to the profile picker as a <code><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a></code>.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_UUID">EXTRA_PROFILE_UUID</a></td>
+        <td class="jd-descrcol" width="100%">
+          Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code> and <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_UPDATED">INTENT_ACTION_PROFILE_UPDATED</a></code>:
+ The string representation of the UUID of the newly activated or updated profile
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></td>
+        <td class="jd-descrcol" width="100%">
+          <p>Broadcast Action: A new profile has been selected.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_UPDATED">INTENT_ACTION_PROFILE_UPDATED</a></td>
+        <td class="jd-descrcol" width="100%">
+          <p>Broadcast Action: Current profile has been updated.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_CHANGED_ACTION">PROFILES_STATE_CHANGED_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Broadcast intent action indicating that Profiles has been enabled or disabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_DISABLED">PROFILES_STATE_DISABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Profiles are disabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_ENABLED">PROFILES_STATE_ENABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Profiles are enabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-2" >
+          <td class="jd-typecol"><nobr>
+          public
+          static
+          final
+          UUID</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#NO_PROFILE">NO_PROFILE</a></td>
+          <td class="jd-descrcol" width="100%">
+            Constant for NO_PROFILE
+
+            
+    
+
+          </td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#addProfile(cyanogenmod.app.Profile)">addProfile</a></span>(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</nobr>
+        
+        <div class="jd-descrdiv">
+          Add a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> that can be selected by the user
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getActiveProfile()">getActiveProfile</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the active <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        
+        <div class="jd-descrdiv">
+          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getProfile(java.lang.String)">getProfile</a></span>(String profileName)</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object by its literal name
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getProfile(java.util.UUID)">getProfile</a></span>(UUID profileUuid)</nobr>
+        
+        <div class="jd-descrdiv">
+          Get a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> via <code><a href="../../../reference/java/util/UUID.html">UUID</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getProfileNames()">getProfileNames</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the profile names currently available to the user
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/app/Profile.html">Profile[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#getProfiles()">getProfiles</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>s currently available to the user
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#profileExists(java.lang.String)">profileExists</a></span>(String profileName)</nobr>
+        
+        <div class="jd-descrdiv">
+          Check if a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> exists via its literal name
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#profileExists(java.util.UUID)">profileExists</a></span>(UUID profileUuid)</nobr>
+        
+        <div class="jd-descrdiv">
+          Check if a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> exists via its <code><a href="../../../reference/java/util/UUID.html">UUID</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#removeProfile(cyanogenmod.app.Profile)">removeProfile</a></span>(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</nobr>
+        
+        <div class="jd-descrdiv">
+          Remove a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> from user selection
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#resetAll()">resetAll</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Reset all profiles, groups, and notification groups to default state
+
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#setActiveProfile(java.lang.String)">setActiveProfile</a></span>(String profileName)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#setActiveProfile(java.util.UUID)">setActiveProfile</a></span>(UUID profileUuid)</nobr>
+        
+        <div class="jd-descrdiv">
+          Set the active <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> by <code><a href="../../../reference/java/util/UUID.html">UUID</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/ProfileManager.html#updateProfile(cyanogenmod.app.Profile)">updateProfile</a></span>(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</nobr>
+        
+        <div class="jd-descrdiv">
+          Update a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="ACTION_PROFILE_PICKER"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ACTION_PROFILE_PICKER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Activity Action: Shows a profile picker.
+ <p>
+ Input: <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_EXISTING_UUID">EXTRA_PROFILE_EXISTING_UUID</a></code>, <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_SHOW_NONE">EXTRA_PROFILE_SHOW_NONE</a></code>,
+ <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_TITLE">EXTRA_PROFILE_TITLE</a></code>.
+ <p>
+ Output: <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_PICKED_UUID">EXTRA_PROFILE_PICKED_UUID</a></code>.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod_platform.intent.action.PROFILE_PICKER"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_LAST_PROFILE_NAME"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_LAST_PROFILE_NAME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code>:
+ The name of the previously active profile
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "lastName"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_LAST_PROFILE_UUID"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_LAST_PROFILE_UUID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code>:
+ The string representation of the UUID of the previously active profile
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "uuid"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILES_STATE"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILES_STATE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The lookup key for an int that indicates whether Profiles are enabled or
+ disabled. Retrieve it with <code><a href="../../../reference/android/content/Intent.html#getIntExtra(java.lang.String, int)">getIntExtra(String, int)</a></code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_DISABLED">PROFILES_STATE_DISABLED</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_ENABLED">PROFILES_STATE_ENABLED</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "profile_state"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_DIALOG_THEME"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_DIALOG_THEME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the resource id theme to use for the dialog picker activity.<br/>
+ The default theme is <code>com.android.internal.R.Theme_Holo_Dialog_Alert</code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.intent.extra.profile.DIALOG_THEME"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_EXISTING_UUID"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_EXISTING_UUID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Given to the profile picker as a <code><a href="../../../reference/java/util/UUID.html">UUID</a></code> string representation. The <code><a href="../../../reference/java/util/UUID.html">UUID</a></code>
+ representation of the current profile, which will be used to show a checkmark next to
+ the item for this <code><a href="../../../reference/java/util/UUID.html">UUID</a></code>. If the item is <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#NO_PROFILE">NO_PROFILE</a></code> then "None" item
+ is selected if <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_SHOW_NONE">EXTRA_PROFILE_SHOW_NONE</a></code> is enabled. Otherwise, the current
+ profile is selected.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "android.intent.extra.profile.EXISTING_UUID"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_NAME"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_NAME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code> and <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_UPDATED">INTENT_ACTION_PROFILE_UPDATED</a></code>:
+ The name of the newly activated or updated profile
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "name"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_PICKED_UUID"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_PICKED_UUID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returned from the profile picker as a <code><a href="../../../reference/java/util/UUID.html">UUID</a></code> string representation.
+ <p>
+ It will be one of:
+ <li> the picked profile,
+ <li> null if the "None" item was picked.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.intent.extra.profile.PICKED_UUID"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_SHOW_NONE"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_SHOW_NONE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Given to the profile picker as a boolean. Whether to show an item for
+ deselect the profile. If the "None" item is picked,
+ <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILE_PICKED_UUID">EXTRA_PROFILE_PICKED_UUID</a></code> will be <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#NO_PROFILE">NO_PROFILE</a></code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "android.intent.extra.profile.SHOW_NONE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_TITLE"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_TITLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Given to the profile picker as a <code><a href="../../../reference/java/lang/CharSequence.html">CharSequence</a></code>. The title to
+ show for the profile picker. This has a default value that is suitable
+ in most cases.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#ACTION_PROFILE_PICKER">ACTION_PROFILE_PICKER</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.intent.extra.profile.TITLE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROFILE_UUID"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROFILE_UUID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_SELECTED">INTENT_ACTION_PROFILE_SELECTED</a></code> and <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#INTENT_ACTION_PROFILE_UPDATED">INTENT_ACTION_PROFILE_UPDATED</a></code>:
+ The string representation of the UUID of the newly activated or updated profile
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "uuid"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INTENT_ACTION_PROFILE_SELECTED"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INTENT_ACTION_PROFILE_SELECTED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p><p>Broadcast Action: A new profile has been selected. This can be triggered by the user
+ or by calls to the ProfileManagerService / Profile.</p>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.intent.action.PROFILE_SELECTED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INTENT_ACTION_PROFILE_UPDATED"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INTENT_ACTION_PROFILE_UPDATED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p><p>Broadcast Action: Current profile has been updated. This is triggered every time the
+ currently active profile is updated, instead of selected.</p>
+ <p> For instance, this includes profile updates caused by a locale change, which doesn't
+ trigger a profile selection, but causes its name to change.</p>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.intent.action.PROFILE_UPDATED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILES_STATE_CHANGED_ACTION"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PROFILES_STATE_CHANGED_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Broadcast intent action indicating that Profiles has been enabled or disabled.
+ One extra provides this state as an int.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#EXTRA_PROFILES_STATE">EXTRA_PROFILES_STATE</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.platform.app.profiles.PROFILES_STATE_CHANGED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILES_STATE_DISABLED"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PROFILES_STATE_DISABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Profiles are disabled.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_CHANGED_ACTION">PROFILES_STATE_CHANGED_ACTION</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILES_STATE_ENABLED"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PROFILES_STATE_ENABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Profiles are enabled.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html#PROFILES_STATE_CHANGED_ACTION">PROFILES_STATE_CHANGED_ACTION</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="NO_PROFILE"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        UUID
+      </span>
+        NO_PROFILE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constant for NO_PROFILE
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="addProfile(cyanogenmod.app.Profile)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">addProfile</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> that can be selected by the user</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profile</td>
+          <td>a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getActiveProfile()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a>
+      </span>
+      <span class="sympad">getActiveProfile</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the active <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>active <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInstance(android.content.Context)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a>
+      </span>
+      <span class="sympad">getInstance</span>
+      <span class="normal">(Context context)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProfile(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a>
+      </span>
+      <span class="sympad">getProfile</span>
+      <span class="normal">(String profileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object by its literal name</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profileName</td>
+          <td>name associated with the profile</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>profile a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProfile(java.util.UUID)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a>
+      </span>
+      <span class="sympad">getProfile</span>
+      <span class="normal">(UUID profileUuid)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> via <code><a href="../../../reference/java/util/UUID.html">UUID</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profileUuid</td>
+          <td><code><a href="../../../reference/java/util/UUID.html">UUID</a></code> associated with the profile</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProfileNames()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String[]
+      </span>
+      <span class="sympad">getProfileNames</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the profile names currently available to the user</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../">ERROR(/String[])</a></code> of profile names
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProfiles()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/Profile.html">Profile[]</a>
+      </span>
+      <span class="sympad">getProfiles</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code>s currently available to the user</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../">ERROR(/Profile[])</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="profileExists(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">profileExists</span>
+      <span class="normal">(String profileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Check if a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> exists via its literal name</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profileName</td>
+          <td>a profile name</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>whether or not the profile exists
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="profileExists(java.util.UUID)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">profileExists</span>
+      <span class="normal">(UUID profileUuid)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Check if a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> exists via its <code><a href="../../../reference/java/util/UUID.html">UUID</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profileUuid</td>
+          <td>the profiles <code><a href="../../../reference/java/util/UUID.html">UUID</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>whether or not the profile exists
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="removeProfile(cyanogenmod.app.Profile)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removeProfile</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> from user selection</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profile</td>
+          <td>a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="resetAll()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">resetAll</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Reset all profiles, groups, and notification groups to default state
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setActiveProfile(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActiveProfile</span>
+      <span class="normal">(String profileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setActiveProfile(java.util.UUID)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActiveProfile</span>
+      <span class="normal">(UUID profileUuid)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the active <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> by <code><a href="../../../reference/java/util/UUID.html">UUID</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profileUuid</td>
+          <td>the <code><a href="../../../reference/java/util/UUID.html">UUID</a></code> associated with the profile
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateProfile(cyanogenmod.app.Profile)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateProfile</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a> profile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Update a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>profile</td>
+          <td>a <code><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></code> object
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+</script>
+
+</body>
+</html>
