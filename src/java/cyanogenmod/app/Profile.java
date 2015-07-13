@@ -412,6 +412,7 @@ public final class Profile implements Parcelable, Comparable {
     /**
      * Add a {@link ProfileGroup} to the {@link Profile}
      * @param profileGroup
+     * @hide
      */
     public void addProfileGroup(ProfileGroup profileGroup) {
         if (profileGroup.isDefaultGroup()) {
@@ -428,6 +429,7 @@ public final class Profile implements Parcelable, Comparable {
     /**
      * Remove a {@link ProfileGroup} with a given {@link UUID}
      * @param uuid
+     * @hide
      */
     public void removeProfileGroup(UUID uuid) {
         if (!profileGroups.get(uuid).isDefaultGroup()) {
@@ -440,6 +442,7 @@ public final class Profile implements Parcelable, Comparable {
     /**
      * Get {@link ProfileGroup}s associated with the {@link Profile}
      * @return {@link ProfileGroup[]}
+     * @hide
      */
     public ProfileGroup[] getProfileGroups() {
         return profileGroups.values().toArray(new ProfileGroup[profileGroups.size()]);
@@ -449,6 +452,7 @@ public final class Profile implements Parcelable, Comparable {
      * Get a {@link ProfileGroup} with a given {@link UUID}
      * @param uuid
      * @return a {@link ProfileGroup}
+     * @hide
      */
     public ProfileGroup getProfileGroup(UUID uuid) {
         return profileGroups.get(uuid);
@@ -457,6 +461,7 @@ public final class Profile implements Parcelable, Comparable {
     /**
      * Get the default {@link ProfileGroup} associated with the {@link Profile}
      * @return the default {@link ProfileGroup}
+     * @hide
      */
     public ProfileGroup getDefaultGroup() {
         return mDefaultGroup;
