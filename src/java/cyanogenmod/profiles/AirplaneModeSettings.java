@@ -33,8 +33,8 @@ import java.io.IOException;
  *
  * <p>Example for setting the airplane mode to enabled:
  * <pre class="prettyprint">
- * AirplaneModeSettings airplaneMode = new AirplaneModeSettings(63, true)
- * profile.setBrightnessSettings(twentyFivePercent);
+ * AirplaneModeSettings airplaneMode = new AirplaneModeSettings(BooleanState.STATE_ENABLED, true)
+ * profile.setAirplaneMode(airplaneMode);
  * </pre>
  */
 public final class AirplaneModeSettings implements Parcelable {

@@ -34,7 +34,7 @@ import java.io.IOException;
  * <p>Example for setting the brightness to ~25% (255 * .25):
  * <pre class="prettyprint">
  * BrightnessSettings twentyFivePercent = new BrightnessSettings(63, true)
- * profile.setBrightnessSettings(twentyFivePercent);
+ * profile.setBrightness(twentyFivePercent);
  * </pre>
  */
 public final class BrightnessSettings implements Parcelable {

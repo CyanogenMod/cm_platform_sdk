@@ -33,7 +33,7 @@ import java.io.IOException;
  * <p>Example for setting the default ring mode to muted:
  * <pre class="prettyprint">
  * RingModeSettings ringSettings = new RingModeSettings(RING_MODE_MUTE, true));
- * profile.setRingModeSettings(ringSettings);
+ * profile.setRingMode(ringSettings);
  * </pre>
  */
 public final class RingModeSettings implements Parcelable {
