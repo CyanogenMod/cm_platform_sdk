@@ -151,7 +151,7 @@ LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.app:cyanogenmod.os:cyanogenmod.platform:org.cyanogenmod.platform \
+        -stubpackages cyanogenmod.app:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.platform:org.cyanogenmod.platform \
         -api $(INTERNAL_CM_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) \
         -nodocs \
@@ -180,7 +180,7 @@ LOCAL_MODULE := cm-system-api-stubs
 
 LOCAL_DROIDDOC_OPTIONS:=\
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_system_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.app:cyanogenmod.os:cyanogenmod.platform:org.cyanogenmod.platform \
+        -stubpackages cyanogenmod.app:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.platform:org.cyanogenmod.platform \
         -showAnnotation android.annotation.SystemApi \
         -api $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE) \
@@ -222,7 +222,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -hdf sdk.version $(cmplat_docs_docs_SDK_VERSION) \
         -hdf sdk.rel.id $(cmplat_docs_docs_SDK_REL_ID) \
         -hdf sdk.preview 0 \
-        -since $(CM_SRC_API_DIR)/1.txt 1
+        -since $(CM_SRC_API_DIR)/1.txt 1 \
+        -since $(CM_SRC_API_DIR)/2.txt 2
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
