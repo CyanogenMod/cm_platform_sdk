@@ -254,6 +254,7 @@ package cyanogenmod.os {
   public static class Build.CM_VERSION_CODES {
     ctor public Build.CM_VERSION_CODES();
     field public static final int APRICOT = 1; // 0x1
+    field public static final int BOYSENBERRY = 2; // 0x2
   }
 
 }
