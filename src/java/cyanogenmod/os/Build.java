@@ -31,6 +31,7 @@ public class Build {
     {
         sdkMap = new SparseArray<String>();
         sdkMap.put(CM_VERSION_CODES.APRICOT, "Apricot");
+        sdkMap.put(CM_VERSION_CODES.BOYSENBERRY, "Boysenberry");
     }
 
     /** Various version strings. */
@@ -53,6 +54,11 @@ public class Build {
          * June 2015: The first version of the platform sdk for CyanogenMod
          */
         public static final int APRICOT = 1;
+
+        /**
+         * July 2015 - ?: The second version of the platform sdk for CyanogenMod
+         */
+        public static final int BOYSENBERRY = 2;
     }
 
     /**
