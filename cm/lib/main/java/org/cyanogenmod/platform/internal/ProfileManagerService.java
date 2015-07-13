@@ -29,6 +29,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.XmlResourceParser;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.os.IBinder;
 import android.text.TextUtils;
@@ -80,6 +81,7 @@ public class ProfileManagerService extends SystemService {
     private NotificationGroup mWildcardGroup;
 
     private Context mContext;
+    private Handler mHandler;
     private boolean mDirty;
     private BackupManager mBackupManager;
     private ProfileTriggerHelper mTriggerHelper;
@@ -100,6 +102,7 @@ public class ProfileManagerService extends SystemService {
     public ProfileManagerService(Context context) {
         super(context);
         mContext = context;
+        mHandler = new Handler();
         publishBinderService(CMContextConstants.CM_PROFILE_SERVICE, mService);
     }
 
@@ -125,7 +128,7 @@ public class ProfileManagerService extends SystemService {
     }
 
     private void initialize(boolean skipFile) {
-        mTriggerHelper = new ProfileTriggerHelper(mContext, this);
+        mTriggerHelper = new ProfileTriggerHelper(mContext, mHandler, this);
         mProfiles = new HashMap<UUID, Profile>();
         mProfileNames = new HashMap<String, UUID>();
         mGroups = new HashMap<UUID, NotificationGroup>();
