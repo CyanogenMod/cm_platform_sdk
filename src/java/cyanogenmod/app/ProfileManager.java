@@ -528,6 +528,7 @@ public class ProfileManager {
      * Get an active {@link ProfileGroup} via its package name
      * @param packageName the package name associated to the profile group
      * @return {@link ProfileGroup}
+     * @hide
      */
     public ProfileGroup getActiveProfileGroup(String packageName) {
         NotificationGroup notificationGroup = getNotificationGroupForPackage(packageName);
