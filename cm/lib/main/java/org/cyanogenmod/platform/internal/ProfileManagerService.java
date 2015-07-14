@@ -159,8 +159,10 @@ public class ProfileManagerService extends SystemService {
 
         @Override
         public void resetAll() {
+            long token = clearCallingIdentity();
             enforceChangePermissions();
             initialize(true);
+            restoreCallingIdentity(token);
         }
 
         @Override
