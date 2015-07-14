@@ -6,11 +6,20 @@
 
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="cyanogenmod.permission.MODIFY_NETWORK_SETTINGS" />
+    <uses-permission android:name="android.permission.REBOOT" />
 
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <uses-library android:name="android.test.runner" />
         <activity android:name=".customtiles.CMStatusBarTest"
                   android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".settings.CMSettingsManagerTest"
+                  android:label="@string/settings_tests_activity_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

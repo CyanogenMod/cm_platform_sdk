@@ -35,6 +35,13 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
+    <!-- Allows system applications to make changes to a subset of system network settings -->
+    <permission android:name="cyanogenmod.permission.MODIFY_NETWORK_SETTINGS"
+                android:label="@string/permlab_modifyNetworkSettings"
+                android:description="@string/permdesc_modifyNetworkSettings"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
+                android:protectionLevel="system|signature" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"

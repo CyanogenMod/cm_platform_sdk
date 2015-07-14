@@ -236,6 +236,14 @@ package cyanogenmod.app {
     field public static final int PROFILES_STATE_ENABLED = 1; // 0x1
   }
 
+  public class SettingsManager {
+    method public static cyanogenmod.app.SettingsManager getInstance(android.content.Context);
+    method public void rebootDevice();
+    method public void setAirplaneModeEnabled(boolean);
+    method public void setMobileDataEnabled(boolean);
+    method public void shutdownDevice();
+  }
+
   public class StatusBarPanelCustomTile implements android.os.Parcelable {
     ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle);
     ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle, long);
@@ -285,6 +293,7 @@ package cyanogenmod.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
+    field public static final java.lang.String MODIFY_SETTINGS = "cyanogenmod.permission.MODIFY_SETTINGS";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
   }
 
