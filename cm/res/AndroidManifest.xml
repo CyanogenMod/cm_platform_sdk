@@ -35,6 +35,13 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
+    <!-- Allows a 3rd party application to make changes to a subset of System Settings -->
+    <permission android:name="cyanogenmod.permission.MODIFY_SETTINGS"
+                android:label="@string/permlab_modifySettings"
+                android:description="@string/permdesc_modifySettings"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
+                android:protectionLevel="signature" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
