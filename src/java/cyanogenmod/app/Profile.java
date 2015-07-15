@@ -476,26 +476,76 @@ public final class Profile implements Parcelable, Comparable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mName);
-        dest.writeInt(mNameResId);
-        new ParcelUuid(mUuid).writeToParcel(dest, 0);
-        ArrayList<ParcelUuid> uuids = new ArrayList<ParcelUuid>(mSecondaryUuids.size());
-        for (UUID u : mSecondaryUuids) {
-            uuids.add(new ParcelUuid(u));
+        if (!TextUtils.isEmpty(mName)) {
+            dest.writeInt(1);
+            dest.writeString(mName);
+        } else {
+            dest.writeInt(0);
         }
-        dest.writeParcelableArray(uuids.toArray(new Parcelable[uuids.size()]), flags);
+        if (mNameResId != 0) {
+            dest.writeInt(1);
+            dest.writeInt(mNameResId);
+        } else {
+            dest.writeInt(0);
+        }
+        if (mUuid != null) {
+            dest.writeInt(1);
+            new ParcelUuid(mUuid).writeToParcel(dest, 0);
+        } else {
+            dest.writeInt(0);
+        }
+        if (mSecondaryUuids != null && !mSecondaryUuids.isEmpty()) {
+            ArrayList<ParcelUuid> uuids = new ArrayList<ParcelUuid>(mSecondaryUuids.size());
+            for (UUID u : mSecondaryUuids) {
+                uuids.add(new ParcelUuid(u));
+            }
+            dest.writeInt(1);
+            dest.writeParcelableArray(uuids.toArray(new Parcelable[uuids.size()]), flags);
+        } else {
+            dest.writeInt(0);
+        }
         dest.writeInt(mStatusBarIndicator ? 1 : 0);
         dest.writeInt(mProfileType);
         dest.writeInt(mDirty ? 1 : 0);
-        dest.writeParcelableArray(
-                profileGroups.values().toArray(new Parcelable[profileGroups.size()]), flags);
-        dest.writeParcelableArray(
-                streams.values().toArray(new Parcelable[streams.size()]), flags);
-        dest.writeParcelableArray(
-                connections.values().toArray(new Parcelable[connections.size()]), flags);
-        dest.writeParcelable(mRingMode, flags);
-        dest.writeParcelable(mAirplaneMode, flags);
-        dest.writeParcelable(mBrightness, flags);
+        if (profileGroups != null && !profileGroups.isEmpty()) {
+            dest.writeInt(1);
+            dest.writeParcelableArray(
+                    profileGroups.values().toArray(new Parcelable[profileGroups.size()]), flags);
+        } else {
+            dest.writeInt(0);
+        }
+        if (streams != null && !streams.isEmpty()) {
+            dest.writeInt(1);
+            dest.writeParcelableArray(
+                    streams.values().toArray(new Parcelable[streams.size()]), flags);
+        } else {
+            dest.writeInt(0);
+        }
+        if (connections != null && !connections.isEmpty()) {
+            dest.writeInt(1);
+            dest.writeParcelableArray(
+                    connections.values().toArray(new Parcelable[connections.size()]), flags);
+        } else {
+            dest.writeInt(0);
+        }
+        if (mRingMode != null) {
+            dest.writeInt(1);
+            mRingMode.writeToParcel(dest, 0);
+        } else {
+            dest.writeInt(0);
+        }
+        if (mAirplaneMode != null) {
+            dest.writeInt(1);
+            mAirplaneMode.writeToParcel(dest, 0);
+        } else {
+            dest.writeInt(0);
+        }
+        if (mBrightness != null) {
+            dest.writeInt(1);
+            mBrightness.writeToParcel(dest, 0);
+        } else {
+            dest.writeInt(0);
+        }
         dest.writeInt(mScreenLockMode);
         dest.writeMap(mTriggers);
         dest.writeInt(mExpandedDesktopMode);
@@ -504,34 +554,54 @@ public final class Profile implements Parcelable, Comparable {
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        mName = in.readString();
-        mNameResId = in.readInt();
-        mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
-        for (Parcelable parcel : in.readParcelableArray(null)) {
-            ParcelUuid u = (ParcelUuid) parcel;
-            mSecondaryUuids.add(u.getUuid());
+        if (in.readInt() != 0) {
+            mName = in.readString();
+        }
+        if (in.readInt() != 0) {
+            mNameResId = in.readInt();
+        }
+        if (in.readInt() != 0) {
+            mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
+        }
+        if (in.readInt() != 0) {
+            for (Parcelable parcel : in.readParcelableArray(null)) {
+                ParcelUuid u = (ParcelUuid) parcel;
+                mSecondaryUuids.add(u.getUuid());
+            }
         }
         mStatusBarIndicator = (in.readInt() == 1);
         mProfileType = in.readInt();
         mDirty = (in.readInt() == 1);
-        for (Parcelable group : in.readParcelableArray(null)) {
-            ProfileGroup grp = (ProfileGroup) group;
-            profileGroups.put(grp.getUuid(), grp);
-            if (grp.isDefaultGroup()) {
-                mDefaultGroup = grp;
+        if (in.readInt() != 0) {
+            for (Parcelable group : in.readParcelableArray(null)) {
+                ProfileGroup grp = (ProfileGroup) group;
+                profileGroups.put(grp.getUuid(), grp);
+                if (grp.isDefaultGroup()) {
+                    mDefaultGroup = grp;
+                }
             }
         }
-        for (Parcelable parcel : in.readParcelableArray(null)) {
-            StreamSettings stream = (StreamSettings) parcel;
-            streams.put(stream.getStreamId(), stream);
+        if (in.readInt() != 0) {
+            for (Parcelable parcel : in.readParcelableArray(null)) {
+                StreamSettings stream = (StreamSettings) parcel;
+                streams.put(stream.getStreamId(), stream);
+            }
         }
-        for (Parcelable parcel : in.readParcelableArray(null)) {
-            ConnectionSettings connection = (ConnectionSettings) parcel;
-            connections.put(connection.getConnectionId(), connection);
+        if (in.readInt() != 0) {
+            for (Parcelable parcel : in.readParcelableArray(null)) {
+                ConnectionSettings connection = (ConnectionSettings) parcel;
+                connections.put(connection.getConnectionId(), connection);
+            }
         }
-        mRingMode = (RingModeSettings) in.readParcelable(null);
-        mAirplaneMode = (AirplaneModeSettings) in.readParcelable(null);
-        mBrightness = (BrightnessSettings) in.readParcelable(null);
+        if (in.readInt() != 0) {
+            mRingMode = RingModeSettings.CREATOR.createFromParcel(in);
+        }
+        if (in.readInt() != 0) {
+            mAirplaneMode = AirplaneModeSettings.CREATOR.createFromParcel(in);
+        }
+        if (in.readInt() != 0) {
+            mBrightness = BrightnessSettings.CREATOR.createFromParcel(in);
+        }
         mScreenLockMode = in.readInt();
         in.readMap(mTriggers, null);
         mExpandedDesktopMode = in.readInt();
