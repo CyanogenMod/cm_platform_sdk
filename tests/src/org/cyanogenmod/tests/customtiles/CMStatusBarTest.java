@@ -18,6 +18,7 @@ package org.cyanogenmod.tests.customtiles;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 
 import cyanogenmod.app.CustomTile;
@@ -118,6 +119,17 @@ public class CMStatusBarTest extends TestActivity {
                                     DummySettings.class)
                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
                             .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            },
+
+            new Test("test publish tile with custom uri") {
+                public void run() {
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setIcon(R.drawable.ic_launcher)
+                            .setOnClickUri(Uri.parse("http://tasker.dinglisch.net"))
                             .build();
                     CMStatusBarManager.getInstance(CMStatusBarTest.this)
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
