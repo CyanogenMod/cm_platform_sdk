@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.cyanogenmod.tests"
-          android:versionCode="1"
+          android:versionCode="2"
           android:versionName="1.0">
 
     <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
     <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"/>
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_NETWORK_SETTINGS" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_SOUND_SETTINGS" />
     <uses-permission android:name="cyanogenmod.permission.MANAGE_ALARMS" />
@@ -78,6 +80,6 @@
     </application>
 
     <instrumentation
-            android:name="android.test.InstrumentationTestRunner"
+            android:name="org.cyanogenmod.tests.CyanogenModInstrumentationTestRunner"
             android:targetPackage="org.cyanogenmod.tests" />
 </manifest>

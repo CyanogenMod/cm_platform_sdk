@@ -29,8 +29,10 @@ import android.os.Handler;
 
 import android.util.Log;
 
+import com.android.internal.annotations.VisibleForTesting;
 import cyanogenmod.app.Profile;
 
+import cyanogenmod.app.ProfileManager;
 import cyanogenmod.providers.CMSettings;
 import org.cyanogenmod.platform.internal.ProfileManagerService;
 
@@ -133,14 +135,16 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
     }
 
     private void checkTriggers(int type, String id, int newState) {
-        for (Profile p : mManagerService.getProfileList()) {
-            if (newState != p.getTriggerState(type, id)) {
-                continue;
-            }
+        if (mManagerService != null) {
+            for (Profile p : mManagerService.getProfileList()) {
+                if (newState != p.getTriggerState(type, id)) {
+                    continue;
+                }
 
-            UUID currentProfileUuid = mManagerService.getActiveProfileInternal().getUuid();
-            if (!currentProfileUuid.equals(p.getUuid())) {
-                mManagerService.setActiveProfileInternal(p, true);
+                UUID currentProfileUuid = mManagerService.getActiveProfileInternal().getUuid();
+                if (!currentProfileUuid.equals(p.getUuid())) {
+                    mManagerService.setActiveProfileInternal(p, true);
+                }
             }
         }
     }
