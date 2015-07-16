@@ -5,6 +5,7 @@
           android:versionName="1.0">
 
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
+    <uses-permission android:name="cyanogenmod.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
@@ -35,6 +36,6 @@
     </application>
 
     <instrumentation
-            android:name="android.test.InstrumentationTestRunner"
+            android:name="org.cyanogenmod.tests.CyanogenModInstrumentationTestRunner"
             android:targetPackage="org.cyanogenmod.tests" />
 </manifest>
