@@ -58,55 +58,55 @@ public final class ConnectionSettings implements Parcelable {
     private boolean mDirty;
 
     /**
-     * The #PROFILE_CONNECTION_MOBILEDATA allows for enabling and disabling the mobile
+     * The {@link #PROFILE_CONNECTION_MOBILEDATA} allows for enabling and disabling the mobile
      * data connection. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_MOBILEDATA = 0;
 
     /**
-     * The #PROFILE_CONNECTION_WIFI allows for enabling and disabling the WiFi connection
+     * The {@link #PROFILE_CONNECTION_WIFI} allows for enabling and disabling the WiFi connection
      * on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_WIFI = 1;
 
     /**
-     * The #PROFILE_CONNECTION_WIFIAP allows for enabling and disabling the WiFi hotspot
+     * The {@link #PROFILE_CONNECTION_WIFIAP} allows for enabling and disabling the WiFi hotspot
      * on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_WIFIAP = 2;
 
     /**
-     * The #PROFILE_CONNECTION_WIMAX allows for enabling and disabling the WIMAX radio (if exists)
+     * The {@link #PROFILE_CONNECTION_WIMAX} allows for enabling and disabling the WIMAX radio (if exists)
      * on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_WIMAX = 3;
 
     /**
-     * The #PROFILE_CONNECTION_GPS allows for enabling and disabling the GPS radio (if exists)
+     * The {@link #PROFILE_CONNECTION_GPS} allows for enabling and disabling the GPS radio (if exists)
      * on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_GPS = 4;
 
     /**
-     * The #PROFILE_CONNECTION_SYNC allows for enabling and disabling the global sync state
+     * The {@link #PROFILE_CONNECTION_SYNC} allows for enabling and disabling the global sync state
      * on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_SYNC = 5;
 
     /**
-     * The #PROFILE_CONNECTION_BLUETOOTH allows for enabling and disabling the Bluetooth device
+     * The {@link #PROFILE_CONNECTION_BLUETOOTH} allows for enabling and disabling the Bluetooth device
      * (if exists) on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_BLUETOOTH = 7;
 
     /**
-     * The #PROFILE_CONNECTION_NFS allows for enabling and disabling the NFC device
+     * The {@link #PROFILE_CONNECTION_NFC} allows for enabling and disabling the NFC device
      * (if exists) on the device. Boolean connection settings {@link BooleanState}
      */
     public static final int PROFILE_CONNECTION_NFC = 8;
 
     /**
-     * The #PROFILE_CONNECTION_2G3G4G allows for flipping between 2G/3G/4G (if exists)
+     * The {@link #PROFILE_CONNECTION_2G3G4G} allows for flipping between 2G/3G/4G (if exists)
      * on the device.
      */
     public static final int PROFILE_CONNECTION_2G3G4G = 9;
