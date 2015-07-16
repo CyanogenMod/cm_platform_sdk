@@ -17,6 +17,7 @@
 package cyanogenmod.os;
 
 import android.os.SystemProperties;
+import android.text.TextUtils;
 import android.util.SparseArray;
 
 /**
@@ -84,9 +85,13 @@ public class Build {
     /**
      * Retrieve the name for the SDK int
      * @param sdkInt
-     * @return name of the SDK int
+     * @return name of the SDK int, {@link #UNKNOWN) if not known
      */
     public static String getNameForSDKInt(int sdkInt) {
-        return sdkMap.get(sdkInt);
+        final String name = sdkMap.get(sdkInt);
+        if (TextUtils.isEmpty(name)) {
+            return UNKNOWN;
+        }
+        return name;
     }
 }

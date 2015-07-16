@@ -56,4 +56,11 @@ public class BuildTest extends AndroidTestCase {
         }
         assertEquals(0, i);
     }
+
+    @SmallTest
+    public void testSdkLevelRetrieveNameImpossible() {
+        String name = Build.getNameForSDKInt(Integer.MAX_VALUE);
+        assertNotNull(name);
+        assertEquals(Build.UNKNOWN, name);
+    }
 }
