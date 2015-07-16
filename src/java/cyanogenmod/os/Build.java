@@ -48,6 +48,23 @@ public class Build {
      * Enumeration of the currently known SDK version codes.  These are the
      * values that can be found in {@link CM_VERSION#SDK_INT}.  Version numbers
      * increment monotonically with each official platform release.
+     *
+     * To programmatically validate that a given API is available for use on the device,
+     * you can quickly check if the SDK_INT from the OS is provided and is greater or equal
+     * to the API level that your application is targeting.
+     * <p>
+     * <pre class="prettyprint">
+     * private void removeActiveProfile() {
+     *     Make sure we're running on BoysenBerry or higher to use Profiles API
+     *     if (Build.CM_VERSION.SDK_INT >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+     *         ProfileManager profileManager = ProfileManager.getInstance(this);
+     *         Profile activeProfile = profileManager.getActiveProfile();
+     *         if (activeProfile != null) {
+     *             profileManager.removeProfile(activeProfile);
+     *         }
+     *     }
+     * }
+     * </p>
      */
     public static class CM_VERSION_CODES {
         /**
