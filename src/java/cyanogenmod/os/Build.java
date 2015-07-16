@@ -39,6 +39,8 @@ public class Build {
         /**
          * The user-visible SDK version of the framework; its possible
          * values are defined in {@link Build.CM_VERSION_CODES}.
+         *
+         * Will return 0 if the device does not support the CM SDK.
          */
         public static final int SDK_INT = SystemProperties.getInt(
                 "ro.cm.build.version.plat.sdk", 0);
@@ -48,6 +50,24 @@ public class Build {
      * Enumeration of the currently known SDK version codes.  These are the
      * values that can be found in {@link CM_VERSION#SDK_INT}.  Version numbers
      * increment monotonically with each official platform release.
+     *
+     * To programmatically validate that a given API is available for use on the device,
+     * you can quickly check if the SDK_INT from the OS is provided and is greater or equal
+     * to the API level that your application is targeting.
+     *
+     * <p>Example for validating that Profiles API is available
+     * <pre class="prettyprint">
+     * private void removeActiveProfile() {
+     *     Make sure we're running on BoysenBerry or higher to use Profiles API
+     *     if (Build.CM_VERSION.SDK_INT >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+     *         ProfileManager profileManager = ProfileManager.getInstance(this);
+     *         Profile activeProfile = profileManager.getActiveProfile();
+     *         if (activeProfile != null) {
+     *             profileManager.removeProfile(activeProfile);
+     *         }
+     *     }
+     * }
+     * </p>
      */
     public static class CM_VERSION_CODES {
         /**
