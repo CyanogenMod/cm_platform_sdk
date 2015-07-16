@@ -76,7 +76,7 @@ public final class RingModeSettings implements Parcelable {
     /**
      * Construct a {@link RingModeSettings} with a default value and whether or not it should
      * override user settings.
-     * @param value ex: #RING_MODE_VIBRATE
+     * @param value ex: {@link #RING_MODE_VIBRATE}
      * @param override whether or not the setting should override user settings
      */
     public RingModeSettings(String value, boolean override) {
@@ -95,7 +95,7 @@ public final class RingModeSettings implements Parcelable {
 
     /**
      * Set the default value for the {@link RingModeSettings}
-     * @param value ex: #RING_MODE_VIBRATE
+     * @param value ex: {@link #RING_MODE_VIBRATE}
      */
     public void setValue(String value) {
         mValue = value;
