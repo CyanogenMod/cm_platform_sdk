@@ -116,7 +116,7 @@ public class ProfileManager {
      */
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_PROFILE_PICKER =
-            "cyanogenmod_platform.intent.action.PROFILE_PICKER";
+            "cyanogenmod.platform.intent.action.PROFILE_PICKER";
 
     /**
      * Constant for NO_PROFILE
