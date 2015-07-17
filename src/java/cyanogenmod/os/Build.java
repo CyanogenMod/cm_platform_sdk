@@ -68,7 +68,7 @@ public class Build {
      *         }
      *     }
      * }
-     * </p>
+     * </pre>
      */
     public static class CM_VERSION_CODES {
         /**
