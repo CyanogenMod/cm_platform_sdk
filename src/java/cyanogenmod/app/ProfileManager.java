@@ -132,7 +132,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_SHOW_NONE =
-            "android.intent.extra.profile.SHOW_NONE";
+            "cyanogenmod.platform.intent.extra.profile.SHOW_NONE";
 
     /**
      * Given to the profile picker as a {@link UUID} string representation. The {@link UUID}
@@ -144,7 +144,7 @@ public class ProfileManager {
      * @see #ACTION_PROFILE_PICKER
      */
     public static final String EXTRA_PROFILE_EXISTING_UUID =
-            "android.intent.extra.profile.EXISTING_UUID";
+            "cyanogenmod.platform.extra.profile.EXISTING_UUID";
 
     /**
      * Given to the profile picker as a {@link CharSequence}. The title to
