@@ -199,7 +199,7 @@ package cyanogenmod.app {
     method public deprecated void setActiveProfile(java.lang.String);
     method public void setActiveProfile(java.util.UUID);
     method public void updateProfile(cyanogenmod.app.Profile);
-    field public static final java.lang.String ACTION_PROFILE_PICKER = "cyanogenmod_platform.intent.action.PROFILE_PICKER";
+    field public static final java.lang.String ACTION_PROFILE_PICKER = "cyanogenmod.platform.intent.action.PROFILE_PICKER";
     field public static final java.lang.String EXTRA_LAST_PROFILE_NAME = "lastName";
     field public static final java.lang.String EXTRA_LAST_PROFILE_UUID = "uuid";
     field public static final java.lang.String EXTRA_PROFILES_STATE = "profile_state";
