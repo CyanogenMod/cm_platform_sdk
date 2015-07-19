@@ -31,6 +31,7 @@ import cyanogenmod.app.ICMTelephonyManager;
 
 /**
  * Internal service which manages interactions with the phone and data connection
+ *
  * @hide
  */
 public class CMTelephonyManagerService extends SystemService {
@@ -55,16 +56,16 @@ public class CMTelephonyManagerService extends SystemService {
     private final IBinder mService = new ICMTelephonyManager.Stub() {
 
         /**
-         * Returns the available SIM subcription information.
+         * Returns the available SIM subscription information.
          * @hide
          */
         @Override
         public List<SubscriptionInfo> getSimInformation() {
-            enforceTelephonyPermission();
+            enforceTelephonyReadPermission();
             if (mSubInfoList == null) {
                 mSubInfoList = getActiveSubscriptionInfoList();
 
-                if(mSubInfoList!=null){
+                if (mSubInfoList != null) {
                     mNumSims = mSubInfoList.size();
                 }
             }
@@ -79,9 +80,15 @@ public class CMTelephonyManagerService extends SystemService {
         return subInfoList;
     }
 
-    private void enforceTelephonyPermission() {
+    private void enforceTelephonyReadPermission() {
         mContext.enforceCallingOrSelfPermission(
-                cyanogenmod.platform.Manifest.permission.VIEW_MODIFY_PHONE_STATE,
+                cyanogenmod.platform.Manifest.permission.READ_MSIM_PHONE_STATE,
+                "CMTelephonyManagerService");
+    }
+
+    private void enforceTelephonyModifyPermission() {
+        mContext.enforceCallingOrSelfPermission(
+                cyanogenmod.platform.Manifest.permission.MODIFY_MSIM_PHONE_STATE,
                 "CMTelephonyManagerService");
     }
 }

@@ -37,7 +37,7 @@ import java.util.List;
  */
 public class CMTelephonyManager {
     private static final String TAG = "CMTelephonyManager";
-    private static boolean localLOGV = false;
+    private static boolean localLOGV = Log.isLoggable(TAG, Log.VERBOSE);
 
     private Context mContext;
 

@@ -23,7 +23,7 @@ import java.util.List;
 /** @hide */
 interface ICMTelephonyManager {
     // --- Methods below are for use by 3rd party applications to manage phone and data connection
-    // You need the PUBLISH_CUSTOM_TILE permission
+    // You need the READ_MSIM_PHONE_STATE permission
     List<SubscriptionInfo> getSimInformation();
 
 }
