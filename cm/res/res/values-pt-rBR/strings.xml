@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
   <string name="permdesc_bindCustomTileListenerService">Permite que o app vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
+  <string name="profileNameDefault">Padrão</string>
+  <string name="profileNameWork">Trabalho</string>
+  <string name="profileNameHome">Casa</string>
+  <string name="profileNameSilent">Silêncio</string>
+  <string name="profileNameNight">Noite</string>
+  <string name="profileNameAutomobile">Automóvel</string>
+  <string name="profileGroupPhone">Telefone</string>
+  <string name="profileGroupCalendar">Calendário</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Outro</string>
 </resources>

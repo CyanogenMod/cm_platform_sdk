@@ -16,19 +16,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">System CyanogenMod</string>
-  <string name="permlab_publishCustomTile">utwórz niestandardowy przełącznik w panelu szybkich ustawień</string>
-  <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
-  <string name="profileNameDefault">Domyślny</string>
-  <string name="profileNameWork">Praca</string>
-  <string name="profileNameHome">Dom</string>
-  <string name="profileNameSilent">Cichy</string>
-  <string name="profileNameNight">Nocny</string>
-  <string name="profileNameAutomobile">Samochód</string>
+  <string name="profileNameWork">Serviciu</string>
+  <string name="profileNameHome">Acasă</string>
+  <string name="profileNameSilent">Silențios</string>
+  <string name="profileNameNight">Noapte</string>
+  <string name="profileNameAutomobile">Automobil</string>
   <string name="profileGroupPhone">Telefon</string>
-  <string name="profileGroupCalendar">Kalendarz</string>
+  <string name="profileGroupCalendar">Calendar</string>
   <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupEmail">Email</string>
   <string name="profileGroupSMS">SMS</string>
-  <string name="wildcardProfile">Inny</string>
 </resources>

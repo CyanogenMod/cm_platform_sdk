@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">uneix-te a un servei d\'escolta de cel·les personalitzades</string>
   <string name="permdesc_bindCustomTileListenerService">Permet a l\'aplicació unir-se a una interfície d\'alt nivell d\'un servei d\'escolta de cel·les personalitzades.</string>
   <string name="custom_tile_listener_binding_label">Escolta de cel·les personalitzades</string>
+  <string name="profileNameDefault">Predeterminat</string>
+  <string name="profileNameWork">Feina</string>
+  <string name="profileNameHome">Casa</string>
+  <string name="profileNameSilent">Silenci</string>
+  <string name="profileNameNight">Nit</string>
+  <string name="profileNameAutomobile">Cotxe</string>
+  <string name="profileGroupPhone">Telèfon</string>
+  <string name="profileGroupCalendar">Calendari</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Correu electrònic</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Altres</string>
 </resources>

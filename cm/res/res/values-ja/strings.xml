@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
   <string name="permdesc_bindCustomTileListenerService">カスタムタイルリスナーサービスのトップレベルインターフェースへのバインドをアプリに許可します</string>
   <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
+  <string name="profileNameDefault">デフォルト</string>
+  <string name="profileNameWork">仕事</string>
+  <string name="profileNameHome">自宅</string>
+  <string name="profileNameSilent">サイレント</string>
+  <string name="profileNameNight">夜</string>
+  <string name="profileNameAutomobile">車</string>
+  <string name="profileGroupPhone">電話</string>
+  <string name="profileGroupCalendar">カレンダー</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">メール</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">その他</string>
 </resources>

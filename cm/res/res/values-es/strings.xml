@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">unirse a un servicio de escucha de controles personalizados</string>
   <string name="permdesc_bindCustomTileListenerService">Permitir que la aplicación pueda unirse a un interfaz de alto nivel de un servicio de escucha de un control.</string>
   <string name="custom_tile_listener_binding_label">Escucha de control personalizado</string>
+  <string name="profileNameDefault">Predeterminado</string>
+  <string name="profileNameWork">Trabajo</string>
+  <string name="profileNameHome">Casa</string>
+  <string name="profileNameSilent">Silencio</string>
+  <string name="profileNameNight">Noche</string>
+  <string name="profileNameAutomobile">Coche</string>
+  <string name="profileGroupPhone">Teléfono</string>
+  <string name="profileGroupCalendar">Calendario</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Correo electrónico</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Otro</string>
 </resources>

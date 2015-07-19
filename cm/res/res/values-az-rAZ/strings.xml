@@ -17,21 +17,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod Sistemi</string>
-  <string name="permlab_publishCustomTile">hızlı ayarlar paneli içinde özel bir kare oluştur</string>
-  <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir.</string>
-  <string name="permlab_bindCustomTileListenerService">özel bir kare takip hizmetine bağla</string>
-  <string name="permdesc_bindCustomTileListenerService">Uygulamaya özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
-  <string name="custom_tile_listener_binding_label">Özel kare takipçisi</string>
-  <string name="profileNameDefault">Varsayılan</string>
+  <string name="permlab_publishCustomTile">cəld tənzimləmələr panelində özəl bir çərçivə yarat</string>
+  <string name="permdesc_publishCustomTile">Tətbiqetməyə cəld tənzimləmələr çərçivəsi yaratmağa icazə verər.</string>
+  <string name="permlab_bindCustomTileListenerService">özəl çərçivə dinləyici xidmətinə bağla</string>
+  <string name="permdesc_bindCustomTileListenerService">Tətbiqetməyə özəl çərçivə dinləyici xidmətinin üst səviyyə interfeysinə bağlanmasına icazə verər.</string>
+  <string name="custom_tile_listener_binding_label">Özəl çərçivə dinləyicisi</string>
+  <string name="profileNameDefault">İlkin</string>
   <string name="profileNameWork">İş</string>
   <string name="profileNameHome">Ev</string>
-  <string name="profileNameSilent">Sessiz</string>
-  <string name="profileNameNight">Gece</string>
-  <string name="profileNameAutomobile">Otomobil</string>
+  <string name="profileNameSilent">Səssiz</string>
+  <string name="profileNameNight">Gecə</string>
+  <string name="profileNameAutomobile">Avtomobil</string>
   <string name="profileGroupPhone">Telefon</string>
-  <string name="profileGroupCalendar">Takvim</string>
+  <string name="profileGroupCalendar">Təqvim</string>
   <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">E-posta</string>
+  <string name="profileGroupEmail">E-poçt</string>
   <string name="profileGroupSMS">SMS</string>
-  <string name="wildcardProfile">Diğer</string>
+  <string name="wildcardProfile">Digər</string>
 </resources>

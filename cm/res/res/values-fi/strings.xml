@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">kiinnitä mukautettu tiili kuuntelupalveluun</string>
   <string name="permdesc_bindCustomTileListenerService">Sallii haltijan kiinnittää mukautetun tiilen kuuntelupalvelun käyttöliittymään.</string>
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>
+  <string name="profileNameDefault">Oletus</string>
+  <string name="profileNameWork">Työ</string>
+  <string name="profileNameHome">Koti</string>
+  <string name="profileNameSilent">Äänetön</string>
+  <string name="profileNameNight">Yö</string>
+  <string name="profileNameAutomobile">Auto</string>
+  <string name="profileGroupPhone">Puhelin</string>
+  <string name="profileGroupCalendar">Kalenteri</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Sähköposti</string>
+  <string name="profileGroupSMS">Tekstiviesti</string>
+  <string name="wildcardProfile">Muu</string>
 </resources>

@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">lié au service d\'écoute d\'un raccourci personnalisé</string>
   <string name="permdesc_bindCustomTileListenerService">Permet à l’application de se lier au service d\'écoute d\'un raccourci personnalisé.</string>
   <string name="custom_tile_listener_binding_label">Service d\'écoute d\'un raccourci personnalisé</string>
+  <string name="profileNameDefault">Défaut</string>
+  <string name="profileNameWork">Bureau</string>
+  <string name="profileNameHome">Maison</string>
+  <string name="profileNameSilent">Silencieux</string>
+  <string name="profileNameNight">Nuit</string>
+  <string name="profileNameAutomobile">Automobile</string>
+  <string name="profileGroupPhone">Téléphone</string>
+  <string name="profileGroupCalendar">Agenda</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Autres</string>
 </resources>

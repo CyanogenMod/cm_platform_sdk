@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">associare ad un servizio listener di tile personalizzato</string>
   <string name="permdesc_bindCustomTileListenerService">Consente ad un\'app di collegarsi ad un interfaccia di un servizio listener di tile personalizzato.</string>
   <string name="custom_tile_listener_binding_label">Listener tile personalizzato</string>
+  <string name="profileNameDefault">Predefinito</string>
+  <string name="profileNameWork">Lavoro</string>
+  <string name="profileNameHome">Casa</string>
+  <string name="profileNameSilent">Silenzioso</string>
+  <string name="profileNameNight">Notte</string>
+  <string name="profileNameAutomobile">Automobile</string>
+  <string name="profileGroupPhone">Telefono</string>
+  <string name="profileGroupCalendar">Calendario</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Email</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Altro</string>
 </resources>

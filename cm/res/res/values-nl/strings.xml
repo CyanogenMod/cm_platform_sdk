@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
   <string name="permdesc_bindCustomTileListenerService">Hiermee kan de app koppelen aan de systeeminterface voor het aanmaken van tegels.</string>
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
+  <string name="profileNameDefault">Standaard</string>
+  <string name="profileNameWork">Werk</string>
+  <string name="profileNameHome">Thuis</string>
+  <string name="profileNameSilent">Stil</string>
+  <string name="profileNameNight">Nacht</string>
+  <string name="profileNameAutomobile">Onderweg</string>
+  <string name="profileGroupPhone">Telefoon</string>
+  <string name="profileGroupCalendar">Agenda</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupSMS">Sms</string>
+  <string name="wildcardProfile">Anders</string>
 </resources>
