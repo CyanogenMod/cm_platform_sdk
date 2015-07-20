@@ -19,6 +19,7 @@ package cyanogenmod.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
+import cyanogenmod.os.Build;
 
 /**
  * Class encapsulating a Custom Tile. Sent by the StatusBarManagerService to clients including
@@ -64,20 +65,54 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
 
     public StatusBarPanelCustomTile(Parcel in) {
-        this.pkg = in.readString();
-        this.opPkg = in.readString();
-        this.id = in.readInt();
-        if (in.readInt() != 0) {
-            this.tag = in.readString();
-        } else {
-            this.tag = null;
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+
+        // tmp variables for final
+        String tmpPkg = null;
+        String tmpOpPkg = null;
+        int tmpId = -1;
+        String tmpTag = null;
+        int tmpUid = -1;
+        int tmpPid = -1;
+        CustomTile tmpCustomTile = null;
+        UserHandle tmpUser = null;
+        long tmpPostTime = -1;
+        String tmpKey = null;
+
+        // Pattern here is that all new members should be added to the beginning of
+        // the writeToParcel method. Then we step through each version, until the first API release
+        // to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
+            // default
+            tmpPkg = in.readString();
+            tmpOpPkg = in.readString();
+            tmpId = in.readInt();
+            if (in.readInt() != 0) {
+                tmpTag = in.readString();
+            } else {
+                tmpTag = null;
+            }
+            tmpUid = in.readInt();
+            tmpPid = in.readInt();
+            tmpCustomTile = new CustomTile(in);
+            tmpUser = UserHandle.readFromParcel(in);
+            tmpPostTime = in.readLong();
+            tmpKey = key();
         }
-        this.uid = in.readInt();
-        this.initialPid = in.readInt();
-        this.customTile = new CustomTile(in);
-        this.user = UserHandle.readFromParcel(in);
-        this.postTime = in.readLong();
-        this.key = key();
+
+        // Assign finals
+        this.pkg = tmpPkg;
+        this.opPkg = tmpOpPkg;
+        this.id = tmpId;
+        this.tag = tmpTag;
+        this.uid = tmpUid;
+        this.initialPid = tmpPid;
+        this.customTile = tmpCustomTile;
+        this.user = tmpUser;
+        this.postTime = tmpPostTime;
+        this.key = tmpKey;
     }
 
     private String key() {
@@ -112,6 +147,10 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
         out.writeString(this.pkg);
         out.writeString(this.opPkg);
         out.writeInt(this.id);
