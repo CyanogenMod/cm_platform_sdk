@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import cyanogenmod.os.Build;
 
 import java.util.ArrayList;
 
@@ -85,26 +86,38 @@ public class CustomTile implements Parcelable {
      * Unflatten the CustomTile from a parcel.
      */
     public CustomTile(Parcel parcel) {
-        resourcesPackageName = parcel.readString();
-        if (parcel.readInt() != 0) {
-            this.onClick = PendingIntent.CREATOR.createFromParcel(parcel);
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = parcel.readInt();
+
+        // Pattern here is that all new members should be added to the beginning of
+        // the writeToParcel method. Then we step through each version, until the first API release
+        // to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            this.resourcesPackageName = parcel.readString();
         }
-        if (parcel.readInt() != 0) {
-            this.onSettingsClick = Intent.CREATOR.createFromParcel(parcel);
+
+        if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
+            if (parcel.readInt() != 0) {
+                this.onClick = PendingIntent.CREATOR.createFromParcel(parcel);
+            }
+            if (parcel.readInt() != 0) {
+                this.onSettingsClick = Intent.CREATOR.createFromParcel(parcel);
+            }
+            if (parcel.readInt() != 0) {
+                this.onClickUri = Uri.CREATOR.createFromParcel(parcel);
+            }
+            if (parcel.readInt() != 0) {
+                this.label = parcel.readString();
+            }
+            if (parcel.readInt() != 0) {
+                this.contentDescription = parcel.readString();
+            }
+            if (parcel.readInt() != 0) {
+                this.expandedStyle = ExpandedStyle.CREATOR.createFromParcel(parcel);
+            }
+            this.icon = parcel.readInt();
         }
-        if (parcel.readInt() != 0) {
-            this.onClickUri = Uri.CREATOR.createFromParcel(parcel);
-        }
-        if (parcel.readInt() != 0) {
-            this.label = parcel.readString();
-        }
-        if (parcel.readInt() != 0) {
-            this.contentDescription = parcel.readString();
-        }
-        if (parcel.readInt() != 0) {
-            this.expandedStyle = ExpandedStyle.CREATOR.createFromParcel(parcel);
-        }
-        this.icon = parcel.readInt();
     }
 
     /**
@@ -177,6 +190,10 @@ public class CustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
         out.writeString(resourcesPackageName);
         if (onClick != null) {
             out.writeInt(1);
@@ -245,10 +262,19 @@ public class CustomTile implements Parcelable {
         private int styleId;
 
         private ExpandedStyle(Parcel parcel) {
-            if (parcel.readInt() != 0) {
-                expandedItems = parcel.createTypedArray(ExpandedItem.CREATOR);
+            // Read parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            int parcelableVersion = parcel.readInt();
+
+            // Pattern here is that all new members should be added to the beginning of
+            // the writeToParcel method. Then we step through each version, until the first API release
+            // to help unravel this parcel
+            if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
+                if (parcel.readInt() != 0) {
+                    expandedItems = parcel.createTypedArray(ExpandedItem.CREATOR);
+                }
+                styleId = parcel.readInt();
             }
-            styleId = parcel.readInt();
         }
 
         /**
@@ -298,6 +324,10 @@ public class CustomTile implements Parcelable {
 
         @Override
         public void writeToParcel(Parcel parcel, int i) {
+            // Write parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            parcel.writeInt(Build.PARCELABLE_VERSION);
+
             if (expandedItems != null) {
                 parcel.writeInt(1);
                 parcel.writeTypedArray(expandedItems, 0);
@@ -444,16 +474,25 @@ public class CustomTile implements Parcelable {
          * Unflatten the ExpandedItem from a parcel.
          */
         protected ExpandedItem(Parcel parcel) {
-            if (parcel.readInt() != 0) {
-                onClickPendingIntent = PendingIntent.CREATOR.createFromParcel(parcel);
+            // Read parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            int parcelableVersion = parcel.readInt();
+
+            // Pattern here is that all new members should be added to the beginning of
+            // the writeToParcel method. Then we step through each version, until the first API release
+            // to help unravel this parcel
+            if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
+                if (parcel.readInt() != 0) {
+                    onClickPendingIntent = PendingIntent.CREATOR.createFromParcel(parcel);
+                }
+                if (parcel.readInt() != 0) {
+                    itemTitle = parcel.readString();
+                }
+                if (parcel.readInt() != 0) {
+                    itemSummary = parcel.readString();
+                }
+                itemDrawableResourceId = parcel.readInt();
             }
-            if (parcel.readInt() != 0) {
-                itemTitle = parcel.readString();
-            }
-            if (parcel.readInt() != 0) {
-                itemSummary = parcel.readString();
-            }
-            itemDrawableResourceId = parcel.readInt();
         }
 
         @Override
@@ -463,6 +502,10 @@ public class CustomTile implements Parcelable {
 
         @Override
         public void writeToParcel(Parcel out, int flags) {
+            // Write parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            out.writeInt(Build.PARCELABLE_VERSION);
+
             if (onClickPendingIntent != null) {
                 out.writeInt(1);
                 onClickPendingIntent.writeToParcel(out, 0);

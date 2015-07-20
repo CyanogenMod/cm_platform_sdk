@@ -19,6 +19,7 @@ package cyanogenmod.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
+import cyanogenmod.os.Build;
 
 /**
  * Class encapsulating a Custom Tile. Sent by the StatusBarManagerService to clients including
@@ -66,6 +67,19 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
 
     public StatusBarPanelCustomTile(Parcel in) {
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+
+        // Pattern here is that all new members should be added to the beginning of
+        // the writeToParcel method. Then we step through each version, until the first API release
+        // to help unravel this parcel
+
+        // This is just an example, we need to always read the last data positions to make sure
+        // the members are always final.
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+        }
+
         this.pkg = in.readString();
         this.resPkg = in.readString();
         this.opPkg = in.readString();
@@ -115,6 +129,10 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
         out.writeString(this.pkg);
         out.writeString(this.resPkg);
         out.writeString(this.opPkg);
