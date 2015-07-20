@@ -27,6 +27,16 @@ public class Build {
     /** Value used for when a build property is unknown. */
     public static final String UNKNOWN = "unknown";
 
+    /**
+     * Since there might be a case where new versions of the cm framework use applications running
+     * old versions of the protocol (and thus old versions of this class), we need a versioning
+     * system for the parcels sent between the core framework and its sdk users.
+     *
+     * This parcelable version should be the latest version API version listed in
+     * {@link CM_VERSION_CODES}
+     */
+    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.BOYSENBERRY;
+
     private static final SparseArray<String> sdkMap;
     static
     {
