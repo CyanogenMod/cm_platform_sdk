@@ -26,6 +26,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
+import cyanogenmod.os.Build;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
 import cyanogenmod.profiles.ConnectionSettings;
@@ -476,6 +477,10 @@ public final class Profile implements Parcelable, Comparable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
         if (!TextUtils.isEmpty(mName)) {
             dest.writeInt(1);
             dest.writeString(mName);
@@ -554,6 +559,10 @@ public final class Profile implements Parcelable, Comparable {
 
     /** @hide */
     public void readFromParcel(Parcel in) {
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+
         if (in.readInt() != 0) {
             mName = in.readString();
         }
