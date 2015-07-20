@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import cyanogenmod.os.Build;
 
 import java.util.ArrayList;
 
@@ -85,7 +86,10 @@ public class CustomTile implements Parcelable {
      * Unflatten the CustomTile from a parcel.
      */
     public CustomTile(Parcel parcel) {
-        resourcesPackageName = parcel.readString();
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = parcel.readInt();
+
         if (parcel.readInt() != 0) {
             this.onClick = PendingIntent.CREATOR.createFromParcel(parcel);
         }
@@ -105,6 +109,7 @@ public class CustomTile implements Parcelable {
             this.expandedStyle = ExpandedStyle.CREATOR.createFromParcel(parcel);
         }
         this.icon = parcel.readInt();
+        this.resourcesPackageName = parcel.readString();
     }
 
     /**
@@ -177,7 +182,10 @@ public class CustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        out.writeString(resourcesPackageName);
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
         if (onClick != null) {
             out.writeInt(1);
             onClick.writeToParcel(out, 0);
@@ -215,6 +223,7 @@ public class CustomTile implements Parcelable {
             out.writeInt(0);
         }
         out.writeInt(icon);
+        out.writeString(resourcesPackageName);
     }
 
     /**
