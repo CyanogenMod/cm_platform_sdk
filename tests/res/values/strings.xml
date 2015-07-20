@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">CM Platform Tests</string>
     <string name="settings_tests_activity_name">CM Platform Settings Tests</string>
+    <string name="alarm_tests_activity_name">CM Platform Alarm Clock Tests</string>
 </resources>
