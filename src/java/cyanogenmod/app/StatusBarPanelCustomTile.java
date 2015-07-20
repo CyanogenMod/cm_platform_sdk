@@ -19,6 +19,7 @@ package cyanogenmod.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
+import cyanogenmod.os.Build;
 
 /**
  * Class encapsulating a Custom Tile. Sent by the StatusBarManagerService to clients including
@@ -66,21 +67,62 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
 
     public StatusBarPanelCustomTile(Parcel in) {
-        this.pkg = in.readString();
-        this.resPkg = in.readString();
-        this.opPkg = in.readString();
-        this.id = in.readInt();
-        if (in.readInt() != 0) {
-            this.tag = in.readString();
-        } else {
-            this.tag = null;
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+        int parcelableSize = in.readInt();
+        int startPosition = in.dataPosition();
+
+        // tmp variables for final
+        String tmpResPkg = null;
+        String tmpPkg = null;
+        String tmpOpPkg = null;
+        int tmpId = -1;
+        String tmpTag = null;
+        int tmpUid = -1;
+        int tmpPid = -1;
+        CustomTile tmpCustomTile = null;
+        UserHandle tmpUser = null;
+        long tmpPostTime = -1;
+
+        // Pattern here is that all new members should be added to the end of
+        // the writeToParcel method. Then we step through each version, until the latest
+        // API release to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
+            // default
+            tmpPkg = in.readString();
+            tmpOpPkg = in.readString();
+            tmpId = in.readInt();
+            if (in.readInt() != 0) {
+                tmpTag = in.readString();
+            } else {
+                tmpTag = null;
+            }
+            tmpUid = in.readInt();
+            tmpPid = in.readInt();
+            tmpCustomTile = new CustomTile(in);
+            tmpUser = UserHandle.readFromParcel(in);
+            tmpPostTime = in.readLong();
         }
-        this.uid = in.readInt();
-        this.initialPid = in.readInt();
-        this.customTile = new CustomTile(in);
-        this.user = UserHandle.readFromParcel(in);
-        this.postTime = in.readLong();
+
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            tmpResPkg = in.readString();
+        }
+
+        // Assign finals
+        this.resPkg = tmpResPkg;
+        this.pkg = tmpPkg;
+        this.opPkg = tmpOpPkg;
+        this.id = tmpId;
+        this.tag = tmpTag;
+        this.uid = tmpUid;
+        this.initialPid = tmpPid;
+        this.customTile = tmpCustomTile;
+        this.user = tmpUser;
+        this.postTime = tmpPostTime;
         this.key = key();
+
+        in.setDataPosition(startPosition + parcelableSize);
     }
 
     private String key() {
@@ -115,8 +157,18 @@ public class StatusBarPanelCustomTile implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
+        // Inject a placeholder that will store the parcel size from this point on
+        // (not including the size itself).
+        int sizePosition = out.dataPosition();
+        out.writeInt(0);
+        int startPosition = out.dataPosition();
+
+        // ==== APRICOT ===
         out.writeString(this.pkg);
-        out.writeString(this.resPkg);
         out.writeString(this.opPkg);
         out.writeInt(this.id);
         if (this.tag != null) {
@@ -130,6 +182,15 @@ public class StatusBarPanelCustomTile implements Parcelable {
         this.customTile.writeToParcel(out, flags);
         user.writeToParcel(out, flags);
         out.writeLong(this.postTime);
+
+        // ==== BOYSENBERRY =====
+        out.writeString(this.resPkg);
+
+        // Go back and write size
+        int parcelableSize = out.dataPosition() - startPosition;
+        out.setDataPosition(sizePosition);
+        out.writeInt(parcelableSize);
+        out.setDataPosition(startPosition + parcelableSize);
     }
 
     @Override

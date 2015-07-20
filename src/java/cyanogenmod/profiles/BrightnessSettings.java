@@ -21,6 +21,7 @@ import android.provider.Settings;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import cyanogenmod.os.Build;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -185,15 +186,45 @@ public final class BrightnessSettings implements Parcelable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
+        // Inject a placeholder that will store the parcel size from this point on
+        // (not including the size itself).
+        int sizePosition = dest.dataPosition();
+        dest.writeInt(0);
+        int startPosition = dest.dataPosition();
+
+        // === BOYSENBERRY ===
         dest.writeInt(mOverride ? 1 : 0);
         dest.writeInt(mValue);
         dest.writeInt(mDirty ? 1 : 0);
+
+        // Go back and write size
+        int parcelableSize = dest.dataPosition() - startPosition;
+        dest.setDataPosition(sizePosition);
+        dest.writeInt(parcelableSize);
+        dest.setDataPosition(startPosition + parcelableSize);
     }
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        mOverride = in.readInt() != 0;
-        mValue = in.readInt();
-        mDirty = in.readInt() != 0;
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+        int parcelableSize = in.readInt();
+        int startPosition = in.dataPosition();
+
+        // Pattern here is that all new members should be added to the end of
+        // the writeToParcel method. Then we step through each version, until the latest
+        // API release to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            mOverride = in.readInt() != 0;
+            mValue = in.readInt();
+            mDirty = in.readInt() != 0;
+        }
+
+        in.setDataPosition(startPosition + parcelableSize);
     }
 }

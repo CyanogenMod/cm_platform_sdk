@@ -26,6 +26,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
+import cyanogenmod.os.Build;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
 import cyanogenmod.profiles.ConnectionSettings;
@@ -189,18 +190,47 @@ public final class Profile implements Parcelable, Comparable {
         }
 
         private ProfileTrigger(Parcel in) {
-            mType = in.readInt();
-            mId = in.readString();
-            mState = in.readInt();
-            mName = in.readString();
+            // Read parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            int parcelableVersion = in.readInt();
+            int parcelableSize = in.readInt();
+            int startPosition = in.dataPosition();
+
+            // Pattern here is that all new members should be added to the end of
+            // the writeToParcel method. Then we step through each version, until the latest
+            // API release to help unravel this parcel
+            if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+                mType = in.readInt();
+                mId = in.readString();
+                mState = in.readInt();
+                mName = in.readString();
+            }
+
+            in.setDataPosition(startPosition + parcelableSize);
         }
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
+            // Write parcelable version, make sure to define explicit changes
+            // within {@link Build.PARCELABLE_VERSION);
+            dest.writeInt(Build.PARCELABLE_VERSION);
+
+            // Inject a placeholder that will store the parcel size from this point on
+            // (not including the size itself).
+            int sizePosition = dest.dataPosition();
+            dest.writeInt(0);
+            int startPosition = dest.dataPosition();
+
             dest.writeInt(mType);
             dest.writeString(mId);
             dest.writeInt(mState);
             dest.writeString(mName);
+
+            // Go back and write size
+            int parcelableSize = dest.dataPosition() - startPosition;
+            dest.setDataPosition(sizePosition);
+            dest.writeInt(parcelableSize);
+            dest.setDataPosition(startPosition + parcelableSize);
         }
 
         @Override
@@ -476,6 +506,17 @@ public final class Profile implements Parcelable, Comparable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
+        // Inject a placeholder that will store the parcel size from this point on
+        // (not including the size itself).
+        int sizePosition = dest.dataPosition();
+        dest.writeInt(0);
+        int startPosition = dest.dataPosition();
+
+        // === BOYSENBERRY ===
         if (!TextUtils.isEmpty(mName)) {
             dest.writeInt(1);
             dest.writeString(mName);
@@ -550,62 +591,81 @@ public final class Profile implements Parcelable, Comparable {
         dest.writeMap(mTriggers);
         dest.writeInt(mExpandedDesktopMode);
         dest.writeInt(mDozeMode);
+
+        // Go back and write size
+        int parcelableSize = dest.dataPosition() - startPosition;
+        dest.setDataPosition(sizePosition);
+        dest.writeInt(parcelableSize);
+        dest.setDataPosition(startPosition + parcelableSize);
     }
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        if (in.readInt() != 0) {
-            mName = in.readString();
-        }
-        if (in.readInt() != 0) {
-            mNameResId = in.readInt();
-        }
-        if (in.readInt() != 0) {
-            mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
-        }
-        if (in.readInt() != 0) {
-            for (Parcelable parcel : in.readParcelableArray(null)) {
-                ParcelUuid u = (ParcelUuid) parcel;
-                mSecondaryUuids.add(u.getUuid());
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+        int parcelableSize = in.readInt();
+        int startPosition = in.dataPosition();
+
+        // Pattern here is that all new members should be added to the end of
+        // the writeToParcel method. Then we step through each version, until the latest
+        // API release to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            if (in.readInt() != 0) {
+                mName = in.readString();
             }
-        }
-        mStatusBarIndicator = (in.readInt() == 1);
-        mProfileType = in.readInt();
-        mDirty = (in.readInt() == 1);
-        if (in.readInt() != 0) {
-            for (Parcelable group : in.readParcelableArray(null)) {
-                ProfileGroup grp = (ProfileGroup) group;
-                profileGroups.put(grp.getUuid(), grp);
-                if (grp.isDefaultGroup()) {
-                    mDefaultGroup = grp;
+            if (in.readInt() != 0) {
+                mNameResId = in.readInt();
+            }
+            if (in.readInt() != 0) {
+                mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
+            }
+            if (in.readInt() != 0) {
+                for (Parcelable parcel : in.readParcelableArray(null)) {
+                    ParcelUuid u = (ParcelUuid) parcel;
+                    mSecondaryUuids.add(u.getUuid());
                 }
             }
-        }
-        if (in.readInt() != 0) {
-            for (Parcelable parcel : in.readParcelableArray(null)) {
-                StreamSettings stream = (StreamSettings) parcel;
-                streams.put(stream.getStreamId(), stream);
+            mStatusBarIndicator = (in.readInt() == 1);
+            mProfileType = in.readInt();
+            mDirty = (in.readInt() == 1);
+            if (in.readInt() != 0) {
+                for (Parcelable group : in.readParcelableArray(null)) {
+                    ProfileGroup grp = (ProfileGroup) group;
+                    profileGroups.put(grp.getUuid(), grp);
+                    if (grp.isDefaultGroup()) {
+                        mDefaultGroup = grp;
+                    }
+                }
             }
-        }
-        if (in.readInt() != 0) {
-            for (Parcelable parcel : in.readParcelableArray(null)) {
-                ConnectionSettings connection = (ConnectionSettings) parcel;
-                connections.put(connection.getConnectionId(), connection);
+            if (in.readInt() != 0) {
+                for (Parcelable parcel : in.readParcelableArray(null)) {
+                    StreamSettings stream = (StreamSettings) parcel;
+                    streams.put(stream.getStreamId(), stream);
+                }
             }
+            if (in.readInt() != 0) {
+                for (Parcelable parcel : in.readParcelableArray(null)) {
+                    ConnectionSettings connection = (ConnectionSettings) parcel;
+                    connections.put(connection.getConnectionId(), connection);
+                }
+            }
+            if (in.readInt() != 0) {
+                mRingMode = RingModeSettings.CREATOR.createFromParcel(in);
+            }
+            if (in.readInt() != 0) {
+                mAirplaneMode = AirplaneModeSettings.CREATOR.createFromParcel(in);
+            }
+            if (in.readInt() != 0) {
+                mBrightness = BrightnessSettings.CREATOR.createFromParcel(in);
+            }
+            mScreenLockMode = in.readInt();
+            in.readMap(mTriggers, null);
+            mExpandedDesktopMode = in.readInt();
+            mDozeMode = in.readInt();
         }
-        if (in.readInt() != 0) {
-            mRingMode = RingModeSettings.CREATOR.createFromParcel(in);
-        }
-        if (in.readInt() != 0) {
-            mAirplaneMode = AirplaneModeSettings.CREATOR.createFromParcel(in);
-        }
-        if (in.readInt() != 0) {
-            mBrightness = BrightnessSettings.CREATOR.createFromParcel(in);
-        }
-        mScreenLockMode = in.readInt();
-        in.readMap(mTriggers, null);
-        mExpandedDesktopMode = in.readInt();
-        mDozeMode = in.readInt();
+
+        in.setDataPosition(startPosition + parcelableSize);
     }
 
     /**

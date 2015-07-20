@@ -18,6 +18,7 @@ package cyanogenmod.app;
 
 import android.app.Notification;
 import android.app.NotificationGroup;
+import cyanogenmod.os.Build;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -263,32 +264,61 @@ public final class ProfileGroup implements Parcelable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
+        // Inject a placeholder that will store the parcel size from this point on
+        // (not including the size itself).
+        int sizePosition = dest.dataPosition();
+        dest.writeInt(0);
+        int startPosition = dest.dataPosition();
+
+        // === BOYSENBERRY ===
         dest.writeString(mName);
         new ParcelUuid(mUuid).writeToParcel(dest, 0);
         dest.writeInt(mDefaultGroup ? 1 : 0);
         dest.writeInt(mDirty ? 1 : 0);
         dest.writeParcelable(mSoundOverride, flags);
         dest.writeParcelable(mRingerOverride, flags);
-
         dest.writeString(mSoundMode.name());
         dest.writeString(mRingerMode.name());
         dest.writeString(mVibrateMode.name());
         dest.writeString(mLightsMode.name());
+
+        // Go back and write size
+        int parcelableSize = dest.dataPosition() - startPosition;
+        dest.setDataPosition(sizePosition);
+        dest.writeInt(parcelableSize);
+        dest.setDataPosition(startPosition + parcelableSize);
     }
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        mName = in.readString();
-        mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
-        mDefaultGroup = in.readInt() != 0;
-        mDirty = in.readInt() != 0;
-        mSoundOverride = in.readParcelable(null);
-        mRingerOverride = in.readParcelable(null);
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+        int parcelableSize = in.readInt();
+        int startPosition = in.dataPosition();
 
-        mSoundMode = Mode.valueOf(Mode.class, in.readString());
-        mRingerMode = Mode.valueOf(Mode.class, in.readString());
-        mVibrateMode = Mode.valueOf(Mode.class, in.readString());
-        mLightsMode = Mode.valueOf(Mode.class, in.readString());
+        // Pattern here is that all new members should be added to the end of
+        // the writeToParcel method. Then we step through each version, until the latest
+        // API release to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            mName = in.readString();
+            mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
+            mDefaultGroup = in.readInt() != 0;
+            mDirty = in.readInt() != 0;
+            mSoundOverride = in.readParcelable(null);
+            mRingerOverride = in.readParcelable(null);
+
+            mSoundMode = Mode.valueOf(Mode.class, in.readString());
+            mRingerMode = Mode.valueOf(Mode.class, in.readString());
+            mVibrateMode = Mode.valueOf(Mode.class, in.readString());
+            mLightsMode = Mode.valueOf(Mode.class, in.readString());
+        }
+
+        in.setDataPosition(startPosition + parcelableSize);
     }
 
     public enum Mode {
