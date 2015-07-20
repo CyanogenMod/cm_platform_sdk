@@ -31,6 +31,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import com.android.internal.telephony.RILConstants;
 
+import cyanogenmod.os.Build;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -390,6 +391,10 @@ public final class ConnectionSettings implements Parcelable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
         dest.writeInt(mConnectionId);
         dest.writeInt(mOverride ? 1 : 0);
         dest.writeInt(mValue);
@@ -398,9 +403,18 @@ public final class ConnectionSettings implements Parcelable {
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        mConnectionId = in.readInt();
-        mOverride = in.readInt() != 0;
-        mValue = in.readInt();
-        mDirty = in.readInt() != 0;
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
+
+        // Pattern here is that all new members should be added to the beginning of
+        // the writeToParcel method. Then we step through each version, until the first API release
+        // to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            mConnectionId = in.readInt();
+            mOverride = in.readInt() != 0;
+            mValue = in.readInt();
+            mDirty = in.readInt() != 0;
+        }
     }
 }

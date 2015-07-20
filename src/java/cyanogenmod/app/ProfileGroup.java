@@ -18,6 +18,7 @@ package cyanogenmod.app;
 
 import android.app.Notification;
 import android.app.NotificationGroup;
+import cyanogenmod.os.Build;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -263,6 +264,10 @@ public final class ProfileGroup implements Parcelable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        dest.writeInt(Build.PARCELABLE_VERSION);
+
         dest.writeString(mName);
         new ParcelUuid(mUuid).writeToParcel(dest, 0);
         dest.writeInt(mDefaultGroup ? 1 : 0);
@@ -278,17 +283,26 @@ public final class ProfileGroup implements Parcelable {
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        mName = in.readString();
-        mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
-        mDefaultGroup = in.readInt() != 0;
-        mDirty = in.readInt() != 0;
-        mSoundOverride = in.readParcelable(null);
-        mRingerOverride = in.readParcelable(null);
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = in.readInt();
 
-        mSoundMode = Mode.valueOf(Mode.class, in.readString());
-        mRingerMode = Mode.valueOf(Mode.class, in.readString());
-        mVibrateMode = Mode.valueOf(Mode.class, in.readString());
-        mLightsMode = Mode.valueOf(Mode.class, in.readString());
+        // Pattern here is that all new members should be added to the beginning of
+        // the writeToParcel method. Then we step through each version, until the first API release
+        // to help unravel this parcel
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            mName = in.readString();
+            mUuid = ParcelUuid.CREATOR.createFromParcel(in).getUuid();
+            mDefaultGroup = in.readInt() != 0;
+            mDirty = in.readInt() != 0;
+            mSoundOverride = in.readParcelable(null);
+            mRingerOverride = in.readParcelable(null);
+
+            mSoundMode = Mode.valueOf(Mode.class, in.readString());
+            mRingerMode = Mode.valueOf(Mode.class, in.readString());
+            mVibrateMode = Mode.valueOf(Mode.class, in.readString());
+            mLightsMode = Mode.valueOf(Mode.class, in.readString());
+        }
     }
 
     public enum Mode {
