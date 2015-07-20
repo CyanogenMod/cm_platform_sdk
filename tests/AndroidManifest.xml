@@ -25,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".alarmclock.CMAlarmClockTest"
+                  android:label="@string/alarm_tests_activity_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".profiles.ProfileTest"
                   android:label="@string/app_name">
             <intent-filter>
