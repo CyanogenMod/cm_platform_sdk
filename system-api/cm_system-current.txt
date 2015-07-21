@@ -243,7 +243,6 @@ package cyanogenmod.os {
   public class Build {
     ctor public Build();
     method public static java.lang.String getNameForSDKInt(int);
-    field public static final int PARCELABLE_VERSION = 2; // 0x2
     field public static final java.lang.String UNKNOWN = "unknown";
   }
 
