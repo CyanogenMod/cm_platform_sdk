@@ -60,6 +60,7 @@ public class CMStatusBarTest extends TestActivity {
                             .setLabel("Test From SDK")
                             .setIcon(R.drawable.ic_launcher)
                             .setOnClickIntent(intent)
+                            .shouldCollapsePanel(true)
                             .setContentDescription("Content description")
                             .build();
                     mCMStatusBarManager.publishTile(CUSTOM_TILE_ID, mCustomTile);
@@ -77,6 +78,7 @@ public class CMStatusBarTest extends TestActivity {
                                     .setLabel("Test 3 seconds")
                                     .setIcon(R.drawable.ic_launcher)
                                     .setOnClickIntent(intent)
+                                    .shouldCollapsePanel(true)
                                     .setContentDescription("Content description")
                                     .build();
                             mCMStatusBarManager.publishTile(CUSTOM_TILE_ID, mCustomTile);
