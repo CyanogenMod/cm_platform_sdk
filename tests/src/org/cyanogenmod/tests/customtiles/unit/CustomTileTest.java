@@ -169,6 +169,25 @@ public class CustomTileTest extends AndroidTestCase {
         assertEquals(expectedCustomTile.icon, fromParcel.icon);
     }
 
+    @SmallTest
+    public void testCustomTileCollapsePanelUnravelFromParcel() {
+        CustomTile expectedCustomTile = new CustomTile.Builder(mContext)
+                .shouldCollapsePanel(true)
+                .build();
+
+        // Write to parcel
+        Parcel parcel = Parcel.obtain();
+        expectedCustomTile.writeToParcel(parcel, 0);
+
+        // Rewind
+        parcel.setDataPosition(0);
+
+        // Verify data when unraveling
+        CustomTile fromParcel = CustomTile.CREATOR.createFromParcel(parcel);
+
+        assertEquals(expectedCustomTile.collapsePanel, fromParcel.collapsePanel);
+    }
+
     @MediumTest
     public void testCustomTileExpandedListStyleUnravelFromParcel() {
         PendingIntent intent = PendingIntent.getActivity(mContext, 0,

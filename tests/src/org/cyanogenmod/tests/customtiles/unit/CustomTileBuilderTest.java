@@ -106,6 +106,15 @@ public class CustomTileBuilderTest extends AndroidTestCase {
         assertEquals(resourceInt, customTile.icon);
     }
 
+    @SmallTest
+    public void testCustomTileBuilderCollapsePanelSet() {
+        boolean collapsePanel = true;
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .shouldCollapsePanel(collapsePanel)
+                .build();
+        assertEquals(collapsePanel, customTile.collapsePanel);
+    }
+
     @MediumTest
     public void testCustomTileBuilderExpandedListStyleSet() {
         PendingIntent intent = PendingIntent.getActivity(mContext, 0,
