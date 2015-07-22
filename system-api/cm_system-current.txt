@@ -17,6 +17,7 @@ package cyanogenmod.app {
     method public int describeContents();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile> CREATOR;
+    field public boolean collapsePanel;
     field public java.lang.String contentDescription;
     field public cyanogenmod.app.CustomTile.ExpandedStyle expandedStyle;
     field public int icon;
@@ -38,6 +39,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.CustomTile.Builder setOnClickIntent(android.app.PendingIntent);
     method public cyanogenmod.app.CustomTile.Builder setOnClickUri(android.net.Uri);
     method public cyanogenmod.app.CustomTile.Builder setOnSettingsClickIntent(android.content.Intent);
+    method public cyanogenmod.app.CustomTile.Builder shouldCollapsePanel(boolean);
   }
 
   public static class CustomTile.ExpandedGridItem extends cyanogenmod.app.CustomTile.ExpandedItem {
