@@ -18,6 +18,8 @@ package org.cyanogenmod.tests.customtiles.unit;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
@@ -104,6 +106,18 @@ public class CustomTileBuilderTest extends AndroidTestCase {
         assertNotNull(customTile.icon);
         assertNotSame(customTile.icon, 0);
         assertEquals(resourceInt, customTile.icon);
+    }
+
+    @SmallTest
+    public void testCustomTileBuilderRemoteIconSet() {
+        int resourceInt = R.drawable.ic_whatshot_white_24dp;
+        Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(),
+                resourceInt);
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .setIcon(bitmap)
+                .build();
+        assertNotNull(customTile.remoteIcon);
+        assertEquals(bitmap, customTile.remoteIcon);
     }
 
     @SmallTest
