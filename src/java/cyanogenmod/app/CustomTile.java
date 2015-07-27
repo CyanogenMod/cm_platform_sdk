@@ -19,6 +19,7 @@ package cyanogenmod.app;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -77,6 +78,11 @@ public class CustomTile implements Parcelable {
     public int icon;
 
     /**
+     * A remote icon to represent the custom tile
+     */
+    public Bitmap remoteIcon;
+
+    /**
      * An expanded style for when the CustomTile is clicked, can either be
      * a {@link GridExpandedStyle} or a {@link ListExpandedStyle}
      */
@@ -127,6 +133,9 @@ public class CustomTile implements Parcelable {
         if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
             this.resourcesPackageName = parcel.readString();
             this.collapsePanel = (parcel.readInt() == 1);
+            if (parcel.readInt() != 0) {
+                this.remoteIcon = Bitmap.CREATOR.createFromParcel(parcel);
+            }
         }
 
         parcel.setDataPosition(startPosition + parcelableSize);
@@ -179,6 +188,9 @@ public class CustomTile implements Parcelable {
         b.append("icon=" + icon + NEW_LINE);
         b.append("resourcesPackageName=" + resourcesPackageName + NEW_LINE);
         b.append("collapsePanel=" + collapsePanel + NEW_LINE);
+        if (remoteIcon != null) {
+            b.append("remoteIcon=" + remoteIcon.getGenerationId() + NEW_LINE);
+        }
         return b.toString();
     }
 
@@ -196,6 +208,7 @@ public class CustomTile implements Parcelable {
         that.expandedStyle = this.expandedStyle;
         that.icon = this.icon;
         that.collapsePanel = this.collapsePanel;
+        that.remoteIcon = this.remoteIcon;
     }
 
     @Override
@@ -257,6 +270,13 @@ public class CustomTile implements Parcelable {
         // ==== BOYSENBERRY =====
         out.writeString(resourcesPackageName);
         out.writeInt(collapsePanel ? 1 : 0);
+
+        if (remoteIcon != null) {
+            out.writeInt(1);
+            remoteIcon.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
 
         // Go back and write size
         int parcelableSize = out.dataPosition() - startPosition;
@@ -477,6 +497,11 @@ public class CustomTile implements Parcelable {
         public int itemDrawableResourceId;
 
         /**
+         * A bitmap to be utilized instead of #itemDrawableResourceId
+         */
+        public Bitmap itemBitmapResource;
+
+        /**
          * The title of the item
          */
         public String itemTitle;
@@ -495,6 +520,13 @@ public class CustomTile implements Parcelable {
          */
         protected void internalSetItemDrawable(int resourceId) {
             itemDrawableResourceId = resourceId;
+        }
+
+        /**
+         * @hide
+         */
+        protected void internalSetItemBitmap(Bitmap bitmap) {
+            itemBitmapResource = bitmap;
         }
 
         /**
@@ -544,6 +576,12 @@ public class CustomTile implements Parcelable {
                 itemDrawableResourceId = parcel.readInt();
             }
 
+            if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+                if (parcel.readInt() != 0) {
+                    itemBitmapResource = Bitmap.CREATOR.createFromParcel(parcel);
+                }
+            }
+
             parcel.setDataPosition(startPosition + parcelableSize);
         }
 
@@ -564,6 +602,7 @@ public class CustomTile implements Parcelable {
             out.writeInt(0);
             int startPosition = out.dataPosition();
 
+            // ==== APRICOT ====
             if (onClickPendingIntent != null) {
                 out.writeInt(1);
                 onClickPendingIntent.writeToParcel(out, 0);
@@ -583,6 +622,14 @@ public class CustomTile implements Parcelable {
                 out.writeInt(0);
             }
             out.writeInt(itemDrawableResourceId);
+
+            // ==== BOYSENBERRY ====
+            if (itemBitmapResource != null) {
+                out.writeInt(1);
+                itemBitmapResource.writeToParcel(out, 0);
+            } else {
+                out.writeInt(0);
+            }
 
             // Go back and write size
             int parcelableSize = out.dataPosition() - startPosition;
@@ -605,6 +652,9 @@ public class CustomTile implements Parcelable {
                 b.append("itemSummary= " + itemSummary.toString() + NEW_LINE);
             }
             b.append("itemDrawableResourceId=" + itemDrawableResourceId + NEW_LINE);
+            if (itemBitmapResource != null) {
+                b.append("itemBitmapResource=" + itemBitmapResource.getGenerationId() + NEW_LINE);
+            }
             return b.toString();
         }
 
@@ -655,6 +705,15 @@ public class CustomTile implements Parcelable {
         public void setExpandedGridItemDrawable(int resourceId) {
             internalSetItemDrawable(resourceId);
         }
+
+        /**
+         * Sets the bitmap associated with the {@link ExpandedGridItem} to be utilized instead of
+         * the {@link ExpandedItem#itemDrawableResourceId}
+         * @param bitmap
+         */
+        public void setExpandedGridItemBitmap(Bitmap bitmap) {
+            internalSetItemBitmap(bitmap);
+        }
     }
 
     /**
@@ -698,6 +757,15 @@ public class CustomTile implements Parcelable {
         public void setExpandedListItemDrawable(int resourceId) {
             internalSetItemDrawable(resourceId);
         }
+
+        /**
+         * Sets the bitmap associated with the {@link ExpandedListItem} to be utilized instead of
+         * the {@link ExpandedItem#itemDrawableResourceId}
+         * @param bitmap
+         */
+        public void setExpandedListItemBitmap(Bitmap bitmap) {
+            internalSetItemBitmap(bitmap);
+        }
     }
 
     /**
@@ -740,6 +808,7 @@ public class CustomTile implements Parcelable {
         private String mLabel;
         private String mContentDescription;
         private int mIcon;
+        private Bitmap mRemoteIcon;
         private Context mContext;
         private ExpandedStyle mExpandedStyle;
         private boolean mCollapsePanel = true;
@@ -833,6 +902,17 @@ public class CustomTile implements Parcelable {
         }
 
         /**
+         * Set a bitmap icon to the custom tile to be utilized instead of {@link CustomTile#icon}
+         * @see CustomTile#remoteIcon
+         * @param remoteIcon
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder setIcon(Bitmap remoteIcon) {
+            mRemoteIcon = remoteIcon;
+            return this;
+        }
+
+        /**
          * Set an {@link ExpandedStyle} to to be displayed when a user clicks the custom tile
          * @param expandedStyle
          * @return {@link cyanogenmod.app.CustomTile.Builder}
@@ -873,6 +953,7 @@ public class CustomTile implements Parcelable {
             tile.expandedStyle = mExpandedStyle;
             tile.icon = mIcon;
             tile.collapsePanel = mCollapsePanel;
+            tile.remoteIcon = mRemoteIcon;
             return tile;
         }
     }
