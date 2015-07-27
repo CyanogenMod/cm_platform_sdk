@@ -201,11 +201,11 @@ public class CMStatusBarManagerService extends SystemService {
 
                 mCustomTileByKey.put(sbc.getKey(), r);
 
-                if (customTile.icon != 0) {
+                if (customTile.icon != 0 || customTile.remoteIcon != null) {
                     StatusBarPanelCustomTile oldSbn = (old != null) ? old.sbTile : null;
                     mCustomTileListeners.notifyPostedLocked(sbc, oldSbn);
                 } else {
-                    Slog.e(TAG, "Not posting custom tile with icon==0: " + customTile);
+                    Slog.e(TAG, "Not posting custom tile with no icon set: " + customTile);
                     if (old != null && !old.isCanceled) {
                         mCustomTileListeners.notifyRemovedLocked(sbc);
                     }
