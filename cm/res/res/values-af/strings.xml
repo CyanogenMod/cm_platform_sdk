@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">Verbind aan a pasgemaakte teël luisteraar diens</string>
   <string name="permdesc_bindCustomTileListenerService">Laat toe die program om te bind aan a top vlak koppelvlak van \'n pasgemaakte teël luister diens.</string>
   <string name="custom_tile_listener_binding_label">Pasgemaakte teël luisteraar</string>
+  <string name="profileNameDefault">Normaal</string>
+  <string name="profileNameWork">Werk</string>
+  <string name="profileNameHome">Tuis</string>
+  <string name="profileNameSilent">Stil</string>
+  <string name="profileNameNight">Nag</string>
+  <string name="profileNameAutomobile">Motor</string>
+  <string name="profileGroupPhone">Foon</string>
+  <string name="profileGroupCalendar">Kalender</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Epos</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Ander</string>
 </resources>

@@ -19,5 +19,19 @@
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
   <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
   <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
+  <string name="permlab_bindCustomTileListenerService">Anbindung an einen Listener-Service für benutzerdefinierte Kacheln</string>
   <string name="permdesc_bindCustomTileListenerService">Ermöglicht der App, sich an einen Listener-Service für benutzerdefinierte Kacheln zu binden.</string>
+  <string name="custom_tile_listener_binding_label">Listener für benutzerdefinierte Kacheln</string>
+  <string name="profileNameDefault">Standard</string>
+  <string name="profileNameWork">Arbeit</string>
+  <string name="profileNameHome">Zu Hause</string>
+  <string name="profileNameSilent">Lautlos</string>
+  <string name="profileNameNight">Nacht</string>
+  <string name="profileNameAutomobile">Fahrzeug</string>
+  <string name="profileGroupPhone">Telefon</string>
+  <string name="profileGroupCalendar">Kalender</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-Mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Anderes</string>
 </resources>

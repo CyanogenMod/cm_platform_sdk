@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">egyéni csempe figyelőszolgáltatáshoz kötés</string>
   <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazás számára, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
   <string name="custom_tile_listener_binding_label">Egyéni csempe figyelőszolgáltatás</string>
+  <string name="profileNameDefault">Alapértelmezett</string>
+  <string name="profileNameWork">Munka</string>
+  <string name="profileNameHome">Otthon</string>
+  <string name="profileNameSilent">Néma</string>
+  <string name="profileNameNight">Éjszaka</string>
+  <string name="profileNameAutomobile">Autóban</string>
+  <string name="profileGroupPhone">Telefon</string>
+  <string name="profileGroupCalendar">Naptár</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Egyéb</string>
 </resources>

@@ -22,4 +22,16 @@
   <string name="permlab_bindCustomTileListenerService">forbind til en tilpasset fliseservice-lytter</string>
   <string name="permdesc_bindCustomTileListenerService">Tillader en app at oprette forbindelse til brugerfladen på højeste niveau i en tilpasset fliseservice-lytter.</string>
   <string name="custom_tile_listener_binding_label">Tilpasset fliseservice-lytter</string>
+  <string name="profileNameDefault">Standard</string>
+  <string name="profileNameWork">Arbejde</string>
+  <string name="profileNameHome">Hjem</string>
+  <string name="profileNameSilent">Lydløs</string>
+  <string name="profileNameNight">Nat</string>
+  <string name="profileNameAutomobile">Bil</string>
+  <string name="profileGroupPhone">Telefon</string>
+  <string name="profileGroupCalendar">Kalender</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">E-mail</string>
+  <string name="profileGroupSMS">SMS</string>
+  <string name="wildcardProfile">Andre</string>
 </resources>
