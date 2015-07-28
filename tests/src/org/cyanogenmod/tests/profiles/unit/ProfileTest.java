@@ -27,6 +27,7 @@ import cyanogenmod.app.Profile;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
 import cyanogenmod.profiles.ConnectionSettings;
+import cyanogenmod.profiles.LockSettings;
 import cyanogenmod.profiles.RingModeSettings;
 import cyanogenmod.profiles.StreamSettings;
 
@@ -177,10 +178,32 @@ public class ProfileTest extends AndroidTestCase {
     }
 
     @MediumTest
+    public void testProfileLockSettingsUnravelFromParcel() {
+        Profile profile = new Profile("Lock Profile");
+        LockSettings expectedLockSettings = new LockSettings(Profile.LockMode.INSECURE);
+        profile.setScreenLockMode(expectedLockSettings);
+
+        // Write to parcel
+        Parcel parcel = Parcel.obtain();
+        profile.writeToParcel(parcel, 0);
+
+        // Rewind
+        parcel.setDataPosition(0);
+
+        // Verify data when unraveling
+        Profile fromParcel = Profile.CREATOR.createFromParcel(parcel);
+
+        LockSettings actualLockSettings = fromParcel.getScreenLockMode();
+
+        assertNotNull(fromParcel);
+        assertEquals(expectedLockSettings.getValue(), actualLockSettings.getValue());
+        assertEquals(expectedLockSettings.isDirty(), actualLockSettings.isDirty());
+    }
+
+    @MediumTest
     public void testProfileUnravelFromParcel() {
         Profile profile = new Profile("Single Profile");
         profile.setProfileType(Profile.Type.TOGGLE);
-        profile.setScreenLockMode(Profile.LockMode.DISABLE);
         profile.setDozeMode(Profile.DozeMode.ENABLE);
         profile.setStatusBarIndicator(true);
 
@@ -197,7 +220,6 @@ public class ProfileTest extends AndroidTestCase {
         assertNotNull(fromParcel);
         assertEquals(profile.getName(), fromParcel.getName());
         assertEquals(profile.getProfileType(), fromParcel.getProfileType());
-        assertEquals(profile.getScreenLockMode(), fromParcel.getScreenLockMode());
         assertEquals(profile.getDozeMode(), fromParcel.getDozeMode());
         assertEquals(profile.getStatusBarIndicator(), fromParcel.getStatusBarIndicator());
     }
