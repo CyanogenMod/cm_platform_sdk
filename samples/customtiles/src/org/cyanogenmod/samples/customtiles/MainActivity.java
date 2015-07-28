@@ -84,6 +84,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .setOnClickIntent(pendingIntent)
                         .setContentDescription("Generic content description")
                         .setLabel("CustomTile " + States.STATE_OFF)
+                        .shouldCollapsePanel(false)
                         .setIcon(R.drawable.ic_launcher)
                         .build();
                 CMStatusBarManager.getInstance(this)
