@@ -30,6 +30,7 @@ import cyanogenmod.os.Build;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
 import cyanogenmod.profiles.ConnectionSettings;
+import cyanogenmod.profiles.LockSettings;
 import cyanogenmod.profiles.RingModeSettings;
 import cyanogenmod.profiles.StreamSettings;
 
@@ -86,7 +87,7 @@ public final class Profile implements Parcelable, Comparable {
 
     private BrightnessSettings mBrightness = new BrightnessSettings();
 
-    private int mScreenLockMode = LockMode.DEFAULT;
+    private LockSettings mScreenLockMode = new LockSettings();
 
     private int mExpandedDesktopMode = ExpandedDesktopMode.DEFAULT;
 
@@ -587,7 +588,12 @@ public final class Profile implements Parcelable, Comparable {
         } else {
             dest.writeInt(0);
         }
-        dest.writeInt(mScreenLockMode);
+        if (mScreenLockMode != null) {
+            dest.writeInt(1);
+            mScreenLockMode.writeToParcel(dest, 0);
+        } else {
+            dest.writeInt(0);
+        }
         dest.writeMap(mTriggers);
         dest.writeInt(mExpandedDesktopMode);
         dest.writeInt(mDozeMode);
@@ -659,7 +665,9 @@ public final class Profile implements Parcelable, Comparable {
             if (in.readInt() != 0) {
                 mBrightness = BrightnessSettings.CREATOR.createFromParcel(in);
             }
-            mScreenLockMode = in.readInt();
+            if (in.readInt() != 0) {
+                mScreenLockMode = LockSettings.CREATOR.createFromParcel(in);
+            }
             in.readMap(mTriggers, null);
             mExpandedDesktopMode = in.readInt();
             mDozeMode = in.readInt();
@@ -792,23 +800,19 @@ public final class Profile implements Parcelable, Comparable {
     }
 
     /**
-     * Get the {@link LockMode} for the {@link Profile}
+     * Get the {@link LockSettings} for the {@link Profile}
      * @return
      */
-    public int getScreenLockMode() {
+    public LockSettings getScreenLockMode() {
         return mScreenLockMode;
     }
 
     /**
-     * Set the {@link LockMode} for the {@link Profile}
+     * Set the {@link LockSettings} for the {@link Profile}
      * @param screenLockMode
      */
-    public void setScreenLockMode(int screenLockMode) {
-        if (screenLockMode < LockMode.DEFAULT || screenLockMode > LockMode.DISABLE) {
-            mScreenLockMode = LockMode.DEFAULT;
-        } else {
-            mScreenLockMode = screenLockMode;
-        }
+    public void setScreenLockMode(LockSettings screenLockMode) {
+        mScreenLockMode = screenLockMode;
         mDirty = true;
     }
 
@@ -952,9 +956,11 @@ public final class Profile implements Parcelable, Comparable {
         builder.append(getStatusBarIndicator() ? "yes" : "no");
         builder.append("</statusbar>\n");
 
-        builder.append("<screen-lock-mode>");
-        builder.append(mScreenLockMode);
-        builder.append("</screen-lock-mode>\n");
+        if (mScreenLockMode != null) {
+            builder.append("<screen-lock-mode>");
+            mScreenLockMode.writeXmlString(builder, context);
+            builder.append("</screen-lock-mode>\n");
+        }
 
         builder.append("<expanded-desktop-mode>");
         builder.append(mExpandedDesktopMode);
@@ -1103,7 +1109,8 @@ public final class Profile implements Parcelable, Comparable {
                     profile.setBrightness(bd);
                 }
                 if (name.equals("screen-lock-mode")) {
-                    profile.setScreenLockMode(Integer.valueOf(xpp.nextText()));
+                    LockSettings lockMode = new LockSettings(Integer.valueOf(xpp.nextText()));
+                    profile.setScreenLockMode(lockMode);
                 }
                 if (name.equals("expanded-desktop-mode")) {
                     profile.setExpandedDesktopMode(Integer.valueOf(xpp.nextText()));
@@ -1160,6 +1167,9 @@ public final class Profile implements Parcelable, Comparable {
 
         // Set brightness
         mBrightness.processOverride(context);
+
+        // Set lock screen mode
+        mScreenLockMode.processOverride(context);
 
         // Set expanded desktop
         // if (mExpandedDesktopMode != ExpandedDesktopMode.DEFAULT) {

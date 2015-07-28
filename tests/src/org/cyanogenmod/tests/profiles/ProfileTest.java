@@ -26,6 +26,7 @@ import cyanogenmod.app.ProfileManager;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
 import cyanogenmod.profiles.ConnectionSettings;
+import cyanogenmod.profiles.LockSettings;
 import cyanogenmod.profiles.RingModeSettings;
 import cyanogenmod.profiles.StreamSettings;
 import org.cyanogenmod.tests.TestActivity;
@@ -64,7 +65,7 @@ public class ProfileTest extends TestActivity {
                     profile.setProfileType(Type.TOGGLE);
                     profile.setExpandedDesktopMode(Profile.ExpandedDesktopMode.ENABLE);
                     profile.setDozeMode(Profile.DozeMode.DEFAULT);
-                    profile.setScreenLockMode(Profile.LockMode.DISABLE);
+                    profile.setScreenLockMode(new LockSettings(Profile.LockMode.DISABLE));
                     mProfileUuidList.add(profile.getUuid());
                     mProfileManager.addProfile(profile);
                 }
@@ -76,7 +77,7 @@ public class ProfileTest extends TestActivity {
                     profile.setProfileType(Type.TOGGLE);
                     profile.setExpandedDesktopMode(Profile.ExpandedDesktopMode.ENABLE);
                     profile.setDozeMode(Profile.DozeMode.DEFAULT);
-                    profile.setScreenLockMode(Profile.LockMode.DISABLE);
+                    profile.setScreenLockMode(new LockSettings(Profile.LockMode.DISABLE));
                     mProfileUuidList.add(profile.getUuid());
                     mProfileManager.addProfile(profile);
                     mProfileManager.setActiveProfile(profile.getUuid());
@@ -94,7 +95,7 @@ public class ProfileTest extends TestActivity {
                     profile.setProfileType(Type.TOGGLE);
                     profile.setExpandedDesktopMode(Profile.ExpandedDesktopMode.ENABLE);
                     profile.setDozeMode(Profile.DozeMode.DEFAULT);
-                    profile.setScreenLockMode(Profile.LockMode.DISABLE);
+                    profile.setScreenLockMode(new LockSettings(Profile.LockMode.DISABLE));
                     mProfileUuidList.add(profile.getUuid());
                     mProfileManager.addProfile(profile);
                     mProfileManager.setActiveProfile(profile.getUuid());
