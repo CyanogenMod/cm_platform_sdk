@@ -532,11 +532,15 @@ public class ProfileManager {
      */
     public ProfileGroup getActiveProfileGroup(String packageName) {
         NotificationGroup notificationGroup = getNotificationGroupForPackage(packageName);
+        final Profile activeProfile = getActiveProfile();
+        if (activeProfile == null) {
+            return null;
+        }
         if (notificationGroup == null) {
-            ProfileGroup defaultGroup = getActiveProfile().getDefaultGroup();
+            ProfileGroup defaultGroup = activeProfile.getDefaultGroup();
             return defaultGroup;
         }
-        return getActiveProfile().getProfileGroup(notificationGroup.getUuid());
+        return activeProfile.getProfileGroup(notificationGroup.getUuid());
     }
 
     /**
