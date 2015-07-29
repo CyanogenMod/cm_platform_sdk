@@ -24,6 +24,7 @@ import android.test.AndroidTestCase;
 
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
+import android.widget.RemoteViews;
 import cyanogenmod.app.CustomTile;
 
 import org.cyanogenmod.tests.R;
@@ -281,5 +282,33 @@ public class CustomTileTest extends AndroidTestCase {
             assertEquals(itemExpected.itemTitle, itemReal.itemTitle);
             assertEquals(itemExpected.itemSummary, itemReal.itemSummary);
         }
+    }
+
+    @MediumTest
+    public void testCustomTileExpandedRemoteStyleUnravelFromParcel() {
+        RemoteViews contentView = new RemoteViews(mContext.getPackageName(), R.layout.remote_view);
+
+        CustomTile.RemoteExpandedStyle remoteExpandedStyle =
+                new CustomTile.RemoteExpandedStyle();
+        remoteExpandedStyle.setRemoteViews(contentView);
+
+        CustomTile expectedCustomTile = new CustomTile.Builder(mContext)
+                .setExpandedStyle(remoteExpandedStyle)
+                .build();
+
+        // Write to parcel
+        Parcel parcel = Parcel.obtain();
+        expectedCustomTile.writeToParcel(parcel, 0);
+
+        // Rewind
+        parcel.setDataPosition(0);
+
+        // Verify data when unraveling
+        CustomTile fromParcel = CustomTile.CREATOR.createFromParcel(parcel);
+
+        assertNotNull(fromParcel.expandedStyle);
+        assertEquals(expectedCustomTile.expandedStyle.getStyle(),
+                fromParcel.expandedStyle.getStyle());
+        assertNotNull(fromParcel.expandedStyle.getContentViews());
     }
 }
