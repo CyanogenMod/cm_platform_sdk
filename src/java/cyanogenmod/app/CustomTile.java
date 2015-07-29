@@ -25,6 +25,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.RemoteViews;
 import cyanogenmod.os.Build;
 
 import java.util.ArrayList;
@@ -309,10 +310,16 @@ public class CustomTile implements Parcelable {
          */
         public static final int LIST_STYLE = 1;
 
+        /**
+         * Identifier for a remote view style expanded view
+         */
+        public static final int REMOTE_STYLE = 2;
+
         private ExpandedStyle() {
             styleId = NO_STYLE;
         }
 
+        private RemoteViews contentViews;
         private ExpandedItem[] expandedItems;
         private int styleId;
 
@@ -331,6 +338,12 @@ public class CustomTile implements Parcelable {
                     expandedItems = parcel.createTypedArray(ExpandedItem.CREATOR);
                 }
                 styleId = parcel.readInt();
+            }
+
+            if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+                if (parcel.readInt() != 0) {
+                    contentViews = RemoteViews.CREATOR.createFromParcel(parcel);
+                }
             }
 
             parcel.setDataPosition(startPosition + parcelableSize);
@@ -360,6 +373,13 @@ public class CustomTile implements Parcelable {
         /**
          * @hide
          */
+        protected void internalSetRemoteViews(RemoteViews remoteViews) {
+            contentViews = remoteViews;
+        }
+
+        /**
+         * @hide
+         */
         protected void internalStyleId(int id) {
             styleId = id;
         }
@@ -370,6 +390,14 @@ public class CustomTile implements Parcelable {
          */
         public ExpandedItem[] getExpandedItems() {
             return expandedItems;
+        }
+
+        /**
+         * Retrieve the RemoteViews that have been set on this expanded style
+         * @return RemoteViews
+         */
+        public RemoteViews getContentViews() {
+            return contentViews;
         }
 
         /**
@@ -405,6 +433,14 @@ public class CustomTile implements Parcelable {
                 parcel.writeInt(0);
             }
             parcel.writeInt(styleId);
+
+            // ==== BOYSENBERRY ====
+            if (contentViews != null) {
+                parcel.writeInt(1);
+                contentViews.writeToParcel(parcel, 0);
+            } else {
+                parcel.writeInt(0);
+            }
 
             // Go back and write size
             int parcelableSize = parcel.dataPosition() - startPosition;
@@ -487,6 +523,26 @@ public class CustomTile implements Parcelable {
          */
         public void setListItems(ArrayList<ExpandedListItem> expandedListItems) {
             internalSetExpandedItems(expandedListItems);
+        }
+    }
+
+    /**
+     * An instance of {@link ExpandedStyle} that shows a remote view in the remote process
+     */
+    public static class RemoteExpandedStyle extends ExpandedStyle {
+        /**
+         * Constructs a RemoteExpandedStyle object with default values.
+         */
+        public RemoteExpandedStyle() {
+            internalStyleId(REMOTE_STYLE);
+        }
+
+        /**
+         * Sets the RemoteViews for the {@link RemoteExpandedStyle}
+         * @param remoteViews a remote view
+         */
+        public void setRemoteViews(RemoteViews remoteViews) {
+            internalSetRemoteViews(remoteViews);
         }
     }
 
