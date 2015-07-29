@@ -23,6 +23,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Handler;
 
+import android.widget.RemoteViews;
 import cyanogenmod.app.CustomTile;
 import cyanogenmod.app.CMStatusBarManager;
 
@@ -296,6 +297,36 @@ public class CMStatusBarTest extends TestActivity {
                     CMStatusBarManager.getInstance(CMStatusBarTest.this)
                             .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
                 }
-            }
+            },
+
+            new Test("test publish tile with remote view") {
+                public void run() {
+                    RemoteViews contentView = new RemoteViews(getPackageName(),
+                            R.layout.remote_view);
+
+                    Intent daneshIntent = new Intent(Intent.ACTION_VIEW)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            .setData(Uri.parse("http://www.reddit.com/r/daneshsayings"));
+                    PendingIntent intent = PendingIntent.getActivity(CMStatusBarTest.this, 0,
+                            daneshIntent, 0);
+                    contentView.setOnClickPendingIntent(R.id.whats_hot_click, intent);
+
+                    CustomTile.RemoteExpandedStyle remoteExpandedStyle =
+                            new CustomTile.RemoteExpandedStyle();
+                    remoteExpandedStyle.setRemoteViews(contentView);
+
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setLabel("Test Expanded Remote Style From SDK")
+                            .setIcon(R.drawable.ic_launcher)
+                            .setExpandedStyle(remoteExpandedStyle)
+                            .setOnSettingsClickIntent(new Intent(CMStatusBarTest.this,
+                                    DummySettings.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                            .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            },
     };
 }
