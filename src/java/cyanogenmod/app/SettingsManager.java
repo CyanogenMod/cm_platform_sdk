@@ -28,6 +28,30 @@ import android.util.Log;
  * </p>
  */
 public class SettingsManager {
+    /**
+     * Turn off zen mode. This restores the original ring and interruption
+     * settings that the user had set before zen mode was enabled.
+     *
+     * @see #setZenMode
+     */
+    public static final int ZEN_MODE_OFF = 0;
+    /**
+     * Sets zen mode to important interruptions mode, so that
+     * only notifications that the user has chosen in Settings
+     * to be of high importance will cause the user's device to notify them.
+     *
+     * This condition is held indefinitely until changed again.
+     *
+     * @see #setZenMode
+     */
+    public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1;
+    /**
+     * Sets zen mode so that no interruptions will be allowed. The device is
+     * effectively silenced indefinitely, until the mode is changed again.
+     *
+     * @see #setZenMode
+     */
+    public static final int ZEN_MODE_NO_INTERRUPTIONS = 2;
 
     private static ISettingsManager sService;
 
@@ -39,6 +63,12 @@ public class SettingsManager {
      */
     public static final String MODIFY_NETWORK_SETTINGS_PERMISSION =
             "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
+
+    /**
+     * Allows an application to change system sound settings, such as the zen mode.
+     */
+    public static final String MODIFY_SOUND_SETTINGS_PERMISSION =
+            "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
 
     private static final String TAG = "SettingsManager";
 
@@ -114,6 +144,32 @@ public class SettingsManager {
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
+    }
+
+    /**
+     * Set the zen mode for the device.
+     *
+     * You will need {@link #MODIFY_SOUND_SETTINGS_PERMISSION}
+     * to utilize this functionality.
+     *
+     * @see #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * @see #ZEN_MODE_NO_INTERRUPTIONS
+     * @see #ZEN_MODE_OFF
+     * @param mode The zen mode to set the device to.
+     *             One of {@link #ZEN_MODE_IMPORTANT_INTERRUPTIONS},
+     *             {@link #ZEN_MODE_NO_INTERRUPTIONS} or
+     *             {@link #ZEN_MODE_OFF}.
+     */
+    public boolean setZenMode(int mode) {
+        if (sService == null) {
+            return false;
+        }
+        try {
+            return getService().setZenMode(mode);
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return false;
     }
 
     /**
