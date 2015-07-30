@@ -16,6 +16,8 @@
 
 package org.cyanogenmod.platform.internal;
 
+import android.app.INotificationManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -32,6 +34,7 @@ import android.util.Log;
 import com.android.server.SystemService;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.ISettingsManager;
+import cyanogenmod.app.SettingsManager;
 
 import java.io.ByteArrayInputStream;
 import java.security.PublicKey;
@@ -51,6 +54,7 @@ public class SettingsManagerService extends SystemService {
 
     private Context mContext;
     private TelephonyManager mTelephonyManager;
+    private INotificationManager mNotificationManager;
 
 
 
@@ -64,6 +68,8 @@ public class SettingsManagerService extends SystemService {
     public void onStart() {
         mTelephonyManager = (TelephonyManager)
                 mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        mNotificationManager = INotificationManager.Stub.asInterface(
+                ServiceManager.getService(Context.NOTIFICATION_SERVICE));
     }
 
     private void enforceModifySettingsPermission() {
@@ -156,6 +162,22 @@ public class SettingsManagerService extends SystemService {
             shutdownInternal(true);
             restoreCallingIdentity(token);
         }
+
+        @Override
+        public boolean setZenMode(int mode) {
+            if (!systemSignatureMatchesDebugCert()) {
+                enforceModifySettingsPermission();
+            }
+            /*
+             * We need to clear the caller's identity in order to
+             *   allow this method call to modify settings
+             *   not allowed by the caller's permissions.
+             */
+            long token = clearCallingIdentity();
+            boolean success = setZenModeInternal(mode);
+            restoreCallingIdentity(token);
+            return success;
+        }
     };
 
     private void setAirplaneModeEnabledInternal(boolean enabled) {
@@ -185,6 +207,39 @@ public class SettingsManagerService extends SystemService {
         } catch (RemoteException e) {
             Log.d(TAG, "Unable to shutdown.");
         }
+    }
+
+    private boolean setZenModeInternal(int mode) {
+        ContentResolver contentResolver = mContext.getContentResolver();
+        int zenModeValue = -1;
+        switch(mode) {
+            case SettingsManager.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
+                zenModeValue = Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
+                break;
+            case SettingsManager.ZEN_MODE_OFF:
+                zenModeValue = Settings.Global.ZEN_MODE_OFF;
+                break;
+            case SettingsManager.ZEN_MODE_NO_INTERRUPTIONS:
+                zenModeValue = Settings.Global.ZEN_MODE_NO_INTERRUPTIONS;
+                break;
+            default:
+                // Invalid mode parameter
+                Log.w(TAG, "setZenMode() called with invalid mode: " + mode);
+                return false;
+        }
+        Settings.Global.putInt(contentResolver,
+                Settings.Global.ZEN_MODE,
+                zenModeValue);
+        try {
+            // Setting the exit condition to null signifies "indefinitely"
+            mNotificationManager.setZenModeCondition(null);
+        } catch (RemoteException e) {
+            // An error occurred, return false since the
+            // condition failed to set.
+            Log.e(TAG, "setZenMode() failed for mode: " + mode);
+            return false;
+        }
+        return true;
     }
 }
 
