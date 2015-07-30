@@ -22,6 +22,7 @@ interface ISettingsManager
 {
     void setAirplaneModeEnabled(boolean enabled);
     void setMobileDataEnabled(boolean enabled);
+    boolean setZenMode(int mode);
     void shutdown();
     void reboot();
 }

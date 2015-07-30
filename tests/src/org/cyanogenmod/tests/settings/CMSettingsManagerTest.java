@@ -49,6 +49,21 @@ public class CMSettingsManagerTest extends TestActivity {
                 public void run() {
                     mSettingsManager.shutdownDevice();
                 }
-            }
+            },
+            new Test("Test set zen mode to important interruptions") {
+                public void run() {
+                    mSettingsManager.setZenMode(SettingsManager.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
+                }
+            },
+            new Test("Test set zen mode to no interruptions") {
+                public void run() {
+                    mSettingsManager.setZenMode(SettingsManager.ZEN_MODE_NO_INTERRUPTIONS);
+                }
+            },
+            new Test("Test turn zen mode off") {
+                public void run() {
+                    mSettingsManager.setZenMode(SettingsManager.ZEN_MODE_OFF);
+                }
+            },
     };
 }

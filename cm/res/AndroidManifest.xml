@@ -42,6 +42,13 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="system|signature" />
 
+    <!-- Allows system applications to make changes to a subset of system sound settings -->
+    <permission android:name="cyanogenmod.permission.MODIFY_SOUND_SETTINGS"
+                android:label="@string/permlab_modifySoundSettings"
+                android:description="@string/permdesc_modifySoundSettings"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
+                android:protectionLevel="normal" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
