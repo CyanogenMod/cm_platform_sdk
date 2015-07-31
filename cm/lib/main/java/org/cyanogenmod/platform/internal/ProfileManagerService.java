@@ -139,9 +139,7 @@ public class ProfileManagerService extends SystemService {
         if (!skipFile) {
             try {
                 loadFromFile();
-            } catch (XmlPullParserException e) {
-                init = true;
-            } catch (IOException e) {
+            } catch (Exception e) {
                 init = true;
             }
         }
