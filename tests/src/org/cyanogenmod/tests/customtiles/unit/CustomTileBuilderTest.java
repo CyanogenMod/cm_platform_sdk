@@ -68,6 +68,17 @@ public class CustomTileBuilderTest extends AndroidTestCase {
     }
 
     @SmallTest
+    public void testCustomTileBuilderDeleteIntent() {
+        Intent intent = new Intent(mContext, DummySettings.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .setDeleteIntent(pendingIntent)
+                .build();
+        assertNotNull(customTile.deleteIntent);
+        assertEquals(pendingIntent, customTile.deleteIntent);
+    }
+
+    @SmallTest
     public void testCustomTileBuilderOnClickUri() {
         //Calling Mike Jones, WHO!? MIKE JONES.
         Uri uri = Uri.parse("2813308004");

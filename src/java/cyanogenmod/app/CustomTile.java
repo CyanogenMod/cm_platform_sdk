@@ -62,6 +62,14 @@ public class CustomTile implements Parcelable {
     public Intent onSettingsClick;
 
     /**
+     * The intent to execute when the custom tile is explicitly removed by the user.
+     *
+     * This probably shouldn't be launching an activity since several of those will be sent
+     * at the same time.
+     */
+    public PendingIntent deleteIntent;
+
+    /**
      * An optional Uri to be parsed and broadcast on tile click, if an onClick pending intent
      * is specified, it will take priority over the uri to be broadcasted.
      **/
@@ -141,6 +149,9 @@ public class CustomTile implements Parcelable {
             if (parcel.readInt() != 0) {
                 this.remoteIcon = Bitmap.CREATOR.createFromParcel(parcel);
             }
+            if (parcel.readInt() != 0) {
+                this.deleteIntent = PendingIntent.CREATOR.createFromParcel(parcel);
+            }
         }
 
         parcel.setDataPosition(startPosition + parcelableSize);
@@ -196,6 +207,9 @@ public class CustomTile implements Parcelable {
         if (remoteIcon != null) {
             b.append("remoteIcon=" + remoteIcon.getGenerationId() + NEW_LINE);
         }
+        if (deleteIntent != null) {
+            b.append("deleteIntent=" + deleteIntent.toString() + NEW_LINE);
+        }
         return b.toString();
     }
 
@@ -214,6 +228,7 @@ public class CustomTile implements Parcelable {
         that.icon = this.icon;
         that.collapsePanel = this.collapsePanel;
         that.remoteIcon = this.remoteIcon;
+        that.deleteIntent = this.deleteIntent;
     }
 
     @Override
@@ -279,6 +294,13 @@ public class CustomTile implements Parcelable {
         if (remoteIcon != null) {
             out.writeInt(1);
             remoteIcon.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
+
+        if (deleteIntent != null) {
+            out.writeInt(1);
+            deleteIntent.writeToParcel(out, 0);
         } else {
             out.writeInt(0);
         }
@@ -885,6 +907,7 @@ public class CustomTile implements Parcelable {
         private Context mContext;
         private ExpandedStyle mExpandedStyle;
         private boolean mCollapsePanel = true;
+        private PendingIntent mDeleteIntent;
 
         /**
          * Constructs a new Builder with the defaults:
@@ -1016,6 +1039,19 @@ public class CustomTile implements Parcelable {
         }
 
         /**
+         * Supply a {@link PendingIntent} to send when the custom tile is cleared explicitly
+         * by the user.
+         *
+         * @see CustomTile#deleteIntent
+         * @param intent
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder setDeleteIntent(PendingIntent intent) {
+            mDeleteIntent = intent;
+            return this;
+        }
+
+        /**
          * Create a {@link cyanogenmod.app.CustomTile} object
          * @return {@link cyanogenmod.app.CustomTile}
          */
@@ -1031,6 +1067,7 @@ public class CustomTile implements Parcelable {
             tile.icon = mIcon;
             tile.collapsePanel = mCollapsePanel;
             tile.remoteIcon = mRemoteIcon;
+            tile.deleteIntent = mDeleteIntent;
             return tile;
         }
     }
