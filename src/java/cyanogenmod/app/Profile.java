@@ -445,6 +445,10 @@ public final class Profile implements Parcelable, Comparable {
      * @hide
      */
     public void addProfileGroup(ProfileGroup profileGroup) {
+        if (profileGroup == null) {
+            return;
+        }
+
         if (profileGroup.isDefaultGroup()) {
             /* we must not have more than one default group */
             if (mDefaultGroup != null) {
@@ -550,22 +554,22 @@ public final class Profile implements Parcelable, Comparable {
         dest.writeInt(mDirty ? 1 : 0);
         if (profileGroups != null && !profileGroups.isEmpty()) {
             dest.writeInt(1);
-            dest.writeParcelableArray(
-                    profileGroups.values().toArray(new Parcelable[profileGroups.size()]), flags);
+            dest.writeTypedArray(profileGroups.values().toArray(
+                    new ProfileGroup[0]), flags);
         } else {
             dest.writeInt(0);
         }
         if (streams != null && !streams.isEmpty()) {
             dest.writeInt(1);
-            dest.writeParcelableArray(
-                    streams.values().toArray(new Parcelable[streams.size()]), flags);
+            dest.writeTypedArray(streams.values().toArray(
+                    new StreamSettings[0]), flags);
         } else {
             dest.writeInt(0);
         }
         if (connections != null && !connections.isEmpty()) {
             dest.writeInt(1);
-            dest.writeParcelableArray(
-                    connections.values().toArray(new Parcelable[connections.size()]), flags);
+            dest.writeTypedArray(connections.values().toArray(
+                    new ConnectionSettings[0]), flags);
         } else {
             dest.writeInt(0);
         }
@@ -630,23 +634,21 @@ public final class Profile implements Parcelable, Comparable {
             mProfileType = in.readInt();
             mDirty = (in.readInt() == 1);
             if (in.readInt() != 0) {
-                for (Parcelable group : in.readParcelableArray(null)) {
-                    ProfileGroup grp = (ProfileGroup) group;
-                    profileGroups.put(grp.getUuid(), grp);
-                    if (grp.isDefaultGroup()) {
-                        mDefaultGroup = grp;
+                for (ProfileGroup group : in.createTypedArray(ProfileGroup.CREATOR)) {
+                    profileGroups.put(group.getUuid(), group);
+                    if (group.isDefaultGroup()) {
+                        mDefaultGroup = group;
                     }
                 }
             }
             if (in.readInt() != 0) {
-                for (Parcelable parcel : in.readParcelableArray(null)) {
-                    StreamSettings stream = (StreamSettings) parcel;
+                for (StreamSettings stream : in.createTypedArray(StreamSettings.CREATOR)) {
                     streams.put(stream.getStreamId(), stream);
                 }
             }
             if (in.readInt() != 0) {
-                for (Parcelable parcel : in.readParcelableArray(null)) {
-                    ConnectionSettings connection = (ConnectionSettings) parcel;
+                for (ConnectionSettings connection :
+                        in.createTypedArray(ConnectionSettings.CREATOR)) {
                     connections.put(connection.getConnectionId(), connection);
                 }
             }
