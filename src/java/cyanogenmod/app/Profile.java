@@ -592,7 +592,7 @@ public final class Profile implements Parcelable, Comparable {
             dest.writeInt(0);
         }
         dest.writeInt(mScreenLockMode);
-        dest.writeMap(mTriggers);
+        dest.writeTypedArray(mTriggers.values().toArray(new ProfileTrigger[0]), flags);
         dest.writeInt(mExpandedDesktopMode);
         dest.writeInt(mDozeMode);
 
@@ -662,7 +662,9 @@ public final class Profile implements Parcelable, Comparable {
                 mBrightness = BrightnessSettings.CREATOR.createFromParcel(in);
             }
             mScreenLockMode = in.readInt();
-            in.readMap(mTriggers, null);
+            for (ProfileTrigger trigger : in.createTypedArray(ProfileTrigger.CREATOR)) {
+                mTriggers.put(trigger.mId, trigger);
+            }
             mExpandedDesktopMode = in.readInt();
             mDozeMode = in.readInt();
         }
