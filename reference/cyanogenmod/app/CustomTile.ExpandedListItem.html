@@ -209,6 +209,7 @@ type="text/css">
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
@@ -568,7 +569,24 @@ android.os.Parcelable
       </tr>
       
     
-      <tr class=" api apilevel-1" >
+      <tr class=" api apilevel-2" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          
+          Bitmap</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemBitmapResource">itemBitmapResource</a></td>
+          <td class="jd-descrcol" width="100%">
+            A bitmap to be utilized instead of #itemDrawableResourceId
+
+            
+    
+
+          </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-1" >
           <td class="jd-typecol"><nobr>
           public
           
@@ -585,7 +603,7 @@ android.os.Parcelable
       </tr>
       
     
-      <tr class="alt-color api apilevel-1" >
+      <tr class=" api apilevel-1" >
           <td class="jd-typecol"><nobr>
           public
           
@@ -602,7 +620,7 @@ android.os.Parcelable
       </tr>
       
     
-      <tr class=" api apilevel-1" >
+      <tr class="alt-color api apilevel-1" >
           <td class="jd-typecol"><nobr>
           public
           
@@ -619,7 +637,7 @@ android.os.Parcelable
       </tr>
       
     
-      <tr class="alt-color api apilevel-1" >
+      <tr class=" api apilevel-1" >
           <td class="jd-typecol"><nobr>
           public
           
@@ -693,7 +711,34 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html#setExpandedListItemBitmap(android.graphics.Bitmap)">setExpandedListItemBitmap</a></span>(Bitmap bitmap)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the bitmap associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></code> to be utilized instead of
+ the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemDrawableResourceId">itemDrawableResourceId</a></code>
+
+ Note, sending many items with bitmaps over IPC may result in a
+ TransactionTooLargeException.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -716,7 +761,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-1" >
+    <tr class="alt-color api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -739,7 +784,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class=" api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -762,7 +807,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-1" >
+    <tr class="alt-color api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1213,6 +1258,43 @@ From interface
 
 <h2>Public Methods</h2>
 
+
+
+<A NAME="setExpandedListItemBitmap(android.graphics.Bitmap)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExpandedListItemBitmap</span>
+      <span class="normal">(Bitmap bitmap)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the bitmap associated with the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></code> to be utilized instead of
+ the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html#itemDrawableResourceId">itemDrawableResourceId</a></code>
+
+ Note, sending many items with bitmaps over IPC may result in a
+ TransactionTooLargeException.</p></div>
+
+    </div>
+</div>
 
 
 <A NAME="setExpandedListItemDrawable(int)"></A>
