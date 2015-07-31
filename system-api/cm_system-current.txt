@@ -17,6 +17,7 @@ package cyanogenmod.app {
     method public int describeContents();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile> CREATOR;
+    field public static final int PSEUDO_GRID_ITEM_MAX_COUNT = 9; // 0x9
     field public boolean collapsePanel;
     field public java.lang.String contentDescription;
     field public cyanogenmod.app.CustomTile.ExpandedStyle expandedStyle;
@@ -25,6 +26,7 @@ package cyanogenmod.app {
     field public android.app.PendingIntent onClick;
     field public android.net.Uri onClickUri;
     field public android.content.Intent onSettingsClick;
+    field public android.graphics.Bitmap remoteIcon;
   }
 
   public static class CustomTile.Builder {
@@ -34,6 +36,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.CustomTile.Builder setContentDescription(int);
     method public cyanogenmod.app.CustomTile.Builder setExpandedStyle(cyanogenmod.app.CustomTile.ExpandedStyle);
     method public cyanogenmod.app.CustomTile.Builder setIcon(int);
+    method public cyanogenmod.app.CustomTile.Builder setIcon(android.graphics.Bitmap);
     method public cyanogenmod.app.CustomTile.Builder setLabel(java.lang.String);
     method public cyanogenmod.app.CustomTile.Builder setLabel(int);
     method public cyanogenmod.app.CustomTile.Builder setOnClickIntent(android.app.PendingIntent);
@@ -44,6 +47,7 @@ package cyanogenmod.app {
 
   public static class CustomTile.ExpandedGridItem extends cyanogenmod.app.CustomTile.ExpandedItem {
     ctor public CustomTile.ExpandedGridItem();
+    method public void setExpandedGridItemBitmap(android.graphics.Bitmap);
     method public void setExpandedGridItemDrawable(int);
     method public void setExpandedGridItemOnClickIntent(android.app.PendingIntent);
     method public void setExpandedGridItemTitle(java.lang.String);
@@ -54,6 +58,7 @@ package cyanogenmod.app {
     method public int describeContents();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile.ExpandedItem> CREATOR;
+    field public android.graphics.Bitmap itemBitmapResource;
     field public int itemDrawableResourceId;
     field public java.lang.String itemSummary;
     field public java.lang.String itemTitle;
@@ -62,6 +67,7 @@ package cyanogenmod.app {
 
   public static class CustomTile.ExpandedListItem extends cyanogenmod.app.CustomTile.ExpandedItem {
     ctor public CustomTile.ExpandedListItem();
+    method public void setExpandedListItemBitmap(android.graphics.Bitmap);
     method public void setExpandedListItemDrawable(int);
     method public void setExpandedListItemOnClickIntent(android.app.PendingIntent);
     method public void setExpandedListItemSummary(java.lang.String);
@@ -70,12 +76,14 @@ package cyanogenmod.app {
 
   public static class CustomTile.ExpandedStyle implements android.os.Parcelable {
     method public int describeContents();
+    method public android.widget.RemoteViews getContentViews();
     method public cyanogenmod.app.CustomTile.ExpandedItem[] getExpandedItems();
     method public int getStyle();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.app.CustomTile.ExpandedStyle> CREATOR;
     field public static final int GRID_STYLE = 0; // 0x0
     field public static final int LIST_STYLE = 1; // 0x1
+    field public static final int REMOTE_STYLE = 2; // 0x2
   }
 
   public static class CustomTile.GridExpandedStyle extends cyanogenmod.app.CustomTile.ExpandedStyle {
@@ -86,6 +94,11 @@ package cyanogenmod.app {
   public static class CustomTile.ListExpandedStyle extends cyanogenmod.app.CustomTile.ExpandedStyle {
     ctor public CustomTile.ListExpandedStyle();
     method public void setListItems(java.util.ArrayList<cyanogenmod.app.CustomTile.ExpandedListItem>);
+  }
+
+  public static class CustomTile.RemoteExpandedStyle extends cyanogenmod.app.CustomTile.ExpandedStyle {
+    ctor public CustomTile.RemoteExpandedStyle();
+    method public void setRemoteViews(android.widget.RemoteViews);
   }
 
   public class CustomTileListenerService extends android.app.Service {
