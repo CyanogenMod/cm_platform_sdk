@@ -148,6 +148,22 @@ public class CMStatusBarTest extends TestActivity {
                 }
             },
 
+            new Test("test publish tile with delete intent") {
+                public void run() {
+                    Intent intent = new Intent(CMStatusBarTest.this, DummySettings.class);
+                    PendingIntent pendingIntent =
+                            PendingIntent.getActivity(CMStatusBarTest.this, 0, intent, 0);
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setLabel("Test Settings From SDK")
+                            .setIcon(R.drawable.ic_launcher)
+                            .setDeleteIntent(pendingIntent)
+                            .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            },
+
             new Test("test publish tile with custom uri") {
                 public void run() {
                     CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)

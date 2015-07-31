@@ -18,9 +18,16 @@ package org.cyanogenmod.platform.internal;
 
 import android.app.ActivityManager;
 import android.app.AppGlobals;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.IPackageManager;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
@@ -59,6 +66,8 @@ public class CMStatusBarManagerService extends SystemService {
 
     static final int MAX_PACKAGE_TILES = 4;
 
+    private static final int REASON_PACKAGE_CHANGED = 1;
+
     private final ManagedServices.UserProfiles mUserProfiles = new ManagedServices.UserProfiles();
 
     final ArrayList<ExternalQuickSettingsRecord> mQSTileList =
@@ -75,7 +84,93 @@ public class CMStatusBarManagerService extends SystemService {
         Log.d(TAG, "registerCMStatusBar cmstatusbar: " + this);
         mCustomTileListeners = new CustomTileListeners();
         publishBinderService(CMContextConstants.CM_STATUS_BAR_SERVICE, mService);
+
+        IntentFilter pkgFilter = new IntentFilter();
+        pkgFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+        pkgFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        pkgFilter.addAction(Intent.ACTION_PACKAGE_CHANGED);
+        pkgFilter.addAction(Intent.ACTION_PACKAGE_RESTARTED);
+        pkgFilter.addAction(Intent.ACTION_QUERY_PACKAGE_RESTART);
+        pkgFilter.addDataScheme("package");
+        getContext().registerReceiverAsUser(mPackageIntentReceiver, UserHandle.ALL, pkgFilter, null,
+                null);
+
+        IntentFilter sdFilter = new IntentFilter(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE);
+        getContext().registerReceiverAsUser(mPackageIntentReceiver, UserHandle.ALL, sdFilter, null,
+                null);
     }
+
+    private final BroadcastReceiver mPackageIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action == null) {
+                return;
+            }
+
+            boolean queryRestart = false;
+            boolean queryRemove = false;
+            boolean packageChanged = false;
+            boolean removeTiles = true;
+
+            if (action.equals(Intent.ACTION_PACKAGE_ADDED)
+                    || (queryRemove=action.equals(Intent.ACTION_PACKAGE_REMOVED))
+                    || action.equals(Intent.ACTION_PACKAGE_RESTARTED)
+                    || (packageChanged=action.equals(Intent.ACTION_PACKAGE_CHANGED))
+                    || (queryRestart=action.equals(Intent.ACTION_QUERY_PACKAGE_RESTART))
+                    || action.equals(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE)) {
+                int changeUserId = intent.getIntExtra(Intent.EXTRA_USER_HANDLE,
+                        UserHandle.USER_ALL);
+                String pkgList[] = null;
+                boolean queryReplace = queryRemove &&
+                        intent.getBooleanExtra(Intent.EXTRA_REPLACING, false);
+                if (action.equals(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE)) {
+                    pkgList = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
+                } else if (queryRestart) {
+                    pkgList = intent.getStringArrayExtra(Intent.EXTRA_PACKAGES);
+                } else {
+                    Uri uri = intent.getData();
+                    if (uri == null) {
+                        return;
+                    }
+                    String pkgName = uri.getSchemeSpecificPart();
+                    if (pkgName == null) {
+                        return;
+                    }
+                    if (packageChanged) {
+                        // We remove tiles for packages which have just been disabled
+                        try {
+                            final IPackageManager pm = AppGlobals.getPackageManager();
+                            final int enabled = pm.getApplicationEnabledSetting(pkgName,
+                                    changeUserId != UserHandle.USER_ALL ? changeUserId :
+                                            UserHandle.USER_OWNER);
+                            if (enabled == PackageManager.COMPONENT_ENABLED_STATE_ENABLED
+                                    || enabled == PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
+                                removeTiles = false;
+                            }
+                        } catch (IllegalArgumentException e) {
+                            // Package doesn't exist; probably racing with uninstall.
+                            // removeTiles is already true, so nothing to do here.
+                            Slog.i(TAG, "Exception trying to look up app enabled setting", e);
+                        } catch (RemoteException e) {
+                            // Failed to talk to PackageManagerService Should never happen!
+                        }
+                    }
+                    pkgList = new String[]{pkgName};
+                }
+
+                if (pkgList != null && (pkgList.length > 0)) {
+                    for (String pkgName : pkgList) {
+                        if (removeTiles) {
+                            removeAllCustomTilesInt(pkgName, !queryRestart,
+                                    changeUserId, REASON_PACKAGE_CHANGED, null);
+                        }
+                    }
+                }
+                mCustomTileListeners.onPackagesChanged(queryReplace, pkgList);
+            }
+        }
+    };
 
     private final IBinder mService = new ICMStatusBarManager.Stub() {
         /**
@@ -340,10 +435,79 @@ public class CMStatusBarManagerService extends SystemService {
                         r.isCanceled = true;
                         mCustomTileListeners.notifyRemovedLocked(r.sbTile);
                         mCustomTileByKey.remove(r.sbTile.getKey());
+                        if (r.getCustomTile().deleteIntent != null) {
+                            try {
+                                r.getCustomTile().deleteIntent.send();
+                            } catch (PendingIntent.CanceledException ex) {
+                                // do nothing - there's no relevant way to recover, and
+                                //     no reason to let this propagate
+                                Slog.w(TAG, "canceled PendingIntent for "
+                                        + r.sbTile.getPackage(), ex);
+                            }
+                        }
                     }
                 }
             }
         });
+    }
+
+    /**
+     * Removes all custom tiles from a given package that have all of the
+     * {@code mustHaveFlags}.
+     */
+    boolean removeAllCustomTilesInt(String pkg, boolean doit, int userId, int reason,
+            ManagedServices.ManagedServiceInfo listener) {
+        synchronized (mQSTileList) {
+            final int N = mQSTileList.size();
+            ArrayList<ExternalQuickSettingsRecord> removedTiles = null;
+            for (int i = N-1; i >= 0; --i) {
+                ExternalQuickSettingsRecord r = mQSTileList.get(i);
+                if (!customTileMatchesUserId(r, userId)) {
+                    continue;
+                }
+                // Don't remove custom tiles to all, if there's no package name specified
+                if (r.getUserId() == UserHandle.USER_ALL && pkg == null) {
+                    continue;
+                }
+                if (pkg != null && !r.sbTile.getPackage().equals(pkg)) {
+                    continue;
+                }
+                if (removedTiles == null) {
+                    removedTiles = new ArrayList<>();
+                }
+                removedTiles.add(r);
+                if (!doit) {
+                    return true;
+                }
+                mQSTileList.remove(i);
+                removeCustomTileLocked(r, false, reason);
+            }
+            return removedTiles != null;
+        }
+    }
+
+    private void removeCustomTileLocked(ExternalQuickSettingsRecord r,
+            boolean sendDelete, int reason) {
+        // tell the app
+        if (sendDelete) {
+            if (r.getCustomTile().deleteIntent != null) {
+                try {
+                    r.getCustomTile().deleteIntent.send();
+                } catch (PendingIntent.CanceledException ex) {
+                    // do nothing - there's no relevant way to recover, and
+                    //     no reason to let this propagate
+                    Slog.w(TAG, "canceled PendingIntent for " + r.sbTile.getPackage(), ex);
+                }
+            }
+        }
+
+        // status bar
+        if (r.getCustomTile().icon != 0 || r.getCustomTile().remoteIcon != null) {
+            r.isCanceled = true;
+            mCustomTileListeners.notifyRemovedLocked(r.sbTile);
+        }
+
+        mCustomTileByKey.remove(r.sbTile.getKey());
     }
 
     private void enforceSystemOrSystemUI(String message) {
