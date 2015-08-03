@@ -209,7 +209,7 @@ public class CustomTileListenerService extends Service {
      *
      * @param pkg Package of the notifying app.
      * @param tag Tag of the custom tile as specified by the notifying app
-     * @param id  ID of the notification as specified by the notifying app
+     * @param id  ID of the custom tile as specified by the notifying app
      * <p>
      */
     public final void removeCustomTile(String pkg, String tag, int id) {

@@ -201,13 +201,13 @@ public class StatusBarPanelCustomTile implements Parcelable {
     }
 
     /**
-     * Returns a userHandle for the instance of the app that posted this notification.
+     * Returns a userHandle for the instance of the app that posted this tile.
      */
     public int getUserId() {
         return this.user.getIdentifier();
     }
 
-    /** The package of the app that posted the notification */
+    /** The package of the app that posted the tile */
     public String getPackage() {
         return pkg;
     }
@@ -223,7 +223,7 @@ public class StatusBarPanelCustomTile implements Parcelable {
     }
 
     /**
-     * A unique instance key for this notification record.
+     * A unique instance key for this tile record.
      */
     public String getKey() {
         return key;
