@@ -172,6 +172,7 @@ package cyanogenmod.app {
   }
 
   public static class Profile.ProfileTrigger implements android.os.Parcelable {
+    ctor public Profile.ProfileTrigger(int, java.lang.String, int, java.lang.String);
     method public int describeContents();
     method public java.lang.String getId();
     method public java.lang.String getName();
