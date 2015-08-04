@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center_horizontal"
+        >
+    <Button
+            android:id="@+id/create_bluetooth_on_wifi_trigger_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bluetooth_on_wifi_trigger"/>
+
+    <TextView
+        android:id="@+id/create_bt_on_wifi_status"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+</LinearLayout>
+
