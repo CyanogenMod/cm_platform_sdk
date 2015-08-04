@@ -59,6 +59,7 @@ public class TileReceiver extends BroadcastReceiver {
 
             CustomTile customTile = new CustomTile.Builder(context)
                     .setOnClickIntent(pendingIntent)
+                    .shouldCollapsePanel(false)
                     .setContentDescription("Generic content description")
                     .setLabel(label)
                     .setIcon(R.drawable.ic_launcher)
