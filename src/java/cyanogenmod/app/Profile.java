@@ -180,8 +180,26 @@ public final class Profile implements Parcelable, Comparable {
         private String mName;
         private int mState;
 
+
         /**
-         * @hide
+         * Construct a {@link ProfileTrigger} based on its type {@link Profile.TriggerType} and if
+         * the trigger should fire on a {@link Profile.TriggerState} change.
+         *
+         * Example:
+         * <pre class="prettyprint">
+         *   triggerId = trigger.getSSID();                  // Use the AP's SSID as identifier
+         *   triggerName = trigger.getTitle();               // Use the AP's name as the trigger name
+         *   triggerType = Profile.TriggerType.WIFI;         // This is a wifi trigger
+         *   triggerState = Profile.TriggerState.ON_CONNECT; // On Connect of this, trigger
+         *
+         *   Profile.ProfileTrigger profileTrigger =
+         *           new Profile.ProfileTrigger(triggerType, triggerId, triggerState, triggerName);
+         * </pre>
+         *
+         * @param type a {@link Profile.TriggerType}
+         * @param id an identifier for the ProfileTrigger
+         * @param state {@link Profile.TriggerState} depending on the TriggerType
+         * @param name an identifying name for the ProfileTrigger
          */
         public ProfileTrigger(int type, String id, int state, String name) {
             mType = type;
