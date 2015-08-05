@@ -18,9 +18,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
   <string name="permlab_publishCustomTile">ustvari ploščico po meri v plošči za hitre nastavitve</string>
-  <string name="permdesc_publishCustomTile">Omogoča aplikaciji, da objavi ploščico za hitre nastavitve.</string>
+  <string name="permdesc_publishCustomTile">Omogoča programu, da objavi ploščico za hitre nastavitve.</string>
   <string name="permlab_bindCustomTileListenerService">veži na storitev poslušalnika ploščic po meri</string>
-  <string name="permdesc_bindCustomTileListenerService">Omogoča aplikaciji, da se veže na vrhnji vmesnik storitve poslušalnika ploščic po meri.</string>
+  <string name="permdesc_bindCustomTileListenerService">Omogoča programu, da se veže na vrhnji vmesnik storitve poslušalnika ploščic po meri.</string>
   <string name="custom_tile_listener_binding_label">Poslušalnik ploščic po meri</string>
   <string name="profileNameDefault">Privzeto</string>
   <string name="profileNameWork">Služba</string>
@@ -33,5 +33,5 @@
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-pošta</string>
   <string name="profileGroupSMS">SMS</string>
-  <string name="wildcardProfile">Drugo</string>
+  <string name="wildcardProfile">Ostalo</string>
 </resources>
