@@ -310,6 +310,9 @@ Summary:
 
 
 
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
 
 
   &#124; <a href="#pubmethods">Methods</a>
@@ -504,6 +507,39 @@ android.os.Parcelable
 
 
 
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html#Profile.ProfileTrigger(int, java.lang.String, int, java.lang.String)">Profile.ProfileTrigger</a></span>(int type, String id, int state, String name)</nobr>
+        
+        <div class="jd-descrdiv">
+          Construct a <code><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></code> based on its type <code><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></code> and if
+ the trigger should fire on a <code><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></code> change.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -940,6 +976,80 @@ From interface
 
 
 <!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="Profile.ProfileTrigger(int, java.lang.String, int, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">Profile.ProfileTrigger</span>
+      <span class="normal">(int type, String id, int state, String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></code> based on its type <code><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></code> and if
+ the trigger should fire on a <code><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></code> change.
+
+ Example:
+ <pre class="prettyprint">
+   triggerId = trigger.getSSID();                  // Use the AP's SSID as identifier
+   triggerName = trigger.getTitle();               // Use the AP's name as the trigger name
+   triggerType = Profile.TriggerType.WIFI;         // This is a wifi trigger
+   triggerState = Profile.TriggerState.ON_CONNECT; // On Connect of this, trigger
+
+   Profile.ProfileTrigger profileTrigger =
+           new Profile.ProfileTrigger(triggerType, triggerId, triggerState, triggerName);
+ </pre></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>a <code><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></code></td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>an identifier for the ProfileTrigger</td>
+        </tr>
+        <tr>
+          <th>state</td>
+          <td><code><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></code> depending on the TriggerType</td>
+        </tr>
+        <tr>
+          <th>name</td>
+          <td>an identifying name for the ProfileTrigger
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 
 
 
