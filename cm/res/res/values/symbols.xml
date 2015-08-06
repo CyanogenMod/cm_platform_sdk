@@ -76,4 +76,8 @@
 
     <!-- Quick Settings tile defaults -->
     <java-symbol type="string" name="config_defaultQuickSettingsTiles" />
+
+    <!-- External views -->
+    <java-symbol type="attr" name="componentName" />
+
 </resources>
