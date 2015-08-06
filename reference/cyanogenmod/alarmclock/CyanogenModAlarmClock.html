@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Build | Android Developers</title>
+<title>CyanogenModAlarmClock | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -139,7 +139,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="1" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -178,11 +178,11 @@ type="text/css">
 
               <ul>
                 
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
@@ -199,12 +199,19 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></li>
       </ul>
     </li>
               
@@ -274,14 +281,11 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
-  
 
 
 
 
-
-  &#124; <a href="#constants">Constants</a>
+  <a href="#constants">Constants</a>
   
 
 
@@ -305,7 +309,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -321,7 +325,7 @@ Summary:
      
     
     class
-<h1 itemprop="name">Build</h1>
+<h1 itemprop="name">CyanogenModAlarmClock</h1>
 
 
 
@@ -343,7 +347,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-1">
+<div id="jd-content" class="api apilevel-2">
 <table class="jd-inheritance-table">
 
 
@@ -357,7 +361,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.os.Build</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.alarmclock.CyanogenModAlarmClock</td>
     </tr>
     
 
@@ -373,7 +377,9 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Information about the current CyanogenMod build, extracted from system properties.
+<p itemprop="articleBody">The CyanogenModAlarmClock class contains utilities for interacting with
+ a variety of Alarm features that the CyanogenMod AlarmClock application
+ (based on AOSP DeskClock) supports.
 </p>
 
 
@@ -404,48 +410,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-1" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></td>
-      <td class="jd-descrcol" width="100%">
-        Various version strings.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-1" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></td>
-      <td class="jd-descrcol" width="100%">
-        Enumeration of the currently known SDK version codes.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-
-
-
 
 
 
@@ -461,11 +425,61 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.html#UNKNOWN">UNKNOWN</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></td>
         <td class="jd-descrcol" width="100%">
-          Value used for when a build property is unknown.
+          Service Action: Set an existing alarm to be either enabled or disabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ALARM_ID">EXTRA_ALARM_ID</a></td>
+        <td class="jd-descrcol" width="100%">
+          Bundle extra: The id of the alarm.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ENABLED">EXTRA_ENABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Bundle extra: Whether to set the alarm to enabled to disabled.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#MODIFY_ALARMS_PERMISSION">MODIFY_ALARMS_PERMISSION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to make modifications to existing alarms,
+ such as turning them on or off.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#READ_ALARMS_PERMISSION">READ_ALARMS_PERMISSION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to have read access to all alarms in the
+ CyanogenMod DeskClock application.
           
     
 
@@ -493,7 +507,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -503,7 +517,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#Build()">Build</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#CyanogenModAlarmClock()">CyanogenModAlarmClock</a></span>()</nobr>
         
   </td></tr>
 
@@ -522,20 +536,22 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
             
             static
             
-            String</nobr>
+            Intent</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#getNameForSDKInt(int)">getNameForSDKInt</a></span>(int sdkInt)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#createAlarmIntent(android.content.Context)">createAlarmIntent</a></span>(Context context)</nobr>
         
         <div class="jd-descrdiv">
-          Retrieve the name for the SDK int
+          <p>
+ Retrieves an Intent that is prepopulated with the proper action and ComponentName to
+ create a new alarm in the CyanogenMod DeskClock application.
           
     
 
@@ -789,9 +805,9 @@ From class
 
 
 
-<A NAME="UNKNOWN"></A>
+<A NAME="ACTION_SET_ALARM_ENABLED"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -799,11 +815,11 @@ From class
         final 
         String
       </span>
-        UNKNOWN
+        ACTION_SET_ALARM_ENABLED
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
         
   
 
@@ -813,14 +829,238 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Value used for when a build property is unknown. </p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Service Action: Set an existing alarm to be either enabled or disabled.
+ <p>
+ This action sets an alarm to be enabled or disabled.
+ </p><p>
+ This action requests an alarm with the id specified by <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ALARM_ID">EXTRA_ALARM_ID</a></code>
+ be set to enabled or disabled, depending on the value set with <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ENABLED">EXTRA_ENABLED</a></code>.
+ </p>
+
+ <p>Requires permission <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#MODIFY_ALARMS_PERMISSION">MODIFY_ALARMS_PERMISSION</a></code> to launch this
+ intent.
+ </p>
+
+ <p>Always set the package name of the Intent that will launch this action
+ to <code><a href="../../../">ERROR(/#DESKCLOCK_PACKAGE)</a></code> explicitly, for security.</p>
+
+ <h3>Request parameters</h3>
+ <ul>
+     <li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ALARM_ID">EXTRA_ALARM_ID</a></code> <em>(required)</em>: The id of the alarm to modify,
+     as stored in <code><a href="../../../reference/android/provider/BaseColumns.html#_ID">_ID</a></code></li>
+     <li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ENABLED">EXTRA_ENABLED</a></code> <em>(required)</em>: Whether to set this alarm to be enabled
+     or disabled. </li>
+ </ul>
+</p></div>
 
     
         <div class="jd-tagdata">
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "unknown"
+                "cyanogenmod.alarmclock.SET_ALARM_ENABLED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_ALARM_ID"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_ALARM_ID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Bundle extra: The id of the alarm.
+ <p>
+ Used by <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></code>.
+ </p><p>
+ This extra is required.
+ </p><p>
+ The value is an <code><a href="../../../reference/java/lang/Long.html">Long</a></code> and is the ID stored in
+ <code><a href="../../../reference/android/provider/BaseColumns.html#_ID">_ID</a></code> for this alarm.
+ </p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></code></li><li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ENABLED">EXTRA_ENABLED</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.extra.alarmclock.ID"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_ENABLED"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_ENABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Bundle extra: Whether to set the alarm to enabled to disabled.
+ <p>
+ Used by <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></code>.
+ </p><p>
+ This extra is required.
+ </p><p>
+ The value is an <code><a href="../../../reference/java/lang/Boolean.html">Boolean</a></code> and if true, will set the alarm specified by
+ <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ALARM_ID">EXTRA_ALARM_ID</a></code> to be enabled. Otherwise, the alarm will be disabled.
+ </p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></code></li><li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#EXTRA_ALARM_ID">EXTRA_ALARM_ID</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.extra.alarmclock.ENABLED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFY_ALARMS_PERMISSION"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFY_ALARMS_PERMISSION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to make modifications to existing alarms,
+ such as turning them on or off.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#ACTION_SET_ALARM_ENABLED">ACTION_SET_ALARM_ENABLED</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.alarmclock.permission.MODIFY_ALARMS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="READ_ALARMS_PERMISSION"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        READ_ALARMS_PERMISSION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to have read access to all alarms in the
+ CyanogenMod DeskClock application.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></code></li>
+      </ul>
+  </div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.alarmclock.permission.READ_ALARMS"
             
         </span>
         </div>
@@ -842,9 +1082,9 @@ From class
 
 
 
-<A NAME="Build()"></A>
+<A NAME="CyanogenModAlarmClock()"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -854,12 +1094,12 @@ From class
          
         
       </span>
-      <span class="sympad">Build</span>
+      <span class="sympad">CyanogenModAlarmClock</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
         
   
 
@@ -890,9 +1130,9 @@ From class
 
 
 
-<A NAME="getNameForSDKInt(int)"></A>
+<A NAME="createAlarmIntent(android.content.Context)"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -900,14 +1140,14 @@ From class
          
          
          
-        String
+        Intent
       </span>
-      <span class="sympad">getNameForSDKInt</span>
-      <span class="normal">(int sdkInt)</span>
+      <span class="sympad">createAlarmIntent</span>
+      <span class="normal">(Context context)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
         
   
 
@@ -917,11 +1157,25 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Retrieve the name for the SDK int</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p><p>
+ Retrieves an Intent that is prepopulated with the proper action and ComponentName to
+ create a new alarm in the CyanogenMod DeskClock application.
+ </p>
+ <p> The action will be set to <code><a href="../../../reference/android/provider/AlarmClock.html#ACTION_SET_ALARM">ACTION_SET_ALARM</a></code>. Use the
+ Intent extras contained at <code><a href="../../../reference/android/provider/AlarmClock.html">AlarmClock</a></code> to configure the alarm.
+ </p>
+ <p>Requires permission <code><a href="../../../reference/android/Manifest.permission.html#SET_ALARM">SET_ALARM</a></code> to launch this
+ intent.
+ </p></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>name of the SDK int, {@link #UNKNOWN) if not known
+      <ul class="nolist"><li>The Intent to create a new alarm with the CyanogenMod DeskClock application.
 </li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/android/provider/AlarmClock.html#ACTION_SET_ALARM">ACTION_SET_ALARM</a></code></li>
+      </ul>
   </div>
 
     </div>

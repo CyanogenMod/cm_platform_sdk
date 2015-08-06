@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Manifest.permission | Android Developers</title>
+<title>ClockContract.CitiesColumns | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -139,7 +139,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="1" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -178,13 +178,13 @@ type="text/css">
 
               <ul>
                 
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
@@ -199,16 +199,19 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/platform/Manifest.html">Manifest</a></li>
-          <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html">Manifest.permission</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/platform/R.html">R</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/platform/R.attr.html">R.attr</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/platform/R.drawable.html">R.drawable</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/platform/R.string.html">R.string</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/platform/R.xml.html">R.xml</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></li>
       </ul>
     </li>
               
@@ -266,44 +269,13 @@ type="text/css">
 
 
 
-  
-   
-  
-  
-  
-  
-
 
 <div class="sum-details-links">
-
-Summary:
-
-
-
-
-
-  <a href="#constants">Constants</a>
-  
-
-
-
-
-
-  &#124; <a href="#pubctors">Ctors</a>
-  
-
-
-
-
-
-  &#124; <a href="#inhmethods">Inherited Methods</a>
-
-&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
 
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -316,18 +288,12 @@ Summary:
 <div id="jd-header">
     public
     static 
-    final 
+     
     
-    class
-<h1 itemprop="name">Manifest.permission</h1>
+    interface
+<h1 itemprop="name">ClockContract.CitiesColumns</h1>
 
 
-
-  
-    extends Object<br/>
-  
-  
-  
 
   
   
@@ -341,21 +307,13 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-1">
+<div id="jd-content" class="api apilevel-2">
 <table class="jd-inheritance-table">
 
 
     <tr>
          	
-        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
-    </tr>
-    
-
-    <tr>
-        
-            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
-         	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.platform.Manifest.permission</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.alarmclock.ClockContract.CitiesColumns</td>
     </tr>
     
 
@@ -369,6 +327,10 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Constants for the Cities table, which contains all selectable cities.
+</p>
 
 
 
@@ -415,10 +377,9 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MODIFY_NETWORK_SETTINGS">MODIFY_NETWORK_SETTINGS</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html#CITY_ID">CITY_ID</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows system applications to make changes to a subset of system network settings 
-
+          Primary id for city.
           
     
 
@@ -428,10 +389,9 @@ Summary:
     
     <tr class=" api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MODIFY_SOUND_SETTINGS">MODIFY_SOUND_SETTINGS</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html#CITY_NAME">CITY_NAME</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows system applications to make changes to a subset of system sound settings 
-
+          City name.
           
     
 
@@ -439,12 +399,23 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#PUBLISH_CUSTOM_TILE">PUBLISH_CUSTOM_TILE</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html#TIMEZONE_NAME">TIMEZONE_NAME</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows a 3rd party application to publish or unpublish a quick settings tile 
+          Timezone name of city.
+          
+    
 
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html#TIMEZONE_OFFSET">TIMEZONE_OFFSET</a></td>
+        <td class="jd-descrcol" width="100%">
+          Timezone offset.
           
     
 
@@ -461,253 +432,43 @@ Summary:
 
 
 
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
 
 
-
-
-
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
-
-
-
-	 
-    <tr class="alt-color api apilevel-1" >
-        <td class="jd-typecol"><nobr>
+    
+      <tr class="alt-color api apilevel-2" >
+          <td class="jd-typecol"><nobr>
+          public
+          static
+          final
+          Uri</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html#CONTENT_URI">CONTENT_URI</a></td>
+          <td class="jd-descrcol" width="100%">
+            The content:// style URL for this table.
             
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#Manifest.permission()">Manifest.permission</a></span>()</nobr>
-        
-  </td></tr>
-
-
-
-</table>
-
-
-
-
-
-
-
-
-
-
-
-<!-- ========== METHOD SUMMARY =========== -->
-<table id="inhmethods" class="jd-sumtable"><tr><th>
-  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
-  <div style="clear:left;">Inherited Methods</div></th></tr>
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-java.lang.Object-trigger"
-          src="../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From class
-
-  java.lang.Object
-
-<div id="inherited-methods-java.lang.Object">
-  <div id="inherited-methods-java.lang.Object-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
     
 
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            Object</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">clone</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">equals</span>(Object arg0)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">finalize</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            Class&lt;?&gt;</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">getClass</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">hashCode</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">notify</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">notifyAll</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">toString</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">wait</span>(long arg0)</nobr>
-        
-  </td></tr>
-
+          </td>
+      </tr>
+      
+    
 
 </table>
-  </div>
-</div>
-</td></tr>
 
 
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </div><!-- jd-descr (summary) -->
@@ -736,7 +497,7 @@ From class
 
 
 
-<A NAME="MODIFY_NETWORK_SETTINGS"></A>
+<A NAME="CITY_ID"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -746,7 +507,7 @@ From class
         final 
         String
       </span>
-        MODIFY_NETWORK_SETTINGS
+        CITY_ID
     </h4>
       <div class="api-level">
         
@@ -760,7 +521,8 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows system applications to make changes to a subset of system network settings 
+  <div class="jd-tagdata jd-tagdescr"><p>Primary id for city.
+ <p>Type: STRING</p>
 </p></div>
 
     
@@ -768,7 +530,7 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS"
+                "city_id"
             
         </span>
         </div>
@@ -778,7 +540,7 @@ From class
 
 
 
-<A NAME="MODIFY_SOUND_SETTINGS"></A>
+<A NAME="CITY_NAME"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -788,7 +550,7 @@ From class
         final 
         String
       </span>
-        MODIFY_SOUND_SETTINGS
+        CITY_NAME
     </h4>
       <div class="api-level">
         
@@ -802,7 +564,8 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows system applications to make changes to a subset of system sound settings 
+  <div class="jd-tagdata jd-tagdescr"><p>City name.
+ <p>Type: STRING</p>
 </p></div>
 
     
@@ -810,7 +573,7 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cyanogenmod.permission.MODIFY_SOUND_SETTINGS"
+                "city_name"
             
         </span>
         </div>
@@ -820,9 +583,9 @@ From class
 
 
 
-<A NAME="PUBLISH_CUSTOM_TILE"></A>
+<A NAME="TIMEZONE_NAME"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -830,11 +593,11 @@ From class
         final 
         String
       </span>
-        PUBLISH_CUSTOM_TILE
+        TIMEZONE_NAME
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
         
   
 
@@ -844,7 +607,8 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows a 3rd party application to publish or unpublish a quick settings tile 
+  <div class="jd-tagdata jd-tagdescr"><p>Timezone name of city.
+ <p>Type: STRING</p>
 </p></div>
 
     
@@ -852,7 +616,50 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cyanogenmod.permission.PUBLISH_CUSTOM_TILE"
+                "timezone_name"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="TIMEZONE_OFFSET"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        TIMEZONE_OFFSET
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Timezone offset.
+ <p>Type: INTEGER</p>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "timezone_offset"
             
         </span>
         </div>
@@ -866,32 +673,27 @@ From class
 <!-- Fields -->
 
 
-<!-- Public ctors -->
-
-
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
 
 
 
-<A NAME="Manifest.permission()"></A>
 
-<div class="jd-details api apilevel-1"> 
+<A NAME="CONTENT_URI"></A>
+
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
-         
-         
-         
-         
-        
+        static 
+        final 
+        Uri
       </span>
-      <span class="sympad">Manifest.permission</span>
-      <span class="normal">()</span>
+        CONTENT_URI
     </h4>
       <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
         
   
 
@@ -901,12 +703,17 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>The content:// style URL for this table.
+</p></div>
 
+    
     </div>
 </div>
 
 
+
+
+<!-- Public ctors -->
 
 
 
