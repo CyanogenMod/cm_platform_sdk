@@ -110,6 +110,13 @@ LOCAL_SRC_FILES := \
     $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
 
+cmplat_LOCAL_INTERMEDIATE_SOURCES := \
+    $(cm_platform_res)/cyanogenmod/platform/R.java \
+    $(cm_platform_res)/cyanogenmod/platform/Manifest.java \
+
+LOCAL_INTERMEDIATE_SOURCES := \
+    $(cmplat_LOCAL_INTERMEDIATE_SOURCES)
+
 # Included aidl files from cyanogenmod.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
