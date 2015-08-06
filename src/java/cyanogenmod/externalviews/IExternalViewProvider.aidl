@@ -20,12 +20,10 @@ package cyanogenmod.externalviews;
 interface IExternalViewProvider
 {
     oneway void onAttach();
-    oneway void onCreateView();
     oneway void onStart();
     oneway void onResume();
     oneway void onPause();
     oneway void onStop();
-    oneway void onDestroyView();
     oneway void onDetach();
 
     oneway void alterWindow(in int x, in int y, in int width, in int height, in boolean visible);
