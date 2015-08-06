@@ -16,12 +16,23 @@ public abstract class ExternalViewProvider {
     private final Handler mHandler = new Handler();
     private final Provider mProvider = new Provider();
 
-    private View mRootView;
+    private final View mRootView;
+    private final WindowManager.LayoutParams mParams;
 
     public ExternalViewProvider(Context context) {
         mContext = context;
 
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        mRootView = onCreateView();
+
+        mParams = new WindowManager.LayoutParams();
+        mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager
+                .LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams
+                .FLAG_HARDWARE_ACCELERATED;
+        mParams.gravity = Gravity.LEFT | Gravity.TOP;
+        mParams.format = PixelFormat.OPAQUE;
+        mParams.preferredRefreshRate = 63;
     }
 
     private final class Provider extends IExternalViewProvider.Stub {
@@ -50,7 +61,7 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mWindowManager.addView(mRootView, mRootView.getLayoutParams());
+                    mWindowManager.addView(mRootView, mParams);
 
                     ExternalViewProvider.this.onResume();
                 }
@@ -92,35 +103,14 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (mRootView == null) {
-                        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-                        layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-                        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager
-                                .LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams
-                                .FLAG_HARDWARE_ACCELERATED;
-                        layoutParams.gravity = Gravity.LEFT | Gravity.TOP;
-                        layoutParams.format = PixelFormat.OPAQUE;
-                        layoutParams.preferredRefreshRate = 63;
+                    if (updateLayoutParams(x, y, width, mParams))
+                        return;
 
-                        mRootView = onCreateView();
+                    if (mRootView.getVisibility() != View.VISIBLE && !visible) {
+                        return;
+                    }
 
-                        if (updateLayoutParams(x, y, width, layoutParams))
-                            return;
-
-                        // TODO make sure we don't add it when it's supposed to be invisible
-                        mWindowManager.addView(mRootView, layoutParams);
-                    } else {
-                        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) mRootView
-                                .getLayoutParams();
-
-                        if (updateLayoutParams(x, y, width, layoutParams))
-                            return;
-
-                        if (mRootView.getVisibility() != View.VISIBLE && !visible) {
-                            return;
-                        }
-
-                        mRootView.setVisibility(visible ? View.VISIBLE : View.GONE);
+                    mRootView.setVisibility(visible ? View.VISIBLE : View.GONE);
 
 //                        if (mRootView instanceof TextureVideoView) {
 //                            TextureVideoView videoView = ((TextureVideoView) view);
@@ -133,9 +123,8 @@ public abstract class ExternalViewProvider {
 //                            }
 //                        }
 
-                        if (mRootView.getVisibility() != View.GONE)
-                            mWindowManager.updateViewLayout(mRootView, layoutParams);
-                    }
+                    if (mRootView.getVisibility() != View.GONE)
+                        mWindowManager.updateViewLayout(mRootView, mParams);
                 }
             });
         }
@@ -163,6 +152,5 @@ public abstract class ExternalViewProvider {
     protected void onResume() { }
     protected void onPause() { }
     protected void onStop() { }
-    protected void onDestroyView() { }
     protected void onDetach() { }
 }
