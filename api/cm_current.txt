@@ -53,13 +53,12 @@ package cyanogenmod.alarmclock {
 
   public class CyanogenModAlarmClock {
     ctor public CyanogenModAlarmClock();
-    method public static android.content.Intent createAlarmIntent();
+    method public static android.content.Intent createAlarmIntent(android.content.Context);
     field public static final java.lang.String ACTION_SET_ALARM_ENABLED = "cyanogenmod.alarmclock.SET_ALARM_ENABLED";
     field public static final java.lang.String EXTRA_ALARM_ID = "cyanogenmod.intent.extra.alarmclock.ID";
     field public static final java.lang.String EXTRA_ENABLED = "cyanogenmod.intent.extra.alarmclock.ENABLED";
     field public static final java.lang.String MODIFY_ALARMS_PERMISSION = "cyanogenmod.alarmclock.permission.MODIFY_ALARMS";
     field public static final java.lang.String READ_ALARMS_PERMISSION = "cyanogenmod.alarmclock.permission.READ_ALARMS";
-    field public static final java.lang.String WRITE_ALARMS_PERMISSION = "cyanogenmod.alarmclock.permission.WRITE_ALARMS";
   }
 
 }
@@ -309,6 +308,8 @@ package cyanogenmod.app {
     method public void setMobileDataEnabled(boolean);
     method public boolean setZenMode(int);
     method public void shutdownDevice();
+    field public static final java.lang.String MODIFY_NETWORK_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
+    field public static final java.lang.String MODIFY_SOUND_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
     field public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1; // 0x1
     field public static final int ZEN_MODE_NO_INTERRUPTIONS = 2; // 0x2
     field public static final int ZEN_MODE_OFF = 0; // 0x0
@@ -363,7 +364,8 @@ package cyanogenmod.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
-    field public static final java.lang.String MODIFY_SETTINGS = "cyanogenmod.permission.MODIFY_SETTINGS";
+    field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
+    field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
   }
 
