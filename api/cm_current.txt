@@ -75,6 +75,19 @@ package cyanogenmod.app {
     method public void removeTileAsUser(java.lang.String, int, android.os.UserHandle);
   }
 
+  public class CMTelephonyManager {
+    method public static cyanogenmod.app.CMTelephonyManager getInstance(android.content.Context);
+    method public java.util.List<android.telephony.SubscriptionInfo> getSubInformation();
+    method public boolean isDataConnectionEnabled();
+    method public boolean isDataConnectionSelectedOnSub(int);
+    method public boolean isSubActive(int);
+    method public void setDataConnectionState(boolean);
+    method public void setDefaultPhoneSub(int);
+    method public void setDefaultSmsSub(int);
+    method public void setSubState(int, boolean);
+    field public static final int ASK_FOR_SUBSCRIPTION_ID = 0; // 0x0
+  }
+
   public class CustomTile implements android.os.Parcelable {
     ctor public CustomTile(android.os.Parcel);
     ctor public CustomTile();
@@ -364,9 +377,11 @@ package cyanogenmod.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
+    field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
+    field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
   }
 
   public final class R {
