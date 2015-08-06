@@ -14,6 +14,7 @@ public abstract class ExternalViewProvider {
     private final Context mContext;
     private final WindowManager mWindowManager;
     private final Handler mHandler = new Handler();
+    private final Provider mProvider = new Provider();
 
     private View mRootView;
 
@@ -72,18 +73,6 @@ public abstract class ExternalViewProvider {
                 @Override
                 public void run() {
                     ExternalViewProvider.this.onStop();
-                }
-            });
-        }
-
-        @Override
-        public void onDestroyView() throws RemoteException {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    ExternalViewProvider.this.onDestroyView();
-
-                    mRootView = null;
                 }
             });
         }
@@ -164,8 +153,12 @@ public abstract class ExternalViewProvider {
         }
     }
 
+    public IBinder getBinder() {
+        return mProvider;
+    }
+
     protected void onAttach() { }
-    protected View onCreateView() { return null; }
+    protected abstract View onCreateView();
     protected void onStart() { }
     protected void onResume() { }
     protected void onPause() { }
