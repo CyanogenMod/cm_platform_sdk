@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Profiles Sample</string>
+    <string name="bluetooth_on_wifi_trigger">Create profile that triggers on top AP from WifiManager</string>
+</resources>
