@@ -5,12 +5,14 @@ import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 
 public abstract class ExternalViewProvider {
 
+    public static final String TAG = "ExternalViewProvider";
     private final Context mContext;
     private final WindowManager mWindowManager;
     private final Handler mHandler = new Handler();
@@ -45,6 +47,7 @@ public abstract class ExternalViewProvider {
                 @Override
                 public void run() {
                     mWindowManager.addView(mRootView, mParams);
+                    Log.d(TAG, "Attached, added view");
 
                     ExternalViewProvider.this.onAttach();
                 }
@@ -106,6 +109,8 @@ public abstract class ExternalViewProvider {
                 public void run() {
                     mWindowManager.removeView(mRootView);
 
+                    Log.d(TAG, "Detached, removed view");
+
                     ExternalViewProvider.this.onDetach();
                 }
             });
@@ -116,7 +121,12 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    updateLayoutParams(x, y, width, mParams);
+                    mParams.x = x;
+                    mParams.y = y;
+                    mParams.width = width;
+                    mParams.height = height;
+
+                    Log.d(TAG, mParams.toString());
 
                     mAskedShow = visible;
 
@@ -128,14 +138,8 @@ public abstract class ExternalViewProvider {
             });
         }
 
-        private void updateLayoutParams(int x, int y, int width, WindowManager.LayoutParams layoutParams) {
-            layoutParams.x = x + 50;
-            layoutParams.y = y + 50;
-            layoutParams.width = width - 100;
-            layoutParams.height = 1500;
-        }
-
         private void updateVisibility() {
+            Log.d(TAG, "shouldShow = " + mShouldShow + " askedShow = " + mAskedShow);
             mRootView.setVisibility(mShouldShow && mAskedShow ? View.VISIBLE : View.GONE);
         }
     }
