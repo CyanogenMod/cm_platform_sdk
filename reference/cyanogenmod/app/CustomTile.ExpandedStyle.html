@@ -178,6 +178,8 @@ type="text/css">
 
               <ul>
                 
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="selected api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-1">
@@ -209,6 +211,7 @@ type="text/css">
           <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
@@ -219,6 +222,7 @@ type="text/css">
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
       </ul>
     </li>
@@ -411,7 +415,9 @@ Summary:
             
               <a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a>,
             
-              <a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a>
+              <a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a>,
+            
+              <a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a>
             
           
       </div>
@@ -438,6 +444,18 @@ Summary:
         <td class="jd-descrcol" width="100%">
           An instance of <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></code> that shows the <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></code>'s in a
  scrollable ListView.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></td>
+        <td class="jd-descrcol" width="100%">
+          An instance of <code><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></code> that shows a remote view in the remote process
+&nbsp;
           
     
 
@@ -523,6 +541,19 @@ Summary:
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html#LIST_STYLE">LIST_STYLE</a></td>
         <td class="jd-descrcol" width="100%">
           Identifier for a list style expanded view
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html#REMOTE_STYLE">REMOTE_STYLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Identifier for a remote view style expanded view
 
           
     
@@ -655,7 +686,30 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-1" >
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            RemoteViews</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html#getContentViews()">getContentViews</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Retrieve the RemoteViews that have been set on this expanded style
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -678,7 +732,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class=" api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -701,7 +755,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -717,7 +771,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class=" api apilevel-1" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1121,6 +1175,49 @@ From interface
 
 
 
+<A NAME="REMOTE_STYLE"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        REMOTE_STYLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Identifier for a remote view style expanded view
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 
 <!-- Fields -->
 
@@ -1209,6 +1306,44 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getContentViews()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        RemoteViews
+      </span>
+      <span class="sympad">getContentViews</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Retrieve the RemoteViews that have been set on this expanded style</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>RemoteViews
+</li></ul>
+  </div>
 
     </div>
 </div>

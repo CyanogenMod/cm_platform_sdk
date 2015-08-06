@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Build | Android Developers</title>
+<title>LockSettings | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -139,7 +139,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="1" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -182,11 +182,11 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
               </ul><br/>
 
@@ -202,9 +202,14 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html">AirplaneModeSettings.BooleanState</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/BrightnessSettings.html">BrightnessSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.html">ConnectionSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.BooleanState.html">ConnectionSettings.BooleanState</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></li>
       </ul>
     </li>
               
@@ -269,21 +274,27 @@ type="text/css">
   
   
 
+  
+   
+  
+  
+   
+  
+  
+  
+
 
 <div class="sum-details-links">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
+
+
+
+
+
+  <a href="#inhconstants">Inherited Constants</a>
   
-
-
-
-
-
-  &#124; <a href="#constants">Constants</a>
-  
-
 
 
 
@@ -305,7 +316,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -318,10 +329,10 @@ Summary:
 <div id="jd-header">
     public
      
-     
+    final 
     
     class
-<h1 itemprop="name">Build</h1>
+<h1 itemprop="name">LockSettings</h1>
 
 
 
@@ -333,6 +344,11 @@ Summary:
 
   
   
+      implements 
+      
+        Parcelable 
+      
+  
   
 
 
@@ -343,7 +359,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-1">
+<div id="jd-content" class="api apilevel-2">
 <table class="jd-inheritance-table">
 
 
@@ -357,7 +373,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.os.Build</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.profiles.LockSettings</td>
     </tr>
     
 
@@ -373,7 +389,15 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Information about the current CyanogenMod build, extracted from system properties.
+<p itemprop="articleBody">The <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> class allows for overriding and setting the
+ current Lock screen state/security level. Value should be one a constant from
+ of <code><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></code>
+
+ <p>Example for disabling lockscreen security:
+ <pre class="prettyprint">
+ LockSettings lock = new LockSettings(Profile.LockMode.INSECURE);
+ profile.setScreenLockMode(lock);
+ </pre>
 </p>
 
 
@@ -404,45 +428,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-1" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></td>
-      <td class="jd-descrcol" width="100%">
-        Various version strings.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-1" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></td>
-      <td class="jd-descrcol" width="100%">
-        Enumeration of the currently known SDK version codes.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
 
 
 
@@ -457,15 +442,35 @@ Summary:
 
 
 <!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+<table id="inhconstants" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Constants</div></th></tr>
 
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+android.os.Parcelable
+<div id="inherited-constants-android.os.Parcelable">
+  <div id="inherited-constants-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
 
     
-    <tr class="alt-color api apilevel-1" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.html#UNKNOWN">UNKNOWN</a></td>
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
         <td class="jd-descrcol" width="100%">
-          Value used for when a build property is unknown.
+          
           
     
 
@@ -473,11 +478,25 @@ Summary:
     </tr>
     
     
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
+        <td class="jd-descrcol" width="100%">
+          
+          
+    
+
+        </td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 </table>
-
-
-
 
 
 
@@ -493,7 +512,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -503,8 +522,61 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#Build()">Build</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#LockSettings(android.os.Parcel)">LockSettings</a></span>(Parcel parcel)</nobr>
         
+        <div class="jd-descrdiv">
+          Unwrap <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> from a parcel.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#LockSettings()">LockSettings</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Construct a <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> with a default value of <code><a href="../../../">ERROR(/Profile.LockMode.DEFAULT)</a></code>.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#LockSettings(int)">LockSettings</a></span>(int value)</nobr>
+        
+        <div class="jd-descrdiv">
+          Construct a <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> with a default value.
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
@@ -522,20 +594,62 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-1" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
             
-            static
             
-            String</nobr>
+            
+            int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.html#getNameForSDKInt(int)">getNameForSDKInt</a></span>(int sdkInt)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#describeContents()">describeContents</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#getValue()">getValue</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Retrieve the name for the SDK int
+          Get the value for the <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html#setValue(int)">setValue</a></span>(int value)</nobr>
+        
+        <div class="jd-descrdiv">
+          Set the value for the <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code>
+
+ see <code><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></code>
+
           
     
 
@@ -760,6 +874,64 @@ From class
 </td></tr>
 
 
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  android.os.Parcelable
+
+<div id="inherited-methods-android.os.Parcelable">
+  <div id="inherited-methods-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">describeContents</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">writeToParcel</span>(Parcel arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
 </table>
 
 
@@ -783,54 +955,6 @@ From class
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="UNKNOWN"></A>
-
-<div class="jd-details api apilevel-1"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        UNKNOWN
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Value used for when a build property is unknown. </p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "unknown"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
@@ -842,9 +966,9 @@ From class
 
 
 
-<A NAME="Build()"></A>
+<A NAME="LockSettings(android.os.Parcel)"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -854,12 +978,12 @@ From class
          
         
       </span>
-      <span class="sympad">Build</span>
-      <span class="normal">()</span>
+      <span class="sympad">LockSettings</span>
+      <span class="normal">(Parcel parcel)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
         
   
 
@@ -869,7 +993,75 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Unwrap <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> from a parcel.</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="LockSettings()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">LockSettings</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> with a default value of <code><a href="../../../">ERROR(/Profile.LockMode.DEFAULT)</a></code>.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="LockSettings(int)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">LockSettings</span>
+      <span class="normal">(int value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> with a default value.
+</p></div>
 
     </div>
 </div>
@@ -890,24 +1082,24 @@ From class
 
 
 
-<A NAME="getNameForSDKInt(int)"></A>
+<A NAME="describeContents()"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
-        static 
          
          
          
-        String
+         
+        int
       </span>
-      <span class="sympad">getNameForSDKInt</span>
-      <span class="normal">(int sdkInt)</span>
+      <span class="sympad">describeContents</span>
+      <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
         
   
 
@@ -917,12 +1109,81 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Retrieve the name for the SDK int</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getValue()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getValue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the value for the <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>name of the SDK int, {@link #UNKNOWN) if not known
+      <ul class="nolist"><li>a constant from <code><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></code>
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<A NAME="setValue(int)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setValue</span>
+      <span class="normal">(int value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the value for the <code><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code>
+
+ see <code><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></code>
+</p></div>
 
     </div>
 </div>
