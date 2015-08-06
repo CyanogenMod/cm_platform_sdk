@@ -19,7 +19,7 @@ package cyanogenmod.externalviews;
 /** @hide */
 interface IExternalViewProvider
 {
-    oneway void onAttach();
+    oneway void onAttach(in IBinder windowToken);
     oneway void onStart();
     oneway void onResume();
     oneway void onPause();
