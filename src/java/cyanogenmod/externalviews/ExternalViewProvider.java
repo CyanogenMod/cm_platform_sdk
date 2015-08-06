@@ -19,6 +19,9 @@ public abstract class ExternalViewProvider {
     private final View mRootView;
     private final WindowManager.LayoutParams mParams;
 
+    private boolean mShouldShow = true;
+    private boolean mAskedShow = false;
+
     public ExternalViewProvider(Context context) {
         mContext = context;
 
@@ -41,6 +44,8 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    mWindowManager.addView(mRootView, mParams);
+
                     ExternalViewProvider.this.onAttach();
                 }
             });
@@ -61,7 +66,9 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mWindowManager.addView(mRootView, mParams);
+                    mShouldShow = true;
+
+                    updateVisibility();
 
                     ExternalViewProvider.this.onResume();
                 }
@@ -73,6 +80,10 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    mShouldShow = false;
+
+                    updateVisibility();
+
                     ExternalViewProvider.this.onPause();
                 }
             });
@@ -93,6 +104,8 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    mWindowManager.removeView(mRootView);
+
                     ExternalViewProvider.this.onDetach();
                 }
             });
@@ -103,25 +116,11 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (updateLayoutParams(x, y, width, mParams))
-                        return;
+                    updateLayoutParams(x, y, width, mParams);
 
-                    if (mRootView.getVisibility() != View.VISIBLE && !visible) {
-                        return;
-                    }
+                    mAskedShow = visible;
 
-                    mRootView.setVisibility(visible ? View.VISIBLE : View.GONE);
-
-//                        if (mRootView instanceof TextureVideoView) {
-//                            TextureVideoView videoView = ((TextureVideoView) view);
-//                            if (view.getVisibility() == View.GONE && videoView.isPlaying()) {
-//                                ((TextureVideoView) view).pause();
-//                                mVideoPosition = videoView.getCurrentPosition();
-//                            } else if (!videoView.isPlaying()){
-//                                videoView.seekTo(mVideoPosition);
-//                                ((TextureVideoView) view).start();
-//                            }
-//                        }
+                    updateVisibility();
 
                     if (mRootView.getVisibility() != View.GONE)
                         mWindowManager.updateViewLayout(mRootView, mParams);
@@ -129,16 +128,15 @@ public abstract class ExternalViewProvider {
             });
         }
 
-        private boolean updateLayoutParams(int x, int y, int width, WindowManager.LayoutParams layoutParams) {
-            if (layoutParams.x == x + 50 && layoutParams.y == y + 50 && layoutParams.width == width - 100 && layoutParams.height == 1500) {
-
-                return true;
-            }
+        private void updateLayoutParams(int x, int y, int width, WindowManager.LayoutParams layoutParams) {
             layoutParams.x = x + 50;
             layoutParams.y = y + 50;
             layoutParams.width = width - 100;
             layoutParams.height = 1500;
-            return false;
+        }
+
+        private void updateVisibility() {
+            mRootView.setVisibility(mShouldShow && mAskedShow ? View.VISIBLE : View.GONE);
         }
     }
 
