@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Profile.DozeMode | Android Developers</title>
+<title>CMTelephonyManager | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -203,7 +203,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
@@ -215,7 +215,7 @@ type="text/css">
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></li>
@@ -305,10 +305,10 @@ Summary:
 
 
 
-  &#124; <a href="#pubctors">Ctors</a>
+
+
+  &#124; <a href="#pubmethods">Methods</a>
   
-
-
 
 
 
@@ -331,11 +331,11 @@ Summary:
 
 <div id="jd-header">
     public
-    static 
+     
      
     
     class
-<h1 itemprop="name">Profile.DozeMode</h1>
+<h1 itemprop="name">CMTelephonyManager</h1>
 
 
 
@@ -371,7 +371,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.Profile.DozeMode</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CMTelephonyManager</td>
     </tr>
     
 
@@ -387,7 +387,11 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Doze modes available on a device
+<p itemprop="articleBody">The CMTelephonyManager allows you to view and manage the phone state and
+ the data connection, with multiple SIMs support.
+
+ <p>
+ To get the instance of this class, utilize CMTelephonyManager#getInstance(Context context)
 </p>
 
 
@@ -435,33 +439,9 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html#DEFAULT">DEFAULT</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#ASK_FOR_SUBSCRIPTION_ID">ASK_FOR_SUBSCRIPTION_ID</a></td>
         <td class="jd-descrcol" width="100%">
-          Represents a default Doze mode (user choice) 
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html#DISABLE">DISABLE</a></td>
-        <td class="jd-descrcol" width="100%">
-          Represents an disabled Doze mode 
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html#ENABLE">ENABLE</a></td>
-        <td class="jd-descrcol" width="100%">
-          Represents an enabled Doze mode 
+          Subscription ID used to set the default Phone and SMS to "ask every time".
           
     
 
@@ -483,9 +463,60 @@ Summary:
 
 
 
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
 
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        
+        <div class="jd-descrdiv">
+          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;SubscriptionInfo&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#getSubInformation()">getSubInformation</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the list of <code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code> that are registered on the
+ phone.
+          
+    
+
+        </div>
+  
+  </td></tr>
 
 
 	 
@@ -496,20 +527,162 @@ Summary:
             
             
             
-            </nobr>
+            boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html#Profile.DozeMode()">Profile.DozeMode</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isDataConnectionEnabled()">isDataConnectionEnabled</a></span>()</nobr>
         
+        <div class="jd-descrdiv">
+          Checks if the network data connection is enabled.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isDataConnectionSelectedOnSub(int)">isDataConnectionSelectedOnSub</a></span>(int subId)</nobr>
+        
+        <div class="jd-descrdiv">
+          Checks if the received subscription received has the data
+ connection enabled.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isSubActive(int)">isSubActive</a></span>(int subId)</nobr>
+        
+        <div class="jd-descrdiv">
+          Returns the state of the SIM by subscription ID.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDataConnectionState(boolean)">setDataConnectionState</a></span>(boolean state)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the network data conection active or inactive.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDefaultPhoneSub(int)">setDefaultPhoneSub</a></span>(int subId)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the default phone used to make phone calls as the one received on subId.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDefaultSmsSub(int)">setDefaultSmsSub</a></span>(int subId)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the default phone used to send SMS as the one received on subId.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setSubState(int, boolean)">setSubState</a></span>(int subId, boolean state)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the state of one of the SIMs by subscription ID.
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
 
 </table>
-
-
-
-
 
 
 
@@ -753,7 +926,7 @@ From class
 
 
 
-<A NAME="DEFAULT"></A>
+<A NAME="ASK_FOR_SUBSCRIPTION_ID"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -763,7 +936,7 @@ From class
         final 
         int
       </span>
-        DEFAULT
+        ASK_FOR_SUBSCRIPTION_ID
     </h4>
       <div class="api-level">
         
@@ -777,7 +950,8 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Represents a default Doze mode (user choice) </p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Subscription ID used to set the default Phone and SMS to "ask every time".
+</p></div>
 
     
         <div class="jd-tagdata">
@@ -795,90 +969,6 @@ From class
 
 
 
-<A NAME="DISABLE"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        DISABLE
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Represents an disabled Doze mode </p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                2
-                (0x00000002)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="ENABLE"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        ENABLE
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Represents an enabled Doze mode </p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                1
-                (0x00000001)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
 
 <!-- Fields -->
 
@@ -886,12 +976,58 @@ From class
 <!-- Public ctors -->
 
 
+
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
+<!-- Protected ctors -->
 
 
 
-<A NAME="Profile.DozeMode()"></A>
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getInstance(android.content.Context)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a>
+      </span>
+      <span class="sympad">getInstance</span>
+      <span class="normal">(Context context)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSubInformation()"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -901,9 +1037,9 @@ From class
          
          
          
-        
+        List&lt;SubscriptionInfo&gt;
       </span>
-      <span class="sympad">Profile.DozeMode</span>
+      <span class="sympad">getSubInformation</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -918,22 +1054,353 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the list of <code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code> that are registered on the
+ phone.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The list of SIM subscriptions. The returning list can be null or empty.</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">See Also</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code></li>
+      </ul>
+  </div>
 
     </div>
 </div>
 
 
+<A NAME="isDataConnectionEnabled()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isDataConnectionEnabled</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if the network data connection is enabled.
+
+ This method will return <code>true</code> (or <code>false</code> if inactive)
+ even when an internet connection is active through Wifi/BT.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code>true</code> if the network data connection is enabled, <code>false</code> otherwise.
+</li></ul>
+  </div>
+
+    </div>
+</div>
 
 
+<A NAME="isDataConnectionSelectedOnSub(int)"></A>
 
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<!-- Protected ctors -->
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isDataConnectionSelectedOnSub</span>
+      <span class="normal">(int subId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if the received subscription received has the data
+ connection enabled.
+
+ This method will return <code>true</code> (or <code>false</code> if inactive on the SIM)
+ even when an internet connection is active through Wifi/BT.
+
+ If the subscription ID is not valid the method will return false.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subId</td>
+          <td>The subscription ID to query.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code>true</code> if the data connection is enabled on the SIM, <code>false</code> otherwise.
+</li></ul>
+  </div>
+
+    </div>
+</div>
 
 
+<A NAME="isSubActive(int)"></A>
 
-<!-- ========= METHOD DETAIL ======== -->
-<!-- Public methdos -->
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isSubActive</span>
+      <span class="normal">(int subId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the state of the SIM by subscription ID.
+
+ If the subscription ID is not valid the method will return <code>false</code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subId</td>
+          <td>The subscription ID to query.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code>true</code> if the SIM is activated (even without signal or requesting the
+ PIN/PUK), <code>false</code> otherwise.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDataConnectionState(boolean)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDataConnectionState</span>
+      <span class="normal">(boolean state)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the network data conection active or inactive.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>state</td>
+          <td>If <code>true</code> enables the network data connection, if <code>false</code> disables it.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDefaultPhoneSub(int)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDefaultPhoneSub</span>
+      <span class="normal">(int subId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the default phone used to make phone calls as the one received on subId.
+
+ If ASK_FOR_SUBSCRIPTION_ID is used as a parameter, then the option to choose
+ what SIM to use is selected.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subId</td>
+          <td>The subscription to set as default for phone calls.
+              To select SIM when calling use ASK_FOR_SUBSCRIPTION_ID.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setDefaultSmsSub(int)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDefaultSmsSub</span>
+      <span class="normal">(int subId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the default phone used to send SMS as the one received on subId.
+
+ If ASK_FOR_SUBSCRIPTION_ID is used as a parameter, then the option to choose
+ what SIM to use is selected.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subId</td>
+          <td>The subscription to set as default for sending SMS.
+              To select SIM when sending SMS use ASK_FOR_SUBSCRIPTION_ID.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSubState(int, boolean)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSubState</span>
+      <span class="normal">(int subId, boolean state)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the state of one of the SIMs by subscription ID.
+
+ If the subscription ID is not valid or the SIM already
+ is in the desired state the method will do nothing.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>subId</td>
+          <td>The subscription ID to change the state.</td>
+        </tr>
+        <tr>
+          <th>state</td>
+          <td><code>true</code> to activate the SIM, <code>false</code> to disable.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 
 
 
