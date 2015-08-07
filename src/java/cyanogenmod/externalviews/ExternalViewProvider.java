@@ -8,7 +8,10 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
+import com.android.internal.policy.PolicyManager;
 
 public abstract class ExternalViewProvider {
 
@@ -18,7 +21,7 @@ public abstract class ExternalViewProvider {
     private final Handler mHandler = new Handler();
     private final Provider mProvider = new Provider();
 
-    private final View mRootView;
+    private final Window mWindow;
     private final WindowManager.LayoutParams mParams;
 
     private boolean mShouldShow = true;
@@ -28,16 +31,16 @@ public abstract class ExternalViewProvider {
         mContext = context;
 
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        mRootView = onCreateView();
+        mWindow = PolicyManager.makeNewWindow(context);
+        ((ViewGroup)mWindow.getDecorView()).addView(onCreateView());
 
         mParams = new WindowManager.LayoutParams();
         mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-        mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager
-                .LayoutParams.FLAG_LAYOUT_NO_LIMITS | WindowManager.LayoutParams
-                .FLAG_HARDWARE_ACCELERATED;
+        mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
         mParams.gravity = Gravity.LEFT | Gravity.TOP;
         mParams.format = PixelFormat.OPAQUE;
-        mParams.preferredRefreshRate = 63;
     }
 
     private final class Provider extends IExternalViewProvider.Stub {
@@ -46,8 +49,7 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mWindowManager.addView(mRootView, mParams);
-                    Log.d(TAG, "Attached, added view");
+                    mWindowManager.addView(mWindow.getDecorView(), mParams);
 
                     ExternalViewProvider.this.onAttach();
                 }
@@ -107,7 +109,7 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mWindowManager.removeView(mRootView);
+                    mWindowManager.removeView(mWindow.getDecorView());
 
                     Log.d(TAG, "Detached, removed view");
 
@@ -132,15 +134,15 @@ public abstract class ExternalViewProvider {
 
                     updateVisibility();
 
-                    if (mRootView.getVisibility() != View.GONE)
-                        mWindowManager.updateViewLayout(mRootView, mParams);
+                    if (mWindow.getDecorView().getVisibility() != View.GONE)
+                        mWindowManager.updateViewLayout(mWindow.getDecorView(), mParams);
                 }
             });
         }
 
         private void updateVisibility() {
             Log.d(TAG, "shouldShow = " + mShouldShow + " askedShow = " + mAskedShow);
-            mRootView.setVisibility(mShouldShow && mAskedShow ? View.VISIBLE : View.GONE);
+            mWindow.getDecorView().setVisibility(mShouldShow && mAskedShow ? View.VISIBLE : View.GONE);
         }
     }
 
