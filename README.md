@@ -6,9 +6,22 @@ The Platform SDK provides a set of APIs that give you easy access to a variety o
 
 You can either [download](https://github.com/CyanogenMod/android_prebuilts_cmsdk/tree/master/current) from prebuilts hosted on github or pull directly via Gradle.
 
-Within `build.gradle` make sure your `repositories` list sonatype OSS repos
 
+### Building against release artifacts
+
+Our stable releases are mirrored in [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22platform.sdk%22), and you can fetch the current release by setting your `build.gradle` dependencies to
+
+```gradle
+dependencies {
+    compile 'org.cyanogenmod:platform.sdk:1.0'
+}
 ```
+
+### Buliding against development snapshots
+
+Within `build.gradle` make sure your `repositories` list sonatype OSS repos for snapshots
+
+```gradle
 repositories {
     maven {
         url "https://oss.sonatype.org/content/repositories/snapshots/"
@@ -16,17 +29,9 @@ repositories {
 }
 ```
 
-To target the current release (for retail devices), set your `dependency` for `1.0-SNAPSHOT`
+You can target the `future` or `development` branch by setting your `dependencies` for `2.0-SNAPSHOT`
 
-```
-dependencies {
-    compile 'org.cyanogenmod:platform.sdk:1.0-SNAPSHOT'
-}
-```
-
-Likewise, you can target the `future` or `development` branch by setting your `dependencies` for `2.0-SNAPSHOT`
-
-```
+```gradle
 dependencies {
     compile 'org.cyanogenmod:platform.sdk:2.0-SNAPSHOT'
 }
