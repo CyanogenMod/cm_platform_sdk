@@ -14,6 +14,8 @@ import android.os.RemoteException;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
+import android.view.WindowManagerGlobal;
 import cyanogenmod.platform.R;
 import java.util.LinkedList;
 
@@ -28,6 +30,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     private boolean mBound;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private IExternalViewProvider mExternalViewProvider;
+    private final IBinder mRemoteWindowToken;
 
     private static ComponentName getComponentFromAttribute(Context context, AttributeSet attrs) {
         String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
@@ -52,6 +55,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         mExtensionComponent = componentName;
         mActivity.getApplication().registerActivityLifecycleCallbacks(this);
         getViewTreeObserver().addOnScrollChangedListener(this);
+        mRemoteWindowToken = WindowManagerGlobal.getInstance().createRemoteWindowToken(getApplicationWindowToken());
         bind();
     }
 
@@ -114,6 +118,15 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
 
     @Override
     public void onActivityResumed(Activity activity) {
+        boolean visible = false;
+        if (getVisibility() == VISIBLE) {
+            final Rect hitRect = new Rect();
+            mActivity.getWindow().getDecorView().getHitRect(hitRect);
+            visible = getLocalVisibleRect(hitRect);
+        }
+
+        WindowManagerGlobal.getInstance().setRemoteWindowVisbility(visible, mRemoteWindowToken, getApplicationWindowToken());
+
         performAction(new Runnable() {
             @Override
             public void run() {
@@ -127,6 +140,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
 
     @Override
     public void onActivityPaused(Activity activity) {
+        WindowManagerGlobal.getInstance().setRemoteWindowVisbility(false, mRemoteWindowToken, getApplicationWindowToken());
+
         performAction(new Runnable() {
             @Override
             public void run() {
@@ -165,22 +180,15 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         super.onLayout(changed, left, top, right, bottom);
         int[] screenCords = new int[2];
         getLocationOnScreen(screenCords);
-        final Rect hitRect = new Rect();
-        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
-                } catch (RemoteException e) {
-                }
-            }
-        });
+
+        WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
+        mParams.x = screenCords[0];
+        mParams.y = screenCords[1];
+        mParams.width = getWidth();
+        mParams.height = getHeight();
+
+        WindowManagerGlobal.getInstance().updateRemoteWindow(mParams, WindowManager.LayoutParams.LAYOUT_CHANGED,
+                mRemoteWindowToken, getApplicationWindowToken());
     }
 
     @Override
@@ -189,20 +197,17 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         getLocationOnScreen(screenCords);
         final Rect hitRect = new Rect();
         mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
-                } catch (RemoteException e) {
-                }
-            }
-        });
+
+        WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
+
+        mParams.x = screenCords[0];
+        mParams.y = screenCords[1];
+        mParams.width = getWidth();
+        mParams.height = getHeight();
+        mParams.visibility = getLocalVisibleRect(hitRect);
+
+        WindowManagerGlobal.getInstance().updateRemoteWindow(mParams, WindowManager.LayoutParams.LAYOUT_CHANGED,
+                mRemoteWindowToken, getApplicationWindowToken());
     }
 
     // Placeholder callbacks
@@ -227,7 +232,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
             @Override
             public void run() {
                 try {
-                    mExternalViewProvider.onAttach(null);
+                    mExternalViewProvider.onAttach(mRemoteWindowToken);
                 } catch (RemoteException e) {
                 }
             }

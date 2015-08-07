@@ -24,9 +24,6 @@ public abstract class ExternalViewProvider {
     private final Window mWindow;
     private final WindowManager.LayoutParams mParams;
 
-    private boolean mShouldShow = true;
-    private boolean mAskedShow = false;
-
     public ExternalViewProvider(Context context) {
         mContext = context;
 
@@ -45,10 +42,11 @@ public abstract class ExternalViewProvider {
 
     private final class Provider extends IExternalViewProvider.Stub {
         @Override
-        public void onAttach(IBinder windowToken) throws RemoteException {
+        public void onAttach(final IBinder remoteWindowToken) throws RemoteException {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
+                    mParams.token = remoteWindowToken;
                     mWindowManager.addView(mWindow.getDecorView(), mParams);
 
                     ExternalViewProvider.this.onAttach();
@@ -71,10 +69,6 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mShouldShow = true;
-
-                    updateVisibility();
-
                     ExternalViewProvider.this.onResume();
                 }
             });
@@ -85,10 +79,6 @@ public abstract class ExternalViewProvider {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mShouldShow = false;
-
-                    updateVisibility();
-
                     ExternalViewProvider.this.onPause();
                 }
             });
@@ -116,33 +106,6 @@ public abstract class ExternalViewProvider {
                     ExternalViewProvider.this.onDetach();
                 }
             });
-        }
-
-        @Override
-        public void alterWindow(final int x, final int y, final int width, final int height, final boolean visible) {
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mParams.x = x;
-                    mParams.y = y;
-                    mParams.width = width;
-                    mParams.height = height;
-
-                    Log.d(TAG, mParams.toString());
-
-                    mAskedShow = visible;
-
-                    updateVisibility();
-
-                    if (mWindow.getDecorView().getVisibility() != View.GONE)
-                        mWindowManager.updateViewLayout(mWindow.getDecorView(), mParams);
-                }
-            });
-        }
-
-        private void updateVisibility() {
-            Log.d(TAG, "shouldShow = " + mShouldShow + " askedShow = " + mAskedShow);
-            mWindow.getDecorView().setVisibility(mShouldShow && mAskedShow ? View.VISIBLE : View.GONE);
         }
     }
 
