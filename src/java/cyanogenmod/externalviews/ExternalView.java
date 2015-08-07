@@ -20,6 +20,9 @@ import java.util.LinkedList;
 public class ExternalView extends View implements ViewTreeObserver.OnScrollChangedListener,
         Application.ActivityLifecycleCallbacks {
 
+    private static final String sAttributeNameSpace =
+            "http://schemas.android.com/apk/lib/cyanogenmod.platform";
+
     private Activity mActivity;
     private final ComponentName mExtensionComponent;
     private boolean mBound;
@@ -27,14 +30,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     private IExternalViewProvider mExternalViewProvider;
 
     private static ComponentName getComponentFromAttribute(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExternalView, 0, 0);
-        try {
-            String component = typedArray.getString(R.attr.componentName);
-            System.out.println("Component " + component);
-            return ComponentName.unflattenFromString(component);
-        } finally {
-            typedArray.recycle();
-        }
+        String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
+        return ComponentName.unflattenFromString(componentString);
     }
 
     public ExternalView(Context context, AttributeSet attrs) {
