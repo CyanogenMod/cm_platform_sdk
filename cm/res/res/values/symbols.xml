@@ -25,4 +25,5 @@
     <java-symbol type="xml" name="profile_default" />
     <java-symbol type="string" name="wildcardProfile" />
 
+    <java-symbol type="attr" name="componentName" />
 </resources>

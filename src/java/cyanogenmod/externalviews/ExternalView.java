@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -13,7 +14,7 @@ import android.os.RemoteException;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
-
+import cyanogenmod.platform.R;
 import java.util.LinkedList;
 
 public class ExternalView extends View implements ViewTreeObserver.OnScrollChangedListener,
@@ -25,20 +26,27 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private IExternalViewProvider mExternalViewProvider;
 
-    public ExternalView(Context context) {
-        this(context, (ComponentName) null);
+    private static ComponentName getComponentFromAttribute(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExternalView, 0, 0);
+        try {
+            String component = typedArray.getString(R.attr.componentName);
+            System.out.println("Component " + component);
+            return ComponentName.unflattenFromString(component);
+        } finally {
+            typedArray.recycle();
+        }
     }
 
     public ExternalView(Context context, AttributeSet attrs) {
-        this(context, (ComponentName) null);
+        this(context, getComponentFromAttribute(context, attrs));
     }
 
     public ExternalView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, (ComponentName) null);
+        this(context, attrs);
     }
 
     public ExternalView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        this(context, (ComponentName) null);
+        this(context, attrs);
     }
 
     public ExternalView(Context context, ComponentName componentName) {
@@ -46,6 +54,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         mActivity = (Activity) getContext();
         mExtensionComponent = componentName;
         mActivity.getApplication().registerActivityLifecycleCallbacks(this);
+        getViewTreeObserver().addOnScrollChangedListener(this);
         bind();
     }
 
@@ -179,24 +188,24 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
 
     @Override
     public void onScrollChanged() {
-//        int[] screenCords = new int[2];
-//        getLocationOnScreen(screenCords);
-//        final Rect hitRect = new Rect();
-//        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-//        final int x = screenCords[0];
-//        final int y = screenCords[1];
-//        final int width = getWidth();
-//        final int height = getHeight();
-//        performAction(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    mExternalViewProvider.alterWindow(x, y, width, height,
-//                            getLocalVisibleRect(hitRect));
-//                } catch (RemoteException e) {
-//                }
-//            }
-//        });
+        int[] screenCords = new int[2];
+        getLocationOnScreen(screenCords);
+        final Rect hitRect = new Rect();
+        mActivity.getWindow().getDecorView().getHitRect(hitRect);
+        final int x = screenCords[0];
+        final int y = screenCords[1];
+        final int width = getWidth();
+        final int height = getHeight();
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.alterWindow(x, y, width, height,
+                            getLocalVisibleRect(hitRect));
+                } catch (RemoteException e) {
+                }
+            }
+        });
     }
 
     // Placeholder callbacks
