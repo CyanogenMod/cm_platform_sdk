@@ -48,6 +48,8 @@ public class SettingsManagerService extends SystemService {
 
     private static final String TAG = "CMSettingsService";
 
+    private static final int CYNGN_DEBUG_CERT_PUBLIC_KEY_HASH = 992989237;
+
     private Context mContext;
     private TelephonyManager mTelephonyManager;
     private INotificationManager mNotificationManager;
@@ -81,11 +83,32 @@ public class SettingsManagerService extends SystemService {
                 "You do not have permissions to shut down the device.");
     }
 
+    private boolean systemSignatureMatchesDebugCert() {
+        try {
+            PackageInfo info = mContext.getPackageManager().getPackageInfo("com.android.systemui", PackageManager.GET_SIGNATURES);
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            X509Certificate cert = (X509Certificate) cf.generateCertificate(
+                    new ByteArrayInputStream(info.signatures[0].toByteArray()));
+            PublicKey key = cert.getPublicKey();
+            int hash = ((RSAPublicKey) key).getModulus().hashCode();
+            boolean match = hash == CYNGN_DEBUG_CERT_PUBLIC_KEY_HASH;
+            Log.d(TAG, "System signature matches debug hash: " + match);
+            return match;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     private final IBinder mService = new ISettingsManager.Stub() {
 
         @Override
         public void setAirplaneModeEnabled(boolean enabled) {
-            enforceModifyNetworkSettingsPermission();
+            if (!systemSignatureMatchesDebugCert()) {
+                enforceModifyNetworkSettingsPermission();
+            }
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -98,7 +121,9 @@ public class SettingsManagerService extends SystemService {
 
         @Override
         public void setMobileDataEnabled(boolean enabled) {
-            enforceModifyNetworkSettingsPermission();
+            if (!systemSignatureMatchesDebugCert()) {
+                enforceModifyNetworkSettingsPermission();
+            }
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -111,7 +136,9 @@ public class SettingsManagerService extends SystemService {
 
         @Override
         public void shutdown() {
-            enforceShutdownPermission();
+            if (!systemSignatureMatchesDebugCert()) {
+                enforceShutdownPermission();
+            }
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
@@ -124,7 +151,9 @@ public class SettingsManagerService extends SystemService {
 
         @Override
         public void reboot() {
-            enforceShutdownPermission();
+            if (!systemSignatureMatchesDebugCert()) {
+                enforceShutdownPermission();
+            }
             /*
              * We need to clear the caller's identity in order to
              *   allow this method call to modify settings
