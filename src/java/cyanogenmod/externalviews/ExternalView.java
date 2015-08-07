@@ -181,13 +181,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         int[] screenCords = new int[2];
         getLocationOnScreen(screenCords);
 
-        WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
-        mParams.x = screenCords[0];
-        mParams.y = screenCords[1];
-        mParams.width = getWidth();
-        mParams.height = getHeight();
-
-        WindowManagerGlobal.getInstance().updateRemoteWindow(mParams, WindowManager.LayoutParams.LAYOUT_CHANGED,
+        WindowManagerGlobal.getInstance().updateRemoteWindow(screenCords[0], screenCords[1], getWidth(), getHeight(),
                 mRemoteWindowToken, getApplicationWindowToken());
     }
 
@@ -198,15 +192,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         final Rect hitRect = new Rect();
         mActivity.getWindow().getDecorView().getHitRect(hitRect);
 
-        WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
-
-        mParams.x = screenCords[0];
-        mParams.y = screenCords[1];
-        mParams.width = getWidth();
-        mParams.height = getHeight();
-        mParams.visibility = getLocalVisibleRect(hitRect);
-
-        WindowManagerGlobal.getInstance().updateRemoteWindow(mParams, WindowManager.LayoutParams.LAYOUT_CHANGED,
+        WindowManagerGlobal.getInstance().updateRemoteWindow(screenCords[0], screenCords[1], getWidth(), getHeight(),
                 mRemoteWindowToken, getApplicationWindowToken());
     }
 

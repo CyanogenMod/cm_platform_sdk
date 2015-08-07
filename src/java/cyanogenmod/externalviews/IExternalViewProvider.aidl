@@ -25,6 +25,4 @@ interface IExternalViewProvider
     oneway void onPause();
     oneway void onStop();
     oneway void onDetach();
-
-    oneway void alterWindow(in int x, in int y, in int width, in int height, in boolean visible);
 }
