@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Build.CM_VERSION | Android Developers</title>
+<title>ClockContract | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -139,7 +139,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="1" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -178,11 +178,11 @@ type="text/css">
 
               <ul>
                 
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
@@ -199,12 +199,19 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
-          <li class="selected api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></li>
       </ul>
     </li>
               
@@ -274,19 +281,19 @@ type="text/css">
 
 Summary:
 
-
-
-
-
-
-
-  <a href="#lfields">Fields</a>
+  <a href="#nestedclasses">Nested Classes</a>
   
 
 
 
-  &#124; <a href="#pubctors">Ctors</a>
+
+
+  &#124; <a href="#constants">Constants</a>
   
+
+
+
+
 
 
 
@@ -299,7 +306,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -311,11 +318,11 @@ Summary:
 
 <div id="jd-header">
     public
-    static 
      
+    final 
     
     class
-<h1 itemprop="name">Build.CM_VERSION</h1>
+<h1 itemprop="name">ClockContract</h1>
 
 
 
@@ -337,7 +344,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-1">
+<div id="jd-content" class="api apilevel-2">
 <table class="jd-inheritance-table">
 
 
@@ -351,7 +358,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.os.Build.CM_VERSION</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.alarmclock.ClockContract</td>
     </tr>
     
 
@@ -367,7 +374,30 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Various version strings. </p>
+<p itemprop="articleBody"><p>
+ The contract between the clock provider and desk clock. Contains
+ definitions for the supported URIs and data columns.
+ </p>
+ <h3>Overview</h3>
+ <p>
+ ClockContract defines the data model of clock related information.
+ This data is stored in a number of tables:
+ </p>
+ <ul>
+ <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></code> table holds the user created alarms</li>
+ <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></code> table holds the current state of each
+ alarm in the AlarmsColumn table.
+ </li>
+ <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></code> table holds all user selectable cities</li>
+ </ul>
+
+ <p>
+ Requires <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#READ_ALARMS_PERMISSION">READ_ALARMS_PERMISSION</a></code>
+ to read from the provider.
+ Requires <code><a href="../../../">ERROR(/cyanogenmod.alarmclock.CyanogenModAlarmClock#WRITE_ALARMS_PERMISSION)</a></code> to write
+ to the provider.
+ </p>
+</p>
 
 
 
@@ -397,75 +427,122 @@ Summary:
 
 
 
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
-
-
-    
-      <tr class="alt-color api apilevel-1" >
-          <td class="jd-typecol"><nobr>
-          public
-          static
-          final
-          int</nobr></td>
-          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html#SDK_INT">SDK_INT</a></td>
-          <td class="jd-descrcol" width="100%">
-            The user-visible SDK version of the framework; its possible
- values are defined in <code><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></code>.
-            
-    
-
-          </td>
-      </tr>
-      
-    
-
-</table>
-
-
-
-
-
-
-
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
-
-
-
-	 
-    <tr class="alt-color api apilevel-1" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html#Build.CM_VERSION()">Build.CM_VERSION</a></span>()</nobr>
+  
+    <tr class="alt-color api apilevel-2" >
+      <td class="jd-typecol"><nobr>
         
-  </td></tr>
+         
+         
+        
+        interface</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></td>
+      <td class="jd-descrcol" width="100%">
+        Constants for tables with AlarmSettings.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        interface</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></td>
+      <td class="jd-descrcol" width="100%">
+        Constants for the Alarms table, which contains the user created alarms.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        interface</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></td>
+      <td class="jd-descrcol" width="100%">
+        Constants for the Cities table, which contains all selectable cities.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        interface</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></td>
+      <td class="jd-descrcol" width="100%">
+        Constants for the Instance table, which contains the state of each alarm.&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html#AUTHORITY">AUTHORITY</a></td>
+        <td class="jd-descrcol" width="100%">
+          This authority is used for writing to or querying from the clock
+ provider.
+          
+    
+
+        </td>
+    </tr>
+    
+    
 
 </table>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -707,30 +784,27 @@ From class
 <!-- Constants -->
 
 
-<!-- Fields -->
-
-
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
 
 
 
 
-<A NAME="SDK_INT"></A>
+<A NAME="AUTHORITY"></A>
 
-<div class="jd-details api apilevel-1"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
         static 
         final 
-        int
+        String
       </span>
-        SDK_INT
+        AUTHORITY
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
         
   
 
@@ -740,60 +814,30 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>The user-visible SDK version of the framework; its possible
- values are defined in <code><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></code>.
-
- Will return 0 if the device does not support the CM SDK.
+  <div class="jd-tagdata jd-tagdescr"><p>This authority is used for writing to or querying from the clock
+ provider.
 </p></div>
 
     
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "com.android.deskclock"
+            
+        </span>
+        </div>
+    
     </div>
 </div>
 
 
+
+
+<!-- Fields -->
 
 
 <!-- Public ctors -->
-
-
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
-
-
-
-<A NAME="Build.CM_VERSION()"></A>
-
-<div class="jd-details api apilevel-1"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">Build.CM_VERSION</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
 
 
 
