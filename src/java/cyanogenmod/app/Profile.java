@@ -26,6 +26,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.internal.policy.IKeyguardService;
 import cyanogenmod.os.Build;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
@@ -1168,7 +1169,7 @@ public final class Profile implements Parcelable, Comparable {
     }
 
     /** @hide */
-    public void doSelect(Context context) {
+    public void doSelect(Context context, IKeyguardService keyguardService) {
         // Set stream volumes
         AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
         for (StreamSettings sd : streams.values()) {
@@ -1190,8 +1191,12 @@ public final class Profile implements Parcelable, Comparable {
         // Set brightness
         mBrightness.processOverride(context);
 
-        // Set lock screen mode
-        mScreenLockMode.processOverride(context);
+        if (keyguardService != null) {
+            // Set lock screen mode
+            mScreenLockMode.processOverride(context, keyguardService);
+        } else {
+            Log.e(TAG, "cannot process screen lock override without a keyguard service.");
+        }
 
         // Set expanded desktop
         // if (mExpandedDesktopMode != ExpandedDesktopMode.DEFAULT) {

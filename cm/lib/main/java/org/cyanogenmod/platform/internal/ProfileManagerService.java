@@ -16,6 +16,9 @@
 
 package org.cyanogenmod.platform.internal;
 
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import com.android.internal.policy.IKeyguardService;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -63,6 +66,9 @@ public class ProfileManagerService extends SystemService {
 
     public static final String PERMISSION_CHANGE_SETTINGS = "android.permission.WRITE_SETTINGS";
 
+    public static final String KEYGUARD_PACKAGE = "com.android.systemui";
+    public static final String KEYGUARD_CLASS = "com.android.systemui.keyguard.KeyguardService";
+
     /* package */ static final File PROFILE_FILE =
             new File(Environment.getSystemSecureDirectory(), "profiles.xml");
 
@@ -85,6 +91,30 @@ public class ProfileManagerService extends SystemService {
     private boolean mDirty;
     private BackupManager mBackupManager;
     private ProfileTriggerHelper mTriggerHelper;
+
+    private Runnable mBindKeyguard = new Runnable() {
+        @Override
+        public void run() {
+            bindKeyguard();
+        }
+    };
+    private IKeyguardService mKeyguardService;
+    private final ServiceConnection mKeyguardConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            if (LOCAL_LOGV) Log.v(TAG, "*** Keyguard connected (yay!)");
+            mKeyguardService = IKeyguardService.Stub.asInterface(service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            if (LOCAL_LOGV) Log.v(TAG, "*** Keyguard disconnected, retrying connection soon.");
+            mKeyguardService = null;
+            // system UI died? retry connection in 5s
+            mHandler.removeCallbacks(mBindKeyguard);
+            mHandler.postDelayed(mBindKeyguard, 5000);
+        }
+    };
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -123,11 +153,23 @@ public class ProfileManagerService extends SystemService {
         mContext.registerReceiver(mIntentReceiver, filter);
     }
 
+    private void bindKeyguard() {
+        if (mKeyguardService == null) {
+            Intent intent = new Intent();
+            intent.setClassName(KEYGUARD_PACKAGE, KEYGUARD_CLASS);
+            if (!mContext.bindServiceAsUser(intent, mKeyguardConnection,
+                    Context.BIND_AUTO_CREATE, UserHandle.CURRENT)) {
+                Log.e(TAG, "error binding to keyguard service");
+            }
+        }
+    }
+
     private void initialize() {
         initialize(false);
     }
 
     private void initialize(boolean skipFile) {
+        bindKeyguard();
         mTriggerHelper = new ProfileTriggerHelper(mContext, mHandler, this);
         mProfiles = new HashMap<UUID, Profile>();
         mProfileNames = new HashMap<String, UUID>();
@@ -588,7 +630,7 @@ public class ProfileManagerService extends SystemService {
         if (doInit) {
             if (LOCAL_LOGV) Log.v(TAG, "setActiveProfile(Profile, boolean) - Running init");
             // Call profile's "doSelect"
-            mActiveProfile.doSelect(mContext);
+            mActiveProfile.doSelect(mContext, mKeyguardService);
 
             // Notify other applications of newly selected profile.
             Intent broadcast = new Intent(ProfileManager.INTENT_ACTION_PROFILE_SELECTED);
