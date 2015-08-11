@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">CyanogenMod Sistemi</string>
   <string name="permlab_publishCustomTile">cəld tənzimləmələr panelində özəl bir çərçivə yarat</string>
   <string name="permdesc_publishCustomTile">Tətbiqetməyə cəld tənzimləmələr çərçivəsi yaratmağa icazə verər.</string>
+  <string name="permlab_modifyNetworkSettings">sistem şəbəkə tənzimləmələrini dəyişdir</string>
+  <string name="permdesc_modifyNetworkSettings">Tətbiqetməyə sistem şəbəkə tənzimləmələrində məhdud sayda dəyişiklik etmə icazəsi verər.</string>
+  <string name="permlab_modifySoundSettings">sistem səs tənzimləmələrini dəyişdir</string>
+  <string name="permdesc_modifySoundSettings">Tətbiqetməyə sistem səs tənzimləmələrində məhdud sayda dəyişiklik etmə icazəsi verər.</string>
   <string name="permlab_bindCustomTileListenerService">özəl çərçivə dinləyici xidmətinə bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Tətbiqetməyə özəl çərçivə dinləyici xidmətinin üst səviyyə interfeysinə bağlanmasına icazə verər.</string>
+  <string name="permlab_readMSPhoneState">telefon durumu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstər</string>
+  <string name="permdesc_readMSPhoneState">Tətbiqetməyə telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstərməyə icazə verər.</string>
+  <string name="permlab_modifyMSPhoneState">telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını dəyişdir</string>
+  <string name="permdesc_modifyMSPhoneState">Tətbiqetməyə telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını dəyişdirmə icazə verər.</string>
   <string name="custom_tile_listener_binding_label">Özəl çərçivə dinləyicisi</string>
   <string name="profileNameDefault">İlkin</string>
   <string name="profileNameWork">İş</string>

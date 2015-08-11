@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">CyanogenMod систем</string>
   <string name="permlab_publishCustomTile">направи прилагођену плочицу у панелу брзог подешавања</string>
   <string name="permdesc_publishCustomTile">Омогући апликацији да избаци плочицу брзог подешавања.</string>
+  <string name="permlab_modifyNetworkSettings">промена поставки мрежног система</string>
+  <string name="permdesc_modifyNetworkSettings">Дозволи апликацији да мења поставке ограниченог дела подешавања мреже.</string>
+  <string name="permlab_modifySoundSettings">промени подешавања системског звука</string>
+  <string name="permdesc_modifySoundSettings">Дозволи апликацији да мења поставке ограниченог дела подешавања системског звука.</string>
   <string name="permlab_bindCustomTileListenerService">везује за подразумевану плочицу сервиса надгледања</string>
   <string name="permdesc_bindCustomTileListenerService">Омогућава апликацији да се веже за интерфејс највишег нивоа прилагођене плочице сервиса надгледања.</string>
+  <string name="permlab_readMSPhoneState">приказ стања телефона и конекције уз подршку за више SIM-ова</string>
+  <string name="permdesc_readMSPhoneState">Дозволи апликацији да види стање телефона и конекцију уз подршку за више SIM-ова.</string>
+  <string name="permlab_modifyMSPhoneState">промена стања телефона и конекције уз подршку за више SIM-ова</string>
+  <string name="permdesc_modifyMSPhoneState">Дозволи апликацији да мења стање телефона и конекције уз подршку за више SIM-ова.</string>
   <string name="custom_tile_listener_binding_label">Прилагођена плочица надгледања</string>
   <string name="profileNameDefault">Подразумевано</string>
   <string name="profileNameWork">Посао</string>

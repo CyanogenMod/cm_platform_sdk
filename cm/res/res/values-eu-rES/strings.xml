@@ -19,6 +19,8 @@
   <string name="cyanogenmod_system_label">CyanogenMod sistema</string>
   <string name="permlab_publishCustomTile">sortu lauza pertsonalizatu bat ezarpen azkarren panelean</string>
   <string name="permdesc_publishCustomTile">Ezarpen azkarretako lauza bat argitaratzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_modifyNetworkSettings">aldatu sistemaren sare ezarpenak</string>
+  <string name="permlab_modifySoundSettings">aldatu sistemaren soinu ezarpenak</string>
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>

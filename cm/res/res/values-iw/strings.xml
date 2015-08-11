@@ -19,6 +19,7 @@
   <string name="cyanogenmod_system_label">מערכת CyanogenMod</string>
   <string name="permlab_publishCustomTile">צור אריח מותאם אישית בתוך לוח ההגדרות המהירות</string>
   <string name="permdesc_publishCustomTile">אפשר ליישום לפרסם אריח הגדרות מותאם אישית.</string>
+  <string name="permlab_modifyNetworkSettings">שינוי הגדרות הרשת של המערכת</string>
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
   <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>

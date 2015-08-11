@@ -17,6 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
+  <string name="permlab_modifyNetworkSettings">modifică setările de rețea ale sistemului</string>
+  <string name="permlab_modifySoundSettings">modifică setările de sunet ale sistemului</string>
   <string name="profileNameDefault">Implicit</string>
   <string name="profileNameWork">Serviciu</string>
   <string name="profileNameHome">Acasă</string>
