@@ -19,6 +19,8 @@
   <string name="cyanogenmod_system_label">System CyanogenMod</string>
   <string name="permlab_publishCustomTile">utwórz niestandardowy przełącznik w panelu szybkich ustawień</string>
   <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
+  <string name="permlab_modifyNetworkSettings">zmień ustawienia sieciowe systemu</string>
+  <string name="permlab_modifySoundSettings">zmień ustawienia dźwiękowe systemu</string>
   <string name="profileNameDefault">Domyślny</string>
   <string name="profileNameWork">Praca</string>
   <string name="profileNameHome">Dom</string>
