@@ -32,7 +32,7 @@ public abstract class ExternalViewProvider {
         ((ViewGroup)mWindow.getDecorView()).addView(onCreateView());
 
         mParams = new WindowManager.LayoutParams();
-        mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        mParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_REMOTE_WINDOW;
         mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
                 WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;

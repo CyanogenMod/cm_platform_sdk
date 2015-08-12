@@ -14,6 +14,10 @@ import cyanogenmod.externalviews.ExternalView;
 
 public class MainActivity extends Activity {
 
+    private View mExternalView;
+    private LinearLayout mRoot;
+    private boolean shown = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,17 @@ public class MainActivity extends Activity {
 //        externalView.setBackgroundColor(Color.RED);
 //        linearLayout.addView(externalView, 0);
         //setContentView(externalView);
+
+        mExternalView = findViewById(R.id.extView);
+        mRoot = (LinearLayout)findViewById(R.id.root);
     }
 
+    public void switchView(View v) {
+        if (shown) {
+            mRoot.removeView(mExternalView);
+        } else {
+            mRoot.addView(mExternalView);
+        }
+        shown = !shown;
+    }
 }

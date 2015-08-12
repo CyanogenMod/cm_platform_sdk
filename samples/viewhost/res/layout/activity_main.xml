@@ -12,22 +12,28 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <cyanogenmod.externalviews.ExternalView
-                custom:componentName="org.cyanogenmod.samples.extview/org.cyanogenmod.samples.extview.SampleProviderService"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:background="#FF0000"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#00FF00"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#0000FF"/>
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="400dp"-->
+            <!--android:background="#00FF00"/>-->
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="400dp"-->
+            <!--android:background="#0000FF"/>-->
+        <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:onClick="switchView"/>-->
+        <cyanogenmod.externalviews.ExternalView
+                android:id="@+id/extView"
+                custom:componentName="org.cyanogenmod.samples.extview/org.cyanogenmod.samples.extview.SampleProviderService"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
     </LinearLayout>
 
 </ScrollView>
