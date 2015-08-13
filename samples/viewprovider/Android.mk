@@ -4,7 +4,7 @@ include $(CLEAR_VARS)
 LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.sdk
 
-LOCAL_SRC_FILES := $(call all-subdir-java-files)
+LOCAL_SRC_FILES := $(call all-java-files-under, src/)
 
 LOCAL_PACKAGE_NAME := CMExternalViewProvider
 

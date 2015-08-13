@@ -1,28 +1,24 @@
 package org.cyanogenmod.samples.extview;
 
-import android.app.Service;
-import android.content.Context;
-import android.content.Intent;
-import android.os.IBinder;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import cyanogenmod.externalviews.ExternalViewProvider;
+import cyanogenmod.externalviews.ExternalViewProviderService;
 
-public class SampleProviderService extends Service {
+public class SampleProviderService extends ExternalViewProviderService {
     @Override
-    public IBinder onBind(Intent intent) {
-        return new Provider(this).getBinder();
+    protected ExternalViewProviderService.Provider createExternalView(Bundle options) {
+        return new ProviderImpl(options);
     }
 
-    private class Provider extends ExternalViewProvider {
-        public Provider(Context context) {
-            super(context);
+    private class ProviderImpl extends Provider {
+        protected ProviderImpl(Bundle options) {
+            super(options);
         }
 
         @Override
         protected View onCreateView() {
-            return LayoutInflater.from(SampleProviderService.this)
-                    .inflate(R.layout.main, null);
+            return LayoutInflater.from(SampleProviderService.this).inflate(R.layout.main, null);
         }
     }
 }

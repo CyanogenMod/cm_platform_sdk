@@ -6,7 +6,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -25,9 +24,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
 
     private Activity mActivity;
     private final ComponentName mExtensionComponent;
-    private boolean mBound;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
-    private IExternalViewProvider mExternalViewProvider;
+    private volatile IExternalViewProvider mExternalViewProvider;
 
     private static ComponentName getComponentFromAttribute(Context context, AttributeSet attrs) {
         String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
@@ -52,29 +50,25 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         mExtensionComponent = componentName;
         mActivity.getApplication().registerActivityLifecycleCallbacks(this);
         getViewTreeObserver().addOnScrollChangedListener(this);
-        bind();
-    }
 
-    private void bind() {
-        if (mBound) {
-            return;
-        }
-        Intent intent = new Intent();
-        intent.setComponent(mExtensionComponent);
-        mActivity.bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
+        mActivity.bindService(new Intent().setComponent(mExtensionComponent),
+                mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     private ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mBound = true;
-            mExternalViewProvider = IExternalViewProvider.Stub.asInterface(service);
-            executeQueue();
+            try {
+                mExternalViewProvider = IExternalViewProvider.Stub.asInterface(
+                        IExternalViewProviderFactory.Stub.asInterface(service).createExternalView(null));
+                executeQueue();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            mBound = false;
             mExternalViewProvider = null;
         }
     };
@@ -86,19 +80,67 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         }
     }
 
+    private void performAction(Runnable r) {
+        if (mExternalViewProvider != null) {
+            r.run();
+        } else {
+            mQueue.add(r);
+        }
+    }
+
+    // view overrides, for positioning
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        int[] screenCords = new int[2];
+        getLocationOnScreen(screenCords);
+        final Rect hitRect = new Rect();
+        mActivity.getWindow().getDecorView().getHitRect(hitRect);
+        final int x = screenCords[0];
+        final int y = screenCords[1];
+        final int width = getWidth();
+        final int height = getHeight();
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.alterWindow(x, y, width, height,
+                            getLocalVisibleRect(hitRect));
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onScrollChanged() {
+        int[] screenCords = new int[2];
+        getLocationOnScreen(screenCords);
+        final Rect hitRect = new Rect();
+        mActivity.getWindow().getDecorView().getHitRect(hitRect);
+        final int x = screenCords[0];
+        final int y = screenCords[1];
+        final int width = getWidth();
+        final int height = getHeight();
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.alterWindow(x, y, width, height,
+                            getLocalVisibleRect(hitRect));
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
     // Activity lifecycle callbacks
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
     }
 
-    private void performAction(Runnable r) {
-        if (mBound) {
-            r.run();
-        } else {
-            mQueue.add(r);
-        }
-    }
     @Override
     public void onActivityStarted(Activity activity) {
         performAction(new Runnable() {
@@ -157,52 +199,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        unbindExtension();
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        int[] screenCords = new int[2];
-        getLocationOnScreen(screenCords);
-        final Rect hitRect = new Rect();
-        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
-                } catch (RemoteException e) {
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onScrollChanged() {
-        int[] screenCords = new int[2];
-        getLocationOnScreen(screenCords);
-        final Rect hitRect = new Rect();
-        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
-                } catch (RemoteException e) {
-                }
-            }
-        });
+        mExternalViewProvider = null;
+        mActivity.unbindService(mServiceConnection);
     }
 
     // Placeholder callbacks
@@ -218,7 +216,6 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
                 }
             }
         });
-        unbindExtension();
     }
 
     @Override
@@ -232,12 +229,5 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
                 }
             }
         });
-    }
-
-    private void unbindExtension() {
-        if (mBound) {
-            mBound = false;
-            mActivity.unbindService(mServiceConnection);
-        }
     }
 }
