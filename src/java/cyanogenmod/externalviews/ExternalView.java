@@ -68,7 +68,12 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             mBound = true;
-            mExternalViewProvider = IExternalViewProvider.Stub.asInterface(service);
+            try {
+                mExternalViewProvider = IExternalViewProvider.Stub.asInterface(
+                        IExternalViewProviderFactory.Stub.asInterface(service).createExternalView(null));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
             executeQueue();
         }
 
