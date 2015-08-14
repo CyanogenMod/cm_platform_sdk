@@ -16,8 +16,8 @@ import android.view.ViewTreeObserver;
 import cyanogenmod.platform.R;
 import java.util.LinkedList;
 
-public class ExternalView extends View implements ViewTreeObserver.OnScrollChangedListener,
-        Application.ActivityLifecycleCallbacks {
+public class ExternalView extends View implements Application.ActivityLifecycleCallbacks,
+        ViewTreeObserver.OnPreDrawListener {
 
     private static final String sAttributeNameSpace =
             "http://schemas.android.com/apk/lib/cyanogenmod.platform";
@@ -26,6 +26,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     private final ComponentName mExtensionComponent;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private volatile IExternalViewProvider mExternalViewProvider;
+    private final ExternalViewProperties mExternalViewProperties;
 
     private static ComponentName getComponentFromAttribute(AttributeSet attrs) {
         String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
@@ -48,9 +49,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         super(context, attributeSet);
         mActivity = (Activity) getContext();
         mExtensionComponent = componentName;
+        mExternalViewProperties = new ExternalViewProperties(this, mActivity);
         mActivity.getApplication().registerActivityLifecycleCallbacks(this);
-        getViewTreeObserver().addOnScrollChangedListener(this);
-
         mActivity.bindService(new Intent().setComponent(mExtensionComponent),
                 mServiceConnection, Context.BIND_AUTO_CREATE);
     }
@@ -91,48 +91,27 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     // view overrides, for positioning
 
     @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        int[] screenCords = new int[2];
-        getLocationOnScreen(screenCords);
-        final Rect hitRect = new Rect();
-        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
+    public boolean onPreDraw() {
+        long cur = System.currentTimeMillis();
+        if (!mExternalViewProperties.hasChanged()) {
+            return true;
+        }
+        final int x = mExternalViewProperties.getX();
+        final int y = mExternalViewProperties.getY();
+        final int width = mExternalViewProperties.getWidth();
+        final int height = mExternalViewProperties.getHeight();
+        final boolean visible = mExternalViewProperties.isVisible();
         performAction(new Runnable() {
             @Override
             public void run() {
                 try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
+                    mExternalViewProvider.alterWindow(x, y, width, height, visible,
+                            mExternalViewProperties.getHitRect());
                 } catch (RemoteException e) {
                 }
             }
         });
-    }
-
-    @Override
-    public void onScrollChanged() {
-        int[] screenCords = new int[2];
-        getLocationOnScreen(screenCords);
-        final Rect hitRect = new Rect();
-        mActivity.getWindow().getDecorView().getHitRect(hitRect);
-        final int x = screenCords[0];
-        final int y = screenCords[1];
-        final int width = getWidth();
-        final int height = getHeight();
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.alterWindow(x, y, width, height,
-                            getLocalVisibleRect(hitRect));
-                } catch (RemoteException e) {
-                }
-            }
-        });
+        return true;
     }
 
     // Activity lifecycle callbacks
@@ -163,6 +142,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
                     mExternalViewProvider.onResume();
                 } catch (RemoteException e) {
                 }
+                getViewTreeObserver().addOnPreDrawListener(ExternalView.this);
             }
         });
     }
@@ -176,6 +156,7 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
                     mExternalViewProvider.onPause();
                 } catch (RemoteException e) {
                 }
+                getViewTreeObserver().removeOnPreDrawListener(ExternalView.this);
             }
         });
     }

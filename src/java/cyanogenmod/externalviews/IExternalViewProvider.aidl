@@ -16,6 +16,8 @@
 
 package cyanogenmod.externalviews;
 
+import android.graphics.Rect;
+
 /** @hide */
 interface IExternalViewProvider
 {
@@ -26,5 +28,5 @@ interface IExternalViewProvider
     oneway void onStop();
     oneway void onDetach();
 
-    oneway void alterWindow(in int x, in int y, in int width, in int height, in boolean visible);
+    void alterWindow(in int x, in int y, in int width, in int height, in boolean visible, in Rect clipRect);
 }

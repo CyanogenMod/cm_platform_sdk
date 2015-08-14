@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -73,7 +74,7 @@ public abstract class ExternalViewProviderService extends Service {
                         WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
                         WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
                 mParams.gravity = Gravity.LEFT | Gravity.TOP;
-                mParams.format = PixelFormat.OPAQUE;
+                mParams.format = PixelFormat.TRANSPARENT;
             }
 
             @Override
@@ -152,7 +153,7 @@ public abstract class ExternalViewProviderService extends Service {
 
             @Override
             public void alterWindow(final int x, final int y, final int width, final int height,
-                                    final boolean visible) {
+                                    final boolean visible, final Rect clipRect) {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -166,6 +167,11 @@ public abstract class ExternalViewProviderService extends Service {
                         mAskedShow = visible;
 
                         updateVisibility();
+
+                        View decorView = mWindow.getDecorView();
+                        if (decorView.getVisibility() == View.VISIBLE) {
+                            decorView.setClipBounds(clipRect);
+                        }
 
                         if (mWindow.getDecorView().getVisibility() != View.GONE)
                             mWindowManager.updateViewLayout(mWindow.getDecorView(), mParams);
