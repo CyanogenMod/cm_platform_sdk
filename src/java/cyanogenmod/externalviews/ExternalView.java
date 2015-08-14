@@ -101,12 +101,13 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
         final int width = mExternalViewProperties.getWidth();
         final int height = mExternalViewProperties.getHeight();
         final boolean visible = mExternalViewProperties.isVisible();
+        final Rect clipRect = mExternalViewProperties.getHitRect();
         performAction(new Runnable() {
             @Override
             public void run() {
                 try {
                     mExternalViewProvider.alterWindow(x, y, width, height, visible,
-                            mExternalViewProperties.getHitRect());
+                            clipRect);
                 } catch (RemoteException e) {
                 }
             }
