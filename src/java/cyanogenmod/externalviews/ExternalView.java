@@ -27,13 +27,13 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private volatile IExternalViewProvider mExternalViewProvider;
 
-    private static ComponentName getComponentFromAttribute(Context context, AttributeSet attrs) {
+    private static ComponentName getComponentFromAttribute(AttributeSet attrs) {
         String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
         return ComponentName.unflattenFromString(componentString);
     }
 
     public ExternalView(Context context, AttributeSet attrs) {
-        this(context, getComponentFromAttribute(context, attrs));
+        this(context, attrs, getComponentFromAttribute(attrs));
     }
 
     public ExternalView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -44,8 +44,8 @@ public class ExternalView extends View implements ViewTreeObserver.OnScrollChang
         this(context, attrs);
     }
 
-    public ExternalView(Context context, ComponentName componentName) {
-        super(context);
+    public ExternalView(Context context, AttributeSet attributeSet, ComponentName componentName) {
+        super(context, attributeSet);
         mActivity = (Activity) getContext();
         mExtensionComponent = componentName;
         mActivity.getApplication().registerActivityLifecycleCallbacks(this);
