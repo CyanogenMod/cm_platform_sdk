@@ -39,4 +39,4 @@ dependencies {
 
 ### WIKI
 
-For further inquiries regarding this project, please reference the [wiki](https://github.com/CyanogenMod/cm_platform_sdk/wiki)
+For further inquiries regarding this project, please reference the [wiki](https://github.com/CyanogenMod/cm_platform_sdk/wiki).
