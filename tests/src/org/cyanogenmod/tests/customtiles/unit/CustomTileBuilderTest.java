@@ -140,6 +140,15 @@ public class CustomTileBuilderTest extends AndroidTestCase {
         assertEquals(collapsePanel, customTile.collapsePanel);
     }
 
+    @SmallTest
+    public void testCustomTileBuilderSensitiveDataSet() {
+        boolean sensitiveData = true;
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .hasSensitiveData(sensitiveData)
+                .build();
+        assertEquals(sensitiveData, customTile.sensitiveData);
+    }
+
     @MediumTest
     public void testCustomTileBuilderExpandedListStyleSet() {
         PendingIntent intent = PendingIntent.getActivity(mContext, 0,

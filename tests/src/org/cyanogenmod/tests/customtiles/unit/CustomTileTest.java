@@ -189,6 +189,25 @@ public class CustomTileTest extends AndroidTestCase {
         assertEquals(expectedCustomTile.collapsePanel, fromParcel.collapsePanel);
     }
 
+    @SmallTest
+    public void testCustomTileSensitiveDataUnravelFromParcel() {
+        CustomTile expectedCustomTile = new CustomTile.Builder(mContext)
+                .hasSensitiveData(true)
+                .build();
+
+        // Write to parcel
+        Parcel parcel = Parcel.obtain();
+        expectedCustomTile.writeToParcel(parcel, 0);
+
+        // Rewind
+        parcel.setDataPosition(0);
+
+        // Verify data when unraveling
+        CustomTile fromParcel = CustomTile.CREATOR.createFromParcel(parcel);
+
+        assertEquals(expectedCustomTile.sensitiveData, fromParcel.sensitiveData);
+    }
+
     @MediumTest
     public void testCustomTileExpandedListStyleUnravelFromParcel() {
         PendingIntent intent = PendingIntent.getActivity(mContext, 0,

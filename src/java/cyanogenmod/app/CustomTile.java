@@ -109,6 +109,12 @@ public class CustomTile implements Parcelable {
     public boolean collapsePanel = true;
 
     /**
+     * Indicates whether this tile has sensitive data that have to be hidden on
+     * secure lockscreens.
+     */
+    public boolean sensitiveData = false;
+
+    /**
      * Unflatten the CustomTile from a parcel.
      */
     public CustomTile(Parcel parcel) {
@@ -152,6 +158,7 @@ public class CustomTile implements Parcelable {
             if (parcel.readInt() != 0) {
                 this.deleteIntent = PendingIntent.CREATOR.createFromParcel(parcel);
             }
+            this.sensitiveData = (parcel.readInt() == 1);
         }
 
         parcel.setDataPosition(startPosition + parcelableSize);
@@ -210,6 +217,7 @@ public class CustomTile implements Parcelable {
         if (deleteIntent != null) {
             b.append("deleteIntent=" + deleteIntent.toString() + NEW_LINE);
         }
+        b.append("sensitiveData=" + sensitiveData + NEW_LINE);
         return b.toString();
     }
 
@@ -229,6 +237,7 @@ public class CustomTile implements Parcelable {
         that.collapsePanel = this.collapsePanel;
         that.remoteIcon = this.remoteIcon;
         that.deleteIntent = this.deleteIntent;
+        that.sensitiveData = this.sensitiveData;
     }
 
     @Override
@@ -290,20 +299,19 @@ public class CustomTile implements Parcelable {
         // ==== BOYSENBERRY =====
         out.writeString(resourcesPackageName);
         out.writeInt(collapsePanel ? 1 : 0);
-
         if (remoteIcon != null) {
             out.writeInt(1);
             remoteIcon.writeToParcel(out, 0);
         } else {
             out.writeInt(0);
         }
-
         if (deleteIntent != null) {
             out.writeInt(1);
             deleteIntent.writeToParcel(out, 0);
         } else {
             out.writeInt(0);
         }
+        out.writeInt(sensitiveData ? 1 : 0);
 
         // Go back and write size
         int parcelableSize = out.dataPosition() - startPosition;
@@ -908,6 +916,7 @@ public class CustomTile implements Parcelable {
         private ExpandedStyle mExpandedStyle;
         private boolean mCollapsePanel = true;
         private PendingIntent mDeleteIntent;
+        private boolean mSensitiveData = false;
 
         /**
          * Constructs a new Builder with the defaults:
@@ -1052,6 +1061,17 @@ public class CustomTile implements Parcelable {
         }
 
         /**
+         * Indicates whether this tile has sensitive data that have to be hidden
+         * on secure lockscreens.
+         * @param bool
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder hasSensitiveData(boolean bool) {
+            mSensitiveData = bool;
+            return this;
+        }
+
+        /**
          * Create a {@link cyanogenmod.app.CustomTile} object
          * @return {@link cyanogenmod.app.CustomTile}
          */
@@ -1068,6 +1088,7 @@ public class CustomTile implements Parcelable {
             tile.collapsePanel = mCollapsePanel;
             tile.remoteIcon = mRemoteIcon;
             tile.deleteIntent = mDeleteIntent;
+            tile.sensitiveData = mSensitiveData;
             return tile;
         }
     }
