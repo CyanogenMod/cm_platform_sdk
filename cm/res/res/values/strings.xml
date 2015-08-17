@@ -59,4 +59,9 @@
 
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Other</string>
+
+    <!-- Permissions for CMHW access -->
+    <string name="permlab_useHardwareFramework">use hardware framework</string>
+    <string name="permdesc_useHardwareFramework">Allows an app access to the CM hardware framework.</string>
+
 </resources>
