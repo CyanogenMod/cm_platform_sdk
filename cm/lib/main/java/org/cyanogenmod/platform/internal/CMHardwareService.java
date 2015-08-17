@@ -25,13 +25,16 @@ import com.android.server.SystemService;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.hardware.ICMHardwareService;
 import cyanogenmod.hardware.CMHardwareManager;
+import cyanogenmod.hardware.DisplayMode;
 
 import java.io.File;
 
 import org.cyanogenmod.hardware.AdaptiveBacklight;
+import org.cyanogenmod.hardware.AutoContrast;
 import org.cyanogenmod.hardware.ColorEnhancement;
 import org.cyanogenmod.hardware.DisplayColorCalibration;
 import org.cyanogenmod.hardware.DisplayGammaCalibration;
+import org.cyanogenmod.hardware.DisplayModeControl;
 import org.cyanogenmod.hardware.HighTouchSensitivity;
 import org.cyanogenmod.hardware.KeyDisabler;
 import org.cyanogenmod.hardware.LongTermOrbits;
@@ -71,6 +74,11 @@ public class CMHardwareService extends SystemService {
         public String getSerialNumber();
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement();
+
+        public DisplayMode[] getDisplayModes();
+        public DisplayMode getCurrentDisplayMode();
+        public DisplayMode getDefaultDisplayMode();
+        public boolean setDisplayMode(DisplayMode mode);
     }
 
     private class LegacyCMHardware implements CMHardwareInterface {
@@ -102,6 +110,10 @@ public class CMHardwareService extends SystemService {
                 mSupportedFeatures |= CMHardwareManager.FEATURE_VIBRATOR;
             if (TouchscreenHovering.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_TOUCH_HOVERING;
+            if (AutoContrast.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_AUTO_CONTRAST;
+            if (DisplayModeControl.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_DISPLAY_MODES;
         }
 
         public int getSupportedFeatures() {
@@ -124,6 +136,8 @@ public class CMHardwareService extends SystemService {
                     return TapToWake.isEnabled();
                 case CMHardwareManager.FEATURE_TOUCH_HOVERING:
                     return TouchscreenHovering.isEnabled();
+                case CMHardwareManager.FEATURE_AUTO_CONTRAST:
+                    return AutoContrast.isEnabled();
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -146,6 +160,8 @@ public class CMHardwareService extends SystemService {
                     return TapToWake.setEnabled(enable);
                 case CMHardwareManager.FEATURE_TOUCH_HOVERING:
                     return TouchscreenHovering.setEnabled(enable);
+                case CMHardwareManager.FEATURE_AUTO_CONTRAST:
+                    return AutoContrast.setEnabled(enable);
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -260,6 +276,22 @@ public class CMHardwareService extends SystemService {
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement() {
             return SunlightEnhancement.isAdaptiveBacklightRequired();
+        }
+
+        public DisplayMode[] getDisplayModes() {
+            return DisplayModeControl.getAvailableModes();
+        }
+
+        public DisplayMode getCurrentDisplayMode() {
+            return DisplayModeControl.getCurrentMode();
+        }
+
+        public DisplayMode getDefaultDisplayMode() {
+            return DisplayModeControl.getDefaultMode();
+        }
+
+        public boolean setDisplayMode(DisplayMode mode) {
+            return DisplayModeControl.setMode(mode, true);
         }
     }
 
@@ -447,6 +479,50 @@ public class CMHardwareService extends SystemService {
                 return false;
             }
             return mCmHwImpl.requireAdaptiveBacklightForSunlightEnhancement();
+        }
+
+        @Override
+        public DisplayMode[] getDisplayModes() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
+                Log.e(TAG, "Display modes are not supported");
+                return null;
+            }
+            return mCmHwImpl.getDisplayModes();
+        }
+
+        @Override
+        public DisplayMode getCurrentDisplayMode() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
+                Log.e(TAG, "Display modes are not supported");
+                return null;
+            }
+            return mCmHwImpl.getCurrentDisplayMode();
+        }
+
+        @Override
+        public DisplayMode getDefaultDisplayMode() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
+                Log.e(TAG, "Display modes are not supported");
+                return null;
+            }
+            return mCmHwImpl.getDefaultDisplayMode();
+        }
+
+        @Override
+        public boolean setDisplayMode(DisplayMode mode) {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
+                Log.e(TAG, "Display modes are not supported");
+                return false;
+            }
+            return mCmHwImpl.setDisplayMode(mode);
         }
     };
 }
