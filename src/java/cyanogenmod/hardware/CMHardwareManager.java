@@ -100,6 +100,16 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_TOUCH_HOVERING = 0x800;
 
+    /**
+     * Auto contrast
+     */
+    public static final int FEATURE_AUTO_CONTRAST = 0x1000;
+
+    /**
+     * Display modes
+     */
+    public static final int FEATURE_DISPLAY_MODES = 0x2000;
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
         FEATURE_COLOR_ENHANCEMENT,
@@ -108,6 +118,7 @@ public final class CMHardwareManager {
         FEATURE_SUNLIGHT_ENHANCEMENT,
         FEATURE_TAP_TO_WAKE,
         FEATURE_TOUCH_HOVERING,
+        FEATURE_AUTO_CONTRAST
     );
 
     private static CMHardwareManager sCMHardwareManagerInstance;
@@ -417,6 +428,7 @@ public final class CMHardwareManager {
     /**
      * @return the number of RGB controls the device supports
      */
+    @Deprecated
     public int getNumGammaControls() {
         try {
             return getService().getNumGammaControls();
@@ -430,6 +442,7 @@ public final class CMHardwareManager {
      *
      * @return the current RGB gamma calibration for the given control
      */
+    @Deprecated
     public int[] getDisplayGammaCalibration(int idx) {
         int[] arr = getDisplayGammaCalibrationArray(idx);
         if (arr == null || arr.length < 3) {
@@ -441,6 +454,7 @@ public final class CMHardwareManager {
     /**
      * @return the minimum value for all colors
      */
+    @Deprecated
     public int getDisplayGammaCalibrationMin() {
         return getArrayValue(getDisplayGammaCalibrationArray(0), GAMMA_CALIBRATION_MIN_INDEX, 0);
     }
@@ -448,6 +462,7 @@ public final class CMHardwareManager {
     /**
      * @return the maximum value for all colors
      */
+    @Deprecated
     public int getDisplayGammaCalibrationMax() {
         return getArrayValue(getDisplayGammaCalibrationArray(0), GAMMA_CALIBRATION_MAX_INDEX, 0);
     }
@@ -462,6 +477,7 @@ public final class CMHardwareManager {
      *
      * @return true on success, false otherwise.
      */
+    @Deprecated
     public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
         try {
             return getService().setDisplayGammaCalibration(idx, rgb);
@@ -521,6 +537,50 @@ public final class CMHardwareManager {
     public boolean requireAdaptiveBacklightForSunlightEnhancement() {
         try {
             return getService().requireAdaptiveBacklightForSunlightEnhancement();
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    /**
+     * @return a list of available display modes on the devices
+     */
+    public DisplayMode[] getDisplayModes() {
+        try {
+            return getService().getDisplayModes();
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return the currently active display mode
+     */
+    public DisplayMode getCurrentDisplayMode() {
+        try {
+            return getService().getCurrentDisplayMode();
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return the default display mode to be set on boot
+     */
+    public DisplayMode getDefaultDisplayMode() {
+        try {
+            return getService().getDefaultDisplayMode();
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return true if setting the mode was successful
+     */
+    public boolean setDisplayMode(DisplayMode mode) {
+        try {
+            return getService().setDisplayMode(mode);
         } catch (RemoteException e) {
         }
         return false;
