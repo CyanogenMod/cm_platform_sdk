@@ -23,6 +23,7 @@
   <string name="permlab_modifySoundSettings">aldatu sistemaren soinu ezarpenak</string>
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_readMSPhoneState">ikusi telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
   <string name="profileNameDefault">Lehenetsia</string>
   <string name="profileNameWork">Lanean</string>

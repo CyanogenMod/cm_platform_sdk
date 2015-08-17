@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">CyanogenMod Sistemi</string>
   <string name="permlab_publishCustomTile">hızlı ayarlar paneli içinde özel bir kare oluştur</string>
   <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir.</string>
+  <string name="permlab_modifyNetworkSettings">sistem ağ ayarlarını değiştir</string>
+  <string name="permdesc_modifyNetworkSettings">Uygulamalara sistem ağ ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
+  <string name="permlab_modifySoundSettings">sistem ses ayarlarını değiştir</string>
+  <string name="permdesc_modifySoundSettings">Uygulamalara sistem ses ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
   <string name="permlab_bindCustomTileListenerService">özel bir kare takip hizmetine bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Uygulamaya özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
+  <string name="permlab_readMSPhoneState">telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini görüntüle</string>
+  <string name="permdesc_readMSPhoneState">Uygulamalara telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini görüntüleme imkanı verir.</string>
+  <string name="permlab_modifyMSPhoneState">telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini değiştir</string>
+  <string name="permdesc_modifyMSPhoneState">Uygulamalara telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini değiştirme imkanı verir.</string>
   <string name="custom_tile_listener_binding_label">Özel kare takipçisi</string>
   <string name="profileNameDefault">Varsayılan</string>
   <string name="profileNameWork">İş</string>

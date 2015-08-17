@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">CyanogenMod Süsteem</string>
   <string name="permlab_publishCustomTile">loo kohandatud tahvel kiirseadete paneelil</string>
   <string name="permdesc_publishCustomTile">Lubab rakendusel avaldada kiirseadete tahvli.</string>
+  <string name="permlab_modifyNetworkSettings">süsteemi võrgusätete muutmine</string>
+  <string name="permdesc_modifyNetworkSettings">Võimaldab rakendusel teha muudatusi piiratud süsteemi võrgusätetes.</string>
+  <string name="permlab_modifySoundSettings">süsteemi helisätete muutmine</string>
+  <string name="permdesc_modifySoundSettings">Võimaldab rakendusel teha muudatusi piiratud süsteemi helisätetes.</string>
   <string name="permlab_bindCustomTileListenerService">Seo kohandatud tahvel kuulaja teenusega</string>
   <string name="permdesc_bindCustomTileListenerService">Võimaldab siduda kõrgema taseme kasutajaliidese kohandatud tahvli kuulaja teenusega.</string>
+  <string name="permlab_readMSPhoneState">telefoni oleku ja andmeühenduse vaatamine, toetades mitmeid SIMe</string>
+  <string name="permdesc_readMSPhoneState">Võimaldab rakendusel vaadata telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
+  <string name="permlab_modifyMSPhoneState">telefoni oleku ja andmeühenduse muutmine, toetades mitmeid SIMe</string>
+  <string name="permdesc_modifyMSPhoneState">Võimaldab rakendusel muuta telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
   <string name="custom_tile_listener_binding_label">Kohandatud tahvli kuulaja</string>
   <string name="profileNameDefault">Vaikimisi</string>
   <string name="profileNameWork">Töö</string>
