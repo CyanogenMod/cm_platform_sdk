@@ -164,12 +164,18 @@ public class ProfileManagerService extends SystemService {
         }
     }
 
+    @Override
+    public void onBootPhase(int phase) {
+        if (phase == PHASE_ACTIVITY_MANAGER_READY) {
+            bindKeyguard();
+        }
+    }
+
     private void initialize() {
         initialize(false);
     }
 
     private void initialize(boolean skipFile) {
-        bindKeyguard();
         mTriggerHelper = new ProfileTriggerHelper(mContext, mHandler, this);
         mProfiles = new HashMap<UUID, Profile>();
         mProfileNames = new HashMap<String, UUID>();
