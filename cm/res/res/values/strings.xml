@@ -42,6 +42,13 @@
     <string name="permlab_useHardwareFramework">use hardware framework</string>
     <string name="permdesc_useHardwareFramework">Allows an app access to the CM hardware framework.</string>
 
+    <!-- Labels for the WRITE_SETTINGS permission -->
+    <string name="permlab_writeSettings">modify CM system settings</string>
+    <string name="permdesc_writeSettings">Allows an app to modify CM system settings.</string>
+
+    <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+    <string name="permlab_writeSecureSettings">modify CM secure system settings</string>
+    <string name="permdesc_writeSecureSettings">Allows an app to modify CM secure system settings. Not for use by normal apps.</string>
 
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
