@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">Система CyanogenMod</string>
   <string name="permlab_publishCustomTile">Создание произвольных плиток в панели быстрых настроек</string>
   <string name="permdesc_publishCustomTile">Приложение сможет добавлять плитки в панель быстрых настроек.</string>
+  <string name="permlab_modifyNetworkSettings">Изменение сетевых настроек системы</string>
+  <string name="permdesc_modifyNetworkSettings">Приложение сможет вносить изменения в сетевые настройки системы.</string>
+  <string name="permlab_modifySoundSettings">Изменение звуковых настроек системы</string>
+  <string name="permdesc_modifySoundSettings">Приложение сможет вносить изменения в звуковые настройки системы.</string>
   <string name="permlab_bindCustomTileListenerService">Привязка к службе слушателя пользовательских плиток</string>
   <string name="permdesc_bindCustomTileListenerService">Позволяет владельцу устанавливать привязку к интерфейсу верхнего уровня службы слушателя пользовательских плиток.</string>
+  <string name="permlab_readMSPhoneState">просмотр состояния телефона и передачи данных с поддержкой нескольких SIM-карт</string>
+  <string name="permdesc_readMSPhoneState">Разрешить приложению доступ к информации о состоянии телефона и передаче данных с поддержкой нескольких SIM-карт.</string>
+  <string name="permlab_modifyMSPhoneState">изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт</string>
+  <string name="permdesc_modifyMSPhoneState">Разрешить приложению изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт.</string>
   <string name="custom_tile_listener_binding_label">Слушатель пользовательских плиток</string>
   <string name="profileNameDefault">Стандартный</string>
   <string name="profileNameWork">Работа</string>

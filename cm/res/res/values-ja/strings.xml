@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">CyanogenModシステム</string>
   <string name="permlab_publishCustomTile">クイック設定パネルでのカスタムタイルの作成</string>
   <string name="permdesc_publishCustomTile">クイック設定タイルの作成をアプリに許可します</string>
+  <string name="permlab_modifyNetworkSettings">システムのネットワークの設定の変更</string>
+  <string name="permdesc_modifyNetworkSettings">システムのネットワークの設定の制限されたセットを変更することをアプリに許可します。</string>
+  <string name="permlab_modifySoundSettings">システムの音の設定</string>
+  <string name="permdesc_modifySoundSettings">システムの音の設定の制限されたセットを変更することをアプリに許可します。</string>
   <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
   <string name="permdesc_bindCustomTileListenerService">カスタムタイルリスナーサービスのトップレベルインターフェースへのバインドをアプリに許可します</string>
+  <string name="permlab_readMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の表示</string>
+  <string name="permdesc_readMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の表示をアプリに許可します。</string>
+  <string name="permlab_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更</string>
+  <string name="permdesc_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更をアプリに許可します。</string>
   <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
   <string name="profileNameDefault">デフォルト</string>
   <string name="profileNameWork">仕事</string>

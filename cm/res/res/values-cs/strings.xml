@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">Systém CyanogenMod</string>
   <string name="permlab_publishCustomTile">vytvoření vlastní dlaždice do panelu rychlého nastavení</string>
   <string name="permdesc_publishCustomTile">Umožní vytvořit vlastní dlaždici v panelu rychlého nastavení.</string>
+  <string name="permlab_modifyNetworkSettings">změnit systémové nastavení sítě</string>
+  <string name="permdesc_modifyNetworkSettings">Umožňuje změnit omezenou sadu síťového nastavení.</string>
+  <string name="permlab_modifySoundSettings">změnit systémové nastavení zvuku</string>
+  <string name="permdesc_modifySoundSettings">Umožňuje změnit omezenou sadu systémového nastavení zvuku.</string>
   <string name="permlab_bindCustomTileListenerService">vázat službu na vlastní dlaždici</string>
   <string name="permdesc_bindCustomTileListenerService">Umožní navázat rozhraní nejvyšší úrovně na službu dlaždice.</string>
+  <string name="permlab_readMSPhoneState">zobrazit stav telefonu a datové připojení s podporou více SIM</string>
+  <string name="permdesc_readMSPhoneState">Umožňuj prohlížet stav telefonu a datového spojení s podporou více SIM.</string>
+  <string name="permlab_modifyMSPhoneState">změnit stav telefonu a datového spojení s podporou více SIM</string>
+  <string name="permdesc_modifyMSPhoneState">Umožňuje změnit stav telefonu a datového spojení s podporou více SIM.</string>
   <string name="custom_tile_listener_binding_label">Služba vlastní dlaždice</string>
   <string name="profileNameDefault">Výchozí</string>
   <string name="profileNameWork">Práce</string>
