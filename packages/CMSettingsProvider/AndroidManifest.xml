@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="org.cyanogenmod.cmsettings"
+          coreApp="true"
+          android:sharedUserId="android.uid.system">
+
+    <permission
+            android:name="cyanogenmod.permission.WRITE_SETTINGS"
+            android:protectionLevel="normal" />
+    <permission
+            android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"
+            android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+
+    <application android:icon="@drawable/icon"
+                 android:label="@string/app_name"
+                 android:process="system"
+                 android:killAfterRestore="false"
+                 android:allowClearUserData="false"
+                 android:enabled="true">
+
+        <provider android:name="CMSettingsProvider" android:authorities="cmsettings"
+                  android:multiprocess="false"
+                  android:exported="true"
+                  android:writePermission="cyanogenmod.permission.WRITE_SETTINGS"
+                  android:singleUser="true"
+                  android:initOrder="100" />
+
+    </application>
+</manifest>
