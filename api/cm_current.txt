@@ -442,6 +442,8 @@ package cyanogenmod.platform {
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
+    field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
+    field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
   }
 
   public final class R {
@@ -562,6 +564,71 @@ package cyanogenmod.profiles {
     method public void setOverride(boolean);
     method public void setValue(int);
     method public void writeToParcel(android.os.Parcel, int);
+  }
+
+}
+
+package cyanogenmod.providers {
+
+  public final class CMSettings {
+    ctor public CMSettings();
+    field public static final java.lang.String AUTHORITY = "cmsettings";
+  }
+
+  public static class CMSettings.CMSettingNotFoundException extends android.util.AndroidException {
+    ctor public CMSettings.CMSettingNotFoundException(java.lang.String);
+  }
+
+  public static final class CMSettings.Global extends android.provider.Settings.NameValueTable {
+    ctor public CMSettings.Global();
+    method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String, int);
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String, long);
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
+    method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
+    method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_global_version";
+  }
+
+  public static final class CMSettings.Secure extends android.provider.Settings.NameValueTable {
+    ctor public CMSettings.Secure();
+    method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String, int);
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String, long);
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
+    method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
+    method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String NAME_THEME_CONFIG = "name_theme_config";
+    field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_secure_version";
+  }
+
+  public static final class CMSettings.System extends android.provider.Settings.NameValueTable {
+    ctor public CMSettings.System();
+    method public static float getFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static float getFloat(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static int getInt(android.content.ContentResolver, java.lang.String, int);
+    method public static int getInt(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static long getLong(android.content.ContentResolver, java.lang.String, long);
+    method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
+    method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
+    method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
+    method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
+    method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
   }
 
 }
