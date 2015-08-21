@@ -30,16 +30,16 @@
   <string name="permlab_modifyMSPhoneState">изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт</string>
   <string name="permdesc_modifyMSPhoneState">Разрешить приложению изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт.</string>
   <string name="custom_tile_listener_binding_label">Слушатель пользовательских плиток</string>
-  <string name="profileNameDefault">Стандартный</string>
+  <string name="profileNameDefault">По умолчанию</string>
   <string name="profileNameWork">Работа</string>
   <string name="profileNameHome">Дом</string>
   <string name="profileNameSilent">Без звука</string>
   <string name="profileNameNight">Ночь</string>
-  <string name="profileNameAutomobile">Автомобиль</string>
+  <string name="profileNameAutomobile">За рулем</string>
   <string name="profileGroupPhone">Телефон</string>
   <string name="profileGroupCalendar">Календарь</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Почта</string>
   <string name="profileGroupSMS">Сообщения</string>
-  <string name="wildcardProfile">Другой</string>
+  <string name="wildcardProfile">Другие</string>
 </resources>

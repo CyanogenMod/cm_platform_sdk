@@ -19,8 +19,16 @@
   <string name="cyanogenmod_system_label">Sistema de CyanogenMod</string>
   <string name="permlab_publishCustomTile">crear un control personalizado en el panel de ajustes rápidos</string>
   <string name="permdesc_publishCustomTile">Permitir que la aplicación pueda publicar un control en los ajustes rápidos.</string>
+  <string name="permlab_modifyNetworkSettings">cambiar ajustes de red del sistema</string>
+  <string name="permdesc_modifyNetworkSettings">Permite a una aplicación hacer cambios a un conjunto restringido de ajustes de red del sistema.</string>
+  <string name="permlab_modifySoundSettings">cambiar ajustes de sonido del sistema</string>
+  <string name="permdesc_modifySoundSettings">Permite a una aplicación hacer cambios a un conjunto restringido de ajustes de sonido del sistema.</string>
   <string name="permlab_bindCustomTileListenerService">unirse a un servicio de escucha de controles personalizados</string>
   <string name="permdesc_bindCustomTileListenerService">Permitir que la aplicación pueda unirse a un interfaz de alto nivel de un servicio de escucha de un control.</string>
+  <string name="permlab_readMSPhoneState">ver el estado del teléfono y la conexión de datos con soporte multi SIM</string>
+  <string name="permdesc_readMSPhoneState">Permite a una aplicación ver el estado del teléfono y la conexión de datos con soporte multi SIM.</string>
+  <string name="permlab_modifyMSPhoneState">modificar el estado del teléfono y la conexión de datos con soporte multi SIM</string>
+  <string name="permdesc_modifyMSPhoneState">Permite a una aplicación modificar el estado del teléfono y la conexión de datos con soporte multi SIM.</string>
   <string name="custom_tile_listener_binding_label">Escucha de control personalizado</string>
   <string name="profileNameDefault">Predeterminado</string>
   <string name="profileNameWork">Trabajo</string>
