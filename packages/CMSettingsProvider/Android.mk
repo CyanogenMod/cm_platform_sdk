@@ -27,7 +27,7 @@ LOCAL_PACKAGE_NAME := CMSettingsProvider
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
-LOCAL_JAVA_LIBRARIES := \
+LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.sdk
 
 include $(BUILD_PACKAGE)
