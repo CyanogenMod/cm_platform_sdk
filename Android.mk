@@ -112,6 +112,9 @@ LOCAL_SRC_FILES := \
 # Included aidl files from cyanogenmod.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
+LOCAL_INTERMEDIATE_SOURCES := \
+    $(cmplat_LOCAL_INTERMEDIATE_SOURCES)
+
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
