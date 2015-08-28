@@ -348,6 +348,65 @@ package cyanogenmod.app {
 
 }
 
+package cyanogenmod.hardware {
+
+  public final class CMHardwareManager {
+    method public boolean get(int);
+    method public cyanogenmod.hardware.DisplayMode getCurrentDisplayMode();
+    method public cyanogenmod.hardware.DisplayMode getDefaultDisplayMode();
+    method public int[] getDisplayColorCalibration();
+    method public int getDisplayColorCalibrationDefault();
+    method public int getDisplayColorCalibrationMax();
+    method public int getDisplayColorCalibrationMin();
+    method public deprecated int[] getDisplayGammaCalibration(int);
+    method public deprecated int getDisplayGammaCalibrationMax();
+    method public deprecated int getDisplayGammaCalibrationMin();
+    method public cyanogenmod.hardware.DisplayMode[] getDisplayModes();
+    method public static cyanogenmod.hardware.CMHardwareManager getInstance(android.content.Context);
+    method public java.lang.String getLtoDestination();
+    method public long getLtoDownloadInterval();
+    method public java.lang.String getLtoSource();
+    method public deprecated int getNumGammaControls();
+    method public java.lang.String getSerialNumber();
+    method public int getSupportedFeatures();
+    method public int getVibratorDefaultIntensity();
+    method public int getVibratorIntensity();
+    method public int getVibratorMaxIntensity();
+    method public int getVibratorMinIntensity();
+    method public int getVibratorWarningIntensity();
+    method public boolean isSupported(int);
+    method public boolean requireAdaptiveBacklightForSunlightEnhancement();
+    method public boolean set(int, boolean);
+    method public boolean setDisplayColorCalibration(int[]);
+    method public deprecated boolean setDisplayGammaCalibration(int, int[]);
+    method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
+    method public boolean setVibratorIntensity(int);
+    field public static final int FEATURE_ADAPTIVE_BACKLIGHT = 1; // 0x1
+    field public static final int FEATURE_AUTO_CONTRAST = 4096; // 0x1000
+    field public static final int FEATURE_COLOR_ENHANCEMENT = 2; // 0x2
+    field public static final int FEATURE_DISPLAY_COLOR_CALIBRATION = 4; // 0x4
+    field public static final int FEATURE_DISPLAY_GAMMA_CALIBRATION = 8; // 0x8
+    field public static final int FEATURE_DISPLAY_MODES = 8192; // 0x2000
+    field public static final int FEATURE_HIGH_TOUCH_SENSITIVITY = 16; // 0x10
+    field public static final int FEATURE_KEY_DISABLE = 32; // 0x20
+    field public static final int FEATURE_LONG_TERM_ORBITS = 64; // 0x40
+    field public static final int FEATURE_SERIAL_NUMBER = 128; // 0x80
+    field public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 256; // 0x100
+    field public static final int FEATURE_TAP_TO_WAKE = 512; // 0x200
+    field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
+    field public static final int FEATURE_VIBRATOR = 1024; // 0x400
+  }
+
+  public class DisplayMode implements android.os.Parcelable {
+    ctor public DisplayMode(int, java.lang.String);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public final int id;
+    field public final java.lang.String name;
+  }
+
+}
+
 package cyanogenmod.os {
 
   public class Build {
@@ -377,6 +436,7 @@ package cyanogenmod.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
+    field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
