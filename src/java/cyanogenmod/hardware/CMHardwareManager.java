@@ -24,6 +24,7 @@ import android.util.Log;
 import cyanogenmod.app.CMContextConstants;
 
 import java.lang.IllegalArgumentException;
+import java.lang.NullPointerException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -168,6 +169,7 @@ public final class CMHardwareManager {
         try {
             return getService().getSupportedFeatures();
         } catch (RemoteException e) {
+        } catch (NullPointerException e) {
         }
         return 0;
     }
