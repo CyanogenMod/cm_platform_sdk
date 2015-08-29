@@ -166,7 +166,10 @@ public final class CMHardwareManager {
      */
     public int getSupportedFeatures() {
         try {
-            return getService().getSupportedFeatures();
+            ICMHardwareService service = getService();
+            if (service != null) {
+                return service.getSupportedFeatures();
+            }
         } catch (RemoteException e) {
         }
         return 0;
