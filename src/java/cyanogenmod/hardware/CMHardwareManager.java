@@ -166,7 +166,9 @@ public final class CMHardwareManager {
      */
     public int getSupportedFeatures() {
         try {
-            return getService().getSupportedFeatures();
+            if (checkService()) {
+                return sService.getSupportedFeatures();
+            }
         } catch (RemoteException e) {
         }
         return 0;
@@ -198,7 +200,9 @@ public final class CMHardwareManager {
         }
 
         try {
-            return getService().get(feature);
+            if (checkService()) {
+                return sService.get(feature);
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -220,7 +224,9 @@ public final class CMHardwareManager {
         }
 
         try {
-            return getService().set(feature, enable);
+            if (checkService()) {
+                return sService.set(feature, enable);
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -257,7 +263,9 @@ public final class CMHardwareManager {
 
     private int[] getVibratorIntensityArray() {
         try {
-            return getService().getVibratorIntensity();
+            if (checkService()) {
+                return sService.getVibratorIntensity();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -308,7 +316,9 @@ public final class CMHardwareManager {
      */
     public boolean setVibratorIntensity(int intensity) {
         try {
-            return getService().setVibratorIntensity(intensity);
+            if (checkService()) {
+                return sService.setVibratorIntensity(intensity);
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -341,7 +351,9 @@ public final class CMHardwareManager {
 
     private int[] getDisplayColorCalibrationArray() {
         try {
-            return getService().getDisplayColorCalibration();
+            if (checkService()) {
+                return sService.getDisplayColorCalibration();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -390,7 +402,9 @@ public final class CMHardwareManager {
      */
     public boolean setDisplayColorCalibration(int[] rgb) {
         try {
-            return getService().setDisplayColorCalibration(rgb);
+            if (checkService()) {
+                return sService.setDisplayColorCalibration(rgb);
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -419,7 +433,9 @@ public final class CMHardwareManager {
 
     private int[] getDisplayGammaCalibrationArray(int idx) {
         try {
-            return getService().getDisplayGammaCalibration(idx);
+            if (checkService()) {
+                return sService.getDisplayGammaCalibration(idx);
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -431,7 +447,9 @@ public final class CMHardwareManager {
     @Deprecated
     public int getNumGammaControls() {
         try {
-            return getService().getNumGammaControls();
+            if (checkService()) {
+                return sService.getNumGammaControls();
+            }
         } catch (RemoteException e) {
         }
         return 0;
@@ -480,7 +498,9 @@ public final class CMHardwareManager {
     @Deprecated
     public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
         try {
-            return getService().setDisplayGammaCalibration(idx, rgb);
+            if (checkService()) {
+                return sService.setDisplayGammaCalibration(idx, rgb);
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -491,7 +511,9 @@ public final class CMHardwareManager {
      */
     public String getLtoSource() {
         try {
-            return getService().getLtoSource();
+            if (checkService()) {
+                return sService.getLtoSource();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -502,7 +524,9 @@ public final class CMHardwareManager {
      */
     public String getLtoDestination() {
         try {
-            return getService().getLtoDestination();
+            if (checkService()) {
+                return sService.getLtoDestination();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -513,7 +537,9 @@ public final class CMHardwareManager {
      */
     public long getLtoDownloadInterval() {
         try {
-            return getService().getLtoDownloadInterval();
+            if (checkService()) {
+                return sService.getLtoDownloadInterval();
+            }
         } catch (RemoteException e) {
         }
         return 0;
@@ -524,7 +550,9 @@ public final class CMHardwareManager {
      */
     public String getSerialNumber() {
         try {
-            return getService().getSerialNumber();
+            if (checkService()) {
+                return sService.getSerialNumber();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -536,7 +564,9 @@ public final class CMHardwareManager {
      */
     public boolean requireAdaptiveBacklightForSunlightEnhancement() {
         try {
-            return getService().requireAdaptiveBacklightForSunlightEnhancement();
+            if (checkService()) {
+                return sService.requireAdaptiveBacklightForSunlightEnhancement();
+            }
         } catch (RemoteException e) {
         }
         return false;
@@ -547,7 +577,9 @@ public final class CMHardwareManager {
      */
     public DisplayMode[] getDisplayModes() {
         try {
-            return getService().getDisplayModes();
+            if (checkService()) {
+                return sService.getDisplayModes();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -558,7 +590,9 @@ public final class CMHardwareManager {
      */
     public DisplayMode getCurrentDisplayMode() {
         try {
-            return getService().getCurrentDisplayMode();
+            if (checkService()) {
+                return sService.getCurrentDisplayMode();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -569,7 +603,9 @@ public final class CMHardwareManager {
      */
     public DisplayMode getDefaultDisplayMode() {
         try {
-            return getService().getDefaultDisplayMode();
+            if (checkService()) {
+                return sService.getDefaultDisplayMode();
+            }
         } catch (RemoteException e) {
         }
         return null;
@@ -580,9 +616,22 @@ public final class CMHardwareManager {
      */
     public boolean setDisplayMode(DisplayMode mode, boolean makeDefault) {
         try {
-            return getService().setDisplayMode(mode, makeDefault);
+            if (checkService()) {
+                return sService.setDisplayMode(mode, makeDefault);
+            }
         } catch (RemoteException e) {
         }
         return false;
+    }
+
+    /**
+     * @return true if service is valid
+     */
+    private boolean checkService() {
+        if (sService == null) {
+            Log.w(TAG, "not connected to CMHardwareManagerService");
+            return false;
+        }
+        return true;
     }
 }
