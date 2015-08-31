@@ -24,9 +24,9 @@
   <string name="custom_tile_listener_binding_label">مُصغٍ خاص لزر الإعدادات السريعة</string>
   <string name="profileNameDefault">المبدئي</string>
   <string name="profileNameWork">العمل</string>
-  <string name="profileNameHome">العمل</string>
+  <string name="profileNameHome">المنزل</string>
   <string name="profileNameSilent">صامت</string>
-  <string name="profileNameNight">ليل</string>
+  <string name="profileNameNight">الليل</string>
   <string name="profileNameAutomobile">السيارة</string>
   <string name="profileGroupPhone">الهاتف</string>
   <string name="profileGroupCalendar">التقويم</string>

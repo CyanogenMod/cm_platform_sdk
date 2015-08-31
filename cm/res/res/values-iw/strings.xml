@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">מאפשר ליישום להציג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
   <string name="permlab_modifyMSPhoneState">שינוי מצב המכשיר וחיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_modifyMSPhoneState">מאפשר ליישום לשנות את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
+  <string name="permlab_useHardwareFramework">השתמש במסגרת חומרתית</string>
+  <string name="permdesc_useHardwareFramework">אפשר ליישום לגשת למסגרת החומרתית של CM.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>

@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Umožňuj prohlížet stav telefonu a datového spojení s podporou více SIM.</string>
   <string name="permlab_modifyMSPhoneState">změnit stav telefonu a datového spojení s podporou více SIM</string>
   <string name="permdesc_modifyMSPhoneState">Umožňuje změnit stav telefonu a datového spojení s podporou více SIM.</string>
+  <string name="permlab_useHardwareFramework">využití hardware zařízení</string>
+  <string name="permdesc_useHardwareFramework">Umožní přistupovat k hardware pomocí CM.</string>
   <string name="custom_tile_listener_binding_label">Služba vlastní dlaždice</string>
   <string name="profileNameDefault">Výchozí</string>
   <string name="profileNameWork">Práce</string>

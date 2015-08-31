@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Επιτρέπει σε μια εφαρμογή να εμφανίζει την κατάσταση του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM.</string>
   <string name="permlab_modifyMSPhoneState">τροποποίηση κατάστασης του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM</string>
   <string name="permdesc_modifyMSPhoneState">Επιτρέπει σε μια εφαρμογή να τροποποιεί την κατάσταση του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM.</string>
+  <string name="permlab_useHardwareFramework">χρήση του πλαισίου υλικού</string>
+  <string name="permdesc_useHardwareFramework">Επιτρέπει σε μια εφαρμογή την πρόσβαση στο πλαίσιο υλικού του CM.</string>
   <string name="custom_tile_listener_binding_label">Listener προσαρμοσμένων πλακιδίων</string>
   <string name="profileNameDefault">Προεπιλογή</string>
   <string name="profileNameWork">Εργασία</string>

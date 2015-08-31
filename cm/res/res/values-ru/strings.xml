@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Разрешить приложению доступ к информации о состоянии телефона и передаче данных с поддержкой нескольких SIM-карт.</string>
   <string name="permlab_modifyMSPhoneState">изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт</string>
   <string name="permdesc_modifyMSPhoneState">Разрешить приложению изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт.</string>
+  <string name="permlab_useHardwareFramework">Взаимодействие с оборудованием</string>
+  <string name="permdesc_useHardwareFramework">Приложение сможет получать доступ к подсистеме аппаратных абстракций CyanogenMod.</string>
   <string name="custom_tile_listener_binding_label">Слушатель пользовательских плиток</string>
   <string name="profileNameDefault">По умолчанию</string>
   <string name="profileNameWork">Работа</string>

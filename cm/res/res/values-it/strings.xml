@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Consenti all\'app di vedere lo stato del telefono e della connessione con supporto per SIM multiple.</string>
   <string name="permlab_modifyMSPhoneState">modifica stato del dispositivo e connessione con supporto a più SIM</string>
   <string name="permdesc_modifyMSPhoneState">Consenti all\'app di modificare lo stato del telefono e della connessione con supporto per SIM multiple.</string>
+  <string name="permlab_useHardwareFramework">utilizza framework hardware</string>
+  <string name="permdesc_useHardwareFramework">Consente ad un\' app di accedere al framework hardware di CM.</string>
   <string name="custom_tile_listener_binding_label">Listener tile personalizzato</string>
   <string name="profileNameDefault">Predefinito</string>
   <string name="profileNameWork">Lavoro</string>

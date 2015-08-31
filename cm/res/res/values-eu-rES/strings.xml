@@ -27,6 +27,8 @@
   <string name="permdesc_readMSPhoneState">Telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin ikustea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_modifyMSPhoneState">aldatu telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
   <string name="permdesc_modifyMSPhoneState">Telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin aldatzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_useHardwareFramework">hardware markoa erabili</string>
+  <string name="permdesc_useHardwareFramework">CM hardware markoa atzitzea ahalbidetzen dio aplikazioari.</string>
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
   <string name="profileNameDefault">Lehenetsia</string>
   <string name="profileNameWork">Lanean</string>
