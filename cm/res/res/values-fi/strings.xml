@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Sallii sovelluksen tarkastella puhelimen tilaa ja datayhteyden tietoja usean SIM-kortin tuella.</string>
   <string name="permlab_modifyMSPhoneState">muokkaa puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>
   <string name="permdesc_modifyMSPhoneState">Sallii sovelluksen muokata puhelimen tilaa ja datayhteyden tietoja usean SIM-kortin tuella.</string>
+  <string name="permlab_useHardwareFramework">käytä laitteiston kehystä</string>
+  <string name="permdesc_useHardwareFramework">Sallii sovelluksen pääsyn CM-laitteiston kehykseen.</string>
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>
   <string name="profileNameDefault">Oletus</string>
   <string name="profileNameWork">Työ</string>

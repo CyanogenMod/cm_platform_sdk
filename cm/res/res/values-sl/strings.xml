@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Omogoča programu ogled stanja telefona in podatkovnih povezav s podporo za več kartic SIM.</string>
   <string name="permlab_modifyMSPhoneState">spreminjanje stanja telefona in podatkovnih povezav s podporo za več kartic SIM</string>
   <string name="permdesc_modifyMSPhoneState">Omogoča programu spreminjanje stanja telefona in podatkovnih povezav s podporo za več kartic SIM.</string>
+  <string name="permlab_useHardwareFramework">uporabi strojno ogrodje</string>
+  <string name="permdesc_useHardwareFramework">Omogoča programu dostop do strojnega ogrodja CM.</string>
   <string name="custom_tile_listener_binding_label">Poslušalnik ploščic po meri</string>
   <string name="profileNameDefault">Privzeto</string>
   <string name="profileNameWork">Služba</string>

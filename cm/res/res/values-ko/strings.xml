@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">앱이 여러 개의 SIM 카드를 지원하면서 휴대전화의 상태와 데이터 연결 상태를 확인하도록 허용합니다.</string>
   <string name="permlab_modifyMSPhoneState">여러 개의 SIM 카드를 지원하면서 휴대전화의 상태와 데이터 연결 상태를 수정</string>
   <string name="permdesc_modifyMSPhoneState">앱이 여러 개의 SIM 카드를 지원하면서 휴대전화의 상태와 데이터 연결 상태를 수정하도록 허용합니다.</string>
+  <string name="permlab_useHardwareFramework">하드웨어 프레임워크 사용</string>
+  <string name="permdesc_useHardwareFramework">앱이 CM 하드웨어 프레임워크에 접근할 수 있도록 허용합니다.</string>
   <string name="custom_tile_listener_binding_label">사용자 정의 타일 확인</string>
   <string name="profileNameDefault">기본</string>
   <string name="profileNameWork">직장</string>

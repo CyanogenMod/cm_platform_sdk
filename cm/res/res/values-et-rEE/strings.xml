@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Võimaldab rakendusel vaadata telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
   <string name="permlab_modifyMSPhoneState">telefoni oleku ja andmeühenduse muutmine, toetades mitmeid SIMe</string>
   <string name="permdesc_modifyMSPhoneState">Võimaldab rakendusel muuta telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
+  <string name="permlab_useHardwareFramework">kasutada riistvara raamistikku</string>
+  <string name="permdesc_useHardwareFramework">Annab rakendusele ligipääsu CM riistvara raamistikule.</string>
   <string name="custom_tile_listener_binding_label">Kohandatud tahvli kuulaja</string>
   <string name="profileNameDefault">Vaikimisi</string>
   <string name="profileNameWork">Töö</string>

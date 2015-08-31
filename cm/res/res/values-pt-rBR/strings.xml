@@ -29,6 +29,8 @@
   <string name="permdesc_readMSPhoneState">Permite que um aplicativo exiba a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
   <string name="permlab_modifyMSPhoneState">modificar a conexão de dados e o estado do telefone com suporte para vários SIMs</string>
   <string name="permdesc_modifyMSPhoneState">Permite que um aplicativo modifique a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
+  <string name="permlab_useHardwareFramework">utilizar o framework do hardware</string>
+  <string name="permdesc_useHardwareFramework">Permite o acesso de um app ao framework de acesso ao hardware CM.</string>
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
