@@ -64,8 +64,6 @@ public class ProfileManagerService extends SystemService {
     // Enable the below for detailed logging of this class
     private static final boolean LOCAL_LOGV = false;
 
-    public static final String PERMISSION_CHANGE_SETTINGS = "android.permission.WRITE_SETTINGS";
-
     public static final String KEYGUARD_PACKAGE = "com.android.systemui";
     public static final String KEYGUARD_CLASS = "com.android.systemui.keyguard.KeyguardService";
 
@@ -520,7 +518,8 @@ public class ProfileManagerService extends SystemService {
     }
 
     private void enforceChangePermissions() {
-        mContext.enforceCallingOrSelfPermission(PERMISSION_CHANGE_SETTINGS,
+        mContext.enforceCallingOrSelfPermission(
+                cyanogenmod.platform.Manifest.permission.MODIFY_PROFILES,
                 "You do not have permissions to change the Profile Manager.");
     }
 

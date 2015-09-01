@@ -51,7 +51,8 @@ import com.android.internal.R;
  *
  * To get the instance of this class, utilize ProfileManager#getInstance(Context context)
  *
- * This manager requires the android.permission.WRITE_SETTINGS permission.
+ * This manager requires the {@link cyanogenmod.platform.Manifest.permission.MODIFY_PROFILES}
+ * permission.
  *
  * @see cyanogenmod.app.Profile
  * @see cyanogenmod.app.ProfileGroup

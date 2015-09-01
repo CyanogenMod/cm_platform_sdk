@@ -75,6 +75,12 @@
                 android:description="@string/permdesc_writeSettings"
                 android:protectionLevel="normal" />
 
+    <!-- Allows an application to modify system profiles -->
+    <permission android:name="cyanogenmod.permission.MODIFY_PROFILES"
+                android:label="@string/permlab_modifyProfiles"
+                android:description="@string/permdesc_modifyProfiles"
+                android:protectionLevel="normal" />
+
     <!-- Allows an application to write to secure CM system settings.
         <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"

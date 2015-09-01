@@ -38,6 +38,10 @@
     <string name="permlab_modifyMSPhoneState">modify the phone state and data connection with support to multiple SIMs</string>
     <string name="permdesc_modifyMSPhoneState">Allows an app to modify the phone state and data connection with support to multiple SIMs.</string>
 
+    <!-- Labels for the MODIFY_PROFILES permission. -->
+    <string name="permlab_modifyProfiles">modify system profiles</string>
+    <string name="permdesc_modifyProfiles">Allows an application to modify system profiles</string>
+
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">use hardware framework</string>
     <string name="permdesc_useHardwareFramework">Allows an app access to the CM hardware framework.</string>
