@@ -113,6 +113,13 @@
                 android:label="@string/permlab_read_alarms"
                 android:description="@string/permdesc_read_alarms"/>
 
+    <!-- Allows an application to access persistent property storage
+         <p>Not for use by third-party applications. -->
+    <permission android:name="cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE"
+                android:label="@string/permlab_managePersistentStorage"
+                android:description="@string/permdesc_managePersistentStorage"
+                android:protectionLevel="system|signature" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
