@@ -47,4 +47,7 @@ interface ICMHardwareService {
     DisplayMode getCurrentDisplayMode();
     DisplayMode getDefaultDisplayMode();
     boolean setDisplayMode(in DisplayMode mode, boolean makeDefault);
+
+    boolean writePersistentBytes(String key, in byte[] bytes);
+    byte[] readPersistentBytes(String key);
 }
