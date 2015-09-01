@@ -149,7 +149,7 @@ public final class CMHardwareManager {
     }
 
     /** @hide */
-    private static ICMHardwareService getService() {
+    public static ICMHardwareService getService() {
         if (sService != null) {
             return sService;
         }

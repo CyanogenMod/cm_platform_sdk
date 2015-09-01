@@ -14,34 +14,33 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.tests.customtiles.unit;
+package org.cyanogenmod.tests.hardware.unit;
 
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import cyanogenmod.app.CMStatusBarManager;
-import cyanogenmod.app.ICMStatusBarManager;
+import cyanogenmod.hardware.CMHardwareManager;
+import cyanogenmod.hardware.ICMHardwareService;
 
 /**
- * Created by adnan on 7/14/15.
+ * Created by adnan on 9/1/15.
  */
-public class CMStatusBarManagerTest extends AndroidTestCase {
-    private CMStatusBarManager mCMStatusBarManager;
-
+public class CMHardwareManagerTest extends AndroidTestCase {
+    private CMHardwareManager mCMHardwareManager;
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        mCMStatusBarManager = CMStatusBarManager.getInstance(mContext);
+        mCMHardwareManager = CMHardwareManager.getInstance(mContext);
     }
 
     @SmallTest
     public void testManagerExists() {
-        assertNotNull(mCMStatusBarManager);
+        assertNotNull(mCMHardwareManager);
     }
 
     @SmallTest
     public void testManagerServiceIsAvailable() {
-        ICMStatusBarManager icmHardwareManagerService = mCMStatusBarManager.getService();
-        assertNotNull(icmHardwareManagerService);
+        ICMHardwareService icmStatusBarManager = mCMHardwareManager.getService();
+        assertNotNull(icmStatusBarManager);
     }
 }
