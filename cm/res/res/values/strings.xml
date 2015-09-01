@@ -66,6 +66,10 @@
     <string name="permlab_writeSecureSettings">modify CM secure system settings</string>
     <string name="permdesc_writeSecureSettings">Allows an app to modify CM secure system settings. Not for use by normal apps.</string>
 
+    <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+    <string name="permlab_managePersistentStorage">manage persistent storage</string>
+    <string name="permdesc_managePersistentStorage">Allows an app to read or write properties which may persist thru a factory reset.</string>
+
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
 
