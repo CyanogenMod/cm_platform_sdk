@@ -18,6 +18,7 @@
     <uses-permission android:name="cyanogenmod.permission.READ_MSIM_PHONE_STATE" />
     <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_PROFILES" />
+    <uses-permission android:name="cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE" />
 
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <uses-library android:name="android.test.runner" />
@@ -70,6 +71,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".customtiles.DummySettings"
                   android:label="@string/app_name" />
     </application>
