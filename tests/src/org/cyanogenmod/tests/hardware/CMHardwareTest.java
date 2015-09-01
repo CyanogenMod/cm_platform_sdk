@@ -47,7 +47,8 @@ public class CMHardwareTest extends TestActivity {
             CMHardwareManager.FEATURE_TAP_TO_WAKE,
             CMHardwareManager.FEATURE_TOUCH_HOVERING,
             CMHardwareManager.FEATURE_AUTO_CONTRAST,
-            CMHardwareManager.FEATURE_DISPLAY_MODES
+            CMHardwareManager.FEATURE_DISPLAY_MODES,
+            CMHardwareManager.FEATURE_PERSISTENT_STORAGE
     );
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
@@ -122,6 +123,16 @@ public class CMHardwareTest extends TestActivity {
             return true;
         } else {
             Toast.makeText(CMHardwareTest.this, "Display modes not supported",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean persistentStorageSupported() {
+        if (mHardwareManager.isSupported(CMHardwareManager.FEATURE_PERSISTENT_STORAGE)) {
+            return true;
+        } else {
+            Toast.makeText(CMHardwareTest.this, "Persistent storage not supported",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
