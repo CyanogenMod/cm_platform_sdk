@@ -121,7 +121,7 @@ public class CMHardwareTest extends TestActivity {
         if (mHardwareManager.isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
             return true;
         } else {
-            Toast.makeText(CMHardwareTest.this, "Serial number not supported",
+            Toast.makeText(CMHardwareTest.this, "Display modes not supported",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
