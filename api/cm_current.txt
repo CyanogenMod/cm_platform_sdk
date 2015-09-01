@@ -106,11 +106,13 @@ package cyanogenmod.app {
     field public android.net.Uri onClickUri;
     field public android.content.Intent onSettingsClick;
     field public android.graphics.Bitmap remoteIcon;
+    field public boolean sensitiveData;
   }
 
   public static class CustomTile.Builder {
     ctor public CustomTile.Builder(android.content.Context);
     method public cyanogenmod.app.CustomTile build();
+    method public cyanogenmod.app.CustomTile.Builder hasSensitiveData(boolean);
     method public cyanogenmod.app.CustomTile.Builder setContentDescription(java.lang.String);
     method public cyanogenmod.app.CustomTile.Builder setContentDescription(int);
     method public cyanogenmod.app.CustomTile.Builder setDeleteIntent(android.app.PendingIntent);
@@ -437,11 +439,15 @@ package cyanogenmod.platform {
   public static final class Manifest.permission {
     ctor public Manifest.permission();
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
+    field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
+    field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
+    field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
+    field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
   }
