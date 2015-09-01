@@ -19,7 +19,9 @@ package cyanogenmod.hardware;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* 
+import cyanogenmod.os.Build;
+
+/**
  * Display Modes API
  *
  * A device may implement a list of preset display modes for different
@@ -36,10 +38,34 @@ import android.os.Parcelable;
 public class DisplayMode implements Parcelable {
     public final int id;
     public final String name;
-       
+
     public DisplayMode(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    private DisplayMode(Parcel parcel) {
+        // Read parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        int parcelableVersion = parcel.readInt();
+        int parcelableSize = parcel.readInt();
+        int startPosition = parcel.dataPosition();
+
+        // temp vars
+        int tmpId = -1;
+        String tmpName = null;
+
+        if (parcelableVersion >= Build.CM_VERSION_CODES.BOYSENBERRY) {
+            tmpId = parcel.readInt();
+            if (parcel.readInt() != 0) {
+                tmpName = parcel.readString();
+            }
+        }
+
+        // set temps
+        this.id = tmpId;
+        this.name = tmpName;
+        parcel.setDataPosition(startPosition + parcelableSize);
     }
 
     @Override
@@ -49,14 +75,37 @@ public class DisplayMode implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        // Write parcelable version, make sure to define explicit changes
+        // within {@link Build.PARCELABLE_VERSION);
+        out.writeInt(Build.PARCELABLE_VERSION);
+
+        // Inject a placeholder that will store the parcel size from this point on
+        // (not including the size itself).
+        int sizePosition = out.dataPosition();
+        out.writeInt(0);
+        int startPosition = out.dataPosition();
+
+        // ==== BOYSENBERRY =====
         out.writeInt(id);
-        out.writeString(name);
+        if (name != null) {
+            out.writeInt(1);
+            out.writeString(name);
+        } else {
+            out.writeInt(0);
+        }
+
+        // Go back and write size
+        int parcelableSize = out.dataPosition() - startPosition;
+        out.setDataPosition(sizePosition);
+        out.writeInt(parcelableSize);
+        out.setDataPosition(startPosition + parcelableSize);
     }
     
     /** @hide */
-    public static final Parcelable.Creator<DisplayMode> CREATOR = new Parcelable.Creator<DisplayMode>() {
+    public static final Parcelable.Creator<DisplayMode> CREATOR =
+            new Parcelable.Creator<DisplayMode>() {
         public DisplayMode createFromParcel(Parcel in) {
-            return new DisplayMode(in.readInt(), in.readString());
+            return new DisplayMode(in);
         }
 
         @Override
