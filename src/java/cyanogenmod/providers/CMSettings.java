@@ -588,6 +588,13 @@ public final class CMSettings {
          */
         public static final String QS_QUICK_PULLDOWN = "qs_quick_pulldown";
 
+        /**
+         * Whether to attach a queue to media notifications.
+         * 0 = 0ff, 1 = on
+         * @hide
+         */
+        public static final String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
+
         // endregion
     }
 
