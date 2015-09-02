@@ -287,7 +287,7 @@ public class CMSettingsProvider extends ContentProvider {
         }
 
         if (numRowsAffected > 0) {
-            getContext().getContentResolver().notifyChange(uri, null);
+            notifyChange(uri, tableName,  callingUserId);
             if (LOCAL_LOGV) Log.d(TAG, tableName + ": " + numRowsAffected + " row(s) updated");
         }
 
