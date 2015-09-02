@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>cyanogenmod.os | Android Developers</title>
+<title>cyanogenmod.providers | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -140,7 +140,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference">
-  <div id="doc-api-level" class="1" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -185,13 +185,13 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
               </ul><br/>
 
@@ -207,13 +207,19 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-        <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></li>
-        <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></li>
-        <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></li>
+        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></li>
+        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></li>
+        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></li>
+        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></li>
       </ul>
     </li>
               
               
+    <li><h2>Exceptions</h2>
+      <ul>
+        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.CMSettingNotFoundException.html">CMSettings.CMSettingNotFoundException</a></li>
+      </ul>
+    </li>
               
             </ul><br/>
         
@@ -266,7 +272,7 @@ type="text/css">
 <div id="api-info-block">
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -275,12 +281,12 @@ type="text/css">
 
 <div id="jd-header">
   package
-  <h1>cyanogenmod.os</h1>
+  <h1>cyanogenmod.providers</h1>
 </div><!-- end header -->
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-1">
+<div id="jd-content" class="api apilevel-2">
 
 
 
@@ -300,10 +306,10 @@ type="text/css">
   
   <table class="jd-sumtable-expando">
     
-      <tr class="alt-color api apilevel-1" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.html">Build</a></td>
+      <tr class="alt-color api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></td>
         <td class="jd-descrcol" width="100%">
-          Information about the current CyanogenMod build, extracted from system properties.&nbsp;
+          CMSettings contains CM specific preferences in System, Secure, and Global.&nbsp;
           
     
 
@@ -311,10 +317,10 @@ type="text/css">
       </tr>
       
     
-      <tr class=" api apilevel-1" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION.html">Build.CM_VERSION</a></td>
+      <tr class=" api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></td>
         <td class="jd-descrcol" width="100%">
-          Various version strings.&nbsp;
+          Global settings, containing miscellaneous CM global preferences.&nbsp;
           
     
 
@@ -322,10 +328,21 @@ type="text/css">
       </tr>
       
     
-      <tr class="alt-color api apilevel-1" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html">Build.CM_VERSION_CODES</a></td>
+      <tr class="alt-color api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></td>
         <td class="jd-descrcol" width="100%">
-          Enumeration of the currently known SDK version codes.&nbsp;
+          Secure settings, containing miscellaneous CM secure preferences.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></td>
+        <td class="jd-descrcol" width="100%">
+          System settings, containing miscellaneous CM system preferences.&nbsp;
           
     
 
@@ -342,6 +359,27 @@ type="text/css">
   
 
 
+  
+    <h2>Exceptions</h2>
+    <div class="jd-sumtable">
+    
+  
+  <table class="jd-sumtable-expando">
+    
+      <tr class="alt-color api apilevel-2" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.CMSettingNotFoundException.html">CMSettings.CMSettingNotFoundException</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+  </table>
+
+    </div>
   
 
 

@@ -182,12 +182,16 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="selected api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -415,6 +419,32 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#HARDWARE_ABSTRACTION_ACCESS">HARDWARE_ABSTRACTION_ACCESS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application access to the CM hardware abstraction framework 
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MANAGE_ALARMS">MANAGE_ALARMS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to manage alarms on the default alarm clock application 
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MODIFY_MSIM_PHONE_STATE">MODIFY_MSIM_PHONE_STATE</a></td>
         <td class="jd-descrcol" width="100%">
           Allows a 3rd party to modify the phone SIM states and data connection 
@@ -441,6 +471,19 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MODIFY_PROFILES">MODIFY_PROFILES</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to modify system profiles 
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#MODIFY_SOUND_SETTINGS">MODIFY_SOUND_SETTINGS</a></td>
         <td class="jd-descrcol" width="100%">
           Allows system applications to make changes to a subset of system sound settings 
@@ -452,11 +495,24 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-1" >
+    <tr class="alt-color api apilevel-1" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#PUBLISH_CUSTOM_TILE">PUBLISH_CUSTOM_TILE</a></td>
         <td class="jd-descrcol" width="100%">
           Allows a 3rd party application to publish or unpublish a quick settings tile 
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#READ_ALARMS">READ_ALARMS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to read alarms from the default alarm clock application 
 
           
     
@@ -470,6 +526,44 @@ Summary:
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#READ_MSIM_PHONE_STATE">READ_MSIM_PHONE_STATE</a></td>
         <td class="jd-descrcol" width="100%">
           Allows a 3rd party to view the phone SIM states and data connection 
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#WRITE_ALARMS">WRITE_ALARMS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to write alarms to the default alarm clock application
+        <p>Not for use by third-party applications.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#WRITE_SECURE_SETTINGS">WRITE_SECURE_SETTINGS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to write to secure CM system settings.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#WRITE_SETTINGS">WRITE_SETTINGS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Allows an application to write to CM system settings 
 
           
     
@@ -762,6 +856,90 @@ From class
 
 
 
+<A NAME="HARDWARE_ABSTRACTION_ACCESS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        HARDWARE_ABSTRACTION_ACCESS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application access to the CM hardware abstraction framework 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MANAGE_ALARMS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MANAGE_ALARMS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to manage alarms on the default alarm clock application 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.MANAGE_ALARMS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="MODIFY_MSIM_PHONE_STATE"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -837,6 +1015,48 @@ From class
         <span>
             
                 "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFY_PROFILES"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFY_PROFILES
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to modify system profiles 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.MODIFY_PROFILES"
             
         </span>
         </div>
@@ -930,6 +1150,48 @@ From class
 
 
 
+<A NAME="READ_ALARMS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        READ_ALARMS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to read alarms from the default alarm clock application 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.READ_ALARMS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="READ_MSIM_PHONE_STATE"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -963,6 +1225,134 @@ From class
         <span>
             
                 "cyanogenmod.permission.READ_MSIM_PHONE_STATE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="WRITE_ALARMS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        WRITE_ALARMS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to write alarms to the default alarm clock application
+        <p>Not for use by third-party applications. 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.WRITE_ALARMS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="WRITE_SECURE_SETTINGS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        WRITE_SECURE_SETTINGS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to write to secure CM system settings.
+        <p>Not for use by third-party applications. 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.WRITE_SECURE_SETTINGS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="WRITE_SETTINGS"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        WRITE_SETTINGS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to write to CM system settings 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.permission.WRITE_SETTINGS"
             
         </span>
         </div>

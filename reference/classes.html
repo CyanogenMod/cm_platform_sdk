@@ -181,12 +181,16 @@ type="text/css">
   <a href="../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="api apilevel-2">
+  <a href="../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-1">
   <a href="../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-2">
   <a href="../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+    <li class="api apilevel-2">
+  <a href="../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -253,6 +257,7 @@ type="text/css">
     <a href="#letter_A">A</a>&nbsp;&nbsp;
     <a href="#letter_B">B</a>&nbsp;&nbsp;
     <a href="#letter_C">C</a>&nbsp;&nbsp;
+    <a href="#letter_D">D</a>&nbsp;&nbsp;
     <a href="#letter_L">L</a>&nbsp;&nbsp;
     <a href="#letter_M">M</a>&nbsp;&nbsp;
     <a href="#letter_P">P</a>&nbsp;&nbsp;
@@ -397,6 +402,75 @@ type="text/css">
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></td>
             <td class="jd-descrcol" width="100%">
               Constants for the Instance table, which contains the state of each alarm.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></td>
+            <td class="jd-descrcol" width="100%">
+              Manages access to CyanogenMod hardware extensions
+
+  <p>
+  This manager requires the HARDWARE_ABSTRACTION_ACCESS permission.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></td>
+            <td class="jd-descrcol" width="100%">
+              CMSettings contains CM specific preferences in System, Secure, and Global.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/CMSettings.CMSettingNotFoundException.html">CMSettings.CMSettingNotFoundException</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></td>
+            <td class="jd-descrcol" width="100%">
+              Global settings, containing miscellaneous CM global preferences.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></td>
+            <td class="jd-descrcol" width="100%">
+              Secure settings, containing miscellaneous CM secure preferences.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></td>
+            <td class="jd-descrcol" width="100%">
+              System settings, containing miscellaneous CM system preferences.&nbsp;
               
     
 
@@ -590,6 +664,27 @@ type="text/css">
 </table>
 
 
+<h2 id="letter_D">D</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-2" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></td>
+            <td class="jd-descrcol" width="100%">
+              Display Modes API
+
+ A device may implement a list of preset display modes for different
+ viewing intents, such as movies, photos, or extra vibrance.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+</table>
+
+
 <h2 id="letter_L">L</h2>
 <table class="jd-sumtable">
     
@@ -744,12 +839,15 @@ type="text/css">
  The ProfileManager allows you to create <code><a href="../reference/cyanogenmod/app/Profile.html">Profile</a></code>s and ProfileGroups to create
  specific behavior states depending on triggers from hardware devices changing states, such as:
 
- WiFi being enabled
- WiFi connecting to a certain AP
- Bluetooth connecting to a certain device
- Bluetooth disconnecting to a certain device
- NFC tag being scanned
+ <pre class="prettyprint">
+     WiFi being enabled
+     WiFi connecting to a certain AP
+     Bluetooth connecting to a certain device
+     Bluetooth disconnecting to a certain device
+     NFC tag being scanned
+ </pre>
 
+ <p>
  Depending on these triggers, you can override connection settings, lockscreen modes, media
  stream volumes and various other settings.&nbsp;
               

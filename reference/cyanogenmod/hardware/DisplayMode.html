@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>Profile.TriggerType | Android Developers</title>
+<title>DisplayMode | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -180,9 +180,9 @@ type="text/css">
                 
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
@@ -206,29 +206,8 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></li>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></li>
       </ul>
     </li>
               
@@ -293,6 +272,15 @@ type="text/css">
   
   
 
+  
+   
+  
+  
+   
+  
+  
+  
+
 
 <div class="sum-details-links">
 
@@ -302,10 +290,13 @@ Summary:
 
 
 
-  <a href="#constants">Constants</a>
+
+  <a href="#inhconstants">Inherited Constants</a>
   
 
 
+  &#124; <a href="#lfields">Fields</a>
+  
 
 
 
@@ -313,6 +304,9 @@ Summary:
   
 
 
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
 
 
 
@@ -335,11 +329,11 @@ Summary:
 
 <div id="jd-header">
     public
-    static 
+     
      
     
     class
-<h1 itemprop="name">Profile.TriggerType</h1>
+<h1 itemprop="name">DisplayMode</h1>
 
 
 
@@ -350,6 +344,11 @@ Summary:
   
 
   
+  
+      implements 
+      
+        Parcelable 
+      
   
   
 
@@ -375,7 +374,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.Profile.TriggerType</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.hardware.DisplayMode</td>
     </tr>
     
 
@@ -391,7 +390,18 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Available trigger types on the device, usually hardware
+<p itemprop="articleBody">Display Modes API
+
+ A device may implement a list of preset display modes for different
+ viewing intents, such as movies, photos, or extra vibrance. These
+ modes may have multiple components such as gamma correction, white
+ point adjustment, etc, but are activated by a single control point.
+
+ This API provides support for enumerating and selecting the
+ modes supported by the hardware.
+
+ A DisplayMode is referenced by it's identifier and carries an
+ associated name (up to the user to translate this value).
 </p>
 
 
@@ -432,16 +442,39 @@ Summary:
 
 
 
+
+
+
 <!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+<table id="inhconstants" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Constants</div></th></tr>
 
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+android.os.Parcelable
+<div id="inherited-constants-android.os.Parcelable">
+  <div id="inherited-constants-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
 
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html#BLUETOOTH">BLUETOOTH</a></td>
+        <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
         <td class="jd-descrcol" width="100%">
-          Represents a Bluetooth trigger type 
+          
           
     
 
@@ -449,11 +482,11 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html#WIFI">WIFI</a></td>
+        <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
         <td class="jd-descrcol" width="100%">
-          Represents a WiFi trigger type 
+          
           
     
 
@@ -461,13 +494,56 @@ Summary:
     </tr>
     
     
+</table>
+  </div>
+</div>
+</td></tr>
+
 
 </table>
 
 
 
 
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
 
+
+    
+      <tr class="alt-color api apilevel-2" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          final
+          int</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html#id">id</a></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-2" >
+          <td class="jd-typecol"><nobr>
+          public
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html#name">name</a></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
+      </tr>
+      
+    
+
+</table>
 
 
 
@@ -491,7 +567,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html#Profile.TriggerType()">Profile.TriggerType</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html#DisplayMode(int, java.lang.String)">DisplayMode</a></span>(int id, String name)</nobr>
         
   </td></tr>
 
@@ -502,6 +578,47 @@ Summary:
 
 
 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html#describeContents()">describeContents</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel out, int flags)</nobr>
+        
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -716,6 +833,64 @@ From class
 </td></tr>
 
 
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  android.os.Parcelable
+
+<div id="inherited-methods-android.os.Parcelable">
+  <div id="inherited-methods-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">describeContents</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">writeToParcel</span>(Parcel arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
 </table>
 
 
@@ -739,98 +914,78 @@ From class
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="BLUETOOTH"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        BLUETOOTH
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Represents a Bluetooth trigger type </p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                1
-                (0x00000001)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="WIFI"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        WIFI
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Represents a WiFi trigger type </p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                0
-                (0x00000000)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="id"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+        final 
+        int
+      </span>
+        id
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="name"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+        final 
+        String
+      </span>
+        name
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
 
 
 <!-- Public ctors -->
@@ -841,7 +996,7 @@ From class
 
 
 
-<A NAME="Profile.TriggerType()"></A>
+<A NAME="DisplayMode(int, java.lang.String)"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -853,8 +1008,8 @@ From class
          
         
       </span>
-      <span class="sympad">Profile.TriggerType</span>
-      <span class="normal">()</span>
+      <span class="sympad">DisplayMode</span>
+      <span class="normal">(int id, String name)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -884,6 +1039,77 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="describeContents()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">describeContents</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="writeToParcel(android.os.Parcel, int)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">writeToParcel</span>
+      <span class="normal">(Parcel out, int flags)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 
 
 
