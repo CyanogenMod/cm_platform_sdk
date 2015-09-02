@@ -88,7 +88,16 @@ public class Build {
         public static final int APRICOT = 1;
 
         /**
-         * July 2015 - ?: The second version of the platform sdk for CyanogenMod
+         * September 2015: The second version of the platform sdk for CyanogenMod
+         *
+         * Features:
+         *   - Profiles API
+         *   - New Expanded Styles for Custom Tiles
+         *   - Hardware Abstraction Framework Access
+         *   - MSIM API
+         *   - Settings interface for partners
+         *   - Introductory Settings Provider
+         *   - AlarmClock API
          */
         public static final int BOYSENBERRY = 2;
     }

@@ -39,20 +39,23 @@ import com.android.internal.R;
  * The ProfileManager allows you to create {@link Profile}s and {@link ProfileGroup}s to create
  * specific behavior states depending on triggers from hardware devices changing states, such as:
  *
- * WiFi being enabled
- * WiFi connecting to a certain AP
- * Bluetooth connecting to a certain device
- * Bluetooth disconnecting to a certain device
- * NFC tag being scanned
+ * <pre class="prettyprint">
+ *     WiFi being enabled
+ *     WiFi connecting to a certain AP
+ *     Bluetooth connecting to a certain device
+ *     Bluetooth disconnecting to a certain device
+ *     NFC tag being scanned
+ * </pre>
  *
+ * <p>
  * Depending on these triggers, you can override connection settings, lockscreen modes, media
  * stream volumes and various other settings.
- *<p>
  *
+ * <p>
  * To get the instance of this class, utilize ProfileManager#getInstance(Context context)
  *
- * This manager requires the {@link cyanogenmod.platform.Manifest.permission.MODIFY_PROFILES}
- * permission.
+ * <p>
+ * This manager requires the MODIFY_PROFILES permission.
  *
  * @see cyanogenmod.app.Profile
  * @see cyanogenmod.app.ProfileGroup

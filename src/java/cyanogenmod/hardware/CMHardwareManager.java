@@ -30,8 +30,10 @@ import java.util.List;
 /**
  * Manages access to CyanogenMod hardware extensions
  *
+ *  <p>
+ *  This manager requires the HARDWARE_ABSTRACTION_ACCESS permission.
+ *  <p>
  *  To get the instance of this class, utilize CMHardwareManager#getInstance(Context context)
- *
  */
 public final class CMHardwareManager {
     private static final String TAG = "CMHardwareManager";
