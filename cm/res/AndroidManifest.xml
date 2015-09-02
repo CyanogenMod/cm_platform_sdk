@@ -63,7 +63,8 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
-    <!-- Allows an application access to the CM hardware abstraction framework -->
+    <!-- Allows an application access to the CM hardware abstraction framework
+        <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS"
                 android:label="@string/permlab_useHardwareFramework"
                 android:description="@string/permdesc_useHardwareFramework"
