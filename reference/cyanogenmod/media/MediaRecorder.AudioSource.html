@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>ClockContract | Android Developers</title>
+<title>MediaRecorder.AudioSource | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -178,13 +178,13 @@ type="text/css">
 
               <ul>
                 
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
@@ -205,19 +205,11 @@ type="text/css">
             <ul>
               
               
-    <li><h2>Interfaces</h2>
-      <ul>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></li>
-      </ul>
-    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html">MediaRecorder</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></li>
       </ul>
     </li>
               
@@ -287,19 +279,19 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
+
+
+
+
+  <a href="#constants">Constants</a>
   
 
 
 
 
 
-  &#124; <a href="#constants">Constants</a>
+  &#124; <a href="#pubctors">Ctors</a>
   
-
-
-
-
 
 
 
@@ -324,11 +316,11 @@ Summary:
 
 <div id="jd-header">
     public
+    static 
      
-    final 
     
     class
-<h1 itemprop="name">ClockContract</h1>
+<h1 itemprop="name">MediaRecorder.AudioSource</h1>
 
 
 
@@ -364,7 +356,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.alarmclock.ClockContract</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.media.MediaRecorder.AudioSource</td>
     </tr>
     
 
@@ -378,32 +370,6 @@ Summary:
 
 <div class="jd-descr">
 
-
-<h2>Class Overview</h2>
-<p itemprop="articleBody"><p>
- The contract between the clock provider and desk clock. Contains
- definitions for the supported URIs and data columns.
- </p>
- <h3>Overview</h3>
- <p>
- ClockContract defines the data model of clock related information.
- This data is stored in a number of tables:
- </p>
- <ul>
- <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></code> table holds the user created alarms</li>
- <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></code> table holds the current state of each
- alarm in the AlarmsColumn table.
- </li>
- <li>The <code><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></code> table holds all user selectable cities</li>
- </ul>
-
- <p>
- Requires <code><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html#READ_ALARMS_PERMISSION">READ_ALARMS_PERMISSION</a></code>
- to read from the provider.
- Requires <code><a href="../../../">ERROR(/cyanogenmod.alarmclock.CyanogenModAlarmClock#WRITE_ALARMS_PERMISSION)</a></code> to write
- to the provider.
- </p>
-</p>
 
 
 
@@ -433,82 +399,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        interface</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></td>
-      <td class="jd-descrcol" width="100%">
-        Constants for tables with AlarmSettings.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        interface</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></td>
-      <td class="jd-descrcol" width="100%">
-        Constants for the Alarms table, which contains the user created alarms.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        interface</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></td>
-      <td class="jd-descrcol" width="100%">
-        Constants for the Cities table, which contains all selectable cities.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        interface</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></td>
-      <td class="jd-descrcol" width="100%">
-        Constants for the Instance table, which contains the state of each alarm.&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-
-
-
 
 
 
@@ -525,11 +415,12 @@ Summary:
 
     
     <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html#AUTHORITY">AUTHORITY</a></td>
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#HOTWORD">HOTWORD</a></td>
         <td class="jd-descrcol" width="100%">
-          This authority is used for writing to or querying from the clock
- provider.
+          Audio source for preemptible, low-priority software hotword detection
+ It presents the same gain and pre processing tuning as
+ <code><a href="../../../reference/android/media/MediaRecorder.AudioSource.html#VOICE_RECOGNITION">VOICE_RECOGNITION</a></code>.
           
     
 
@@ -549,6 +440,31 @@ Summary:
 
 
 
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#MediaRecorder.AudioSource()">MediaRecorder.AudioSource</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -796,7 +712,7 @@ From class
 
 
 
-<A NAME="AUTHORITY"></A>
+<A NAME="HOTWORD"></A>
 
 <div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
@@ -804,9 +720,9 @@ From class
         public 
         static 
         final 
-        String
+        int
       </span>
-        AUTHORITY
+        HOTWORD
     </h4>
       <div class="api-level">
         
@@ -820,8 +736,16 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>This authority is used for writing to or querying from the clock
- provider.
+  <div class="jd-tagdata jd-tagdescr"><p>Audio source for preemptible, low-priority software hotword detection
+ It presents the same gain and pre processing tuning as
+ <code><a href="../../../reference/android/media/MediaRecorder.AudioSource.html#VOICE_RECOGNITION">VOICE_RECOGNITION</a></code>.
+ <p>
+ An application should use this audio source when it wishes to do
+ always-on software hotword detection, while gracefully giving in to any other application
+ that might want to read from the microphone.
+ </p>
+ You must hold <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#CAPTURE_AUDIO_HOTWORD_PERMISSION">CAPTURE_AUDIO_HOTWORD_PERMISSION</a></code>
+ to use this audio source.
 </p></div>
 
     
@@ -829,7 +753,8 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "com.android.deskclock"
+                1999
+                (0x000007cf)
             
         </span>
         </div>
@@ -844,6 +769,46 @@ From class
 
 
 <!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="MediaRecorder.AudioSource()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">MediaRecorder.AudioSource</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 
 
 
