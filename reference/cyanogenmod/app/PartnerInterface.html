@@ -96,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>SettingsManager | Android Developers</title>
+<title>PartnerInterface | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -184,6 +184,8 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
@@ -218,6 +220,7 @@ type="text/css">
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
@@ -227,7 +230,6 @@ type="text/css">
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></li>
           <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
       </ul>
     </li>
@@ -339,7 +341,7 @@ Summary:
      
     
     class
-<h1 itemprop="name">SettingsManager</h1>
+<h1 itemprop="name">PartnerInterface</h1>
 
 
 
@@ -375,7 +377,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.SettingsManager</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.PartnerInterface</td>
     </tr>
     
 
@@ -392,7 +394,7 @@ Summary:
 
 <h2>Class Overview</h2>
 <p itemprop="articleBody"><p>
- The SettingsManager allows applications to modify a subset of system settings.
+ The PartnerInterface allows applications to interact with a subset of system settings.
  </p>
 </p>
 
@@ -441,7 +443,7 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></td>
         <td class="jd-descrcol" width="100%">
           Allows an application to change network settings,
  such as enabling or disabling airplane mode.
@@ -454,7 +456,7 @@ Summary:
     
     <tr class=" api apilevel-2" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#MODIFY_SOUND_SETTINGS_PERMISSION">MODIFY_SOUND_SETTINGS_PERMISSION</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#MODIFY_SOUND_SETTINGS_PERMISSION">MODIFY_SOUND_SETTINGS_PERMISSION</a></td>
         <td class="jd-descrcol" width="100%">
           Allows an application to change system sound settings, such as the zen mode.
           
@@ -466,7 +468,7 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></td>
         <td class="jd-descrcol" width="100%">
           Sets zen mode to important interruptions mode, so that
  only notifications that the user has chosen in Settings
@@ -480,7 +482,7 @@ Summary:
     
     <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></td>
         <td class="jd-descrcol" width="100%">
           Sets zen mode so that no interruptions will be allowed.
           
@@ -492,7 +494,7 @@ Summary:
     
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></td>
         <td class="jd-descrcol" width="100%">
           Turn off zen mode.
           
@@ -531,15 +533,16 @@ Summary:
             
             
             
-            static
             
-            <a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></nobr>
+            
+            String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#getCurrentHotwordPackageName()">getCurrentHotwordPackageName</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></code>
+          Retrieves the package name of the application that currently holds the
+ <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#HOTWORD">HOTWORD</a></code> input.
           
     
 
@@ -554,12 +557,35 @@ Summary:
             
             
             
+            static
+            
+            <a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        
+        <div class="jd-descrdiv">
+          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></code>
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
             
             
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#rebootDevice()">rebootDevice</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#rebootDevice()">rebootDevice</a></span>()</nobr>
         
         <div class="jd-descrdiv">
           Reboots the device, immediately.
@@ -572,7 +598,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -582,7 +608,7 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setAirplaneModeEnabled(boolean)">setAirplaneModeEnabled</a></span>(boolean enabled)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setAirplaneModeEnabled(boolean)">setAirplaneModeEnabled</a></span>(boolean enabled)</nobr>
         
         <div class="jd-descrdiv">
           Turns on or off airplane mode.
@@ -595,7 +621,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -605,10 +631,33 @@ Summary:
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setMobileDataEnabled(boolean)">setMobileDataEnabled</a></span>(boolean enabled)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setMobileDataEnabled(boolean)">setMobileDataEnabled</a></span>(boolean enabled)</nobr>
         
         <div class="jd-descrdiv">
           Turns on or off mobile network.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setZenMode(int)">setZenMode</a></span>(int mode)</nobr>
+        
+        <div class="jd-descrdiv">
+          Set the zen mode for the device.
           
     
 
@@ -625,33 +674,10 @@ Summary:
             
             
             
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setZenMode(int)">setZenMode</a></span>(int mode)</nobr>
-        
-        <div class="jd-descrdiv">
-          Set the zen mode for the device.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/SettingsManager.html#shutdownDevice()">shutdownDevice</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#shutdownDevice()">shutdownDevice</a></span>()</nobr>
         
         <div class="jd-descrdiv">
           Shuts down the device, immediately.
@@ -1024,7 +1050,7 @@ From class
  This condition is held indefinitely until changed again.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setZenMode(int)">setZenMode(int)</a></code></li>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setZenMode(int)">setZenMode(int)</a></code></li>
       </ul>
   </div>
 
@@ -1072,7 +1098,7 @@ From class
  effectively silenced indefinitely, until the mode is changed again.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setZenMode(int)">setZenMode(int)</a></code></li>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setZenMode(int)">setZenMode(int)</a></code></li>
       </ul>
   </div>
 
@@ -1120,7 +1146,7 @@ From class
  settings that the user had set before zen mode was enabled.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#setZenMode(int)">setZenMode(int)</a></code></li>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#setZenMode(int)">setZenMode(int)</a></code></li>
       </ul>
   </div>
 
@@ -1160,6 +1186,45 @@ From class
 
 
 
+<A NAME="getCurrentHotwordPackageName()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCurrentHotwordPackageName</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Retrieves the package name of the application that currently holds the
+ <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#HOTWORD">HOTWORD</a></code> input.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The package name or null if no application currently holds the HOTWORD input.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="getInstance(android.content.Context)"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -1170,7 +1235,7 @@ From class
          
          
          
-        <a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a>
+        <a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a>
       </span>
       <span class="sympad">getInstance</span>
       <span class="normal">(Context context)</span>
@@ -1187,10 +1252,10 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></code></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></code></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html">SettingsManager</a></code>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></code>
 </li></ul>
   </div>
 
@@ -1264,7 +1329,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Turns on or off airplane mode.
 
- You will need <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></code>
+ You will need <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></code>
  to utilize this functionality.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1310,7 +1375,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Turns on or off mobile network.
 
- You will need <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></code>
+ You will need <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#MODIFY_NETWORK_SETTINGS_PERMISSION">MODIFY_NETWORK_SETTINGS_PERMISSION</a></code>
  to utilize this functionality.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1356,7 +1421,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Set the zen mode for the device.
 
- You will need <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#MODIFY_SOUND_SETTINGS_PERMISSION">MODIFY_SOUND_SETTINGS_PERMISSION</a></code>
+ You will need <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#MODIFY_SOUND_SETTINGS_PERMISSION">MODIFY_SOUND_SETTINGS_PERMISSION</a></code>
  to utilize this functionality.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -1364,16 +1429,16 @@ From class
         <tr>
           <th>mode</td>
           <td>The zen mode to set the device to.
-             One of <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></code>,
-             <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></code> or
-             <code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></code>.
+             One of <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></code>,
+             <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></code> or
+             <code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></code>.
 </td>
         </tr>
       </table>
   </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/SettingsManager.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></code></li>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_IMPORTANT_INTERRUPTIONS">ZEN_MODE_IMPORTANT_INTERRUPTIONS</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_NO_INTERRUPTIONS">ZEN_MODE_NO_INTERRUPTIONS</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/PartnerInterface.html#ZEN_MODE_OFF">ZEN_MODE_OFF</a></code></li>
       </ul>
   </div>
 

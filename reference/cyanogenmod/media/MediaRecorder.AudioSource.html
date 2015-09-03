@@ -88,11 +88,6 @@
 
 
 
-
-
-
-
-
 <html>
 <head>
 
@@ -101,7 +96,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>CMContextConstants | Android Developers</title>
+<title>MediaRecorder.AudioSource | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +139,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="" style="display:none"></div>
+  <div id="doc-api-level" class="2" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -153,31 +148,6 @@ type="text/css">
               src="../../../assets/cid_smart.png" alt="CID" width="50" height="50"/>
           <span id="masthead-title">CyanogenMod Platform SDK</span></a>
       </div>
-      <div id="headerRight">
-          <div id="search">
-              <div id="searchForm">
-                  <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
-                    <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
-                        <tr>
-                          <td class="gsc-input">
-                            <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../../../../../')" onkeyup="return search_changed(event, false, '../../../../../../')" style="color: rgb(170, 170, 170);">
-                          <div id="search_filtered_div" class="no-display">
-                              <table id="search_filtered" cellspacing="0">
-                              </table>
-                          </div>
-                          </td>
-                          <td class="gsc-search-button">
-                            <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button">
-                          </td>
-                          <td class="gsc-clear-button">
-                            <div title="clear results" class="gsc-clear-button">&nbsp;</div>
-                          </td>
-                        </tr></tbody>
-                      </table>
-                  </form>
-              </div><!-- searchForm -->
-          </div><!-- search -->
-      </div><!-- headerRight -->
   </div><!-- header -->
 
 
@@ -194,10 +164,10 @@ type="text/css">
             </select>
           </div>
         </div><!-- end toggle -->
-        <div id="api-nav-title">Android APIs</div>
+        <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [  ];
+        var SINCE_DATA = [ '1', '2' ];
         buildApiLevelSelector();
       </script>
                   
@@ -208,10 +178,22 @@ type="text/css">
 
               <ul>
                 
-    <li class="selected api apilevel-">
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-">
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
+    <li class="selected api apilevel-2">
+  <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -226,12 +208,8 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/app/CMContextConstants.html">CMContextConstants</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html">MediaRecorder</a></li>
+          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></li>
       </ul>
     </li>
               
@@ -312,6 +290,9 @@ Summary:
 
 
 
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
 
 
 
@@ -323,6 +304,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -334,11 +316,11 @@ Summary:
 
 <div id="jd-header">
     public
-     
+    static 
      
     
     class
-<h1 itemprop="name">CMContextConstants</h1>
+<h1 itemprop="name">MediaRecorder.AudioSource</h1>
 
 
 
@@ -360,7 +342,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-">
+<div id="jd-content" class="api apilevel-2">
 <table class="jd-inheritance-table">
 
 
@@ -374,7 +356,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CMContextConstants</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.media.MediaRecorder.AudioSource</td>
     </tr>
     
 
@@ -388,11 +370,6 @@ Summary:
 
 <div class="jd-descr">
 
-
-<h2>Class Overview</h2>
-<p itemprop="articleBody">Constants to be used with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code>
- to retrieve published system services
-</p>
 
 
 
@@ -437,13 +414,13 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CMContextConstants.html#CM_STATUS_BAR_SERVICE">CM_STATUS_BAR_SERVICE</a></td>
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#HOTWORD">HOTWORD</a></td>
         <td class="jd-descrcol" width="100%">
-          Use with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code> to retrieve a
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> for informing the user of
- background events.
+          Audio source for preemptible, low-priority software hotword detection
+ It presents the same gain and pre processing tuning as
+ <code><a href="../../../reference/android/media/MediaRecorder.AudioSource.html#VOICE_RECOGNITION">VOICE_RECOGNITION</a></code>.
           
     
 
@@ -463,6 +440,31 @@ Summary:
 
 
 
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html#MediaRecorder.AudioSource()">MediaRecorder.AudioSource</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -710,20 +712,21 @@ From class
 
 
 
-<A NAME="CM_STATUS_BAR_SERVICE"></A>
+<A NAME="HOTWORD"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-2"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
         static 
         final 
-        String
+        int
       </span>
-        CM_STATUS_BAR_SERVICE
+        HOTWORD
     </h4>
       <div class="api-level">
         
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
         
   
 
@@ -733,21 +736,25 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Use with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code> to retrieve a
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> for informing the user of
- background events.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code></li>
-      </ul>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p>Audio source for preemptible, low-priority software hotword detection
+ It presents the same gain and pre processing tuning as
+ <code><a href="../../../reference/android/media/MediaRecorder.AudioSource.html#VOICE_RECOGNITION">VOICE_RECOGNITION</a></code>.
+ <p>
+ An application should use this audio source when it wishes to do
+ always-on software hotword detection, while gracefully giving in to any other application
+ that might want to read from the microphone.
+ </p>
+ You must hold <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#CAPTURE_AUDIO_HOTWORD_PERMISSION">CAPTURE_AUDIO_HOTWORD_PERMISSION</a></code>
+ to use this audio source.
+</p></div>
 
     
         <div class="jd-tagdata">
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cmstatusbar"
+                1999
+                (0x000007cf)
             
         </span>
         </div>
@@ -762,6 +769,46 @@ From class
 
 
 <!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="MediaRecorder.AudioSource()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">MediaRecorder.AudioSource</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 
 
 
