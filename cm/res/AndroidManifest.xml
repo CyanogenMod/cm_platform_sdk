@@ -17,6 +17,7 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
     package="cyanogenmod.platform"
     coreApp="true" android:sharedUserId="android.uid.system"
     android:sharedUserLabel="@string/cyanogenmod_system_label">
@@ -40,6 +41,7 @@
                 android:label="@string/permlab_modifyNetworkSettings"
                 android:description="@string/permdesc_modifyNetworkSettings"
                 android:icon="@drawable/ic_launcher_cyanogenmod"
+                androidprv:allowViaWhitelist="true"
                 android:protectionLevel="system|signature" />
 
     <!-- Allows system applications to make changes to a subset of system sound settings -->
