@@ -193,6 +193,21 @@ package cyanogenmod.app {
     field public static final java.lang.String SERVICE_INTERFACE = "cyanogenmod.app.CustomTileListenerService";
   }
 
+  public class PartnerInterface {
+    method public java.lang.String getCurrentHotwordPackageName();
+    method public static cyanogenmod.app.PartnerInterface getInstance(android.content.Context);
+    method public void rebootDevice();
+    method public void setAirplaneModeEnabled(boolean);
+    method public void setMobileDataEnabled(boolean);
+    method public boolean setZenMode(int);
+    method public void shutdownDevice();
+    field public static final java.lang.String MODIFY_NETWORK_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
+    field public static final java.lang.String MODIFY_SOUND_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
+    field public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1; // 0x1
+    field public static final int ZEN_MODE_NO_INTERRUPTIONS = 2; // 0x2
+    field public static final int ZEN_MODE_OFF = 0; // 0x0
+  }
+
   public final class Profile implements android.os.Parcelable {
     ctor public Profile(java.lang.String);
     method public void addSecondaryUuid(java.util.UUID);
@@ -316,20 +331,6 @@ package cyanogenmod.app {
     field public static final int PROFILES_STATE_ENABLED = 1; // 0x1
   }
 
-  public class PartnerInterface {
-    method public static cyanogenmod.app.PartnerInterface getInstance(android.content.Context);
-    method public void rebootDevice();
-    method public void setAirplaneModeEnabled(boolean);
-    method public void setMobileDataEnabled(boolean);
-    method public boolean setZenMode(int);
-    method public void shutdownDevice();
-    field public static final java.lang.String MODIFY_NETWORK_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
-    field public static final java.lang.String MODIFY_SOUND_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
-    field public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1; // 0x1
-    field public static final int ZEN_MODE_NO_INTERRUPTIONS = 2; // 0x2
-    field public static final int ZEN_MODE_OFF = 0; // 0x0
-  }
-
   public class StatusBarPanelCustomTile implements android.os.Parcelable {
     ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle);
     ctor public StatusBarPanelCustomTile(java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, int, int, cyanogenmod.app.CustomTile, android.os.UserHandle, long);
@@ -405,6 +406,22 @@ package cyanogenmod.hardware {
     method public void writeToParcel(android.os.Parcel, int);
     field public final int id;
     field public final java.lang.String name;
+  }
+
+}
+
+package cyanogenmod.media {
+
+  public class MediaRecorder {
+    ctor public MediaRecorder();
+    field public static final java.lang.String ACTION_HOTWORD_INPUT_CHANGED = "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED";
+    field public static final java.lang.String CAPTURE_AUDIO_HOTWORD_PERMISSION = "android.permission.CAPTURE_AUDIO_HOTWORD";
+    field public static final java.lang.String EXTRA_CURRENT_PACKAGE_NAME = "com.cyanogenmod.intent.extra.CURRENT_PACKAGE_NAME";
+  }
+
+  public static class MediaRecorder.AudioSource {
+    ctor public MediaRecorder.AudioSource();
+    field public static final int HOTWORD = 1999; // 0x7cf
   }
 
 }
