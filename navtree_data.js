@@ -6,6 +6,8 @@ var NAVTREE_DATA =
 , null ] ]
 , "1" ], [ "cyanogenmod.hardware", "reference/cyanogenmod/hardware/package-summary.html", [ [ "Classes", null, [ [ "CMHardwareManager", "reference/cyanogenmod/hardware/CMHardwareManager.html", null, "2" ], [ "DisplayMode", "reference/cyanogenmod/hardware/DisplayMode.html", null, "2" ] ]
 , null ] ]
+, "2" ], [ "cyanogenmod.media", "reference/cyanogenmod/media/package-summary.html", [ [ "Classes", null, [ [ "MediaRecorder", "reference/cyanogenmod/media/MediaRecorder.html", null, "2" ], [ "MediaRecorder.AudioSource", "reference/cyanogenmod/media/MediaRecorder.AudioSource.html", null, "2" ] ]
+, null ] ]
 , "2" ], [ "cyanogenmod.os", "reference/cyanogenmod/os/package-summary.html", [ [ "Classes", null, [ [ "Build", "reference/cyanogenmod/os/Build.html", null, "1" ], [ "Build.CM_VERSION", "reference/cyanogenmod/os/Build.CM_VERSION.html", null, "1" ], [ "Build.CM_VERSION_CODES", "reference/cyanogenmod/os/Build.CM_VERSION_CODES.html", null, "1" ] ]
 , null ] ]
 , "1" ], [ "cyanogenmod.platform", "reference/cyanogenmod/platform/package-summary.html", [ [ "Classes", null, [ [ "Manifest", "reference/cyanogenmod/platform/Manifest.html", null, "1" ], [ "Manifest.permission", "reference/cyanogenmod/platform/Manifest.permission.html", null, "1" ], [ "R", "reference/cyanogenmod/platform/R.html", null, "1" ], [ "R.attr", "reference/cyanogenmod/platform/R.attr.html", null, "1" ], [ "R.drawable", "reference/cyanogenmod/platform/R.drawable.html", null, "2" ], [ "R.string", "reference/cyanogenmod/platform/R.string.html", null, "1" ], [ "R.xml", "reference/cyanogenmod/platform/R.xml.html", null, "2" ] ]
