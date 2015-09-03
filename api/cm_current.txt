@@ -409,6 +409,20 @@ package cyanogenmod.hardware {
 
 }
 
+package cyanogenmod.media {
+
+  public class MediaRecorder {
+    ctor public MediaRecorder();
+    field public static final java.lang.String CAPTURE_AUDIO_HOTWORD_PERMISSION = "android.permission.CAPTURE_AUDIO_HOTWORD";
+  }
+
+  public class MediaRecorder.AudioSource {
+    ctor public MediaRecorder.AudioSource();
+    field public static final int HOTWORD = 1999; // 0x7cf
+  }
+
+}
+
 package cyanogenmod.os {
 
   public class Build {
