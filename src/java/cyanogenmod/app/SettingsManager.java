@@ -205,4 +205,21 @@ public class SettingsManager {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
     }
+
+    /**
+     * Retrieves the package name of the application that currently holds the
+     * {@link cyanogenmod.media.MediaRecorder.AudioSource#HOTWORD} input.
+     * @return The package name or null if no application currently holds the HOTWORD input.
+     */
+    public String getCurrentHotwordPackageName() {
+        if (sService == null) {
+            return null;
+        }
+        try {
+            return getService().getCurrentHotwordPackageName();
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return null;
+    }
 }
