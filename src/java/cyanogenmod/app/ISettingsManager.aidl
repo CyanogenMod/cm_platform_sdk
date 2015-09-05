@@ -25,4 +25,5 @@ interface ISettingsManager
     boolean setZenMode(int mode);
     void shutdown();
     void reboot();
+    String getCurrentHotwordPackageName();
 }
