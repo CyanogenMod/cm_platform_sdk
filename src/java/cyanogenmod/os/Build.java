@@ -99,7 +99,7 @@ public class Build {
          * <li>Hardware Abstraction Framework Access via
          * {@link cyanogenmod.hardware.CMHardwareManager} (Not for use by 3rd parties)
          * <li>MSIM API via {@link cyanogenmod.app.CMTelephonyManager}
-         * <li>Settings interface for partners via {@link cyanogenmod.app.SettingsManager}
+         * <li>Interface for partners via {@link cyanogenmod.app.PartnerInterface}
          * <li>Introductory Settings Provider {@link cyanogenmod.providers.CMSettings}
          * <li>AlarmClock API via {@link cyanogenmod.alarmclock.CyanogenModAlarmClock}
          * </ul>

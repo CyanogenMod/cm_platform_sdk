@@ -24,10 +24,10 @@ import android.util.Log;
 
 /**
  * <p>
- * The SettingsManager allows applications to modify a subset of system settings.
+ * The PartnerInterface allows applications to interact with a subset of system settings.
  * </p>
  */
-public class SettingsManager {
+public class PartnerInterface {
     /**
      * Turn off zen mode. This restores the original ring and interruption
      * settings that the user had set before zen mode was enabled.
@@ -53,7 +53,7 @@ public class SettingsManager {
      */
     public static final int ZEN_MODE_NO_INTERRUPTIONS = 2;
 
-    private static ISettingsManager sService;
+    private static IPartnerInterface sService;
 
     private Context mContext;
 
@@ -70,11 +70,11 @@ public class SettingsManager {
     public static final String MODIFY_SOUND_SETTINGS_PERMISSION =
             "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
 
-    private static final String TAG = "SettingsManager";
+    private static final String TAG = "PartnerInterface";
 
-    private static SettingsManager sSettingsManagerInstance;
+    private static PartnerInterface sPartnerInterfaceInstance;
 
-    private SettingsManager(Context context) {
+    private PartnerInterface(Context context) {
         Context appContext = context.getApplicationContext();
         if (appContext != null) {
             mContext = appContext;
@@ -85,25 +85,25 @@ public class SettingsManager {
     }
 
     /**
-     * Get or create an instance of the {@link cyanogenmod.app.SettingsManager}
+     * Get or create an instance of the {@link cyanogenmod.app.PartnerInterface}
      * @param context
-     * @return {@link SettingsManager}
+     * @return {@link PartnerInterface}
      */
-    public static SettingsManager getInstance(Context context) {
-        if (sSettingsManagerInstance == null) {
-            sSettingsManagerInstance = new SettingsManager(context);
+    public static PartnerInterface getInstance(Context context) {
+        if (sPartnerInterfaceInstance == null) {
+            sPartnerInterfaceInstance = new PartnerInterface(context);
         }
-        return sSettingsManagerInstance;
+        return sPartnerInterfaceInstance;
     }
 
     /** @hide */
-    static public ISettingsManager getService() {
+    static public IPartnerInterface getService() {
         if (sService != null) {
             return sService;
         }
-        IBinder b = ServiceManager.getService(CMContextConstants.CM_SETTINGS_SERVICE);
+        IBinder b = ServiceManager.getService(CMContextConstants.CM_PARTNER_INTERFACE);
         if (b != null) {
-            sService = ISettingsManager.Stub.asInterface(b);
+            sService = IPartnerInterface.Stub.asInterface(b);
             return sService;
         } else {
             return null;
@@ -122,7 +122,7 @@ public class SettingsManager {
             return;
         }
         try {
-            getService().setAirplaneModeEnabled(enabled);
+            sService.setAirplaneModeEnabled(enabled);
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
@@ -140,7 +140,7 @@ public class SettingsManager {
             return;
         }
         try {
-            getService().setMobileDataEnabled(enabled);
+            sService.setMobileDataEnabled(enabled);
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
@@ -165,7 +165,7 @@ public class SettingsManager {
             return false;
         }
         try {
-            return getService().setZenMode(mode);
+            return sService.setZenMode(mode);
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
@@ -183,7 +183,7 @@ public class SettingsManager {
             return;
         }
         try {
-            getService().shutdown();
+            sService.shutdown();
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
@@ -200,9 +200,26 @@ public class SettingsManager {
             return;
         }
         try {
-            getService().reboot();
+            sService.reboot();
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
+    }
+
+    /**
+     * Retrieves the package name of the application that currently holds the
+     * {@link cyanogenmod.media.MediaRecorder.AudioSource#HOTWORD} input.
+     * @return The package name or null if no application currently holds the HOTWORD input.
+     */
+    public String getCurrentHotwordPackageName() {
+        if (sService == null) {
+            return null;
+        }
+        try {
+            return sService.getCurrentHotwordPackageName();
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return null;
     }
 }

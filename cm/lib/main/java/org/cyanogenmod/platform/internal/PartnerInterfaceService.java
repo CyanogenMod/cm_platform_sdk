@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.media.IAudioService;
 import android.os.IBinder;
 
 import android.os.IPowerManager;
@@ -33,8 +34,9 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import com.android.server.SystemService;
 import cyanogenmod.app.CMContextConstants;
-import cyanogenmod.app.ISettingsManager;
-import cyanogenmod.app.SettingsManager;
+import cyanogenmod.app.IPartnerInterface;
+import cyanogenmod.app.PartnerInterface;
+import cyanogenmod.media.MediaRecorder;
 
 import java.io.ByteArrayInputStream;
 import java.security.PublicKey;
@@ -44,18 +46,19 @@ import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
 
 /** {@hide} */
-public class SettingsManagerService extends SystemService {
+public class PartnerInterfaceService extends SystemService {
 
     private static final String TAG = "CMSettingsService";
 
     private Context mContext;
     private TelephonyManager mTelephonyManager;
     private INotificationManager mNotificationManager;
+    private IAudioService mAudioService;
 
-    public SettingsManagerService(Context context) {
+    public PartnerInterfaceService(Context context) {
         super(context);
         mContext = context;
-        publishBinderService(CMContextConstants.CM_SETTINGS_SERVICE, mService);
+        publishBinderService(CMContextConstants.CM_PARTNER_INTERFACE, mService);
     }
 
     @Override
@@ -64,15 +67,17 @@ public class SettingsManagerService extends SystemService {
                 mContext.getSystemService(Context.TELEPHONY_SERVICE);
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
+        IBinder b = ServiceManager.getService(android.content.Context.AUDIO_SERVICE);
+        mAudioService = IAudioService.Stub.asInterface(b);
     }
 
     private void enforceModifyNetworkSettingsPermission() {
-        mContext.enforceCallingOrSelfPermission(SettingsManager.MODIFY_NETWORK_SETTINGS_PERMISSION,
+        mContext.enforceCallingOrSelfPermission(PartnerInterface.MODIFY_NETWORK_SETTINGS_PERMISSION,
                 "You do not have permissions to change system network settings.");
     }
 
     private void enforceModifySoundSettingsPermission() {
-        mContext.enforceCallingOrSelfPermission(SettingsManager.MODIFY_SOUND_SETTINGS_PERMISSION,
+        mContext.enforceCallingOrSelfPermission(PartnerInterface.MODIFY_SOUND_SETTINGS_PERMISSION,
                 "You do not have permissions to change system sound settings.");
     }
 
@@ -81,7 +86,12 @@ public class SettingsManagerService extends SystemService {
                 "You do not have permissions to shut down the device.");
     }
 
-    private final IBinder mService = new ISettingsManager.Stub() {
+    private void enforceCaptureHotwordPermission() {
+        mContext.enforceCallingOrSelfPermission(MediaRecorder.CAPTURE_AUDIO_HOTWORD_PERMISSION,
+                "You do not have permission to query the hotword input package name.");
+    }
+
+    private final IBinder mService = new IPartnerInterface.Stub() {
 
         @Override
         public void setAirplaneModeEnabled(boolean enabled) {
@@ -148,6 +158,15 @@ public class SettingsManagerService extends SystemService {
             restoreCallingIdentity(token);
             return success;
         }
+
+        @Override
+        public String getCurrentHotwordPackageName() {
+            enforceCaptureHotwordPermission();
+            long token = clearCallingIdentity();
+            String packageName = getHotwordPackageNameInternal();
+            restoreCallingIdentity(token);
+            return packageName;
+        }
     };
 
     private void setAirplaneModeEnabledInternal(boolean enabled) {
@@ -183,13 +202,13 @@ public class SettingsManagerService extends SystemService {
         ContentResolver contentResolver = mContext.getContentResolver();
         int zenModeValue = -1;
         switch(mode) {
-            case SettingsManager.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
+            case PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
                 break;
-            case SettingsManager.ZEN_MODE_OFF:
+            case PartnerInterface.ZEN_MODE_OFF:
                 zenModeValue = Settings.Global.ZEN_MODE_OFF;
                 break;
-            case SettingsManager.ZEN_MODE_NO_INTERRUPTIONS:
+            case PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_NO_INTERRUPTIONS;
                 break;
             default:
@@ -210,6 +229,16 @@ public class SettingsManagerService extends SystemService {
             return false;
         }
         return true;
+    }
+
+    public String getHotwordPackageNameInternal() {
+        String packageName = null;
+        try {
+            packageName = mAudioService.getCurrentHotwordInputPackageName();
+        } catch (RemoteException e) {
+            Log.e(TAG, "getHotwordPackageName() failed.");
+        }
+        return packageName;
     }
 }
 
