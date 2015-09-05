@@ -18,11 +18,12 @@
 package cyanogenmod.app;
 
 /** {@hide} */
-interface ISettingsManager
+interface IPartnerInterface
 {
     void setAirplaneModeEnabled(boolean enabled);
     void setMobileDataEnabled(boolean enabled);
     boolean setZenMode(int mode);
     void shutdown();
     void reboot();
+    String getCurrentHotwordPackageName();
 }

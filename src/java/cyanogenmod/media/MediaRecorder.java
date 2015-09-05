@@ -26,7 +26,47 @@ public class MediaRecorder {
     public static final String CAPTURE_AUDIO_HOTWORD_PERMISSION
             = "android.permission.CAPTURE_AUDIO_HOTWORD";
 
-    public class AudioSource {
+    /**
+     * <p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
+     * <ul>
+     *   <li><em>state</em> - A String value indicating the state of the input.
+     *   {@link #EXTRA_HOTWORD_INPUT_STATE}. The value will be one of:
+     *   {@link android.media.AudioRecord#RECORDSTATE_RECORDING} or
+     *   {@link android.media.AudioRecord#RECORDSTATE_STOPPED}.
+     *   </li>
+     *   <li><em>package</em> - A String value indicating the package name of the application
+     *   that currently holds the HOTWORD input.
+     *   {@link #EXTRA_CURRENT_PACKAGE_NAME}
+     *   </li>
+
+     * </ul>
+     *
+     * <p class="note">This is a protected intent that can only be sent
+     * by the system. It can only be received by packages that hold
+     * {@link android.Manifest.permission#CAPTURE_AUDIO_HOTWORD}.
+     */
+    //@SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_HOTWORD_INPUT_CHANGED
+            = "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED";
+
+    /**
+     * Extra for {@link #ACTION_HOTWORD_INPUT_CHANGED} that provides the package name of the
+     * app in that controlled the HOTWORD input when the state changed. Can be reused for other
+     * purposes.
+     */
+    public static final String EXTRA_CURRENT_PACKAGE_NAME =
+            "com.cyanogenmod.intent.extra.CURRENT_PACKAGE_NAME";
+
+    /**
+     * Extra for {@link #ACTION_HOTWORD_INPUT_CHANGED} that provides the state of
+     * the input when the broadcast action was sent.
+     * @hide
+     */
+    public static final String EXTRA_HOTWORD_INPUT_STATE =
+            "com.cyanogenmod.intent.extra.HOTWORD_INPUT_STATE";
+
+
+    public static class AudioSource {
         /**
          * Audio source for preemptible, low-priority software hotword detection
          * It presents the same gain and pre processing tuning as

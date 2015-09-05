@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".settings.CMSettingsManagerTest"
+        <activity android:name=".settings.CMPartnerInterfaceTest"
                   android:label="@string/settings_tests_activity_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -53,10 +53,10 @@ public final class CMContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
-     * {@link cyanogenmod.app.SettingsManager} changing system settings.
+     * {@link cyanogenmod.app.PartnerInterface} changing system settings.
      *
      * @see android.content.Context#getSystemService
-     * @see cyanogenmod.app.SettingsManager
+     * @see cyanogenmod.app.PartnerInterface
      *
      * @hide
      */
