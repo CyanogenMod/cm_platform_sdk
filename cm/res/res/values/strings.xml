@@ -66,6 +66,10 @@
     <string name="permlab_writeSecureSettings">modify CM secure system settings</string>
     <string name="permdesc_writeSecureSettings">Allows an app to modify CM secure system settings. Not for use by normal apps.</string>
 
+    <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+    <string name="permlab_accessAppSuggestions">access application suggestions</string>
+    <string name="permdesc_accessAppSuggestions">Allows an app to access application suggestions.</string>
+
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
 
