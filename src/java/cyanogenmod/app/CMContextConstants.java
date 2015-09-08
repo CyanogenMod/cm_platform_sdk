@@ -85,4 +85,9 @@ public final class CMContextConstants {
      * @hide
      */
     public static final String CM_HARDWARE_SERVICE = "cmhardware";
+
+    /**
+     * @hide
+     */
+    public static final String CM_APP_SUGGEST_SERVICE = "cmappsuggest";
 }

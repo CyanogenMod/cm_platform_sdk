@@ -120,6 +120,13 @@
                 android:description="@string/permdesc_managePersistentStorage"
                 android:protectionLevel="system|signature" />
 
+    <!-- Permission for accessing a provider of app suggestions
+         @hide -->
+    <permission android:name="cyanogenmod.permission.ACCESS_APP_SUGGESTIONS"
+                android:label="@string/permlab_accessAppSuggestions"
+                android:description="@string/permdesc_accessAppSuggestions"
+                android:protectionLevel="signature|system|development" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
