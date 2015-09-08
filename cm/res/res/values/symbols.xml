@@ -19,6 +19,10 @@
          SDK.  Instead, put them here. -->
     <private-symbols package="org.cyanogenmod.platform.internal" />
 
+    <java-symbol type="bool" name="config_enableAppSuggestOverlay"/>
+    <java-symbol type="string" name="config_appSuggestProviderPackageName"/>
+    <java-symbol type="array" name="config_appSuggestProviderPackageNames"/>
+
     <java-symbol type="string" name="custom_tile_listener_binding_label" />
 
     <!-- Profiles -->
