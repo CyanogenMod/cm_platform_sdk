@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CyanogenMod Resolver</string>
+    <string name="download_and_open_with">Download and open with</string>
+</resources>
