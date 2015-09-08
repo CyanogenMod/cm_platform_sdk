@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Whether to enable app suggest overlay which allows app suggest
+         provider to be replaced by an app at run-time. When disabled, only
+         the config_appSuggestProviderPackageName will be searched for app
+         suggest provider, otherwise packages whos signature matches the
+         signature of config_appSuggestProviderPackageNames will be searched,
+         and the service with the highest version number will be picked.
+         Anyone who wants to disable the overlay mechanism can set it to false.
+         -->
+    <bool name="config_enableAppSuggestOverlay" translatable="false">true</bool>
+    <!-- Package name providing app suggest support. Used only when
+         config_enableAppSuggestOverlay is false. -->
+    <string name="config_appSuggestProviderPackageName" translatable="false">com.cyanogen.app.suggest</string>
+
+    <string-array name="config_appSuggestProviderPackageNames" translatable="false">
+        <!-- The standard CM app suggest provider -->
+        <item>com.cyanogen.app.suggest</item>
+    </string-array>
+</resources>
