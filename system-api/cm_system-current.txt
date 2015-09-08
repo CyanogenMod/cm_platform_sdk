@@ -463,6 +463,7 @@ package cyanogenmod.platform {
 
   public static final class Manifest.permission {
     ctor public Manifest.permission();
+    field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
@@ -482,8 +483,16 @@ package cyanogenmod.platform {
     ctor public R();
   }
 
+  public static final class R.array {
+    ctor public R.array();
+  }
+
   public static final class R.attr {
     ctor public R.attr();
+  }
+
+  public static final class R.bool {
+    ctor public R.bool();
   }
 
   public static final class R.drawable {
