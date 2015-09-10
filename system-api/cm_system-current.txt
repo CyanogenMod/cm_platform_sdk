@@ -354,6 +354,7 @@ package cyanogenmod.app {
 package cyanogenmod.hardware {
 
   public final class CMHardwareManager {
+    method public boolean deletePersistentObject(java.lang.String);
     method public boolean get(int);
     method public cyanogenmod.hardware.DisplayMode getCurrentDisplayMode();
     method public cyanogenmod.hardware.DisplayMode getDefaultDisplayMode();
@@ -378,12 +379,18 @@ package cyanogenmod.hardware {
     method public int getVibratorMinIntensity();
     method public int getVibratorWarningIntensity();
     method public boolean isSupported(int);
+    method public byte[] readPersistentBytes(java.lang.String);
+    method public int readPersistentInt(java.lang.String);
+    method public java.lang.String readPersistentString(java.lang.String);
     method public boolean requireAdaptiveBacklightForSunlightEnhancement();
     method public boolean set(int, boolean);
     method public boolean setDisplayColorCalibration(int[]);
     method public deprecated boolean setDisplayGammaCalibration(int, int[]);
     method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
     method public boolean setVibratorIntensity(int);
+    method public boolean writePersistentBytes(java.lang.String, byte[]);
+    method public boolean writePersistentInt(java.lang.String, int);
+    method public boolean writePersistentString(java.lang.String, java.lang.String);
     field public static final int FEATURE_ADAPTIVE_BACKLIGHT = 1; // 0x1
     field public static final int FEATURE_AUTO_CONTRAST = 4096; // 0x1000
     field public static final int FEATURE_COLOR_ENHANCEMENT = 2; // 0x2
@@ -393,6 +400,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_HIGH_TOUCH_SENSITIVITY = 16; // 0x10
     field public static final int FEATURE_KEY_DISABLE = 32; // 0x20
     field public static final int FEATURE_LONG_TERM_ORBITS = 64; // 0x40
+    field public static final int FEATURE_PERSISTENT_STORAGE = 16384; // 0x4000
     field public static final int FEATURE_SERIAL_NUMBER = 128; // 0x80
     field public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 256; // 0x100
     field public static final int FEATURE_TAP_TO_WAKE = 512; // 0x200
@@ -457,6 +465,7 @@ package cyanogenmod.platform {
     ctor public Manifest.permission();
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
+    field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
