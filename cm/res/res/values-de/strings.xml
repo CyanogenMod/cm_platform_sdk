@@ -29,8 +29,17 @@
   <string name="permdesc_readMSPhoneState">Ermöglicht der App, den Systemstatus und die Datenverbindung auf Unterstützung von mehreren SIM-Karten zu überprüfen.</string>
   <string name="permlab_modifyMSPhoneState">Systemstatus und Datenverbindung zur Unterstützung von mehreren SIM-Karten anpassen</string>
   <string name="permdesc_modifyMSPhoneState">Ermöglicht der App, den Systemstatus und die Datenverbindung zur Unterstützung von mehreren SIM-Karten anzupassen.</string>
+  <string name="permlab_modifyProfiles">Systemprofile ändern</string>
   <string name="permlab_useHardwareFramework">Hardware-Framework verwenden</string>
   <string name="permdesc_useHardwareFramework">Ermöglicht der App, auf das CM-Hardware-Framework zuzugreifen.</string>
+  <string name="permlab_write_alarms">Alarme direkt ändern</string>
+  <string name="permdesc_write_alarms">Ermöglicht der App, das Hinzufügen, Ändern oder Löschen Ihrer Alarme.</string>
+  <string name="permlab_manage_alarms">geplante Alarme aktivieren/deaktivieren</string>
+  <string name="permdesc_manage_alarms">Ermöglicht der App, geplante Alarme zu aktivieren oder deaktivieren.</string>
+  <string name="permlab_read_alarms">auf geplante Alarme zugreifen</string>
+  <string name="permdesc_read_alarms">Ermöglicht der App, Ihre geplanten Alarme auszulesen.</string>
+  <string name="permlab_writeSettings">CM-Systemeinstellungen ändern</string>
+  <string name="permdesc_writeSettings">Ermöglicht der App, CM-Systemeinstellungen zu ändern.</string>
   <string name="custom_tile_listener_binding_label">Listener für benutzerdefinierte Kacheln</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeit</string>

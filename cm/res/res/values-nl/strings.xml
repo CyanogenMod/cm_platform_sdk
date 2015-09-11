@@ -29,6 +29,15 @@
   <string name="permdesc_readMSPhoneState">Hiermee kan de app de status van de telefoon en de gegevensverbinding weergeven met ondersteuning voor meerdere simkaarten.</string>
   <string name="permlab_modifyMSPhoneState">telefoonstatus en gegevensverbinding wijzigen met ondersteuning voor multi-SIM</string>
   <string name="permdesc_modifyMSPhoneState">Hiermee kan de app de status van de telefoon en van de gegevensverbinding wijzigen met ondersteuning voor meerdere simkaarten.</string>
+  <string name="permlab_modifyProfiles">systeemprofielen wijzigen</string>
+  <string name="permlab_write_alarms">rechtstreeks alarmen wijzigen</string>
+  <string name="permdesc_write_alarms">Hiermee kan de app alarmen toevoegen, bewerken of verwijderen.</string>
+  <string name="permlab_manage_alarms">geplande alarmen in-/uitschakelen</string>
+  <string name="permdesc_manage_alarms">Hiermee kan de app uw geplande alarmen in-/uitschakelen.</string>
+  <string name="permlab_read_alarms">toegang tot geplande alarmen</string>
+  <string name="permdesc_read_alarms">Hiermee kan de app uw geplande alarmen lezen.</string>
+  <string name="permlab_writeSettings">CM-systeeminstellingen wijzigen</string>
+  <string name="permdesc_writeSettings">Hiermee kan de app de systeeminstellingen van CM wijzigen.</string>
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
   <string name="profileNameDefault">Standaard</string>
   <string name="profileNameWork">Werk</string>

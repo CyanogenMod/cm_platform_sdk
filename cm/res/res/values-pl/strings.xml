@@ -21,6 +21,8 @@
   <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
   <string name="permlab_modifyNetworkSettings">zmień ustawienia sieciowe systemu</string>
   <string name="permlab_modifySoundSettings">zmień ustawienia dźwiękowe systemu</string>
+  <string name="permlab_useHardwareFramework">używa sprzętowego frameworka</string>
+  <string name="permdesc_useHardwareFramework">Umożliwia aplikacji na dostęp do frameworka CM.</string>
   <string name="profileNameDefault">Domyślny</string>
   <string name="profileNameWork">Praca</string>
   <string name="profileNameHome">Dom</string>
