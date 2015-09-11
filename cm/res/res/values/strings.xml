@@ -40,7 +40,7 @@
 
     <!-- Labels for the MODIFY_PROFILES permission. -->
     <string name="permlab_modifyProfiles">modify system profiles</string>
-    <string name="permdesc_modifyProfiles">Allows an application to modify system profiles</string>
+    <string name="permdesc_modifyProfiles">Allows an app to modify system profiles.</string>
 
     <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
     <string name="permlab_useHardwareFramework">use hardware framework</string>
