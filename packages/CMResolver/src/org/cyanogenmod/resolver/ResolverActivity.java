@@ -575,8 +575,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             // Header views don't count.
             return;
         }
-        ListAdapter d = mListView.getAdapter();
-        if (d == mAdapter) {
+        if (mAdapter.getCount() > 0 && !mUsingSuggestions) {
             ResolveInfo resolveInfo = mAdapter.resolveInfoForPosition(position, true);
             if (mResolvingHome && hasManagedProfile()
                     && !supportsManagedProfiles(resolveInfo)) {
