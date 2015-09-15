@@ -526,7 +526,9 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             mRegistered = true;
         }
         mAdapter.handlePackagesChanged();
-        mSuggestAdapter.handlePackagesChanged();
+        if (mHasSuggestions) {
+            mSuggestAdapter.handlePackagesChanged();
+        }
         if (mProfileView != null) {
             bindProfileView();
         }
