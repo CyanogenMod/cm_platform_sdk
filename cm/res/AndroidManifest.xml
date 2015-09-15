@@ -121,7 +121,7 @@
                 android:protectionLevel="system|signature" />
 
     <!-- Permission for accessing a provider of app suggestions
-         @hide -->
+         <p>Not for use by third-party applications. -->
     <permission android:name="cyanogenmod.permission.ACCESS_APP_SUGGESTIONS"
                 android:label="@string/permlab_accessAppSuggestions"
                 android:description="@string/permdesc_accessAppSuggestions"
