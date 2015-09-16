@@ -55,6 +55,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -97,7 +98,6 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
     private boolean mAlwaysUseOption;
     private boolean mShowExtended;
     private ListView mListView;
-    private boolean mHasSuggestions;
     private ViewGroup mFilteredItemContainer;
     private Button mAlwaysButton;
     private Button mOnceButton;
@@ -121,20 +121,9 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
         @Override public void onSomePackagesChanged() {
             mAdapter.handlePackagesChanged();
             mSuggestAdapter.handlePackagesChanged();
-            if (mAdapter.getCount() == 0 && !mHasSuggestions) {
+            if (!mUsingSuggestions && mAdapter.getCount() == 0) {
                 // We no longer have any items...  just finish the activity.
                 finish();
-            } else {
-                ListAdapter d = mListView.getAdapter();
-                if (mHasSuggestions) {
-                    if (d != mSuggestAdapter) {
-                        mListView.setAdapter(mSuggestAdapter);
-                    }
-                } else if (d != mAdapter) {
-                    mListView.setAdapter(mAdapter);
-                } else {
-                    // keep using the same adapter
-                }
             }
             if (mProfileView != null) {
                 bindProfileView();
@@ -280,7 +269,6 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             return;
         }
 
-        mHasSuggestions = mSuggest.handles(mIntent);
 
         int count = mAdapter.mList.size();
         if (count > 1 || (count == 1 && mAdapter.getOtherProfile() != null)) {
@@ -300,7 +288,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             }
 
             mUsingSuggestions = false;
-        } else if (count == 1 && !mHasSuggestions) {
+        } else if (count == 1) {
             safelyStartActivity(mAdapter.intentForPosition(0, false));
             mPackageMonitor.unregister();
             mRegistered = false;
@@ -311,7 +299,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
 
             mListView = (ListView) findViewById(R.id.resolver_list);
 
-            if (!mHasSuggestions) {
+            if (!mSuggest.handles(mIntent)) {
                 final TextView empty = (TextView) findViewById(R.id.empty);
                 empty.setVisibility(View.VISIBLE);
                 mListView.setVisibility(View.GONE);
@@ -525,7 +513,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             mPackageMonitor.register(this, getMainLooper(), false);
             mRegistered = true;
         }
-        if (mHasSuggestions) {
+        if (mUsingSuggestions) {
             mSuggestAdapter.handlePackagesChanged();
         } else {
             mAdapter.handlePackagesChanged();
@@ -578,7 +566,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
             // Header views don't count.
             return;
         }
-        if (mAdapter.getCount() > 0 && !mUsingSuggestions) {
+        if (!mUsingSuggestions) {
             ResolveInfo resolveInfo = mAdapter.resolveInfoForPosition(position, true);
             if (mResolvingHome && hasManagedProfile()
                     && !supportsManagedProfiles(resolveInfo)) {
@@ -610,6 +598,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                 .setData(item.getDownloadUri())
                 .addFlags((Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET));
         startActivity(in);
+        finish();
     }
 
     private boolean hasManagedProfile() {
@@ -1208,8 +1197,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                 // Header views don't count.
                 return false;
             }
-            ListAdapter d = mListView.getAdapter();
-            if (d == mAdapter) {
+            if (!mUsingSuggestions) {
                 ResolveInfo ri = mAdapter.resolveInfoForPosition(position, true);
                 showAppDetails(ri);
             } else {
@@ -1346,8 +1334,6 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
                     notifyDataSetChanged();
                 }
             }.execute();
-
-
         }
 
         public DisplayApplicationSuggestion getRecommended() {
