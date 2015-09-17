@@ -33,7 +33,6 @@
                  android:enabled="true">
 
         <activity android:name="org.cyanogenmod.resolver.ResolverActivity"
-                android:theme="@style/AppTheme.DeviceDefault.Resolver"
                 android:exported="true"/>
 
     </application>

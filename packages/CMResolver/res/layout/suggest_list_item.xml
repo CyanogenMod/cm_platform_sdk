@@ -64,6 +64,6 @@
             android:layout_marginBottom="12dp"
             android:layout_alignParentEnd="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/play_download"/>
+            android:src="@drawable/ic_play_download"/>
 </RelativeLayout>
 
