@@ -24,7 +24,6 @@ import android.content.UriMatcher;
 import android.content.pm.PackageManager;
 import android.database.AbstractCursor;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
@@ -177,7 +176,6 @@ public class CMSettingsProvider extends ContentProvider {
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
-            db.close();
         }
 
         if (numRowsAffected > 0) {
@@ -206,17 +204,11 @@ public class CMSettingsProvider extends ContentProvider {
         CMDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
                 callingUserId));
 
-        long rowId = -1;
-
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        try {
-            rowId = db.insert(tableName, null, values);
-        } finally {
-            db.close();
-        }
+        long rowId = db.insert(tableName, null, values);
 
         Uri returnUri = null;
-        if (rowId != -1) {
+        if (rowId > -1) {
             returnUri = ContentUris.withAppendedId(uri, rowId);
             notifyChange(returnUri, tableName, callingUserId);
             if (LOCAL_LOGV) Log.d(TAG, "Inserted row id: " + rowId + " into tableName: " +
@@ -245,11 +237,7 @@ public class CMSettingsProvider extends ContentProvider {
                     callingUserId));
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            try {
-                numRowsAffected = db.delete(tableName, selection, selectionArgs);
-            } finally {
-                db.close();
-            }
+            numRowsAffected = db.delete(tableName, selection, selectionArgs);
 
             if (numRowsAffected > 0) {
                 notifyChange(uri, tableName, callingUserId);
@@ -277,14 +265,8 @@ public class CMSettingsProvider extends ContentProvider {
         CMDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
                 callingUserId));
 
-        int numRowsAffected = 0;
-
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        try {
-            numRowsAffected = db.update(tableName, values, selection, selectionArgs);
-        } finally {
-            db.close();
-        }
+        int numRowsAffected = db.update(tableName, values, selection, selectionArgs);
 
         if (numRowsAffected > 0) {
             getContext().getContentResolver().notifyChange(uri, null);
@@ -354,14 +336,7 @@ public class CMSettingsProvider extends ContentProvider {
         // written by the first, but that's benign: the SQLite helper implementation
         // manages concurrency itself, and it's important that we not run the db
         // initialization with any of our own locks held, so we're fine.
-        SQLiteDatabase db = null;
-        try {
-            db = dbHelper.getWritableDatabase();
-        } catch (SQLiteCantOpenDatabaseException ex){
-            Log.e(TAG, "Unable to open writable database for user: " + userId, ex);
-        } finally {
-            db.close();
-        }
+        dbHelper.getWritableDatabase();
     }
 
     /**
