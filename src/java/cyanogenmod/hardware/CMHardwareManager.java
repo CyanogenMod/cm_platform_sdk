@@ -119,6 +119,8 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_PERSISTENT_STORAGE = 0x4000;
 
+    public static final int FEATURE_THERMAL_MONITOR = 0x8000;
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
         FEATURE_COLOR_ENHANCEMENT,
@@ -127,7 +129,8 @@ public final class CMHardwareManager {
         FEATURE_SUNLIGHT_ENHANCEMENT,
         FEATURE_TAP_TO_WAKE,
         FEATURE_TOUCH_HOVERING,
-        FEATURE_AUTO_CONTRAST
+        FEATURE_AUTO_CONTRAST,
+        FEATURE_THERMAL_MONITOR
     );
 
     private static CMHardwareManager sCMHardwareManagerInstance;
@@ -768,5 +771,25 @@ public final class CMHardwareManager {
             return false;
         }
         return true;
+    }
+
+    public boolean registerThermalListener(ThermalListenerCallback thermalCallback) {
+        try {
+            if (checkService()) {
+                return sService.registerThermalListener(thermalCallback);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    public boolean unRegisterThermalListener(ThermalListenerCallback thermalCallback) {
+        try {
+            if (checkService()) {
+                return sService.unRegisterThermalListener(thermalCallback);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
     }
 }
