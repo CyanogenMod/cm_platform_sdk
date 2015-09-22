@@ -17,6 +17,7 @@
 package cyanogenmod.hardware;
 
 import cyanogenmod.hardware.DisplayMode;
+import cyanogenmod.hardware.IThermalListenerCallback;
 
 /** @hide */
 interface ICMHardwareService {
@@ -50,4 +51,8 @@ interface ICMHardwareService {
 
     boolean writePersistentBytes(String key, in byte[] bytes);
     byte[] readPersistentBytes(String key);
+
+    int getThermalState();
+    boolean registerThermalListener(IThermalListenerCallback callback);
+    boolean unRegisterThermalListener(IThermalListenerCallback callback);
 }
