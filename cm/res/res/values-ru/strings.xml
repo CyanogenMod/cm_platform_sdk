@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт</string>
   <string name="permdesc_modifyMSPhoneState">Разрешить приложению изменение состояния телефона и передачи данных с поддержкой нескольких SIM-карт.</string>
   <string name="permlab_modifyProfiles">изменение системных профилей</string>
+  <string name="permdesc_modifyProfiles">Приложение сможет изменять настройки системных профилей.</string>
   <string name="permlab_useHardwareFramework">Взаимодействие с оборудованием</string>
   <string name="permdesc_useHardwareFramework">Приложение сможет получать доступ к подсистеме аппаратных абстракций CyanogenMod.</string>
   <string name="permlab_write_alarms">изменение будильников</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">Приложение сможет изменять системные настройки СМ.</string>
   <string name="permlab_writeSecureSettings">изменение защищённых настроек</string>
   <string name="permdesc_writeSecureSettings">Приложение сможет изменять защищённые настройки системы. Это разрешение не используется обычными приложениями.</string>
+  <string name="permlab_managePersistentStorage">Управление хранилищем ПЗУ</string>
+  <string name="permdesc_managePersistentStorage">Приложение сможет читать или записывать свойства, которые могут сохраняться после сброса настроек.</string>
+  <string name="permlab_accessAppSuggestions">Доступ к списку рекомендуемых приложений</string>
+  <string name="permdesc_accessAppSuggestions">Приложение сможет получать доступ к списку рекомендованных приложений.</string>
   <string name="custom_tile_listener_binding_label">Слушатель пользовательских плиток</string>
   <string name="profileNameDefault">По умолчанию</string>
   <string name="profileNameWork">Работа</string>

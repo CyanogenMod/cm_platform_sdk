@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">muokkaa puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>
   <string name="permdesc_modifyMSPhoneState">Sallii sovelluksen muokata puhelimen tilaa ja datayhteyden tietoja usean SIM-kortin tuella.</string>
   <string name="permlab_modifyProfiles">muokkaa järjestelmän profiileja</string>
+  <string name="permdesc_modifyProfiles">Sallii sovelluksen muokata järjestelmäprofiileja.</string>
   <string name="permlab_useHardwareFramework">käytä laitteiston kehystä</string>
   <string name="permdesc_useHardwareFramework">Sallii sovelluksen pääsyn CM-laitteiston kehykseen.</string>
   <string name="permlab_write_alarms">muuta hälytyksiä suoraan</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">Sallii sovelluksen muokata CM-järjestelmän asetuksia.</string>
   <string name="permlab_writeSecureSettings">muokkaa CM-järjestelmän turvallisuusasetuksia</string>
   <string name="permdesc_writeSecureSettings">Sallii sovelluksen muokata CM-järjestelmän turvallisuusasetuksia. Ei normaalin sovelluksen käytettäväksi.</string>
+  <string name="permlab_managePersistentStorage">hallitse pysyvää tallennustilaa</string>
+  <string name="permdesc_managePersistentStorage">Sallii sovelluksen lukea tai kirjoittaa ominaisuuksia jotka voivat säilyä tehdasasetusten palautuksen jälkeen.</string>
+  <string name="permlab_accessAppSuggestions">käytä sovellusehdotuksia</string>
+  <string name="permdesc_accessAppSuggestions">Sallii sovelluksen käyttää sovellusehdotuksia.</string>
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>
   <string name="profileNameDefault">Oletus</string>
   <string name="profileNameWork">Työ</string>
