@@ -18,6 +18,8 @@ package org.cyanogenmod.platform.internal;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
+import android.os.RemoteException;
 import android.util.Log;
 
 import com.android.server.SystemService;
@@ -26,6 +28,8 @@ import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.hardware.ICMHardwareService;
 import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.hardware.DisplayMode;
+import cyanogenmod.hardware.IThermalListenerCallback;
+import cyanogenmod.hardware.ThermalListenerCallback;
 
 import java.io.File;
 
@@ -42,16 +46,20 @@ import org.cyanogenmod.hardware.PersistentStorage;
 import org.cyanogenmod.hardware.SerialNumber;
 import org.cyanogenmod.hardware.SunlightEnhancement;
 import org.cyanogenmod.hardware.TapToWake;
+import org.cyanogenmod.hardware.ThermalMonitor;
+import org.cyanogenmod.hardware.ThermalUpdateCallback;
 import org.cyanogenmod.hardware.TouchscreenHovering;
 import org.cyanogenmod.hardware.VibratorHW;
 
-public class CMHardwareService extends SystemService {
+public class CMHardwareService extends SystemService implements ThermalUpdateCallback {
 
     private static final boolean DEBUG = true;
     private static final String TAG = CMHardwareService.class.getSimpleName();
 
     private final Context mContext;
     private final CMHardwareInterface mCmHwImpl;
+    private int mCurrentThermalState;
+    private RemoteCallbackList<IThermalListenerCallback> mRemoteCallbackList;
 
     private interface CMHardwareInterface {
         public int getSupportedFeatures();
@@ -120,6 +128,8 @@ public class CMHardwareService extends SystemService {
                 mSupportedFeatures |= CMHardwareManager.FEATURE_DISPLAY_MODES;
             if (PersistentStorage.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_PERSISTENT_STORAGE;
+            if (ThermalMonitor.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_THERMAL_MONITOR;
         }
 
         public int getSupportedFeatures() {
@@ -144,6 +154,8 @@ public class CMHardwareService extends SystemService {
                     return TouchscreenHovering.isEnabled();
                 case CMHardwareManager.FEATURE_AUTO_CONTRAST:
                     return AutoContrast.isEnabled();
+                case CMHardwareManager.FEATURE_THERMAL_MONITOR:
+                    return ThermalMonitor.isEnabled();
                 default:
                     Log.e(TAG, "feature " + feature + " is not a boolean feature");
                     return false;
@@ -322,6 +334,26 @@ public class CMHardwareService extends SystemService {
 
     @Override
     public void onStart() {
+        if (ThermalMonitor.isSupported()) {
+            ThermalMonitor.initialize(this);
+            mRemoteCallbackList = new RemoteCallbackList<IThermalListenerCallback>();
+        }
+    }
+
+    @Override
+    public void setThermalState(int state) {
+        mCurrentThermalState = state;
+        int i = mRemoteCallbackList.beginBroadcast();
+        while (i > 0) {
+            i--;
+            try {
+                mRemoteCallbackList.getBroadcastItem(i).onThermalChanged(state);
+            } catch (RemoteException e) {
+                // The RemoteCallbackList will take care of removing
+                // the dead object for us.
+            }
+        }
+        mRemoteCallbackList.finishBroadcast();
     }
 
     private final IBinder mService = new ICMHardwareService.Stub() {
@@ -559,6 +591,36 @@ public class CMHardwareService extends SystemService {
                 return null;
             }
             return mCmHwImpl.readPersistentBytes(key);
+        }
+
+        @Override
+        public int getThermalState() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_THERMAL_MONITOR)) {
+                return mCurrentThermalState;
+            }
+            return ThermalListenerCallback.State.STATE_UNKNOWN;
+        }
+
+        @Override
+        public boolean registerThermalListener(IThermalListenerCallback callback) {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_THERMAL_MONITOR)) {
+                return mRemoteCallbackList.register(callback);
+            }
+            return false;
+        }
+
+        @Override
+        public boolean unRegisterThermalListener(IThermalListenerCallback callback) {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_THERMAL_MONITOR)) {
+                return mRemoteCallbackList.unregister(callback);
+            }
+            return false;
         }
     };
 }
