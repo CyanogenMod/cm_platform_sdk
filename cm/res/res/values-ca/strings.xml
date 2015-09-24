@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">modificar l\'estat del telèfon i la connexió de dades amb suport per múltiples SIMs</string>
   <string name="permdesc_modifyMSPhoneState">Permet una aplicació modificar l\'estat del telèfon i la connexió de dades amb suport per múltiples SIMs.</string>
   <string name="permlab_modifyProfiles">modifica els perfils del sistema</string>
+  <string name="permdesc_modifyProfiles">Permet a una aplicació modificar els perfils del sistema.</string>
   <string name="permlab_useHardwareFramework">utilitza el marc de hardware</string>
   <string name="permdesc_useHardwareFramework">Permet a una aplicació accedir al marc de hardware de CM.</string>
   <string name="permlab_write_alarms">canviar directament les alarmes</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">Permet a una aplicació modificar la configuració del sistema CM.</string>
   <string name="permlab_writeSecureSettings">modificar la configuració segura del sistema CM</string>
   <string name="permdesc_writeSecureSettings">Permet a una aplicació modificar la configuració segura del sistema CM. No utilitzar en aplicacions normals.</string>
+  <string name="permlab_managePersistentStorage">gestiona l\'emmagatzematge persistent</string>
+  <string name="permdesc_managePersistentStorage">Permet a una aplicació llegir o escriure propietats que poden persistir després d\'un reinici als ajustaments de fàbrica.</string>
+  <string name="permlab_accessAppSuggestions">accedir a suggeriments d\'aplicacions</string>
+  <string name="permdesc_accessAppSuggestions">Permet a una aplicació accedir a suggeriments d\'aplicacions.</string>
   <string name="custom_tile_listener_binding_label">Escolta de cel·les personalitzades</string>
   <string name="profileNameDefault">Predeterminat</string>
   <string name="profileNameWork">Feina</string>
