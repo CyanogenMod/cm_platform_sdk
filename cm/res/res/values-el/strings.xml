@@ -45,6 +45,8 @@
   <string name="permdesc_writeSecureSettings">Επιτρέπει σε μια εφαρμογή να τροποποιεί τις ασφαλείς ρυθμίσεις συστήματος του CM. Δεν χρησιμοποιείται από κανονικές εφαρμογές.</string>
   <string name="permlab_managePersistentStorage">διαχείριση επίμονου χώρου αποθήκευσης</string>
   <string name="permdesc_managePersistentStorage">Επιτρέπει σε μια εφαρμογή να διαβάσει ή να γράψει ιδιότητες που μπορούν να επιμείνουν ακόμη και μετά από μια επαναφορά εργοστασιακών ρυθμίσεων.</string>
+  <string name="permlab_accessAppSuggestions">πρόσβαση στις προτάσεις εφαρμογών</string>
+  <string name="permdesc_accessAppSuggestions">Επιτρέπει σε μια εφαρμογή να έχει πρόσβαση στις προτάσεις εφαρμογών.</string>
   <string name="custom_tile_listener_binding_label">Listener προσαρμοσμένων πλακιδίων</string>
   <string name="profileNameDefault">Προεπιλογή</string>
   <string name="profileNameWork">Εργασία</string>

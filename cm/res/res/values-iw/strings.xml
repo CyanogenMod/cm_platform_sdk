@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">שינוי מצב המכשיר וחיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_modifyMSPhoneState">מאפשר ליישום לשנות את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
   <string name="permlab_modifyProfiles">שינוי פרופילי מערכת</string>
+  <string name="permdesc_modifyProfiles">מאפשר ליישום לשנות פרופילי מערכת.</string>
   <string name="permlab_useHardwareFramework">השתמש במסגרת חומרתית</string>
   <string name="permdesc_useHardwareFramework">אפשר ליישום לגשת למסגרת החומרתית של CM.</string>
   <string name="permlab_write_alarms">שינוי שעונים מעוררים ישירות</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">מאפשר ליישום לשנות את הגדרות מערכת CM.</string>
   <string name="permlab_writeSecureSettings">שינוי הגדרות מאובטחות של מערכת CM</string>
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
+  <string name="permlab_managePersistentStorage">ניהול אחסון מתמיד</string>
+  <string name="permdesc_managePersistentStorage">מאפשר ליישום לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
+  <string name="permlab_accessAppSuggestions">גישה להצעות יישום</string>
+  <string name="permdesc_accessAppSuggestions">מאפשר ליישום לגשת להצעות יישום.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>
