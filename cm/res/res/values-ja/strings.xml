@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更</string>
   <string name="permdesc_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更をアプリに許可します。</string>
   <string name="permlab_modifyProfiles">システムプロファイルの変更</string>
+  <string name="permdesc_modifyProfiles">システムプロファイルの変更をアプリに許可します。</string>
   <string name="permlab_useHardwareFramework">ハードウェアフレームワークの使用</string>
   <string name="permdesc_useHardwareFramework">CMハードウェアフレームワークへのアクセスをアプリに許可します。</string>
   <string name="permlab_write_alarms">アラームの直接変更</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">CMシステム設定の変更をアプリに許可します。</string>
   <string name="permlab_writeSecureSettings">CMセキュアシステム設定の変更</string>
   <string name="permdesc_writeSecureSettings">CMセキュアシステム設定の変更をアプリに許可します。通常のアプリ用ではありません。</string>
+  <string name="permlab_managePersistentStorage">持続的ストレージの管理</string>
+  <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても持続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
+  <string name="permlab_accessAppSuggestions">アプリケーションの候補へのアクセス</string>
+  <string name="permdesc_accessAppSuggestions">アプリケーションの候補にアクセスすることを許可します。</string>
   <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
   <string name="profileNameDefault">デフォルト</string>
   <string name="profileNameWork">仕事</string>

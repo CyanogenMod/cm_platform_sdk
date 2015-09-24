@@ -19,4 +19,18 @@
   <string name="cyanogenmod_system_label">CyanogenMod 系統</string>
   <string name="permlab_publishCustomTile">於快速設定面板中建立自訂標題</string>
   <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
+  <string name="permdesc_writeSettings">允許應用程式更改CM系統設定</string>
+  <string name="permlab_writeSecureSettings">修改 CM 系統安全設定</string>
+  <string name="profileNameDefault">預設</string>
+  <string name="profileNameWork">工作</string>
+  <string name="profileNameHome">住家</string>
+  <string name="profileNameSilent">安靜</string>
+  <string name="profileNameNight">夜晚</string>
+  <string name="profileNameAutomobile">汽車</string>
+  <string name="profileGroupPhone">電話</string>
+  <string name="profileGroupCalendar">日曆</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">電子郵件</string>
+  <string name="profileGroupSMS">簡訊</string>
+  <string name="wildcardProfile">其他</string>
 </resources>

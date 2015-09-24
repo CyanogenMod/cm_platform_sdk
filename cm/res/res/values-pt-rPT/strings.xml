@@ -30,6 +30,7 @@
   <string name="permlab_modifyMSPhoneState">modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>
   <string name="permdesc_modifyMSPhoneState">Permite a aplicação modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
+  <string name="permdesc_modifyProfiles">Permite a uma aplicação modificar os perfis do sistema.</string>
   <string name="permlab_useHardwareFramework">utilizar a estrutura de hardware</string>
   <string name="permdesc_useHardwareFramework">Permite o acesso duma aplicação à estrutura de hardware CM.</string>
   <string name="permlab_write_alarms">alterar diretamente os alarmes</string>
@@ -42,6 +43,10 @@
   <string name="permdesc_writeSettings">Permite a uma aplicação modificar as definições de sistema CM.</string>
   <string name="permlab_writeSecureSettings">modificar as definições de sistema seguro CM</string>
   <string name="permdesc_writeSecureSettings">Permite a uma aplicação modificar as definições de sistema seguro CM. Não é para ser utilizado por aplicações normais.</string>
+  <string name="permlab_managePersistentStorage">gerir o armazenamento persistente</string>
+  <string name="permdesc_managePersistentStorage">Permite a uma aplicação ler ou escrever propriedades que podem persistir mesmo após a reposição dos dados de fábrica.</string>
+  <string name="permlab_accessAppSuggestions">aceder a sugestões da aplicação</string>
+  <string name="permdesc_accessAppSuggestions">Permite a uma aplicação aceder a sugestões da aplicação.</string>
   <string name="custom_tile_listener_binding_label">Escuta de botão personalizado</string>
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
