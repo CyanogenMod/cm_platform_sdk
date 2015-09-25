@@ -205,11 +205,19 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.html">IThermalListenerCallback</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
           <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.Stub.html">IThermalListenerCallback.Stub</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></li>
       </ul>
     </li>
               
@@ -595,6 +603,19 @@ Summary:
     
     <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_THERMAL_MONITOR">FEATURE_THERMAL_MONITOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          Thermal change monitor
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_TOUCH_HOVERING">FEATURE_TOUCH_HOVERING</a></td>
         <td class="jd-descrcol" width="100%">
           Touchscreen hovering
@@ -606,7 +627,7 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_VIBRATOR">FEATURE_VIBRATOR</a></td>
         <td class="jd-descrcol" width="100%">
@@ -978,13 +999,29 @@ Summary:
             int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getVibratorDefaultIntensity()">getVibratorDefaultIntensity</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getThermalState()">getThermalState</a></span>()</nobr>
         
   </td></tr>
 
 
 	 
     <tr class="alt-color api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getVibratorDefaultIntensity()">getVibratorDefaultIntensity</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1000,7 +1037,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1016,7 +1053,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1032,7 +1069,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1048,7 +1085,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1071,7 +1108,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1094,7 +1131,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1117,7 +1154,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1131,6 +1168,29 @@ Summary:
         
         <div class="jd-descrdiv">
           Read a string from persistent storage
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#registerThermalListener(cyanogenmod.hardware.ThermalListenerCallback)">registerThermalListener</a></span>(<a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a> thermalCallback)</nobr>
+        
+        <div class="jd-descrdiv">
+          Register a callback to be notified of thermal state changes
           
     
 
@@ -1276,6 +1336,29 @@ Summary:
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback)">unRegisterThermalListener</a></span>(<a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a> thermalCallback)</nobr>
+        
+        <div class="jd-descrdiv">
+          Unregister a callback previously registered to be notified of thermal state changes
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#writePersistentBytes(java.lang.String, byte[])">writePersistentBytes</a></span>(String key, byte[] value)</nobr>
         
         <div class="jd-descrdiv">
@@ -1289,7 +1372,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1312,7 +1395,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -2130,6 +2213,49 @@ From class
             
                 512
                 (0x00000200)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FEATURE_THERMAL_MONITOR"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FEATURE_THERMAL_MONITOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Thermal change monitor
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                32768
+                (0x00008000)
             
         </span>
         </div>
@@ -2987,6 +3113,44 @@ From class
 </div>
 
 
+<A NAME="getThermalState()"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getThermalState</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>current thermal <code><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></code>
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="getVibratorDefaultIntensity()"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -3365,6 +3529,44 @@ From class
 </div>
 
 
+<A NAME="registerThermalListener(cyanogenmod.hardware.ThermalListenerCallback)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">registerThermalListener</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a> thermalCallback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Register a callback to be notified of thermal state changes</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>boolean indicating whether register succeeded or failed
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="requireAdaptiveBacklightForSunlightEnhancement()"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -3638,6 +3840,44 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>true on success, false otherwise.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback)"></A>
+
+<div class="jd-details api apilevel-2"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">unRegisterThermalListener</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a> thermalCallback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Unregister a callback previously registered to be notified of thermal state changes</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>boolean indicating whether un-registering succeeded or failed
 </li></ul>
   </div>
 
