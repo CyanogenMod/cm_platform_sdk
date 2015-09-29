@@ -38,20 +38,20 @@ public class BuildTest extends AndroidTestCase {
 
     @SmallTest
     public void testSdkApiLevelCurrent() {
-        assertEquals(Build.CM_VERSION_CODES.BOYSENBERRY, Build.CM_VERSION.SDK_INT);
+        assertEquals(Build.CM_VERSION_CODES.CANTALOUPE, Build.CM_VERSION.SDK_INT);
     }
 
     @SmallTest
     public void testSdkApiLevelCanMatch() {
         String apiName = Build.getNameForSDKInt(Build.CM_VERSION.SDK_INT);
         assertNotNull(apiName);
-        assertEquals(Build.getNameForSDKInt(Build.CM_VERSION_CODES.BOYSENBERRY), apiName);
+        assertEquals(Build.getNameForSDKInt(Build.CM_VERSION_CODES.CANTALOUPE), apiName);
     }
 
     @SmallTest
     public void testSdkApiLevelSkippedIfGreaterThanAllowed() {
         int i = 0;
-        if (Build.CM_VERSION.SDK_INT > Build.CM_VERSION_CODES.BOYSENBERRY + 1) {
+        if (Build.CM_VERSION.SDK_INT > Build.CM_VERSION_CODES.CANTALOUPE + 1) {
             i++;
         }
         assertEquals(0, i);
