@@ -13,7 +13,7 @@ Our stable releases are mirrored in [Maven Central](http://search.maven.org/#sea
 
 ```gradle
 dependencies {
-    compile 'org.cyanogenmod:platform.sdk:1.0'
+    compile 'org.cyanogenmod:platform.sdk:2.0'
 }
 ```
 
@@ -29,11 +29,11 @@ repositories {
 }
 ```
 
-You can target the `future` or `development` branch by setting your `dependencies` for `2.0-SNAPSHOT`
+You can target the `future` or `development` branch by setting your `dependencies` for `3.0-SNAPSHOT`
 
 ```gradle
 dependencies {
-    compile 'org.cyanogenmod:platform.sdk:2.0-SNAPSHOT'
+    compile 'org.cyanogenmod:platform.sdk:3.0-SNAPSHOT'
 }
 ```
 
