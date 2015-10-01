@@ -439,10 +439,10 @@ package cyanogenmod.hardware {
     ctor public ThermalListenerCallback.State();
     method public static final java.lang.String toString(int);
     field public static final int STATE_COOL = 0; // 0x0
-    field public static final int STATE_EXTREME = 3; // 0x3
-    field public static final int STATE_HIGH = 2; // 0x2
-    field public static final int STATE_NORMAL = 1; // 0x1
+    field public static final int STATE_CRITICAL = 3; // 0x3
     field public static final int STATE_UNKNOWN = -1; // 0xffffffff
+    field public static final int STATE_WARM_FALLING = 1; // 0x1
+    field public static final int STATE_WARM_RISING = 2; // 0x2
   }
 
 }
