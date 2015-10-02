@@ -19,8 +19,17 @@
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">opret en brugerdefineret flise i panelet til hurtige indstillinger</string>
   <string name="permdesc_publishCustomTile">Tillader en app at lave en flise med hurtig indstilling.</string>
+  <string name="permlab_modifyNetworkSettings">ændre indstillinger for system netværk</string>
+  <string name="permdesc_modifyNetworkSettings">Tillader en app at ændre et begrænset antal indstillinger af system netværk.</string>
+  <string name="permlab_modifySoundSettings">ændre systemets lydindstillinger</string>
+  <string name="permdesc_modifySoundSettings">Tillader en app at ændre et begrænset antal lydindstillinger.</string>
   <string name="permlab_bindCustomTileListenerService">forbind til en tilpasset fliseservice-lytter</string>
   <string name="permdesc_bindCustomTileListenerService">Tillader en app at oprette forbindelse til brugerfladen på højeste niveau i en tilpasset fliseservice-lytter.</string>
+  <string name="permlab_readMSPhoneState">se status for forbindelse og data med understøttelse af flere SIM-kort</string>
+  <string name="permdesc_readMSPhoneState">Gør det muligt for en app at se status for forbindelse og data med understøttelse af flere SIM-kort.</string>
+  <string name="permlab_modifyMSPhoneState">ændre status for forbindelse og data med understøttelse af flere SIM-kort</string>
+  <string name="permdesc_modifyMSPhoneState">Gør det muligt for en app at ændre status for forbindelse og data med understøttelse af flere SIM-kort.</string>
+  <string name="permlab_writeSettings">ændre CM-systemindstillinger</string>
   <string name="custom_tile_listener_binding_label">Tilpasset fliseservice-lytter</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbejde</string>

@@ -30,6 +30,9 @@
   <string name="permlab_modifyMSPhoneState">telefoonstatus en gegevensverbinding wijzigen met ondersteuning voor multi-SIM</string>
   <string name="permdesc_modifyMSPhoneState">Hiermee kan de app de status van de telefoon en van de gegevensverbinding wijzigen met ondersteuning voor meerdere simkaarten.</string>
   <string name="permlab_modifyProfiles">systeemprofielen wijzigen</string>
+  <string name="permdesc_modifyProfiles">Hiermee kan de app systeemprofielen wijzigen.</string>
+  <string name="permlab_useHardwareFramework">hardware-framework gebruiken</string>
+  <string name="permdesc_useHardwareFramework">Hiermee kan de app toegang krijgen tot het hardware-framework van CM.</string>
   <string name="permlab_write_alarms">rechtstreeks alarmen wijzigen</string>
   <string name="permdesc_write_alarms">Hiermee kan de app alarmen toevoegen, bewerken of verwijderen.</string>
   <string name="permlab_manage_alarms">geplande alarmen in-/uitschakelen</string>
@@ -38,6 +41,10 @@
   <string name="permdesc_read_alarms">Hiermee kan de app uw geplande alarmen lezen.</string>
   <string name="permlab_writeSettings">CM-systeeminstellingen wijzigen</string>
   <string name="permdesc_writeSettings">Hiermee kan de app de systeeminstellingen van CM wijzigen.</string>
+  <string name="permlab_writeSecureSettings">beveiligde CM-systeeminstellingen wijzigen</string>
+  <string name="permdesc_writeSecureSettings">Hiermee kan de app de beveiligde systeeminstellingen van CM wijzigen. Niet voor gebruik door normale apps.</string>
+  <string name="permlab_managePersistentStorage">blijvende opslag beheren</string>
+  <string name="permdesc_managePersistentStorage">Hiermee kan de app eigenschappen lezen of schrijven die blijven bestaan na terugzetten naar fabrieksinstellingen.</string>
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
   <string name="profileNameDefault">Standaard</string>
   <string name="profileNameWork">Werk</string>

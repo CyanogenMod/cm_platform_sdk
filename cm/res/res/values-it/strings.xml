@@ -44,7 +44,7 @@
   <string name="permlab_writeSecureSettings">modifica le impostazioni di sistema sicure CM</string>
   <string name="permdesc_writeSecureSettings">Consenti ad un\'app di modificare le impostazioni di sistema sicure CM. Non per l\'uso di normali applicazioni.</string>
   <string name="permlab_managePersistentStorage">gestione archivio persistente</string>
-  <string name="permdesc_managePersistentStorage">Consenti ad un\'app di leggere o scrivere proprietà che possono persistere ad un reset di fabbrica.</string>
+  <string name="permdesc_managePersistentStorage">Consenti ad un\'app di leggere o scrivere proprietà che possono persistere ad un ripristino di fabbrica.</string>
   <string name="permlab_accessAppSuggestions">accesso ai suggerimenti applicazioni</string>
   <string name="permdesc_accessAppSuggestions">Consenti ad un\'app di accedere ai suggerimenti delle applicazioni.</string>
   <string name="custom_tile_listener_binding_label">Listener tile personalizzato</string>
