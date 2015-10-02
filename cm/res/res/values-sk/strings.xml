@@ -45,6 +45,8 @@
   <string name="permdesc_writeSecureSettings">Umožňuje aplikácii zmeniť zabezpečené systémové nastavenia CM. Nie je určené pre normálne aplikácie.</string>
   <string name="permlab_managePersistentStorage">spravovať trvalé úložisko</string>
   <string name="permdesc_managePersistentStorage">Umožňuje aplikácii čítanie alebo zápis vlastností, ktoré môžu pretrvávať po obnove továrenských nastavení.</string>
+  <string name="permlab_accessAppSuggestions">prístup k návrhom aplikácií</string>
+  <string name="permdesc_accessAppSuggestions">Umožňuje aplikácii prístup k návrhom aplikácií.</string>
   <string name="custom_tile_listener_binding_label">Služba vlastnej dlaždice</string>
   <string name="profileNameDefault">Predvolený</string>
   <string name="profileNameWork">Práca</string>
