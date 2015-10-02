@@ -1367,6 +1367,9 @@ public final class CMSettings {
         public static final String HEADS_UP_NOTIFICATIONS_ENABLED =
                 "heads_up_notifications_enabled";
 
+        /** @hide */ public static final int HEADS_UP_OFF = 0;
+        /** @hide */ public static final int HEADS_UP_ON = 1;
+
         // endregion
     }
 }
