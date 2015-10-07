@@ -1352,24 +1352,6 @@ public final class CMSettings {
 
         // region Global Settings
 
-        /**
-         * The name of the device
-         *
-         * @hide
-         */
-        public static final String DEVICE_NAME = "device_name";
-
-        /**
-         * Defines global heads up toggle. One of HEADS_UP_OFF, HEADS_UP_ON.
-         *
-         * @hide
-         */
-        public static final String HEADS_UP_NOTIFICATIONS_ENABLED =
-                "heads_up_notifications_enabled";
-
-        /** @hide */ public static final int HEADS_UP_OFF = 0;
-        /** @hide */ public static final int HEADS_UP_ON = 1;
-
         // endregion
     }
 }
