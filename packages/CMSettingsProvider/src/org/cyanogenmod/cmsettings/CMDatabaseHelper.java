@@ -209,16 +209,6 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.STATS_COLLECTION,
                 R.bool.def_stats_collection);
-
-        // Global
-        if (mUserHandle == UserHandle.USER_OWNER) {
-            loadSettingsForTable(db, CMTableNames.TABLE_GLOBAL, CMSettings.Global.DEVICE_NAME,
-                    getDefaultDeviceName());
-
-            loadIntegerSetting(db, CMTableNames.TABLE_GLOBAL,
-                    CMSettings.Global.HEADS_UP_NOTIFICATIONS_ENABLED,
-                            R.integer.def_heads_up_enabled);
-        }
     }
 
     /**
@@ -276,12 +266,5 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         contentValues.put(Settings.NameValueTable.VALUE, value);
 
         db.insertWithOnConflict(tableName, null, contentValues, SQLiteDatabase.CONFLICT_IGNORE);
-    }
-
-    /**
-     * @return Gets the default device name
-     */
-    private String getDefaultDeviceName() {
-        return mContext.getResources().getString(R.string.def_device_name, Build.MODEL);
     }
 }
