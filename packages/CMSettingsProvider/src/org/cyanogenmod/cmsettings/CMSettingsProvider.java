@@ -219,19 +219,6 @@ public class CMSettingsProvider extends ContentProvider {
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM secure table");
-
-            // Migrate global settings
-            if (userId == UserHandle.USER_OWNER) {
-                HashMap<String, String> globalToCmSettingsMap = new HashMap<String, String>();
-                globalToCmSettingsMap.put(Settings.Global.DEVICE_NAME,
-                        CMSettings.Global.DEVICE_NAME);
-                globalToCmSettingsMap.put(Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED,
-                        CMSettings.Global.HEADS_UP_NOTIFICATIONS_ENABLED);
-
-                rowsMigrated = migrateCMSettingsForTable(userId,
-                        CMDatabaseHelper.CMTableNames.TABLE_GLOBAL, globalToCmSettingsMap);
-                if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM global table");
-            }
         }
     }
 
