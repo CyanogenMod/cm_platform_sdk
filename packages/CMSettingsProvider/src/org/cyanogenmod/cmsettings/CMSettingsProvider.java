@@ -157,6 +157,123 @@ public class CMSettingsProvider extends ContentProvider {
         }
     }
 
+    /* @hide */
+    private static class LegacyCMSettings {
+        /**
+         * Whether to allow one finger quick settings expansion on the right side of the statusbar.
+         * @deprecated Use {@link android.provider.Settings.System#QS_QUICK_PULLDOWN} instead
+         * @hide
+         */
+        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+
+        /**
+         * Whether to enable "advanced mode" for the current user.
+         * Boolean setting. 0 = no, 1 = yes.
+         * @hide
+         */
+        public static final String ADVANCED_MODE = "advanced_mode";
+
+        /**
+         * The button brightness to be used while the screen is on or after a button press,
+         * depending on the value of {@link BUTTON_BACKLIGHT_TIMEOUT}.
+         * Valid value range is between 0 and {@link PowerManager#getMaximumButtonBrightness()}
+         * @hide
+         */
+        public static final String BUTTON_BRIGHTNESS = "button_brightness";
+
+        /**
+         * The time in ms to keep the button backlight on after pressing a button.
+         * A value of 0 will keep the buttons on for as long as the screen is on.
+         * @hide
+         */
+        public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
+
+        /**
+         * Default theme to use.  If empty, use holo.
+         * @hide
+         */
+        public static final String DEFAULT_THEME_PACKAGE = "default_theme_package";
+
+        /**
+         * A '|' delimited list of theme components to apply from the default theme on first boot.
+         * Components can be one or more of the "mods_XXXXXXX" found in
+         * {@link ThemesContract$ThemesColumns}.  Leaving this field blank assumes all components
+         * will be applied.
+         *
+         * ex: mods_icons|mods_overlays|mods_homescreen
+         *
+         * @hide
+         */
+        public static final String DEFAULT_THEME_COMPONENTS = "default_theme_components";
+
+        /**
+         * Developer options - Navigation Bar show switch
+         * @hide
+         */
+        public static final String DEV_FORCE_SHOW_NAVBAR = "dev_force_show_navbar";
+
+        /**
+         * The keyboard brightness to be used while the screen is on.
+         * Valid value range is between 0 and {@link PowerManager#getMaximumKeyboardBrightness()}
+         * @hide
+         */
+        public static final String KEYBOARD_BRIGHTNESS = "keyboard_brightness";
+
+        /**
+         * String to contain power menu actions
+         * @hide
+         */
+        public static final String POWER_MENU_ACTIONS = "power_menu_actions";
+
+        /**
+         * Global stats collection
+         * @hide
+         */
+        public static final String STATS_COLLECTION = "stats_collection";
+
+        /**
+         * Whether to show the brightness slider in quick settings panel.
+         * @hide
+         */
+        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+
+        /**
+         * List of QS tile names
+         * @hide
+         */
+        public static final String QS_TILES = "sysui_qs_tiles";
+
+        /**
+         * Use "main" tiles on the first row of the quick settings panel
+         * 0 = no, 1 = yes
+         * @hide
+         */
+        public static final String QS_USE_MAIN_TILES = "sysui_qs_main_tiles";
+
+        /**
+         * Boolean value whether to link ringtone and notification volume
+         *
+         * @hide
+         */
+        public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
+
+        /**
+         * Custom navring actions
+         * @hide
+         */
+        public static final String[] NAVIGATION_RING_TARGETS = new String[] {
+                "navigation_ring_targets_0",
+                "navigation_ring_targets_1",
+                "navigation_ring_targets_2",
+        };
+
+        /**
+         * @hide
+         */
+         public static final String THEME_PACKAGE_NAME_PERSISTENCE_PROPERTY
+                 = "persist.sys.themePackageName";
+    }
+
     /**
      * Migrates CM settings for a specific user.
      * @param userId The id of the user to run CM settings migration for.
@@ -167,7 +284,7 @@ public class CMSettingsProvider extends ContentProvider {
 
             // Migrate system settings
             HashMap<String, String> systemToCmSettingsMap = new HashMap<String, String>();
-            systemToCmSettingsMap.put(Settings.System.QS_QUICK_PULLDOWN,
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
                     CMSettings.System.QS_QUICK_PULLDOWN);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
@@ -176,43 +293,43 @@ public class CMSettingsProvider extends ContentProvider {
 
             // Migrate secure settings
             HashMap<String, String> secureToCmSettingsMap = new HashMap<String, String>();
-            secureToCmSettingsMap.put(Settings.Secure.ADVANCED_MODE,
+            secureToCmSettingsMap.put(LegacyCMSettings.ADVANCED_MODE,
                     CMSettings.Secure.ADVANCED_MODE);
-            secureToCmSettingsMap.put(Settings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
+            secureToCmSettingsMap.put(LegacyCMSettings.BUTTON_BACKLIGHT_TIMEOUT,
                     CMSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT);
-            secureToCmSettingsMap.put(Settings.Secure.BUTTON_BRIGHTNESS,
+            secureToCmSettingsMap.put(LegacyCMSettings.BUTTON_BRIGHTNESS,
                     CMSettings.Secure.BUTTON_BRIGHTNESS);
-            secureToCmSettingsMap.put(Settings.Secure.DEFAULT_THEME_COMPONENTS,
+            secureToCmSettingsMap.put(LegacyCMSettings.DEFAULT_THEME_COMPONENTS,
                     CMSettings.Secure.DEFAULT_THEME_COMPONENTS);
-            secureToCmSettingsMap.put(Settings.Secure.DEFAULT_THEME_PACKAGE,
+            secureToCmSettingsMap.put(LegacyCMSettings.DEFAULT_THEME_PACKAGE,
                     CMSettings.Secure.DEFAULT_THEME_PACKAGE);
-            secureToCmSettingsMap.put(Settings.Secure.DEV_FORCE_SHOW_NAVBAR,
+            secureToCmSettingsMap.put(LegacyCMSettings.DEV_FORCE_SHOW_NAVBAR,
                     CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR);
             secureToCmSettingsMap.put(
-                    Configuration.THEME_PKG_CONFIGURATION_PERSISTENCE_PROPERTY,
+                    LegacyCMSettings.THEME_PKG_CONFIGURATION_PERSISTENCE_PROPERTY,
                             CMSettings.Secure.NAME_THEME_CONFIG);
-            secureToCmSettingsMap.put(Settings.Secure.KEYBOARD_BRIGHTNESS,
+            secureToCmSettingsMap.put(LegacyCMSettings.KEYBOARD_BRIGHTNESS,
                     CMSettings.Secure.KEYBOARD_BRIGHTNESS);
-            secureToCmSettingsMap.put(Settings.Secure.POWER_MENU_ACTIONS,
+            secureToCmSettingsMap.put(LegacyCMSettings.Secure.POWER_MENU_ACTIONS,
                     CMSettings.Secure.POWER_MENU_ACTIONS);
-            secureToCmSettingsMap.put(Settings.Secure.STATS_COLLECTION,
+            secureToCmSettingsMap.put(LegacyCMSettings.STATS_COLLECTION,
                     CMSettings.Secure.STATS_COLLECTION);
-            secureToCmSettingsMap.put(Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
+            secureToCmSettingsMap.put(LegacyCMSettings.QS_SHOW_BRIGHTNESS_SLIDER,
                     CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER);
-            secureToCmSettingsMap.put(Settings.Secure.QS_TILES,
+            secureToCmSettingsMap.put(LegacyCMSettings.QS_TILES,
                     CMSettings.Secure.QS_TILES);
-            secureToCmSettingsMap.put(Settings.Secure.QS_USE_MAIN_TILES,
+            secureToCmSettingsMap.put(LegacyCMSettings.QS_USE_MAIN_TILES,
                     CMSettings.Secure.QS_USE_MAIN_TILES);
-            secureToCmSettingsMap.put(Settings.Secure.VOLUME_LINK_NOTIFICATION,
+            secureToCmSettingsMap.put(LegacyCMSettings.VOLUME_LINK_NOTIFICATION,
                     CMSettings.Secure.VOLUME_LINK_NOTIFICATION);
 
-            int navRingTargetsLength = Settings.Secure.NAVIGATION_RING_TARGETS.length;
+            int navRingTargetsLength = LegacyCMSettings.NAVIGATION_RING_TARGETS.length;
             int cmNavRingTargetsLength = CMSettings.Secure.NAVIGATION_RING_TARGETS.length;
             int minNavRingTargetsLength = navRingTargetsLength <= cmNavRingTargetsLength ?
                     navRingTargetsLength : cmNavRingTargetsLength;
 
             for (int i = 0; i < minNavRingTargetsLength; i++) {
-                systemToCmSettingsMap.put(Settings.Secure.NAVIGATION_RING_TARGETS[i],
+                systemToCmSettingsMap.put(LegacyCMSettings.NAVIGATION_RING_TARGETS[i],
                         CMSettings.Secure.NAVIGATION_RING_TARGETS[i]);
             }
 
