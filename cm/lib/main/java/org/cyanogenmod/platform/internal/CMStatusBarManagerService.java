@@ -61,6 +61,7 @@ import org.cyanogenmod.platform.internal.R;
 public class CMStatusBarManagerService extends SystemService {
     private static final String TAG = "CMStatusBarManagerService";
 
+    private Context mContext;
     private Handler mHandler = new Handler();
     private CustomTileListeners mCustomTileListeners;
 
@@ -77,6 +78,7 @@ public class CMStatusBarManagerService extends SystemService {
 
     public CMStatusBarManagerService(Context context) {
         super(context);
+        mContext = context;
     }
 
     @Override
