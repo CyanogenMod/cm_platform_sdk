@@ -219,25 +219,29 @@ public class PartnerInterfaceService extends SystemService {
         Settings.Global.putInt(contentResolver,
                 Settings.Global.ZEN_MODE,
                 zenModeValue);
+        /* 
         try {
             // Setting the exit condition to null signifies "indefinitely"
-            mNotificationManager.setZenModeCondition(null);
+             mNotificationManager.setZenModeCondition(null);
         } catch (RemoteException e) {
             // An error occurred, return false since the
             // condition failed to set.
             Log.e(TAG, "setZenMode() failed for mode: " + mode);
             return false;
         }
+        */ 
         return true;
     }
 
     public String getHotwordPackageNameInternal() {
         String packageName = null;
+        /*
         try {
             packageName = mAudioService.getCurrentHotwordInputPackageName();
         } catch (RemoteException e) {
             Log.e(TAG, "getHotwordPackageName() failed.");
         }
+        */
         return packageName;
     }
 }
