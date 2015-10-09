@@ -40,6 +40,7 @@ public class AppSuggestManagerService extends SystemService {
     public static final String ACTION = "org.cyanogenmod.app.suggest";
 
     private AppSuggestProviderInterface mImpl;
+    private Context mContext;
 
     private final IBinder mService = new IAppSuggestManager.Stub() {
         public boolean handles(Intent intent) {
@@ -57,6 +58,7 @@ public class AppSuggestManagerService extends SystemService {
 
     public AppSuggestManagerService(Context context) {
         super(context);
+        mContext = context;
     }
 
     @Override
