@@ -78,14 +78,14 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
        // mIntentFilter.addAction(AudioManager.A2DP_ROUTE_CHANGED_ACTION);
         updateEnabled();
 
-        mContext.getContentResolver().registerContentObserver(
+        /* mContext.getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.SYSTEM_PROFILES_ENABLED), false,
-                mSettingsObserver);
+                mSettingsObserver); */
     }
 
     public void updateEnabled() {
-        boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+        boolean enabled = false; // Settings.System.getInt(mContext.getContentResolver(),
+                //Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
         if (enabled && !mFilterRegistered) {
             Log.v(TAG, "Enabling");
             mContext.registerReceiver(this, mIntentFilter);

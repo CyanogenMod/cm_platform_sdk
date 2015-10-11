@@ -236,7 +236,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -hdf sdk.preview 0 \
         -since $(CM_SRC_API_DIR)/1.txt 1 \
         -since $(CM_SRC_API_DIR)/2.txt 2 \
-        -since $(CM_SRC_API_DIR)/3.txt 3
+        -since $(CM_SRC_API_DIR)/3.txt 3 \
+        -since $(CM_SRC_API_DIR)/4.txt 4
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)

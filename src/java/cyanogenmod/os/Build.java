@@ -36,7 +36,7 @@ public class Build {
      * {@link CM_VERSION_CODES}
      * @hide
      */
-    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.CANTALOUPE;
+    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.DRAGON_FRUIT;
 
     private static final SparseArray<String> sdkMap;
     static
@@ -45,6 +45,7 @@ public class Build {
         sdkMap.put(CM_VERSION_CODES.APRICOT, "Apricot");
         sdkMap.put(CM_VERSION_CODES.BOYSENBERRY, "Boysenberry");
         sdkMap.put(CM_VERSION_CODES.CANTALOUPE, "Cantaloupe");
+        sdkMap.put(CM_VERSION_CODES.DRAGON_FRUIT, "Dragon Fruit");
     }
 
     /** Various version strings. */
@@ -111,6 +112,13 @@ public class Build {
          * TODO: Pending Q1 release
          */
         public static final int CANTALOUPE = 3;
+
+
+        /**
+         * First M Release
+         */
+        public static final int DRAGON_FRUIT = 4;
+
     }
 
     /**
