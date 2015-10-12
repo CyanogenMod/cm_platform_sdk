@@ -45,6 +45,8 @@
   <string name="permdesc_writeSecureSettings">Permitir a una aplicación modificar la configuración del sistema seguro de CM. No para uso de aplicaciones normales.</string>
   <string name="permlab_managePersistentStorage">gestionar el almacenamiento persistente</string>
   <string name="permdesc_managePersistentStorage">Permitir a una aplicación leer o escribir propiedades que pueden persistir incluso después de una restauración de fábrica.</string>
+  <string name="permlab_accessAppSuggestions">acceso a las sugerencias de aplicación</string>
+  <string name="permdesc_accessAppSuggestions">Permitir a una aplicación acceder a las sugerencias de aplicación.</string>
   <string name="custom_tile_listener_binding_label">Escucha de control personalizado</string>
   <string name="profileNameDefault">Predeterminado</string>
   <string name="profileNameWork">Trabajo</string>
