@@ -43,6 +43,7 @@
   <string name="permdesc_writeSettings">Ermöglicht der App, CM-Systemeinstellungen zu ändern.</string>
   <string name="permlab_writeSecureSettings">CM-Sicherheits-Systemeinstellungen ändern</string>
   <string name="permdesc_writeSecureSettings">Ermöglicht der App, CM-Sicherheits-Systemeinstellungen zu ändern. Nicht für die Nutzung durch normale Anwendungen bestimmt.</string>
+  <string name="permlab_managePersistentStorage">permanenten Speicher verwalten</string>
   <string name="permdesc_managePersistentStorage">Ermöglicht der App, Eigenschaften auszulesen oder zu speichern, die auch beim Zurücksetzen auf die Werkseinstellungen erhalten bleiben können.</string>
   <string name="permlab_accessAppSuggestions">auf Anwendungsvorschläge zugreifen</string>
   <string name="permdesc_accessAppSuggestions">Ermöglicht der App, auf die Anwendungsvorschläge zuzugreifen.</string>

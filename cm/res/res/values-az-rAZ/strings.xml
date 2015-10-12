@@ -41,6 +41,8 @@
   <string name="permdesc_writeSettings">Tətbiqetməyə CM sistem tənzimləmələrini dəyişmə icazəsi verər.</string>
   <string name="permlab_writeSecureSettings">CM təhlükəsiz sistem tənzimləmələrini dəyişdir</string>
   <string name="permdesc_writeSecureSettings">Tətbiqetməyə CM təhlükəsiz sistem tənzimləmələrini dəyişmə icazəsi verər. Normal tətbiqetmələr üçün deyil.</string>
+  <string name="permlab_managePersistentStorage">davamlı saxlama sahəsini idarə et</string>
+  <string name="permdesc_managePersistentStorage">Tətbiqetməyə zavod tənzimləmələrinə qayıtdıqda davamlı qalıcı xüsusiyyətləri oxuma və ya yazma icazəsi verər.</string>
   <string name="permlab_accessAppSuggestions">tətbiqetmə təkliflərinə müraciət</string>
   <string name="permdesc_accessAppSuggestions">Tətbiqetməyə tətbiqetmə təkliflərinə müraciət icazəsi verər.</string>
   <string name="custom_tile_listener_binding_label">Özəl çərçivə dinləyicisi</string>
