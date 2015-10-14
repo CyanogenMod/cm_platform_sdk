@@ -36,7 +36,7 @@
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
 
-    <!-- Allows system applications to make changes to a subset of system network settings -->
+    <!-- Allows an app to make changes to the airplane mode and mobile data network settings -->
     <permission android:name="cyanogenmod.permission.MODIFY_NETWORK_SETTINGS"
                 android:label="@string/permlab_modifyNetworkSettings"
                 android:description="@string/permdesc_modifyNetworkSettings"
@@ -44,7 +44,7 @@
                 androidprv:allowViaWhitelist="true"
                 android:protectionLevel="system|signature" />
 
-    <!-- Allows system applications to make changes to a subset of system sound settings -->
+    <!-- Allows an app to make changes to the interruption mode sound settings -->
     <permission android:name="cyanogenmod.permission.MODIFY_SOUND_SETTINGS"
                 android:label="@string/permlab_modifySoundSettings"
                 android:description="@string/permdesc_modifySoundSettings"
