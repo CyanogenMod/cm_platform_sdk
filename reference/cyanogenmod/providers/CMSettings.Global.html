@@ -167,7 +167,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1', '2' ];
+        var SINCE_DATA = [ '1', '2', '3' ];
         buildApiLevelSelector();
       </script>
                   
@@ -418,8 +418,8 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Global settings, containing miscellaneous CM global preferences.  This
- table holds simple name/value pairs.  There are convenience
+<p itemprop="articleBody">Global settings, containing miscellaneous CM global preferences. This
+ table holds simple name/value pairs. There are convenience
  functions for accessing individual settings entries.
 </p>
 
@@ -671,7 +671,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getFloat(android.content.ContentResolver, java.lang.String, float)">getFloat</a></span>(ContentResolver cr, String name, float def)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single settings value
  as a floating point number.
           
     
@@ -695,7 +695,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getFloat(android.content.ContentResolver, java.lang.String)">getFloat</a></span>(ContentResolver cr, String name)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single system settings value
  as a float.
           
     
@@ -719,7 +719,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getInt(android.content.ContentResolver, java.lang.String, int)">getInt</a></span>(ContentResolver cr, String name, int def)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single settings value
  as an integer.
           
     
@@ -743,7 +743,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getInt(android.content.ContentResolver, java.lang.String)">getInt</a></span>(ContentResolver cr, String name)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single settings value
  as an integer.
           
     
@@ -767,7 +767,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getLong(android.content.ContentResolver, java.lang.String, long)">getLong</a></span>(ContentResolver cr, String name, long def)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single settings value
  as a <code>long</code>.
           
     
@@ -791,7 +791,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getLong(android.content.ContentResolver, java.lang.String)">getLong</a></span>(ContentResolver cr, String name)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for retrieving a single secure settings value
+          Convenience function for retrieving a single settings value
  as a <code>long</code>.
           
     
@@ -825,7 +825,31 @@ android.provider.BaseColumns
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            Uri</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#getUriFor(java.lang.String)">getUriFor</a></span>(String name)</nobr>
+        
+        <div class="jd-descrdiv">
+          Construct the content URI for a particular name/value pair, useful for monitoring changes
+ with a ContentObserver.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -849,7 +873,7 @@ android.provider.BaseColumns
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -873,7 +897,7 @@ android.provider.BaseColumns
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -886,7 +910,7 @@ android.provider.BaseColumns
         <span class="sympad"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html#putLong(android.content.ContentResolver, java.lang.String, long)">putLong</a></span>(ContentResolver cr, String name, long value)</nobr>
         
         <div class="jd-descrdiv">
-          Convenience function for updating a secure settings value as a long
+          Convenience function for updating a single settings value as a long
  integer.
           
     
@@ -897,7 +921,7 @@ android.provider.BaseColumns
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1391,7 +1415,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single settings value
  as a floating point number.  Note that internally setting values are
  always stored as strings; this function converts the string to an
  float for you. The default value will be returned if the setting
@@ -1451,7 +1475,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single system settings value
  as a float.  Note that internally setting values are always
  stored as strings; this function converts the string to a float
  for you.
@@ -1519,7 +1543,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single settings value
  as an integer.  Note that internally setting values are always
  stored as strings; this function converts the string to an integer
  for you.  The default value will be returned if the setting is
@@ -1579,7 +1603,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single settings value
  as an integer.  Note that internally setting values are always
  stored as strings; this function converts the string to an integer
  for you.
@@ -1647,7 +1671,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single settings value
  as a <code>long</code>.  Note that internally setting values are always
  stored as strings; this function converts the string to a <code>long</code>
  for you.  The default value will be returned if the setting is
@@ -1707,7 +1731,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single secure settings value
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for retrieving a single settings value
  as a <code>long</code>.  Note that internally setting values are always
  stored as strings; this function converts the string to a <code>long</code>
  for you.
@@ -1792,6 +1816,53 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>the corresponding value, or null if not present
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getUriFor(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">getUriFor</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Construct the content URI for a particular name/value pair, useful for monitoring changes
+ with a ContentObserver.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td>to look up in the table</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the corresponding content URI
 </li></ul>
   </div>
 
@@ -1946,7 +2017,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for updating a secure settings value as a long
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience function for updating a single settings value as a long
  integer. This will either create a new entry in the table if the
  given name does not exist, or modify the value of the existing row
  with that name.  Note that internally setting values are always
