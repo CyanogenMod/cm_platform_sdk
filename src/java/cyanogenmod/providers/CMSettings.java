@@ -2468,6 +2468,12 @@ public final class CMSettings {
         public static final String STATS_COLLECTION = "stats_collection";
 
         /**
+         * Whether the global stats collection setting has been successfully reported to server
+         * @hide
+         */
+        public static final String STATS_COLLECTION_REPORTED = "stats_collection_reported";
+
+        /**
          * Boolean value whether to link ringtone and notification volume
          *
          * @hide
