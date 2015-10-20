@@ -596,6 +596,14 @@ public final class CMSettings {
         public static final String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
 
         /**
+         * Whether the HighTouchSensitivity is activated or not.
+         * 0 = off, 1 = on
+         * @hide
+         */
+        public static final String HIGH_TOUCH_SENSITIVITY_ENABLE =
+                "high_touch_sensitivity_enable";
+
+        /**
          * Show the pending notification counts as overlays on the status bar
          * @hide
          */
