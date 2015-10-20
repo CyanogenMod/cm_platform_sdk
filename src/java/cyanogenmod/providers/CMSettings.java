@@ -588,6 +588,14 @@ public final class CMSettings {
          */
         public static final String QS_QUICK_PULLDOWN = "qs_quick_pulldown";
 
+        /**
+         * Whether the HighTouchSensitivity is activated or not.
+         * 0 = off, 1 = on
+         * @hide
+         */
+        public static final String HIGH_TOUCH_SENSITIVITY_ENABLE =
+                "high_touch_sensitivity_enable";
+
         // endregion
     }
 
