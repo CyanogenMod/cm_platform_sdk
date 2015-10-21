@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">Створити власну плитку для панелі швидких налаштувань</string>
   <string name="permdesc_publishCustomTile">Дозволяє додатку створити плитку швидких налаштувань.</string>
   <string name="permlab_modifyNetworkSettings">змінювати налаштування мережі системи</string>
-  <string name="permdesc_modifyNetworkSettings">Дозволяє програмі вносити зміни до обмеженого переліку системних параметрів мережі.</string>
   <string name="permlab_modifySoundSettings">змінювати звукові налаштування системи</string>
-  <string name="permdesc_modifySoundSettings">Дозволяє програмі вносити зміни до обмеженого переліку системних параметрів звуку.</string>
   <string name="permlab_bindCustomTileListenerService">прив’язати до власної служби</string>
   <string name="permdesc_bindCustomTileListenerService">Дозволяє власникові прив\'язувати плитки до інтерфесу високого рівня служб.</string>
   <string name="permlab_readMSPhoneState">переглядати стан телефону і з\'єднання даних з підтримкою до декількох SIM</string>

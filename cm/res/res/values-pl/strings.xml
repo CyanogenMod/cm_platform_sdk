@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">utwórz niestandardowy przełącznik w panelu szybkich ustawień</string>
   <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
   <string name="permlab_modifyNetworkSettings">zmień ustawienia sieciowe systemu</string>
-  <string name="permdesc_modifyNetworkSettings">Pozwala aplikacji na wprowadzenie zmian w ograniczonym zestawie systemowych ustawień sieci.</string>
   <string name="permlab_modifySoundSettings">zmień ustawienia dźwiękowe systemu</string>
-  <string name="permdesc_modifySoundSettings">Pozwala aplikacji na wprowadzenie zmian w ograniczonym zestawie ustawień dźwięków systemowych.</string>
   <string name="permlab_bindCustomTileListenerService">powiąż z niestandardowymi usługami odbiornika</string>
   <string name="permdesc_bindCustomTileListenerService">Pozwala aplikacji na powiązanie z interfejsem najwyższego poziomu niestandardowej usługi odbiornika.</string>
   <string name="permlab_readMSPhoneState">pokaż stanu telefonu i połączenia danych z wsparciem dla wielu kart SIM</string>

@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">빠른 설정 패널에 사용자 정의 타일 생성</string>
   <string name="permdesc_publishCustomTile">앱이 빠른 설정 타일을 만들 수 있도록 허용합니다.</string>
   <string name="permlab_modifyNetworkSettings">시스템 네트워크 설정 변경</string>
-  <string name="permdesc_modifyNetworkSettings">앱이 제한된 부분의 시스템 네트워크 설정을 변경할 수 있도록 허용합니다.</string>
   <string name="permlab_modifySoundSettings">시스템 소리 설정 변경</string>
-  <string name="permdesc_modifySoundSettings">앱이 제한된 부분의 시스템 소리 설정을 변경할 수 있도록 허용합니다.</string>
   <string name="permlab_bindCustomTileListenerService">사용자 정의 타일 확인 서비스에 연결</string>
   <string name="permdesc_bindCustomTileListenerService">앱이 사용자 정의 타일 확인 서비스의 최상위 인터페이스에 연결하도록 허용합니다.</string>
   <string name="permlab_readMSPhoneState">여러 개의 SIM 카드를 지원하면서 휴대전화의 상태와 데이터 연결 상태를 확인</string>

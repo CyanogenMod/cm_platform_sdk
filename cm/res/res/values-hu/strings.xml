@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">egy egyedi csempe létrehozása a gyors beállítások panelen</string>
   <string name="permdesc_publishCustomTile">Lehetővé teszi az alkalmazás számára, hogy gyors beállítások csempét hozzon létre.</string>
   <string name="permlab_modifyNetworkSettings">rendszer hálózati beállításainak módosítása</string>
-  <string name="permdesc_modifyNetworkSettings">Lehetővé teszi az alkalmazás számára, hogy módosítsa a rendszer hálózati beállításait korlátozott lehetőségek között.</string>
   <string name="permlab_modifySoundSettings">rendszer hangbeállításainak módosítása</string>
-  <string name="permdesc_modifySoundSettings">Lehetővé teszi az alkalmazás számára, hogy módosítsa a rendszer hangbeállításait korlátozott lehetőségek között.</string>
   <string name="permlab_bindCustomTileListenerService">egyéni csempe figyelőszolgáltatáshoz kötés</string>
   <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazás számára, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
   <string name="permlab_readMSPhoneState">telefon állapotának és adatkapcsolatának megtekintése több SIM támogatásával</string>

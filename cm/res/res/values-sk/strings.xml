@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">vytvoriť vlastnú dlaždicu v paneli rýchlych nastavení</string>
   <string name="permdesc_publishCustomTile">Umožňuje aplikácii vytvoriť dlaždicu v rýchlych nastaveniach.</string>
   <string name="permlab_modifyNetworkSettings">zmeniť systémové nastavenia siete</string>
-  <string name="permdesc_modifyNetworkSettings">Umožňuje aplikácii vykonávať zmeny vo vyhradených systémových nastaveniach siete.</string>
+  <string name="permdesc_modifyNetworkSettings">Umožňuje aplikácii vykonávať zmeny nastavení režimu v lietadle a mobilného dátového pripojenia.</string>
   <string name="permlab_modifySoundSettings">zmeniť systémové nastavenia zvuku</string>
-  <string name="permdesc_modifySoundSettings">Umožňuje aplikácii vykonávať zmeny vo vyhradených systémových nastaveniach zvuku.</string>
+  <string name="permdesc_modifySoundSettings">Umožňuje aplikácii vykonávať zmeny nastavení zvuku pre režim prerušenia.</string>
   <string name="permlab_bindCustomTileListenerService">viazať službu na vlastnú dlaždicu</string>
   <string name="permdesc_bindCustomTileListenerService">Umožňuje aplikácii nadviazať rozhranie najvyššej úrovne na službu dlaždice.</string>
   <string name="permlab_readMSPhoneState">zobraziť stav telefónu a dátového pripojenia s podporou viacerých SIM</string>

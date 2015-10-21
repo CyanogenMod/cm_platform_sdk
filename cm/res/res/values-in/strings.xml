@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">Buat petak kustom di panel pengaturan cepat</string>
   <string name="permdesc_publishCustomTile">Mengizinkan aplikasi untuk membuat petak setelan cepat.</string>
   <string name="permlab_modifyNetworkSettings">ubah pengaturan jaringan sistem</string>
-  <string name="permdesc_modifyNetworkSettings">Mengizinkan aplikasi untuk membuat perubahan pada serangkaian pengaturan jaringan sistem tertentu.</string>
   <string name="permlab_modifySoundSettings">ubah pengaturan suara sistem</string>
-  <string name="permdesc_modifySoundSettings">Mengizinkan aplikasi untuk membuat perubahan pada serangkaian pengaturan suara sistem tertentu.</string>
   <string name="permlab_bindCustomTileListenerService">menautkan ke layanan tile listener kustom</string>
   <string name="permdesc_bindCustomTileListenerService">Mengizinkan aplikasi untuk menautkan antarmuka level atas dari layanan pendengar petak kustom.</string>
   <string name="permlab_readMSPhoneState">lihat status ponsel dan koneksi data dengan dukungan untuk beberapa SIM</string>

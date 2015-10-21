@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">Skep \'n persoonlike teël binne die vinnige instellings paneel</string>
   <string name="permdesc_publishCustomTile">Laat \'n program toe om \'n vinnige instellings teël te publiseer.</string>
   <string name="permlab_modifyNetworkSettings">verander stelsel se netwerk instellings</string>
-  <string name="permdesc_modifyNetworkSettings">Laat \'n toep toe om veranderinge te maak aan beperkte stel van stelsel netwerk instellings.</string>
+  <string name="permdesc_modifyNetworkSettings">Laat \'n toep toe om veranderinge te maak aan vliegtuigmodus en mobiele netwerk instellings.</string>
   <string name="permlab_modifySoundSettings">verander stelsel klank instellings</string>
-  <string name="permdesc_modifySoundSettings">Laat \'n toep toe om veranderinge te maak aan beperkte stel van stelsel klank instellings.</string>
+  <string name="permdesc_modifySoundSettings">Laat \'n toep toe om veranderinge te maak aan die onderbreking modus klank instellings.</string>
   <string name="permlab_bindCustomTileListenerService">Verbind aan a pasgemaakte teël luisteraar diens</string>
   <string name="permdesc_bindCustomTileListenerService">Laat toe die program om te bind aan a top vlak koppelvlak van \'n pasgemaakte teël luister diens.</string>
   <string name="permlab_readMSPhoneState">kyk na die foon status en data koppeling met ondersteuning na menigvuldige SIMs</string>

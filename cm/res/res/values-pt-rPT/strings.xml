@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">criar um botão personalizado no painel de definições rápidas</string>
   <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um botão de definições rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as definições de rede do sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permite a aplicação fazer alterações num conjunto restrito de definições de rede do sistema.</string>
+  <string name="permdesc_modifyNetworkSettings">Permite a uma aplicação fazer alterações ao modo avião e definições de rede de dados móveis.</string>
   <string name="permlab_modifySoundSettings">alterar as definições de som do sistema</string>
-  <string name="permdesc_modifySoundSettings">Permite a aplicação fazer alterações num conjunto restrito de definições de som do sistema.</string>
+  <string name="permdesc_modifySoundSettings">Permite a uma aplicação fazer alterações nas definições do modo de interrupção do som.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
   <string name="permdesc_bindCustomTileListenerService">Permite à aplicação ligar a um interface de nível superior de um serviço de escuta de botão personalizado.</string>
   <string name="permlab_readMSPhoneState">ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>

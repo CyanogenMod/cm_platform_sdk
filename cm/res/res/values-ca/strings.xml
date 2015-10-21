@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">crea una cel·la personalitzada al panell d\'ajustos ràpids</string>
   <string name="permdesc_publishCustomTile">Permet a una aplicació publicar una cel·la d\'ajustos ràpids.</string>
   <string name="permlab_modifyNetworkSettings">canvia la configuració de xarxa de sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permet a una aplicació fer canvis en un conjunt limitat de paràmetres de xarxa del sistema.</string>
+  <string name="permdesc_modifyNetworkSettings">Permet a una aplicació fer canvis als ajustaments de xarxa del mode avió i de les dades mòbils.</string>
   <string name="permlab_modifySoundSettings">canvia la configuració de so del sistema</string>
-  <string name="permdesc_modifySoundSettings">Permet a una aplicació fer canvis en un conjunt limitat de paràmetres de so del sistema.</string>
+  <string name="permdesc_modifySoundSettings">Permet a una aplicació fer canvis als ajustaments de so del mode sense interrupcions.</string>
   <string name="permlab_bindCustomTileListenerService">uneix-te a un servei d\'escolta de cel·les personalitzades</string>
   <string name="permdesc_bindCustomTileListenerService">Permet a l\'aplicació unir-se a una interfície d\'alt nivell d\'un servei d\'escolta de cel·les personalitzades.</string>
   <string name="permlab_readMSPhoneState">mostra l\'estat del telèfon i la connexió de dades amb suport per múltiples SIMs</string>

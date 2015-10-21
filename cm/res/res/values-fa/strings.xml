@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">ایجاد کاشی سفارشی در پنل تنظیمات سریع</string>
   <string name="permdesc_publishCustomTile">به برنامه اجازه می‌دهد یک کاشی در تنظیمات سریع ایجاد کند.</string>
   <string name="permlab_modifyNetworkSettings">تغییر تنظیمات شبکه‌ی سیستم</string>
-  <string name="permdesc_modifyNetworkSettings">به برنامه اجازه می‌دهد تا در مجموعه‌ای محدود از تنظیمات شبکه سیستم تغییراتی ایجاد کند.</string>
+  <string name="permdesc_modifyNetworkSettings">به برنامه اجازه می‌دهد تا در تنظیمات شبکه داده همراه و حالت هواپیما ایجاد تغییرات کند.</string>
   <string name="permlab_modifySoundSettings">تغییر تنظیمات صدای سیستم</string>
-  <string name="permdesc_modifySoundSettings">به برنامه اجازه می‌دهد تا در مجموعه‌ای محدود از تنظیمات صدای سیستم تغییراتی ایجاد کند.</string>
+  <string name="permdesc_modifySoundSettings">به برنامه اجازه می‌دهد تا در تنظیمات صدا در حالت وقفه ایجاد تغییرات کند.</string>
   <string name="permlab_bindCustomTileListenerService">پیوستن به یک سرویس پیرو کاشی شخصی</string>
   <string name="permdesc_bindCustomTileListenerService">به برنامه اجازه می‌دهد تا به رابط سطح بالای یک سرویس پیرو کاشی شخصی بپیوندد.</string>
   <string name="permlab_readMSPhoneState">مشاهده وضعیت تلفن و اتصال داده با پشتیبانی از چندین سیم کارت</string>

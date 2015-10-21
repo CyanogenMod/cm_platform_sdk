@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">sortu lauza pertsonalizatu bat ezarpen azkarren panelean</string>
   <string name="permdesc_publishCustomTile">Ezarpen azkarretako lauza bat argitaratzea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_modifyNetworkSettings">aldatu sistemaren sare ezarpenak</string>
-  <string name="permdesc_modifyNetworkSettings">Sistemaren sare ezarpenen atal mugatu batean aldaketak egitea ahalbidetzen dio aplikazioari.</string>
+  <string name="permdesc_modifyNetworkSettings">Hegaldi moduan eta datu mugikorren ezarpenetan aldaketak egitea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_modifySoundSettings">aldatu sistemaren soinu ezarpenak</string>
-  <string name="permdesc_modifySoundSettings">Sistemaren soinu ezarpenen atal mugatu batean aldaketak egitea ahalbidetzen dio aplikazioari.</string>
+  <string name="permdesc_modifySoundSettings">Etenaldi moduaren soinu ezarpenetan aldaketak egitea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_readMSPhoneState">ikusi telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
