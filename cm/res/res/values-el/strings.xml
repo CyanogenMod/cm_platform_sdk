@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">δημιουργία προσαρμοσμένου πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων</string>
   <string name="permdesc_publishCustomTile">Επιτρέπει σε μία εφαρμογή τη δημιουργία πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων.</string>
   <string name="permlab_modifyNetworkSettings">αλλαγή ρυθμίσεων δικτύου συστήματος</string>
-  <string name="permdesc_modifyNetworkSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές σε ένα περιορισμένο σύνολο των ρυθμίσεων δικτύου του συστήματος.</string>
+  <string name="permdesc_modifyNetworkSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές στις ρυθμίσεις λειτουργίας πτήσης και δεδομένων κινητής τηλεφωνίας.</string>
   <string name="permlab_modifySoundSettings">αλλαγή ρυθμίσεων ήχου συστήματος</string>
-  <string name="permdesc_modifySoundSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές σε ένα περιορισμένο σύνολο των ρυθμίσεων ήχου του συστήματος.</string>
+  <string name="permdesc_modifySoundSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές στις ρυθμίσεις ήχου για τις διακοπές.</string>
   <string name="permlab_bindCustomTileListenerService">σύνδεση σε ένα listener υπηρεσίας προσαρμοσμένων πλακιδίων</string>
   <string name="permdesc_bindCustomTileListenerService">Επιτρέπει στην εφαρμογή τη σύνδεση στο ανώτατο επίπεδο διασύνδεσης ενός listener υπηρεσίας προσαρμοσμένων πλακιδίων.</string>
   <string name="permlab_readMSPhoneState">εμφάνιση κατάστασης του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM</string>

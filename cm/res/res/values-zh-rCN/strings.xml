@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">在快速设置面板中创建一个自定义瓷块</string>
   <string name="permdesc_publishCustomTile">允许应用发布一个快速设置瓷片。</string>
   <string name="permlab_modifyNetworkSettings">更改系统网络设置</string>
-  <string name="permdesc_modifyNetworkSettings">允许应用有限地修改系统网络设置。</string>
   <string name="permlab_modifySoundSettings">修改系统声音设置</string>
-  <string name="permdesc_modifySoundSettings">允许应用有限地修改系统声音设置。</string>
   <string name="permlab_bindCustomTileListenerService">绑定到自定义瓷片侦听器服务</string>
   <string name="permdesc_bindCustomTileListenerService">允许应用绑定到自定义瓷片侦听器服务的顶层界面。</string>
   <string name="permlab_readMSPhoneState">查看支持多 SIM 卡的手机状态和数据连接</string>

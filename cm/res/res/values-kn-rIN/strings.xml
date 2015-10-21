@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್ ಪ್ಯಾನೆಲ್ ಒಳಗೆಯೇ ಒಂದು ಕಸ್ಟಮ್ ಟೈಲ್ ರಚಿಸಿ</string>
   <string name="permdesc_publishCustomTile">ಒಂದು ಆಪ್‍ಗೆ ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್ ಟೈಲನ್ನು ಮುದ್ರಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_modifyNetworkSettings">ಸಿಸ್ಟಂ ನೆಟ್‍ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್ಸ್ ಬದಲಿಸು</string>
-  <string name="permdesc_modifyNetworkSettings">ಒಂದು ಆಪ್‍ಗೆ ಸೀಮಿತ ಸಿಸ್ಟಂ ನೆಟ್‍ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್ಸ್ ಗೆ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_modifySoundSettings">ಸಿಸ್ಟಂ ಶಬ್ಧ ಸೆಟ್ಟಿಂಗ್ಸ್ ಬದಲಾಯಿಸು</string>
-  <string name="permdesc_modifySoundSettings">ಒಂದು ಆಪ್‍ಗೆ ಸೀಮಿತ ಸಿಸ್ಟಂ ಶಬ್ಧ ಸೆಟ್ಟಿಂಗ್ಸ್ ಗೆ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_bindCustomTileListenerService">ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್ ಸೇವೆಗೆ ಬೈಂಡ್ ಮಾಡು</string>
   <string name="permdesc_bindCustomTileListenerService">ಆಪ್‍ಗೆ ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್‍ ಸೇವೆಯ ಮೇಲ್ದರ್ಜೆಯ ಇಂಟರ್ಫೇಸ್‍ಗೆ ಬೈಂಡ್ ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_readMSPhoneState">ಬಹು ಸಿಮ್‍ಗಳ ಬೆಂಬಲದ ಜೊತೆ ಫೋನ್ ಸ್ಥಿತಿ ಮತ್ತು ಡೇಟಾ ಸಂಪರ್ಕವನ್ನು ವೀಕ್ಷಿಸುವಿಕೆ</string>
@@ -30,6 +28,7 @@
   <string name="permlab_modifyMSPhoneState">ಬಹು ಸಿಮ್‍ಗಳ ಬೆಂಬಲದ ಜೊತೆ ಫೋನ್ ಸ್ಥಿತಿ ಮತ್ತು ಡೇಟಾ ಸಂಪರ್ಕವನ್ನು ಮಾರ್ಪಡಿಸುವಿಕೆ</string>
   <string name="permdesc_modifyMSPhoneState">ಒಂದು ಆಪ್‍ಗೆ ಬಹು ಸಿಮ್‍ಗಳ ಬೆಂಬಲದ ಜೊತೆ ಫೋನ್ ಸ್ಥಿತಿ ಮತ್ತು ಡೇಟಾ ಸಂಪರ್ಕವನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_modifyProfiles">ಸಿಸ್ಟಂ ಪ್ರೋಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸು</string>
+  <string name="permdesc_modifyProfiles">ಒಂದು ಆಪ್‍ಗೆ ಸಿಸ್ಟಂ ಪ್ರೊಫೈಲ್‍ಗಳನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_useHardwareFramework">ಹಾರ್ಡ್‍ವೇರ್ ಫ್ರೇಮ್‍ವರ್ಕ್ ಉಪಯೋಗಿಸು</string>
   <string name="permdesc_useHardwareFramework">ಒಂದು ಆಪ್ CM ಹಾರ್ಡ್‍ವೇರ್ ಫ್ರೇಮ್‍ವರ್ಕನ್ನು ಪ್ರವೇಶಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_write_alarms">ಅಲಾರಂಗಳನ್ನು ನೇರವಾಗಿ ಬದಲಿಸು</string>
@@ -42,6 +41,10 @@
   <string name="permdesc_writeSettings">ಒಂದು ಆಪ್‍ಗೆ CM ಸಿಸ್ಟಂ ಸೆಟ್ಟಿಂಗ್ಸನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_writeSecureSettings">CM ಸುರಕ್ಷಿತ ಸೆಟ್ಟಿಂಗ್ಸನ್ನು ಮಾರ್ಪಡಿಸು</string>
   <string name="permdesc_writeSecureSettings">ಒಂದು ಆಪ್‍ಗೆ CM ಸುರಕ್ಷಿತ ಸೆಟ್ಟಿಂಗ್ಸನ್ನು ಮಾರ್ಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. ಸಾಮಾನ್ಯ ಆಪ್‍ಗಳ ಬಳಕೆಗಲ್ಲ.</string>
+  <string name="permlab_managePersistentStorage">ನಿರಂತರ ಸಂಗ್ರಹಣೆ ನಿರ್ವಹಿಸು</string>
+  <string name="permdesc_managePersistentStorage">ಒಂದು ಆಪ್‍ಗೆ ಪ್ರಾಪರ್ಟೀಸನ್ನು ರೀಡ್/ವ್ರೈಟ್ ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ ಅದು ಫ್ಯಾಕ್ಟರಿ ಮರುಹೊಂದಿಕೆಯ ನಂತರವೂ ಮುಂದುವರೆಯಬಹುದು.</string>
+  <string name="permlab_accessAppSuggestions">ಅಪ್ಲಿಕೇಶನ್ ಸಲಹೆಗಳನ್ನು ಪ್ರವೇಶಿಸು</string>
+  <string name="permdesc_accessAppSuggestions">ಒಂದು ಆಪ್‍ಗೆ ಅಪ್ಲಿಕೇಶನ್ ಸಲಹೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="custom_tile_listener_binding_label">ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್</string>
   <string name="profileNameDefault">ಡೀಫಾಲ್ಟ್</string>
   <string name="profileNameWork">ಉದ್ಯೋಗ</string>

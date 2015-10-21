@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">クイック設定パネルでのカスタムタイルの作成</string>
   <string name="permdesc_publishCustomTile">クイック設定タイルの作成をアプリに許可します</string>
   <string name="permlab_modifyNetworkSettings">システムのネットワークの設定の変更</string>
-  <string name="permdesc_modifyNetworkSettings">システムのネットワークの設定の制限されたセットを変更することをアプリに許可します。</string>
+  <string name="permdesc_modifyNetworkSettings">機内モードとモバイルデータ通信の設定を変更することをアプリに許可します。</string>
   <string name="permlab_modifySoundSettings">システムの音の設定</string>
-  <string name="permdesc_modifySoundSettings">システムの音の設定の制限されたセットを変更することをアプリに許可します。</string>
+  <string name="permdesc_modifySoundSettings">サイレントモードの音の設定を変更することをアプリに許可します。</string>
   <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
   <string name="permdesc_bindCustomTileListenerService">カスタムタイルリスナーサービスのトップレベルインターフェースへのバインドをアプリに許可します</string>
   <string name="permlab_readMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の表示</string>

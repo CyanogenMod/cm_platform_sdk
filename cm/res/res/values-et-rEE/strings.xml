@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">loo kohandatud tahvel kiirseadete paneelil</string>
   <string name="permdesc_publishCustomTile">Lubab rakendusel avaldada kiirseadete tahvli.</string>
   <string name="permlab_modifyNetworkSettings">süsteemi võrgusätete muutmine</string>
-  <string name="permdesc_modifyNetworkSettings">Võimaldab rakendusel teha muudatusi piiratud süsteemi võrgusätetes.</string>
   <string name="permlab_modifySoundSettings">süsteemi helisätete muutmine</string>
-  <string name="permdesc_modifySoundSettings">Võimaldab rakendusel teha muudatusi piiratud süsteemi helisätetes.</string>
   <string name="permlab_bindCustomTileListenerService">Seo kohandatud tahvel kuulaja teenusega</string>
   <string name="permdesc_bindCustomTileListenerService">Võimaldab siduda kõrgema taseme kasutajaliidese kohandatud tahvli kuulaja teenusega.</string>
   <string name="permlab_readMSPhoneState">telefoni oleku ja andmeühenduse vaatamine, toetades mitmeid SIMe</string>

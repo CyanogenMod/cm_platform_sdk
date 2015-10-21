@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">hızlı ayarlar paneli içinde özel bir kare oluştur</string>
   <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir.</string>
   <string name="permlab_modifyNetworkSettings">sistem ağ ayarlarını değiştir</string>
-  <string name="permdesc_modifyNetworkSettings">Uygulamalara sistem ağ ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
+  <string name="permdesc_modifyNetworkSettings">Uygulamalara uçak modunu ve mobil veri şebeke ayarlarını değiştirme izni verir.</string>
   <string name="permlab_modifySoundSettings">sistem ses ayarlarını değiştir</string>
-  <string name="permdesc_modifySoundSettings">Uygulamalara sistem ses ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
+  <string name="permdesc_modifySoundSettings">Uygulamalara bildirim modu ses ayarlarını değiştirme izni verir.</string>
   <string name="permlab_bindCustomTileListenerService">özel bir kare takip hizmetine bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Uygulamaya özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
   <string name="permlab_readMSPhoneState">telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini görüntüle</string>

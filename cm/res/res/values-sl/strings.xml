@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">ustvari ploščico po meri na plošči za hitre nastavitve</string>
   <string name="permdesc_publishCustomTile">Omogoča programu, da objavi ploščico za hitre nastavitve.</string>
   <string name="permlab_modifyNetworkSettings">spreminjanje sistemskih nastavitev omrežja</string>
-  <string name="permdesc_modifyNetworkSettings">Omogoča programu, da naredi spremembe v omejenem nizu sistemskih nastavitev omrežja.</string>
+  <string name="permdesc_modifyNetworkSettings">Omogoča programu, da naredi spremembe v načinu letenja in nastavitvah omrežja mobilnih podatkov.</string>
   <string name="permlab_modifySoundSettings">spreminjanje sistemskih nastavitev zvoka</string>
-  <string name="permdesc_modifySoundSettings">Omogoča programu, da naredi spremembe v omejenem nizu sistemskih nastavitev zvoka.</string>
+  <string name="permdesc_modifySoundSettings">Omogoča programu, da naredi spremembe v zvočnih nastavitvah načina prekinitve.</string>
   <string name="permlab_bindCustomTileListenerService">veži na storitev poslušalnika ploščic po meri</string>
   <string name="permdesc_bindCustomTileListenerService">Omogoča programu, da se veže na vrhnji vmesnik storitve poslušalnika ploščic po meri.</string>
   <string name="permlab_readMSPhoneState">ogled stanja telefona in podatkovnih povezav s podporo za več kartic SIM</string>

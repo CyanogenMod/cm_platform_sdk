@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">luo mukautettu tiili pika-asetuspaneeliin</string>
   <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pika-asetustiiliä.</string>
   <string name="permlab_modifyNetworkSettings">muuta järjestelmän verkkoasetuksia</string>
-  <string name="permdesc_modifyNetworkSettings">Sallii sovelluksen tehdä muutoksia joihinkin järjestelmän verkkoasetuksiin.</string>
+  <string name="permdesc_modifyNetworkSettings">Sallii sovelluksen tehdä muutoksia lentokonetilan ja mobiiliverkon asetuksiin.</string>
   <string name="permlab_modifySoundSettings">muuta järjestelmän ääniasetuksia</string>
-  <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia joihinkin järjestelmän ääniasetuksiin.</string>
+  <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia keskeytystilan ääniasetuksiin.</string>
   <string name="permlab_bindCustomTileListenerService">kiinnitä mukautettu tiili kuuntelupalveluun</string>
   <string name="permdesc_bindCustomTileListenerService">Sallii haltijan kiinnittää mukautetun tiilen kuuntelupalvelun käyttöliittymään.</string>
   <string name="permlab_readMSPhoneState">tarkastele puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>

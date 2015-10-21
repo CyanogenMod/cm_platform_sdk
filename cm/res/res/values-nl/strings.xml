@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">een aangepaste tegel aanmaken in het snelle instellingenpaneel</string>
   <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen.</string>
   <string name="permlab_modifyNetworkSettings">systeemnetwerkinstellingen wijzigen</string>
-  <string name="permdesc_modifyNetworkSettings">Hiermee kan de app wijzigingen aanbrengen in een beperkt aantal systeemnetwerkinstellingen.</string>
   <string name="permlab_modifySoundSettings">systeemgeluidinstellingen wijzigen</string>
-  <string name="permdesc_modifySoundSettings">Hiermee kan de app wijzigingen aanbrengen in een beperkt aantal systeemgeluidinstellingen.</string>
   <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
   <string name="permdesc_bindCustomTileListenerService">Hiermee kan de app koppelen aan de systeeminterface voor het aanmaken van tegels.</string>
   <string name="permlab_readMSPhoneState">telefoonstatus en gegevensverbinding bekijken met ondersteuning voor multi-SIM</string>
@@ -45,6 +43,8 @@
   <string name="permdesc_writeSecureSettings">Hiermee kan de app de beveiligde systeeminstellingen van CM wijzigen. Niet voor gebruik door normale apps.</string>
   <string name="permlab_managePersistentStorage">blijvende opslag beheren</string>
   <string name="permdesc_managePersistentStorage">Hiermee kan de app eigenschappen lezen of schrijven die blijven bestaan na terugzetten naar fabrieksinstellingen.</string>
+  <string name="permlab_accessAppSuggestions">toegang tot app-suggesties</string>
+  <string name="permdesc_accessAppSuggestions">Hiermee kan de app toegang krijgen tot app-suggesties.</string>
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
   <string name="profileNameDefault">Standaard</string>
   <string name="profileNameWork">Werk</string>

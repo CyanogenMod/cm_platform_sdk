@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">สร้างไทต์กำหนดเองในทางลัดการตั้งค่า</string>
   <string name="permdesc_publishCustomTile">อนุญาตให้แอปสร้างไทต์ใหม่ในทางลัดการตั้งค่า</string>
   <string name="permlab_modifyNetworkSettings">เปลี่ยนการตั้งค่าเครือข่ายระบบ</string>
-  <string name="permdesc_modifyNetworkSettings">อนุญาตให้แอพเปลี่ยนแปลงไปใช้ชุดการตั้งค่าเครือข่ายระบบที่เข้มงวด</string>
   <string name="permlab_modifySoundSettings">เปลี่ยนการตั้งค่าเสียงของระบบ</string>
-  <string name="permdesc_modifySoundSettings">อนุญาตให้แอพเปลี่ยนแปลงไปใช้ชุดการตั้งค่าเครือข่ายระบบที่เข้มงวด</string>
   <string name="permlab_bindCustomTileListenerService">ผูกไว้กับบริการกำหนดเอง</string>
   <string name="permdesc_bindCustomTileListenerService">อนุญาตให้แอปผูกตัวเองไว้กับบริการต่างๆของเครื่อง</string>
   <string name="permlab_readMSPhoneState">ดูสถานะและการเชื่อมต่อข้อมูลของโทรศัพท์ด้วยการให้ความช่วยเหลือกับ SIM หลายอัน</string>

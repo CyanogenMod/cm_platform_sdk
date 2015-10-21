@@ -20,9 +20,8 @@
   <string name="permlab_publishCustomTile">cəld tənzimləmələr panelində özəl bir çərçivə yarat</string>
   <string name="permdesc_publishCustomTile">Tətbiqetməyə cəld tənzimləmələr çərçivəsi yaratmağa icazə verər.</string>
   <string name="permlab_modifyNetworkSettings">sistem şəbəkə tənzimləmələrini dəyişdir</string>
-  <string name="permdesc_modifyNetworkSettings">Tətbiqetməyə sistem şəbəkə tənzimləmələrində məhdud sayda dəyişiklik etmə icazəsi verər.</string>
+  <string name="permdesc_modifyNetworkSettings">Tətbiqetməyə uçuş rejimini və mobil verilənlər şəbəkə tənzimləmələrini dəyişdirmə icazəsi verər.</string>
   <string name="permlab_modifySoundSettings">sistem səs tənzimləmələrini dəyişdir</string>
-  <string name="permdesc_modifySoundSettings">Tətbiqetməyə sistem səs tənzimləmələrində məhdud sayda dəyişiklik etmə icazəsi verər.</string>
   <string name="permlab_bindCustomTileListenerService">özəl çərçivə dinləyici xidmətinə bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Tətbiqetməyə özəl çərçivə dinləyici xidmətinin üst səviyyə interfeysinə bağlanmasına icazə verər.</string>
   <string name="permlab_readMSPhoneState">telefon durumu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstər</string>

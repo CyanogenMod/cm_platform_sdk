@@ -22,12 +22,14 @@
   <string name="permlab_bindCustomTileListenerService">bind till en anpassad tjänst som lyssnar efter brickor</string>
   <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad tjänst som lyssnar efter brickor.</string>
   <string name="custom_tile_listener_binding_label">Anpassad tjänst som lyssnar efter brickor</string>
+  <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Jobb</string>
   <string name="profileNameHome">Hemma</string>
   <string name="profileNameSilent">Tyst</string>
   <string name="profileNameNight">Natt</string>
   <string name="profileNameAutomobile">Bil</string>
   <string name="profileGroupPhone">Telefon</string>
+  <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-post</string>
   <string name="profileGroupSMS">SMS</string>

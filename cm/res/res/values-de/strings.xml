@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
   <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
   <string name="permlab_modifyNetworkSettings">System-Netzwerkeinstellungen ändern</string>
-  <string name="permdesc_modifyNetworkSettings">Ermöglicht der App, geringe Änderungen an den System-Netzwerkeinstellungen vorzunehmen.</string>
   <string name="permlab_modifySoundSettings">System-Soundeinstellungen ändern</string>
-  <string name="permdesc_modifySoundSettings">Ermöglicht der App, geringe Änderungen an den System-Soundeinstellungen vorzunehmen.</string>
   <string name="permlab_bindCustomTileListenerService">Anbindung an einen Listener-Service für benutzerdefinierte Kacheln</string>
   <string name="permdesc_bindCustomTileListenerService">Ermöglicht der App, sich an einen Listener-Service für benutzerdefinierte Kacheln zu binden.</string>
   <string name="permlab_readMSPhoneState">Systemstatus und Datenverbindung auf Unterstützung von mehreren SIM-Karten überprüfen</string>

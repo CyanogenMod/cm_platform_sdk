@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">criar um botão personalizado no painel de configurações rápidas</string>
   <string name="permdesc_publishCustomTile">Permite que um app insira um botão nas configurações rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as configurações de rede do sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permite que um aplicativo faça alterações em um conjunto restrito de configurações de rede do sistema.</string>
   <string name="permlab_modifySoundSettings">alterar as configurações de som do sistema</string>
-  <string name="permdesc_modifySoundSettings">Permite que um aplicativo faça alterações em um conjunto restrito de configurações de som do sistema.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
   <string name="permdesc_bindCustomTileListenerService">Permite que o app vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
   <string name="permlab_readMSPhoneState">veja a conexão de dados e o estado do telefone com suporte para vários SIMs</string>

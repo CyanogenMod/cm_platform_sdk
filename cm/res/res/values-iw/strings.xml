@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">צור אריח מותאם אישית בתוך לוח ההגדרות המהירות</string>
   <string name="permdesc_publishCustomTile">מאפשר ליישום לפרסם אריח הגדרות מותאם אישית.</string>
   <string name="permlab_modifyNetworkSettings">שינוי הגדרות הרשת של המערכת</string>
-  <string name="permdesc_modifyNetworkSettings">מאפשר ליישום לבצע שינויים בהגדרות רשת מוגבלות של המערכת.</string>
+  <string name="permdesc_modifyNetworkSettings">מאפשר ליישום לבצע שינויים בהגדרות מצב הטיסה ורשת הנתונים הניידים.</string>
   <string name="permlab_modifySoundSettings">שינוי הגדרות השמע של המערכת</string>
-  <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות שמע מוגבלות של המערכת.</string>
+  <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות השמע של מצב ההפרעה.</string>
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
   <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
   <string name="permlab_readMSPhoneState">הצג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>

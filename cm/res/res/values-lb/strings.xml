@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">eng Kachel an de séieren Astellungen uweisen</string>
   <string name="permdesc_publishCustomTile">Erlaabt der App, eng Kachel an de séieren Astellungen uweisen.</string>
   <string name="permlab_modifyNetworkSettings">Netzwierkastellunge vum System änneren</string>
-  <string name="permdesc_modifyNetworkSettings">Erlaabt der App, geréng Ännerungen an den Netzwierkastellunge vum System ze maachen.</string>
   <string name="permlab_modifySoundSettings">Tounastellunge vum System änneren</string>
-  <string name="permdesc_modifySoundSettings">Erlaabt der App, geréng Ännerungen an den Tounastellunge vum System ze maachen.</string>
   <string name="permlab_bindCustomTileListenerService">en eegenene Kachel-Lauschter-Service ubannen</string>
   <string name="permdesc_bindCustomTileListenerService">Erlaabt der App, sech op dem ieweschtem Niveau un d\'Schnëttstell vun engem Kachel-Lauschter-Service unzebannen.</string>
   <string name="permlab_readMSPhoneState">Systemstatus an Dateconnectioun op Ënnerstëtzung vu méi SIM-Kaarten iwwerpréiwen</string>
