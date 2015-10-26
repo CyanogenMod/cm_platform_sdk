@@ -595,6 +595,12 @@ public final class CMSettings {
          */
         public static final String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
 
+        /**
+         * Show the pending notification counts as overlays on the status bar
+         * @hide
+         */
+        public static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
+
         // endregion
     }
 

@@ -26,11 +26,12 @@ import android.net.wifi.WifiManager;
 import android.net.wifi.WifiSsid;
 import android.net.wifi.WifiInfo;
 import android.os.Handler;
-import android.provider.Settings;
+
 import android.util.Log;
 
 import cyanogenmod.app.Profile;
 
+import cyanogenmod.providers.CMSettings;
 import org.cyanogenmod.platform.internal.ProfileManagerService;
 
 import java.util.UUID;
@@ -78,9 +79,9 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
        // mIntentFilter.addAction(AudioManager.A2DP_ROUTE_CHANGED_ACTION);
         updateEnabled();
 
-        /* mContext.getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(Settings.System.SYSTEM_PROFILES_ENABLED), false,
-                mSettingsObserver); */
+        mContext.getContentResolver().registerContentObserver(
+                CMSettings.System.getUriFor(CMSettings.System.SYSTEM_PROFILES_ENABLED), false,
+                mSettingsObserver);
     }
 
     public void updateEnabled() {
