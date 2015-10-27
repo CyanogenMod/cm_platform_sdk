@@ -86,38 +86,6 @@ public class ClassPathTest extends AndroidTestCase {
         }
     }
 
-    @SmallTest
-    public void testSystemServerClassPathIsClean() {
-        /**
-         * Everything in the in the system server class path shouldn't have oat files
-         * it doesn't matter if it contains the sdk or not since the classes won't be loaded
-         * as part of the system class loader
-         */
-        final String systemserverclasspath = System.getenv("SYSTEMSERVERCLASSPATH");
-
-        ArrayList<String> classPathJars = new ArrayList<String>();
-
-        if (systemserverclasspath != null) {
-            String[] bootClassPathElements = systemserverclasspath.split(":");
-            for (String element : bootClassPathElements) {
-                classPathJars.add(element);
-            }
-        } else {
-            throw new AssertionError("No SYSTEMSERVERCLASSPATH defined! ");
-        }
-
-        for (String classPathJar : classPathJars) {
-            try {
-                File jar = new File(classPathJar);
-                DexFile dexFile = new DexFile(jar);
-                fail("IOException should have been thrown, dex file "
-                        + dexFile.getName() + " should not have an oat file");
-            } catch (IOException expected) {
-                expected.printStackTrace();
-            }
-        }
-    }
-
     private ArrayList<String> getLoadedClasses() {
         ArrayList<String> listOfClasses = new ArrayList<String>();
         try {
