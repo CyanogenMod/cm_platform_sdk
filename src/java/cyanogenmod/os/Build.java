@@ -38,6 +38,9 @@ public class Build {
      */
     public static final int PARCELABLE_VERSION = CM_VERSION_CODES.DRAGON_FRUIT;
 
+    /** A build ID string meant for displaying to the user */
+    public static final String CYANOGENMOD_DISPLAY_VERSION = "ro.cm.display.version";
+
     private static final SparseArray<String> sdkMap;
     static
     {
