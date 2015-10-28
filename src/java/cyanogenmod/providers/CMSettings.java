@@ -601,6 +601,48 @@ public final class CMSettings {
          */
         public static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
 
+        /**
+         * Whether to hide the clock, show it in the right or left
+         * position or show it in the center
+         * 0: don't show the clock
+         * 1: show the clock in the right position (LTR)
+         * 2: show the clock in the center
+         * 3: show the clock in the left position (LTR)
+         * default: 1
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK = "status_bar_clock";
+
+        /**
+         * Display style of AM/PM next to clock in status bar
+         * 0: Normal display (Eclair stock)
+         * 1: Small display (Froyo stock)
+         * 2: No display (Gingerbread/ICS stock)
+         * default: 2
+         * @hide
+         */
+        public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
+
+        /**
+         * Display style of the status bar battery information
+         * 0: Display the battery an icon in portrait mode
+         * 2: Display the battery as a circle
+         * 4: Hide the battery status information
+         * 5: Display the battery an icon in landscape mode
+         * 6: Display the battery as plain text
+         * default: 0
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+
+        /**
+         * Status bar battery %
+         * 0: Hide the battery percentage
+         * 1: Display the battery percentage inside the icon
+         * 2: Display the battery percentage next to the icon
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
         // endregion
     }
 
