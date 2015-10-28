@@ -20,7 +20,9 @@
   <string name="permlab_publishCustomTile">ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್ ಪ್ಯಾನೆಲ್ ಒಳಗೆಯೇ ಒಂದು ಕಸ್ಟಮ್ ಟೈಲ್ ರಚಿಸಿ</string>
   <string name="permdesc_publishCustomTile">ಒಂದು ಆಪ್‍ಗೆ ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್ ಟೈಲನ್ನು ಮುದ್ರಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_modifyNetworkSettings">ಸಿಸ್ಟಂ ನೆಟ್‍ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್ಸ್ ಬದಲಿಸು</string>
+  <string name="permdesc_modifyNetworkSettings">ಒಂದು ಆಪ್‍ಗೆ ಏರೋಪ್ಲೇನ್ ಮೋಡ್ ಮತ್ತು ಮೊಬೈಲ್ ಡೇಟಾ ನೆಟ್‍ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್ಸನ್ನು ಬದಲಾಯಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_modifySoundSettings">ಸಿಸ್ಟಂ ಶಬ್ಧ ಸೆಟ್ಟಿಂಗ್ಸ್ ಬದಲಾಯಿಸು</string>
+  <string name="permdesc_modifySoundSettings">ಒಂದು ಆಪ್‍ಗೆ ಅಡಚಣೆ ಮೋಡ್ ಶಬ್ಧ ಸೆಟ್ಟಿಂಗ್ಸನ್ನು ಬದಲಾಯಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_bindCustomTileListenerService">ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್ ಸೇವೆಗೆ ಬೈಂಡ್ ಮಾಡು</string>
   <string name="permdesc_bindCustomTileListenerService">ಆಪ್‍ಗೆ ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್‍ ಸೇವೆಯ ಮೇಲ್ದರ್ಜೆಯ ಇಂಟರ್ಫೇಸ್‍ಗೆ ಬೈಂಡ್ ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ.</string>
   <string name="permlab_readMSPhoneState">ಬಹು ಸಿಮ್‍ಗಳ ಬೆಂಬಲದ ಜೊತೆ ಫೋನ್ ಸ್ಥಿತಿ ಮತ್ತು ಡೇಟಾ ಸಂಪರ್ಕವನ್ನು ವೀಕ್ಷಿಸುವಿಕೆ</string>

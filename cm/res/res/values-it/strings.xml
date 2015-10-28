@@ -20,7 +20,9 @@
   <string name="permlab_publishCustomTile">creare un tile personalizzato all\'interno del pannello Impostazioni rapide</string>
   <string name="permdesc_publishCustomTile">Consenti ad un\'app di pubblicare un tile personalizzato.</string>
   <string name="permlab_modifyNetworkSettings">modifica le impostazioni di rete di sistema</string>
+  <string name="permdesc_modifyNetworkSettings">Consente ad un\'app di apportare modifiche alla modalità aereo e alle impostazioni di rete dati mobile.</string>
   <string name="permlab_modifySoundSettings">cambia impostazioni suoni di sistema</string>
+  <string name="permdesc_modifySoundSettings">Consente ad un\'app di apportare modifiche alle impostazioni di modalità interruzione audio.</string>
   <string name="permlab_bindCustomTileListenerService">associare ad un servizio listener di tile personalizzato</string>
   <string name="permdesc_bindCustomTileListenerService">Consente ad un\'app di collegarsi ad un interfaccia di un servizio listener di tile personalizzato.</string>
   <string name="permlab_readMSPhoneState">vedi stato del dispositivo e connessione con supporto a più SIM</string>
