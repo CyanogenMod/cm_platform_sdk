@@ -90,4 +90,11 @@ public final class CMContextConstants {
      * @hide
      */
     public static final String CM_APP_SUGGEST_SERVICE = "cmappsuggest";
+
+    /**
+     * Control device power profile and characteristics.
+     *
+     * @hide
+     */
+    public static final String CM_PERFORMANCE_SERVICE = "cmperformance";
 }
