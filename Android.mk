@@ -76,6 +76,7 @@ cm_framework_module := $(LOCAL_INSTALLED_MODULE)
 cm_framework_res_R_stamp := \
     $(call intermediates-dir-for,APPS,org.cyanogenmod.platform-res,,COMMON)/src/R.stamp
 $(full_classes_compiled_jar): $(cm_framework_res_R_stamp)
+$(built_dex_intermediate): $(cm_framework_res_R_stamp)
 
 $(cm_framework_module): | $(dir $(cm_framework_module))org.cyanogenmod.platform-res.apk
 
