@@ -76,6 +76,7 @@ cm_framework_module := $(LOCAL_INSTALLED_MODULE)
 cm_framework_res_R_stamp := \
     $(call intermediates-dir-for,APPS,org.cyanogenmod.platform-res,,COMMON)/src/R.stamp
 $(full_classes_compiled_jar): $(cm_framework_res_R_stamp)
+$(built_dex_intermediate): $(cm_framework_res_R_stamp)
 
 $(cm_framework_module): | $(dir $(cm_framework_module))org.cyanogenmod.platform-res.apk
 
@@ -122,6 +123,35 @@ LOCAL_INTERMEDIATE_SOURCES := \
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
+# full target for use by platform apps
+#
+include $(CLEAR_VARS)
+
+LOCAL_MODULE:= org.cyanogenmod.platform.internal
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES := services
+
+LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+
+# Included aidl files from cyanogenmod.app namespace
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+
+cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
+    $(cm_platform_res)/cyanogenmod/platform/R.java \
+    $(cm_platform_res)/cyanogenmod/platform/Manifest.java \
+    $(cm_platform_res)/org/cyanogenmod/platform/internal/R.java \
+    $(cm_platform_res)/org/cyanogenmod/platform/internal/Manifest.java
+
+LOCAL_INTERMEDIATE_SOURCES := \
+    $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
+
+$(full_target): $(cm_framework_built) $(gen)
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
+
 # ===========================================================
 # Common Droiddoc vars
 cmplat_docs_src_files := \
@@ -163,7 +193,7 @@ LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:org.cyanogenmod.platform \
+		-stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:org.cyanogenmod.platform \
         -api $(INTERNAL_CM_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) \
         -nodocs \
@@ -192,7 +222,7 @@ LOCAL_MODULE := cm-system-api-stubs
 
 LOCAL_DROIDDOC_OPTIONS:=\
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_system_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:org.cyanogenmod.platform \
+		-stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:org.cyanogenmod.platform \
         -showAnnotation android.annotation.SystemApi \
         -api $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE) \

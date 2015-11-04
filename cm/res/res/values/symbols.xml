@@ -29,4 +29,16 @@
     <java-symbol type="xml" name="profile_default" />
     <java-symbol type="string" name="wildcardProfile" />
 
+    <!-- Performance Profiles -->
+    <java-symbol type="array" name="perf_profile_entries" />
+    <java-symbol type="array" name="perf_profile_values" />
+    <java-symbol type="string" name="perf_profile_pwrsv" />
+    <java-symbol type="string" name="perf_profile_bal" />
+    <java-symbol type="string" name="perf_profile_perf" />
+    <java-symbol type="string" name="perf_profile_bias_power" />
+    <java-symbol type="string" name="perf_profile_bias_perf" />
+
+    <!-- Array of default activities with custom power management -->
+    <java-symbol type="array" name="config_auto_perf_activities" />
+
 </resources>
