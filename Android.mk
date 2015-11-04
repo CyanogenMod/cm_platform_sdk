@@ -123,6 +123,35 @@ LOCAL_INTERMEDIATE_SOURCES := \
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
+# full target for use by platform apps
+#
+include $(CLEAR_VARS)
+
+LOCAL_MODULE:= org.cyanogenmod.platform.internal
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES := services
+
+LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+
+# Included aidl files from cyanogenmod.app namespace
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+
+cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
+    $(cm_platform_res)/cyanogenmod/platform/R.java \
+    $(cm_platform_res)/cyanogenmod/platform/Manifest.java \
+    $(cm_platform_res)/org/cyanogenmod/platform/internal/R.java \
+    $(cm_platform_res)/org/cyanogenmod/platform/internal/Manifest.java
+
+LOCAL_INTERMEDIATE_SOURCES := \
+    $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
+
+$(full_target): $(cm_framework_built) $(gen)
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
+
 # ===========================================================
 # Common Droiddoc vars
 cmplat_docs_src_files := \
