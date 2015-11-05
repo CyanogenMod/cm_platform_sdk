@@ -67,6 +67,7 @@ import java.util.Map;
          }
      }
 
+     /*
      @MediumTest
      public void testMigrateCMSettingsForOtherUser() {
          // Make sure there's an owner
@@ -119,6 +120,7 @@ import java.util.Map;
          }
          return false;
      }
+     */
 
      @MediumTest
      public void testBulkInsertSuccess() {
