@@ -1283,6 +1283,13 @@ public final class CMSettings {
          * @hide
          */
         public static final String LOCKSCREEN_TARGETS = "lockscreen_target_actions";
+
+        /**
+         * Whether to display a menu containing 'Wipe data', 'Force close' and other options
+         * in the notification area and in the recent app list
+         * @hide
+         */
+        public static final String DEVELOPMENT_SHORTCUT = "development_shortcut";
         // endregion
     }
 
