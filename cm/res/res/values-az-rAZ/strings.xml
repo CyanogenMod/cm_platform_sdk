@@ -22,6 +22,7 @@
   <string name="permlab_modifyNetworkSettings">sistem şəbəkə tənzimləmələrini dəyişdir</string>
   <string name="permdesc_modifyNetworkSettings">Tətbiqetməyə uçuş rejimini və mobil verilənlər şəbəkə tənzimləmələrini dəyişdirmə icazəsi verər.</string>
   <string name="permlab_modifySoundSettings">sistem səs tənzimləmələrini dəyişdir</string>
+  <string name="permdesc_modifySoundSettings">Tətbiqetməyə fasilə rejimi səs tənzimləmələrini dəyişdirmə icazəsi verər.</string>
   <string name="permlab_bindCustomTileListenerService">özəl çərçivə dinləyici xidmətinə bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Tətbiqetməyə özəl çərçivə dinləyici xidmətinin üst səviyyə interfeysinə bağlanmasına icazə verər.</string>
   <string name="permlab_readMSPhoneState">telefon durumu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstər</string>
@@ -30,6 +31,8 @@
   <string name="permdesc_modifyMSPhoneState">Tətbiqetməyə telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını dəyişdirmə icazə verər.</string>
   <string name="permlab_modifyProfiles">sistem profillərini dəyişdir</string>
   <string name="permdesc_modifyProfiles">Tətbiqetməyə sistem profillərini dəyişdirmə icazəsi verər.</string>
+  <string name="permlab_useHardwareFramework">avadanlıq bünövrəsindən istifadə et</string>
+  <string name="permdesc_useHardwareFramework">Tətbiqetmənin CM avadanlıq bünövrəsinə müraciətinə icazə verər.</string>
   <string name="permlab_write_alarms">birbaşa zəngli saatları dəyişdir</string>
   <string name="permdesc_write_alarms">Tətbiqetməyə zəngli saat əlavə etmə, dəyişdirmə və silmə icazəsi verər.</string>
   <string name="permlab_manage_alarms">müəyyən zəngli saatları aç/bağla</string>

@@ -20,7 +20,9 @@
   <string name="permlab_publishCustomTile">opret en brugerdefineret flise i panelet til hurtige indstillinger</string>
   <string name="permdesc_publishCustomTile">Tillader en app at lave en flise med hurtig indstilling.</string>
   <string name="permlab_modifyNetworkSettings">ændre indstillinger for system netværk</string>
+  <string name="permdesc_modifyNetworkSettings">Tillader en app at foretage ændringer i flytilstand og netværksopsætning for mobildata.</string>
   <string name="permlab_modifySoundSettings">ændre systemets lydindstillinger</string>
+  <string name="permdesc_modifySoundSettings">Tillader en app at foretage ændringer i indstillingerne for tilstanden lydafbrydelse.</string>
   <string name="permlab_bindCustomTileListenerService">forbind til en tilpasset fliseservice-lytter</string>
   <string name="permdesc_bindCustomTileListenerService">Tillader en app at oprette forbindelse til brugerfladen på højeste niveau i en tilpasset fliseservice-lytter.</string>
   <string name="permlab_readMSPhoneState">se status for forbindelse og data med understøttelse af flere SIM-kort</string>

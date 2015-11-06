@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">نظام CyanogenMod</string>
   <string name="permlab_publishCustomTile">إنشاء زر مخصص ضمن لوحة الإعدادات السريعة</string>
-  <string name="permdesc_publishCustomTile">يسمح التطبيق بإضافة زر ضمن لوحة الإعدادت السريعة.</string>
+  <string name="permdesc_publishCustomTile">يسمح للتطبيق بإضافة زر ضمن لوحة الإعدادت السريعة.</string>
   <string name="permlab_modifyNetworkSettings">تغيير إعدادات شبكة الإتصال في النظام</string>
   <string name="permlab_modifySoundSettings">تغيير إعدادات صوت النظام</string>
   <string name="permlab_bindCustomTileListenerService">الارتباط بخدمة خاصة للإصغاء إلى تغيّرات الزر المخصص في لوحة الإعدادات السريعة</string>
