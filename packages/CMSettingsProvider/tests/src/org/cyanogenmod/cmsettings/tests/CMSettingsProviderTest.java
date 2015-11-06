@@ -32,6 +32,7 @@ import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.text.TextUtils;
 import cyanogenmod.providers.CMSettings;
+import org.cyanogenmod.cmsettings.CMSettingsProvider;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -81,11 +82,13 @@ import java.util.Map;
      private void testMigrateSettingsForUser(int userId) {
          // Setup values in Settings
          final String expectedPullDownValue = "testQuickPullDownValue";
-         Settings.System.putStringForUser(mContentResolver, Settings.System.QS_QUICK_PULLDOWN,
+         Settings.System.putStringForUser(mContentResolver,
+                 CMSettingsProvider.LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
                  expectedPullDownValue, userId);
 
          final int expectedKeyboardBrightness = 4;
-         Settings.Secure.putIntForUser(mContentResolver, Settings.Secure.KEYBOARD_BRIGHTNESS,
+         Settings.Secure.putIntForUser(mContentResolver,
+                 CMSettingsProvider.LegacyCMSettings.KEYBOARD_BRIGHTNESS,
                  expectedKeyboardBrightness, userId);
 
          Bundle arg = new Bundle();
