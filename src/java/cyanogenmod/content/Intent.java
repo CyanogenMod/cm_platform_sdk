@@ -29,5 +29,15 @@ public class Intent {
      * <p>Output: Nothing
      * @hide
      */
-    public static final String ACTION_RECENTS_LONG_PRESS = "android.intent.action.RECENTS_LONG_PRESS";
+    public static final String ACTION_RECENTS_LONG_PRESS =
+            "cyanogenmod.intent.action.RECENTS_LONG_PRESS";
+
+    /**
+     * This field is part of the intent {@link #ACTION_RECENTS_LONG_PRESS}.
+     * The type of the extra is a boolean that indicates if the long press
+     * is released.
+     * @hide
+     */
+    public static final String EXTRA_RECENTS_LONG_PRESS_RELEASE =
+            "cyanogenmod.intent.extra.RECENTS_LONG_PRESS_RELEASE";
 }

@@ -158,7 +158,7 @@ public class CMSettingsProvider extends ContentProvider {
     }
 
     /* @hide */
-    private static class LegacyCMSettings {
+    static class LegacyCMSettings {
         /**
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          * @deprecated Use {@link android.provider.Settings.System#QS_QUICK_PULLDOWN} instead
@@ -274,6 +274,15 @@ public class CMSettingsProvider extends ContentProvider {
          *          'com.google.vending' -> 'com.white.theme'
          */
         public static final String THEME_PKG_CONFIGURATION_PERSISTENCE_PROPERTY = "themeConfig";
+
+        /**
+         * The global recents long press activity chosen by the user.
+         * This setting is stored as a flattened component name as
+         * per {@link ComponentName#flattenToString()}.
+         *
+         * @hide
+         */
+        public static final String RECENTS_LONG_PRESS_ACTIVITY = "recents_long_press_activity";
     }
 
     /**
@@ -334,6 +343,9 @@ public class CMSettingsProvider extends ContentProvider {
                 systemToCmSettingsMap.put(LegacyCMSettings.NAVIGATION_RING_TARGETS[i],
                         CMSettings.Secure.NAVIGATION_RING_TARGETS[i]);
             }
+
+            secureToCmSettingsMap.put(LegacyCMSettings.RECENTS_LONG_PRESS_ACTIVITY,
+                    CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
