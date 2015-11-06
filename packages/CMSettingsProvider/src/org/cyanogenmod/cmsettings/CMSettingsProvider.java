@@ -45,6 +45,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
+
 import cyanogenmod.providers.CMSettings;
 
 import java.util.HashMap;
@@ -158,7 +159,7 @@ public class CMSettingsProvider extends ContentProvider {
     }
 
     /* @hide */
-    static class LegacyCMSettings {
+    public static class LegacyCMSettings {
         /**
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          * @deprecated Use {@link android.provider.Settings.System#QS_QUICK_PULLDOWN} instead
