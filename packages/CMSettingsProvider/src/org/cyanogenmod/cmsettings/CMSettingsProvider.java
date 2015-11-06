@@ -284,6 +284,12 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String RECENTS_LONG_PRESS_ACTIVITY = "recents_long_press_activity";
+
+        /**
+         * Navigation controls to Use
+         * @hide
+         */
+        public static final String NAV_BUTTONS = "nav_buttons";
     }
 
     /**
@@ -298,6 +304,8 @@ public class CMSettingsProvider extends ContentProvider {
             HashMap<String, String> systemToCmSettingsMap = new HashMap<String, String>();
             systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
                     CMSettings.System.QS_QUICK_PULLDOWN);
+            systemToCmSettingsMap.put(LegacyCMSettings.NAV_BUTTONS,
+                    CMSettings.System.NAV_BUTTONS);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
@@ -334,7 +342,6 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.QS_USE_MAIN_TILES);
             secureToCmSettingsMap.put(LegacyCMSettings.VOLUME_LINK_NOTIFICATION,
                     CMSettings.Secure.VOLUME_LINK_NOTIFICATION);
-
             int navRingTargetsLength = LegacyCMSettings.NAVIGATION_RING_TARGETS.length;
             int cmNavRingTargetsLength = CMSettings.Secure.NAVIGATION_RING_TARGETS.length;
             int minNavRingTargetsLength = navRingTargetsLength <= cmNavRingTargetsLength ?
