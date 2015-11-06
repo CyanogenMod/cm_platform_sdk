@@ -20,7 +20,9 @@
   <string name="permlab_publishCustomTile">een aangepaste tegel aanmaken in het snelle instellingenpaneel</string>
   <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen.</string>
   <string name="permlab_modifyNetworkSettings">systeemnetwerkinstellingen wijzigen</string>
+  <string name="permdesc_modifyNetworkSettings">Hiermee kan de app wijzigingen aanbrengen in de vliegmodus en de mobiele netwerkinstellingen.</string>
   <string name="permlab_modifySoundSettings">systeemgeluidinstellingen wijzigen</string>
+  <string name="permdesc_modifySoundSettings">Hiermee kan de app wijzigingen aanbrengen in de onderbrekingsinstellingen van meldingen.</string>
   <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
   <string name="permdesc_bindCustomTileListenerService">Hiermee kan de app koppelen aan de systeeminterface voor het aanmaken van tegels.</string>
   <string name="permlab_readMSPhoneState">telefoonstatus en gegevensverbinding bekijken met ondersteuning voor multi-SIM</string>
