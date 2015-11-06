@@ -290,6 +290,166 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String NAV_BUTTONS = "nav_buttons";
+
+        /**
+         * Action to perform when the home key is long-pressed.
+         * (Default can be configured via config_longPressOnHomeBehavior)
+         * 0 - Nothing
+         * 1 - Menu
+         * 2 - App-switch
+         * 3 - Search
+         * 4 - Voice search
+         * 5 - In-app search
+         * 6 - Launch Camera
+         * 7 - Action Sleep
+         * 8 - Last app
+         * @hide
+         */
+        public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
+
+        /**
+         * Action to perform when the home key is double-tapped.
+         * (Default can be configured via config_doubleTapOnHomeBehavior)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_HOME_DOUBLE_TAP_ACTION = "key_home_double_tap_action";
+
+        /**
+         * Whether to wake the screen with the back key, the value is boolean.
+         * @hide
+         */
+        public static final String BACK_WAKE_SCREEN = "back_wake_screen";
+
+        /**
+         * Whether to wake the screen with the menu key, the value is boolean.
+         * @hide
+         */
+        public static final String MENU_WAKE_SCREEN = "menu_wake_screen";
+
+        /**
+         * Whether to wake the screen with the volume keys, the value is boolean.
+         * @hide
+         */
+        public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+
+        /**
+         * Action to perform when the menu key is pressed. (Default is 1)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_MENU_ACTION = "key_menu_action";
+
+        /**
+         * Action to perform when the menu key is long-pressed.
+         * (Default is 0 on devices with a search key, 3 on devices without)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
+
+        /**
+         * Action to perform when the assistant (search) key is pressed. (Default is 3)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_ASSIST_ACTION = "key_assist_action";
+
+        /**
+         * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
+
+        /**
+         * Action to perform when the app switch key is pressed. (Default is 2)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
+
+        /**
+         * Action to perform when the app switch key is long-pressed. (Default is 0)
+         * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+         * @hide
+         */
+        public static final String KEY_APP_SWITCH_LONG_PRESS_ACTION = "key_app_switch_long_press_action";
+
+        /**
+         * Whether to wake the screen with the home key, the value is boolean.
+         * @hide
+         */
+        public static final String HOME_WAKE_SCREEN = "home_wake_screen";
+
+        /**
+         * Whether to wake the screen with the assist key, the value is boolean.
+         * @hide
+         */
+        public static final String ASSIST_WAKE_SCREEN = "assist_wake_screen";
+
+        /**
+         * Whether to wake the screen with the app switch key, the value is boolean.
+         * @hide
+         */
+        public static final String APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
+
+        /**
+         * Whether to wake the screen with the camera key half-press.
+         * @hide
+         */
+        public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
+
+        /**
+         * Whether or not to send device back to sleep if Camera button is released ("Peek")
+         * @hide
+         */
+        public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+
+        /**
+         * Whether to launch secure camera app when key is longpressed
+         * @hide
+         */
+        public static final String CAMERA_LAUNCH = "camera_launch";
+
+        /**
+         * Swap volume buttons when the screen is rotated
+         * 0 - Disabled
+         * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
+         * 2 - Enabled (screen is rotated by 180 or 270 degrees: tablet)
+         * @hide
+         */
+        public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
+
+        /**
+         * What happens when the user presses the Power button while in-call
+         * and the screen is on.<br/>
+         * <b>Values:</b><br/>
+         * 1 - The Power button turns off the screen and locks the device. (Default behavior)<br/>
+         * 2 - The Power button hangs up the current call.<br/>
+         *
+         * @hide
+         */
+        public static final String INCALL_POWER_BUTTON_BEHAVIOR = "incall_power_button_behavior";
+
+        /**
+         * INCALL_POWER_BUTTON_BEHAVIOR value for "turn off screen".
+         * @hide
+         */
+        public static final int INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF = 0x1;
+
+        /**
+         * INCALL_POWER_BUTTON_BEHAVIOR value for "hang up".
+         * @hide
+         */
+        public static final int INCALL_POWER_BUTTON_BEHAVIOR_HANGUP = 0x2;
+
+        /**
+         * INCALL_POWER_BUTTON_BEHAVIOR default value.
+         * @hide
+         */
+        public static final int INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT =
+                INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF;
     }
 
     /**
@@ -306,6 +466,42 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.QS_QUICK_PULLDOWN);
             systemToCmSettingsMap.put(LegacyCMSettings.NAV_BUTTONS,
                     CMSettings.System.NAV_BUTTONS);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_HOME_LONG_PRESS_ACTION,
+                    CMSettings.System.KEY_HOME_LONG_PRESS_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_HOME_DOUBLE_TAP_ACTION,
+                    CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.BACK_WAKE_SCREEN,
+                    CMSettings.System.BACK_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.MENU_WAKE_SCREEN,
+                    CMSettings.System.MENU_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.VOLUME_WAKE_SCREEN,
+                    CMSettings.System.VOLUME_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_MENU_ACTION,
+                    CMSettings.System.KEY_MENU_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_MENU_LONG_PRESS_ACTION,
+                    CMSettings.System.KEY_MENU_LONG_PRESS_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_ASSIST_ACTION,
+                    CMSettings.System.KEY_ASSIST_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_ASSIST_LONG_PRESS_ACTION,
+                    CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_APP_SWITCH_ACTION,
+                    CMSettings.System.KEY_APP_SWITCH_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.KEY_APP_SWITCH_LONG_PRESS_ACTION,
+                    CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
+            systemToCmSettingsMap.put(LegacyCMSettings.HOME_WAKE_SCREEN,
+                    CMSettings.System.HOME_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.ASSIST_WAKE_SCREEN,
+                    CMSettings.System.ASSIST_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.APP_SWITCH_WAKE_SCREEN,
+                    CMSettings.System.APP_SWITCH_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_WAKE_SCREEN,
+                    CMSettings.System.CAMERA_WAKE_SCREEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_SLEEP_ON_RELEASE,
+                    CMSettings.System.CAMERA_SLEEP_ON_RELEASE);
+            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_LAUNCH,
+                    CMSettings.System.CAMERA_LAUNCH);
+            systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
+                    CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
@@ -354,6 +550,10 @@ public class CMSettingsProvider extends ContentProvider {
 
             secureToCmSettingsMap.put(LegacyCMSettings.RECENTS_LONG_PRESS_ACTIVITY,
                     CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY);
+            secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
+                    CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
+            secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
+                    CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
