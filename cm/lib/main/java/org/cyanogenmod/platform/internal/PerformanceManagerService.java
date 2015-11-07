@@ -277,7 +277,6 @@ public class PerformanceManagerService extends SystemService {
 
         @Override
         public void handleMessage(Message msg) {
-            Slog.d(TAG, "handler what=" + msg.what + " arg=" + msg.arg1);
             switch (msg.what) {
                 case MSG_CPU_BOOST:
                     mPm.powerHint(POWER_HINT_CPU_BOOST, msg.arg1);

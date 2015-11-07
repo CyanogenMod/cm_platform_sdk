@@ -45,6 +45,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
+
 import cyanogenmod.providers.CMSettings;
 
 import java.util.HashMap;
@@ -158,7 +159,7 @@ public class CMSettingsProvider extends ContentProvider {
     }
 
     /* @hide */
-    private static class LegacyCMSettings {
+    public static class LegacyCMSettings {
         /**
          * Whether to allow one finger quick settings expansion on the right side of the statusbar.
          * @deprecated Use {@link android.provider.Settings.System#QS_QUICK_PULLDOWN} instead
@@ -274,6 +275,21 @@ public class CMSettingsProvider extends ContentProvider {
          *          'com.google.vending' -> 'com.white.theme'
          */
         public static final String THEME_PKG_CONFIGURATION_PERSISTENCE_PROPERTY = "themeConfig";
+
+        /**
+         * The global recents long press activity chosen by the user.
+         * This setting is stored as a flattened component name as
+         * per {@link ComponentName#flattenToString()}.
+         *
+         * @hide
+         */
+        public static final String RECENTS_LONG_PRESS_ACTIVITY = "recents_long_press_activity";
+
+        /**
+         * Navigation controls to Use
+         * @hide
+         */
+        public static final String NAV_BUTTONS = "nav_buttons";
     }
 
     /**
@@ -288,6 +304,8 @@ public class CMSettingsProvider extends ContentProvider {
             HashMap<String, String> systemToCmSettingsMap = new HashMap<String, String>();
             systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
                     CMSettings.System.QS_QUICK_PULLDOWN);
+            systemToCmSettingsMap.put(LegacyCMSettings.NAV_BUTTONS,
+                    CMSettings.System.NAV_BUTTONS);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
@@ -324,7 +342,6 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.QS_USE_MAIN_TILES);
             secureToCmSettingsMap.put(LegacyCMSettings.VOLUME_LINK_NOTIFICATION,
                     CMSettings.Secure.VOLUME_LINK_NOTIFICATION);
-
             int navRingTargetsLength = LegacyCMSettings.NAVIGATION_RING_TARGETS.length;
             int cmNavRingTargetsLength = CMSettings.Secure.NAVIGATION_RING_TARGETS.length;
             int minNavRingTargetsLength = navRingTargetsLength <= cmNavRingTargetsLength ?
@@ -334,6 +351,9 @@ public class CMSettingsProvider extends ContentProvider {
                 systemToCmSettingsMap.put(LegacyCMSettings.NAVIGATION_RING_TARGETS[i],
                         CMSettings.Secure.NAVIGATION_RING_TARGETS[i]);
             }
+
+            secureToCmSettingsMap.put(LegacyCMSettings.RECENTS_LONG_PRESS_ACTIVITY,
+                    CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
