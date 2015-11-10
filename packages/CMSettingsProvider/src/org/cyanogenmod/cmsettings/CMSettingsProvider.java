@@ -482,6 +482,18 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+
+        /**
+         * Sprint MWI Quirk: Show message wait indicator notifications
+         * @hide
+         */
+        public static final String ENABLE_MWI_NOTIFICATION = "enable_mwi_notification";
+
+        /**
+         * Check the proximity sensor during wakeup
+         * @hide
+         */
+        public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
     }
 
     /**
@@ -544,6 +556,10 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.BATTERY_LIGHT_MEDIUM_COLOR);
             systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_FULL_COLOR,
                     CMSettings.System.BATTERY_LIGHT_FULL_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_MWI_NOTIFICATION,
+                    CMSettings.System.ENABLE_MWI_NOTIFICATION);
+            systemToCmSettingsMap.put(LegacyCMSettings.PROXIMITY_ON_WAKE,
+                    CMSettings.System.PROXIMITY_ON_WAKE);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
