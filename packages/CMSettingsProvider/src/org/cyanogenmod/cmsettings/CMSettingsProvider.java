@@ -494,6 +494,12 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
+
+        /**
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = CMSettings.Secure.ADB_NOTIFY;
     }
 
     /**
@@ -612,6 +618,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
             secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
                     CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
+
+            secureToCmSettingsMap.put(LegacyCMSettings.ADB_NOTIFY, CMSettings.Secure.ADB_NOTIFY);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
