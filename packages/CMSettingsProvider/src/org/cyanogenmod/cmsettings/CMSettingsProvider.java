@@ -507,6 +507,11 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String ADB_PORT = CMSettings.Secure.ADB_PORT;
 
+        /**
+         * The hostname for this device
+         * @hide
+         */
+        public static final String DEVICE_HOSTNAME = CMSettings.Secure.DEVICE_HOSTNAME;
     }
 
     /**
@@ -628,6 +633,8 @@ public class CMSettingsProvider extends ContentProvider {
 
             secureToCmSettingsMap.put(LegacyCMSettings.ADB_NOTIFY, CMSettings.Secure.ADB_NOTIFY);
             secureToCmSettingsMap.put(LegacyCMSettings.ADB_PORT, CMSettings.Secure.ADB_PORT);
+            secureToCmSettingsMap.put(LegacyCMSettings.DEVICE_HOSTNAME,
+                    CMSettings.Secure.DEVICE_HOSTNAME);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
