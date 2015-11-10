@@ -542,6 +542,11 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String KILL_APP_LONGPRESS_BACK =
                 CMSettings.Secure.KILL_APP_LONGPRESS_BACK;
+
+        /** Protected Components
+         * @hide
+         */
+        public static final String PROTECTED_COMPONENTS = "protected_components";
     }
 
     /**
@@ -669,6 +674,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.PROTECTED_SMS_ADDRESSES);
             secureToCmSettingsMap.put(LegacyCMSettings.KILL_APP_LONGPRESS_BACK,
                     CMSettings.Secure.KILL_APP_LONGPRESS_BACK);
+            secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_COMPONENTS,
+                    CMSettings.Secure.PROTECTED_COMPONENTS);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
