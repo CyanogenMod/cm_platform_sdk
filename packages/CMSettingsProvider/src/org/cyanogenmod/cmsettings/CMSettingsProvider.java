@@ -547,6 +547,14 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String PROTECTED_COMPONENTS = "protected_components";
+
+        /**
+         * Stored color matrix for LiveDisplay. This is used to allow co-existence with
+         * display tuning done by DisplayAdjustmentUtils when hardware support isn't
+         * available.
+         * @hide
+         */
+        public static final String LIVE_DISPLAY_COLOR_MATRIX = "live_display_color_matrix";
     }
 
     /**
@@ -676,6 +684,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.KILL_APP_LONGPRESS_BACK);
             secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_COMPONENTS,
                     CMSettings.Secure.PROTECTED_COMPONENTS);
+            secureToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_COLOR_MATRIX,
+                    CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
