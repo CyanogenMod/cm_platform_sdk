@@ -500,6 +500,12 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String ADB_NOTIFY = CMSettings.Secure.ADB_NOTIFY;
+
+        /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = CMSettings.Secure.ADB_PORT;
     }
 
     /**
