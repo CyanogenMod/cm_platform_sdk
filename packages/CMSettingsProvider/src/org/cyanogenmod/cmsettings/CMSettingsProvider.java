@@ -535,6 +535,13 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String PROTECTED_SMS_ADDRESSES =
                 CMSettings.Secure.PROTECTED_SMS_ADDRESSES;
+
+        /**
+         * Whether to allow killing of the foreground app by long-pressing the Back button
+         * @hide
+         */
+        public static final String KILL_APP_LONGPRESS_BACK =
+                CMSettings.Secure.KILL_APP_LONGPRESS_BACK;
     }
 
     /**
@@ -660,6 +667,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.DEVICE_HOSTNAME);
             secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_SMS_ADDRESSES,
                     CMSettings.Secure.PROTECTED_SMS_ADDRESSES);
+            secureToCmSettingsMap.put(LegacyCMSettings.KILL_APP_LONGPRESS_BACK,
+                    CMSettings.Secure.KILL_APP_LONGPRESS_BACK);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
