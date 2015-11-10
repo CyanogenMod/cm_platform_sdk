@@ -450,6 +450,38 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final int INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT =
                 INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF;
+
+        /**
+         * Whether the battery light should be enabled (if hardware supports it)
+         * The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+
+        /**
+         * Whether the battery LED should repeatedly flash when the battery is low
+         * on charge. The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_PULSE = "battery_light_pulse";
+
+        /**
+         * What color to use for the battery LED while charging - low
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+
+        /**
+         * What color to use for the battery LED while charging - medium
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
+
+        /**
+         * What color to use for the battery LED while charging - full
+         * @hide
+         */
+        public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
     }
 
     /**
@@ -502,6 +534,16 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.CAMERA_LAUNCH);
             systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
                     CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
+            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_ENABLED,
+                    CMSettings.System.BATTERY_LIGHT_ENABLED);
+            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_PULSE,
+                    CMSettings.System.BATTERY_LIGHT_PULSE);
+            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_LOW_COLOR,
+                    CMSettings.System.BATTERY_LIGHT_LOW_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_MEDIUM_COLOR,
+                    CMSettings.System.BATTERY_LIGHT_MEDIUM_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_FULL_COLOR,
+                    CMSettings.System.BATTERY_LIGHT_FULL_COLOR);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
