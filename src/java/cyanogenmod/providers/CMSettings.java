@@ -1512,6 +1512,12 @@ public final class CMSettings {
          * @hide
          */
         public static final String DEVICE_HOSTNAME = "device_hostname";
+
+        /**
+         * Known good originating source sms addresses
+         * @hide
+         */
+        public static final String PROTECTED_SMS_ADDRESSES = "protected_sms_addresses";
         // endregion
     }
 

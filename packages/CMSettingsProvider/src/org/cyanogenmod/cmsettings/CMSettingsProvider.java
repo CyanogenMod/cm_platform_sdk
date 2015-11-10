@@ -528,6 +528,13 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String DEVICE_HOSTNAME = CMSettings.Secure.DEVICE_HOSTNAME;
+
+        /**
+         * Known good originating source sms addresses
+         * @hide
+         */
+        public static final String PROTECTED_SMS_ADDRESSES =
+                CMSettings.Secure.PROTECTED_SMS_ADDRESSES;
     }
 
     /**
@@ -651,6 +658,8 @@ public class CMSettingsProvider extends ContentProvider {
             secureToCmSettingsMap.put(LegacyCMSettings.ADB_PORT, CMSettings.Secure.ADB_PORT);
             secureToCmSettingsMap.put(LegacyCMSettings.DEVICE_HOSTNAME,
                     CMSettings.Secure.DEVICE_HOSTNAME);
+            secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_SMS_ADDRESSES,
+                    CMSettings.Secure.PROTECTED_SMS_ADDRESSES);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);

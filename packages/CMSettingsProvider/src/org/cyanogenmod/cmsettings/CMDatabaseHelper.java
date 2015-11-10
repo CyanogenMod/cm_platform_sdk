@@ -228,6 +228,18 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.STATS_COLLECTION,
                 R.bool.def_stats_collection);
+
+        loadProtectedSmsSetting(db);
+    }
+
+    private void loadProtectedSmsSetting(SQLiteDatabase db) {
+        String[] regAddresses = mContext.getResources()
+                .getStringArray(R.array.def_protected_sms_list_values);
+        if (regAddresses.length > 0) {
+            loadSettingsForTable(db, CMTableNames.TABLE_SECURE,
+                    CMSettings.Secure.PROTECTED_SMS_ADDRESSES,
+                    TextUtils.join("|", regAddresses));
+        }
     }
 
     /**
