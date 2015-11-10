@@ -516,6 +516,13 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String ADB_NOTIFY = CMSettings.Secure.ADB_NOTIFY;
+
+        /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = CMSettings.Secure.ADB_PORT;
+
     }
 
     /**
@@ -636,6 +643,7 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
 
             secureToCmSettingsMap.put(LegacyCMSettings.ADB_NOTIFY, CMSettings.Secure.ADB_NOTIFY);
+            secureToCmSettingsMap.put(LegacyCMSettings.ADB_PORT, CMSettings.Secure.ADB_PORT);
 
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
