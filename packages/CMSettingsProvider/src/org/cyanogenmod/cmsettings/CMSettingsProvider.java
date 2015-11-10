@@ -165,14 +165,15 @@ public class CMSettingsProvider extends ContentProvider {
          * @deprecated Use {@link android.provider.Settings.System#QS_QUICK_PULLDOWN} instead
          * @hide
          */
-        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+        public static final String STATUS_BAR_QUICK_QS_PULLDOWN =
+                CMSettings.System.QS_QUICK_PULLDOWN;
 
         /**
          * Whether to enable "advanced mode" for the current user.
          * Boolean setting. 0 = no, 1 = yes.
          * @hide
          */
-        public static final String ADVANCED_MODE = "advanced_mode";
+        public static final String ADVANCED_MODE = CMSettings.Secure.ADVANCED_MODE;
 
         /**
          * The button brightness to be used while the screen is on or after a button press,
@@ -180,20 +181,21 @@ public class CMSettingsProvider extends ContentProvider {
          * Valid value range is between 0 and {@link PowerManager#getMaximumButtonBrightness()}
          * @hide
          */
-        public static final String BUTTON_BRIGHTNESS = "button_brightness";
+        public static final String BUTTON_BRIGHTNESS = CMSettings.Secure.BUTTON_BRIGHTNESS;
 
         /**
          * The time in ms to keep the button backlight on after pressing a button.
          * A value of 0 will keep the buttons on for as long as the screen is on.
          * @hide
          */
-        public static final String BUTTON_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
+        public static final String BUTTON_BACKLIGHT_TIMEOUT =
+                CMSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT;
 
         /**
          * Default theme to use.  If empty, use holo.
          * @hide
          */
-        public static final String DEFAULT_THEME_PACKAGE = "default_theme_package";
+        public static final String DEFAULT_THEME_PACKAGE = CMSettings.Secure.DEFAULT_THEME_PACKAGE;
 
         /**
          * A '|' delimited list of theme components to apply from the default theme on first boot.
@@ -205,68 +207,68 @@ public class CMSettingsProvider extends ContentProvider {
          *
          * @hide
          */
-        public static final String DEFAULT_THEME_COMPONENTS = "default_theme_components";
+        public static final String DEFAULT_THEME_COMPONENTS =
+                CMSettings.Secure.DEFAULT_THEME_COMPONENTS;
 
         /**
          * Developer options - Navigation Bar show switch
          * @hide
          */
-        public static final String DEV_FORCE_SHOW_NAVBAR = "dev_force_show_navbar";
+        public static final String DEV_FORCE_SHOW_NAVBAR = CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR;
 
         /**
          * The keyboard brightness to be used while the screen is on.
          * Valid value range is between 0 and {@link PowerManager#getMaximumKeyboardBrightness()}
          * @hide
          */
-        public static final String KEYBOARD_BRIGHTNESS = "keyboard_brightness";
+        public static final String KEYBOARD_BRIGHTNESS = CMSettings.Secure.KEYBOARD_BRIGHTNESS;
 
         /**
          * String to contain power menu actions
          * @hide
          */
-        public static final String POWER_MENU_ACTIONS = "power_menu_actions";
+        public static final String POWER_MENU_ACTIONS = CMSettings.Secure.POWER_MENU_ACTIONS;
 
         /**
          * Global stats collection
          * @hide
          */
-        public static final String STATS_COLLECTION = "stats_collection";
+        public static final String STATS_COLLECTION = CMSettings.Secure.STATS_COLLECTION;
 
         /**
          * Whether to show the brightness slider in quick settings panel.
          * @hide
          */
-        public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+        public static final String QS_SHOW_BRIGHTNESS_SLIDER =
+                CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER;
 
         /**
          * List of QS tile names
          * @hide
          */
-        public static final String QS_TILES = "sysui_qs_tiles";
+        public static final String QS_TILES = CMSettings.Secure.QS_TILES;
 
         /**
          * Use "main" tiles on the first row of the quick settings panel
          * 0 = no, 1 = yes
          * @hide
          */
-        public static final String QS_USE_MAIN_TILES = "sysui_qs_main_tiles";
+        public static final String QS_USE_MAIN_TILES = CMSettings.Secure.QS_USE_MAIN_TILES;
 
         /**
          * Boolean value whether to link ringtone and notification volume
          *
          * @hide
          */
-        public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
+        public static final String VOLUME_LINK_NOTIFICATION =
+                CMSettings.Secure.VOLUME_LINK_NOTIFICATION;
 
         /**
          * Custom navring actions
          * @hide
          */
-        public static final String[] NAVIGATION_RING_TARGETS = new String[] {
-                "navigation_ring_targets_0",
-                "navigation_ring_targets_1",
-                "navigation_ring_targets_2",
-        };
+        public static final String[] NAVIGATION_RING_TARGETS =
+                CMSettings.Secure.NAVIGATION_RING_TARGETS;
 
         /**
          * If an app does not have a specific theme set then it will use the 'default' theme+
@@ -283,13 +285,14 @@ public class CMSettingsProvider extends ContentProvider {
          *
          * @hide
          */
-        public static final String RECENTS_LONG_PRESS_ACTIVITY = "recents_long_press_activity";
+        public static final String RECENTS_LONG_PRESS_ACTIVITY =
+                CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY;
 
         /**
          * Navigation controls to Use
          * @hide
          */
-        public static final String NAV_BUTTONS = "nav_buttons";
+        public static final String NAV_BUTTONS = CMSettings.System.NAV_BUTTONS;
 
         /**
          * Action to perform when the home key is long-pressed.
@@ -305,7 +308,8 @@ public class CMSettingsProvider extends ContentProvider {
          * 8 - Last app
          * @hide
          */
-        public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
+        public static final String KEY_HOME_LONG_PRESS_ACTION =
+                CMSettings.System.KEY_HOME_LONG_PRESS_ACTION;
 
         /**
          * Action to perform when the home key is double-tapped.
@@ -313,32 +317,33 @@ public class CMSettingsProvider extends ContentProvider {
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_HOME_DOUBLE_TAP_ACTION = "key_home_double_tap_action";
+        public static final String KEY_HOME_DOUBLE_TAP_ACTION =
+                CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION;
 
         /**
          * Whether to wake the screen with the back key, the value is boolean.
          * @hide
          */
-        public static final String BACK_WAKE_SCREEN = "back_wake_screen";
+        public static final String BACK_WAKE_SCREEN = CMSettings.System.BACK_WAKE_SCREEN;
 
         /**
          * Whether to wake the screen with the menu key, the value is boolean.
          * @hide
          */
-        public static final String MENU_WAKE_SCREEN = "menu_wake_screen";
+        public static final String MENU_WAKE_SCREEN = CMSettings.System.MENU_WAKE_SCREEN;
 
         /**
          * Whether to wake the screen with the volume keys, the value is boolean.
          * @hide
          */
-        public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+        public static final String VOLUME_WAKE_SCREEN = CMSettings.System.VOLUME_WAKE_SCREEN;
 
         /**
          * Action to perform when the menu key is pressed. (Default is 1)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_MENU_ACTION = "key_menu_action";
+        public static final String KEY_MENU_ACTION = CMSettings.System.KEY_MENU_ACTION;
 
         /**
          * Action to perform when the menu key is long-pressed.
@@ -346,71 +351,76 @@ public class CMSettingsProvider extends ContentProvider {
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
+        public static final String KEY_MENU_LONG_PRESS_ACTION =
+                CMSettings.System.KEY_MENU_LONG_PRESS_ACTION;
 
         /**
          * Action to perform when the assistant (search) key is pressed. (Default is 3)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_ASSIST_ACTION = "key_assist_action";
+        public static final String KEY_ASSIST_ACTION = CMSettings.System.KEY_ASSIST_ACTION;
 
         /**
          * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
+        public static final String KEY_ASSIST_LONG_PRESS_ACTION =
+                CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION;
 
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
+        public static final String KEY_APP_SWITCH_ACTION = CMSettings.System.KEY_APP_SWITCH_ACTION;
 
         /**
          * Action to perform when the app switch key is long-pressed. (Default is 0)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
-        public static final String KEY_APP_SWITCH_LONG_PRESS_ACTION = "key_app_switch_long_press_action";
+        public static final String KEY_APP_SWITCH_LONG_PRESS_ACTION =
+                CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION;
 
         /**
          * Whether to wake the screen with the home key, the value is boolean.
          * @hide
          */
-        public static final String HOME_WAKE_SCREEN = "home_wake_screen";
+        public static final String HOME_WAKE_SCREEN = CMSettings.System.HOME_WAKE_SCREEN;
 
         /**
          * Whether to wake the screen with the assist key, the value is boolean.
          * @hide
          */
-        public static final String ASSIST_WAKE_SCREEN = "assist_wake_screen";
+        public static final String ASSIST_WAKE_SCREEN = CMSettings.System.ASSIST_WAKE_SCREEN;
 
         /**
          * Whether to wake the screen with the app switch key, the value is boolean.
          * @hide
          */
-        public static final String APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
+        public static final String APP_SWITCH_WAKE_SCREEN =
+                CMSettings.System.APP_SWITCH_WAKE_SCREEN;
 
         /**
          * Whether to wake the screen with the camera key half-press.
          * @hide
          */
-        public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
+        public static final String CAMERA_WAKE_SCREEN = CMSettings.System.CAMERA_WAKE_SCREEN;
 
         /**
          * Whether or not to send device back to sleep if Camera button is released ("Peek")
          * @hide
          */
-        public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+        public static final String CAMERA_SLEEP_ON_RELEASE =
+                CMSettings.System.CAMERA_SLEEP_ON_RELEASE;
 
         /**
          * Whether to launch secure camera app when key is longpressed
          * @hide
          */
-        public static final String CAMERA_LAUNCH = "camera_launch";
+        public static final String CAMERA_LAUNCH = CMSettings.System.CAMERA_LAUNCH;
 
         /**
          * Swap volume buttons when the screen is rotated
@@ -419,7 +429,8 @@ public class CMSettingsProvider extends ContentProvider {
          * 2 - Enabled (screen is rotated by 180 or 270 degrees: tablet)
          * @hide
          */
-        public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
+        public static final String SWAP_VOLUME_KEYS_ON_ROTATION =
+                CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION;
 
         /**
          * What happens when the user presses the Power button while in-call
@@ -430,7 +441,8 @@ public class CMSettingsProvider extends ContentProvider {
          *
          * @hide
          */
-        public static final String INCALL_POWER_BUTTON_BEHAVIOR = "incall_power_button_behavior";
+        public static final String INCALL_POWER_BUTTON_BEHAVIOR =
+                CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR;
 
         /**
          * INCALL_POWER_BUTTON_BEHAVIOR value for "turn off screen".
@@ -456,44 +468,48 @@ public class CMSettingsProvider extends ContentProvider {
          * The value is boolean (1 or 0).
          * @hide
          */
-        public static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+        public static final String BATTERY_LIGHT_ENABLED = CMSettings.System.BATTERY_LIGHT_ENABLED;
 
         /**
          * Whether the battery LED should repeatedly flash when the battery is low
          * on charge. The value is boolean (1 or 0).
          * @hide
          */
-        public static final String BATTERY_LIGHT_PULSE = "battery_light_pulse";
+        public static final String BATTERY_LIGHT_PULSE = CMSettings.System.BATTERY_LIGHT_PULSE;
 
         /**
          * What color to use for the battery LED while charging - low
          * @hide
          */
-        public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+        public static final String BATTERY_LIGHT_LOW_COLOR =
+                CMSettings.System.BATTERY_LIGHT_LOW_COLOR;
 
         /**
          * What color to use for the battery LED while charging - medium
          * @hide
          */
-        public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
+        public static final String BATTERY_LIGHT_MEDIUM_COLOR =
+                CMSettings.System.BATTERY_LIGHT_MEDIUM_COLOR;
 
         /**
          * What color to use for the battery LED while charging - full
          * @hide
          */
-        public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+        public static final String BATTERY_LIGHT_FULL_COLOR =
+                CMSettings.System.BATTERY_LIGHT_FULL_COLOR;
 
         /**
          * Sprint MWI Quirk: Show message wait indicator notifications
          * @hide
          */
-        public static final String ENABLE_MWI_NOTIFICATION = "enable_mwi_notification";
+        public static final String ENABLE_MWI_NOTIFICATION =
+                CMSettings.System.ENABLE_MWI_NOTIFICATION;
 
         /**
          * Check the proximity sensor during wakeup
          * @hide
          */
-        public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
+        public static final String PROXIMITY_ON_WAKE = CMSettings.System.PROXIMITY_ON_WAKE;
     }
 
     /**
