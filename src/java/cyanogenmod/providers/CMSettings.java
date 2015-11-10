@@ -1636,6 +1636,60 @@ public final class CMSettings {
          */
         public static final int INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT =
                 INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF;
+
+        /**
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = "adb_notify";
+
+        /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
+
+        /**
+         * The hostname for this device
+         * @hide
+         */
+        public static final String DEVICE_HOSTNAME = "device_hostname";
+
+        /**
+         * Whether to allow killing of the foreground app by long-pressing the Back button
+         * @hide
+         */
+        public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+
+        /** Protected Components
+         * @hide
+         */
+        public static final String PROTECTED_COMPONENTS = "protected_components";
+
+        /**
+         * Stored color matrix for LiveDisplay. This is used to allow co-existence with
+         * display tuning done by DisplayAdjustmentUtils when hardware support isn't
+         * available.
+         * @hide
+         */
+        public static final String LIVE_DISPLAY_COLOR_MATRIX = "live_display_color_matrix";
+
+        /**
+         * Whether to include options in power menu for rebooting into recovery or bootloader
+         * @hide
+         */
+        public static final String ADVANCED_REBOOT = "advanced_reboot";
+
+        /**
+         * This will be set to the system's current theme API version when ThemeService starts.
+         * It is useful for when an upgrade from one version of CM to another occurs.
+         * For example, after a user upgrades from CM11 to CM12, the value of this field
+         * might be 19. ThemeService would then change the value to 21. This is useful
+         * when an API change breaks a theme. Themeservice can identify old themes and
+         * unapply them from the system.
+         * @hide
+         */
+        public static final String THEME_PREV_BOOT_API_LEVEL = "theme_prev_boot_api_level";
         // endregion
     }
 
