@@ -510,6 +510,67 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String PROXIMITY_ON_WAKE = CMSettings.System.PROXIMITY_ON_WAKE;
+
+        /**
+         * Enable looking up of phone numbers of nearby places
+         *
+         * @hide
+         */
+        public static final String ENABLE_FORWARD_LOOKUP = CMSettings.System.ENABLE_FORWARD_LOOKUP;
+
+        /**
+         * Enable looking up of phone numbers of people
+         *
+         * @hide
+         */
+        public static final String ENABLE_PEOPLE_LOOKUP = CMSettings.System.ENABLE_PEOPLE_LOOKUP;
+
+        /**
+         * Enable looking up of information of phone numbers not in the contacts
+         *
+         * @hide
+         */
+        public static final String ENABLE_REVERSE_LOOKUP = CMSettings.System.ENABLE_REVERSE_LOOKUP;
+
+        /**
+         * The forward lookup provider
+         *
+         * @hide
+         */
+        public static final String FORWARD_LOOKUP_PROVIDER =
+                CMSettings.System.FORWARD_LOOKUP_PROVIDER;
+
+        /**
+         * The people lookup provider
+         *
+         * @hide
+         */
+        public static final String PEOPLE_LOOKUP_PROVIDER =
+                CMSettings.System.PEOPLE_LOOKUP_PROVIDER;
+
+        /**
+         * The reverse lookup provider
+         *
+         * @hide
+         */
+        public static final String REVERSE_LOOKUP_PROVIDER =
+                CMSettings.System.REVERSE_LOOKUP_PROVIDER;
+
+        /**
+         * The OpenCNAM paid account ID
+         *
+         * @hide
+         */
+        public static final String DIALER_OPENCNAM_ACCOUNT_SID =
+                CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID;
+
+        /**
+         * The OpenCNAM authentication token
+         *
+         * @hide
+         */
+        public static final String DIALER_OPENCNAM_AUTH_TOKEN =
+                CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN;
     }
 
     /**
@@ -576,6 +637,22 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.ENABLE_MWI_NOTIFICATION);
             systemToCmSettingsMap.put(LegacyCMSettings.PROXIMITY_ON_WAKE,
                     CMSettings.System.PROXIMITY_ON_WAKE);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_FORWARD_LOOKUP,
+                    CMSettings.System.ENABLE_FORWARD_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_PEOPLE_LOOKUP,
+                    CMSettings.System.ENABLE_PEOPLE_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_REVERSE_LOOKUP,
+                    CMSettings.System.ENABLE_REVERSE_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.FORWARD_LOOKUP_PROVIDER,
+                    CMSettings.System.FORWARD_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.PEOPLE_LOOKUP_PROVIDER,
+                    CMSettings.System.PEOPLE_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.REVERSE_LOOKUP_PROVIDER,
+                    CMSettings.System.REVERSE_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_ACCOUNT_SID,
+                    CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID);
+            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_AUTH_TOKEN,
+                    CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
