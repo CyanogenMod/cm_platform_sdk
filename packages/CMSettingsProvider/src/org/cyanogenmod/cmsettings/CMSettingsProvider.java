@@ -633,6 +633,13 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String LIVE_DISPLAY_HINTED = CMSettings.System.LIVE_DISPLAY_HINTED;
+
+        /**
+         *  Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE =
+                CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE;
     }
 
     /**
@@ -733,6 +740,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.DISPLAY_COLOR_ADJUSTMENT);
             systemToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_HINTED,
                     CMSettings.System.LIVE_DISPLAY_HINTED);
+            systemToCmSettingsMap.put(LegacyCMSettings.DOUBLE_TAP_SLEEP_GESTURE,
+                    CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
