@@ -17,7 +17,7 @@ dependencies {
 }
 ```
 
-### Buliding against development snapshots
+### Building against development snapshots
 
 Within `build.gradle` make sure your `repositories` list sonatype OSS repos for snapshots
 
