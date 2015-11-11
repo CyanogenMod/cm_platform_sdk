@@ -654,6 +654,13 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String RECENTS_SHOW_SEARCH_BAR =
                 CMSettings.System.RECENTS_SHOW_SEARCH_BAR;
+
+        /**
+         * Whether navigation bar is placed on the left side in landscape mode
+         * @hide
+         */
+        public static final String NAVBAR_LEFT_IN_LANDSCAPE =
+                CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE;
     }
 
     /**
@@ -760,6 +767,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.STATUS_BAR_SHOW_WEATHER);
             systemToCmSettingsMap.put(LegacyCMSettings.RECENTS_SHOW_SEARCH_BAR,
                     CMSettings.System.RECENTS_SHOW_SEARCH_BAR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NAVBAR_LEFT_IN_LANDSCAPE,
+                    CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
