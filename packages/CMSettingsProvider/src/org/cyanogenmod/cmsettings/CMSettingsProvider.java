@@ -661,6 +661,13 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String NAVBAR_LEFT_IN_LANDSCAPE =
                 CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE;
+
+        /**
+         * Locale for secondary overlay on dialer for t9 search input
+         * @hide
+         */
+        public static final String T9_SEARCH_INPUT_LOCALE =
+                CMSettings.System.T9_SEARCH_INPUT_LOCALE;
     }
 
     /**
@@ -769,6 +776,8 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.RECENTS_SHOW_SEARCH_BAR);
             systemToCmSettingsMap.put(LegacyCMSettings.NAVBAR_LEFT_IN_LANDSCAPE,
                     CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
+            systemToCmSettingsMap.put(LegacyCMSettings.T9_SEARCH_INPUT_LOCALE,
+                    CMSettings.System.T9_SEARCH_INPUT_LOCALE);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
