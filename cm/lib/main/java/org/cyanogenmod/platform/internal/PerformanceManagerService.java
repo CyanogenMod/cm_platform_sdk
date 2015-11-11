@@ -56,7 +56,6 @@ public class PerformanceManagerService extends SystemService {
 
     private int mCurrentProfile = -1;
 
-    private boolean mProfileSetByUser = false;
     private int mNumProfiles = 0;
 
     private final ServiceThread mHandlerThread;
@@ -241,25 +240,6 @@ public class PerformanceManagerService extends SystemService {
             mHandler.removeMessages(MSG_CPU_BOOST);
             mHandler.removeMessages(MSG_LAUNCH_BOOST);
             mHandler.sendEmptyMessage(MSG_LAUNCH_BOOST);
-        }
-
-        @Override
-        public void activityResumed(Intent intent) {
-            if (!hasAppProfiles() || intent == null || mProfileSetByUser) {
-                return;
-            }
-
-            final ComponentName cn = intent.getComponent();
-            if (cn == null) {
-                return;
-            }
-            
-            int forApp = getProfileForActivity(cn.flattenToString());
-            if (forApp == mCurrentProfile) {
-                return;
-            }
-
-            setPowerProfileInternal(forApp, false);
         }
     }
 
