@@ -50,4 +50,8 @@
     <!-- Proximity check on screen on default -->
     <java-symbol type="bool" name="config_proximityCheckOnWakeEnabledByDefault" />
 
+    <!-- Notification and battery light -->
+    <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
+    <java-symbol type="bool" name="config_multipleNotificationLeds" />
+
 </resources>

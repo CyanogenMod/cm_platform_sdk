@@ -51,4 +51,12 @@
     <integer name="config_proximityCheckTimeout">250</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
+    <!-- Is the notification LED brightness adjustable ?
+         Used to decide if the user can set LED brightness -->
+    <bool name="config_adjustableNotificationLedBrightness">false</bool>
+
+    <!-- Does the device have multiple LEDs ?
+         Used to decide if the user can change the multiple LEDs settings -->
+    <bool name="config_multipleNotificationLeds">false</bool>
+
 </resources>
