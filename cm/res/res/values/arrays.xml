@@ -24,7 +24,7 @@
         <item>@string/perf_profile_perf</item>
     </string-array>
 
-    <!-- These values are intentionally out of ordert to give an "ascending"
+    <!-- These values are intentionally out of order to give an "ascending"
          view of the modes while allowing devices to easily omit the bias
          modes if they are not applicable or needed. These values correspond
          to the enumeration in PerformanceManager. -->
@@ -35,4 +35,29 @@
         <item>4</item>
         <item>2</item>
     </integer-array>
+
+    <!-- LiveDisplay -->
+    <string-array name="live_display_entries" translatable="false">
+        <item>@string/live_display_auto</item>
+        <item>@string/live_display_off</item>
+        <item>@string/live_display_day</item>
+        <item>@string/live_display_night</item>
+        <item>@string/live_display_outdoor</item>
+    </string-array>
+
+    <string-array name="live_display_summaries" translatable="false">
+        <item>@string/live_display_auto_summary</item>
+        <item>@string/live_display_off_summary</item>
+        <item>@string/live_display_day_summary</item>
+        <item>@string/live_display_night_summary</item>
+        <item>@string/live_display_outdoor_summary</item>
+    </string-array>
+
+    <string-array name="live_display_values" translatable="false">
+        <item>2</item>
+        <item>0</item>
+        <item>4</item>
+        <item>1</item>
+        <item>3</item>
+    </string-array>
 </resources>

@@ -580,6 +580,59 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String WIFI_AUTO_CONNECT_TYPE =
                 CMSettings.System.WIFI_AUTO_CONNECT_TYPE;
+
+        /**
+         * Color temperature of the display during the day
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_DAY =
+                CMSettings.System.DISPLAY_TEMPERATURE_DAY;
+
+        /**
+         * Color temperature of the display at night
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_NIGHT =
+                CMSettings.System.DISPLAY_TEMPERATURE_NIGHT;
+
+        /**
+         * Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_MODE =
+                CMSettings.System.DISPLAY_TEMPERATURE_MODE;
+
+        /**
+         * Automatic outdoor mode
+         * @hide
+         */
+        public static final String DISPLAY_AUTO_OUTDOOR_MODE =
+                CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE;
+
+        /**
+         * Use display power saving features such as CABC or CABL
+         * @hide
+         */
+        public static final String DISPLAY_LOW_POWER = CMSettings.System.DISPLAY_LOW_POWER;
+
+        /**
+         * Use color enhancement feature of display
+         * @hide
+         */
+        public static final String DISPLAY_COLOR_ENHANCE = CMSettings.System.DISPLAY_COLOR_ENHANCE;
+
+        /**
+         * Manual display color adjustments (RGB values as floats, separated by spaces)
+         * @hide
+         */
+        public static final String DISPLAY_COLOR_ADJUSTMENT =
+                CMSettings.System.DISPLAY_COLOR_ADJUSTMENT;
+
+        /**
+         * Did we tell about how they can stop breaking their eyes?
+         * @hide
+         */
+        public static final String LIVE_DISPLAY_HINTED = CMSettings.System.LIVE_DISPLAY_HINTED;
     }
 
     /**
@@ -664,6 +717,22 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN);
             systemToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_CONNECT_TYPE,
                     CMSettings.System.WIFI_AUTO_CONNECT_TYPE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_DAY,
+                    CMSettings.System.DISPLAY_TEMPERATURE_DAY);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_NIGHT,
+                    CMSettings.System.DISPLAY_TEMPERATURE_NIGHT);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_MODE,
+                    CMSettings.System.DISPLAY_TEMPERATURE_MODE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_AUTO_OUTDOOR_MODE,
+                    CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_LOW_POWER,
+                    CMSettings.System.DISPLAY_LOW_POWER);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ENHANCE,
+                    CMSettings.System.DISPLAY_COLOR_ENHANCE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ADJUSTMENT,
+                    CMSettings.System.DISPLAY_COLOR_ADJUSTMENT);
+            systemToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_HINTED,
+                    CMSettings.System.LIVE_DISPLAY_HINTED);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
