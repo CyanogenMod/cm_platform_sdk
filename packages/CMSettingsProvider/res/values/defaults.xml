@@ -62,4 +62,12 @@
 
     <!-- Default for CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
     <string name="def_power_notifications_ringtone" translatable="false">content://settings/system/notification_sound</string>
+
+    <!-- Default value for the notification LEDs brightness
+         on devices equiped with configurable LED controller -->
+    <integer name="def_notification_brightness_level">255</integer>
+
+    <!-- Default value for whether or not to use multiple notification LEDs
+         on devices equiped with more than one LED -->
+    <bool name="def_notification_multiple_leds">false</bool>
 </resources>
