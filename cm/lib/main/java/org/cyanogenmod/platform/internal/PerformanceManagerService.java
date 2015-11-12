@@ -70,7 +70,6 @@ public class PerformanceManagerService extends SystemService {
     private final int POWER_FEATURE_SUPPORTED_PROFILES = 0x00001000;
 
     private PowerManagerInternal mPm;
-    private boolean mLowPowerModeEnabled = false;
 
     // Max time (microseconds) to allow a CPU boost for
     private static final int MAX_CPU_BOOST_TIME = 5000000;
@@ -124,7 +123,6 @@ public class PerformanceManagerService extends SystemService {
                         profile = PerformanceManager.PROFILE_BALANCED;
                     }
                     setPowerProfileInternal(profile, true);
-                    mPm.registerLowPowerModeObserver(mLowPowerModeListener);
                 }
             }
         }
@@ -290,24 +288,4 @@ public class PerformanceManagerService extends SystemService {
             }
         }
     }
-
-    private final PowerManagerInternal.LowPowerModeListener mLowPowerModeListener = new
-            PowerManagerInternal.LowPowerModeListener() {
-
-                @Override
-                public void onLowPowerModeChanged(boolean enabled) {
-
-                    if (mNumProfiles < 1) {
-                        return;
-                    }
-                    if (enabled == mLowPowerModeEnabled) {
-                        return;
-                    }
-                    if (enabled && mCurrentProfile != PerformanceManager.PROFILE_POWER_SAVE) {
-                        setPowerProfileInternal(PerformanceManager.PROFILE_POWER_SAVE, true);
-                    } else if (!enabled && mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
-                        setPowerProfileInternal(PerformanceManager.PROFILE_BALANCED, true);
-                    }
-                }
-            };
 }
