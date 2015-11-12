@@ -510,6 +510,164 @@ public class CMSettingsProvider extends ContentProvider {
          * @hide
          */
         public static final String PROXIMITY_ON_WAKE = CMSettings.System.PROXIMITY_ON_WAKE;
+
+        /**
+         * Enable looking up of phone numbers of nearby places
+         *
+         * @hide
+         */
+        public static final String ENABLE_FORWARD_LOOKUP = CMSettings.System.ENABLE_FORWARD_LOOKUP;
+
+        /**
+         * Enable looking up of phone numbers of people
+         *
+         * @hide
+         */
+        public static final String ENABLE_PEOPLE_LOOKUP = CMSettings.System.ENABLE_PEOPLE_LOOKUP;
+
+        /**
+         * Enable looking up of information of phone numbers not in the contacts
+         *
+         * @hide
+         */
+        public static final String ENABLE_REVERSE_LOOKUP = CMSettings.System.ENABLE_REVERSE_LOOKUP;
+
+        /**
+         * The forward lookup provider
+         *
+         * @hide
+         */
+        public static final String FORWARD_LOOKUP_PROVIDER =
+                CMSettings.System.FORWARD_LOOKUP_PROVIDER;
+
+        /**
+         * The people lookup provider
+         *
+         * @hide
+         */
+        public static final String PEOPLE_LOOKUP_PROVIDER =
+                CMSettings.System.PEOPLE_LOOKUP_PROVIDER;
+
+        /**
+         * The reverse lookup provider
+         *
+         * @hide
+         */
+        public static final String REVERSE_LOOKUP_PROVIDER =
+                CMSettings.System.REVERSE_LOOKUP_PROVIDER;
+
+        /**
+         * The OpenCNAM paid account ID
+         *
+         * @hide
+         */
+        public static final String DIALER_OPENCNAM_ACCOUNT_SID =
+                CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID;
+
+        /**
+         * The OpenCNAM authentication token
+         *
+         * @hide
+         */
+        public static final String DIALER_OPENCNAM_AUTH_TOKEN =
+                CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN;
+
+        /**
+         * Whether wifi settings will connect to access point automatically
+         * 0 = automatically
+         * 1 = manually
+         * @hide
+         */
+        public static final String WIFI_AUTO_CONNECT_TYPE =
+                CMSettings.System.WIFI_AUTO_CONNECT_TYPE;
+
+        /**
+         * Color temperature of the display during the day
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_DAY =
+                CMSettings.System.DISPLAY_TEMPERATURE_DAY;
+
+        /**
+         * Color temperature of the display at night
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_NIGHT =
+                CMSettings.System.DISPLAY_TEMPERATURE_NIGHT;
+
+        /**
+         * Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.
+         * @hide
+         */
+        public static final String DISPLAY_TEMPERATURE_MODE =
+                CMSettings.System.DISPLAY_TEMPERATURE_MODE;
+
+        /**
+         * Automatic outdoor mode
+         * @hide
+         */
+        public static final String DISPLAY_AUTO_OUTDOOR_MODE =
+                CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE;
+
+        /**
+         * Use display power saving features such as CABC or CABL
+         * @hide
+         */
+        public static final String DISPLAY_LOW_POWER = CMSettings.System.DISPLAY_LOW_POWER;
+
+        /**
+         * Use color enhancement feature of display
+         * @hide
+         */
+        public static final String DISPLAY_COLOR_ENHANCE = CMSettings.System.DISPLAY_COLOR_ENHANCE;
+
+        /**
+         * Manual display color adjustments (RGB values as floats, separated by spaces)
+         * @hide
+         */
+        public static final String DISPLAY_COLOR_ADJUSTMENT =
+                CMSettings.System.DISPLAY_COLOR_ADJUSTMENT;
+
+        /**
+         * Did we tell about how they can stop breaking their eyes?
+         * @hide
+         */
+        public static final String LIVE_DISPLAY_HINTED = CMSettings.System.LIVE_DISPLAY_HINTED;
+
+        /**
+         *  Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE =
+                CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE;
+
+        /**
+         * Boolean value on whether to show weather in the statusbar
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_WEATHER =
+                CMSettings.System.STATUS_BAR_SHOW_WEATHER;
+
+        /**
+         * Show search bar in recents
+         * @hide
+         */
+        public static final String RECENTS_SHOW_SEARCH_BAR =
+                CMSettings.System.RECENTS_SHOW_SEARCH_BAR;
+
+        /**
+         * Whether navigation bar is placed on the left side in landscape mode
+         * @hide
+         */
+        public static final String NAVBAR_LEFT_IN_LANDSCAPE =
+                CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE;
+
+        /**
+         * Locale for secondary overlay on dialer for t9 search input
+         * @hide
+         */
+        public static final String T9_SEARCH_INPUT_LOCALE =
+                CMSettings.System.T9_SEARCH_INPUT_LOCALE;
     }
 
     /**
@@ -576,6 +734,50 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.ENABLE_MWI_NOTIFICATION);
             systemToCmSettingsMap.put(LegacyCMSettings.PROXIMITY_ON_WAKE,
                     CMSettings.System.PROXIMITY_ON_WAKE);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_FORWARD_LOOKUP,
+                    CMSettings.System.ENABLE_FORWARD_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_PEOPLE_LOOKUP,
+                    CMSettings.System.ENABLE_PEOPLE_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_REVERSE_LOOKUP,
+                    CMSettings.System.ENABLE_REVERSE_LOOKUP);
+            systemToCmSettingsMap.put(LegacyCMSettings.FORWARD_LOOKUP_PROVIDER,
+                    CMSettings.System.FORWARD_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.PEOPLE_LOOKUP_PROVIDER,
+                    CMSettings.System.PEOPLE_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.REVERSE_LOOKUP_PROVIDER,
+                    CMSettings.System.REVERSE_LOOKUP_PROVIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_ACCOUNT_SID,
+                    CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID);
+            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_AUTH_TOKEN,
+                    CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN);
+            systemToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_CONNECT_TYPE,
+                    CMSettings.System.WIFI_AUTO_CONNECT_TYPE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_DAY,
+                    CMSettings.System.DISPLAY_TEMPERATURE_DAY);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_NIGHT,
+                    CMSettings.System.DISPLAY_TEMPERATURE_NIGHT);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_MODE,
+                    CMSettings.System.DISPLAY_TEMPERATURE_MODE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_AUTO_OUTDOOR_MODE,
+                    CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_LOW_POWER,
+                    CMSettings.System.DISPLAY_LOW_POWER);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ENHANCE,
+                    CMSettings.System.DISPLAY_COLOR_ENHANCE);
+            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ADJUSTMENT,
+                    CMSettings.System.DISPLAY_COLOR_ADJUSTMENT);
+            systemToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_HINTED,
+                    CMSettings.System.LIVE_DISPLAY_HINTED);
+            systemToCmSettingsMap.put(LegacyCMSettings.DOUBLE_TAP_SLEEP_GESTURE,
+                    CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_SHOW_WEATHER,
+                    CMSettings.System.STATUS_BAR_SHOW_WEATHER);
+            systemToCmSettingsMap.put(LegacyCMSettings.RECENTS_SHOW_SEARCH_BAR,
+                    CMSettings.System.RECENTS_SHOW_SEARCH_BAR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NAVBAR_LEFT_IN_LANDSCAPE,
+                    CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
+            systemToCmSettingsMap.put(LegacyCMSettings.T9_SEARCH_INPUT_LOCALE,
+                    CMSettings.System.T9_SEARCH_INPUT_LOCALE);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
