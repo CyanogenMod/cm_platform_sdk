@@ -887,6 +887,54 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES =
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES;
+
+        /**
+         * Whether to wake the display when plugging or unplugging the charger
+         *
+         * @hide
+         */
+        public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED =
+                CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED;
+
+        /** {@hide} */
+        public static final String BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX =
+                CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX;
+
+        /**
+         * Whether to sound when charger power is connected/disconnected
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_ENABLED =
+                CMSettings.Global.POWER_NOTIFICATIONS_ENABLED;
+
+        /**
+         * Whether to vibrate when charger power is connected/disconnected
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_VIBRATE =
+                CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE;
+
+        /**
+         * URI for power notification sounds
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_RINGTONE =
+                CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE;
+
+        /**
+         * @hide
+         */
+        public static final String ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK =
+                CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK;
+
+        /**
+         * Whether the system auto-configure the priority of the wifi ap's or use
+         * the manual settings established by the user.
+         * <> 0 to autoconfigure, 0 to manual settings. Default is <> 0.
+         * @hide
+         */
+        public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION =
+                CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION;
     }
 
     /**
@@ -1118,6 +1166,27 @@ public class CMSettingsProvider extends ContentProvider {
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM secure table");
+
+            // Migrate global settings
+            HashMap<String, String> globalToCmSettingsMap = new HashMap<String, String>();
+            globalToCmSettingsMap.put(LegacyCMSettings.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                    CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
+            globalToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
+                    CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_ENABLED,
+                    CMSettings.Global.POWER_NOTIFICATIONS_ENABLED);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_VIBRATE,
+                    CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_RINGTONE,
+                    CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE);
+            globalToCmSettingsMap.put(LegacyCMSettings.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
+                    CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK);
+            globalToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_PRIORITIES_CONFIGURATION,
+                    CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION);
+
+            rowsMigrated = migrateCMSettingsForTable(userId,
+                    CMDatabaseHelper.CMTableNames.TABLE_GLOBAL, globalToCmSettingsMap);
+            if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM global table");
         }
     }
 
