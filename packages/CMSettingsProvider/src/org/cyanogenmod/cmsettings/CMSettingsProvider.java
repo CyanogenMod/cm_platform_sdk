@@ -724,6 +724,169 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String T9_SEARCH_INPUT_LOCALE =
                 CMSettings.System.T9_SEARCH_INPUT_LOCALE;
+
+        /**
+         * If all file types can be accepted over Bluetooth OBEX.
+         * @hide
+         */
+        public static final String BLUETOOTH_ACCEPT_ALL_FILES =
+                CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES;
+
+        /**
+         * Whether to scramble a pin unlock layout
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT =
+                CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT;
+
+        /**
+         * @hide
+         */
+        public static final String SHOW_ALARM_ICON = CMSettings.System.SHOW_ALARM_ICON;
+
+        /**
+         * Whether to show the IME switcher in the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER =
+                CMSettings.System.STATUS_BAR_IME_SWITCHER;
+
+        /**
+         * Whether to control brightness from status bar
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL =
+                CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL;
+
+        /**
+         * Whether or not volume button music controls should be enabled to seek media tracks
+         * @hide
+         */
+        public static final String VOLBTN_MUSIC_CONTROLS =
+                CMSettings.System.VOLBTN_MUSIC_CONTROLS;
+
+        /**
+         * Use EdgeGesture Service for system gestures in PhoneWindowManager
+         * @hide
+         */
+        public static final String USE_EDGE_SERVICE_FOR_GESTURES =
+                CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES;
+
+        /**
+         * Show the pending notification counts as overlays on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_NOTIF_COUNT =
+                CMSettings.System.STATUS_BAR_NOTIF_COUNT;
+
+        /**
+         * Call recording format value
+         * 0: AMR_WB
+         * 1: MPEG_4
+         * Default: 0
+         * @hide
+         */
+        public static final String CALL_RECORDING_FORMAT =
+                CMSettings.System.CALL_RECORDING_FORMAT;
+
+        /**
+         * Contains the notifications light maximum brightness to use.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL =
+                CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL;
+
+        /**
+         * Whether to use the all the LEDs for the notifications or just one.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE =
+                CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE;
+
+        /**
+         * Whether to allow notifications with the screen on or DayDreams.
+         * The value is boolean (1 or 0). Default will always be false.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_SCREEN_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON;
+
+        /**
+         * What color to use for the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR;
+
+        /**
+         * How long to flash the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON;
+
+        /**
+         * How long to wait between flashes for the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF;
+
+        /**
+         * What color to use for the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR;
+
+        /**
+         * How long to flash the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON;
+
+        /**
+         * How long to wait between flashes for the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF;
+        /**
+         * What color to use for the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR;
+
+        /**
+         * How long to flash the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON;
+
+        /**
+         * How long to wait between flashes for the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF;
+
+        /**
+         * Whether to use the custom LED values for the notification pulse LED.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE;
+
+        /**
+         * Which custom LED values to use for the notification pulse LED.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES;
     }
 
     /**
@@ -834,6 +997,56 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
             systemToCmSettingsMap.put(LegacyCMSettings.T9_SEARCH_INPUT_LOCALE,
                     CMSettings.System.T9_SEARCH_INPUT_LOCALE);
+            systemToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_ACCEPT_ALL_FILES,
+                    CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES);
+            systemToCmSettingsMap.put(LegacyCMSettings.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                    CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+            systemToCmSettingsMap.put(LegacyCMSettings.SHOW_ALARM_ICON,
+                    CMSettings.System.SHOW_ALARM_ICON);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_IME_SWITCHER,
+                    CMSettings.System.STATUS_BAR_IME_SWITCHER);
+            systemToCmSettingsMap.put(LegacyCMSettings.QS_SHOW_BRIGHTNESS_SLIDER,
+                    CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_BRIGHTNESS_CONTROL,
+                    CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
+            systemToCmSettingsMap.put(LegacyCMSettings.VOLBTN_MUSIC_CONTROLS,
+                    CMSettings.System.VOLBTN_MUSIC_CONTROLS);
+            systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
+                    CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
+            systemToCmSettingsMap.put(LegacyCMSettings.USE_EDGE_SERVICE_FOR_GESTURES,
+                    CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_NOTIF_COUNT,
+                    CMSettings.System.STATUS_BAR_NOTIF_COUNT);
+            systemToCmSettingsMap.put(LegacyCMSettings.CALL_RECORDING_FORMAT,
+                    CMSettings.System.CALL_RECORDING_FORMAT);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                    CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                    CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_SCREEN_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
