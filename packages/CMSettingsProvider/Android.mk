@@ -33,4 +33,3 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 include $(BUILD_PACKAGE)
 
 ########################
-include $(call all-makefiles-under,$(LOCAL_PATH))
