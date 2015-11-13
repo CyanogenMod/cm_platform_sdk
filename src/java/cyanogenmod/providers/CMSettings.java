@@ -16,6 +16,8 @@
 
 package cyanogenmod.providers;
 
+import com.android.internal.util.ArrayUtils;
+
 import android.content.ContentResolver;
 import android.content.IContentProvider;
 import android.database.Cursor;
@@ -1225,6 +1227,93 @@ public final class CMSettings {
          */
         public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES =
                 "notification_light_pulse_custom_values";
+
+        /**
+         * @hide
+         */
+        public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
+                CMSettings.System.QS_QUICK_PULLDOWN,
+                CMSettings.System.NAV_BUTTONS,
+                CMSettings.System.KEY_HOME_LONG_PRESS_ACTION,
+                CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
+                CMSettings.System.BACK_WAKE_SCREEN,
+                CMSettings.System.MENU_WAKE_SCREEN,
+                CMSettings.System.VOLUME_WAKE_SCREEN,
+                CMSettings.System.KEY_MENU_ACTION,
+                CMSettings.System.KEY_MENU_LONG_PRESS_ACTION,
+                CMSettings.System.KEY_ASSIST_ACTION,
+                CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION,
+                CMSettings.System.KEY_APP_SWITCH_ACTION,
+                CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
+                CMSettings.System.HOME_WAKE_SCREEN,
+                CMSettings.System.ASSIST_WAKE_SCREEN,
+                CMSettings.System.APP_SWITCH_WAKE_SCREEN,
+                CMSettings.System.CAMERA_WAKE_SCREEN,
+                CMSettings.System.CAMERA_SLEEP_ON_RELEASE,
+                CMSettings.System.CAMERA_LAUNCH,
+                CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
+                CMSettings.System.BATTERY_LIGHT_ENABLED,
+                CMSettings.System.BATTERY_LIGHT_PULSE,
+                CMSettings.System.BATTERY_LIGHT_LOW_COLOR,
+                CMSettings.System.BATTERY_LIGHT_MEDIUM_COLOR,
+                CMSettings.System.BATTERY_LIGHT_FULL_COLOR,
+                CMSettings.System.ENABLE_MWI_NOTIFICATION,
+                CMSettings.System.PROXIMITY_ON_WAKE,
+                CMSettings.System.ENABLE_FORWARD_LOOKUP,
+                CMSettings.System.ENABLE_PEOPLE_LOOKUP,
+                CMSettings.System.ENABLE_REVERSE_LOOKUP,
+                CMSettings.System.FORWARD_LOOKUP_PROVIDER,
+                CMSettings.System.PEOPLE_LOOKUP_PROVIDER,
+                CMSettings.System.REVERSE_LOOKUP_PROVIDER,
+                CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID,
+                CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN,
+                CMSettings.System.WIFI_AUTO_CONNECT_TYPE,
+                CMSettings.System.DISPLAY_TEMPERATURE_DAY,
+                CMSettings.System.DISPLAY_TEMPERATURE_NIGHT,
+                CMSettings.System.DISPLAY_TEMPERATURE_MODE,
+                CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
+                CMSettings.System.DISPLAY_LOW_POWER,
+                CMSettings.System.DISPLAY_COLOR_ENHANCE,
+                CMSettings.System.DISPLAY_COLOR_ADJUSTMENT,
+                CMSettings.System.LIVE_DISPLAY_HINTED,
+                CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
+                CMSettings.System.STATUS_BAR_SHOW_WEATHER,
+                CMSettings.System.RECENTS_SHOW_SEARCH_BAR,
+                CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
+                CMSettings.System.T9_SEARCH_INPUT_LOCALE,
+                CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
+                CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                CMSettings.System.SHOW_ALARM_ICON,
+                CMSettings.System.STATUS_BAR_IME_SWITCHER,
+                CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
+                CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
+                CMSettings.System.VOLBTN_MUSIC_CONTROLS,
+                CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
+                CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
+                CMSettings.System.STATUS_BAR_NOTIF_COUNT,
+                CMSettings.System.CALL_RECORDING_FORMAT,
+                CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES
+        };
+
+        /**
+         * @hide
+         */
+        public static boolean isLegacySetting(String key) {
+            return ArrayUtils.contains(LEGACY_SYSTEM_SETTINGS, key);
+        }
     }
 
     /**
@@ -1861,6 +1950,45 @@ public final class CMSettings {
          */
         public static final String THEME_PREV_BOOT_API_LEVEL = "theme_prev_boot_api_level";
         // endregion
+
+        /**
+         * @hide
+         */
+        public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
+                CMSettings.Secure.ADVANCED_MODE,
+                CMSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
+                CMSettings.Secure.BUTTON_BRIGHTNESS,
+                CMSettings.Secure.DEFAULT_THEME_COMPONENTS,
+                CMSettings.Secure.DEFAULT_THEME_PACKAGE,
+                CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
+                CMSettings.Secure.NAME_THEME_CONFIG,
+                CMSettings.Secure.KEYBOARD_BRIGHTNESS,
+                CMSettings.Secure.POWER_MENU_ACTIONS,
+                CMSettings.Secure.STATS_COLLECTION,
+                CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
+                CMSettings.Secure.QS_TILES,
+                CMSettings.Secure.QS_USE_MAIN_TILES,
+                CMSettings.Secure.VOLUME_LINK_NOTIFICATION,
+                CMSettings.Secure.NAVIGATION_RING_TARGETS[0],
+                CMSettings.Secure.NAVIGATION_RING_TARGETS[1],
+                CMSettings.Secure.NAVIGATION_RING_TARGETS[2],
+                CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY,
+                CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
+                CMSettings.Secure.ADB_NOTIFY,
+                CMSettings.Secure.ADB_PORT,
+                CMSettings.Secure.DEVICE_HOSTNAME,
+                CMSettings.Secure.KILL_APP_LONGPRESS_BACK,
+                CMSettings.Secure.PROTECTED_COMPONENTS,
+                CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
+                CMSettings.Secure.ADVANCED_REBOOT,
+                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL};
+
+        /**
+         * @hide
+         */
+        public static boolean isLegacySetting(String key) {
+            return ArrayUtils.contains(LEGACY_SECURE_SETTINGS, key);
+        }
     }
 
     /**
@@ -2278,5 +2406,24 @@ public final class CMSettings {
          */
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
         // endregion
+
+        /**
+         * @hide
+         */
+        public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
+                CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
+                CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
+                CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
+                CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
+                CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
+                CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION};
+
+        /**
+         * @hide
+         */
+        public static boolean isLegacySetting(String key) {
+            return ArrayUtils.contains(LEGACY_GLOBAL_SETTINGS, key);
+        }
     }
 }
