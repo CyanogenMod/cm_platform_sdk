@@ -946,246 +946,18 @@ public class CMSettingsProvider extends ContentProvider {
             if (LOCAL_LOGV) Log.d(TAG, "CM settings will be migrated for user id: " + userId);
 
             // Migrate system settings
-            HashMap<String, String> systemToCmSettingsMap = new HashMap<String, String>();
-            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    CMSettings.System.QS_QUICK_PULLDOWN);
-            systemToCmSettingsMap.put(LegacyCMSettings.NAV_BUTTONS,
-                    CMSettings.System.NAV_BUTTONS);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_HOME_LONG_PRESS_ACTION,
-                    CMSettings.System.KEY_HOME_LONG_PRESS_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_HOME_DOUBLE_TAP_ACTION,
-                    CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.BACK_WAKE_SCREEN,
-                    CMSettings.System.BACK_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.MENU_WAKE_SCREEN,
-                    CMSettings.System.MENU_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.VOLUME_WAKE_SCREEN,
-                    CMSettings.System.VOLUME_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_MENU_ACTION,
-                    CMSettings.System.KEY_MENU_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_MENU_LONG_PRESS_ACTION,
-                    CMSettings.System.KEY_MENU_LONG_PRESS_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_ASSIST_ACTION,
-                    CMSettings.System.KEY_ASSIST_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_ASSIST_LONG_PRESS_ACTION,
-                    CMSettings.System.KEY_ASSIST_LONG_PRESS_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_APP_SWITCH_ACTION,
-                    CMSettings.System.KEY_APP_SWITCH_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.KEY_APP_SWITCH_LONG_PRESS_ACTION,
-                    CMSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
-            systemToCmSettingsMap.put(LegacyCMSettings.HOME_WAKE_SCREEN,
-                    CMSettings.System.HOME_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.ASSIST_WAKE_SCREEN,
-                    CMSettings.System.ASSIST_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.APP_SWITCH_WAKE_SCREEN,
-                    CMSettings.System.APP_SWITCH_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_WAKE_SCREEN,
-                    CMSettings.System.CAMERA_WAKE_SCREEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_SLEEP_ON_RELEASE,
-                    CMSettings.System.CAMERA_SLEEP_ON_RELEASE);
-            systemToCmSettingsMap.put(LegacyCMSettings.CAMERA_LAUNCH,
-                    CMSettings.System.CAMERA_LAUNCH);
-            systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
-                    CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
-            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_ENABLED,
-                    CMSettings.System.BATTERY_LIGHT_ENABLED);
-            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_PULSE,
-                    CMSettings.System.BATTERY_LIGHT_PULSE);
-            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_LOW_COLOR,
-                    CMSettings.System.BATTERY_LIGHT_LOW_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_MEDIUM_COLOR,
-                    CMSettings.System.BATTERY_LIGHT_MEDIUM_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.BATTERY_LIGHT_FULL_COLOR,
-                    CMSettings.System.BATTERY_LIGHT_FULL_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_MWI_NOTIFICATION,
-                    CMSettings.System.ENABLE_MWI_NOTIFICATION);
-            systemToCmSettingsMap.put(LegacyCMSettings.PROXIMITY_ON_WAKE,
-                    CMSettings.System.PROXIMITY_ON_WAKE);
-            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_FORWARD_LOOKUP,
-                    CMSettings.System.ENABLE_FORWARD_LOOKUP);
-            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_PEOPLE_LOOKUP,
-                    CMSettings.System.ENABLE_PEOPLE_LOOKUP);
-            systemToCmSettingsMap.put(LegacyCMSettings.ENABLE_REVERSE_LOOKUP,
-                    CMSettings.System.ENABLE_REVERSE_LOOKUP);
-            systemToCmSettingsMap.put(LegacyCMSettings.FORWARD_LOOKUP_PROVIDER,
-                    CMSettings.System.FORWARD_LOOKUP_PROVIDER);
-            systemToCmSettingsMap.put(LegacyCMSettings.PEOPLE_LOOKUP_PROVIDER,
-                    CMSettings.System.PEOPLE_LOOKUP_PROVIDER);
-            systemToCmSettingsMap.put(LegacyCMSettings.REVERSE_LOOKUP_PROVIDER,
-                    CMSettings.System.REVERSE_LOOKUP_PROVIDER);
-            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_ACCOUNT_SID,
-                    CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID);
-            systemToCmSettingsMap.put(LegacyCMSettings.DIALER_OPENCNAM_AUTH_TOKEN,
-                    CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN);
-            systemToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_CONNECT_TYPE,
-                    CMSettings.System.WIFI_AUTO_CONNECT_TYPE);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_DAY,
-                    CMSettings.System.DISPLAY_TEMPERATURE_DAY);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_NIGHT,
-                    CMSettings.System.DISPLAY_TEMPERATURE_NIGHT);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_TEMPERATURE_MODE,
-                    CMSettings.System.DISPLAY_TEMPERATURE_MODE);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_AUTO_OUTDOOR_MODE,
-                    CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_LOW_POWER,
-                    CMSettings.System.DISPLAY_LOW_POWER);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ENHANCE,
-                    CMSettings.System.DISPLAY_COLOR_ENHANCE);
-            systemToCmSettingsMap.put(LegacyCMSettings.DISPLAY_COLOR_ADJUSTMENT,
-                    CMSettings.System.DISPLAY_COLOR_ADJUSTMENT);
-            systemToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_HINTED,
-                    CMSettings.System.LIVE_DISPLAY_HINTED);
-            systemToCmSettingsMap.put(LegacyCMSettings.DOUBLE_TAP_SLEEP_GESTURE,
-                    CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE);
-            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_SHOW_WEATHER,
-                    CMSettings.System.STATUS_BAR_SHOW_WEATHER);
-            systemToCmSettingsMap.put(LegacyCMSettings.RECENTS_SHOW_SEARCH_BAR,
-                    CMSettings.System.RECENTS_SHOW_SEARCH_BAR);
-            systemToCmSettingsMap.put(LegacyCMSettings.NAVBAR_LEFT_IN_LANDSCAPE,
-                    CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
-            systemToCmSettingsMap.put(LegacyCMSettings.T9_SEARCH_INPUT_LOCALE,
-                    CMSettings.System.T9_SEARCH_INPUT_LOCALE);
-            systemToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_ACCEPT_ALL_FILES,
-                    CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES);
-            systemToCmSettingsMap.put(LegacyCMSettings.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
-                    CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
-            systemToCmSettingsMap.put(LegacyCMSettings.SHOW_ALARM_ICON,
-                    CMSettings.System.SHOW_ALARM_ICON);
-            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_IME_SWITCHER,
-                    CMSettings.System.STATUS_BAR_IME_SWITCHER);
-            systemToCmSettingsMap.put(LegacyCMSettings.QS_SHOW_BRIGHTNESS_SLIDER,
-                    CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER);
-            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_BRIGHTNESS_CONTROL,
-                    CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
-            systemToCmSettingsMap.put(LegacyCMSettings.VOLBTN_MUSIC_CONTROLS,
-                    CMSettings.System.VOLBTN_MUSIC_CONTROLS);
-            systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
-                    CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
-            systemToCmSettingsMap.put(LegacyCMSettings.USE_EDGE_SERVICE_FOR_GESTURES,
-                    CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES);
-            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_NOTIF_COUNT,
-                    CMSettings.System.STATUS_BAR_NOTIF_COUNT);
-            systemToCmSettingsMap.put(LegacyCMSettings.CALL_RECORDING_FORMAT,
-                    CMSettings.System.CALL_RECORDING_FORMAT);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                    CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
-                    CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_SCREEN_ON,
-                    CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE);
-            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
-                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES);
-
             int rowsMigrated = migrateCMSettingsForTable(userId,
-                    CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
+                    CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, CMSettings.System.LEGACY_SYSTEM_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM system table");
 
             // Migrate secure settings
-            HashMap<String, String> secureToCmSettingsMap = new HashMap<String, String>();
-            secureToCmSettingsMap.put(LegacyCMSettings.ADVANCED_MODE,
-                    CMSettings.Secure.ADVANCED_MODE);
-            secureToCmSettingsMap.put(LegacyCMSettings.BUTTON_BACKLIGHT_TIMEOUT,
-                    CMSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT);
-            secureToCmSettingsMap.put(LegacyCMSettings.BUTTON_BRIGHTNESS,
-                    CMSettings.Secure.BUTTON_BRIGHTNESS);
-            secureToCmSettingsMap.put(LegacyCMSettings.DEFAULT_THEME_COMPONENTS,
-                    CMSettings.Secure.DEFAULT_THEME_COMPONENTS);
-            secureToCmSettingsMap.put(LegacyCMSettings.DEFAULT_THEME_PACKAGE,
-                    CMSettings.Secure.DEFAULT_THEME_PACKAGE);
-            secureToCmSettingsMap.put(LegacyCMSettings.DEV_FORCE_SHOW_NAVBAR,
-                    CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR);
-            secureToCmSettingsMap.put(
-                    LegacyCMSettings.THEME_PKG_CONFIGURATION_PERSISTENCE_PROPERTY,
-                            CMSettings.Secure.NAME_THEME_CONFIG);
-            secureToCmSettingsMap.put(LegacyCMSettings.KEYBOARD_BRIGHTNESS,
-                    CMSettings.Secure.KEYBOARD_BRIGHTNESS);
-            secureToCmSettingsMap.put(LegacyCMSettings.POWER_MENU_ACTIONS,
-                    CMSettings.Secure.POWER_MENU_ACTIONS);
-            secureToCmSettingsMap.put(LegacyCMSettings.STATS_COLLECTION,
-                    CMSettings.Secure.STATS_COLLECTION);
-            secureToCmSettingsMap.put(LegacyCMSettings.QS_SHOW_BRIGHTNESS_SLIDER,
-                    CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER);
-            secureToCmSettingsMap.put(LegacyCMSettings.QS_TILES,
-                    CMSettings.Secure.QS_TILES);
-            secureToCmSettingsMap.put(LegacyCMSettings.QS_USE_MAIN_TILES,
-                    CMSettings.Secure.QS_USE_MAIN_TILES);
-            secureToCmSettingsMap.put(LegacyCMSettings.VOLUME_LINK_NOTIFICATION,
-                    CMSettings.Secure.VOLUME_LINK_NOTIFICATION);
-            int navRingTargetsLength = LegacyCMSettings.NAVIGATION_RING_TARGETS.length;
-            int cmNavRingTargetsLength = CMSettings.Secure.NAVIGATION_RING_TARGETS.length;
-            int minNavRingTargetsLength = navRingTargetsLength <= cmNavRingTargetsLength ?
-                    navRingTargetsLength : cmNavRingTargetsLength;
-
-            for (int i = 0; i < minNavRingTargetsLength; i++) {
-                systemToCmSettingsMap.put(LegacyCMSettings.NAVIGATION_RING_TARGETS[i],
-                        CMSettings.Secure.NAVIGATION_RING_TARGETS[i]);
-            }
-
-            secureToCmSettingsMap.put(LegacyCMSettings.RECENTS_LONG_PRESS_ACTIVITY,
-                    CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY);
-            secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
-                    CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
-            secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
-                    CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
-
-            secureToCmSettingsMap.put(LegacyCMSettings.ADB_NOTIFY, CMSettings.Secure.ADB_NOTIFY);
-            secureToCmSettingsMap.put(LegacyCMSettings.ADB_PORT, CMSettings.Secure.ADB_PORT);
-            secureToCmSettingsMap.put(LegacyCMSettings.DEVICE_HOSTNAME,
-                    CMSettings.Secure.DEVICE_HOSTNAME);
-            secureToCmSettingsMap.put(LegacyCMSettings.KILL_APP_LONGPRESS_BACK,
-                    CMSettings.Secure.KILL_APP_LONGPRESS_BACK);
-            secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_COMPONENTS,
-                    CMSettings.Secure.PROTECTED_COMPONENTS);
-            secureToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_COLOR_MATRIX,
-                    CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX);
-            secureToCmSettingsMap.put(LegacyCMSettings.ADVANCED_REBOOT,
-                    CMSettings.Secure.ADVANCED_REBOOT);
-            secureToCmSettingsMap.put(LegacyCMSettings.THEME_PREV_BOOT_API_LEVEL,
-                    CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL);
-
             rowsMigrated = migrateCMSettingsForTable(userId,
-                    CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
+                    CMDatabaseHelper.CMTableNames.TABLE_SECURE, CMSettings.Secure.LEGACY_SECURE_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM secure table");
 
             // Migrate global settings
-            HashMap<String, String> globalToCmSettingsMap = new HashMap<String, String>();
-            globalToCmSettingsMap.put(LegacyCMSettings.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                    CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
-            globalToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
-                    CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX);
-            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_ENABLED,
-                    CMSettings.Global.POWER_NOTIFICATIONS_ENABLED);
-            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_VIBRATE,
-                    CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE);
-            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_RINGTONE,
-                    CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE);
-            globalToCmSettingsMap.put(LegacyCMSettings.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
-                    CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK);
-            globalToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_PRIORITIES_CONFIGURATION,
-                    CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION);
-
             rowsMigrated = migrateCMSettingsForTable(userId,
-                    CMDatabaseHelper.CMTableNames.TABLE_GLOBAL, globalToCmSettingsMap);
+                    CMDatabaseHelper.CMTableNames.TABLE_GLOBAL, CMSettings.Global.LEGACY_GLOBAL_SETTINGS);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM global table");
         }
     }
@@ -1194,19 +966,15 @@ public class CMSettingsProvider extends ContentProvider {
      * Migrates CM settings for a specific table and user id.
      * @param userId The id of the user to run CM settings migration for.
      * @param tableName The name of the table to run CM settings migration on.
-     * @param settingsMap A mapping between key names in {@link Settings} and {@link CMSettings}
+     * @param settings An array of keys to migrate from {@link Settings} to {@link CMSettings}
      * @return Number of rows migrated.
      */
-    private int migrateCMSettingsForTable(int userId, String tableName, HashMap<String,
-            String> settingsMap) {
+    private int migrateCMSettingsForTable(int userId, String tableName, String[] settings) {
         ContentResolver contentResolver = getContext().getContentResolver();
-        Set<Map.Entry<String, String>> entrySet = settingsMap.entrySet();
-        ContentValues[] contentValues = new ContentValues[settingsMap.size()];
+        ContentValues[] contentValues = new ContentValues[settings.length];
 
         int migrateSettingsCount = 0;
-        for (Map.Entry<String, String> keyPair : entrySet) {
-            String settingsKey = keyPair.getKey();
-            String cmSettingsKey = keyPair.getValue();
+        for (String settingsKey : settings) {
             String settingsValue = null;
 
             if (tableName.equals(CMDatabaseHelper.CMTableNames.TABLE_SYSTEM)) {
@@ -1226,7 +994,7 @@ public class CMSettingsProvider extends ContentProvider {
                     + settingsValue);
 
             ContentValues contentValue = new ContentValues();
-            contentValue.put(Settings.NameValueTable.NAME, cmSettingsKey);
+            contentValue.put(Settings.NameValueTable.NAME, settingsKey);
             contentValue.put(Settings.NameValueTable.VALUE, settingsValue);
             contentValues[migrateSettingsCount++] = contentValue;
         }
