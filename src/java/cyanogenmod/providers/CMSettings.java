@@ -27,12 +27,18 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.AndroidException;
+import android.util.ArrayMap;
+import android.util.ArraySet;
 import android.util.Log;
 
+import com.android.internal.util.ArrayUtils;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -270,11 +276,52 @@ public final class CMSettings {
 
         public static final String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
 
+        /** @hide */
+        public static interface Validator {
+            public boolean validate(String value);
+        }
+
         private static final NameValueCache sNameValueCache = new NameValueCache(
                 SYS_PROP_CM_SETTING_VERSION,
                 CONTENT_URI,
                 CALL_METHOD_GET_SYSTEM,
                 CALL_METHOD_PUT_SYSTEM);
+
+        private static final Validator sBooleanValidator =
+                new DiscreteValueValidator(new String[] {"0", "1"});
+
+        private static final Validator sNonNegativeIntegerValidator = new Validator() {
+            @Override
+            public boolean validate(String value) {
+                try {
+                    return Integer.parseInt(value) >= 0;
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+            }
+        };
+
+        private static final Validator sUriValidator = new Validator() {
+            @Override
+            public boolean validate(String value) {
+                try {
+                    Uri.decode(value);
+                    return true;
+                } catch (IllegalArgumentException e) {
+                    return false;
+                }
+            }
+        };
+
+        private static final Validator sColorValidator =
+                new InclusiveIntegerRangeValidator(Integer.MIN_VALUE, Integer.MAX_VALUE);
+
+        private static final Validator sAlwaysTrueValidator = new Validator() {
+            @Override
+            public boolean validate(String value) {
+                return true;
+            }
+        };
 
         // region Methods
 
@@ -622,6 +669,96 @@ public final class CMSettings {
 
         // endregion
 
+        private static final class DiscreteValueValidator implements Validator {
+            private final String[] mValues;
+
+            public DiscreteValueValidator(String[] values) {
+                mValues = values;
+            }
+
+            @Override
+            public boolean validate(String value) {
+                return ArrayUtils.contains(mValues, value);
+            }
+        }
+
+        private static final class InclusiveIntegerRangeValidator implements Validator {
+            private final int mMin;
+            private final int mMax;
+
+            public InclusiveIntegerRangeValidator(int min, int max) {
+                mMin = min;
+                mMax = max;
+            }
+
+            @Override
+            public boolean validate(String value) {
+                try {
+                    final int intValue = Integer.parseInt(value);
+                    return intValue >= mMin && intValue <= mMax;
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+            }
+        }
+
+        private static final class InclusiveFloatRangeValidator implements Validator {
+            private final float mMin;
+            private final float mMax;
+
+            public InclusiveFloatRangeValidator(float min, float max) {
+                mMin = min;
+                mMax = max;
+            }
+
+            @Override
+            public boolean validate(String value) {
+                try {
+                    final float floatValue = Float.parseFloat(value);
+                    return floatValue >= mMin && floatValue <= mMax;
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+            }
+        }
+
+        private static final class DelimitedListValidator implements Validator {
+            private final ArraySet<String> mValidValueSet;
+            private final String mDelimiter;
+            private final boolean mAllowEmptyList;
+
+            public DelimitedListValidator(String[] validValues, String delimiter,
+                    boolean allowEmptyList) {
+                mValidValueSet = new ArraySet<String>(Arrays.asList(validValues));
+                mDelimiter = delimiter;
+                mAllowEmptyList = allowEmptyList;
+            }
+
+            @Override
+            public boolean validate(String value) {
+                ArraySet<String> values = new ArraySet<String>();
+                if (!TextUtils.isEmpty(value)) {
+                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
+                    for (String item : array) {
+                        if (TextUtils.isEmpty(item)) {
+                            continue;
+                        }
+                        values.add(item);
+                    }
+                }
+                if (values.size() > 0) {
+                    values.removeAll(mValidValueSet);
+                    // values.size() will be non-zero if it contains any values not in
+                    // mValidValueSet
+                    return values.size() == 0;
+                } else if (mAllowEmptyList) {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
         // region System Settings
 
         /**
@@ -631,12 +768,19 @@ public final class CMSettings {
          */
         public static final String QS_QUICK_PULLDOWN = "qs_quick_pulldown";
 
+        /** @hide */
+        public static final Validator QS_QUICK_PULLDOWN_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
+
         /**
          * Whether to attach a queue to media notifications.
          * 0 = 0ff, 1 = on
          * @hide
          */
         public static final String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_PLAY_QUEUE_VALIDATOR = sBooleanValidator;
 
         /**
          * Whether the HighTouchSensitivity is activated or not.
@@ -646,11 +790,19 @@ public final class CMSettings {
         public static final String HIGH_TOUCH_SENSITIVITY_ENABLE =
                 "high_touch_sensitivity_enable";
 
+        /** @hide */
+        public static final Validator HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Show the pending notification counts as overlays on the status bar
          * @hide
          */
         public static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
+
+        /** @hide */
+        public static final Validator SYSTEM_PROFILES_ENABLED_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to hide the clock, show it in the right or left
@@ -664,6 +816,10 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_CLOCK = "status_bar_clock";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 3);
+
         /**
          * Display style of AM/PM next to clock in status bar
          * 0: Normal display (Eclair stock)
@@ -673,6 +829,10 @@ public final class CMSettings {
          * @hide
          */
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_AM_PM_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
 
         /**
          * Display style of the status bar battery information
@@ -686,6 +846,10 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_BATTERY_STYLE_VALIDATOR =
+                new DiscreteValueValidator(new String[] {"0", "2", "4", "5", "6"});
+
         /**
          * Status bar battery %
          * 0: Hide the battery percentage
@@ -693,8 +857,12 @@ public final class CMSettings {
          * 2: Display the battery percentage next to the icon
          * @hide
          */
-        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-        // endregion
+        public static final String STATUS_BAR_SHOW_BATTERY_PERCENT =
+                "status_bar_show_battery_percent";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
 
         /**
          * Whether the phone ringtone should be played in an increasing manner
@@ -702,17 +870,28 @@ public final class CMSettings {
          */
         public static final String INCREASING_RING = "increasing_ring";
 
+        /** @hide */
+        public static final Validator INCREASING_RING_VALIDATOR = sBooleanValidator;
+
         /**
          * Start volume fraction for increasing ring volume
          * @hide
          */
         public static final String INCREASING_RING_START_VOLUME = "increasing_ring_start_vol";
 
+        /** @hide */
+        public static final Validator INCREASING_RING_START_VOLUME_VALIDATOR =
+                new InclusiveFloatRangeValidator(0, 1);
+
         /**
          * Ramp up time (seconds) for increasing ring
          * @hide
          */
         public static final String INCREASING_RING_RAMP_UP_TIME = "increasing_ring_ramp_up_time";
+
+        /** @hide */
+        public static final Validator INCREASING_RING_RAMP_UP_TIME_VALIDATOR =
+                new InclusiveIntegerRangeValidator(5, 60);
 
         /**
          * Volume Adjust Sounds Enable, This is the noise made when using volume hard buttons
@@ -721,11 +900,20 @@ public final class CMSettings {
          */
         public static final String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
 
+        /** @hide */
+        public static final Validator VOLUME_ADJUST_SOUNDS_ENABLED_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Navigation controls to Use
          * @hide
          */
         public static final String NAV_BUTTONS = "nav_buttons";
+
+        /** @hide */
+        public static final Validator NAV_BUTTONS_VALIDATOR =
+                new DelimitedListValidator(new String[] {"empty", "home", "back", "search",
+                        "recent", "menu0", "menu1", "menu2", "dpad_left", "dpad_right"}, "|", true);
 
         /**
          * Volume key controls ringtone or media sound stream
@@ -734,12 +922,20 @@ public final class CMSettings {
         public static final String VOLUME_KEYS_CONTROL_RING_STREAM =
                 "volume_keys_control_ring_stream";
 
+        /** @hide */
+        public static final Validator VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * boolean value. toggles using arrow key locations on nav bar
          * as left and right dpad keys
          * @hide
          */
         public static final String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
+
+        /** @hide */
+        public static final Validator NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Action to perform when the home key is long-pressed.
@@ -757,6 +953,10 @@ public final class CMSettings {
          */
         public static final String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
 
+        /** @hide */
+        public static final Validator KEY_HOME_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
+
         /**
          * Action to perform when the home key is double-tapped.
          * (Default can be configured via config_doubleTapOnHomeBehavior)
@@ -765,11 +965,19 @@ public final class CMSettings {
          */
         public static final String KEY_HOME_DOUBLE_TAP_ACTION = "key_home_double_tap_action";
 
+        /** @hide */
+        public static final Validator KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
+
         /**
          * Whether to wake the screen with the back key, the value is boolean.
          * @hide
          */
         public static final String BACK_WAKE_SCREEN = "back_wake_screen";
+
+        /** @hide */
+        public static final Validator BACK_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to wake the screen with the menu key, the value is boolean.
@@ -777,11 +985,19 @@ public final class CMSettings {
          */
         public static final String MENU_WAKE_SCREEN = "menu_wake_screen";
 
+        /** @hide */
+        public static final Validator MENU_WAKE_SCREENN_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether to wake the screen with the volume keys, the value is boolean.
          * @hide
          */
         public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+
+        /** @hide */
+        public static final Validator VOLUME_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Action to perform when the menu key is pressed. (Default is 1)
@@ -789,6 +1005,10 @@ public final class CMSettings {
          * @hide
          */
         public static final String KEY_MENU_ACTION = "key_menu_action";
+
+        /** @hide */
+        public static final Validator KEY_MENU_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
 
         /**
          * Action to perform when the menu key is long-pressed.
@@ -798,12 +1018,20 @@ public final class CMSettings {
          */
         public static final String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
 
+        /** @hide */
+        public static final Validator KEY_MENU_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
+
         /**
          * Action to perform when the assistant (search) key is pressed. (Default is 3)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
         public static final String KEY_ASSIST_ACTION = "key_assist_action";
+
+        /** @hide */
+        public static final Validator KEY_ASSIST_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
 
         /**
          * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
@@ -812,12 +1040,20 @@ public final class CMSettings {
          */
         public static final String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
 
+        /** @hide */
+        public static final Validator KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
+
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
          * @hide
          */
         public static final String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
+
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
 
         /**
          * Action to perform when the app switch key is long-pressed. (Default is 0)
@@ -826,11 +1062,19 @@ public final class CMSettings {
          */
         public static final String KEY_APP_SWITCH_LONG_PRESS_ACTION = "key_app_switch_long_press_action";
 
+        /** @hide */
+        public static final Validator KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 8);
+
         /**
          * Whether to wake the screen with the home key, the value is boolean.
          * @hide
          */
         public static final String HOME_WAKE_SCREEN = "home_wake_screen";
+
+        /** @hide */
+        public static final Validator HOME_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to wake the screen with the assist key, the value is boolean.
@@ -838,11 +1082,19 @@ public final class CMSettings {
          */
         public static final String ASSIST_WAKE_SCREEN = "assist_wake_screen";
 
+        /** @hide */
+        public static final Validator ASSIST_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether to wake the screen with the app switch key, the value is boolean.
          * @hide
          */
         public static final String APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
+
+        /** @hide */
+        public static final Validator APP_SWITCH_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to wake the screen with the camera key half-press.
@@ -850,17 +1102,29 @@ public final class CMSettings {
          */
         public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
 
+        /** @hide */
+        public static final Validator CAMERA_WAKE_SCREEN_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether or not to send device back to sleep if Camera button is released ("Peek")
          * @hide
          */
         public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
 
+        /** @hide */
+        public static final Validator CAMERA_SLEEP_ON_RELEASE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether to launch secure camera app when key is longpressed
          * @hide
          */
         public static final String CAMERA_LAUNCH = "camera_launch";
+
+        /** @hide */
+        public static final Validator CAMERA_LAUNCH_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Swap volume buttons when the screen is rotated
@@ -871,12 +1135,20 @@ public final class CMSettings {
          */
         public static final String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
 
+        /** @hide */
+        public static final Validator SWAP_VOLUME_KEYS_ON_ROTATION_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
+
         /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
          * @hide
          */
         public static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_ENABLED_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether the battery LED should repeatedly flash when the battery is low
@@ -885,11 +1157,19 @@ public final class CMSettings {
          */
         public static final String BATTERY_LIGHT_PULSE = "battery_light_pulse";
 
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_PULSE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * What color to use for the battery LED while charging - low
          * @hide
          */
         public static final String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_LOW_COLOR_VALIDATOR =
+                sColorValidator;
 
         /**
          * What color to use for the battery LED while charging - medium
@@ -897,11 +1177,19 @@ public final class CMSettings {
          */
         public static final String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
 
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_MEDIUM_COLOR_VALIDATOR =
+                sColorValidator;
+
         /**
          * What color to use for the battery LED while charging - full
          * @hide
          */
         public static final String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+
+        /** @hide */
+        public static final Validator BATTERY_LIGHT_FULL_COLOR_VALIDATOR =
+                sColorValidator;
 
         /**
          * Sprint MWI Quirk: Show message wait indicator notifications
@@ -909,11 +1197,19 @@ public final class CMSettings {
          */
         public static final String ENABLE_MWI_NOTIFICATION = "enable_mwi_notification";
 
+        /** @hide */
+        public static final Validator ENABLE_MWI_NOTIFICATION_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Check the proximity sensor during wakeup
          * @hide
          */
         public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
+
+        /** @hide */
+        public static final Validator PROXIMITY_ON_WAKE_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Enable looking up of phone numbers of nearby places
@@ -922,12 +1218,20 @@ public final class CMSettings {
          */
         public static final String ENABLE_FORWARD_LOOKUP = "enable_forward_lookup";
 
+        /** @hide */
+        public static final Validator ENABLE_FORWARD_LOOKUP_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Enable looking up of phone numbers of people
          *
          * @hide
          */
         public static final String ENABLE_PEOPLE_LOOKUP = "enable_people_lookup";
+
+        /** @hide */
+        public static final Validator ENABLE_PEOPLE_LOOKUP_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Enable looking up of information of phone numbers not in the contacts
@@ -936,12 +1240,19 @@ public final class CMSettings {
          */
         public static final String ENABLE_REVERSE_LOOKUP = "enable_reverse_lookup";
 
+        /** @hide */
+        public static final Validator ENABLE_REVERSE_LOOKUP_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * The forward lookup provider
          *
          * @hide
          */
         public static final String FORWARD_LOOKUP_PROVIDER = "forward_lookup_provider";
+
+        /** @hide */
+        public static final Validator FORWARD_LOOKUP_PROVIDER_VALIDATOR = sAlwaysTrueValidator;
 
         /**
          * The people lookup provider
@@ -950,12 +1261,18 @@ public final class CMSettings {
          */
         public static final String PEOPLE_LOOKUP_PROVIDER = "people_lookup_provider";
 
+        /** @hide */
+        public static final Validator PEOPLE_LOOKUP_PROVIDER_VALIDATOR = sAlwaysTrueValidator;
+
         /**
          * The reverse lookup provider
          *
          * @hide
          */
         public static final String REVERSE_LOOKUP_PROVIDER = "reverse_lookup_provider";
+
+        /** @hide */
+        public static final Validator REVERSE_LOOKUP_PROVIDER_VALIDATOR = sAlwaysTrueValidator;
 
         /**
          * The OpenCNAM paid account ID
@@ -964,12 +1281,20 @@ public final class CMSettings {
          */
         public static final String DIALER_OPENCNAM_ACCOUNT_SID = "dialer_opencnam_account_sid";
 
+        /** @hide */
+        public static final Validator DIALER_OPENCNAM_ACCOUNT_SID_VALIDATOR =
+                sAlwaysTrueValidator;
+
         /**
          * The OpenCNAM authentication token
          *
          * @hide
          */
         public static final String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
+
+        /** @hide */
+        public static final Validator DIALER_OPENCNAM_AUTH_TOKEN_VALIDATOR =
+                sAlwaysTrueValidator;
 
         /**
          * Whether wifi settings will connect to access point automatically
@@ -979,11 +1304,19 @@ public final class CMSettings {
          */
         public static final String WIFI_AUTO_CONNECT_TYPE = "wifi_auto_connect_type";
 
+        /** @hide */
+        public static final Validator WIFI_AUTO_CONNECT_TYPE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 1);
+
         /**
          * Color temperature of the display during the day
          * @hide
          */
         public static final String DISPLAY_TEMPERATURE_DAY = "display_temperature_day";
+
+        /** @hide */
+        public static final Validator DISPLAY_TEMPERATURE_DAY_VALIDATOR =
+                new InclusiveIntegerRangeValidator(1000, 10000);
 
         /**
          * Color temperature of the display at night
@@ -991,11 +1324,19 @@ public final class CMSettings {
          */
         public static final String DISPLAY_TEMPERATURE_NIGHT = "display_temperature_night";
 
+        /** @hide */
+        public static final Validator DISPLAY_TEMPERATURE_NIGHT_VALIDATOR =
+                new InclusiveIntegerRangeValidator(1000, 10000);
+
         /**
          * Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.
          * @hide
          */
         public static final String DISPLAY_TEMPERATURE_MODE = "display_temperature_mode";
+
+        /** @hide */
+        public static final Validator DISPLAY_TEMPERATURE_MODE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 4);
 
         /**
          * Automatic outdoor mode
@@ -1003,11 +1344,19 @@ public final class CMSettings {
          */
         public static final String DISPLAY_AUTO_OUTDOOR_MODE = "display_auto_outdoor_mode";
 
+        /** @hide */
+        public static final Validator DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Use display power saving features such as CABC or CABL
          * @hide
          */
         public static final String DISPLAY_LOW_POWER = "display_low_power";
+
+        /** @hide */
+        public static final Validator DISPLAY_LOW_POWER_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Use color enhancement feature of display
@@ -1015,11 +1364,33 @@ public final class CMSettings {
          */
         public static final String DISPLAY_COLOR_ENHANCE = "display_color_enhance";
 
+        /** @hide */
+        public static final Validator DISPLAY_COLOR_ENHANCE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Manual display color adjustments (RGB values as floats, separated by spaces)
          * @hide
          */
         public static final String DISPLAY_COLOR_ADJUSTMENT = "display_color_adjustment";
+
+        /** @hide */
+        public static final Validator DISPLAY_COLOR_ADJUSTMENT_VALIDATOR =
+                new Validator() {
+                    @Override
+                    public boolean validate(String value) {
+                        String[] colorAdjustment = value == null ?
+                                null : value.split(" ");
+                        if (colorAdjustment != null && colorAdjustment.length != 3) {
+                            return false;
+                        }
+                        Validator floatValidator = new InclusiveFloatRangeValidator(0, 1);
+                        return colorAdjustment == null ||
+                                floatValidator.validate(colorAdjustment[0]) &&
+                                floatValidator.validate(colorAdjustment[1]) &&
+                                floatValidator.validate(colorAdjustment[2]);
+                    }
+                };
 
         /**
          * Did we tell about how they can stop breaking their eyes?
@@ -1027,11 +1398,19 @@ public final class CMSettings {
          */
         public static final String LIVE_DISPLAY_HINTED = "live_display_hinted";
 
+        /** @hide */
+        public static final Validator LIVE_DISPLAY_HINTED_VALIDATOR =
+                sBooleanValidator;
+
         /**
          *  Enable statusbar double tap gesture on to put device to sleep
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+
+        /** @hide */
+        public static final Validator DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Boolean value on whether to show weather in the statusbar
@@ -1039,11 +1418,19 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_SHOW_WEATHER = "status_bar_show_weather";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_SHOW_WEATHER_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Show search bar in recents
          * @hide
          */
         public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
+
+        /** @hide */
+        public static final Validator RECENTS_SHOW_SEARCH_BAR_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether navigation bar is placed on the left side in landscape mode
@@ -1051,11 +1438,25 @@ public final class CMSettings {
          */
         public static final String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
 
+        /** @hide */
+        public static final Validator NAVBAR_LEFT_IN_LANDSCAPE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Locale for secondary overlay on dialer for t9 search input
          * @hide
          */
         public static final String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+
+        /** @hide */
+        public static final Validator T9_SEARCH_INPUT_LOCALE_VALIDATOR =
+                new Validator() {
+                    @Override
+                    public boolean validate(String value) {
+                        final Locale locale = new Locale(value);
+                        return ArrayUtils.contains(Locale.getAvailableLocales(), locale);
+                    }
+                };
 
         /**
          * If all file types can be accepted over Bluetooth OBEX.
@@ -1064,6 +1465,10 @@ public final class CMSettings {
         public static final String BLUETOOTH_ACCEPT_ALL_FILES =
                 "bluetooth_accept_all_files";
 
+        /** @hide */
+        public static final Validator BLUETOOTH_ACCEPT_ALL_FILES_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether to scramble a pin unlock layout
          * @hide
@@ -1071,10 +1476,18 @@ public final class CMSettings {
         public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT =
                 "lockscreen_scramble_pin_layout";
 
+        /** @hide */
+        public static final Validator LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * @hide
          */
         public static final String SHOW_ALARM_ICON = "show_alarm_icon";
+
+        /** @hide */
+        public static final Validator SHOW_ALARM_ICON_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to show the IME switcher in the status bar
@@ -1082,17 +1495,29 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_IME_SWITCHER_VALIDATOR =
+                sBooleanValidator;
+
         /** Whether to allow one finger quick settings expansion on the right side of the statusbar.
          *
          * @hide
          */
         public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR =
+                sBooleanValidator;
+
         /** Whether to show the brightness slider in quick settings panel.
          *
          * @hide
          */
         public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+
+        /** @hide */
+        public static final Validator QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to control brightness from status bar
@@ -1101,11 +1526,19 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
+        /** @hide */
+        public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * @hide
          */
         public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
+
+        /** @hide */
+        public static final Validator VOLBTN_MUSIC_CONTROLS_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Use EdgeGesture Service for system gestures in PhoneWindowManager
@@ -1113,11 +1546,19 @@ public final class CMSettings {
          */
         public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
 
+        /** @hide */
+        public static final Validator USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Show the pending notification counts as overlays on the status bar
          * @hide
          */
         public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_NOTIF_COUNT_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Call recording format value
@@ -1128,12 +1569,21 @@ public final class CMSettings {
          */
         public static final String CALL_RECORDING_FORMAT = "call_recording_format";
 
+        /** @hide */
+        public static final Validator CALL_RECORDING_FORMAT_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 1);
+
         /**
          * Contains the notifications light maximum brightness to use.
+         * Values range from 1 to 255
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL =
                 "notification_light_brightness_level";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR =
+                new InclusiveIntegerRangeValidator(1, 255);
 
         /**
          * Whether to use the all the LEDs for the notifications or just one.
@@ -1141,6 +1591,10 @@ public final class CMSettings {
          */
         public static final String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE =
                 "notification_light_multiple_leds_enable";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR =
+                sBooleanValidator;
 
         /**
          * Whether to allow notifications with the screen on or DayDreams.
@@ -1150,12 +1604,20 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_SCREEN_ON =
                 "notification_light_screen_on_enable";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * What color to use for the notification LED by default
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR =
                 "notification_light_pulse_default_color";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR_VALIDATOR =
+                sColorValidator;
 
         /**
          * How long to flash the notification LED by default
@@ -1164,12 +1626,20 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON =
                 "notification_light_pulse_default_led_on";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON_VALIDATOR =
+                sNonNegativeIntegerValidator;
+
         /**
          * How long to wait between flashes for the notification LED by default
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF =
                 "notification_light_pulse_default_led_off";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF_VALIDATOR =
+                sNonNegativeIntegerValidator;
 
         /**
          * What color to use for the missed call notification LED
@@ -1178,6 +1648,10 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_PULSE_CALL_COLOR =
                 "notification_light_pulse_call_color";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_CALL_COLOR_VALIDATOR =
+                sColorValidator;
+
         /**
          * How long to flash the missed call notification LED
          * @hide
@@ -1185,18 +1659,31 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_ON =
                 "notification_light_pulse_call_led_on";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_CALL_LED_ON_VALIDATOR =
+                sNonNegativeIntegerValidator;
+
         /**
          * How long to wait between flashes for the missed call notification LED
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF =
                 "notification_light_pulse_call_led_off";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF_VALIDATOR =
+                sNonNegativeIntegerValidator;
+
         /**
          * What color to use for the voicemail notification LED
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR =
                 "notification_light_pulse_vmail_color";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR_VALIDATOR =
+                sColorValidator;
 
         /**
          * How long to flash the voicemail notification LED
@@ -1205,12 +1692,20 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON =
                 "notification_light_pulse_vmail_led_on";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON_VALIDATOR =
+                sNonNegativeIntegerValidator;
+
         /**
          * How long to wait between flashes for the voicemail notification LED
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF =
                 "notification_light_pulse_vmail_led_off";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF_VALIDATOR =
+                sNonNegativeIntegerValidator;
 
         /**
          * Whether to use the custom LED values for the notification pulse LED.
@@ -1219,12 +1714,207 @@ public final class CMSettings {
         public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE =
                 "notification_light_pulse_custom_enable";
 
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR =
+                sBooleanValidator;
+
         /**
          * Which custom LED values to use for the notification pulse LED.
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES =
                 "notification_light_pulse_custom_values";
+
+        /** @hide */
+        public static final Validator NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR =
+                new Validator() {
+                    @Override
+                    public boolean validate(String value) {
+                        if (TextUtils.isEmpty(value)) {
+                            return true;
+                        }
+
+                        for (String packageValuesString : value.split("\\|")) {
+                            String[] packageValues = packageValuesString.split("=");
+                            if (packageValues.length != 2) {
+                                if (LOCAL_LOGV) {
+                                    Log.d(TAG, "Incorrect number of package values: "
+                                            + packageValues.length);
+                                }
+                                return false;
+                            }
+                            String packageName = packageValues[0];
+                            if (TextUtils.isEmpty(packageName)) {
+                                if (LOCAL_LOGV)  Log.d(TAG, "Empty package name");
+                                return false;
+                            }
+                            String[] values = packageValues[1].split(";");
+                            if (values.length != 3) {
+                                if (LOCAL_LOGV) {
+                                    Log.d(TAG, "Incorrect number of values: " + values.length);
+                                }
+                                return false;
+                            }
+                            try {
+                                // values[0] is LED color
+                                if (!sColorValidator.validate(values[0])) {
+                                    if (LOCAL_LOGV) {
+                                        Log.d(TAG, "Invalid LED color (" + values[0] + ") for "
+                                                + packageName);
+                                    }
+                                    return false;
+                                }
+                                // values[1] is the LED on time and should be non-negative
+                                if (!sNonNegativeIntegerValidator.validate(values[1])) {
+                                    if (LOCAL_LOGV) {
+                                        Log.d(TAG, "Invalid LED on time (" + values[1] + ") for "
+                                                + packageName);
+                                    }
+                                    return false;
+                                }
+                                // values[1] is the LED off time and should be non-negative
+                                if (!sNonNegativeIntegerValidator.validate(values[2])) {
+                                    if (LOCAL_LOGV) {
+                                        Log.d(TAG, "Invalid LED off time (" + values[2] + ") for "
+                                                + packageName);
+                                    }
+                                    return false;
+                                }
+                            } catch (NumberFormatException e) {
+                                return false;
+                            }
+                        }
+                        // if we make it all the way through then the data is considered valid
+                        return true;
+                    }
+                };
+        // endregion
+
+        /**
+         * These are all public system settings
+         *
+         * @hide
+         */
+        public static final Map<String, Validator> VALIDATORS =
+                new ArrayMap<String, Validator>();
+        static {
+            VALIDATORS.put(QS_QUICK_PULLDOWN, QS_QUICK_PULLDOWN_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_PLAY_QUEUE, NOTIFICATION_PLAY_QUEUE_VALIDATOR);
+            VALIDATORS.put(HIGH_TOUCH_SENSITIVITY_ENABLE,
+                    HIGH_TOUCH_SENSITIVITY_ENABLE_VALIDATOR);
+            VALIDATORS.put(SYSTEM_PROFILES_ENABLED, SYSTEM_PROFILES_ENABLED_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_AM_PM, STATUS_BAR_AM_PM_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_STYLE, STATUS_BAR_BATTERY_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_SHOW_BATTERY_PERCENT,
+                    STATUS_BAR_SHOW_BATTERY_PERCENT_VALIDATOR);
+            VALIDATORS.put(INCREASING_RING, INCREASING_RING_VALIDATOR);
+            VALIDATORS.put(INCREASING_RING_START_VOLUME,
+                    INCREASING_RING_START_VOLUME_VALIDATOR);
+            VALIDATORS.put(INCREASING_RING_RAMP_UP_TIME,
+                    INCREASING_RING_RAMP_UP_TIME_VALIDATOR);
+            VALIDATORS.put(VOLUME_ADJUST_SOUNDS_ENABLED,
+                    VOLUME_ADJUST_SOUNDS_ENABLED_VALIDATOR);
+            VALIDATORS.put(NAV_BUTTONS, NAV_BUTTONS_VALIDATOR);
+            VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_STREAM,
+                    VOLUME_KEYS_CONTROL_RING_STREAM_VALIDATOR);
+            VALIDATORS.put(NAVIGATION_BAR_MENU_ARROW_KEYS,
+                    NAVIGATION_BAR_MENU_ARROW_KEYS_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_LONG_PRESS_ACTION, KEY_HOME_LONG_PRESS_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_HOME_DOUBLE_TAP_ACTION, KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR);
+            VALIDATORS.put(BACK_WAKE_SCREEN, BACK_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(MENU_WAKE_SCREEN, MENU_WAKE_SCREENN_VALIDATOR);
+            VALIDATORS.put(VOLUME_WAKE_SCREEN, VOLUME_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(KEY_MENU_ACTION, KEY_MENU_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_MENU_LONG_PRESS_ACTION, KEY_MENU_LONG_PRESS_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_ASSIST_ACTION, KEY_ASSIST_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_ASSIST_LONG_PRESS_ACTION,
+                    KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_ACTION, KEY_APP_SWITCH_ACTION_VALIDATOR);
+            VALIDATORS.put(KEY_APP_SWITCH_LONG_PRESS_ACTION,
+                    KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR);
+            VALIDATORS.put(HOME_WAKE_SCREEN, HOME_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(ASSIST_WAKE_SCREEN, ASSIST_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(APP_SWITCH_WAKE_SCREEN, APP_SWITCH_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
+            VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
+            VALIDATORS.put(SWAP_VOLUME_KEYS_ON_ROTATION,
+                    SWAP_VOLUME_KEYS_ON_ROTATION_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_ENABLED, BATTERY_LIGHT_ENABLED_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_PULSE, BATTERY_LIGHT_PULSE_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_LOW_COLOR, BATTERY_LIGHT_LOW_COLOR_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_MEDIUM_COLOR, BATTERY_LIGHT_MEDIUM_COLOR_VALIDATOR);
+            VALIDATORS.put(BATTERY_LIGHT_FULL_COLOR, BATTERY_LIGHT_FULL_COLOR_VALIDATOR);
+            VALIDATORS.put(ENABLE_MWI_NOTIFICATION, ENABLE_MWI_NOTIFICATION_VALIDATOR);
+            VALIDATORS.put(PROXIMITY_ON_WAKE, PROXIMITY_ON_WAKE_VALIDATOR);
+            VALIDATORS.put(ENABLE_FORWARD_LOOKUP, ENABLE_FORWARD_LOOKUP_VALIDATOR);
+            VALIDATORS.put(ENABLE_PEOPLE_LOOKUP, ENABLE_PEOPLE_LOOKUP_VALIDATOR);
+            VALIDATORS.put(ENABLE_REVERSE_LOOKUP, ENABLE_REVERSE_LOOKUP_VALIDATOR);
+            VALIDATORS.put(FORWARD_LOOKUP_PROVIDER, FORWARD_LOOKUP_PROVIDER_VALIDATOR);
+            VALIDATORS.put(PEOPLE_LOOKUP_PROVIDER, PEOPLE_LOOKUP_PROVIDER_VALIDATOR);
+            VALIDATORS.put(REVERSE_LOOKUP_PROVIDER, REVERSE_LOOKUP_PROVIDER_VALIDATOR);
+            VALIDATORS.put(DIALER_OPENCNAM_ACCOUNT_SID,
+                    DIALER_OPENCNAM_ACCOUNT_SID_VALIDATOR);
+            VALIDATORS.put(DIALER_OPENCNAM_AUTH_TOKEN, DIALER_OPENCNAM_AUTH_TOKEN_VALIDATOR);
+            VALIDATORS.put(WIFI_AUTO_CONNECT_TYPE, WIFI_AUTO_CONNECT_TYPE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_TEMPERATURE_DAY, DISPLAY_TEMPERATURE_DAY_VALIDATOR);
+            VALIDATORS.put(DISPLAY_TEMPERATURE_NIGHT, DISPLAY_TEMPERATURE_NIGHT_VALIDATOR);
+            VALIDATORS.put(DISPLAY_TEMPERATURE_MODE, DISPLAY_TEMPERATURE_MODE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_AUTO_OUTDOOR_MODE, DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_LOW_POWER, DISPLAY_LOW_POWER_VALIDATOR);
+            VALIDATORS.put(DISPLAY_COLOR_ENHANCE, DISPLAY_COLOR_ENHANCE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_COLOR_ADJUSTMENT, DISPLAY_COLOR_ADJUSTMENT_VALIDATOR);
+            VALIDATORS.put(LIVE_DISPLAY_HINTED, LIVE_DISPLAY_HINTED_VALIDATOR);
+            VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE, DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_SHOW_WEATHER, STATUS_BAR_SHOW_WEATHER_VALIDATOR);
+            VALIDATORS.put(RECENTS_SHOW_SEARCH_BAR, RECENTS_SHOW_SEARCH_BAR_VALIDATOR);
+            VALIDATORS.put(NAVBAR_LEFT_IN_LANDSCAPE, NAVBAR_LEFT_IN_LANDSCAPE_VALIDATOR);
+            VALIDATORS.put(T9_SEARCH_INPUT_LOCALE, T9_SEARCH_INPUT_LOCALE_VALIDATOR);
+            VALIDATORS.put(BLUETOOTH_ACCEPT_ALL_FILES, BLUETOOTH_ACCEPT_ALL_FILES_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                    LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
+            VALIDATORS.put(SHOW_ALARM_ICON, SHOW_ALARM_ICON_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_IME_SWITCHER, STATUS_BAR_IME_SWITCHER_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN,
+                    STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR);
+            VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL,
+                    STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
+            VALIDATORS.put(VOLBTN_MUSIC_CONTROLS, VOLBTN_MUSIC_CONTROLS_VALIDATOR);
+            VALIDATORS.put(USE_EDGE_SERVICE_FOR_GESTURES,
+                    USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_NOTIF_COUNT, STATUS_BAR_NOTIF_COUNT_VALIDATOR);
+            VALIDATORS.put(CALL_RECORDING_FORMAT, CALL_RECORDING_FORMAT_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                    NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                    NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_SCREEN_ON,
+                    NOTIFICATION_LIGHT_SCREEN_ON_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
+                    NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
+                    NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
+                    NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
+                    NOTIFICATION_LIGHT_PULSE_CALL_COLOR_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
+                    NOTIFICATION_LIGHT_PULSE_CALL_LED_ON_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
+                    NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
+                    NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
+                    NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
+                    NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
+                    NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
+            VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                    NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
+        };
     }
 
     /**
