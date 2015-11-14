@@ -289,6 +289,62 @@ public class CMSettingsProvider extends ContentProvider {
                 CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY;
 
         /**
+         * Whether to display the ADB notification.
+         * @hide
+         */
+        public static final String ADB_NOTIFY = CMSettings.Secure.ADB_NOTIFY;
+
+        /**
+         * The TCP/IP port to run ADB on, or -1 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = CMSettings.Secure.ADB_PORT;
+
+        /**
+         * The hostname for this device
+         * @hide
+         */
+        public static final String DEVICE_HOSTNAME = CMSettings.Secure.DEVICE_HOSTNAME;
+
+        /**
+         * Whether to allow killing of the foreground app by long-pressing the Back button
+         * @hide
+         */
+        public static final String KILL_APP_LONGPRESS_BACK =
+                CMSettings.Secure.KILL_APP_LONGPRESS_BACK;
+
+        /** Protected Components
+         * @hide
+         */
+        public static final String PROTECTED_COMPONENTS = "protected_components";
+
+        /**
+         * Stored color matrix for LiveDisplay. This is used to allow co-existence with
+         * display tuning done by DisplayAdjustmentUtils when hardware support isn't
+         * available.
+         * @hide
+         */
+        public static final String LIVE_DISPLAY_COLOR_MATRIX = "live_display_color_matrix";
+
+        /**
+         * Whether to include options in power menu for rebooting into recovery or bootloader
+         * @hide
+         */
+        public static final String ADVANCED_REBOOT = CMSettings.Secure.ADVANCED_REBOOT;
+
+        /**
+         * This will be set to the system's current theme API version when ThemeService starts.
+         * It is useful for when an upgrade from one version of CM to another occurs.
+         * For example, after a user upgrades from CM11 to CM12, the value of this field
+         * might be 19. ThemeService would then change the value to 21. This is useful
+         * when an API change breaks a theme. Themeservice can identify old themes and
+         * unapply them from the system.
+         * @hide
+         */
+        public static final String THEME_PREV_BOOT_API_LEVEL =
+                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL;
+
+        /**
          * Navigation controls to Use
          * @hide
          */
@@ -668,6 +724,217 @@ public class CMSettingsProvider extends ContentProvider {
          */
         public static final String T9_SEARCH_INPUT_LOCALE =
                 CMSettings.System.T9_SEARCH_INPUT_LOCALE;
+
+        /**
+         * If all file types can be accepted over Bluetooth OBEX.
+         * @hide
+         */
+        public static final String BLUETOOTH_ACCEPT_ALL_FILES =
+                CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES;
+
+        /**
+         * Whether to scramble a pin unlock layout
+         * @hide
+         */
+        public static final String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT =
+                CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT;
+
+        /**
+         * @hide
+         */
+        public static final String SHOW_ALARM_ICON = CMSettings.System.SHOW_ALARM_ICON;
+
+        /**
+         * Whether to show the IME switcher in the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER =
+                CMSettings.System.STATUS_BAR_IME_SWITCHER;
+
+        /**
+         * Whether to control brightness from status bar
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_BRIGHTNESS_CONTROL =
+                CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL;
+
+        /**
+         * Whether or not volume button music controls should be enabled to seek media tracks
+         * @hide
+         */
+        public static final String VOLBTN_MUSIC_CONTROLS =
+                CMSettings.System.VOLBTN_MUSIC_CONTROLS;
+
+        /**
+         * Use EdgeGesture Service for system gestures in PhoneWindowManager
+         * @hide
+         */
+        public static final String USE_EDGE_SERVICE_FOR_GESTURES =
+                CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES;
+
+        /**
+         * Show the pending notification counts as overlays on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_NOTIF_COUNT =
+                CMSettings.System.STATUS_BAR_NOTIF_COUNT;
+
+        /**
+         * Call recording format value
+         * 0: AMR_WB
+         * 1: MPEG_4
+         * Default: 0
+         * @hide
+         */
+        public static final String CALL_RECORDING_FORMAT =
+                CMSettings.System.CALL_RECORDING_FORMAT;
+
+        /**
+         * Contains the notifications light maximum brightness to use.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL =
+                CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL;
+
+        /**
+         * Whether to use the all the LEDs for the notifications or just one.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE =
+                CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE;
+
+        /**
+         * Whether to allow notifications with the screen on or DayDreams.
+         * The value is boolean (1 or 0). Default will always be false.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_SCREEN_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON;
+
+        /**
+         * What color to use for the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR;
+
+        /**
+         * How long to flash the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON;
+
+        /**
+         * How long to wait between flashes for the notification LED by default
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF;
+
+        /**
+         * What color to use for the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR;
+
+        /**
+         * How long to flash the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON;
+
+        /**
+         * How long to wait between flashes for the missed call notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF;
+        /**
+         * What color to use for the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR;
+
+        /**
+         * How long to flash the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON;
+
+        /**
+         * How long to wait between flashes for the voicemail notification LED
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF;
+
+        /**
+         * Whether to use the custom LED values for the notification pulse LED.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE;
+
+        /**
+         * Which custom LED values to use for the notification pulse LED.
+         * @hide
+         */
+        public static final String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES =
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES;
+
+        /**
+         * Whether to wake the display when plugging or unplugging the charger
+         *
+         * @hide
+         */
+        public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED =
+                CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED;
+
+        /** {@hide} */
+        public static final String BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX =
+                CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX;
+
+        /**
+         * Whether to sound when charger power is connected/disconnected
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_ENABLED =
+                CMSettings.Global.POWER_NOTIFICATIONS_ENABLED;
+
+        /**
+         * Whether to vibrate when charger power is connected/disconnected
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_VIBRATE =
+                CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE;
+
+        /**
+         * URI for power notification sounds
+         * @hide
+         */
+        public static final String POWER_NOTIFICATIONS_RINGTONE =
+                CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE;
+
+        /**
+         * @hide
+         */
+        public static final String ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK =
+                CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK;
+
+        /**
+         * Whether the system auto-configure the priority of the wifi ap's or use
+         * the manual settings established by the user.
+         * <> 0 to autoconfigure, 0 to manual settings. Default is <> 0.
+         * @hide
+         */
+        public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION =
+                CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION;
     }
 
     /**
@@ -778,6 +1045,56 @@ public class CMSettingsProvider extends ContentProvider {
                     CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE);
             systemToCmSettingsMap.put(LegacyCMSettings.T9_SEARCH_INPUT_LOCALE,
                     CMSettings.System.T9_SEARCH_INPUT_LOCALE);
+            systemToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_ACCEPT_ALL_FILES,
+                    CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES);
+            systemToCmSettingsMap.put(LegacyCMSettings.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                    CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
+            systemToCmSettingsMap.put(LegacyCMSettings.SHOW_ALARM_ICON,
+                    CMSettings.System.SHOW_ALARM_ICON);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_IME_SWITCHER,
+                    CMSettings.System.STATUS_BAR_IME_SWITCHER);
+            systemToCmSettingsMap.put(LegacyCMSettings.QS_SHOW_BRIGHTNESS_SLIDER,
+                    CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_BRIGHTNESS_CONTROL,
+                    CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL);
+            systemToCmSettingsMap.put(LegacyCMSettings.VOLBTN_MUSIC_CONTROLS,
+                    CMSettings.System.VOLBTN_MUSIC_CONTROLS);
+            systemToCmSettingsMap.put(LegacyCMSettings.SWAP_VOLUME_KEYS_ON_ROTATION,
+                    CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION);
+            systemToCmSettingsMap.put(LegacyCMSettings.USE_EDGE_SERVICE_FOR_GESTURES,
+                    CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES);
+            systemToCmSettingsMap.put(LegacyCMSettings.STATUS_BAR_NOTIF_COUNT,
+                    CMSettings.System.STATUS_BAR_NOTIF_COUNT);
+            systemToCmSettingsMap.put(LegacyCMSettings.CALL_RECORDING_FORMAT,
+                    CMSettings.System.CALL_RECORDING_FORMAT);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                    CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                    CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_SCREEN_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_SCREEN_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE);
+            systemToCmSettingsMap.put(LegacyCMSettings.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                    CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES);
 
             int rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SYSTEM, systemToCmSettingsMap);
@@ -831,9 +1148,45 @@ public class CMSettingsProvider extends ContentProvider {
             secureToCmSettingsMap.put(LegacyCMSettings.INCALL_POWER_BUTTON_BEHAVIOR,
                     CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR);
 
+            secureToCmSettingsMap.put(LegacyCMSettings.ADB_NOTIFY, CMSettings.Secure.ADB_NOTIFY);
+            secureToCmSettingsMap.put(LegacyCMSettings.ADB_PORT, CMSettings.Secure.ADB_PORT);
+            secureToCmSettingsMap.put(LegacyCMSettings.DEVICE_HOSTNAME,
+                    CMSettings.Secure.DEVICE_HOSTNAME);
+            secureToCmSettingsMap.put(LegacyCMSettings.KILL_APP_LONGPRESS_BACK,
+                    CMSettings.Secure.KILL_APP_LONGPRESS_BACK);
+            secureToCmSettingsMap.put(LegacyCMSettings.PROTECTED_COMPONENTS,
+                    CMSettings.Secure.PROTECTED_COMPONENTS);
+            secureToCmSettingsMap.put(LegacyCMSettings.LIVE_DISPLAY_COLOR_MATRIX,
+                    CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX);
+            secureToCmSettingsMap.put(LegacyCMSettings.ADVANCED_REBOOT,
+                    CMSettings.Secure.ADVANCED_REBOOT);
+            secureToCmSettingsMap.put(LegacyCMSettings.THEME_PREV_BOOT_API_LEVEL,
+                    CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL);
+
             rowsMigrated = migrateCMSettingsForTable(userId,
                     CMDatabaseHelper.CMTableNames.TABLE_SECURE, secureToCmSettingsMap);
             if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM secure table");
+
+            // Migrate global settings
+            HashMap<String, String> globalToCmSettingsMap = new HashMap<String, String>();
+            globalToCmSettingsMap.put(LegacyCMSettings.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                    CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
+            globalToCmSettingsMap.put(LegacyCMSettings.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
+                    CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_ENABLED,
+                    CMSettings.Global.POWER_NOTIFICATIONS_ENABLED);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_VIBRATE,
+                    CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE);
+            globalToCmSettingsMap.put(LegacyCMSettings.POWER_NOTIFICATIONS_RINGTONE,
+                    CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE);
+            globalToCmSettingsMap.put(LegacyCMSettings.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
+                    CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK);
+            globalToCmSettingsMap.put(LegacyCMSettings.WIFI_AUTO_PRIORITIES_CONFIGURATION,
+                    CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION);
+
+            rowsMigrated = migrateCMSettingsForTable(userId,
+                    CMDatabaseHelper.CMTableNames.TABLE_GLOBAL, globalToCmSettingsMap);
+            if (LOCAL_LOGV) Log.d(TAG, "Migrated " + rowsMigrated + " to CM global table");
         }
     }
 

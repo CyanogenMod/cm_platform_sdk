@@ -54,4 +54,12 @@
          1==on -->
     <integer name="def_heads_up_enabled">1</integer>
 
+    <!-- Default for CMSettings.Global.POWER_NOTIFICATIONS_ENABLED -->
+    <bool name="def_power_notifications_enabled">false</bool>
+
+    <!-- Default for CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE -->
+    <bool name="def_power_notifications_vibrate">false</bool>
+
+    <!-- Default for CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE -->
+    <string name="def_power_notifications_ringtone" translatable="false">content://settings/system/notification_sound</string>
 </resources>
