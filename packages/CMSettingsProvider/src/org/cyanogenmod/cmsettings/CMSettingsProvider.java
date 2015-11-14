@@ -1517,11 +1517,15 @@ public class CMSettingsProvider extends ContentProvider {
         CMDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+        final String name = values.getAsString(Settings.NameValueTable.NAME);
+        if (CMDatabaseHelper.CMTableNames.TABLE_SYSTEM.equals(tableName)) {
+            final String value = values.getAsString(Settings.NameValueTable.VALUE);
+            validateSystemSettingValue(name, value);
+        }
         long rowId = db.insert(tableName, null, values);
 
         Uri returnUri = null;
         if (rowId > -1) {
-            String name = values.getAsString(Settings.NameValueTable.NAME);
             returnUri = Uri.withAppendedPath(uri, name);
             notifyChange(returnUri, tableName, userId);
             if (LOCAL_LOGV) Log.d(TAG, "Inserted row id: " + rowId + " into tableName: " +
@@ -1772,6 +1776,14 @@ public class CMSettingsProvider extends ContentProvider {
             Binder.restoreCallingIdentity(oldId);
         }
         if (LOCAL_LOGV) Log.v(TAG, "notifying for " + notifyTarget + ": " + uri);
+    }
+
+    private void validateSystemSettingValue(String name, String value) {
+        CMSettings.System.ValueValidator validator = CMSettings.System.VALUE_VALIDATORS.get(name);
+        if (validator != null && !validator.validate(value)) {
+            throw new IllegalArgumentException("Invalid value: " + value
+                    + " for setting: " + name);
+        }
     }
 
     // TODO Add caching
