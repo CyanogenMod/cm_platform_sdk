@@ -1726,11 +1726,6 @@ public final class CMSettings {
         public static final String KEYBOARD_BRIGHTNESS = "keyboard_brightness";
 
         /**
-         * Default theme config name
-         */
-        public static final String NAME_THEME_CONFIG = "name_theme_config";
-
-        /**
          * Custom navring actions
          * @hide
          */
@@ -1913,7 +1908,6 @@ public final class CMSettings {
                 CMSettings.Secure.DEFAULT_THEME_COMPONENTS,
                 CMSettings.Secure.DEFAULT_THEME_PACKAGE,
                 CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
-                CMSettings.Secure.NAME_THEME_CONFIG,
                 CMSettings.Secure.KEYBOARD_BRIGHTNESS,
                 CMSettings.Secure.POWER_MENU_ACTIONS,
                 CMSettings.Secure.STATS_COLLECTION,
