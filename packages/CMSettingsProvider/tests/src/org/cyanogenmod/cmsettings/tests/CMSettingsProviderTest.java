@@ -81,7 +81,7 @@ import java.util.Map;
 
      private void testMigrateSettingsForUser(int userId) {
          // Setup values in Settings
-         final String expectedPullDownValue = "testQuickPullDownValue";
+         /*final String expectedPullDownValue = "testQuickPullDownValue";
          Settings.System.putStringForUser(mContentResolver,
                  CMSettingsProvider.LegacyCMSettings.STATUS_BAR_QUICK_QS_PULLDOWN,
                  expectedPullDownValue, userId);
@@ -89,7 +89,7 @@ import java.util.Map;
          final int expectedKeyboardBrightness = 4;
          Settings.Secure.putIntForUser(mContentResolver,
                  CMSettingsProvider.LegacyCMSettings.KEYBOARD_BRIGHTNESS,
-                 expectedKeyboardBrightness, userId);
+                 expectedKeyboardBrightness, userId);*/
 
          Bundle arg = new Bundle();
          arg.putInt(CMSettings.CALL_METHOD_USER_KEY, userId);

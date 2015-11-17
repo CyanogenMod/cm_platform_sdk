@@ -69,4 +69,8 @@
     <java-symbol type="integer" name="config_dayColorTemperature" />
     <java-symbol type="integer" name="config_nightColorTemperature" />
     <java-symbol type="integer" name="config_outdoorAmbientLux" />
+
+    <!-- Notification and battery light -->
+    <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
+    <java-symbol type="bool" name="config_multipleNotificationLeds" />
 </resources>
