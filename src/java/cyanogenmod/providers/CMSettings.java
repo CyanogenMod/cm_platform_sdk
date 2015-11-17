@@ -1296,7 +1296,19 @@ public final class CMSettings {
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                CMSettings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
+                CMSettings.System.SYSTEM_PROFILES_ENABLED,
+                CMSettings.System.INCREASING_RING,
+                CMSettings.System.INCREASING_RING_START_VOLUME,
+                CMSettings.System.INCREASING_RING_RAMP_UP_TIME,
+                CMSettings.System.STATUS_BAR_CLOCK,
+                CMSettings.System.STATUS_BAR_AM_PM,
+                CMSettings.System.STATUS_BAR_BATTERY_STYLE,
+                CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
+                CMSettings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
+                CMSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
         };
 
         /**
@@ -1926,7 +1938,13 @@ public final class CMSettings {
                 CMSettings.Secure.PROTECTED_COMPONENTS,
                 CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
                 CMSettings.Secure.ADVANCED_REBOOT,
-                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL};
+                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL,
+                CMSettings.Secure.LOCKSCREEN_TARGETS,
+                CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
+                CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
+                CMSettings.Secure.DEVELOPMENT_SHORTCUT,
+                CMSettings.Secure.PERFORMANCE_PROFILE,
+                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED};
 
         /**
          * @hide
