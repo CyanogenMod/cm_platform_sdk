@@ -1824,15 +1824,6 @@ public final class CMSettings {
                 RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING;
 
         /**
-         * When the user has enable the option to have a "bug report" command
-         * in the power menu.
-         * @deprecated Use {@link android.provider.Settings.Global#BUGREPORT_IN_POWER_MENU} instead
-         * @hide
-         */
-        @Deprecated
-        public static final String BUGREPORT_IN_POWER_MENU = "bugreport_in_power_menu";
-
-        /**
          * Performance profile
          * @hide
          */
@@ -1856,36 +1847,6 @@ public final class CMSettings {
          * @hide
          */
         public static final String DEVELOPMENT_SHORTCUT = "development_shortcut";
-
-        /**
-         * What happens when the user presses the Power button while in-call
-         * and the screen is on.<br/>
-         * <b>Values:</b><br/>
-         * 1 - The Power button turns off the screen and locks the device. (Default behavior)<br/>
-         * 2 - The Power button hangs up the current call.<br/>
-         *
-         * @hide
-         */
-        public static final String INCALL_POWER_BUTTON_BEHAVIOR = "incall_power_button_behavior";
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR value for "turn off screen".
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF = 0x1;
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR value for "hang up".
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_HANGUP = 0x2;
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR default value.
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT =
-                INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF;
 
         /**
          * Whether to display the ADB notification.
@@ -1964,7 +1925,6 @@ public final class CMSettings {
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[1],
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[2],
                 CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY,
-                CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
                 CMSettings.Secure.ADB_NOTIFY,
                 CMSettings.Secure.ADB_PORT,
                 CMSettings.Secure.DEVICE_HOSTNAME,
