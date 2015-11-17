@@ -974,14 +974,6 @@ public final class CMSettings {
         public static final String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
 
         /**
-         * Whether wifi settings will connect to access point automatically
-         * 0 = automatically
-         * 1 = manually
-         * @hide
-         */
-        public static final String WIFI_AUTO_CONNECT_TYPE = "wifi_auto_connect_type";
-
-        /**
          * Color temperature of the display during the day
          * @hide
          */
@@ -1267,7 +1259,6 @@ public final class CMSettings {
                 CMSettings.System.REVERSE_LOOKUP_PROVIDER,
                 CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID,
                 CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN,
-                CMSettings.System.WIFI_AUTO_CONNECT_TYPE,
                 CMSettings.System.DISPLAY_TEMPERATURE_DAY,
                 CMSettings.System.DISPLAY_TEMPERATURE_NIGHT,
                 CMSettings.System.DISPLAY_TEMPERATURE_MODE,
@@ -2352,13 +2343,6 @@ public final class CMSettings {
             return putStringForUser(cr, name, Float.toString(value), userId);
         }
 
-        /**
-         * Get the key that retrieves a bluetooth a2dp src's priority.
-         * @hide
-         */
-        public static final String getBluetoothA2dpSrcPriorityKey(String address) {
-            return BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX + address.toUpperCase(Locale.ROOT);
-        }
         // endregion
 
         // region Global Settings
@@ -2369,10 +2353,6 @@ public final class CMSettings {
          */
         public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED =
                 "wake_when_plugged_or_unplugged";
-
-        /** {@hide} */
-        public static final String
-                BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX = "bluetooth_a2dp_src_priority_";
 
         /**
          * Whether to sound when charger power is connected/disconnected
@@ -2412,7 +2392,6 @@ public final class CMSettings {
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
                 CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
                 CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
                 CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
                 CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
