@@ -974,14 +974,6 @@ public final class CMSettings {
         public static final String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
 
         /**
-         * Whether wifi settings will connect to access point automatically
-         * 0 = automatically
-         * 1 = manually
-         * @hide
-         */
-        public static final String WIFI_AUTO_CONNECT_TYPE = "wifi_auto_connect_type";
-
-        /**
          * Color temperature of the display during the day
          * @hide
          */
@@ -1267,7 +1259,6 @@ public final class CMSettings {
                 CMSettings.System.REVERSE_LOOKUP_PROVIDER,
                 CMSettings.System.DIALER_OPENCNAM_ACCOUNT_SID,
                 CMSettings.System.DIALER_OPENCNAM_AUTH_TOKEN,
-                CMSettings.System.WIFI_AUTO_CONNECT_TYPE,
                 CMSettings.System.DISPLAY_TEMPERATURE_DAY,
                 CMSettings.System.DISPLAY_TEMPERATURE_NIGHT,
                 CMSettings.System.DISPLAY_TEMPERATURE_MODE,
@@ -1305,7 +1296,19 @@ public final class CMSettings {
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON,
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF,
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES
+                CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                CMSettings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
+                CMSettings.System.SYSTEM_PROFILES_ENABLED,
+                CMSettings.System.INCREASING_RING,
+                CMSettings.System.INCREASING_RING_START_VOLUME,
+                CMSettings.System.INCREASING_RING_RAMP_UP_TIME,
+                CMSettings.System.STATUS_BAR_CLOCK,
+                CMSettings.System.STATUS_BAR_AM_PM,
+                CMSettings.System.STATUS_BAR_BATTERY_STYLE,
+                CMSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
+                CMSettings.System.VOLUME_KEYS_CONTROL_RING_STREAM,
+                CMSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
         };
 
         /**
@@ -1735,11 +1738,6 @@ public final class CMSettings {
         public static final String KEYBOARD_BRIGHTNESS = "keyboard_brightness";
 
         /**
-         * Default theme config name
-         */
-        public static final String NAME_THEME_CONFIG = "name_theme_config";
-
-        /**
          * Custom navring actions
          * @hide
          */
@@ -1833,15 +1831,6 @@ public final class CMSettings {
                 RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING;
 
         /**
-         * When the user has enable the option to have a "bug report" command
-         * in the power menu.
-         * @deprecated Use {@link android.provider.Settings.Global#BUGREPORT_IN_POWER_MENU} instead
-         * @hide
-         */
-        @Deprecated
-        public static final String BUGREPORT_IN_POWER_MENU = "bugreport_in_power_menu";
-
-        /**
          * Performance profile
          * @hide
          */
@@ -1865,36 +1854,6 @@ public final class CMSettings {
          * @hide
          */
         public static final String DEVELOPMENT_SHORTCUT = "development_shortcut";
-
-        /**
-         * What happens when the user presses the Power button while in-call
-         * and the screen is on.<br/>
-         * <b>Values:</b><br/>
-         * 1 - The Power button turns off the screen and locks the device. (Default behavior)<br/>
-         * 2 - The Power button hangs up the current call.<br/>
-         *
-         * @hide
-         */
-        public static final String INCALL_POWER_BUTTON_BEHAVIOR = "incall_power_button_behavior";
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR value for "turn off screen".
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF = 0x1;
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR value for "hang up".
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_HANGUP = 0x2;
-
-        /**
-         * INCALL_POWER_BUTTON_BEHAVIOR default value.
-         * @hide
-         */
-        public static final int INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT =
-                INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF;
 
         /**
          * Whether to display the ADB notification.
@@ -1961,7 +1920,6 @@ public final class CMSettings {
                 CMSettings.Secure.DEFAULT_THEME_COMPONENTS,
                 CMSettings.Secure.DEFAULT_THEME_PACKAGE,
                 CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
-                CMSettings.Secure.NAME_THEME_CONFIG,
                 CMSettings.Secure.KEYBOARD_BRIGHTNESS,
                 CMSettings.Secure.POWER_MENU_ACTIONS,
                 CMSettings.Secure.STATS_COLLECTION,
@@ -1973,7 +1931,6 @@ public final class CMSettings {
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[1],
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[2],
                 CMSettings.Secure.RECENTS_LONG_PRESS_ACTIVITY,
-                CMSettings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
                 CMSettings.Secure.ADB_NOTIFY,
                 CMSettings.Secure.ADB_PORT,
                 CMSettings.Secure.DEVICE_HOSTNAME,
@@ -1981,7 +1938,13 @@ public final class CMSettings {
                 CMSettings.Secure.PROTECTED_COMPONENTS,
                 CMSettings.Secure.LIVE_DISPLAY_COLOR_MATRIX,
                 CMSettings.Secure.ADVANCED_REBOOT,
-                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL};
+                CMSettings.Secure.THEME_PREV_BOOT_API_LEVEL,
+                CMSettings.Secure.LOCKSCREEN_TARGETS,
+                CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
+                CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
+                CMSettings.Secure.DEVELOPMENT_SHORTCUT,
+                CMSettings.Secure.PERFORMANCE_PROFILE,
+                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED};
 
         /**
          * @hide
@@ -2352,13 +2315,6 @@ public final class CMSettings {
             return putStringForUser(cr, name, Float.toString(value), userId);
         }
 
-        /**
-         * Get the key that retrieves a bluetooth a2dp src's priority.
-         * @hide
-         */
-        public static final String getBluetoothA2dpSrcPriorityKey(String address) {
-            return BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX + address.toUpperCase(Locale.ROOT);
-        }
         // endregion
 
         // region Global Settings
@@ -2369,10 +2325,6 @@ public final class CMSettings {
          */
         public static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED =
                 "wake_when_plugged_or_unplugged";
-
-        /** {@hide} */
-        public static final String
-                BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX = "bluetooth_a2dp_src_priority_";
 
         /**
          * Whether to sound when charger power is connected/disconnected
@@ -2412,7 +2364,6 @@ public final class CMSettings {
          */
         public static final String[] LEGACY_GLOBAL_SETTINGS = new String[]{
                 CMSettings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                CMSettings.Global.BLUETOOTH_A2DP_SRC_PRIORITY_PREFIX,
                 CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
                 CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
                 CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
