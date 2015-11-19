@@ -18,6 +18,7 @@ package org.cyanogenmod.cmsettings;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -54,12 +55,12 @@ import java.util.Set;
  * The CMSettingsProvider serves as a {@link ContentProvider} for CM specific settings
  */
 public class CMSettingsProvider extends ContentProvider {
-    private static final String TAG = "CMSettingsProvider";
+    static final String TAG = "CMSettingsProvider";
     private static final boolean LOCAL_LOGV = false;
 
     private static final boolean USER_CHECK_THROWS = true;
 
-    private static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm_settings";
+   static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm13_settings";
 
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
@@ -249,7 +250,7 @@ public class CMSettingsProvider extends ContentProvider {
 
     @Override
     public Bundle call(String method, String request, Bundle args) {
-        if (LOCAL_LOGV) Log.d(TAG, "Call method: " + method);
+        if (LOCAL_LOGV) Log.d(TAG, "Call method: " + method + " " + request);
 
         int callingUserId = UserHandle.getCallingUserId();
         if (args != null) {
@@ -260,6 +261,19 @@ public class CMSettingsProvider extends ContentProvider {
                         "get/set setting for user", null);
                 if (LOCAL_LOGV) Log.v(TAG, "   access setting for user " + callingUserId);
             }
+        }
+
+        boolean hasMigratedCMSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_CM_SETTINGS,
+                false);
+        if (!hasMigratedCMSettings) {
+            if (LOCAL_LOGV) {
+                Log.d(TAG, "Reenabling component preboot receiver");
+            }
+            getContext().getPackageManager().setComponentEnabledSetting(
+                    new ComponentName("org.cyanogenmod.cmsettings",
+                            "org.cyanogenmod.cmsettings.PreBootReceiver"),
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
         }
 
         // Migrate methods
