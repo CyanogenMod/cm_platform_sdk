@@ -1066,6 +1066,13 @@ public final class CMSettings {
                 "lockscreen_scramble_pin_layout";
 
         /**
+         * Whether to unlock automatically when the correct PIN/password is entered
+         * @hide
+         */
+        public static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL =
+                "lockscreen_quick_unlock_control";
+
+        /**
          * @hide
          */
         public static final String SHOW_ALARM_ICON = "show_alarm_icon";
@@ -1274,6 +1281,7 @@ public final class CMSettings {
                 CMSettings.System.T9_SEARCH_INPUT_LOCALE,
                 CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
                 CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                CMSettings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
                 CMSettings.System.SHOW_ALARM_ICON,
                 CMSettings.System.STATUS_BAR_IME_SWITCHER,
                 CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
