@@ -89,7 +89,7 @@ import java.util.Map;
          final int expectedKeyboardBrightness = 4;
          Settings.Secure.putIntForUser(mContentResolver,
                  CMSettingsProvider.LegacyCMSettings.KEYBOARD_BRIGHTNESS,
-                 expectedKeyboardBrightness, userId);*/
+                 expectedKeyboardBrightness, userId);
 
          Bundle arg = new Bundle();
          arg.putInt(CMSettings.CALL_METHOD_USER_KEY, userId);
@@ -111,7 +111,7 @@ import java.util.Map;
 
          final int actualKeyboardBrightness = CMSettings.Secure.getIntForUser(mContentResolver,
                  CMSettings.Secure.KEYBOARD_BRIGHTNESS, -1, userId);
-         assertEquals(expectedKeyboardBrightness, actualKeyboardBrightness);
+         assertEquals(expectedKeyboardBrightness, actualKeyboardBrightness);*/
      }
 
      private boolean findUser(UserManager userManager, int userHandle) {
