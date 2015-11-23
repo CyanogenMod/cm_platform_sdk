@@ -10,4 +10,4 @@ To run the test (on a live device):
 
 To generate example settings to be written against 12.1 device during migration:
 
-  ```java -cp /Volumes/CM/CM13/out/host/<platform>/framework/migration-interface.jar GenerateExampleSettings <output file path>"
+  ```java -cp /Volumes/CM/CM13/out/host/<platform>/framework/migration-interface.jar GenerateExampleSettings <output file path> ```
