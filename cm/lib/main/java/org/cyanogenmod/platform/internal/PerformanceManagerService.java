@@ -142,6 +142,19 @@ public class PerformanceManagerService extends SystemService {
                        CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED, 1) == 1);
     }
 
+    private boolean getProfileHasAppProfilesInternal(int profile) {
+        if (profile < 0 || profile > mNumProfiles) {
+            Slog.e(TAG, "Invalid profile: " + profile);
+            return false;
+        }
+
+        if (profile == PerformanceManager.PROFILE_BALANCED) {
+            return mPatterns != null;
+        }
+
+        return false;
+    }
+
     /**
      * Get the profile saved by the user
      */
@@ -238,8 +251,7 @@ public class PerformanceManagerService extends SystemService {
         } else {
             profile = getUserProfile();
             // use app specific rules if profile is balanced
-            if (hasAppProfiles() &&
-                profile == PerformanceManager.PROFILE_BALANCED) {
+            if (hasAppProfiles() && getProfileHasAppProfilesInternal(profile)) {
                 profile = getProfileForActivity(mCurrentActivityName);
             }
         }
@@ -273,6 +285,11 @@ public class PerformanceManagerService extends SystemService {
         @Override
         public int getNumberOfProfiles() {
             return mNumProfiles;
+        }
+
+        @Override
+        public boolean getProfileHasAppProfiles(int profile) {
+            return getProfileHasAppProfilesInternal(profile);
         }
     };
 
