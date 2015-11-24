@@ -40,4 +40,29 @@ public class Intent {
      */
     public static final String EXTRA_RECENTS_LONG_PRESS_RELEASE =
             "cyanogenmod.intent.extra.RECENTS_LONG_PRESS_RELEASE";
+
+    /**
+     * Intent filter to update protected app component's settings
+     */
+    public static final String PROTECTED_ACTION = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
+
+    /**
+     * Intent filter to notify change in state of protected application.
+     */
+    public static final String PROTECTED_CHANGED_ACTION =
+            "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
+
+    /**
+     * This field is part of the intent {@link #PROTECTED_CHANGED_ACTION}.
+     * Intent extra field for the state of protected application
+     */
+    public static final String PROTECTED_STATE =
+            "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
+
+    /**
+     * This field is part of the intent {@link #PROTECTED_CHANGED_ACTION}.
+     * Intent extra field to indicate protected component value
+     */
+    public static final String PROTECTED_COMPONENTS =
+            "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
 }
