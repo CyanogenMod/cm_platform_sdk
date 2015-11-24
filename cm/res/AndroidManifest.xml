@@ -127,6 +127,10 @@
                 android:description="@string/permdesc_accessAppSuggestions"
                 android:protectionLevel="signature|privileged|development" />
 
+    <permission
+            android:name="cyanogenmod.permission.PROTECTED_APP"
+            android:protectionLevel="signatureOrSystem" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"

@@ -40,4 +40,15 @@ public class Intent {
      */
     public static final String EXTRA_RECENTS_LONG_PRESS_RELEASE =
             "cyanogenmod.intent.extra.RECENTS_LONG_PRESS_RELEASE";
+
+    /**
+     * Protected Apps
+     */
+    public static final String PROTECTED_ACTION = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
+    public static final String PROTECTED_CHANGED_ACTION =
+            "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
+    public static final String PROTECTED_STATE =
+            "cyanogenmod.intent.action.PACKAGE_PROTECTED_STATE";
+    public static final String PROTECTED_COMPONENTS =
+            "cyanogenmod.intent.action.PACKAGE_PROTECTED_COMPONENTS";
 }
