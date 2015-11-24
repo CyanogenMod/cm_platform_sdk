@@ -73,7 +73,7 @@ public class PerformanceManagerService extends SystemService {
 
     // Max time (microseconds) to allow a CPU boost for
     private static final int MAX_CPU_BOOST_TIME = 5000000;
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     
     public PerformanceManagerService(Context context) {
         super(context);
@@ -140,6 +140,19 @@ public class PerformanceManagerService extends SystemService {
         return mNumProfiles > 0 && mPatterns != null &&
                (CMSettings.Secure.getInt(mContext.getContentResolver(),
                        CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED, 1) == 1);
+    }
+
+    private boolean getProfileHasAppProfilesInternal(int profile) {
+        if (profile < 0 || profile > mNumProfiles) {
+            Slog.e(TAG, "Invalid profile: " + profile);
+            return false;
+        }
+
+        if (profile == PerformanceManager.PROFILE_BALANCED) {
+            return mPatterns != null;
+        }
+
+        return false;
     }
 
     /**
@@ -270,6 +283,11 @@ public class PerformanceManagerService extends SystemService {
         @Override
         public int getNumberOfProfiles() {
             return mNumProfiles;
+        }
+
+        @Override
+        public boolean getProfileHasAppProfiles(int profile) {
+            return getProfileHasAppProfilesInternal(profile);
         }
     };
 
