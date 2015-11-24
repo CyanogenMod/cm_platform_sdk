@@ -26,4 +26,6 @@ interface IPerformanceManager {
     int getPowerProfile();
 
     int getNumberOfProfiles();
+
+    boolean getProfileHasAppProfiles(int profile);
 }
