@@ -77,6 +77,11 @@
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
 
+    <!-- Labels for the PROTECTED_APP permission. -->
+    <string name="permlab_protectedApp">add and remove applications to protected apps</string>
+    <string name="permdesc_protectedApp">Allows an application to be marked as protected
+        and can be locked</string>
+
     <!-- Profiles -->
     <!-- Names of default profiles. -->
     <string name="profileNameDefault">Default</string>
