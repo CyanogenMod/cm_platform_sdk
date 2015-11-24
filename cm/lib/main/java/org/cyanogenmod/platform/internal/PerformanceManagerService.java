@@ -29,7 +29,6 @@ import android.os.Message;
 import android.os.Process;
 import android.os.SystemProperties;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Slog;
 
 import com.android.server.ServiceThread;
@@ -54,9 +53,8 @@ public class PerformanceManagerService extends SystemService {
     private Pattern[] mPatterns = null;
     private int[] mProfiles = null;
 
+    /** Active profile that based on low power mode, user and app rules */
     private int mCurrentProfile = -1;
-
-    private boolean mProfileSetByUser = false;
     private int mNumProfiles = 0;
 
     private final ServiceThread mHandlerThread;
@@ -71,9 +69,11 @@ public class PerformanceManagerService extends SystemService {
 
     private PowerManagerInternal mPm;
     private boolean mLowPowerModeEnabled = false;
+    private String mCurrentActivityName = null;
 
     // Max time (microseconds) to allow a CPU boost for
     private static final int MAX_CPU_BOOST_TIME = 5000000;
+    private static final boolean DEBUG = false;
     
     public PerformanceManagerService(Context context) {
         super(context);
@@ -90,6 +90,10 @@ public class PerformanceManagerService extends SystemService {
                 if (info.length == 2) {
                     mPatterns[i] = Pattern.compile(info[0]);
                     mProfiles[i] = Integer.valueOf(info[1]);
+                    if (DEBUG) {
+                        Slog.d(TAG, String.format("App profile #%d: %s => %s",
+                            i, info[0], info[1]));
+                    }
                 }
             }
         }
@@ -115,15 +119,17 @@ public class PerformanceManagerService extends SystemService {
             synchronized (this) {
                 mPm = getLocalService(PowerManagerInternal.class);
                 mNumProfiles = mPm.getFeature(POWER_FEATURE_SUPPORTED_PROFILES);
-                Slog.d(TAG, "Supported profiles: " + mNumProfiles);
                 if (mNumProfiles > 0) {
-                    int profile = CMSettings.Secure.getInt(mContext.getContentResolver(),
-                            CMSettings.Secure.PERFORMANCE_PROFILE,
-                            PerformanceManager.PROFILE_BALANCED);
+                    int profile = getUserProfile();
                     if (profile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
-                        profile = PerformanceManager.PROFILE_BALANCED;
+                        Slog.i(TAG, String.format("Reverting profile %d to %d",
+                            profile, PerformanceManager.PROFILE_BALANCED));
+                        setPowerProfileInternal(
+                            PerformanceManager.PROFILE_BALANCED, true);
+                    } else {
+                        setPowerProfileInternal(profile, false);
                     }
-                    setPowerProfileInternal(profile, true);
+
                     mPm.registerLowPowerModeObserver(mLowPowerModeListener);
                 }
             }
@@ -136,13 +142,44 @@ public class PerformanceManagerService extends SystemService {
                        CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED, 1) == 1);
     }
 
+    /**
+     * Get the profile saved by the user
+     */
+    private int getUserProfile() {
+        return CMSettings.Secure.getInt(mContext.getContentResolver(),
+                CMSettings.Secure.PERFORMANCE_PROFILE,
+                PerformanceManager.PROFILE_BALANCED);
+    }
+
+    /**
+     * Apply a power profile and persist if fromUser = true
+     *
+     * @param  profile  power profile
+     * @param  fromUser true to persist the profile
+     * @return          true if the active profile changed
+     */
     private synchronized boolean setPowerProfileInternal(int profile, boolean fromUser) {
-        if (profile == mCurrentProfile) {
+        if (DEBUG) {
+            Slog.v(TAG, String.format(
+                "setPowerProfileInternal(profile=%d, fromUser=%b)",
+                profile, fromUser));
+        }
+        if (profile < 0 || profile > mNumProfiles) {
+            Slog.e(TAG, "Invalid profile: " + profile);
             return false;
         }
 
-        if (profile < 0 || profile > mNumProfiles) {
-            Slog.e(TAG, "Invalid profile: " + profile);
+        /**
+         * It's possible that mCurrrentProfile != getUserProfile() because of a
+         * per-app profile. Store the user's profile preference and then bail
+         * early if there is no work to be done.
+         */
+        if (fromUser) {
+            CMSettings.Secure.putInt(mContext.getContentResolver(),
+                    CMSettings.Secure.PERFORMANCE_PROFILE, profile);
+        }
+
+        if (profile == mCurrentProfile) {
             return false;
         }
 
@@ -150,11 +187,6 @@ public class PerformanceManagerService extends SystemService {
 
         long token = Binder.clearCallingIdentity();
 
-        if (fromUser) {
-            CMSettings.Secure.putInt(mContext.getContentResolver(),
-                    CMSettings.Secure.PERFORMANCE_PROFILE, profile);
-        }
-        
         mCurrentProfile = profile;
         
         mHandler.removeMessages(MSG_CPU_BOOST);
@@ -192,7 +224,29 @@ public class PerformanceManagerService extends SystemService {
             Slog.e(TAG, "Invalid boost duration: " + duration);
         }
     }
-    
+
+    private void applyProfile() {
+        if (mNumProfiles < 1) {
+            // don't have profiles, bail.
+            return;
+        }
+
+        int profile;
+        if (mLowPowerModeEnabled) {
+            // LPM always wins
+            profile = PerformanceManager.PROFILE_POWER_SAVE;
+        } else {
+            profile = getUserProfile();
+            // use app specific rules if profile is balanced
+            if (hasAppProfiles() &&
+                profile == PerformanceManager.PROFILE_BALANCED) {
+                profile = getProfileForActivity(mCurrentActivityName);
+            }
+        }
+
+        setPowerProfileInternal(profile, false);
+    }
+
     private final IBinder mBinder = new IPerformanceManager.Stub() {
 
         @Override
@@ -213,9 +267,7 @@ public class PerformanceManagerService extends SystemService {
 
         @Override
         public int getPowerProfile() {
-            return CMSettings.Secure.getInt(mContext.getContentResolver(),
-                    CMSettings.Secure.PERFORMANCE_PROFILE,
-                    PerformanceManager.PROFILE_BALANCED);
+            return getUserProfile();
         }
 
         @Override
@@ -245,21 +297,16 @@ public class PerformanceManagerService extends SystemService {
 
         @Override
         public void activityResumed(Intent intent) {
-            if (!hasAppProfiles() || intent == null || mProfileSetByUser) {
-                return;
+            String activityName = null;
+            if (intent != null) {
+                final ComponentName cn = intent.getComponent();
+                if (cn != null) {
+                    activityName = cn.flattenToString();
+                }
             }
 
-            final ComponentName cn = intent.getComponent();
-            if (cn == null) {
-                return;
-            }
-            
-            int forApp = getProfileForActivity(cn.flattenToString());
-            if (forApp == mCurrentProfile) {
-                return;
-            }
-
-            setPowerProfileInternal(forApp, false);
+            mCurrentActivityName = activityName;
+            applyProfile();
         }
     }
 
@@ -296,18 +343,14 @@ public class PerformanceManagerService extends SystemService {
 
                 @Override
                 public void onLowPowerModeChanged(boolean enabled) {
-
-                    if (mNumProfiles < 1) {
-                        return;
-                    }
                     if (enabled == mLowPowerModeEnabled) {
                         return;
                     }
-                    if (enabled && mCurrentProfile != PerformanceManager.PROFILE_POWER_SAVE) {
-                        setPowerProfileInternal(PerformanceManager.PROFILE_POWER_SAVE, true);
-                    } else if (!enabled && mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
-                        setPowerProfileInternal(PerformanceManager.PROFILE_BALANCED, true);
+                    if (DEBUG) {
+                        Slog.d(TAG, "low power mode enabled: " + enabled);
                     }
+                    mLowPowerModeEnabled = enabled;
+                    applyProfile();
                 }
             };
 }
