@@ -127,6 +127,14 @@
                 android:description="@string/permdesc_accessAppSuggestions"
                 android:protectionLevel="signature|privileged|development" />
 
+    <!-- Permission for adding/removing applications to protected apps
+          <p>Not for use by third-party applications. -->
+    <permission
+            android:name="cyanogenmod.permission.PROTECTED_APP"
+            android:label="@string/permlab_protectedApp"
+            android:description="@string/permdesc_protectedApp"
+            android:protectionLevel="signature|privileged" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"

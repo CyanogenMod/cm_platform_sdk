@@ -18,9 +18,9 @@ package org.cyanogenmod.cmsettings;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.ContentProvider;
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -29,7 +29,6 @@ import android.content.SharedPreferences;
 import android.content.UriMatcher;
 import android.content.pm.PackageManager;
 import android.content.pm.UserInfo;
-import android.content.res.Configuration;
 import android.database.AbstractCursor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -56,12 +55,12 @@ import java.util.Set;
  * The CMSettingsProvider serves as a {@link ContentProvider} for CM specific settings
  */
 public class CMSettingsProvider extends ContentProvider {
-    private static final String TAG = "CMSettingsProvider";
+    static final String TAG = "CMSettingsProvider";
     private static final boolean LOCAL_LOGV = false;
 
     private static final boolean USER_CHECK_THROWS = true;
 
-    private static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm_settings";
+   static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm13_settings";
 
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
@@ -251,7 +250,7 @@ public class CMSettingsProvider extends ContentProvider {
 
     @Override
     public Bundle call(String method, String request, Bundle args) {
-        if (LOCAL_LOGV) Log.d(TAG, "Call method: " + method);
+        if (LOCAL_LOGV) Log.d(TAG, "Call method: " + method + " " + request);
 
         int callingUserId = UserHandle.getCallingUserId();
         if (args != null) {
@@ -262,6 +261,19 @@ public class CMSettingsProvider extends ContentProvider {
                         "get/set setting for user", null);
                 if (LOCAL_LOGV) Log.v(TAG, "   access setting for user " + callingUserId);
             }
+        }
+
+        boolean hasMigratedCMSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_CM_SETTINGS,
+                false);
+        if (!hasMigratedCMSettings) {
+            if (LOCAL_LOGV) {
+                Log.d(TAG, "Reenabling component preboot receiver");
+            }
+            getContext().getPackageManager().setComponentEnabledSetting(
+                    new ComponentName("org.cyanogenmod.cmsettings",
+                            "org.cyanogenmod.cmsettings.PreBootReceiver"),
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
         }
 
         // Migrate methods
@@ -505,12 +517,18 @@ public class CMSettingsProvider extends ContentProvider {
 
         CMDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName, userId));
 
+        // Validate value if inserting int System table
+        final String name = values.getAsString(Settings.NameValueTable.NAME);
+        if (CMDatabaseHelper.CMTableNames.TABLE_SYSTEM.equals(tableName)) {
+            final String value = values.getAsString(Settings.NameValueTable.VALUE);
+            validateSystemSettingNameValue(name, value);
+        }
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         long rowId = db.insert(tableName, null, values);
 
         Uri returnUri = null;
         if (rowId > -1) {
-            String name = values.getAsString(Settings.NameValueTable.NAME);
             returnUri = Uri.withAppendedPath(uri, name);
             notifyChange(returnUri, tableName, userId);
             if (LOCAL_LOGV) Log.d(TAG, "Inserted row id: " + rowId + " into tableName: " +
@@ -567,6 +585,13 @@ public class CMSettingsProvider extends ContentProvider {
 
         String tableName = getTableNameFromUri(uri);
         checkWritePermissions(tableName);
+
+        // Validate value if updating System table
+        final String name = values.getAsString(Settings.NameValueTable.NAME);
+        if (CMDatabaseHelper.CMTableNames.TABLE_SYSTEM.equals(tableName)) {
+            final String value = values.getAsString(Settings.NameValueTable.VALUE);
+            validateSystemSettingNameValue(name, value);
+        }
 
         int callingUserId = UserHandle.getCallingUserId();
         CMDatabaseHelper dbHelper = getOrEstablishDatabase(getUserIdForTable(tableName,
@@ -761,6 +786,18 @@ public class CMSettingsProvider extends ContentProvider {
             Binder.restoreCallingIdentity(oldId);
         }
         if (LOCAL_LOGV) Log.v(TAG, "notifying for " + notifyTarget + ": " + uri);
+    }
+
+    private void validateSystemSettingNameValue(String name, String value) {
+        CMSettings.System.Validator validator = CMSettings.System.VALIDATORS.get(name);
+        if (validator == null) {
+            throw new IllegalArgumentException("Invalid setting: " + name);
+        }
+
+        if (!validator.validate(value)) {
+            throw new IllegalArgumentException("Invalid value: " + value
+                    + " for setting: " + name);
+        }
     }
 
     // TODO Add caching
