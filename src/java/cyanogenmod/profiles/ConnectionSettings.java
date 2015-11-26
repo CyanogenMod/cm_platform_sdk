@@ -22,7 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.net.wifi.WifiManager;
-/* import android.net.wimax.WimaxHelper; */
+import android.net.wimax.WimaxHelper;
 import android.nfc.NfcAdapter;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -325,12 +325,12 @@ public final class ConnectionSettings implements Parcelable {
                 }
                 break;
             case PROFILE_CONNECTION_WIMAX:
-                /* if (WimaxHelper.isWimaxSupported(context)) {
+                if (WimaxHelper.isWimaxSupported(context)) {
                     currentState = WimaxHelper.isWimaxEnabled(context);
                     if (currentState != forcedState) {
                         WimaxHelper.setWimaxEnabled(context, forcedState);
                     }
-                } */
+                }
                 break;
             case PROFILE_CONNECTION_NFC:
                 if (nfcAdapter != null) {
