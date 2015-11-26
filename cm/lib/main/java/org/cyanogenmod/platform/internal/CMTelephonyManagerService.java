@@ -201,10 +201,11 @@ public class CMTelephonyManagerService extends SystemService {
     }
 
     private boolean isSubActive(int subId) {
-        /* boolean validSubscriptionId = SubscriptionManager.isValidSubscriptionId(subId);
+        boolean validSubscriptionId = SubscriptionManager.isValidSubscriptionId(subId);
 
         if (validSubscriptionId) {
-            int simState = SubscriptionManager.getSimStateForSubscriber(subId);
+            int simState = SubscriptionManager.getSimStateForSlotIdx(
+                    SubscriptionManager.getSlotId(subId));
             switch (simState) {
                 case TelephonyManager.SIM_STATE_ABSENT:
                 case TelephonyManager.SIM_STATE_CARD_IO_ERROR:
@@ -223,12 +224,11 @@ public class CMTelephonyManagerService extends SystemService {
         } else {
             Log.w(TAG, "Invalid subscription identifier: " + subId);
             return false;
-        } */
-        return false;
+        }
     }
 
     private void setSubState(int subId, boolean state) {
-        /* if (localLOGD) {
+        if (localLOGD) {
             Log.d(TAG, "Setting the subscription " + subId + " to inactive (false) or active (true): " + state);
         }
 
@@ -236,7 +236,7 @@ public class CMTelephonyManagerService extends SystemService {
             SubscriptionManager.activateSubId(subId);
         } else {
             SubscriptionManager.deactivateSubId(subId);
-        } */
+        }
     }
 
     private boolean isDataConnectionSelectedOnSub(int subId) {
@@ -296,12 +296,12 @@ public class CMTelephonyManagerService extends SystemService {
     }
 
     private void setDefaultPhoneSub(int subId) {
-        /* if (localLOGD) {
+        if (localLOGD) {
             Log.d(TAG, "Setting the SIM for phone calls on subscription " + subId);
         }
 
         SubscriptionManager subscriptionManager = SubscriptionManager.from(mContext);
-        if (subId == CMTelephonyManager.ASK_FOR_SUBSCRIPTION_ID) {
+        /*if (subId == CMTelephonyManager.ASK_FOR_SUBSCRIPTION_ID) {
             if (localLOGD) {
                 Log.d(TAG, "Activates the prompt for phone calls");
             }
@@ -309,16 +309,17 @@ public class CMTelephonyManagerService extends SystemService {
         } else {
             SubscriptionManager.setVoicePromptEnabled(false);
             subscriptionManager.setDefaultVoiceSubId(subId);
-        } */
+        }*/
+        subscriptionManager.setDefaultVoiceSubId(subId);
     }
 
     private void setDefaultSmsSub(int subId) {
-        /* if (localLOGD) {
+        if (localLOGD) {
             Log.d(TAG, "Setting the SIM for phone calls on subscription " + subId);
         }
 
         SubscriptionManager subscriptionManager = SubscriptionManager.from(mContext);
-        if (subId == CMTelephonyManager.ASK_FOR_SUBSCRIPTION_ID) {
+        /*if (subId == CMTelephonyManager.ASK_FOR_SUBSCRIPTION_ID) {
             if (localLOGD) {
                 Log.d(TAG, "Activates the prompt for SMS");
             }
@@ -326,7 +327,8 @@ public class CMTelephonyManagerService extends SystemService {
         } else {
             SubscriptionManager.setSMSPromptEnabled(false);
             subscriptionManager.setDefaultSmsSubId(subId);
-        } */
+        }*/
+        subscriptionManager.setDefaultSmsSubId(subId);
     }
 
     private void enforceTelephonyReadPermission() {
