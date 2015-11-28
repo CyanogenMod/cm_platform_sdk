@@ -37,6 +37,7 @@
   <string name="permlab_read_alarms">hozzáférés ütemezett riasztásokhoz</string>
   <string name="permdesc_read_alarms">Lehetővé teszi az alkalmazás számára, hogy olvassa az ütemezett riasztásait.</string>
   <string name="permlab_writeSettings">CM rendszer beállításainak módosítása</string>
+  <string name="permlab_writeSecureSettings">CM biztonsági rendszer beállításainak módosítása</string>
   <string name="custom_tile_listener_binding_label">Egyéni csempe figyelőszolgáltatás</string>
   <string name="profileNameDefault">Alapértelmezett</string>
   <string name="profileNameWork">Munka</string>
