@@ -17,15 +17,10 @@
 import java.util.ArrayList;
 
 /**
- * Created by adnan on 11/16/15.
+ * Created by adnan on 11/29/15.
  */
-public class SettingImageCommands implements CommandExecutor {
+public class DebuggingCommands implements CommandExecutor {
     private ArrayList<Command> commandHistory = new ArrayList<Command>();
-    private String authority;
-
-    public SettingImageCommands(String authority) {
-        this.authority = authority;
-    }
 
     @Override
     public void execute() {
@@ -35,22 +30,16 @@ public class SettingImageCommands implements CommandExecutor {
     }
 
     private void addCommand(Command commandWithTimeout) {
-        commandWithTimeout.prepend(authority);
         commandHistory.add(commandWithTimeout);
     }
 
-    public void addQuery(String uri, ArrayList<Setting> settings) {
-        QueryCommand queryCommand = new QueryCommand(uri, settings);
-        addCommand(queryCommand);
+    public void addFastboot(int command, String[] arguments) {
+        FastbootCommand fastbootCommand = new FastbootCommand(command, arguments);
+        addCommand(fastbootCommand);
     }
 
-    public void addInsert(String uri, Setting setting) {
-        InsertCommand insertCommand = new InsertCommand(uri, setting);
-        addCommand(insertCommand);
-    }
-
-    public void addRead(String fileName, String uri, ArrayList<Setting> settings) {
-        ReadCommand readCommand = new ReadCommand(fileName, uri, settings);
-        addCommand(readCommand);
+    public void addAdb(int command) {
+        AdbCommand adbCommand = new AdbCommand(command);
+        addCommand(adbCommand);
     }
 }
