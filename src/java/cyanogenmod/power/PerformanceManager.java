@@ -178,4 +178,23 @@ public class PerformanceManager {
         }
         return ret;
     }
+
+    /**
+     * Check if profile has app-specific profiles
+     *
+     * Returns true if profile has app-specific profiles.
+     */
+    public boolean getProfileHasAppProfiles(int profile) {
+        boolean ret = false;
+        if (mNumberOfProfiles > 0) {
+            try {
+                if (checkService()) {
+                    ret = sService.getProfileHasAppProfiles(profile);
+                }
+            } catch (RemoteException e) {
+                // nothing
+            }
+        }
+        return ret;
+    }
 }
