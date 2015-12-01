@@ -2004,6 +2004,7 @@ public final class CMSettings {
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
+            VALIDATORS.put(Secure.PROTECTED_COMPONENTS, sAlwaysTrueValidator);
         };
         // endregion
     }
