@@ -265,13 +265,16 @@ public class CMSettingsProvider extends ContentProvider {
 
         boolean hasMigratedCMSettings = mSharedPrefs.getBoolean(PREF_HAS_MIGRATED_CM_SETTINGS,
                 false);
-        if (!hasMigratedCMSettings) {
+        final ComponentName preBootReceiver = new ComponentName("org.cyanogenmod.cmsettings",
+                "org.cyanogenmod.cmsettings.PreBootReceiver");
+        final PackageManager packageManager = getContext().getPackageManager();
+        if (!hasMigratedCMSettings &&
+                packageManager.getComponentEnabledSetting(preBootReceiver)
+                        == PackageManager.COMPONENT_ENABLED_STATE_DISABLED ) {
             if (LOCAL_LOGV) {
                 Log.d(TAG, "Reenabling component preboot receiver");
             }
-            getContext().getPackageManager().setComponentEnabledSetting(
-                    new ComponentName("org.cyanogenmod.cmsettings",
-                            "org.cyanogenmod.cmsettings.PreBootReceiver"),
+            packageManager.setComponentEnabledSetting(preBootReceiver,
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
         }
