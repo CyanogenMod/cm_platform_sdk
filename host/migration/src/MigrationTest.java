@@ -90,14 +90,15 @@ class MigrationTest {
         legacyToCMSettings.execute();
 
         //Force update
-        SettingImageCommands updateRom = new SettingImageCommands(null);
-        updateRom.addFastboot(FastbootCommand.Types.ADB_REBOOT_BOOTLOADER, null);
+        DebuggingCommands updateRom = new DebuggingCommands();
+        updateRom.addAdb(AdbCommand.Types.REBOOT_BOOTLOADER);
         updateRom.addFastboot(FastbootCommand.Types.FASTBOOT_DEVICES, null);
         updateRom.addFastboot(FastbootCommand.Types.FASTBOOT_FLASH,
                 new String[]{"boot", bootImage});
         updateRom.addFastboot(FastbootCommand.Types.FASTBOOT_FLASH,
                 new String[]{"system", systemImage});
         updateRom.addFastboot(FastbootCommand.Types.FASTBOOT_REBOOT, null);
+        updateRom.addAdb(AdbCommand.Types.CHECK_BOOT_COMPLETE);
         updateRom.execute();
 
         //Requery

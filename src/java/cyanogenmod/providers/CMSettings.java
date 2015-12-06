@@ -761,6 +761,26 @@ public final class CMSettings {
             }
         }
 
+        /**
+         * @hide
+         */
+        public static final Validator PROTECTED_COMPONENTS_VALIDATOR = new Validator() {
+            private final String mDelimiter = "|";
+
+            @Override
+            public boolean validate(String value) {
+                if (!TextUtils.isEmpty(value)) {
+                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
+                    for (String item : array) {
+                        if (TextUtils.isEmpty(item)) {
+                            return false; // Empty components not allowed
+                        }
+                    }
+                }
+                return true;  // Empty list is allowed though.
+            }
+        };
+
         // region System Settings
 
         /**
@@ -2004,6 +2024,7 @@ public final class CMSettings {
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
+            VALIDATORS.put(Secure.PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
         };
         // endregion
     }

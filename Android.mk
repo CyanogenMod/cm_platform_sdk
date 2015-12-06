@@ -133,6 +133,7 @@ LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(cyanogenmod_src)) \
+    $(call all-java-files-under, $(cyanogenmod_internal_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
 

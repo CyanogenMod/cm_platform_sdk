@@ -85,8 +85,8 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
     }
 
     public void updateEnabled() {
-        boolean enabled = false; // Settings.System.getInt(mContext.getContentResolver(),
-                //Settings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
+        boolean enabled = CMSettings.System.getInt(mContext.getContentResolver(),
+                CMSettings.System.SYSTEM_PROFILES_ENABLED, 1) == 1;
         if (enabled && !mFilterRegistered) {
             Log.v(TAG, "Enabling");
             mContext.registerReceiver(this, mIntentFilter);

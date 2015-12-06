@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2015 The CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,13 +26,6 @@ import java.util.List;
  * Created by adnan on 11/17/15.
  */
 public class FastbootCommand extends Command {
-    private static final int MAX_RETRIES = 20;
-    private static final String[] ADB_REBOOT_BOOTLOADER = new String[] {
-            "adb", "reboot", "bootloader"
-    };
-    private static final String[] ADB_CHECK_BOOT_COMPLETE = new String[] {
-            "adb", "shell", "getprop", "sys.boot_completed"
-    };
     private static final String FASTBOOT_COMMAND = "fastboot";
     private static final String REBOOT = "reboot";
     private static final String DEVICES = "devices";
@@ -29,9 +38,6 @@ public class FastbootCommand extends Command {
 
     public FastbootCommand(int command, String[] args) {
         switch (command) {
-            case Types.ADB_REBOOT_BOOTLOADER:
-                baseCommand = ADB_REBOOT_BOOTLOADER;
-                break;
             case Types.FASTBOOT_FLASH:
                 baseCommand = new String[] { FASTBOOT_COMMAND };
                 baseArg = FLASH;
@@ -102,45 +108,6 @@ public class FastbootCommand extends Command {
             in.close();
             err.close();
             //Gross
-            if (baseArg != null && baseArg.equals(REBOOT)) {
-                List<String> secondCommandList = new ArrayList<String>(
-                        ADB_CHECK_BOOT_COMPLETE.length + 1);
-                secondCommandList.addAll(Arrays.asList(ADB_CHECK_BOOT_COMPLETE));
-                String[] secondCommands = secondCommandList.toArray(
-                        new String[secondCommandList.size()]);
-                if (MigrationTest.DEBUG) {
-                    System.out.println("Using commands: " + Arrays.toString(secondCommands));
-                }
-                Process process2;
-                BufferedReader in2;
-                String line2;
-                for (int i = 1; i < MAX_RETRIES; i++) {
-                    process2 = Runtime.getRuntime().exec(secondCommands);
-                    in2 = new BufferedReader(
-                            new InputStreamReader(process2.getInputStream()));
-                    if ((line2 = in2.readLine()) != null) {
-                        if (line2.equals("1")) {
-                            in2.close();
-                            process2.destroy();
-                            try {
-                                System.out.println("Device up detected...");
-                                Thread.sleep(10000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            break;
-                        }
-                    }
-                    try {
-                        System.out.println("Waiting for device to come up...");
-                        Thread.sleep(10000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    in2.close();
-                    process2.destroy();
-                }
-            }
             process.destroy();
         } catch (IOException e) {
             System.err.println("Error ");
@@ -149,7 +116,6 @@ public class FastbootCommand extends Command {
     }
 
     public final class Types {
-        public static final int ADB_REBOOT_BOOTLOADER = -1;
         public static final int FASTBOOT_FLASH = 0;
         public static final int FASTBOOT_DEVICES = 1;
         public static final int FASTBOOT_REBOOT = 2;
