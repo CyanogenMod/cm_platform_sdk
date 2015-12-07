@@ -227,7 +227,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                 R.string.def_qs_tiles);
 
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.QS_USE_MAIN_TILES,
-                R.bool.def_def_sysui_qs_main_tiles);
+                R.bool.def_sysui_qs_main_tiles);
 
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.STATS_COLLECTION,
                 R.bool.def_stats_collection);
