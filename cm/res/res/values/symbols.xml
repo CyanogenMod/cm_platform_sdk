@@ -73,4 +73,7 @@
     <!-- Notification and battery light -->
     <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
     <java-symbol type="bool" name="config_multipleNotificationLeds" />
+
+    <!-- Quick Settings tile defaults -->
+    <java-symbol type="string" name="config_defaultQuickSettingsTiles" />
 </resources>
