@@ -1782,6 +1782,10 @@ public final class CMSettings {
                     }
                 };
 
+        public static final String NOTIFICATION_LIGHT_COLOR_AUTO =
+                "notification_light_color_auto";
+
+
         /**
          * @hide
          */
