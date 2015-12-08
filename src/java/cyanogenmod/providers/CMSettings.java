@@ -2605,6 +2605,13 @@ public final class CMSettings {
          * @hide
          */
         public static final String THEME_PREV_BOOT_API_LEVEL = "theme_prev_boot_api_level";
+
+        /**
+         * Whether to show the keyguard visualizer.
+         * Boolean setting. 0 = off, 1 = on.
+         * @hide
+         */
+        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
         // endregion
 
         /**
@@ -2641,7 +2648,9 @@ public final class CMSettings {
                 CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
                 CMSettings.Secure.DEVELOPMENT_SHORTCUT,
                 CMSettings.Secure.PERFORMANCE_PROFILE,
-                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED};
+                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED,
+                CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
+        };
 
         /**
          * @hide
