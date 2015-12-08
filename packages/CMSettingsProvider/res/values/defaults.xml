@@ -47,6 +47,9 @@
     <!-- Default for CMSettings.Secure.QS_USE_MAIN_TILES -->
     <bool name="def_sysui_qs_main_tiles">true</bool>
 
+    <!-- Default for CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED -->
+    <bool name="def_lockscreen_visualizer">true</bool>
+
     <!-- Defaults for Global -->
 
     <!-- Default for CMSettings.Global.DEVICE_NAME
