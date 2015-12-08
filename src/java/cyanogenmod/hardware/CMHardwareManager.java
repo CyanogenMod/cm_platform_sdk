@@ -735,6 +735,20 @@ public final class CMHardwareManager {
     }
 
     /**
+     * @return true if this implementation does it's own lux metering
+     * @hide
+     */
+    public boolean isSunlightEnhancementSelfManaged() {
+        try {
+            if (checkService()) {
+                return sService.isSunlightEnhancementSelfManaged();
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    /**
      * @return a list of available display modes on the devices
      */
     public DisplayMode[] getDisplayModes() {
