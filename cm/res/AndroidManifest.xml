@@ -135,6 +135,12 @@
             android:description="@string/permdesc_protectedApp"
             android:protectionLevel="signature|privileged" />
 
+    <!-- Allows an application to be used as a third party keyguard -->
+    <permission android:name="android.permission.THIRD_PARTY_KEYGUARD"
+                android:label="@string/permlab_thirdPartyKeyguard"
+                android:description="@string/permdesc_thirdPartyKeyguard"
+                android:protectionLevel="signature|privileged" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
