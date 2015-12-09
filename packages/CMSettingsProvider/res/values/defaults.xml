@@ -44,6 +44,9 @@
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <bool name="def_stats_collection">false</bool>
 
+    <!-- Default for CMSettings.Secure.QS_USE_MAIN_TILES -->
+    <bool name="def_sysui_qs_main_tiles">true</bool>
+
     <!-- Defaults for Global -->
 
     <!-- Default for CMSettings.Global.DEVICE_NAME

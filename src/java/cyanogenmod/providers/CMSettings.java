@@ -269,6 +269,140 @@ public final class CMSettings {
         }
     }
 
+    // region Validators
+
+    /** @hide */
+    public static interface Validator {
+        public boolean validate(String value);
+    }
+
+    private static final Validator sBooleanValidator =
+            new DiscreteValueValidator(new String[] {"0", "1"});
+
+    private static final Validator sNonNegativeIntegerValidator = new Validator() {
+        @Override
+        public boolean validate(String value) {
+            try {
+                return Integer.parseInt(value) >= 0;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    };
+
+    private static final Validator sUriValidator = new Validator() {
+        @Override
+        public boolean validate(String value) {
+            try {
+                Uri.decode(value);
+                return true;
+            } catch (IllegalArgumentException e) {
+                return false;
+            }
+        }
+    };
+
+    private static final Validator sColorValidator =
+            new InclusiveIntegerRangeValidator(Integer.MIN_VALUE, Integer.MAX_VALUE);
+
+    private static final Validator sAlwaysTrueValidator = new Validator() {
+        @Override
+        public boolean validate(String value) {
+            return true;
+        }
+    };
+
+    private static final class DiscreteValueValidator implements Validator {
+        private final String[] mValues;
+
+        public DiscreteValueValidator(String[] values) {
+            mValues = values;
+        }
+
+        @Override
+        public boolean validate(String value) {
+            return ArrayUtils.contains(mValues, value);
+        }
+    }
+
+    private static final class InclusiveIntegerRangeValidator implements Validator {
+        private final int mMin;
+        private final int mMax;
+
+        public InclusiveIntegerRangeValidator(int min, int max) {
+            mMin = min;
+            mMax = max;
+        }
+
+        @Override
+        public boolean validate(String value) {
+            try {
+                final int intValue = Integer.parseInt(value);
+                return intValue >= mMin && intValue <= mMax;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    }
+
+    private static final class InclusiveFloatRangeValidator implements Validator {
+        private final float mMin;
+        private final float mMax;
+
+        public InclusiveFloatRangeValidator(float min, float max) {
+            mMin = min;
+            mMax = max;
+        }
+
+        @Override
+        public boolean validate(String value) {
+            try {
+                final float floatValue = Float.parseFloat(value);
+                return floatValue >= mMin && floatValue <= mMax;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    }
+
+    private static final class DelimitedListValidator implements Validator {
+        private final ArraySet<String> mValidValueSet;
+        private final String mDelimiter;
+        private final boolean mAllowEmptyList;
+
+        public DelimitedListValidator(String[] validValues, String delimiter,
+                                      boolean allowEmptyList) {
+            mValidValueSet = new ArraySet<String>(Arrays.asList(validValues));
+            mDelimiter = delimiter;
+            mAllowEmptyList = allowEmptyList;
+        }
+
+        @Override
+        public boolean validate(String value) {
+            ArraySet<String> values = new ArraySet<String>();
+            if (!TextUtils.isEmpty(value)) {
+                final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
+                for (String item : array) {
+                    if (TextUtils.isEmpty(item)) {
+                        continue;
+                    }
+                    values.add(item);
+                }
+            }
+            if (values.size() > 0) {
+                values.removeAll(mValidValueSet);
+                // values.size() will be non-zero if it contains any values not in
+                // mValidValueSet
+                return values.size() == 0;
+            } else if (mAllowEmptyList) {
+                return true;
+            }
+
+            return false;
+        }
+    }
+    // endregion Validators
+
     /**
      * System settings, containing miscellaneous CM system preferences. This table holds simple
      * name/value pairs. There are convenience functions for accessing individual settings entries.
@@ -278,52 +412,11 @@ public final class CMSettings {
 
         public static final String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
 
-        /** @hide */
-        public static interface Validator {
-            public boolean validate(String value);
-        }
-
         private static final NameValueCache sNameValueCache = new NameValueCache(
                 SYS_PROP_CM_SETTING_VERSION,
                 CONTENT_URI,
                 CALL_METHOD_GET_SYSTEM,
                 CALL_METHOD_PUT_SYSTEM);
-
-        private static final Validator sBooleanValidator =
-                new DiscreteValueValidator(new String[] {"0", "1"});
-
-        private static final Validator sNonNegativeIntegerValidator = new Validator() {
-            @Override
-            public boolean validate(String value) {
-                try {
-                    return Integer.parseInt(value) >= 0;
-                } catch (NumberFormatException e) {
-                    return false;
-                }
-            }
-        };
-
-        private static final Validator sUriValidator = new Validator() {
-            @Override
-            public boolean validate(String value) {
-                try {
-                    Uri.decode(value);
-                    return true;
-                } catch (IllegalArgumentException e) {
-                    return false;
-                }
-            }
-        };
-
-        private static final Validator sColorValidator =
-                new InclusiveIntegerRangeValidator(Integer.MIN_VALUE, Integer.MAX_VALUE);
-
-        private static final Validator sAlwaysTrueValidator = new Validator() {
-            @Override
-            public boolean validate(String value) {
-                return true;
-            }
-        };
 
         // region Methods
 
@@ -670,116 +763,6 @@ public final class CMSettings {
         }
 
         // endregion
-
-        private static final class DiscreteValueValidator implements Validator {
-            private final String[] mValues;
-
-            public DiscreteValueValidator(String[] values) {
-                mValues = values;
-            }
-
-            @Override
-            public boolean validate(String value) {
-                return ArrayUtils.contains(mValues, value);
-            }
-        }
-
-        private static final class InclusiveIntegerRangeValidator implements Validator {
-            private final int mMin;
-            private final int mMax;
-
-            public InclusiveIntegerRangeValidator(int min, int max) {
-                mMin = min;
-                mMax = max;
-            }
-
-            @Override
-            public boolean validate(String value) {
-                try {
-                    final int intValue = Integer.parseInt(value);
-                    return intValue >= mMin && intValue <= mMax;
-                } catch (NumberFormatException e) {
-                    return false;
-                }
-            }
-        }
-
-        private static final class InclusiveFloatRangeValidator implements Validator {
-            private final float mMin;
-            private final float mMax;
-
-            public InclusiveFloatRangeValidator(float min, float max) {
-                mMin = min;
-                mMax = max;
-            }
-
-            @Override
-            public boolean validate(String value) {
-                try {
-                    final float floatValue = Float.parseFloat(value);
-                    return floatValue >= mMin && floatValue <= mMax;
-                } catch (NumberFormatException e) {
-                    return false;
-                }
-            }
-        }
-
-        private static final class DelimitedListValidator implements Validator {
-            private final ArraySet<String> mValidValueSet;
-            private final String mDelimiter;
-            private final boolean mAllowEmptyList;
-
-            public DelimitedListValidator(String[] validValues, String delimiter,
-                    boolean allowEmptyList) {
-                mValidValueSet = new ArraySet<String>(Arrays.asList(validValues));
-                mDelimiter = delimiter;
-                mAllowEmptyList = allowEmptyList;
-            }
-
-            @Override
-            public boolean validate(String value) {
-                ArraySet<String> values = new ArraySet<String>();
-                if (!TextUtils.isEmpty(value)) {
-                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
-                    for (String item : array) {
-                        if (TextUtils.isEmpty(item)) {
-                            continue;
-                        }
-                        values.add(item);
-                    }
-                }
-                if (values.size() > 0) {
-                    values.removeAll(mValidValueSet);
-                    // values.size() will be non-zero if it contains any values not in
-                    // mValidValueSet
-                    return values.size() == 0;
-                } else if (mAllowEmptyList) {
-                    return true;
-                }
-
-                return false;
-            }
-        }
-
-        /**
-         * @hide
-         */
-        public static final Validator PROTECTED_COMPONENTS_VALIDATOR = new Validator() {
-            private final String mDelimiter = "|";
-
-            @Override
-            public boolean validate(String value) {
-                if (!TextUtils.isEmpty(value)) {
-                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
-                    for (String item : array) {
-                        if (TextUtils.isEmpty(item)) {
-                            return false; // Empty components not allowed
-                        }
-                    }
-                }
-                return true;  // Empty list is allowed though.
-            }
-        };
 
         // region System Settings
 
@@ -2024,7 +2007,6 @@ public final class CMSettings {
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
-            VALIDATORS.put(Secure.PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
         };
         // endregion
     }
@@ -2046,7 +2028,6 @@ public final class CMSettings {
                 CALL_METHOD_PUT_SECURE);
 
         // region Methods
-
 
         /**
          * Put a delimited list as a string
@@ -2667,6 +2648,41 @@ public final class CMSettings {
          */
         public static boolean isLegacySetting(String key) {
             return ArrayUtils.contains(LEGACY_SECURE_SETTINGS, key);
+        }
+
+        /**
+         * @hide
+         */
+        public static final Validator PROTECTED_COMPONENTS_VALIDATOR = new Validator() {
+            private final String mDelimiter = "|";
+
+            @Override
+            public boolean validate(String value) {
+                if (!TextUtils.isEmpty(value)) {
+                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
+                    for (String item : array) {
+                        if (TextUtils.isEmpty(item)) {
+                            return false; // Empty components not allowed
+                        }
+                    }
+                }
+                return true;  // Empty list is allowed though.
+            }
+        };
+
+        /**
+         * Mapping of validators for all secure settings.  This map is used to validate both valid
+         * keys as well as validating the values for those keys.
+         *
+         * Note: Make sure if you add a new Secure setting you create a Validator for it and add
+         *       it to this map.
+         *
+         * @hide
+         */
+        public static final Map<String, Validator> VALIDATORS =
+                new ArrayMap<String, Validator>();
+        static {
+            VALIDATORS.put(PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
         }
     }
 
