@@ -22,13 +22,13 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
     private static final String sAttributeNameSpace =
             "http://schemas.android.com/apk/lib/cyanogenmod.platform";
 
-    private Context mContext;
-    private final ComponentName mExtensionComponent;
+    protected Context mContext;
+    protected final ComponentName mExtensionComponent;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private volatile IExternalViewProvider mExternalViewProvider;
     private final ExternalViewProperties mExternalViewProperties;
 
-    private static ComponentName getComponentFromAttribute(AttributeSet attrs) {
+    protected static ComponentName getComponentFromAttribute(AttributeSet attrs) {
         String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
         return ComponentName.unflattenFromString(componentString);
     }
@@ -46,6 +46,11 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
     }
 
     public ExternalView(Context context, AttributeSet attributeSet, ComponentName componentName) {
+        this(context,attributeSet,componentName,true);
+    }
+
+    //TODO: Do we want to make this constructor public?
+    protected ExternalView(Context context, AttributeSet attributeSet, ComponentName componentName, boolean bindOnCreate) {
         super(context, attributeSet);
         mContext = getContext();
         mExtensionComponent = componentName;
@@ -53,6 +58,12 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
         Application app = (mContext instanceof Activity) ? ((Activity) mContext).getApplication()
                 : (Application) mContext;
         app.registerActivityLifecycleCallbacks(this);
+        if (bindOnCreate) {
+            bindToService();
+        }
+    }
+
+    protected void bindToService() {
         mContext.bindService(new Intent().setComponent(mExtensionComponent),
                 mServiceConnection, Context.BIND_AUTO_CREATE);
     }
