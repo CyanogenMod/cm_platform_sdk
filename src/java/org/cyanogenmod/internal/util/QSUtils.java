@@ -66,9 +66,10 @@ public class QSUtils {
         return QSConstants.DYNAMIC_TILES_AVAILABLE.contains(tileSpec);
     }
 
+    @SuppressWarnings("unchecked")
     public static List<String> getAvailableTiles(Context context) {
         filterTiles(context);
-        return QSConstants.TILES_AVAILABLE;
+        return (List<String>) QSConstants.TILES_AVAILABLE.clone();
     }
 
     public static List<String> getDefaultTiles(Context context) {
