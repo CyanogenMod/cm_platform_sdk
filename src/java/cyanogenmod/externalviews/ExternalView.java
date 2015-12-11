@@ -39,13 +39,22 @@ import java.util.LinkedList;
 public class ExternalView extends View implements Application.ActivityLifecycleCallbacks,
         ViewTreeObserver.OnPreDrawListener {
 
-    private Context mContext;
+    private static final String sAttributeNameSpace =
+            "http://schemas.android.com/apk/lib/cyanogenmod.platform";
+
+    protected Context mContext;
+    protected final ComponentName mExtensionComponent;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
     private volatile IExternalViewProvider mExternalViewProvider;
     private final ExternalViewProperties mExternalViewProperties;
 
+    protected static ComponentName getComponentFromAttribute(AttributeSet attrs) {
+        String componentString = attrs.getAttributeValue(sAttributeNameSpace, "componentName");
+        return ComponentName.unflattenFromString(componentString);
+    }
+
     public ExternalView(Context context, AttributeSet attrs) {
-        this(context, attrs, null);
+        this(context, attrs, getComponentFromAttribute(attrs));
     }
 
     public ExternalView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -59,14 +68,16 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
     public ExternalView(Context context, AttributeSet attributeSet, ComponentName componentName) {
         super(context, attributeSet);
         mContext = getContext();
+        mExtensionComponent = componentName;
         mExternalViewProperties = new ExternalViewProperties(this, mContext);
         Application app = (mContext instanceof Activity) ? ((Activity) mContext).getApplication()
                 : (Application) mContext;
         app.registerActivityLifecycleCallbacks(this);
-        if (componentName != null) {
-            mContext.bindService(new Intent().setComponent(componentName),
-                    mServiceConnection, Context.BIND_AUTO_CREATE);
-        }
+        mContext.bindService(new Intent().setComponent(mExtensionComponent),
+                mServiceConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    protected void bindToService() {
     }
 
     private ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -225,22 +236,5 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
                 }
             }
         });
-    }
-
-    /**
-     * Sets the component of the ExternalViewProviderService to be used for this ExternalView.
-     * If a provider is already connected to this view, it is first unbound before binding to the
-     * new provider.
-     * @param componentName
-     */
-    public void setProviderComponent(ComponentName componentName) {
-        // unbind any existing external view provider
-        if (mExternalViewProvider != null) {
-            mContext.unbindService(mServiceConnection);
-        }
-        if (componentName != null) {
-            mContext.bindService(new Intent().setComponent(componentName),
-                    mServiceConnection, Context.BIND_AUTO_CREATE);
-        }
     }
 }
