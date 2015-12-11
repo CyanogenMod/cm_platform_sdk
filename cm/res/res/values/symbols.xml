@@ -76,4 +76,10 @@
 
     <!-- Quick Settings tile defaults -->
     <java-symbol type="string" name="config_defaultQuickSettingsTiles" />
+
+    <!-- Wifi Service -->
+    <java-symbol type="string" name="def_wifi_wifihotspot_ssid" />
+    <java-symbol type="string" name="def_wifi_wifihotspot_pass" />
+    <java-symbol type="string" name="def_wifi_direct_name" />
+    <java-symbol type="bool" name="set_wifi_hotspot_security_none" />
 </resources>
