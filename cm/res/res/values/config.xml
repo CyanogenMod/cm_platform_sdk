@@ -66,4 +66,14 @@
 
     <!-- Default, comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
     <string name="config_defaultQuickSettingsTiles">wifi,bt,cell,airplane,rotation,flashlight,location,edit,cast,visualizer,hotspot,inversion,dnd,live_display</string>
+
+    <!-- Wifi Service -->
+    <!-- Whether to make default hotspot security NONE-->
+    <bool name="config_wifiHotspotSecurityNone">false</bool>
+    <!-- Default wi-fi hotspot ssid -->
+    <string name="config_wifiHotSpotSsid" translatable="false"></string>
+    <!-- Default wi-fi hotspot pass -->
+    <string name="config_wifiHotSpotPass" translatable="false"></string>
+    <!-- Default wi-fi direct name -->
+    <string name="config_wifiDirectName" translatable="false"></string>
 </resources>
