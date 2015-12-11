@@ -65,4 +65,9 @@ public class Intent {
      */
     public static final String EXTRA_PROTECTED_COMPONENTS =
             "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
+    public static final String ACTION_INSIGHT = "cyanogenmod.intent.action.INSIGHT";
+    public static final String EXTRA_INSIGHT_SELECTED_TEXT = "cyanogenmod.intent.extra.EXTRA_INSIGHT_SELECTED_TEXT";
+    public static final String EXTRA_INSIGHT_ALL_TEXT = "cyanogenmod.intent.action.EXTRA_INSIGHT_ALL_TEXT";
+    public static final String EXTRA_INSIGHT_SELECTION_START = "cyanogenmod.intent.action.EXTRA_INSIGHT_SELECTION_START";
+    public static final String EXTRA_INSIGHT_SELECTION_END = "cyanogenmod.intent.action.EXTRA_INSIGHT_SELECTION_END";
 }
