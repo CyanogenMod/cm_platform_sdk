@@ -81,6 +81,12 @@ public abstract class ExternalViewProviderService extends Service {
     protected abstract Provider createExternalView(Bundle options);
 
     protected abstract class Provider {
+        public static final int DEFAULT_WINDOW_TYPE = WindowManager.LayoutParams.TYPE_PHONE;
+        public static final int DEFAULT_WINDOW_FLAGS =
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;;
+
         private final class ProviderImpl extends IExternalViewProvider.Stub {
             private final Window mWindow;
             private final WindowManager.LayoutParams mParams;
@@ -88,15 +94,13 @@ public abstract class ExternalViewProviderService extends Service {
             private boolean mShouldShow = true;
             private boolean mAskedShow = false;
 
-            public ProviderImpl() {
+            public ProviderImpl(Provider provider) {
                 mWindow = new PhoneWindow(ExternalViewProviderService.this);
                 ((ViewGroup) mWindow.getDecorView()).addView(onCreateView());
 
                 mParams = new WindowManager.LayoutParams();
-                mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
-                mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
-                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+                mParams.type = provider.getWindowType();
+                mParams.flags = provider.getWindowFlags();
                 mParams.gravity = Gravity.LEFT | Gravity.TOP;
                 mParams.format = PixelFormat.TRANSPARENT;
             }
@@ -202,7 +206,7 @@ public abstract class ExternalViewProviderService extends Service {
             }
         }
 
-        private final ProviderImpl mImpl = new ProviderImpl();
+        private final ProviderImpl mImpl = new ProviderImpl(this);
         private final Bundle mOptions;
 
         protected Provider(Bundle options) {
@@ -220,5 +224,13 @@ public abstract class ExternalViewProviderService extends Service {
         protected void onPause() {}
         protected void onStop() {}
         protected void onDetach() {}
+
+        /*package*/ int getWindowType() {
+            return DEFAULT_WINDOW_TYPE;
+        }
+
+        /*package*/ int getWindowFlags() {
+            return DEFAULT_WINDOW_FLAGS;
+        }
     }
 }
