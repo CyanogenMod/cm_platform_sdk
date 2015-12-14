@@ -210,6 +210,12 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.QS_QUICK_PULLDOWN,
                 R.integer.def_qs_quick_pulldown);
 
+        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                R.integer.def_notification_brightness_level);
+
+        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                R.bool.def_notification_multiple_leds);
+
         // Secure
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.ADVANCED_MODE,
                 R.bool.def_advanced_mode);
@@ -232,23 +238,21 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.STATS_COLLECTION,
                 R.bool.def_stats_collection);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
-                R.bool.def_power_notifications_enabled);
+        // Global - This table only exists for the owner
+        if (UserHandle.USER_OWNER == mUserHandle) {
+            loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
+                    CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
+                    R.bool.def_power_notifications_enabled);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                R.bool.def_power_notifications_vibrate);
+            loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
+                    CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
+                    R.bool.def_power_notifications_vibrate);
 
-        loadStringSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                R.string.def_power_notifications_ringtone);
+            loadStringSetting(db, CMTableNames.TABLE_GLOBAL,
+                    CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
+                    R.string.def_power_notifications_ringtone);
+        }
 
-        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                R.integer.def_notification_brightness_level);
-
-        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
-                R.bool.def_notification_multiple_leds);
     }
 
     /**
