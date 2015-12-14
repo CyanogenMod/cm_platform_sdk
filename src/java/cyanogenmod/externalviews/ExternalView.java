@@ -39,10 +39,11 @@ import java.util.LinkedList;
 public class ExternalView extends View implements Application.ActivityLifecycleCallbacks,
         ViewTreeObserver.OnPreDrawListener {
 
-    private Context mContext;
     private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
-    private volatile IExternalViewProvider mExternalViewProvider;
-    private final ExternalViewProperties mExternalViewProperties;
+
+    protected Context mContext;
+    protected final ExternalViewProperties mExternalViewProperties;
+    protected volatile IExternalViewProvider mExternalViewProvider;
 
     public ExternalView(Context context, AttributeSet attrs) {
         this(context, attrs, null);
@@ -94,7 +95,7 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
         }
     }
 
-    private void performAction(Runnable r) {
+    protected void performAction(Runnable r) {
         if (mExternalViewProvider != null) {
             r.run();
         } else {
