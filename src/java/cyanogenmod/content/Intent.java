@@ -65,4 +65,34 @@ public class Intent {
      */
     public static final String EXTRA_PROTECTED_COMPONENTS =
             "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
+
+    /**
+     * This field is part of the Insight API.
+     * Intent Action for getting and Insight into a piece of selected text
+     */
+    public static final String ACTION_INSIGHT = "cyanogenmod.intent.action.INSIGHT";
+
+    /**
+     * This field is part of the Insight API
+     * Intent Extra containing the text selected by the user
+     */
+    public static final String EXTRA_INSIGHT_SELECTED_TEXT = "cyanogenmod.intent.extra.EXTRA_INSIGHT_SELECTED_TEXT";
+
+    /**
+     * This field is part of the Insight API
+     * Intent Extra containing the full text of the view the user has made a selection within.  Allows handler to gain further context regarding the selection
+     */
+    public static final String EXTRA_INSIGHT_ALL_TEXT = "cyanogenmod.intent.action.EXTRA_INSIGHT_ALL_TEXT";
+
+    /**
+     * This field is part of the Insight API
+     * Intent Extra contianing for the Integer offset within the EXTRA_INSIGHT_ALL_TEXT where the user's selection begins.
+     */
+    public static final String EXTRA_INSIGHT_SELECTION_START = "cyanogenmod.intent.action.EXTRA_INSIGHT_SELECTION_START";
+
+    /**
+     * This field is part of the Insight API
+     * Intent Extra contianing for the Integer offset within the EXTRA_INSIGHT_ALL_TEXT where the user's selection ends.
+     */
+    public static final String EXTRA_INSIGHT_SELECTION_END = "cyanogenmod.intent.action.EXTRA_INSIGHT_SELECTION_END";
 }
