@@ -16,20 +16,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">ระบบ CyanogenMod</string>
-  <string name="permlab_publishCustomTile">สร้างไทต์กำหนดเองในทางลัดการตั้งค่า</string>
-  <string name="permdesc_publishCustomTile">อนุญาตให้แอปสร้างไทต์ใหม่ในทางลัดการตั้งค่า</string>
   <string name="permlab_modifyNetworkSettings">เปลี่ยนการตั้งค่าเครือข่ายระบบ</string>
   <string name="permlab_modifySoundSettings">เปลี่ยนการตั้งค่าเสียงของระบบ</string>
-  <string name="permlab_bindCustomTileListenerService">ผูกไว้กับบริการกำหนดเอง</string>
-  <string name="permdesc_bindCustomTileListenerService">อนุญาตให้แอปผูกตัวเองไว้กับบริการต่างๆของเครื่อง</string>
   <string name="permlab_readMSPhoneState">ดูสถานะและการเชื่อมต่อข้อมูลของโทรศัพท์ด้วยการให้ความช่วยเหลือกับ SIM หลายอัน</string>
   <string name="permdesc_readMSPhoneState">อนุญาตให้แอพดูสถานะและการเชื่อมต่อข้อมูลของโทรศัพท์ด้วยการให้ความช่วยเหลือกับ SIM หลายอัน</string>
   <string name="permlab_modifyMSPhoneState">ปรับแต่งสถานะและการเชื่อมต่อข้อมูลของโทรศัพท์ด้วยการให้ความช่วยเหลือกับ SIM หลายอัน</string>
   <string name="permdesc_modifyMSPhoneState">อนุญาตให้แอพปรับแต่งสถานะและการเชื่อมต่อข้อมูลของโทรศัพท์ด้วยการให้ความช่วยเหลือกับ SIM หลายอัน</string>
   <string name="permlab_useHardwareFramework">ใช้ฮาร์ดแวร์เฟรมเวิร์ค</string>
   <string name="permdesc_useHardwareFramework">อนุญาตให้แอพเข้าถึง CM ฮาร์ดแวร์เฟรมเวิร์ค</string>
-  <string name="custom_tile_listener_binding_label">บริการกำหนดเองของไทต์</string>
   <string name="profileNameDefault">ค่าเริ่มต้น</string>
   <string name="profileNameWork">งาน</string>
   <string name="profileNameHome">บ้าน</string>
