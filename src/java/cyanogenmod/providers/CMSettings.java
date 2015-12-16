@@ -2605,6 +2605,13 @@ public final class CMSettings {
          * @hide
          */
         public static final String THEME_PREV_BOOT_API_LEVEL = "theme_prev_boot_api_level";
+
+        /**
+         * Whether detail view for the location tile is enabled
+         * @hide
+         */
+        public static final String QS_LOCATION_ADVANCED = "qs_location_advanced";
+
         // endregion
 
         /**
@@ -2641,7 +2648,8 @@ public final class CMSettings {
                 CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
                 CMSettings.Secure.DEVELOPMENT_SHORTCUT,
                 CMSettings.Secure.PERFORMANCE_PROFILE,
-                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED};
+                CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED,
+                CMSettings.Secure.QS_LOCATION_ADVANCED};
 
         /**
          * @hide
