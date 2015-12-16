@@ -58,6 +58,7 @@ public class PartnerInterfaceService extends SystemService {
     public PartnerInterfaceService(Context context) {
         super(context);
         mContext = context;
+        mContext.getResources().getString(R.string.test_yeah);
         publishBinderService(CMContextConstants.CM_PARTNER_INTERFACE, mService);
     }
 

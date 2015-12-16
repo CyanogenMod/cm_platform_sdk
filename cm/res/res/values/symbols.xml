@@ -24,6 +24,7 @@
     <java-symbol type="array" name="config_appSuggestProviderPackageNames"/>
 
     <java-symbol type="string" name="custom_tile_listener_binding_label" />
+    <java-symbol type="string" name="test_yeah" />
 
     <!-- Profiles -->
     <java-symbol type="xml" name="profile_default" />
