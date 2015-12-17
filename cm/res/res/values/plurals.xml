@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Plurals for time: seconds, minutes, hours, days  -->
+    <plurals name="seconds">
+        <item quantity="zero">0 seconds</item>
+        <item quantity="one">1 second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="zero">0 minutes</item>
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="zero">0 hours</item>
+        <item quantity="one">1 hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="zero">0 days</item>
+        <item quantity="one">1 day</item>
+        <item quantity="few">%d days</item>
+        <item quantity="many">many days</item>
+    </plurals>
+</resources>
