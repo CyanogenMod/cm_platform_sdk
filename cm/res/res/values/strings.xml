@@ -96,4 +96,26 @@
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Other</string>
 
+    <!-- setZenMode -->
+    <!-- Duration format strings -->
+    <string name="second">1 second</string>
+    <string name="format_seconds">%1$d seconds</string>
+    <string name="minute">1 minute</string>
+    <string name="format_minutes">%1$d minutes</string>
+    <string name="hour">1 hour</string>
+    <string name="format_hours">%1$d hours</string>
+    <string name="day">1 day</string>
+    <string name="format_days">%1$d days</string>
+
+    <!-- Separator char between duration phrases, e.g. 1 hour<separator_char>1 minute -->
+    <string name="duration_separator"> </string>
+
+    <!-- Line 1 that is passed to Condition: e.g. "For 30 minutes" -->
+    <string name="format_line1">For %1$s</string>
+    <!-- Line 2 that is passed to Condition: e.g. "Until 11:54 AM" -->
+    <string name="format_line2">Until %1$s</string>
+    <!-- Summary that comes from Line1, and the input to Line2: e.g. "For 30 minutes (until 11:54 AM)" -->
+    <string name="format_summary">%1$s (until %2$s)</string>
+
+
 </resources>

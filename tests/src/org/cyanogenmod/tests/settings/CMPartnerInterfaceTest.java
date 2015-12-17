@@ -52,17 +52,17 @@ public class CMPartnerInterfaceTest extends TestActivity {
             },
             new Test("Test set zen mode to important interruptions") {
                 public void run() {
-                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
+                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS, PartnerInterface.ZEN_MODE_DURATION_15_MINUTES_MS);
                 }
             },
             new Test("Test set zen mode to no interruptions") {
                 public void run() {
-                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS);
+                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS, PartnerInterface.ZEN_MODE_DURATION_15_MINUTES_MS);
                 }
             },
             new Test("Test turn zen mode off") {
                 public void run() {
-                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF);
+                    mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF, 0);
                 }
             },
     };
