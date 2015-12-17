@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.IAudioService;
+import android.net.Uri;
 import android.os.IBinder;
 
 import android.os.IPowerManager;
@@ -30,7 +31,9 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.service.notification.Condition;
 import android.telephony.TelephonyManager;
+import android.text.format.DateFormat;
 import android.util.Log;
 import com.android.server.SystemService;
 import cyanogenmod.app.CMContextConstants;
@@ -44,6 +47,8 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
+import java.text.SimpleDateFormat;
+
 
 /** {@hide} */
 public class PartnerInterfaceService extends SystemService {
@@ -154,7 +159,21 @@ public class PartnerInterfaceService extends SystemService {
              *   not allowed by the caller's permissions.
              */
             long token = clearCallingIdentity();
-            boolean success = setZenModeInternal(mode);
+            boolean success = setZenModeInternal(mode, -1);
+            restoreCallingIdentity(token);
+            return success;
+        }
+
+        @Override
+        public boolean setZenModeWithDuration(int mode, long durationMillis) {
+            enforceModifySoundSettingsPermission();
+            /*
+             * We need to clear the caller's identity in order to
+             *   allow this method call to modify settings
+             *   not allowed by the caller's permissions.
+             */
+            long token = clearCallingIdentity();
+            boolean success = setZenModeInternal(mode, durationMillis);
             restoreCallingIdentity(token);
             return success;
         }
@@ -198,37 +217,124 @@ public class PartnerInterfaceService extends SystemService {
         }
     }
 
-    private boolean setZenModeInternal(int mode) {
+    private boolean setZenModeInternal(int mode, long durationMillis) {
         ContentResolver contentResolver = mContext.getContentResolver();
         int zenModeValue = -1;
+        Condition zenModeCondition = null;
         switch(mode) {
             case PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
+                if (durationMillis > -1 && durationMillis <= PartnerInterface.ZEN_MODE_DURATION_MAX_MS ) {
+                    zenModeCondition = createZenModeCondition(durationMillis);
+                }
                 break;
             case PartnerInterface.ZEN_MODE_OFF:
                 zenModeValue = Settings.Global.ZEN_MODE_OFF;
+                // Leaving the condition to null signifies "indefinitely"
+                // durationMillis is ignored
                 break;
             case PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_NO_INTERRUPTIONS;
+                if (durationMillis > -1 && durationMillis <= PartnerInterface.ZEN_MODE_DURATION_MAX_MS) {
+                    zenModeCondition = createZenModeCondition(durationMillis);
+                }
                 break;
             default:
                 // Invalid mode parameter
-                Log.w(TAG, "setZenMode() called with invalid mode: " + mode);
+                Log.w(TAG, "setZenModeInternal() called with invalid mode: " + mode);
                 return false;
         }
+
         Settings.Global.putInt(contentResolver,
                 Settings.Global.ZEN_MODE,
                 zenModeValue);
+
         try {
-            // Setting the exit condition to null signifies "indefinitely"
-            mNotificationManager.setZenModeCondition(null);
+            mNotificationManager.setZenModeCondition(zenModeCondition);
         } catch (RemoteException e) {
             // An error occurred, return false since the
             // condition failed to set.
-            Log.e(TAG, "setZenMode() failed for mode: " + mode);
+            Log.e(TAG, "setZenModeInternal() failed for mode: " + mode);
             return false;
         }
         return true;
+    }
+
+    // setZenModeInternal Helpers
+    // Zen Mode constants for formatting the time condition. Round to nearest unit (e.g. minute, hour, day)
+    private static final String DURATION_SEPARATOR = " ";
+    private static final long DURATION_SECOND_MS = 1000;
+    private static final long DURATION_MINUTE_MS = 60 * DURATION_SECOND_MS;
+    private static final long DURATION_HOUR_MS = 60 * DURATION_MINUTE_MS;
+    private static final long DURATION_DAY_MS = 24 * DURATION_HOUR_MS;
+
+    // createZenModeCondition for specifying duration of zen mode
+    private Condition createZenModeCondition(long durationMillis) {
+        final long endTimeMillis = System.currentTimeMillis() + durationMillis;
+        // handle the case for MAX_LONG overflow
+        if (endTimeMillis < 0) {
+            Log.w(TAG, "createZenModeCondition duration exceeds the max numerical limit. Defaulting to Indefinite");
+            return null;
+        }
+        final Uri conditionId = android.service.notification.ZenModeConfig.toCountdownConditionId(endTimeMillis);
+
+        // end time: the "11:54 AM" or "11:54 AM 12/31/2015" end time info
+        final String end_time = formatZenModeEndtime(durationMillis, endTimeMillis);
+        // line 1: the "For 15 minutes" duration info
+        final String line1 = mContext.getString(R.string.format_line1, formatZenModeDuration(durationMillis));
+        // line 2:  "Until 11:54 AM" end time info
+        final String line2 = mContext.getString(R.string.format_line2, end_time);
+        // summary: a concatenation of line1 duration + end time, or line2 if more than a day
+        final String summary = durationMillis < DURATION_DAY_MS ?
+                mContext.getString(R.string.format_summary, line1, end_time):
+                line2;
+        return new Condition(conditionId,
+                summary,
+                line1,
+                line2,
+                //0 for no icon
+                0,
+                //TRUE state for valid condition
+                Condition.STATE_TRUE,
+                //flag = 1
+                Condition.FLAG_RELEVANT_NOW);
+    }
+
+    // formatZenModeEndtime helper for the end time e.g. "11:54 AM" line 2 content
+    private String formatZenModeEndtime(long durationMillis, long endTimeMillis) {
+        if (durationMillis < DURATION_DAY_MS) {
+            return DateFormat.getTimeFormat(mContext).format(new java.util.Date(endTimeMillis));
+        } else {
+            return DateFormat.getTimeFormat(mContext).format(new java.util.Date(endTimeMillis)) +
+                    DURATION_SEPARATOR +
+                    DateFormat.getDateFormat(mContext).format(new java.util.Date(endTimeMillis));
+        }
+    }
+
+    // formatZenModeDuration helper for the duration e.g. "15 minutes" line 1 content.
+    // duration is rounded to the nearest unit (either second, minute, hour, or day)
+    private String formatZenModeDuration(long durationMillis) {
+        // Use "0 seconds" and avoid other zero plurals
+        if (durationMillis < DURATION_MINUTE_MS) {
+            // round to nearest second
+            final int seconds = (int)(durationMillis / DURATION_SECOND_MS + 0.5);
+            return mContext.getResources().getQuantityString(R.plurals.seconds, seconds, seconds);
+        }
+        if (durationMillis < DURATION_HOUR_MS) {
+            // round to nearest minute
+            final int minutes = (int)(durationMillis / DURATION_MINUTE_MS + 0.5);
+            return mContext.getResources().getQuantityString(R.plurals.minutes, minutes, minutes);
+        }
+        if (durationMillis < DURATION_DAY_MS) {
+            // round to the nearest hour
+            final int hours = (int) (durationMillis / DURATION_HOUR_MS + 0.5);
+            return mContext.getResources().getQuantityString(R.plurals.hours, hours, hours);
+        }
+        // return "xx days"
+        // TODO:add week, month, year as needed and ensure correctness of (int)
+        // whenever PartnerInterface.ZEN_MODE_DURATION_MAX_MS is increased
+        final int days = (int) (durationMillis / DURATION_DAY_MS + 0.5);
+        return mContext.getResources().getQuantityString(R.plurals.days, days, days);
     }
 
     public String getHotwordPackageNameInternal() {

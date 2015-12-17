@@ -29,4 +29,12 @@
     <java-symbol type="xml" name="profile_default" />
     <java-symbol type="string" name="wildcardProfile" />
 
+    <!-- setZenMode Condition duration and end time formatting -->
+    <java-symbol type="plurals" name="seconds" />
+    <java-symbol type="plurals" name="minutes" />
+    <java-symbol type="plurals" name="hours" />
+    <java-symbol type="plurals" name="days" />
+    <java-symbol type="string" name="format_line1" />
+    <java-symbol type="string" name="format_line2" />
+    <java-symbol type="string" name="format_summary" />
 </resources>

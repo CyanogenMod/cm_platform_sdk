@@ -96,4 +96,30 @@
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Other</string>
 
+    <!-- setZenMode duration and end time format strings -->
+    <!-- Line 1 that is passed to Condition: e.g. "For 30 minutes" -->
+    <string name="format_line1">For %1$s</string>
+    <!-- Line 2 that is passed to Condition: e.g. "Until 11:54 AM" -->
+    <string name="format_line2">Until %1$s</string>
+    <!-- Normal summary that comes from Line1, and the input to Line2: e.g. "For 30 minutes (until 11:54 AM)" -->
+    <string name="format_summary">%1$s (until %2$s)</string>
+    <!-- Long duration summary that says date and time, e.g. "Until 12/31/2015 11:59 PM" -->
+    <string name="format_summary_long_duration">Until %2$s</string>
+    <!-- Plurals for time: seconds, minutes, hours, days  -->
+    <plurals name="seconds">
+        <item quantity="one">1 second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">1 hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="one">1 day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
 </resources>
