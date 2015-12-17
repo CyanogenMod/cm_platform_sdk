@@ -2476,13 +2476,6 @@ public final class CMSettings {
         public static final String STATS_COLLECTION_REPORTED = "stats_collection_reported";
 
         /**
-         * Boolean value whether to link ringtone and notification volume
-         *
-         * @hide
-         */
-        public static final String VOLUME_LINK_NOTIFICATION = "volume_link_notification";
-
-        /**
          * Whether newly installed apps should run with privacy guard by default
          * @hide
          */
@@ -2642,7 +2635,6 @@ public final class CMSettings {
                 CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                 CMSettings.Secure.QS_TILES,
                 CMSettings.Secure.QS_USE_MAIN_TILES,
-                CMSettings.Secure.VOLUME_LINK_NOTIFICATION,
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[0],
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[1],
                 CMSettings.Secure.NAVIGATION_RING_TARGETS[2],
