@@ -2489,6 +2489,12 @@ public final class CMSettings {
         public static final String PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
 
         /**
+         * Whether a notification should be shown if privacy guard is enabled
+         * @hide
+         */
+        public static final String PRIVACY_GUARD_NOTIFICATION = "privacy_guard_notification";
+
+        /**
          * The global recents long press activity chosen by the user.
          * This setting is stored as a flattened component name as
          * per {@link ComponentName#flattenToString()}.
@@ -2612,6 +2618,12 @@ public final class CMSettings {
          */
         public static final String QS_LOCATION_ADVANCED = "qs_location_advanced";
 
+        /**
+         * Whether to show the keyguard visualizer.
+         * Boolean setting. 0 = off, 1 = on.
+         * @hide
+         */
+        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
         // endregion
 
         /**
@@ -2646,10 +2658,13 @@ public final class CMSettings {
                 CMSettings.Secure.LOCKSCREEN_TARGETS,
                 CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
                 CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
+                CMSettings.Secure.PRIVACY_GUARD_NOTIFICATION,
                 CMSettings.Secure.DEVELOPMENT_SHORTCUT,
                 CMSettings.Secure.PERFORMANCE_PROFILE,
                 CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED,
-                CMSettings.Secure.QS_LOCATION_ADVANCED};
+                CMSettings.Secure.QS_LOCATION_ADVANCED,
+                CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
+        };
 
         /**
          * @hide
