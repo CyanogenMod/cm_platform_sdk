@@ -30,6 +30,7 @@ import android.os.UserManager;
 import android.provider.Settings;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
+import android.test.suitebuilder.annotation.SmallTest;
 import android.text.TextUtils;
 import cyanogenmod.providers.CMSettings;
 import org.cyanogenmod.cmsettings.CMSettingsProvider;
@@ -77,6 +78,45 @@ import java.util.Map;
          assertNotNull(mGuest);
 
          testMigrateSettingsForUser(mGuest.id);
+     }
+
+     /**
+      * make sure that queries to SettingsProvider are forwarded to CMSettingsProvider as needed
+      * See {@link cyanogenmod.providers.CMSettings.System#shouldInterceptSystemProvider(String)}
+      *
+      * Currently this test only checks that
+      * {@link cyanogenmod.providers.CMSettings.System#SYSTEM_PROFILES_ENABLED} is expected to
+      * be forwarded, and is forwarded.
+      */
+     @SmallTest
+     public void testSettingsProviderKeyForwarding() {
+         String forwardedKey = CMSettings.System.SYSTEM_PROFILES_ENABLED;
+
+         // make sure the key should be forwarded
+         assertTrue(CMSettings.System.shouldInterceptSystemProvider(forwardedKey));
+
+         // put value 1 into Settings provider:
+         // let's try to disable the profiles via the Settings provider
+         Settings.System.putStringForUser(mContentResolver,
+                 forwardedKey, "0", UserHandle.USER_CURRENT);
+
+         // assert this is what we just put in there
+         assertEquals("0", Settings.System.getStringForUser(getContext().getContentResolver(),
+                 forwardedKey, UserHandle.USER_CURRENT));
+
+         // put value 2 into CMSettings provider
+         CMSettings.System.putStringForUser(mContentResolver,
+                 forwardedKey, "1", UserHandle.USER_CURRENT);
+
+         assertEquals("1", CMSettings.System.getStringForUser(getContext().getContentResolver(),
+                 forwardedKey, UserHandle.USER_CURRENT));
+
+         // assert reading from both returns value 2
+         final String cmProviderValue = CMSettings.System.getStringForUser(
+                 getContext().getContentResolver(), forwardedKey, UserHandle.USER_CURRENT);
+         final String settingsProviderValue = Settings.System.getStringForUser(
+                 getContext().getContentResolver(), forwardedKey, UserHandle.USER_CURRENT);
+         assertEquals(cmProviderValue, settingsProviderValue);
      }
 
      private void testMigrateSettingsForUser(int userId) {
