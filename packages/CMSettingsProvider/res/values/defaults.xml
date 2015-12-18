@@ -23,6 +23,9 @@
          2. Left -->
     <integer name="def_qs_quick_pulldown">0</integer>
 
+    <!-- Default for CMSettings.System.SYSTEM_PROFILES_ENABLED -->
+    <bool name="def_profiles_enabled">true</bool>
+
     <!-- Defaults for Secure -->
 
     <!-- Default for CMSettings.Secure.ADVANCED_MODE -->

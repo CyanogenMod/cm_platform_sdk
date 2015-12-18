@@ -26,12 +26,12 @@ import android.os.IBinder;
 import android.os.ParcelUuid;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.provider.Settings;
 import android.util.Log;
 
 import cyanogenmod.app.IProfileManager;
 
 import com.android.internal.R;
+import cyanogenmod.providers.CMSettings;
 
 
 /**
@@ -67,8 +67,6 @@ public class ProfileManager {
     private Context mContext;
 
     private static final String TAG = "ProfileManager";
-
-    private static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
 
     /**
      * <p>Broadcast Action: A new profile has been selected. This can be triggered by the user
@@ -214,9 +212,6 @@ public class ProfileManager {
      */
     public static final int PROFILES_STATE_ENABLED = 1;
 
-    // A blank profile that is created to be returned if profiles disabled
-    private static Profile mEmptyProfile;
-
     private static ProfileManager sProfileManagerInstance;
     private ProfileManager(Context context) {
         Context appContext = context.getApplicationContext();
@@ -226,7 +221,6 @@ public class ProfileManager {
             mContext = context;
         }
         sService = getService();
-        mEmptyProfile = new Profile("EmptyProfile");
     }
 
     /**
@@ -253,14 +247,10 @@ public class ProfileManager {
 
     @Deprecated
     public void setActiveProfile(String profileName) {
-        if (Settings.System.getInt(mContext.getContentResolver(),
-                SYSTEM_PROFILES_ENABLED, 1) == 1) {
-            // Profiles are enabled, return active profile
-            try {
-                getService().setActiveProfileByName(profileName);
-            } catch (RemoteException e) {
-                Log.e(TAG, e.getLocalizedMessage(), e);
-            }
+        try {
+            getService().setActiveProfileByName(profileName);
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
         }
     }
 
@@ -269,14 +259,10 @@ public class ProfileManager {
      * @param profileUuid the {@link UUID} associated with the profile
      */
     public void setActiveProfile(UUID profileUuid) {
-        if (Settings.System.getInt(mContext.getContentResolver(),
-                SYSTEM_PROFILES_ENABLED, 1) == 1) {
-            // Profiles are enabled, return active profile
-            try {
-                getService().setActiveProfile(new ParcelUuid(profileUuid));
-            } catch (RemoteException e) {
-                Log.e(TAG, e.getLocalizedMessage(), e);
-            }
+        try {
+            getService().setActiveProfile(new ParcelUuid(profileUuid));
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
         }
     }
 
@@ -285,21 +271,12 @@ public class ProfileManager {
      * @return active {@link Profile}
      */
     public Profile getActiveProfile() {
-        if (Settings.System.getInt(mContext.getContentResolver(),
-                SYSTEM_PROFILES_ENABLED, 1) == 1) {
-            // Profiles are enabled, return active profile
-            try {
-                return getService().getActiveProfile();
-            } catch (RemoteException e) {
-                Log.e(TAG, e.getLocalizedMessage(), e);
-            }
-            return null;
-
-        } else {
-            // Profiles are not enabled, return the empty profile
-            return mEmptyProfile;
+        try {
+            return getService().getActiveProfile();
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
         }
-
+        return null;
     }
 
     /**
@@ -554,5 +531,18 @@ public class ProfileManager {
         } catch (SecurityException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
+    }
+
+    /**
+     * Check if profiles are currently activated in the system
+     * @return whether profiles are enabled
+     */
+    public boolean isProfilesEnabled() {
+        try {
+            return getService().isEnabled();
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return false;
     }
 }
