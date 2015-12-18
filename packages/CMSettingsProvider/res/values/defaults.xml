@@ -39,7 +39,7 @@
 
     <!-- Default for CMSettings.Secure.QS_TILES
          Comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
-    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,visualizer,hotspot,live_display</string>
+    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,hotspot,live_display</string>
 
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <bool name="def_stats_collection">false</bool>
