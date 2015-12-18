@@ -18,7 +18,11 @@ package org.cyanogenmod.platform.internal;
 
 import android.content.ComponentName;
 import android.content.ServiceConnection;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Message;
 import com.android.internal.policy.IKeyguardService;
+import cyanogenmod.providers.CMSettings;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -69,6 +73,8 @@ public class ProfileManagerService extends SystemService {
 
     /* package */ static final File PROFILE_FILE =
             new File(Environment.getSystemSecureDirectory(), "profiles.xml");
+
+    private static final int MSG_SEND_PROFILE_STATE = 10;
 
     private Map<UUID, Profile> mProfiles;
 
@@ -127,10 +133,43 @@ public class ProfileManagerService extends SystemService {
         }
     };
 
+    private final Handler.Callback mHandlerCallback = new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_SEND_PROFILE_STATE:
+                    int state = msg.arg1 == 1 ? ProfileManager.PROFILES_STATE_ENABLED
+                            : ProfileManager.PROFILES_STATE_DISABLED;
+
+                    Intent newState = new Intent(ProfileManager.PROFILES_STATE_CHANGED_ACTION);
+                    newState.putExtra(ProfileManager.EXTRA_PROFILES_STATE, state);
+
+                    mContext.sendBroadcastAsUser(newState, UserHandle.ALL);
+
+
+                    return true;
+            }
+            return false;
+        }
+    };
+
+    private class ProfilesObserver extends ContentObserver {
+        public ProfilesObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            int state = CMSettings.System.getInt(mContext.getContentResolver(),
+                    CMSettings.System.SYSTEM_PROFILES_ENABLED, 1);
+            mHandler.obtainMessage(MSG_SEND_PROFILE_STATE, state, 0 /* unused */).sendToTarget();
+        }
+    }
+
     public ProfileManagerService(Context context) {
         super(context);
         mContext = context;
-        mHandler = new Handler();
+        mHandler = new Handler(mHandlerCallback);
         publishBinderService(CMContextConstants.CM_PROFILE_SERVICE, mService);
     }
 
@@ -149,6 +188,10 @@ public class ProfileManagerService extends SystemService {
         filter.addAction(Intent.ACTION_LOCALE_CHANGED);
         filter.addAction(Intent.ACTION_SHUTDOWN);
         mContext.registerReceiver(mIntentReceiver, filter);
+
+        mContext.getContentResolver().registerContentObserver(
+                CMSettings.System.getUriFor(CMSettings.System.SYSTEM_PROFILES_ENABLED),
+                false, new ProfilesObserver(mHandler), UserHandle.USER_ALL);
     }
 
     private void bindKeyguard() {
