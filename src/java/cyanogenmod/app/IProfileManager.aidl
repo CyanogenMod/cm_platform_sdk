@@ -47,4 +47,5 @@ interface IProfileManager
     NotificationGroup getNotificationGroup(in ParcelUuid groupParcelUuid);
 
     void resetAll();
+    boolean isEnabled();
 }

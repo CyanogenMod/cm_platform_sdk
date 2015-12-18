@@ -251,6 +251,9 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
         loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
                 R.bool.def_notification_multiple_leds);
+
+        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.SYSTEM_PROFILES_ENABLED,
+                R.bool.def_profiles_enabled);
     }
 
     private void loadGlobalSettings(SQLiteDatabase db) {
