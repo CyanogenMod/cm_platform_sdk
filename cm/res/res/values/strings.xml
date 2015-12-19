@@ -71,16 +71,15 @@
     <string name="permdesc_managePersistentStorage">Allows an app to read or write properties which may persist thrοugh a factory reset.</string>
 
     <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-    <string name="permlab_accessAppSuggestions">access application suggestions</string>
-    <string name="permdesc_accessAppSuggestions">Allows an app to access application suggestions.</string>
+    <string name="permlab_accessAppSuggestions">access app suggestions</string>
+    <string name="permdesc_accessAppSuggestions">Allows an app to access app suggestions.</string>
 
     <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
     <string name="custom_tile_listener_binding_label">Custom tile listener</string>
 
     <!-- Labels for the PROTECTED_APP permission. -->
-    <string name="permlab_protectedApp">add and remove applications to protected apps</string>
-    <string name="permdesc_protectedApp">Allows an application to be marked as protected
-        and can be locked</string>
+    <string name="permlab_protectedApp">add and remove apps to protected apps</string>
+    <string name="permdesc_protectedApp">Allows an app to mark other apps as protected and lock them.</string>
 
     <!-- Profiles -->
     <!-- Names of default profiles. -->
