@@ -24,6 +24,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.Gravity;
@@ -57,6 +58,12 @@ public abstract class KeyguardExternalViewProviderService extends Service {
     }
 
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        super.onStartCommand(intent, flags, startId);
+        return START_NOT_STICKY;
+    }
+
+    @Override
     public final IBinder onBind(Intent intent) {
         return new IExternalViewProviderFactory.Stub() {
             @Override public IBinder createExternalView(final Bundle options) {
@@ -87,6 +94,9 @@ public abstract class KeyguardExternalViewProviderService extends Service {
 
             private boolean mShouldShow = true;
             private boolean mAskedShow = false;
+
+            private final RemoteCallbackList<IKeyguardExternalViewCallbacks> mCallbacks =
+                    new RemoteCallbackList<IKeyguardExternalViewCallbacks>();
 
             public ProviderImpl(Provider provider) {
                 mWindow = new PhoneWindow(KeyguardExternalViewProviderService.this);
@@ -243,11 +253,71 @@ public abstract class KeyguardExternalViewProviderService extends Service {
                 });
             }
 
+            @Override
+            public void registerCallback(IKeyguardExternalViewCallbacks callback) {
+                mCallbacks.register(callback);
+            }
+
+            @Override
+            public void unregisterCallback(IKeyguardExternalViewCallbacks callback) {
+                mCallbacks.unregister(callback);
+            }
+
             private void updateVisibility() {
                 if (DEBUG) Log.d(TAG, "shouldShow = " + mShouldShow + " askedShow = " + mAskedShow);
                 mWindow.getDecorView().setVisibility(mShouldShow && mAskedShow ?
                         View.VISIBLE : View.GONE);
             }
+
+            // callbacks from provider to host
+            protected final void dismiss() {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.dismiss();
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
+            protected final void dismissAndStartActivity(final Intent intent) {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.dismissAndStartActivity(intent);
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
+            protected final void collapseNotificationPanel() {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.collapseNotificationPanel();
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
+            protected final void setInteractivity(final boolean isInteractive) {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.setInteractivity(isInteractive);
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
         }
 
         private final ProviderImpl mImpl = new ProviderImpl(this);
@@ -269,11 +339,29 @@ public abstract class KeyguardExternalViewProviderService extends Service {
         protected void onStop() {}
         protected void onDetach() {}
 
+        // keyguard events
         protected abstract void onKeyguardShowing(boolean screenOn);
         protected abstract void onKeyguardDismissed();
         protected abstract void onBouncerShowing(boolean showing);
         protected abstract void onScreenTurnedOn();
         protected abstract void onScreenTurnedOff();
+
+        // callbacks from provider to host
+        protected final void dismiss() {
+            mImpl.dismiss();
+        }
+
+        protected final void dismissAndStartActivity(final Intent intent) {
+            mImpl.dismissAndStartActivity(intent);
+        }
+
+        protected final void collapseNotificationPanel() {
+            mImpl.collapseNotificationPanel();
+        }
+
+        protected final void setInteractivity(final boolean isInteractive) {
+            mImpl.setInteractivity(isInteractive);
+        }
 
         /*package*/ final int getWindowType() {
             return WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL;
