@@ -7,6 +7,9 @@ import cyanogenmod.app.PartnerInterface;
  * Tests functionality added in {@link cyanogenmod.app.PartnerInterface}
  */
 public class CMPartnerInterfaceTest extends TestActivity {
+
+    // Zen Mode to 15 minutes
+    private static final long ZEN_MODE_DURATION_15_MINUTES_MS = 15 * 60000;
     PartnerInterface mPartnerInterface;
     @Override
     protected String tag() {
@@ -55,9 +58,19 @@ public class CMPartnerInterfaceTest extends TestActivity {
                     mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
                 }
             },
+            new Test("Test set zen mode to important interruptions with 15 mins duration") {
+                public void run() {
+                    mPartnerInterface.setZenModeWithDuration(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS, ZEN_MODE_DURATION_15_MINUTES_MS);
+                }
+            },
             new Test("Test set zen mode to no interruptions") {
                 public void run() {
                     mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS);
+                }
+            },
+            new Test("Test set zen mode to no interruptions with 15 mins duration") {
+                public void run() {
+                    mPartnerInterface.setZenModeWithDuration(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS, ZEN_MODE_DURATION_15_MINUTES_MS);
                 }
             },
             new Test("Test turn zen mode off") {
@@ -65,5 +78,5 @@ public class CMPartnerInterfaceTest extends TestActivity {
                     mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF);
                 }
             },
-    };
+     };
 }
