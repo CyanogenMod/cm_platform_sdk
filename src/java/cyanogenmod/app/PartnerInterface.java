@@ -42,16 +42,17 @@ public class PartnerInterface {
      *
      * This condition is held indefinitely until changed again.
      *
-     * @see #setZenMode
+     * @see #setZenMode and #setZenModeWithDuration
      */
     public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1;
     /**
      * Sets zen mode so that no interruptions will be allowed. The device is
      * effectively silenced indefinitely, until the mode is changed again.
      *
-     * @see #setZenMode
+     * @see #setZenMode and #setZenModeWithDuration
      */
     public static final int ZEN_MODE_NO_INTERRUPTIONS = 2;
+
 
     private static IPartnerInterface sService;
 
@@ -166,6 +167,36 @@ public class PartnerInterface {
         }
         try {
             return sService.setZenMode(mode);
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return false;
+    }
+
+    /**
+     * Set the zen mode for the device, allow a duration parameter
+     *
+     * You will need {@link #MODIFY_SOUND_SETTINGS_PERMISSION}
+     * to utilize this functionality.
+     *
+     * @see #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * @see #ZEN_MODE_NO_INTERRUPTIONS
+     * @param mode The zen mode to set the device to.
+     *             One of {@link #ZEN_MODE_IMPORTANT_INTERRUPTIONS},
+     *             {@link #ZEN_MODE_NO_INTERRUPTIONS}.
+     *             If using {@link #ZEN_MODE_OFF}, the duration will be ignored
+     * @param durationMillis The duration in milliseconds,
+     *                       if duration + System.currentTimeMillis() results in
+     *                       long overflow, duration will be "indefinitely".
+     *                       all durationMillis < 0 will mean "indefinitely".
+     *
+     */
+    public boolean setZenModeWithDuration(int mode, long durationMillis) {
+        if (sService == null) {
+            return false;
+        }
+        try {
+            return sService.setZenModeWithDuration(mode, durationMillis);
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
