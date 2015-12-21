@@ -18,6 +18,8 @@ package cyanogenmod.externalviews;
 
 import android.graphics.Rect;
 
+import cyanogenmod.externalviews.IKeyguardExternalViewCallbacks;
+
 /** @hide */
 interface IKeyguardExternalViewProvider
 {
@@ -34,6 +36,9 @@ interface IKeyguardExternalViewProvider
     oneway void onBouncerShowing(boolean showing);
     oneway void onScreenTurnedOn();
     oneway void onScreenTurnedOff();
+
+    oneway void registerCallback(in IKeyguardExternalViewCallbacks callback);
+    oneway void unregisterCallback(in IKeyguardExternalViewCallbacks callback);
 
     void alterWindow(in int x, in int y, in int width, in int height, in boolean visible,
             in Rect clipRect);
