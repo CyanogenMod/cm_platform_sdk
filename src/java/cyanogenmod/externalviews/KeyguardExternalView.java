@@ -16,24 +16,40 @@
 
 package cyanogenmod.externalviews;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.Application;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Bundle;
+import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+
+import java.util.LinkedList;
 
 /**
  * TODO: unhide once documented and finalized
  * @hide
  */
-public final class KeyguardExternalView extends ExternalView {
+public class KeyguardExternalView extends View implements Application.ActivityLifecycleCallbacks,
+        ViewTreeObserver.OnPreDrawListener {
 
     public static final String EXTRA_PERMISSION_LIST = "permissions_list";
     public static final String CATEGORY_KEYGUARD_GRANT_PERMISSION
             = "org.cyanogenmod.intent.category.KEYGUARD_GRANT_PERMISSION";
 
+    private LinkedList<Runnable> mQueue = new LinkedList<Runnable>();
+
+    private Context mContext;
+    private final ExternalViewProperties mExternalViewProperties;
+    private volatile IKeyguardExternalViewProvider mExternalViewProvider;
     private final Point mDisplaySize;
 
     public KeyguardExternalView(Context context, AttributeSet attrs) {
@@ -41,21 +57,64 @@ public final class KeyguardExternalView extends ExternalView {
     }
 
     public KeyguardExternalView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context,attrs);
+        this(context, attrs);
     }
 
-    public KeyguardExternalView(Context context, AttributeSet attrs, int defStyleAttr,
-            int defStyleRes) {
-        this(context,attrs);
+    public KeyguardExternalView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        this(context, attrs);
     }
 
-    public KeyguardExternalView(Context context, AttributeSet attributeSet,
-            ComponentName componentName) {
-        super(context,attributeSet,componentName);
+    public KeyguardExternalView(Context context, AttributeSet attributeSet, ComponentName componentName) {
+        super(context, attributeSet);
+        mContext = getContext();
+        mExternalViewProperties = new ExternalViewProperties(this, mContext);
+        Application app = (mContext instanceof Activity) ? ((Activity) mContext).getApplication()
+                : (Application) mContext;
+        app.registerActivityLifecycleCallbacks(this);
+        if (componentName != null) {
+            mContext.bindService(new Intent().setComponent(componentName),
+                    mServiceConnection, Context.BIND_AUTO_CREATE);
+        }
         mDisplaySize = new Point();
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getRealSize(mDisplaySize);
     }
+
+    private ServiceConnection mServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            try {
+                mExternalViewProvider = IKeyguardExternalViewProvider.Stub.asInterface(
+                        IExternalViewProviderFactory.Stub.asInterface(service).
+                                createExternalView(null));
+                executeQueue();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mExternalViewProvider = null;
+        }
+    };
+
+    private void executeQueue() {
+        while (!mQueue.isEmpty()) {
+            Runnable r = mQueue.pop();
+            r.run();
+        }
+    }
+
+    protected void performAction(Runnable r) {
+        if (mExternalViewProvider != null) {
+            r.run();
+        } else {
+            mQueue.add(r);
+        }
+    }
+
+    // view overrides, for positioning
 
     @Override
     public boolean onPreDraw() {
@@ -80,5 +139,180 @@ public final class KeyguardExternalView extends ExternalView {
             }
         });
         return true;
+    }
+
+    // Activity lifecycle callbacks
+
+    @Override
+    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+    }
+
+    @Override
+    public void onActivityStarted(Activity activity) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onStart();
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResumed(Activity activity) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onResume();
+                } catch (RemoteException e) {
+                }
+                getViewTreeObserver().addOnPreDrawListener(KeyguardExternalView.this);
+            }
+        });
+    }
+
+    @Override
+    public void onActivityPaused(Activity activity) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onPause();
+                } catch (RemoteException e) {
+                }
+                getViewTreeObserver().removeOnPreDrawListener(KeyguardExternalView.this);
+            }
+        });
+    }
+
+    @Override
+    public void onActivityStopped(Activity activity) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onStop();
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+    }
+
+    @Override
+    public void onActivityDestroyed(Activity activity) {
+        mExternalViewProvider = null;
+        mContext.unbindService(mServiceConnection);
+    }
+
+    // Placeholder callbacks
+
+    @Override
+    public void onDetachedFromWindow() {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onDetach();
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onAttach(null);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    /**
+     * Sets the component of the ExternalViewProviderService to be used for this ExternalView.
+     * If a provider is already connected to this view, it is first unbound before binding to the
+     * new provider.
+     * @param componentName
+     */
+    public void setProviderComponent(ComponentName componentName) {
+        // unbind any existing external view provider
+        if (mExternalViewProvider != null) {
+            mContext.unbindService(mServiceConnection);
+        }
+        if (componentName != null) {
+            mContext.bindService(new Intent().setComponent(componentName),
+                    mServiceConnection, Context.BIND_AUTO_CREATE);
+        }
+    }
+
+    public void onKeyguardShowing(final boolean screenOn) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onKeyguardShowing(screenOn);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    public void onKeyguardDismissed() {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onKeyguardDismissed();
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    public void onBouncerShowing(final boolean showing) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onBouncerShowing(showing);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    public void onScreenTurnedOn() {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onScreenTurnedOn();
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    public void onScreenTurnedOff() {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onScreenTurnedOff();
+                } catch (RemoteException e) {
+                }
+            }
+        });
     }
 }
