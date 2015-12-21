@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.IAudioService;
+import android.net.Uri;
 import android.os.IBinder;
 
 import android.os.IPowerManager;
@@ -46,6 +47,7 @@ import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
 
 /** @hide */
+
 public class PartnerInterfaceService extends SystemService {
 
     private static final String TAG = "CMSettingsService";
@@ -154,7 +156,21 @@ public class PartnerInterfaceService extends SystemService {
              *   not allowed by the caller's permissions.
              */
             long token = clearCallingIdentity();
-            boolean success = setZenModeInternal(mode);
+            boolean success = setZenModeInternal(mode, -1);
+            restoreCallingIdentity(token);
+            return success;
+        }
+
+        @Override
+        public boolean setZenModeWithDuration(int mode, long durationMillis) {
+            enforceModifySoundSettingsPermission();
+            /*
+             * We need to clear the caller's identity in order to
+             *   allow this method call to modify settings
+             *   not allowed by the caller's permissions.
+             */
+            long token = clearCallingIdentity();
+            boolean success = setZenModeInternal(mode, durationMillis);
             restoreCallingIdentity(token);
             return success;
         }
@@ -198,39 +214,52 @@ public class PartnerInterfaceService extends SystemService {
         }
     }
 
-    private boolean setZenModeInternal(int mode) {
-        ContentResolver contentResolver = mContext.getContentResolver();
+    private boolean setZenModeInternal(int mode, long durationMillis) {
         int zenModeValue = -1;
+        Uri zenModeConditionUri = null;
         switch(mode) {
             case PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS;
+                zenModeConditionUri = createZenModeConditionUri(durationMillis);
                 break;
             case PartnerInterface.ZEN_MODE_OFF:
                 zenModeValue = Settings.Global.ZEN_MODE_OFF;
+                // Leaving the condition Uri to null signifies "indefinitely"
+                // durationMillis is ignored
                 break;
             case PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS:
                 zenModeValue = Settings.Global.ZEN_MODE_NO_INTERRUPTIONS;
+                zenModeConditionUri = createZenModeConditionUri(durationMillis);
                 break;
             default:
                 // Invalid mode parameter
                 Log.w(TAG, "setZenMode() called with invalid mode: " + mode);
                 return false;
         }
-        Settings.Global.putInt(contentResolver,
-                Settings.Global.ZEN_MODE,
-                zenModeValue);
-        /* 
+
         try {
-            // Setting the exit condition to null signifies "indefinitely"
-             mNotificationManager.setZenModeCondition(null);
+            mNotificationManager.setZenMode(zenModeValue, zenModeConditionUri, "setZenMode (PartnerInterface)");
         } catch (RemoteException e) {
             // An error occurred, return false since the
             // condition failed to set.
             Log.e(TAG, "setZenMode() failed for mode: " + mode);
             return false;
         }
-        */ 
         return true;
+    }
+
+    private Uri createZenModeConditionUri(long durationMillis) {
+        // duration values that mean "indefinitely"
+        if (durationMillis == Long.MAX_VALUE || durationMillis < 0) {
+            return null;
+        }
+        final long endTimeMillis = System.currentTimeMillis() + durationMillis;
+        // long overflow also means "indefinitely"
+        if (endTimeMillis < 0) {
+            Log.w(TAG, "createZenModeCondition duration exceeds the max numerical limit. Defaulting to Indefinite");
+            return null;
+        }
+        return android.service.notification.ZenModeConfig.toCountdownConditionId(endTimeMillis);
     }
 
     public String getHotwordPackageNameInternal() {
