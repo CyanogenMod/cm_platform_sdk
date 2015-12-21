@@ -23,6 +23,7 @@ interface IPartnerInterface
     void setAirplaneModeEnabled(boolean enabled);
     void setMobileDataEnabled(boolean enabled);
     boolean setZenMode(int mode);
+    boolean setZenModeWithDuration(int mode, long durationMillis);
     void shutdown();
     void reboot();
     String getCurrentHotwordPackageName();
