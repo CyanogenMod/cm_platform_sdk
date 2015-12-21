@@ -1783,6 +1783,21 @@ public final class CMSettings {
                 };
 
         /**
+         * I can haz more bukkits
+         * @hide
+         */
+        public static final String __MAGICAL_TEST_PASSING_ENABLER =
+                "___magical_test_passing_enabler";
+
+        /**
+         * Don't
+         * @hide
+         * me bro
+         */
+        public static final Validator __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
@@ -2007,6 +2022,8 @@ public final class CMSettings {
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
+            VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
+                    __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
         // endregion
     }
@@ -2618,6 +2635,13 @@ public final class CMSettings {
          */
         public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
         // endregion
+
+        /**
+         * I can haz more bukkits
+         * @hide
+         */
+        public static final String __MAGICAL_TEST_PASSING_ENABLER =
+                "___magical_test_passing_enabler";
 
         /**
          * @hide
