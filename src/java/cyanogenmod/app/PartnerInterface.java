@@ -42,16 +42,182 @@ public class PartnerInterface {
      *
      * This condition is held indefinitely until changed again.
      *
-     * @see #setZenMode
+     * @see #setZenMode and #setZenModeWithDuration
      */
     public static final int ZEN_MODE_IMPORTANT_INTERRUPTIONS = 1;
     /**
      * Sets zen mode so that no interruptions will be allowed. The device is
      * effectively silenced indefinitely, until the mode is changed again.
      *
-     * @see #setZenMode
+     * @see #setZenMode and #setZenModeWithDuration
      */
     public static final int ZEN_MODE_NO_INTERRUPTIONS = 2;
+    /**
+     * Sets the zen mode duration to 15 minutes
+     * for #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_15_MINUTES_MS = 15 * 60000;
+    /**
+     * Sets the zen mode duration to 30 minutes
+     * for #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_30_MINUTES_MS = 30 * 60000;
+    /**
+     * Sets the zen mode duration to 45 minutes
+     * for #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_45_MINUTES_MS = 45 * 60000;
+    /**
+     * Sets the zen mode duration to 1 Hour
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_1_HOUR_MS = 60 * 60000;
+    /**
+     * Sets the zen mode duration to 2 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_2_HOURS_MS = 2 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 3 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_3_HOURS_MS = 3 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 4 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_4_HOURS_MS = 4 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 6 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_5_HOURS_MS = 5 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 6 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_6_HOURS_MS = 6 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 8 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_7_HOURS_MS = 7 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 8 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_8_HOURS_MS = 8 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 10 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_9_HOURS_MS = 9 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 10 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_10_HOURS_MS = 10 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 12 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_11_HOURS_MS = 11 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 12 Hours
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_12_HOURS_MS = 12 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 1 day
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_24_HOURS_MS = 24 * ZEN_MODE_DURATION_1_HOUR_MS;
+    /**
+     * Sets the zen mode duration to 1 year
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is the duration in milliseconds that the mode will persist before being
+     * set to #ZEN_MODE_OFF
+     *
+     * This is also the current maximum duration. See #ZEN_MODE_DURATION_MAX_MS
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_365_DAYS_MS = 365 * ZEN_MODE_DURATION_24_HOURS_MS;
+    /**
+     * The maximum current limit for zen mode duration, based on estimation of reasonable use case.
+     * Any duration values greater than ZEN_MODE_DURATION_MAX_MS will default to
+     * Indefinite time.
+     * Applies to #ZEN_MODE_NO_INTERRUPTIONS and #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * This is not a numerical limitation and may be extended in the future.
+     * However currently there is no foreseeable case for duration values greater than 365 days.
+     *
+     * @see #setZenModeWithDuration
+     */
+    public static final long ZEN_MODE_DURATION_MAX_MS = ZEN_MODE_DURATION_365_DAYS_MS;
+
 
     private static IPartnerInterface sService;
 
@@ -166,6 +332,33 @@ public class PartnerInterface {
         }
         try {
             return sService.setZenMode(mode);
+        } catch (RemoteException e) {
+            Log.e(TAG, e.getLocalizedMessage(), e);
+        }
+        return false;
+    }
+
+    /**
+     * Set the zen mode for the device, allow a duration parameter
+     *
+     * You will need {@link #MODIFY_SOUND_SETTINGS_PERMISSION}
+     * to utilize this functionality.
+     *
+     * @see #ZEN_MODE_IMPORTANT_INTERRUPTIONS
+     * @see #ZEN_MODE_NO_INTERRUPTIONS
+     * @param mode The zen mode to set the device to.
+     *             One of {@link #ZEN_MODE_IMPORTANT_INTERRUPTIONS},
+     *             {@link #ZEN_MODE_NO_INTERRUPTIONS}.
+     *             If using {@link #ZEN_MODE_OFF}, the duration will be ignored
+     * @param durationMillis The duration in milliseconds
+     *  -1 for indefinitely
+     */
+    public boolean setZenModeWithDuration(int mode, long durationMillis) {
+        if (sService == null) {
+            return false;
+        }
+        try {
+            return sService.setZenModeWithDuration(mode, durationMillis);
         } catch (RemoteException e) {
             Log.e(TAG, e.getLocalizedMessage(), e);
         }
