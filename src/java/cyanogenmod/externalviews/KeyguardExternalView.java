@@ -39,7 +39,7 @@ import java.util.LinkedList;
  * @hide
  */
 public class KeyguardExternalView extends View implements Application.ActivityLifecycleCallbacks,
-        ViewTreeObserver.OnPreDrawListener {
+        ViewTreeObserver.OnPreDrawListener, IBinder.DeathRecipient {
 
     public static final String EXTRA_PERMISSION_LIST = "permissions_list";
     public static final String CATEGORY_KEYGUARD_GRANT_PERMISSION
@@ -50,7 +50,10 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
     private Context mContext;
     private final ExternalViewProperties mExternalViewProperties;
     private volatile IKeyguardExternalViewProvider mExternalViewProvider;
+    private IBinder mService;
     private final Point mDisplaySize;
+
+    private KeyguardExternalViewCallbacks mCallback;
 
     public KeyguardExternalView(Context context, AttributeSet attrs) {
         this(context, attrs, null);
@@ -87,6 +90,8 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
                 mExternalViewProvider = IKeyguardExternalViewProvider.Stub.asInterface(
                         IExternalViewProviderFactory.Stub.asInterface(service).
                                 createExternalView(null));
+                mService = service;
+                mService.linkToDeath(KeyguardExternalView.this, 0);
                 executeQueue();
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -96,6 +101,39 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mExternalViewProvider = null;
+            mService.unlinkToDeath(KeyguardExternalView.this, 0);
+            mService = null;
+        }
+    };
+
+    private final IKeyguardExternalViewCallbacks mKeyguardExternalViewCallbacks =
+            new IKeyguardExternalViewCallbacks.Stub() {
+        @Override
+        public void dismiss() throws RemoteException {
+            if (mCallback != null) {
+                mCallback.dismiss();
+            }
+        }
+
+        @Override
+        public void dismissAndStartActivity(Intent intent) throws RemoteException {
+            if (mCallback != null) {
+                mCallback.dismissAndStartActivity(intent);
+            }
+        }
+
+        @Override
+        public void collapseNotificationPanel() throws RemoteException {
+            if (mCallback != null) {
+                mCallback.collapseNotificationPanel();
+            }
+        }
+
+        @Override
+        public void setInteractivity(boolean isInteractive) {
+            if (mCallback != null) {
+                mCallback.setInteractivity(isInteractive);
+            }
         }
     };
 
@@ -314,5 +352,31 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
                 }
             }
         });
+    }
+
+    public void registerCallback(KeyguardExternalViewCallbacks callback) {
+        mCallback = callback;
+    }
+
+    public void unregisterCallback(KeyguardExternalViewCallbacks callback) {
+        if (mCallback != callback) {
+            throw new IllegalArgumentException("Callback not registered");
+        }
+        mCallback = null;
+    }
+
+    @Override
+    public void binderDied() {
+        if (mCallback != null) {
+            mCallback.providerDied();
+        }
+    }
+
+    public interface KeyguardExternalViewCallbacks {
+        public void dismiss();
+        public void dismissAndStartActivity(Intent intent);
+        public void collapseNotificationPanel();
+        public void setInteractivity(boolean isInteractive);
+        public void providerDied();
     }
 }

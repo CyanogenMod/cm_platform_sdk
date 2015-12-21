@@ -24,6 +24,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.Gravity;
@@ -49,11 +50,20 @@ public abstract class KeyguardExternalViewProviderService extends Service {
     private WindowManager mWindowManager;
     private final Handler mHandler = new Handler();
 
+    private final RemoteCallbackList<IKeyguardExternalViewCallbacks> mCallbacks =
+            new RemoteCallbackList<IKeyguardExternalViewCallbacks>();
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        super.onStartCommand(intent, flags, startId);
+        return START_NOT_STICKY;
     }
 
     @Override
@@ -269,11 +279,69 @@ public abstract class KeyguardExternalViewProviderService extends Service {
         protected void onStop() {}
         protected void onDetach() {}
 
+        // keyguard events
         protected abstract void onKeyguardShowing(boolean screenOn);
         protected abstract void onKeyguardDismissed();
         protected abstract void onBouncerShowing(boolean showing);
         protected abstract void onScreenTurnedOn();
         protected abstract void onScreenTurnedOff();
+
+        // callbacks from provider to host
+        protected final void dismiss() {
+            RemoteCallbackList<IKeyguardExternalViewCallbacks> callbacks =
+                    KeyguardExternalViewProviderService.this.mCallbacks;
+            int N = callbacks.beginBroadcast();
+            for(int i=0; i < N; i++) {
+                IKeyguardExternalViewCallbacks callback = callbacks.getBroadcastItem(0);
+                try {
+                    callback.dismiss();
+                } catch(RemoteException e) {
+                }
+            }
+            callbacks.finishBroadcast();
+        }
+
+        protected final void dismissAndStartActivity(final Intent intent) {
+            RemoteCallbackList<IKeyguardExternalViewCallbacks> callbacks =
+                    KeyguardExternalViewProviderService.this.mCallbacks;
+            int N = callbacks.beginBroadcast();
+            for(int i=0; i < N; i++) {
+                IKeyguardExternalViewCallbacks callback = callbacks.getBroadcastItem(0);
+                try {
+                    callback.dismissAndStartActivity(intent);
+                } catch(RemoteException e) {
+                }
+            }
+            callbacks.finishBroadcast();
+        }
+
+        protected final void collapseNotificationPanel() {
+            RemoteCallbackList<IKeyguardExternalViewCallbacks> callbacks =
+                    KeyguardExternalViewProviderService.this.mCallbacks;
+            int N = callbacks.beginBroadcast();
+            for(int i=0; i < N; i++) {
+                IKeyguardExternalViewCallbacks callback = callbacks.getBroadcastItem(0);
+                try {
+                    callback.collapseNotificationPanel();
+                } catch(RemoteException e) {
+                }
+            }
+            callbacks.finishBroadcast();
+        }
+
+        protected final void setInteractivity(final boolean isInteractive) {
+            RemoteCallbackList<IKeyguardExternalViewCallbacks> callbacks =
+                    KeyguardExternalViewProviderService.this.mCallbacks;
+            int N = callbacks.beginBroadcast();
+            for(int i=0; i < N; i++) {
+                IKeyguardExternalViewCallbacks callback = callbacks.getBroadcastItem(0);
+                try {
+                    callback.setInteractivity(isInteractive);
+                } catch(RemoteException e) {
+                }
+            }
+            callbacks.finishBroadcast();
+        }
 
         /*package*/ final int getWindowType() {
             return WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL;
@@ -286,5 +354,13 @@ public abstract class KeyguardExternalViewProviderService extends Service {
                     WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                     WindowManager.LayoutParams.FLAG_FULLSCREEN;
         }
+    }
+
+    public void register(IKeyguardExternalViewCallbacks callback) {
+        mCallbacks.register(callback);
+    }
+
+    public void unregister(IKeyguardExternalViewCallbacks callback) {
+        mCallbacks.unregister(callback);
     }
 }
