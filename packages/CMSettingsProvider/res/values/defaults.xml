@@ -76,4 +76,7 @@
     <!-- Default value for whether or not to use multiple notification LEDs
          on devices equiped with more than one LED -->
     <bool name="def_notification_multiple_leds">false</bool>
+
+    <!-- Default value of Settings.System.ENABLE_PEOPLE_LOOKUP -->
+    <integer name="def_people_lookup">1</integer>
 </resources>
