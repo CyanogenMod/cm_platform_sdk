@@ -45,7 +45,7 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
 
-/** {@hide} */
+/** @hide */
 public class PartnerInterfaceService extends SystemService {
 
     private static final String TAG = "CMSettingsService";
