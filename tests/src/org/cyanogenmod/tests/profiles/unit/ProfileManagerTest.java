@@ -20,6 +20,7 @@ import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 import cyanogenmod.app.ProfileManager;
 import cyanogenmod.app.IProfileManager;
+import cyanogenmod.providers.CMSettings;
 
 /**
  * Created by adnan on 7/15/15.
@@ -42,5 +43,31 @@ public class ProfileManagerTest extends AndroidTestCase {
     public void testManagerServiceIsAvailable() {
         IProfileManager iProfileManager = mProfileManager.getService();
         assertNotNull(iProfileManager);
+    }
+
+    @SmallTest
+    public void testManagerProfileIsEnabled() {
+        // first enable profiles
+        final String enabledValue = "1";
+        assertTrue(CMSettings.System.putString(getContext().getContentResolver(),
+                CMSettings.System.SYSTEM_PROFILES_ENABLED, enabledValue));
+
+        // check that we successfully enabled them via system setting
+        assertEquals(enabledValue, CMSettings.System.getString(getContext().getContentResolver(),
+                CMSettings.System.SYSTEM_PROFILES_ENABLED));
+
+        // check that profile manger returns true
+        assertTrue(mProfileManager.isProfilesEnabled());
+
+        // now disable the setting
+        final String disabledValue = "0";
+        assertTrue(CMSettings.System.putString(getContext().getContentResolver(),
+                CMSettings.System.SYSTEM_PROFILES_ENABLED, disabledValue));
+
+        // check that we successfully disable them via system setting
+        assertEquals(disabledValue, CMSettings.System.getString(getContext().getContentResolver(),
+                CMSettings.System.SYSTEM_PROFILES_ENABLED));
+
+        assertFalse(mProfileManager.isProfilesEnabled());
     }
 }

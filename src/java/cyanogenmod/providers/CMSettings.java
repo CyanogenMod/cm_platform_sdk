@@ -1783,6 +1783,21 @@ public final class CMSettings {
                 };
 
         /**
+         * I can haz more bukkits
+         * @hide
+         */
+        public static final String __MAGICAL_TEST_PASSING_ENABLER =
+                "___magical_test_passing_enabler";
+
+        /**
+         * Don't
+         * @hide
+         * me bro
+         */
+        public static final Validator __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SYSTEM_SETTINGS = new String[]{
@@ -1878,6 +1893,13 @@ public final class CMSettings {
          */
         public static boolean isLegacySetting(String key) {
             return ArrayUtils.contains(LEGACY_SYSTEM_SETTINGS, key);
+        }
+
+        /**
+         * @hide
+         */
+        public static boolean shouldInterceptSystemProvider(String key) {
+            return key.equals(System.SYSTEM_PROFILES_ENABLED);
         }
 
         /**
@@ -2007,6 +2029,8 @@ public final class CMSettings {
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                     NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES_VALIDATOR);
+            VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
+                    __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
         };
         // endregion
     }
@@ -2620,6 +2644,13 @@ public final class CMSettings {
         // endregion
 
         /**
+         * I can haz more bukkits
+         * @hide
+         */
+        public static final String __MAGICAL_TEST_PASSING_ENABLER =
+                "___magical_test_passing_enabler";
+
+        /**
          * @hide
          */
         public static final String[] LEGACY_SECURE_SETTINGS = new String[]{
@@ -2698,6 +2729,13 @@ public final class CMSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
+        }
+
+        /**
+         * @hide
+         */
+        public static boolean shouldInterceptSystemProvider(String key) {
+            return false;
         }
     }
 
@@ -3122,6 +3160,13 @@ public final class CMSettings {
          */
         public static boolean isLegacySetting(String key) {
             return ArrayUtils.contains(LEGACY_GLOBAL_SETTINGS, key);
+        }
+
+        /**
+         * @hide
+         */
+        public static boolean shouldInterceptSystemProvider(String key) {
+            return false;
         }
     }
 }

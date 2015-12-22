@@ -23,6 +23,9 @@
          2. Left -->
     <integer name="def_qs_quick_pulldown">0</integer>
 
+    <!-- Default for CMSettings.System.SYSTEM_PROFILES_ENABLED -->
+    <bool name="def_profiles_enabled">true</bool>
+
     <!-- Defaults for Secure -->
 
     <!-- Default for CMSettings.Secure.ADVANCED_MODE -->
@@ -39,7 +42,7 @@
 
     <!-- Default for CMSettings.Secure.QS_TILES
          Comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
-    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,visualizer,hotspot,live_display</string>
+    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,hotspot,live_display</string>
 
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <bool name="def_stats_collection">false</bool>
