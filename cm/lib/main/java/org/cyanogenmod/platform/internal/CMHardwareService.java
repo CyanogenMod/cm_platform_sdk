@@ -51,6 +51,7 @@ import org.cyanogenmod.hardware.ThermalUpdateCallback;
 import org.cyanogenmod.hardware.TouchscreenHovering;
 import org.cyanogenmod.hardware.VibratorHW;
 
+/** @hide */
 public class CMHardwareService extends SystemService implements ThermalUpdateCallback {
 
     private static final boolean DEBUG = true;

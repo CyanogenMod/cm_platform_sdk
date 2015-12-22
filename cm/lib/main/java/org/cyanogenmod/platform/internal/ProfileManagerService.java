@@ -61,7 +61,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/** {@hide} */
+/** @hide */
 public class ProfileManagerService extends SystemService {
 
     private static final String TAG = "CMProfileService";
