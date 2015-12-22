@@ -187,10 +187,6 @@ public class ProfileManagerService extends SystemService {
         filter.addAction(Intent.ACTION_LOCALE_CHANGED);
         filter.addAction(Intent.ACTION_SHUTDOWN);
         mContext.registerReceiver(mIntentReceiver, filter);
-
-        mContext.getContentResolver().registerContentObserver(
-                CMSettings.System.getUriFor(CMSettings.System.SYSTEM_PROFILES_ENABLED),
-                false, new ProfilesObserver(mHandler), UserHandle.USER_ALL);
     }
 
     private void bindKeyguard() {
@@ -208,6 +204,10 @@ public class ProfileManagerService extends SystemService {
     public void onBootPhase(int phase) {
         if (phase == PHASE_ACTIVITY_MANAGER_READY) {
             bindKeyguard();
+        } else if (phase == PHASE_BOOT_COMPLETED) {
+            mContext.getContentResolver().registerContentObserver(
+                    CMSettings.System.getUriFor(CMSettings.System.SYSTEM_PROFILES_ENABLED),
+                    false, new ProfilesObserver(mHandler), UserHandle.USER_ALL);
         }
     }
 
