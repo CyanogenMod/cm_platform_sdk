@@ -62,6 +62,10 @@ public class QSUtils {
         return QSConstants.STATIC_TILES_AVAILABLE.contains(tileSpec);
     }
 
+    public static boolean isDynamicQsTile(String tileSpec) {
+        return QSConstants.DYNAMIC_TILES_AVAILBLE.contains(tileSpec);
+    }
+
     @SuppressWarnings("unchecked")
     public static List<String> getAvailableTiles(Context context) {
         filterTiles(context);
