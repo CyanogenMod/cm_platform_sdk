@@ -243,7 +243,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
     private void loadSystemSettings(SQLiteDatabase db) {
         // System
-        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.QS_QUICK_PULLDOWN,
+        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                 R.integer.def_qs_quick_pulldown);
 
         loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
