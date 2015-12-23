@@ -108,7 +108,8 @@ public class Build {
         public static final int BOYSENBERRY = 2;
 
         /**
-         * TODO: Pending Q1 release
+         * November - December 2015: The third iteration of the platform sdk for CyanogenMod
+         * Transition api level that is mostly 1:1 to {@link #BOYSENBERRY}
          */
         public static final int CANTALOUPE = 3;
     }
