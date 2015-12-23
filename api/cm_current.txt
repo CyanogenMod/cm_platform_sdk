@@ -305,6 +305,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.Profile getProfile(java.util.UUID);
     method public java.lang.String[] getProfileNames();
     method public cyanogenmod.app.Profile[] getProfiles();
+    method public boolean isProfilesEnabled();
     method public boolean profileExists(java.lang.String);
     method public boolean profileExists(java.util.UUID);
     method public void removeProfile(cyanogenmod.app.Profile);
@@ -351,6 +352,18 @@ package cyanogenmod.app {
 
 }
 
+package cyanogenmod.content {
+
+  public class Intent {
+    ctor public Intent();
+    field public static final java.lang.String ACTION_PROTECTED = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
+    field public static final java.lang.String ACTION_PROTECTED_CHANGED = "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
+    field public static final java.lang.String EXTRA_PROTECTED_COMPONENTS = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
+    field public static final java.lang.String EXTRA_PROTECTED_STATE = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
+  }
+
+}
+
 package cyanogenmod.hardware {
 
   public final class CMHardwareManager {
@@ -379,6 +392,7 @@ package cyanogenmod.hardware {
     method public int getVibratorMaxIntensity();
     method public int getVibratorMinIntensity();
     method public int getVibratorWarningIntensity();
+    method public boolean isSunlightEnhancementSelfManaged();
     method public boolean isSupported(int);
     method public byte[] readPersistentBytes(java.lang.String);
     method public int readPersistentInt(java.lang.String);
@@ -468,6 +482,7 @@ package cyanogenmod.os {
   public class Build {
     ctor public Build();
     method public static java.lang.String getNameForSDKInt(int);
+    field public static final java.lang.String CYANOGENMOD_DISPLAY_VERSION = "ro.cm.display.version";
     field public static final java.lang.String UNKNOWN = "unknown";
   }
 
@@ -481,6 +496,7 @@ package cyanogenmod.os {
     field public static final int APRICOT = 1; // 0x1
     field public static final int BOYSENBERRY = 2; // 0x2
     field public static final int CANTALOUPE = 3; // 0x3
+    field public static final int DRAGON_FRUIT = 4; // 0x4
   }
 
 }
@@ -501,9 +517,11 @@ package cyanogenmod.platform {
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
+    field public static final java.lang.String PROTECTED_APP = "cyanogenmod.permission.PROTECTED_APP";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
+    field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
@@ -529,12 +547,35 @@ package cyanogenmod.platform {
     ctor public R.drawable();
   }
 
+  public static final class R.integer {
+    ctor public R.integer();
+  }
+
   public static final class R.string {
     ctor public R.string();
   }
 
   public static final class R.xml {
     ctor public R.xml();
+  }
+
+}
+
+package cyanogenmod.power {
+
+  public class PerformanceManager {
+    method public static cyanogenmod.power.PerformanceManager getInstance(android.content.Context);
+    method public int getNumberOfProfiles();
+    method public int getPowerProfile();
+    method public boolean getProfileHasAppProfiles(int);
+    method public boolean setPowerProfile(int);
+    field public static final java.lang.String POWER_PROFILE_CHANGED = "cyanogenmod.power.PROFILE_CHANGED";
+    field public static final int PROFILE_BALANCED = 1; // 0x1
+    field public static final int PROFILE_BIAS_PERFORMANCE = 4; // 0x4
+    field public static final int PROFILE_BIAS_POWER_SAVE = 3; // 0x3
+    field public static final int PROFILE_HIGH_PERFORMANCE = 2; // 0x2
+    field public static final int PROFILE_POWER_SAVE = 0; // 0x0
+    field public static final java.lang.String TAG = "PerformanceManager";
   }
 
 }
@@ -683,7 +724,6 @@ package cyanogenmod.providers {
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
     method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
     field public static final android.net.Uri CONTENT_URI;
-    field public static final java.lang.String NAME_THEME_CONFIG = "name_theme_config";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_secure_version";
   }
 
