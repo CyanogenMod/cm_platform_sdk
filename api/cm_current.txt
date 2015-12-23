@@ -480,6 +480,7 @@ package cyanogenmod.os {
     ctor public Build.CM_VERSION_CODES();
     field public static final int APRICOT = 1; // 0x1
     field public static final int BOYSENBERRY = 2; // 0x2
+    field public static final int CANTALOUPE = 3; // 0x3
   }
 
 }
@@ -658,6 +659,7 @@ package cyanogenmod.providers {
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
     method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static android.net.Uri getUriFor(java.lang.String);
     method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
     method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
@@ -675,6 +677,7 @@ package cyanogenmod.providers {
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
     method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static android.net.Uri getUriFor(java.lang.String);
     method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
     method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
@@ -693,6 +696,7 @@ package cyanogenmod.providers {
     method public static long getLong(android.content.ContentResolver, java.lang.String, long);
     method public static long getLong(android.content.ContentResolver, java.lang.String) throws cyanogenmod.providers.CMSettings.CMSettingNotFoundException;
     method public static java.lang.String getString(android.content.ContentResolver, java.lang.String);
+    method public static android.net.Uri getUriFor(java.lang.String);
     method public static boolean putFloat(android.content.ContentResolver, java.lang.String, float);
     method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
