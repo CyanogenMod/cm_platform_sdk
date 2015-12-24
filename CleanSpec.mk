@@ -43,3 +43,6 @@ $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.cy
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.platform.internal_intermediates)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/docs/cm-api-stubs-timestamp)
 $(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/cmsdk_stubs_current_intermediates)
+# KeyguardExternalView uses a new interface which requires cleaning to avoid a runtime exception
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.platform_intermediates)
+$(call add-clean-step, rm -rf $(OUT_DIR)/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.platform.sdk_intermediates)

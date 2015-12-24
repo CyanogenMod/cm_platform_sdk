@@ -31,6 +31,7 @@ import cyanogenmod.platform.Manifest;
 import java.util.ArrayList;
 import java.util.List;
 
+/** @hide */
 public class AppSuggestManagerService extends SystemService {
     private static final String TAG = "AppSgstMgrService";
     public static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);

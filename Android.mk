@@ -163,10 +163,10 @@ cmplat_docs_java_libraries := \
     org.cyanogenmod.platform.sdk
 
 # SDK version as defined
-cmplat_docs_SDK_VERSION := 0.1
+cmplat_docs_SDK_VERSION := 13.0
 
 # release version
-cmplat_docs_SDK_REL_ID := 0
+cmplat_docs_SDK_REL_ID := 4
 
 cmplat_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
@@ -179,8 +179,7 @@ intermediates.COMMON := $(call intermediates-dir-for,$(LOCAL_MODULE_CLASS), org.
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
-    $(cmplat_docs_src_files) \
-    $(call all-java-files-under, $(library_src))
+    $(cmplat_docs_src_files)
 LOCAL_INTERMEDIATE_SOURCES:= $(cmplat_LOCAL_INTERMEDIATE_SOURCES)
 LOCAL_JAVA_LIBRARIES:= $(cmplat_docs_java_libraries)
 LOCAL_MODULE_CLASS:= $(cmplat_docs_LOCAL_MODULE_CLASS)
@@ -194,7 +193,8 @@ LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_stubs_current_intermediates/src \
-		-stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:org.cyanogenmod.platform \
+        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power \
+        -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) \
         -nodocs \
@@ -204,15 +204,16 @@ LOCAL_UNINSTALLABLE_MODULE := true
 
 include $(BUILD_DROIDDOC)
 
+# $(gen), i.e. framework.aidl, is also needed while building against the current stub.
 $(full_target): $(cm_framework_built) $(gen)
 $(INTERNAL_CM_PLATFORM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_API_FILE))
 
 # ====  the system api stubs ===================================
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= \
-    $(cmplat_docs_src_files) \
-    $(call all-java-files-under, $(library_src))
+    $(cmplat_docs_src_files)
 LOCAL_INTERMEDIATE_SOURCES:= $(cmplat_LOCAL_INTERMEDIATE_SOURCES)
 LOCAL_JAVA_LIBRARIES:= $(cmplat_docs_java_libraries)
 LOCAL_MODULE_CLASS:= $(cmplat_docs_LOCAL_MODULE_CLASS)
@@ -223,8 +224,9 @@ LOCAL_MODULE := cm-system-api-stubs
 
 LOCAL_DROIDDOC_OPTIONS:=\
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_system_stubs_current_intermediates/src \
-		-stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:org.cyanogenmod.platform \
+        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power \
         -showAnnotation android.annotation.SystemApi \
+        -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE) \
         -nodocs \
@@ -236,8 +238,10 @@ LOCAL_UNINSTALLABLE_MODULE := true
 
 include $(BUILD_DROIDDOC)
 
+# $(gen), i.e. framework.aidl, is also needed while building against the current stub.
 $(full_target): $(cm_framework_built) $(gen)
 $(INTERNAL_CM_PLATFORM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_API_FILE))
 
 # Documentation
 # ===========================================================
@@ -254,13 +258,14 @@ LOCAL_ADDITONAL_JAVA_DIR := $(intermediates.COMMON)/src
 LOCAL_IS_HOST_MODULE := false
 LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := vendor/sm/build/tools/droiddoc/templates-cmsdk
 LOCAL_ADDITIONAL_DEPENDENCIES := \
-    services
+    services \
+    org.cyanogenmod.hardware
 
 LOCAL_JAVA_LIBRARIES := $(cmplat_docs_java_libraries)
 
 LOCAL_DROIDDOC_OPTIONS := \
         -offlinemode \
-        -hidePackage org.cyanogenmod.platform.internal \
+        -exclude org.cyanogenmod.platform.internal \
         -hdf android.whichdoc offline \
         -hdf sdk.version $(cmplat_docs_docs_SDK_VERSION) \
         -hdf sdk.rel.id $(cmplat_docs_docs_SDK_REL_ID) \
