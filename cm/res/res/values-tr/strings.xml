@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">hızlı ayarlar paneli içinde özel bir kare oluştur</string>
   <string name="permdesc_publishCustomTile">Uygulamalara hızlı ayarlar karesi oluşturma izni verir.</string>
   <string name="permlab_modifyNetworkSettings">sistem ağ ayarlarını değiştir</string>
-  <string name="permdesc_modifyNetworkSettings">Uygulamalara sistem ağ ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
+  <string name="permdesc_modifyNetworkSettings">Uygulamalara uçak modunu ve mobil veri şebeke ayarlarını değiştirme izni verir.</string>
   <string name="permlab_modifySoundSettings">sistem ses ayarlarını değiştir</string>
-  <string name="permdesc_modifySoundSettings">Uygulamalara sistem ses ayarları üzerinde sınırlı miktarda değişiklik imkanı verir.</string>
+  <string name="permdesc_modifySoundSettings">Uygulamalara bildirim modu ses ayarlarını değiştirme izni verir.</string>
   <string name="permlab_bindCustomTileListenerService">özel bir kare takip hizmetine bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Uygulamaya özel bir kare takip hizmetinin üst düzey arayüzünü bağlamasına izin verir.</string>
   <string name="permlab_readMSPhoneState">telefon durumunu ve çoklu SIMler ile veri bağlantısı desteğini görüntüle</string>
@@ -46,8 +46,10 @@
   <string name="permlab_managePersistentStorage">kalıcı depolama alanını yönet</string>
   <string name="permdesc_managePersistentStorage">Uygulamalara fabrika ayarlarına dönüldüğünde kalıcı özellikleri okuma ve yazma izni verir.</string>
   <string name="permlab_accessAppSuggestions">uygulama önerilerine eriş</string>
-  <string name="permdesc_accessAppSuggestions">Uygulamalara uygulama önerilerine erişim izni verir.</string>
+  <string name="permdesc_accessAppSuggestions">Bir uygulamanın uygulama önerilerine erişiminine izin verir.</string>
   <string name="custom_tile_listener_binding_label">Özel kare takipçisi</string>
+  <string name="permlab_protectedApp">korunan uygulamalara uygulama ekle ya da kaldır</string>
+  <string name="permdesc_protectedApp">Uygulamalara diğer uygulamaları korunan uygulama olarak işaretleme ve kilitleme izni verir.</string>
   <string name="profileNameDefault">Varsayılan</string>
   <string name="profileNameWork">İş</string>
   <string name="profileNameHome">Ev</string>
@@ -60,4 +62,22 @@
   <string name="profileGroupEmail">E-posta</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Diğer</string>
+  <string name="perf_profile_pwrsv">Güç tasarrufu</string>
+  <string name="perf_profile_bal">Dengeli</string>
+  <string name="perf_profile_perf">Performans</string>
+  <string name="perf_profile_bias_power">Verimlilik</string>
+  <string name="perf_profile_bias_perf">Hızlı</string>
+  <string name="live_display_auto">Otomatik</string>
+  <string name="live_display_auto_summary">Gün batımı ve doğumundan sonra ekranın renk sıcaklığını otomatik ayarlar</string>
+  <string name="live_display_off">Kapalı</string>
+  <string name="live_display_off_summary">Tüm ayarlamaları devre dışı bırak</string>
+  <string name="live_display_day">Gün</string>
+  <string name="live_display_day_summary">Sadece gündüz ayarlarını kullan</string>
+  <string name="live_display_night">Gece</string>
+  <string name="live_display_night_summary">Sadece gece ayarlarını kullan</string>
+  <string name="live_display_outdoor">Açık alan (parlak güneş)</string>
+  <string name="live_display_outdoor_summary">Sadece açık alan ayarlarını kullanır</string>
+  <string name="live_display_hint">LiveDisplay göz yorgunluğunuzu azaltıp geceleri uyumanıza yardımcı olabilir. Denemek için buraya tıklayın!</string>
+  <string name="permlab_thirdPartyKeyguard">üçüncü taraf kilit ekranı</string>
+  <string name="permdesc_thirdPartyKeyguard">Uygulamalara şifresiz kilit ekranı olarak kullanılabilme izni verir.</string>
 </resources>

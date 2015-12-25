@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
   <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
   <string name="permlab_modifyNetworkSettings">System-Netzwerkeinstellungen ändern</string>
-  <string name="permdesc_modifyNetworkSettings">Ermöglicht der App, geringe Änderungen an den System-Netzwerkeinstellungen vorzunehmen.</string>
+  <string name="permdesc_modifyNetworkSettings">Ermöglicht der App, Änderungen am Flugmodus und den Einstellungen für mobile Daten vorzunehmen.</string>
   <string name="permlab_modifySoundSettings">System-Soundeinstellungen ändern</string>
-  <string name="permdesc_modifySoundSettings">Ermöglicht der App, geringe Änderungen an den System-Soundeinstellungen vorzunehmen.</string>
+  <string name="permdesc_modifySoundSettings">Ermöglicht der App, Änderungen an den Toneinstellungen des Unterbrechungsmodus vorzunehmen.</string>
   <string name="permlab_bindCustomTileListenerService">Anbindung an einen Listener-Service für benutzerdefinierte Kacheln</string>
   <string name="permdesc_bindCustomTileListenerService">Ermöglicht der App, sich an einen Listener-Service für benutzerdefinierte Kacheln zu binden.</string>
   <string name="permlab_readMSPhoneState">Systemstatus und Datenverbindung auf Unterstützung von mehreren SIM-Karten überprüfen</string>
@@ -43,9 +43,8 @@
   <string name="permdesc_writeSettings">Ermöglicht der App, CM-Systemeinstellungen zu ändern.</string>
   <string name="permlab_writeSecureSettings">CM-Sicherheits-Systemeinstellungen ändern</string>
   <string name="permdesc_writeSecureSettings">Ermöglicht der App, CM-Sicherheits-Systemeinstellungen zu ändern. Nicht für die Nutzung durch normale Anwendungen bestimmt.</string>
+  <string name="permlab_managePersistentStorage">permanenten Speicher verwalten</string>
   <string name="permdesc_managePersistentStorage">Ermöglicht der App, Eigenschaften auszulesen oder zu speichern, die auch beim Zurücksetzen auf die Werkseinstellungen erhalten bleiben können.</string>
-  <string name="permlab_accessAppSuggestions">auf Anwendungsvorschläge zugreifen</string>
-  <string name="permdesc_accessAppSuggestions">Ermöglicht der App, auf die Anwendungsvorschläge zuzugreifen.</string>
   <string name="custom_tile_listener_binding_label">Listener für benutzerdefinierte Kacheln</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeit</string>
@@ -59,4 +58,14 @@
   <string name="profileGroupEmail">E-Mail</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Anderes</string>
+  <string name="live_display_auto">Automatisch</string>
+  <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
+  <string name="live_display_day">Tag</string>
+  <string name="live_display_day_summary">Nur Tag-Modus verwenden</string>
+  <string name="live_display_night">Nacht</string>
+  <string name="live_display_night_summary">Nur Nacht-Modus verwenden</string>
+  <string name="live_display_outdoor">Außen (helle Sonne)</string>
+  <string name="live_display_outdoor_summary">Nur Außen-Modus verwenden</string>
+  <string name="live_display_hint">LiveDisplay kann gegen eine Überanstrengung der Augen und so beim Einschlafen helfen. Klicken Sie hier, um es auszuprobieren!</string>
+  <string name="permlab_thirdPartyKeyguard">Sperrbildschirm eines Drittanbieters</string>
 </resources>

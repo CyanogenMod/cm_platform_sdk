@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">crée un raccourci personnalisé dans le volet des raccourcis</string>
   <string name="permdesc_publishCustomTile">Autorise une application à déclarer un raccourci pour le volet des raccourcis.</string>
   <string name="permlab_modifyNetworkSettings">modifier les paramètres réseau du système</string>
-  <string name="permdesc_modifyNetworkSettings">Autorise une application à modifier un ensemble restreint de paramètres réseau du système.</string>
+  <string name="permdesc_modifyNetworkSettings">Autorise à une application à modifier le mode avion et les paramètres de réseau de données mobiles.</string>
   <string name="permlab_modifySoundSettings">modifier les paramètres système de son</string>
-  <string name="permdesc_modifySoundSettings">Autorise une application à modifier un ensemble restreint de paramètres audio du système.</string>
+  <string name="permdesc_modifySoundSettings">Autorise une application à modifier les réglages du son en mode interruption.</string>
   <string name="permlab_bindCustomTileListenerService">lié au service d\'écoute d\'un raccourci personnalisé</string>
   <string name="permdesc_bindCustomTileListenerService">Permet à l’application de se lier au service d\'écoute d\'un raccourci personnalisé.</string>
   <string name="permlab_readMSPhoneState">voir l\'état du téléphone et de la connexion de données en gérant le multi-SIM</string>
@@ -58,4 +58,5 @@
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Autres</string>
+  <string name="live_display_night">Nuit</string>
 </resources>

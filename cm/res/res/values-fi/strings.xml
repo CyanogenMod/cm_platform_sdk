@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">luo mukautettu tiili pika-asetuspaneeliin</string>
   <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pika-asetustiiliä.</string>
   <string name="permlab_modifyNetworkSettings">muuta järjestelmän verkkoasetuksia</string>
-  <string name="permdesc_modifyNetworkSettings">Sallii sovelluksen tehdä muutoksia joihinkin järjestelmän verkkoasetuksiin.</string>
+  <string name="permdesc_modifyNetworkSettings">Sallii sovelluksen tehdä muutoksia lentokonetilan ja mobiiliverkon asetuksiin.</string>
   <string name="permlab_modifySoundSettings">muuta järjestelmän ääniasetuksia</string>
-  <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia joihinkin järjestelmän ääniasetuksiin.</string>
+  <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia keskeytystilan ääniasetuksiin.</string>
   <string name="permlab_bindCustomTileListenerService">kiinnitä mukautettu tiili kuuntelupalveluun</string>
   <string name="permdesc_bindCustomTileListenerService">Sallii haltijan kiinnittää mukautetun tiilen kuuntelupalvelun käyttöliittymään.</string>
   <string name="permlab_readMSPhoneState">tarkastele puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>
@@ -45,8 +45,6 @@
   <string name="permdesc_writeSecureSettings">Sallii sovelluksen muokata CM-järjestelmän turvallisuusasetuksia. Ei normaalin sovelluksen käytettäväksi.</string>
   <string name="permlab_managePersistentStorage">hallitse pysyvää tallennustilaa</string>
   <string name="permdesc_managePersistentStorage">Sallii sovelluksen lukea tai kirjoittaa ominaisuuksia jotka voivat säilyä tehdasasetusten palautuksen jälkeen.</string>
-  <string name="permlab_accessAppSuggestions">käytä sovellusehdotuksia</string>
-  <string name="permdesc_accessAppSuggestions">Sallii sovelluksen käyttää sovellusehdotuksia.</string>
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>
   <string name="profileNameDefault">Oletus</string>
   <string name="profileNameWork">Työ</string>
@@ -60,4 +58,5 @@
   <string name="profileGroupEmail">Sähköposti</string>
   <string name="profileGroupSMS">Tekstiviesti</string>
   <string name="wildcardProfile">Muu</string>
+  <string name="live_display_night">Yö</string>
 </resources>

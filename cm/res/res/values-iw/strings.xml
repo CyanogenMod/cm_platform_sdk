@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">צור אריח מותאם אישית בתוך לוח ההגדרות המהירות</string>
   <string name="permdesc_publishCustomTile">מאפשר ליישום לפרסם אריח הגדרות מותאם אישית.</string>
   <string name="permlab_modifyNetworkSettings">שינוי הגדרות הרשת של המערכת</string>
-  <string name="permdesc_modifyNetworkSettings">מאפשר ליישום לבצע שינויים בהגדרות רשת מוגבלות של המערכת.</string>
+  <string name="permdesc_modifyNetworkSettings">מאפשר ליישום לבצע שינויים בהגדרות מצב הטיסה ורשת הנתונים הניידים.</string>
   <string name="permlab_modifySoundSettings">שינוי הגדרות השמע של המערכת</string>
-  <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות שמע מוגבלות של המערכת.</string>
+  <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות השמע של מצב ההפרעה.</string>
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
   <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
   <string name="permlab_readMSPhoneState">הצג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
@@ -45,8 +45,6 @@
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
   <string name="permlab_managePersistentStorage">ניהול אחסון מתמיד</string>
   <string name="permdesc_managePersistentStorage">מאפשר ליישום לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
-  <string name="permlab_accessAppSuggestions">גישה להצעות יישום</string>
-  <string name="permdesc_accessAppSuggestions">מאפשר ליישום לגשת להצעות יישום.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>
@@ -60,4 +58,22 @@
   <string name="profileGroupEmail">דוא\"ל</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">אחר</string>
+  <string name="perf_profile_pwrsv">חיסכון בסוללה</string>
+  <string name="perf_profile_bal">מאוזן</string>
+  <string name="perf_profile_perf">ביצועים</string>
+  <string name="perf_profile_bias_power">יעילות</string>
+  <string name="perf_profile_bias_perf">מהיר</string>
+  <string name="live_display_auto">אוטומטי</string>
+  <string name="live_display_auto_summary">התאם אוטומטית את טמפרטורת הצבע של המסך לאחר הזריחה והשקיעה</string>
+  <string name="live_display_off">כבוי</string>
+  <string name="live_display_off_summary">בטל את כל ההתאמות</string>
+  <string name="live_display_day">יום</string>
+  <string name="live_display_day_summary">השתמש בהגדרות יום בלבד</string>
+  <string name="live_display_night">לילה</string>
+  <string name="live_display_night_summary">השתמש בהגדרות לילה בלבד</string>
+  <string name="live_display_outdoor">בחוץ (שמש בהירה)</string>
+  <string name="live_display_outdoor_summary">השתמש בהגדרות חוץ בלבד</string>
+  <string name="live_display_hint">LiveDisplay יכולה למזער את עייפות העין ולעזור לך לישון בלילה. לחץ כאן כדי לנסות!</string>
+  <string name="permlab_thirdPartyKeyguard">מסך נעילה של צד שלישי</string>
+  <string name="permdesc_thirdPartyKeyguard">מאפשר ליישום לשמש כמסך נעילה לא מאובטח.</string>
 </resources>

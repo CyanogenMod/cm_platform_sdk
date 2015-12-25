@@ -20,9 +20,9 @@
   <string name="permlab_publishCustomTile">sortu lauza pertsonalizatu bat ezarpen azkarren panelean</string>
   <string name="permdesc_publishCustomTile">Ezarpen azkarretako lauza bat argitaratzea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_modifyNetworkSettings">aldatu sistemaren sare ezarpenak</string>
-  <string name="permdesc_modifyNetworkSettings">Sistemaren sare ezarpenen atal mugatu batean aldaketak egitea ahalbidetzen dio aplikazioari.</string>
+  <string name="permdesc_modifyNetworkSettings">Hegaldi moduan eta datu mugikorren ezarpenetan aldaketak egitea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_modifySoundSettings">aldatu sistemaren soinu ezarpenak</string>
-  <string name="permdesc_modifySoundSettings">Sistemaren soinu ezarpenen atal mugatu batean aldaketak egitea ahalbidetzen dio aplikazioari.</string>
+  <string name="permdesc_modifySoundSettings">Etenaldi moduaren soinu ezarpenetan aldaketak egitea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_readMSPhoneState">ikusi telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
@@ -45,9 +45,11 @@
   <string name="permdesc_writeSecureSettings">CM sistema ezarpen seguruak aldatzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute behar.</string>
   <string name="permlab_managePersistentStorage">kudeatu behin betiko biltegiratzea</string>
   <string name="permdesc_managePersistentStorage">Gailua lantegiko ezarpenetara leheneratuta ere mantenduko diren ezaugarriak irakurri edo idaztea ahalbidetzen dio aplikazioari.</string>
-  <string name="permlab_accessAppSuggestions">aplikazio proposamenak atzitu</string>
+  <string name="permlab_accessAppSuggestions">aplikazio aholkuak atzitu</string>
   <string name="permdesc_accessAppSuggestions">Aplikazio proposamenak atzitzea ahalbidetzen dio aplikazioari.</string>
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
+  <string name="permlab_protectedApp">gehitu edo kendu aplikazioak babestutako aplikazioen zerrendan</string>
+  <string name="permdesc_protectedApp">Beste aplikazio batzuk babestuta gisa markatzea eta blokeatzea ahalbidetzen dio aplikazioari.</string>
   <string name="profileNameDefault">Lehenetsia</string>
   <string name="profileNameWork">Lanean</string>
   <string name="profileNameHome">Etxean</string>
@@ -60,4 +62,22 @@
   <string name="profileGroupEmail">Eposta</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Beste bat</string>
+  <string name="perf_profile_pwrsv">Energia aurreztea</string>
+  <string name="perf_profile_bal">Orekatua</string>
+  <string name="perf_profile_perf">Errendimendua</string>
+  <string name="perf_profile_bias_power">Eraginkortasuna</string>
+  <string name="perf_profile_bias_perf">Azkarra</string>
+  <string name="live_display_auto">Automatikoa</string>
+  <string name="live_display_auto_summary">Doitu automatikoki pantailaren kolore tenperatura ilunabarra eta egunsentiaren ostean</string>
+  <string name="live_display_off">Ez</string>
+  <string name="live_display_off_summary">Ezgaitu doitze guztiak</string>
+  <string name="live_display_day">Eguna</string>
+  <string name="live_display_day_summary">Erabili egun ezarpenak besterik ez</string>
+  <string name="live_display_night">Gaua</string>
+  <string name="live_display_night_summary">Erabili gau ezarpenak besterik ez</string>
+  <string name="live_display_outdoor">Kalean (eguzkipean)</string>
+  <string name="live_display_outdoor_summary">Erabili kaleko ezarpenak besterik ez</string>
+  <string name="live_display_hint">LiveDisplayk begi nekea gutxitu eta gauez lo egiten lagundu dezake. Probatu ezazu!</string>
+  <string name="permlab_thirdPartyKeyguard">hirugarrengoen blokeo pantaila</string>
+  <string name="permdesc_thirdPartyKeyguard">Aplikazio bat blokeo pantaila ez seguru gisa erabiltzea ahalbidetzen du.</string>
 </resources>
