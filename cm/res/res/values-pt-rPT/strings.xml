@@ -17,18 +17,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
-  <string name="permlab_publishCustomTile">criar um botão personalizado no painel de definições rápidas</string>
-  <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um botão de definições rápidas.</string>
+  <string name="permlab_publishCustomTile">criar um mosaico personalizado no painel de definições rápidas</string>
+  <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um mosaico de definições rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as definições de rede do sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permite a uma aplicação fazer alterações ao modo avião e definições de rede de dados móveis.</string>
+  <string name="permdesc_modifyNetworkSettings">Permite a uma aplicação fazer alterações ao Modo Avião e definições de rede de dados móveis.</string>
   <string name="permlab_modifySoundSettings">alterar as definições de som do sistema</string>
   <string name="permdesc_modifySoundSettings">Permite a uma aplicação fazer alterações nas definições do modo de interrupção do som.</string>
-  <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite à aplicação ligar a um interface de nível superior de um serviço de escuta de botão personalizado.</string>
+  <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de mosaicos personalizados</string>
+  <string name="permdesc_bindCustomTileListenerService">Permite que a aplicação se vincule a uma interface de nível superior de um serviço de escuta de mosaico personalizado.</string>
   <string name="permlab_readMSPhoneState">ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>
-  <string name="permdesc_readMSPhoneState">Permite a aplicação ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <string name="permdesc_readMSPhoneState">Permite a uma aplicação ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
   <string name="permlab_modifyMSPhoneState">modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Permite a aplicação modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <string name="permdesc_modifyMSPhoneState">Permite a uma aplicação modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
   <string name="permdesc_modifyProfiles">Permite a uma aplicação modificar os perfis do sistema.</string>
   <string name="permlab_useHardwareFramework">utilizar a estrutura de hardware</string>
@@ -47,7 +47,7 @@
   <string name="permdesc_managePersistentStorage">Permite a uma aplicação ler ou escrever propriedades que podem persistir mesmo após a reposição dos dados de fábrica.</string>
   <string name="permlab_accessAppSuggestions">aceder a sugestões da aplicação</string>
   <string name="permdesc_accessAppSuggestions">Permite a uma aplicação aceder a sugestões da aplicação.</string>
-  <string name="custom_tile_listener_binding_label">Escuta de botão personalizado</string>
+  <string name="custom_tile_listener_binding_label">Escuta de mosaicos personalizados</string>
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
   <string name="profileNameHome">Casa</string>

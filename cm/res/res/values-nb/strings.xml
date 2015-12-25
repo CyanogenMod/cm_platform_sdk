@@ -21,6 +21,7 @@
   <string name="permdesc_publishCustomTile">Tillater at en app kan publisere en hurtiginnstillingsflis.</string>
   <string name="permlab_bindCustomTileListenerService">binde til en egendefinert flis-lyttertjeneste</string>
   <string name="permdesc_bindCustomTileListenerService">Tillater at en app kan bindes til det øverste nivået i grensesnittet til en tilpasset flis-lyttertjeneste.</string>
+  <string name="permlab_modifyProfiles">endre system profiler</string>
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeid</string>
