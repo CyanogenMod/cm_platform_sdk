@@ -16,17 +16,16 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="cyanogenmod_system_label">Hệ thống CyanogenMod</string>
-  <string name="profileNameDefault">Mặc định</string>
-  <string name="profileNameWork">Văn phòng</string>
-  <string name="profileNameHome">Ở nhà</string>
-  <string name="profileNameSilent">Im lặng</string>
-  <string name="profileNameNight">Ban đêm</string>
-  <string name="profileNameAutomobile">Trên ôtô</string>
-  <string name="profileGroupPhone">Điện thoại</string>
-  <string name="profileGroupCalendar">Lịch</string>
+  <string name="profileNameWork">Trabayu</string>
+  <string name="profileNameHome">Home</string>
+  <string name="profileNameSilent">Silenciu</string>
+  <string name="profileNameNight">Nueche</string>
+  <string name="profileNameAutomobile">Automóvil</string>
+  <string name="profileGroupPhone">Teléfonu</string>
+  <string name="profileGroupCalendar">Calendariu</string>
   <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">Email</string>
+  <string name="profileGroupEmail">Corréu</string>
   <string name="profileGroupSMS">SMS</string>
-  <string name="wildcardProfile">Khác</string>
+  <string name="wildcardProfile">Otru</string>
+  <string name="live_display_night">Nueche</string>
 </resources>

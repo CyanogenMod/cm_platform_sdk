@@ -33,4 +33,5 @@
   <string name="profileGroupEmail">電子郵件</string>
   <string name="profileGroupSMS">簡訊</string>
   <string name="wildcardProfile">其他</string>
+  <string name="live_display_night">夜晚</string>
 </resources>

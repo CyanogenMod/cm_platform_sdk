@@ -20,9 +20,7 @@
   <string name="permlab_publishCustomTile">egy egyedi csempe létrehozása a gyors beállítások panelen</string>
   <string name="permdesc_publishCustomTile">Lehetővé teszi az alkalmazás számára, hogy gyors beállítások csempét hozzon létre.</string>
   <string name="permlab_modifyNetworkSettings">rendszer hálózati beállításainak módosítása</string>
-  <string name="permdesc_modifyNetworkSettings">Lehetővé teszi az alkalmazás számára, hogy módosítsa a rendszer hálózati beállításait korlátozott lehetőségek között.</string>
   <string name="permlab_modifySoundSettings">rendszer hangbeállításainak módosítása</string>
-  <string name="permdesc_modifySoundSettings">Lehetővé teszi az alkalmazás számára, hogy módosítsa a rendszer hangbeállításait korlátozott lehetőségek között.</string>
   <string name="permlab_bindCustomTileListenerService">egyéni csempe figyelőszolgáltatáshoz kötés</string>
   <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazás számára, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
   <string name="permlab_readMSPhoneState">telefon állapotának és adatkapcsolatának megtekintése több SIM támogatásával</string>
@@ -39,6 +37,7 @@
   <string name="permlab_read_alarms">hozzáférés ütemezett riasztásokhoz</string>
   <string name="permdesc_read_alarms">Lehetővé teszi az alkalmazás számára, hogy olvassa az ütemezett riasztásait.</string>
   <string name="permlab_writeSettings">CM rendszer beállításainak módosítása</string>
+  <string name="permlab_writeSecureSettings">CM biztonsági rendszer beállításainak módosítása</string>
   <string name="custom_tile_listener_binding_label">Egyéni csempe figyelőszolgáltatás</string>
   <string name="profileNameDefault">Alapértelmezett</string>
   <string name="profileNameWork">Munka</string>
@@ -52,4 +51,5 @@
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Egyéb</string>
+  <string name="live_display_night">Éjszaka</string>
 </resources>
