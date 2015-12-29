@@ -24,10 +24,6 @@ import cyanogenmod.externalviews.IKeyguardExternalViewCallbacks;
 interface IKeyguardExternalViewProvider
 {
     oneway void onAttach(in IBinder windowToken);
-    oneway void onStart();
-    oneway void onResume();
-    oneway void onPause();
-    oneway void onStop();
     oneway void onDetach();
 
     // Keyguard specific interface
