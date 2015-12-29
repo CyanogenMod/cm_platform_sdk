@@ -39,8 +39,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * TODO: unhide once documented and finalized
- * @hide
+ * A class for providing a view that can be displayed within the lock screen.  Applications that
+ * wish to provide a view to be displayed within the lock screen should extend this service.
+ *
+ * <p>Applications extending this class should include the
+ * {@link cyanogenmod.platform.Manifest.permission.THIRD_PARTY_KEYGUARD} permission in their
+ * manifest</p>
  */
 public abstract class KeyguardExternalViewProviderService extends Service {
 
@@ -85,8 +89,19 @@ public abstract class KeyguardExternalViewProviderService extends Service {
         };
     }
 
+    /**
+     * Called when the host has bound to this service.
+     * @param options Optional bundle.  This param is currently not used.
+     * @return  The newly created provider.
+     */
     protected abstract Provider createExternalView(Bundle options);
 
+    /**
+     * This class provides an interface for the host and service to communicate to each other.
+     *
+     * <p>Applications extending {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     * must also extend this class within their service.</p>
+     */
     protected abstract class Provider {
         private final class ProviderImpl extends IKeyguardExternalViewProvider.Stub {
             private final Window mWindow;
@@ -331,34 +346,132 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             return mOptions;
         }
 
+        /**
+         * Called when the host view is attached to a window.
+         */
         protected void onAttach() {}
+
+        /**
+         * Callback used for getting the view to be displayed within the host's content.
+         * @return The view to be displayed within the host's content.
+         */
         protected abstract View onCreateView();
+
+        /**
+         * Called when the host's activity or application is started.
+         */
         protected void onStart() {}
+
+        /**
+         * Called when the host's activity or application is resumed.
+         */
         protected void onResume() {}
+
+        /**
+         * Called when the host's activity or application is paused.
+         */
         protected void onPause() {}
+
+        /**
+         * Called when the host's activity or application is stopped.
+         */
         protected void onStop() {}
+
+        /**
+         * Called when the host view is detached from a window.
+         */
         protected void onDetach() {}
 
         // keyguard events
+
+        /**
+         * Called from the host when the keyguard is being shown to the user.
+         * @param screenOn  True if the screen is currently on.
+         */
         protected abstract void onKeyguardShowing(boolean screenOn);
+
+        /**
+         * Called from the host when the use has unlocked the device.  Once this is called the lock
+         * lock screen should no longer displayed.
+         *
+         * <p>The view component should enter a paused state when this is called, and save any state
+         * information that may be needed once the lock screen is displayed again.  For example, a
+         * non-interactive component that provides animated visuals should pause playback of those
+         * animations and save the state, if necessary, of that animation.</p>
+         */
         protected abstract void onKeyguardDismissed();
+
+        /**
+         * Called from the host when the keyguard is displaying the security screen for the user to
+         * enter their pin, password, or pattern.
+         *
+         * <p>Interactive components will no longer have focus when the bouncer is displayed and
+         * should enter a paused or idle state while the bouncer is being shown.</p>
+         * @param showing True if the bouncer is being show or false when it is dismissed without the
+         *                device being unlocked.
+         */
         protected abstract void onBouncerShowing(boolean showing);
+
+        /**
+         * Called from the host when the screen is turned on.
+         *
+         * <p>The provided view should return to a running state when this is called.  For example,
+         * a non-interactive component that provides animated visuals should resume playback of
+         * those animations.</p>
+         */
         protected abstract void onScreenTurnedOn();
+
+        /**
+         * Called from the host when the screen is turned off.
+         *
+         * <p>The provided view should provided view should pause its activity, if not currently
+         * in a paused state, and do any work necessary to be ready when the screen is turned
+         * back on.  This will allow for a seamless user experience once the screen is turned on.
+         * </p>
+         */
         protected abstract void onScreenTurnedOff();
 
         // callbacks from provider to host
+
+        /**
+         * This method should be called whenever an action has occurred within your view that would
+         * require it to be dismissed and either unlock the device or show the bouncer so the user
+         * can enter their security pin, password, or pattern.
+         *
+         * <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+         * secure code, onBouncerShowing should be called with onShowing being set to false.</p>
+         */
         protected final void dismiss() {
             mImpl.dismiss();
         }
 
+        /**
+         * Similar to dismiss() with the added action of launching the provided intent once the lock
+         * screen is unlocked.
+         * @param intent An intent specifying an activity to launch.
+         */
         protected final void dismissAndStartActivity(final Intent intent) {
             mImpl.dismissAndStartActivity(intent);
         }
 
+        /**
+         * Call this method when you would like to take focus and hide the notification panel.
+         *
+         * <p>You should call this method if your component requires focus and the users's
+         * attention.  This has no effect for non-interactive components.</p>
+         */
         protected final void collapseNotificationPanel() {
             mImpl.collapseNotificationPanel();
         }
 
+        /**
+         * This method should be called when the provided view needs to change from interactive to
+         * non-interactive and vice versa.
+         *
+         * <p>Interactive components can receive input focus and receive user interaction while
+         * non-interactive components never receive focus and are purely visual.</p>
+         * @param isInteractive
+         */
         protected final void setInteractivity(final boolean isInteractive) {
             mImpl.setInteractivity(isInteractive);
         }
