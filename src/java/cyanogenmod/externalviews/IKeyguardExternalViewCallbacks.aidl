@@ -20,8 +20,8 @@ import android.content.Intent;
 
 /** @hide */
 interface IKeyguardExternalViewCallbacks {
-    oneway void dismiss();
-    oneway void dismissAndStartActivity(in Intent intent);
+    boolean requestDismiss();
+    boolean requestDismissAndStartActivity(in Intent intent);
     oneway void collapseNotificationPanel();
     oneway void setInteractivity(boolean isInteractive);
 }

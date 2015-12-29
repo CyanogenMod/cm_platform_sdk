@@ -16,6 +16,7 @@
 
 package cyanogenmod.externalviews;
 
+import android.annotation.NonNull;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -39,8 +40,17 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * TODO: unhide once documented and finalized
- * @hide
+ * A class for providing a view that can be displayed within the lock screen.  Applications that
+ * wish to provide a view to be displayed within the lock screen should extend this service.
+ *
+ * <p>Applications extending this class should include the
+ * {@link cyanogenmod.platform.Manifest.permission#THIRD_PARTY_KEYGUARD} permission in their
+ * manifest</p>
+
+ * <p>Applications extending this class should also extend
+ * {@link KeyguardExternalViewProviderService.Provider} and return a new instance of
+ * {@link KeyguardExternalViewProviderService.Provider} in
+ * {@link KeyguardExternalViewProviderService#createExternalView(Bundle)}.</p>
  */
 public abstract class KeyguardExternalViewProviderService extends Service {
 
@@ -85,8 +95,16 @@ public abstract class KeyguardExternalViewProviderService extends Service {
         };
     }
 
+    /**
+     * Called when the host has bound to this service.
+     * @param options Optional bundle.  This param is currently not used.
+     * @return  The newly created provider.
+     */
     protected abstract Provider createExternalView(Bundle options);
 
+    /**
+     * This class provides an interface for the host and service to communicate to each other.
+     */
     protected abstract class Provider {
         private final class ProviderImpl extends IKeyguardExternalViewProvider.Stub {
             private final Window mWindow;
@@ -116,50 +134,6 @@ public abstract class KeyguardExternalViewProviderService extends Service {
                     public void run() {
                         mWindowManager.addView(mWindow.getDecorView(), mParams);
                         Provider.this.onAttach();
-                    }
-                });
-            }
-
-            @Override
-            public void onStart() throws RemoteException {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Provider.this.onStart();
-                    }
-                });
-            }
-
-            @Override
-            public void onResume() throws RemoteException {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mShouldShow = true;
-                        updateVisibility();
-                        Provider.this.onResume();
-                    }
-                });
-            }
-
-            @Override
-            public void onPause() throws RemoteException {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mShouldShow = false;
-                        updateVisibility();
-                        Provider.this.onPause();
-                    }
-                });
-            }
-
-            @Override
-            public void onStop() throws RemoteException {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Provider.this.onStop();
                     }
                 });
             }
@@ -270,28 +244,32 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             }
 
             // callbacks from provider to host
-            protected final void dismiss() {
+            protected final boolean requestDismiss() {
+                boolean ret = true;
                 int N = mCallbacks.beginBroadcast();
                 for(int i=0; i < N; i++) {
                     IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
                     try {
-                        callback.dismiss();
+                        ret &= callback.requestDismiss();
                     } catch(RemoteException e) {
                     }
                 }
                 mCallbacks.finishBroadcast();
+                return ret;
             }
 
-            protected final void dismissAndStartActivity(final Intent intent) {
+            protected final boolean requestDismissAndStartActivity(final Intent intent) {
+                boolean ret = true;
                 int N = mCallbacks.beginBroadcast();
                 for(int i=0; i < N; i++) {
                     IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
                     try {
-                        callback.dismissAndStartActivity(intent);
+                        ret &= callback.requestDismissAndStartActivity(intent);
                     } catch(RemoteException e) {
                     }
                 }
                 mCallbacks.finishBroadcast();
+                return ret;
             }
 
             protected final void collapseNotificationPanel() {
@@ -331,34 +309,127 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             return mOptions;
         }
 
+        /**
+         * Called when the host view is attached to a window.
+         */
         protected void onAttach() {}
-        protected abstract View onCreateView();
-        protected void onStart() {}
-        protected void onResume() {}
-        protected void onPause() {}
-        protected void onStop() {}
+
+        /**
+         * Called when the host view is detached from a window.
+         */
         protected void onDetach() {}
 
+        /**
+         * Callback used for getting the view to be displayed within the host's content.
+         * @return The view to be displayed within the host's content.  If null is returned no
+         *         content will be displayed.
+         */
+        protected abstract View onCreateView();
+
         // keyguard events
+
+        /**
+         * Called from the host when the keyguard is being shown to the user.
+         * @param screenOn  True if the screen is currently on.
+         */
         protected abstract void onKeyguardShowing(boolean screenOn);
+
+        /**
+         * Called from the host when the user has unlocked the device.  Once this is called the lock
+         * lock screen is no longer being displayed.
+         *
+         * <p>The view component should enter a paused state when this is called, and save any state
+         * information that may be needed once the lock screen is displayed again.  For example, a
+         * non-interactive component that provides animated visuals should pause playback of those
+         * animations and save the state, if necessary, of that animation.</p>
+         */
         protected abstract void onKeyguardDismissed();
+
+        /**
+         * Called from the host when the keyguard is displaying the security screen for the user to
+         * enter their pin, password, or pattern.
+         *
+         * <p>Interactive components will no longer have focus when the bouncer is displayed and
+         * should enter a paused or idle state while the bouncer is being shown.</p>
+         * @param showing True if the bouncer is being show or false when it is dismissed without the
+         *                device being unlocked.
+         */
         protected abstract void onBouncerShowing(boolean showing);
+
+        /**
+         * Called from the host when the screen is turned on.
+         *
+         * <p>The provided view should return to a running state when this is called.  For example,
+         * a non-interactive component that provides animated visuals should resume playback of
+         * those animations.</p>
+         */
         protected abstract void onScreenTurnedOn();
+
+        /**
+         * Called from the host when the screen is turned off.
+         *
+         * <p>The provided view should provided view should pause its activity, if not currently
+         * in a paused state, and do any work necessary to be ready when the screen is turned
+         * back on.  This will allow for a seamless user experience once the screen is turned on.
+         * </p>
+         */
         protected abstract void onScreenTurnedOff();
 
         // callbacks from provider to host
-        protected final void dismiss() {
-            mImpl.dismiss();
+
+        /**
+         * Request that the keyguard be dismissed.   Calling this method will dismiss the lock
+         * screen, if it is a not secure, or present the user with the security screen for the user
+         * to enter their security code to finish dismissing the lock screen.
+         *
+         * <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+         * secure code, the lock screen will not be dismissed and
+         * {@link KeyguardExternalViewProviderService.Provider#onBouncerShowing(boolean)} will be
+         * called with {@code onShowing} being set to false, indicating that the lock screen was not
+         * dismissed as requested.</p>
+         * @return True if the call succeeded.
+         */
+        protected final boolean requestDismiss() {
+            return mImpl.requestDismiss();
         }
 
-        protected final void dismissAndStartActivity(final Intent intent) {
-            mImpl.dismissAndStartActivity(intent);
+        /**
+         * Request that the keyguard be dismissed and the activity provided by the given intent be
+         * started once the keyguard is dismissed.   If a secure lock screen is being used the user
+         * will need to enter their correct security code to finish dismissing the lock screen.
+         *
+         * <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+         * secure code, the lock screen will not be dismissed and
+         * {@link KeyguardExternalViewProviderService.Provider#onBouncerShowing(boolean)} will be
+         * called with onShowing being set to false, indicating that the lock screen was not
+         * dismissed as requested.</p>
+         * @param intent An intent specifying an activity to launch.
+         * @return True if the call succeeded.
+         */
+        protected final boolean dismissAndStartActivity(final Intent intent) {
+            return mImpl.requestDismissAndStartActivity(intent);
         }
 
+        /**
+         * Call this method when you would like to take focus and hide the notification panel.
+         *
+         * <p>You should call this method if your component requires focus and the users's
+         * attention.  The user will still be able to bring the notifications back into view by
+         * sliding down from the status bar.
+         * Calling this method has no effect for non-interactive components.</p>
+         */
         protected final void collapseNotificationPanel() {
             mImpl.collapseNotificationPanel();
         }
 
+        /**
+         * This method should be called when the provided view needs to change from interactive to
+         * non-interactive and vice versa.
+         *
+         * <p>Interactive components can receive input focus and receive user interaction while
+         * non-interactive components never receive focus and are purely visual.</p>
+         * @param isInteractive
+         */
         protected final void setInteractivity(final boolean isInteractive) {
             mImpl.setInteractivity(isInteractive);
         }
