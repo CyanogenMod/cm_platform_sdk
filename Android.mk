@@ -266,6 +266,7 @@ LOCAL_JAVA_LIBRARIES := $(cmplat_docs_java_libraries)
 LOCAL_DROIDDOC_OPTIONS := \
         -offlinemode \
         -exclude org.cyanogenmod.platform.internal \
+        -hidePackage org.cyanogenmod.platform.internal \
         -hdf android.whichdoc offline \
         -hdf sdk.version $(cmplat_docs_docs_SDK_VERSION) \
         -hdf sdk.rel.id $(cmplat_docs_docs_SDK_REL_ID) \
