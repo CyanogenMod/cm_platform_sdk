@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>MediaRecorder | Android Developers</title>
+<title>PerformanceManager | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="4" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -191,13 +191,13 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
-    <li class="api apilevel-4">
+    <li class="selected api apilevel-4">
   <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
@@ -219,8 +219,7 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html">MediaRecorder</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></li>
+          <li class="selected api apilevel-4"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html">PerformanceManager</a></li>
       </ul>
     </li>
               
@@ -290,24 +289,21 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
+
+
+
+
+  <a href="#constants">Constants</a>
   
 
 
 
 
 
-  &#124; <a href="#constants">Constants</a>
+
+
+  &#124; <a href="#pubmethods">Methods</a>
   
-
-
-
-
-
-  &#124; <a href="#pubctors">Ctors</a>
-  
-
-
 
 
 
@@ -318,7 +314,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
   
   
 
@@ -334,7 +330,7 @@ Summary:
      
     
     class
-<h1 itemprop="name">MediaRecorder</h1>
+<h1 itemprop="name">PerformanceManager</h1>
 
 
 
@@ -356,7 +352,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-4">
 <table class="jd-inheritance-table">
 
 
@@ -370,7 +366,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.media.MediaRecorder</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.power.PerformanceManager</td>
     </tr>
     
 
@@ -384,6 +380,10 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">
+</p>
 
 
 
@@ -413,31 +413,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></td>
-      <td class="jd-descrcol" width="100%">
-        &nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-
-
-
 
 
 
@@ -453,13 +428,12 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#POWER_PROFILE_CHANGED">POWER_PROFILE_CHANGED</a></td>
         <td class="jd-descrcol" width="100%">
-          <p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
+          Broadcast sent when profile is changed
+
           
     
 
@@ -467,12 +441,14 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#CAPTURE_AUDIO_HOTWORD_PERMISSION">CAPTURE_AUDIO_HOTWORD_PERMISSION</a></td>
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#PROFILE_BALANCED">PROFILE_BALANCED</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
+          Balanced power profile
+ 
+ The default mode for balanced power savings and performance
+
           
     
 
@@ -480,12 +456,69 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></td>
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#PROFILE_BIAS_PERFORMANCE">PROFILE_BIAS_PERFORMANCE</a></td>
         <td class="jd-descrcol" width="100%">
-          Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed.
+          Performance bias profile
+ 
+ This mode improves performance at the cost of some power.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#PROFILE_BIAS_POWER_SAVE">PROFILE_BIAS_POWER_SAVE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Power save bias profile
+ 
+ This mode decreases performance slightly to improve
+ power savings.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#PROFILE_HIGH_PERFORMANCE">PROFILE_HIGH_PERFORMANCE</a></td>
+        <td class="jd-descrcol" width="100%">
+          High-performance profile
+ 
+ This mode sacrifices power for maximum performance
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#PROFILE_POWER_SAVE">PROFILE_POWER_SAVE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Power save profile
+
+ This mode sacrifices performance for maximum power saving.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#TAG">TAG</a></td>
+        <td class="jd-descrcol" width="100%">
+          
           
     
 
@@ -507,33 +540,131 @@ Summary:
 
 
 
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
 
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../reference/cyanogenmod/power/PerformanceManager.html">PerformanceManager</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            </nobr>
+            int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#MediaRecorder()">MediaRecorder</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#getNumberOfProfiles()">getNumberOfProfiles</a></span>()</nobr>
         
+        <div class="jd-descrdiv">
+          Returns the number of supported profiles, zero if unsupported
+ This is queried via the PowerHAL.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#getPowerProfile()">getPowerProfile</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the current power profile
+
+ Returns null if power profiles are not enabled
+
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#getProfileHasAppProfiles(int)">getProfileHasAppProfiles</a></span>(int profile)</nobr>
+        
+        <div class="jd-descrdiv">
+          Check if profile has app-specific profiles
+
+ Returns true if profile has app-specific profiles.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/power/PerformanceManager.html#setPowerProfile(int)">setPowerProfile</a></span>(int profile)</nobr>
+        
+        <div class="jd-descrdiv">
+          Set the system power profile
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
 
 </table>
-
-
-
-
 
 
 
@@ -777,9 +908,9 @@ From class
 
 
 
-<A NAME="ACTION_HOTWORD_INPUT_CHANGED"></A>
+<A NAME="POWER_PROFILE_CHANGED"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -787,11 +918,11 @@ From class
         final 
         String
       </span>
-        ACTION_HOTWORD_INPUT_CHANGED
+        POWER_PROFILE_CHANGED
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -801,23 +932,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p><p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
-   <code><a href="../../../">ERROR(/#EXTRA_HOTWORD_INPUT_STATE)</a></code>. The value will be one of:
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_RECORDING">RECORDSTATE_RECORDING</a></code> or
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_STOPPED">RECORDSTATE_STOPPED</a></code>.
-   </li>
-   <li><em>package</em> - A String value indicating the package name of the application
-   that currently holds the HOTWORD input.
-   <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></code>
-   </li>
-
- </ul>
-
- <p class="note">This is a protected intent that can only be sent
- by the system. It can only be received by packages that hold
- <code><a href="../../../reference/android/Manifest.permission.html#CAPTURE_AUDIO_HOTWORD">CAPTURE_AUDIO_HOTWORD</a></code>.
+  <div class="jd-tagdata jd-tagdescr"><p>Broadcast sent when profile is changed
 </p></div>
 
     
@@ -825,7 +940,7 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED"
+                "cyanogenmod.power.PROFILE_CHANGED"
             
         </span>
         </div>
@@ -835,21 +950,21 @@ From class
 
 
 
-<A NAME="CAPTURE_AUDIO_HOTWORD_PERMISSION"></A>
+<A NAME="PROFILE_BALANCED"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
         static 
         final 
-        String
+        int
       </span>
-        CAPTURE_AUDIO_HOTWORD_PERMISSION
+        PROFILE_BALANCED
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -859,10 +974,9 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
-
- This is a system|signature permission.
+  <div class="jd-tagdata jd-tagdescr"><p>Balanced power profile
+ 
+ The default mode for balanced power savings and performance
 </p></div>
 
     
@@ -870,7 +984,8 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "android.permission.CAPTURE_AUDIO_HOTWORD"
+                1
+                (0x00000001)
             
         </span>
         </div>
@@ -880,21 +995,21 @@ From class
 
 
 
-<A NAME="EXTRA_CURRENT_PACKAGE_NAME"></A>
+<A NAME="PROFILE_BIAS_PERFORMANCE"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
         static 
         final 
-        String
+        int
       </span>
-        EXTRA_CURRENT_PACKAGE_NAME
+        PROFILE_BIAS_PERFORMANCE
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -904,9 +1019,9 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed. Can be reused for other
- purposes.
+  <div class="jd-tagdata jd-tagdescr"><p>Performance bias profile
+ 
+ This mode improves performance at the cost of some power.
 </p></div>
 
     
@@ -914,7 +1029,185 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "com.cyanogenmod.intent.extra.CURRENT_PACKAGE_NAME"
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILE_BIAS_POWER_SAVE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PROFILE_BIAS_POWER_SAVE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Power save bias profile
+ 
+ This mode decreases performance slightly to improve
+ power savings. 
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILE_HIGH_PERFORMANCE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PROFILE_HIGH_PERFORMANCE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>High-performance profile
+ 
+ This mode sacrifices power for maximum performance
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROFILE_POWER_SAVE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PROFILE_POWER_SAVE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Power save profile
+
+ This mode sacrifices performance for maximum power saving.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="TAG"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        TAG
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "PerformanceManager"
             
         </span>
         </div>
@@ -931,29 +1224,37 @@ From class
 <!-- Public ctors -->
 
 
+
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
+<!-- Protected ctors -->
 
 
 
-<A NAME="MediaRecorder()"></A>
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
 
-<div class="jd-details api apilevel-2"> 
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getInstance(android.content.Context)"></A>
+
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
+        static 
          
          
          
-         
-        
+        <a href="../../../reference/cyanogenmod/power/PerformanceManager.html">PerformanceManager</a>
       </span>
-      <span class="sympad">MediaRecorder</span>
-      <span class="normal">()</span>
+      <span class="sympad">getInstance</span>
+      <span class="normal">(Context context)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
         
   
 
@@ -969,16 +1270,156 @@ From class
 </div>
 
 
+<A NAME="getNumberOfProfiles()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getNumberOfProfiles</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the number of supported profiles, zero if unsupported
+ This is queried via the PowerHAL.
+</p></div>
+
+    </div>
+</div>
 
 
+<A NAME="getPowerProfile()"></A>
 
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<!-- Protected ctors -->
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getPowerProfile</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the current power profile
+
+ Returns null if power profiles are not enabled
+</p></div>
+
+    </div>
+</div>
 
 
+<A NAME="getProfileHasAppProfiles(int)"></A>
 
-<!-- ========= METHOD DETAIL ======== -->
-<!-- Public methdos -->
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">getProfileHasAppProfiles</span>
+      <span class="normal">(int profile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Check if profile has app-specific profiles
+
+ Returns true if profile has app-specific profiles.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setPowerProfile(int)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">setPowerProfile</span>
+      <span class="normal">(int profile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the system power profile</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IllegalArgumentException</td>
+            <td>if invalid
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 
 
 

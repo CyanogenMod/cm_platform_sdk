@@ -1,9 +1,12 @@
 cyanogenmod.alarmclock
 cyanogenmod.app
+cyanogenmod.content
 cyanogenmod.hardware
 cyanogenmod.media
 cyanogenmod.os
 cyanogenmod.platform
+cyanogenmod.power
 cyanogenmod.profiles
 cyanogenmod.providers
+cyanogenmod.util
 

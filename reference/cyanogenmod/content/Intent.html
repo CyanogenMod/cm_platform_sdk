@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>MediaRecorder | Android Developers</title>
+<title>Intent | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="4" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -187,11 +187,11 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-4">
+    <li class="selected api apilevel-4">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
@@ -219,8 +219,7 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html">MediaRecorder</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></li>
+          <li class="selected api apilevel-4"><a href="../../../reference/cyanogenmod/content/Intent.html">Intent</a></li>
       </ul>
     </li>
               
@@ -290,14 +289,11 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
-  
 
 
 
 
-
-  &#124; <a href="#constants">Constants</a>
+  <a href="#constants">Constants</a>
   
 
 
@@ -318,7 +314,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
   
   
 
@@ -334,7 +330,7 @@ Summary:
      
     
     class
-<h1 itemprop="name">MediaRecorder</h1>
+<h1 itemprop="name">Intent</h1>
 
 
 
@@ -356,7 +352,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-4">
 <table class="jd-inheritance-table">
 
 
@@ -370,7 +366,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.media.MediaRecorder</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.content.Intent</td>
     </tr>
     
 
@@ -384,6 +380,10 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">CyanogenMod specific intent definition class.
+</p>
 
 
 
@@ -413,31 +413,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></td>
-      <td class="jd-descrcol" width="100%">
-        &nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-
-
-
 
 
 
@@ -453,13 +428,12 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED">ACTION_PROTECTED</a></td>
         <td class="jd-descrcol" width="100%">
-          <p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
+          Intent filter to update protected app component's settings
+
           
     
 
@@ -467,12 +441,11 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#CAPTURE_AUDIO_HOTWORD_PERMISSION">CAPTURE_AUDIO_HOTWORD_PERMISSION</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></td>
         <td class="jd-descrcol" width="100%">
-          Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
+          Intent filter to notify change in state of protected application.
           
     
 
@@ -480,12 +453,23 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#EXTRA_PROTECTED_COMPONENTS">EXTRA_PROTECTED_COMPONENTS</a></td>
         <td class="jd-descrcol" width="100%">
-          Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed.
+          This field is part of the intent <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></code>.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#EXTRA_PROTECTED_STATE">EXTRA_PROTECTED_STATE</a></td>
+        <td class="jd-descrcol" width="100%">
+          This field is part of the intent <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></code>.
           
     
 
@@ -513,7 +497,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
@@ -523,7 +507,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#MediaRecorder()">MediaRecorder</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/content/Intent.html#Intent()">Intent</a></span>()</nobr>
         
   </td></tr>
 
@@ -777,9 +761,9 @@ From class
 
 
 
-<A NAME="ACTION_HOTWORD_INPUT_CHANGED"></A>
+<A NAME="ACTION_PROTECTED"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -787,11 +771,11 @@ From class
         final 
         String
       </span>
-        ACTION_HOTWORD_INPUT_CHANGED
+        ACTION_PROTECTED
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -801,23 +785,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p><p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
-   <code><a href="../../../">ERROR(/#EXTRA_HOTWORD_INPUT_STATE)</a></code>. The value will be one of:
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_RECORDING">RECORDSTATE_RECORDING</a></code> or
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_STOPPED">RECORDSTATE_STOPPED</a></code>.
-   </li>
-   <li><em>package</em> - A String value indicating the package name of the application
-   that currently holds the HOTWORD input.
-   <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></code>
-   </li>
-
- </ul>
-
- <p class="note">This is a protected intent that can only be sent
- by the system. It can only be received by packages that hold
- <code><a href="../../../reference/android/Manifest.permission.html#CAPTURE_AUDIO_HOTWORD">CAPTURE_AUDIO_HOTWORD</a></code>.
+  <div class="jd-tagdata jd-tagdescr"><p>Intent filter to update protected app component's settings
 </p></div>
 
     
@@ -825,7 +793,7 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED"
+                "cyanogenmod.intent.action.PACKAGE_PROTECTED"
             
         </span>
         </div>
@@ -835,9 +803,9 @@ From class
 
 
 
-<A NAME="CAPTURE_AUDIO_HOTWORD_PERMISSION"></A>
+<A NAME="ACTION_PROTECTED_CHANGED"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -845,11 +813,11 @@ From class
         final 
         String
       </span>
-        CAPTURE_AUDIO_HOTWORD_PERMISSION
+        ACTION_PROTECTED_CHANGED
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -859,10 +827,7 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
-
- This is a system|signature permission.
+  <div class="jd-tagdata jd-tagdescr"><p>Intent filter to notify change in state of protected application.
 </p></div>
 
     
@@ -870,7 +835,7 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "android.permission.CAPTURE_AUDIO_HOTWORD"
+                "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE"
             
         </span>
         </div>
@@ -880,9 +845,9 @@ From class
 
 
 
-<A NAME="EXTRA_CURRENT_PACKAGE_NAME"></A>
+<A NAME="EXTRA_PROTECTED_COMPONENTS"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -890,11 +855,11 @@ From class
         final 
         String
       </span>
-        EXTRA_CURRENT_PACKAGE_NAME
+        EXTRA_PROTECTED_COMPONENTS
     </h4>
       <div class="api-level">
         
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
         
   
 
@@ -904,9 +869,8 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed. Can be reused for other
- purposes.
+  <div class="jd-tagdata jd-tagdescr"><p>This field is part of the intent <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></code>.
+ Intent extra field to indicate protected component value
 </p></div>
 
     
@@ -914,7 +878,50 @@ From class
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "com.cyanogenmod.intent.extra.CURRENT_PACKAGE_NAME"
+                "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXTRA_PROTECTED_STATE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        EXTRA_PROTECTED_STATE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This field is part of the intent <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></code>.
+ Intent extra field for the state of protected application
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE"
             
         </span>
         </div>
@@ -936,9 +943,9 @@ From class
 
 
 
-<A NAME="MediaRecorder()"></A>
+<A NAME="Intent()"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-4"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -948,12 +955,12 @@ From class
          
         
       </span>
-      <span class="sympad">MediaRecorder</span>
+      <span class="sympad">Intent</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
         
   
 

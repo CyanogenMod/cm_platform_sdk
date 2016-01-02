@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>MediaRecorder | Android Developers</title>
+<title>ColorUtils | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -191,7 +191,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
@@ -203,7 +203,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
-    <li class="api apilevel-">
+    <li class="selected api apilevel-">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
               </ul><br/>
 
@@ -219,8 +219,7 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html">MediaRecorder</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/util/ColorUtils.html">ColorUtils</a></li>
       </ul>
     </li>
               
@@ -290,24 +289,21 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
+
+
+
+
+
+
+
+
+  <a href="#pubctors">Ctors</a>
   
 
 
 
-
-
-  &#124; <a href="#constants">Constants</a>
+  &#124; <a href="#pubmethods">Methods</a>
   
-
-
-
-
-
-  &#124; <a href="#pubctors">Ctors</a>
-  
-
-
 
 
 
@@ -318,7 +314,6 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -334,7 +329,7 @@ Summary:
      
     
     class
-<h1 itemprop="name">MediaRecorder</h1>
+<h1 itemprop="name">ColorUtils</h1>
 
 
 
@@ -356,7 +351,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-">
 <table class="jd-inheritance-table">
 
 
@@ -370,7 +365,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.media.MediaRecorder</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.util.ColorUtils</td>
     </tr>
     
 
@@ -384,6 +379,11 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Helper class for colorspace conversions, and color-related
+ algorithms which may be generally useful.
+</p>
 
 
 
@@ -413,28 +413,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.AudioSource.html">MediaRecorder.AudioSource</a></td>
-      <td class="jd-descrcol" width="100%">
-        &nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
 
 
 
@@ -443,58 +421,6 @@ Summary:
 
 
 
-
-
-
-
-
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></td>
-        <td class="jd-descrcol" width="100%">
-          <p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#CAPTURE_AUDIO_HOTWORD_PERMISSION">CAPTURE_AUDIO_HOTWORD_PERMISSION</a></td>
-        <td class="jd-descrcol" width="100%">
-          Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></td>
-        <td class="jd-descrcol" width="100%">
-          Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-
-</table>
 
 
 
@@ -513,7 +439,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -523,7 +449,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#MediaRecorder()">MediaRecorder</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#ColorUtils()">ColorUtils</a></span>()</nobr>
         
   </td></tr>
 
@@ -534,6 +460,112 @@ Summary:
 
 
 
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            float[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#convertRGBtoLAB(int)">convertRGBtoLAB</a></span>(int rgb)</nobr>
+        
+        <div class="jd-descrdiv">
+          Converts an RGB packed int into L*a*b space, which is well-suited for finding
+ perceptual differences in color
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#findPerceptuallyNearestColor(int, int[])">findPerceptuallyNearestColor</a></span>(int rgb, int[] colors)</nobr>
+        
+        <div class="jd-descrdiv">
+          Finds the "perceptually nearest" color from a list of colors to
+ the given RGB value.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#findPerceptuallyNearestSolidColor(int)">findPerceptuallyNearestSolidColor</a></span>(int rgb)</nobr>
+        
+        <div class="jd-descrdiv">
+          Convenience method to find the nearest "solid" color (having RGB components
+ of either 0 or 255) to the given color.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#generateAlertColorFromDrawable(android.graphics.drawable.Drawable)">generateAlertColorFromDrawable</a></span>(Drawable drawable)</nobr>
+        
+        <div class="jd-descrdiv">
+          Takes a drawable and uses Palette to generate a suitable "alert"
+ color which can be used for an external notification mechanism
+ such as an RGB LED.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+
+</table>
 
 
 
@@ -771,160 +803,6 @@ From class
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="ACTION_HOTWORD_INPUT_CHANGED"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        ACTION_HOTWORD_INPUT_CHANGED
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p><p>Broadcast Action: The state of the HOTWORD audio input has changed.:</p>
- <ul>
-   <li><em>state</em> - A String value indicating the state of the input.
-   <code><a href="../../../">ERROR(/#EXTRA_HOTWORD_INPUT_STATE)</a></code>. The value will be one of:
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_RECORDING">RECORDSTATE_RECORDING</a></code> or
-   <code><a href="../../../reference/android/media/AudioRecord.html#RECORDSTATE_STOPPED">RECORDSTATE_STOPPED</a></code>.
-   </li>
-   <li><em>package</em> - A String value indicating the package name of the application
-   that currently holds the HOTWORD input.
-   <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#EXTRA_CURRENT_PACKAGE_NAME">EXTRA_CURRENT_PACKAGE_NAME</a></code>
-   </li>
-
- </ul>
-
- <p class="note">This is a protected intent that can only be sent
- by the system. It can only be received by packages that hold
- <code><a href="../../../reference/android/Manifest.permission.html#CAPTURE_AUDIO_HOTWORD">CAPTURE_AUDIO_HOTWORD</a></code>.
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="CAPTURE_AUDIO_HOTWORD_PERMISSION"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        CAPTURE_AUDIO_HOTWORD_PERMISSION
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Allows an application to listen passively to the device microphone in the background
- to detect speech of a hotword or phrase.
-
- This is a system|signature permission.
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "android.permission.CAPTURE_AUDIO_HOTWORD"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="EXTRA_CURRENT_PACKAGE_NAME"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        EXTRA_CURRENT_PACKAGE_NAME
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Extra for <code><a href="../../../reference/cyanogenmod/media/MediaRecorder.html#ACTION_HOTWORD_INPUT_CHANGED">ACTION_HOTWORD_INPUT_CHANGED</a></code> that provides the package name of the
- app in that controlled the HOTWORD input when the state changed. Can be reused for other
- purposes.
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "com.cyanogenmod.intent.extra.CURRENT_PACKAGE_NAME"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
@@ -936,9 +814,9 @@ From class
 
 
 
-<A NAME="MediaRecorder()"></A>
+<A NAME="ColorUtils()"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -948,12 +826,11 @@ From class
          
         
       </span>
-      <span class="sympad">MediaRecorder</span>
+      <span class="sympad">ColorUtils</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        <div></div>
         
   
 
@@ -979,6 +856,194 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="convertRGBtoLAB(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        float[]
+      </span>
+      <span class="sympad">convertRGBtoLAB</span>
+      <span class="normal">(int rgb)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Converts an RGB packed int into L*a*b space, which is well-suited for finding
+ perceptual differences in color</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>rgb</td>
+          <td>A 32-bit value of packed RGB ints</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>array of Lab values of size 3
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="findPerceptuallyNearestColor(int, int[])"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">findPerceptuallyNearestColor</span>
+      <span class="normal">(int rgb, int[] colors)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Finds the "perceptually nearest" color from a list of colors to
+ the given RGB value. This is done by converting to
+ L*a*b colorspace and using a simple distance calculation.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>rgb</td>
+          <td>The original color to start with</td>
+        </tr>
+        <tr>
+          <th>colors</td>
+          <td>An array of colors to test</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>RGB packed int of nearest color in the list
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="findPerceptuallyNearestSolidColor(int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">findPerceptuallyNearestSolidColor</span>
+      <span class="normal">(int rgb)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience method to find the nearest "solid" color (having RGB components
+ of either 0 or 255) to the given color. This is useful for cases such as
+ LED notification lights which may not be able to display the full range
+ of colors due to hardware limitations.</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="generateAlertColorFromDrawable(android.graphics.drawable.Drawable)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">generateAlertColorFromDrawable</span>
+      <span class="normal">(Drawable drawable)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Takes a drawable and uses Palette to generate a suitable "alert"
+ color which can be used for an external notification mechanism
+ such as an RGB LED. This will always pick a solid color having
+ RGB components of 255 or 0.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>drawable</td>
+          <td>The drawable to generate a color for</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a suitable solid color which corresponds to the image
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 
 
 

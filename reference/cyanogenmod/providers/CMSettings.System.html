@@ -88,6 +88,11 @@
 
 
 
+
+
+
+
+
 <html>
 <head>
 
@@ -167,7 +172,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1', '2', '3' ];
+        var SINCE_DATA = [ '1', '2', '3', '4' ];
         buildApiLevelSelector();
       </script>
                   
@@ -182,6 +187,8 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-2">
@@ -190,10 +197,14 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -465,11 +476,1108 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#APP_SWITCH_WAKE_SCREEN">APP_SWITCH_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the app switch key, the value is boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#ASSIST_WAKE_SCREEN">ASSIST_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the assist key, the value is boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BACK_WAKE_SCREEN">BACK_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the back key, the value is boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BATTERY_LIGHT_ENABLED">BATTERY_LIGHT_ENABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether the battery light should be enabled (if hardware supports it)
+ The value is boolean (1 or 0).
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BATTERY_LIGHT_FULL_COLOR">BATTERY_LIGHT_FULL_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the battery LED while charging - full
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BATTERY_LIGHT_LOW_COLOR">BATTERY_LIGHT_LOW_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the battery LED while charging - low
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BATTERY_LIGHT_MEDIUM_COLOR">BATTERY_LIGHT_MEDIUM_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the battery LED while charging - medium
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BATTERY_LIGHT_PULSE">BATTERY_LIGHT_PULSE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether the battery LED should repeatedly flash when the battery is low
+ on charge.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#BLUETOOTH_ACCEPT_ALL_FILES">BLUETOOTH_ACCEPT_ALL_FILES</a></td>
+        <td class="jd-descrcol" width="100%">
+          If all file types can be accepted over Bluetooth OBEX.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#CALL_RECORDING_FORMAT">CALL_RECORDING_FORMAT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Call recording format value
+ 0: AMR_WB
+ 1: MPEG_4
+ Default: 0
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#CAMERA_LAUNCH">CAMERA_LAUNCH</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to launch secure camera app when key is longpressed
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#CAMERA_SLEEP_ON_RELEASE">CAMERA_SLEEP_ON_RELEASE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether or not to send device back to sleep if Camera button is released ("Peek")
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#CAMERA_WAKE_SCREEN">CAMERA_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the camera key half-press.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DIALER_OPENCNAM_ACCOUNT_SID">DIALER_OPENCNAM_ACCOUNT_SID</a></td>
+        <td class="jd-descrcol" width="100%">
+          The OpenCNAM paid account ID to be utilized by the Dialer
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DIALER_OPENCNAM_AUTH_TOKEN">DIALER_OPENCNAM_AUTH_TOKEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          The OpenCNAM authentication token to be utilized by the Dialer
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_AUTO_OUTDOOR_MODE">DISPLAY_AUTO_OUTDOOR_MODE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Automatic outdoor mode
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_COLOR_ADJUSTMENT">DISPLAY_COLOR_ADJUSTMENT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Manual display color adjustments (RGB values as floats, separated by spaces)
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_COLOR_ENHANCE">DISPLAY_COLOR_ENHANCE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Use color enhancement feature of display
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_LOW_POWER">DISPLAY_LOW_POWER</a></td>
+        <td class="jd-descrcol" width="100%">
+          Use display power saving features such as CABC or CABL
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_TEMPERATURE_DAY">DISPLAY_TEMPERATURE_DAY</a></td>
+        <td class="jd-descrcol" width="100%">
+          Color temperature of the display during the day
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_TEMPERATURE_MODE">DISPLAY_TEMPERATURE_MODE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DISPLAY_TEMPERATURE_NIGHT">DISPLAY_TEMPERATURE_NIGHT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Color temperature of the display at night
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#DOUBLE_TAP_SLEEP_GESTURE">DOUBLE_TAP_SLEEP_GESTURE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Enable statusbar double tap gesture on to put device to sleep
+  0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#ENABLE_FORWARD_LOOKUP">ENABLE_FORWARD_LOOKUP</a></td>
+        <td class="jd-descrcol" width="100%">
+          Enable looking up of phone numbers of nearby places
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#ENABLE_PEOPLE_LOOKUP">ENABLE_PEOPLE_LOOKUP</a></td>
+        <td class="jd-descrcol" width="100%">
+          Enable looking up of phone numbers of people
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#ENABLE_REVERSE_LOOKUP">ENABLE_REVERSE_LOOKUP</a></td>
+        <td class="jd-descrcol" width="100%">
+          Enable looking up of information of phone numbers not in the contacts
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#FORWARD_LOOKUP_PROVIDER">FORWARD_LOOKUP_PROVIDER</a></td>
+        <td class="jd-descrcol" width="100%">
+          The forward lookup provider to be utilized by the Dialer
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#HIGH_TOUCH_SENSITIVITY_ENABLE">HIGH_TOUCH_SENSITIVITY_ENABLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether the HighTouchSensitivity is activated or not.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#HOME_WAKE_SCREEN">HOME_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the home key, the value is boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#INCREASING_RING">INCREASING_RING</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether the phone ringtone should be played in an increasing manner
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#INCREASING_RING_RAMP_UP_TIME">INCREASING_RING_RAMP_UP_TIME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Ramp up time (seconds) for increasing ring
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#INCREASING_RING_START_VOLUME">INCREASING_RING_START_VOLUME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Start volume fraction for increasing ring volume
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_APP_SWITCH_ACTION">KEY_APP_SWITCH_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the app switch key is pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_APP_SWITCH_LONG_PRESS_ACTION">KEY_APP_SWITCH_LONG_PRESS_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the app switch key is long-pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_ASSIST_ACTION">KEY_ASSIST_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the assistant (search) key is pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_ASSIST_LONG_PRESS_ACTION">KEY_ASSIST_LONG_PRESS_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the assistant (search) key is long-pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_HOME_DOUBLE_TAP_ACTION">KEY_HOME_DOUBLE_TAP_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the home key is double-tapped.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_HOME_LONG_PRESS_ACTION">KEY_HOME_LONG_PRESS_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the home key is long-pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_MENU_ACTION">KEY_MENU_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the menu key is pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#KEY_MENU_LONG_PRESS_ACTION">KEY_MENU_LONG_PRESS_ACTION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action to perform when the menu key is long-pressed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#LOCKSCREEN_PIN_SCRAMBLE_LAYOUT">LOCKSCREEN_PIN_SCRAMBLE_LAYOUT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to scramble a pin unlock layout
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#MENU_WAKE_SCREEN">MENU_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the menu key, the value is boolean.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NAVBAR_LEFT_IN_LANDSCAPE">NAVBAR_LEFT_IN_LANDSCAPE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether navigation bar is placed on the left side in landscape mode
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NAVIGATION_BAR_MENU_ARROW_KEYS">NAVIGATION_BAR_MENU_ARROW_KEYS</a></td>
+        <td class="jd-descrcol" width="100%">
+          boolean value.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NAV_BUTTONS">NAV_BUTTONS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Navigation controls to Use
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL">NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL</a></td>
+        <td class="jd-descrcol" width="100%">
+          Contains the notifications light maximum brightness to use.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE">NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to use the all the LEDs for the notifications or just one.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_CALL_COLOR">NOTIFICATION_LIGHT_PULSE_CALL_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the missed call notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF">NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to wait between flashes for the missed call notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_CALL_LED_ON">NOTIFICATION_LIGHT_PULSE_CALL_LED_ON</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to flash the missed call notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE">NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to use the custom LED values for the notification pulse LED.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES">NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES</a></td>
+        <td class="jd-descrcol" width="100%">
+          Which custom LED values to use for the notification pulse LED.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR">NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the notification LED by default
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF">NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to wait between flashes for the notification LED by default
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON">NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to flash the notification LED by default
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR">NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          What color to use for the voicemail notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF">NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to wait between flashes for the voicemail notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON">NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON</a></td>
+        <td class="jd-descrcol" width="100%">
+          How long to flash the voicemail notification LED
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_LIGHT_SCREEN_ON">NOTIFICATION_LIGHT_SCREEN_ON</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to allow notifications with the screen on or DayDreams.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#NOTIFICATION_PLAY_QUEUE">NOTIFICATION_PLAY_QUEUE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to attach a queue to media notifications.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#PEOPLE_LOOKUP_PROVIDER">PEOPLE_LOOKUP_PROVIDER</a></td>
+        <td class="jd-descrcol" width="100%">
+          The people lookup provider to be utilized by the Dialer
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#PROXIMITY_ON_WAKE">PROXIMITY_ON_WAKE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Check the proximity sensor during wakeup
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#QS_SHOW_BRIGHTNESS_SLIDER">QS_SHOW_BRIGHTNESS_SLIDER</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to show the brightness slider in quick settings panel.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#RECENTS_SHOW_SEARCH_BAR">RECENTS_SHOW_SEARCH_BAR</a></td>
+        <td class="jd-descrcol" width="100%">
+          Show search bar in recents
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#REVERSE_LOOKUP_PROVIDER">REVERSE_LOOKUP_PROVIDER</a></td>
+        <td class="jd-descrcol" width="100%">
+          The reverse lookup provider to be utilized by the Dialer
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#SHOW_ALARM_ICON">SHOW_ALARM_ICON</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to show the alarm clock icon in the status bar.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_AM_PM">STATUS_BAR_AM_PM</a></td>
+        <td class="jd-descrcol" width="100%">
+          Display style of AM/PM next to clock in status bar
+ 0: Normal display (Eclair stock)
+ 1: Small display (Froyo stock)
+ 2: No display (Gingerbread/ICS stock)
+ default: 2
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_BATTERY_STYLE">STATUS_BAR_BATTERY_STYLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Display style of the status bar battery information
+ 0: Display the battery an icon in portrait mode
+ 2: Display the battery as a circle
+ 4: Hide the battery status information
+ 5: Display the battery an icon in landscape mode
+ 6: Display the battery as plain text
+ default: 0
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_BRIGHTNESS_CONTROL">STATUS_BAR_BRIGHTNESS_CONTROL</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to control brightness from status bar
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_CLOCK">STATUS_BAR_CLOCK</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to hide the clock, show it in the right or left
+ position or show it in the center
+ 0: don't show the clock
+ 1: show the clock in the right position (LTR)
+ 2: show the clock in the center
+ 3: show the clock in the left position (LTR)
+ default: 1
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_IME_SWITCHER">STATUS_BAR_IME_SWITCHER</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to show the IME switcher in the status bar
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_NOTIF_COUNT">STATUS_BAR_NOTIF_COUNT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Show the pending notification counts as overlays on the status bar
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_QUICK_QS_PULLDOWN">STATUS_BAR_QUICK_QS_PULLDOWN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to allow one finger quick settings expansion on the right side of the statusbar.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_SHOW_BATTERY_PERCENT">STATUS_BAR_SHOW_BATTERY_PERCENT</a></td>
+        <td class="jd-descrcol" width="100%">
+          Status bar battery %
+ 0: Hide the battery percentage
+ 1: Display the battery percentage inside the icon
+ 2: Display the battery percentage next to the icon
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#STATUS_BAR_SHOW_WEATHER">STATUS_BAR_SHOW_WEATHER</a></td>
+        <td class="jd-descrcol" width="100%">
+          Boolean value on whether to show weather in the statusbar
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#SWAP_VOLUME_KEYS_ON_ROTATION">SWAP_VOLUME_KEYS_ON_ROTATION</a></td>
+        <td class="jd-descrcol" width="100%">
+          Swap volume buttons when the screen is rotated
+ 0 - Disabled
+ 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
+ 2 - Enabled (screen is rotated by 180 or 270 degrees: tablet)
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#SYSTEM_PROFILES_ENABLED">SYSTEM_PROFILES_ENABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to enable system profiles feature
+ 0 = off, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#SYS_PROP_CM_SETTING_VERSION">SYS_PROP_CM_SETTING_VERSION</a></td>
         <td class="jd-descrcol" width="100%">
           
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#T9_SEARCH_INPUT_LOCALE">T9_SEARCH_INPUT_LOCALE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Locale for secondary overlay on dialer for t9 search input
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#USE_EDGE_SERVICE_FOR_GESTURES">USE_EDGE_SERVICE_FOR_GESTURES</a></td>
+        <td class="jd-descrcol" width="100%">
+          Use EdgeGesture Service for system gestures in PhoneWindowManager
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#VOLBTN_MUSIC_CONTROLS">VOLBTN_MUSIC_CONTROLS</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether or not volume button music controls should be enabled to seek media tracks
+ 0 = 0ff, 1 = on
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#VOLUME_ADJUST_SOUNDS_ENABLED">VOLUME_ADJUST_SOUNDS_ENABLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Volume Adjust Sounds Enable, This is the noise made when using volume hard buttons
+ Defaults to 1 - sounds enabled
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#VOLUME_KEYS_CONTROL_RING_STREAM">VOLUME_KEYS_CONTROL_RING_STREAM</a></td>
+        <td class="jd-descrcol" width="100%">
+          Volume key controls ringtone or media sound stream
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html#VOLUME_WAKE_SCREEN">VOLUME_WAKE_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          Whether to wake the screen with the volume keys, the value is boolean.
           
     
 
@@ -824,7 +1932,7 @@ android.provider.BaseColumns
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class=" api apilevel-3" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1247,6 +2355,3321 @@ From class
 
 
 
+<A NAME="APP_SWITCH_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        APP_SWITCH_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the app switch key, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "app_switch_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ASSIST_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ASSIST_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the assist key, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "assist_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BACK_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BACK_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the back key, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "back_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BATTERY_LIGHT_ENABLED"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BATTERY_LIGHT_ENABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether the battery light should be enabled (if hardware supports it)
+ The value is boolean (1 or 0).
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "battery_light_enabled"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BATTERY_LIGHT_FULL_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BATTERY_LIGHT_FULL_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the battery LED while charging - full
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "battery_light_full_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BATTERY_LIGHT_LOW_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BATTERY_LIGHT_LOW_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the battery LED while charging - low
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "battery_light_low_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BATTERY_LIGHT_MEDIUM_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BATTERY_LIGHT_MEDIUM_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the battery LED while charging - medium
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "battery_light_medium_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BATTERY_LIGHT_PULSE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BATTERY_LIGHT_PULSE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether the battery LED should repeatedly flash when the battery is low
+ on charge. The value is boolean (1 or 0).
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "battery_light_pulse"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BLUETOOTH_ACCEPT_ALL_FILES"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BLUETOOTH_ACCEPT_ALL_FILES
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>If all file types can be accepted over Bluetooth OBEX.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "bluetooth_accept_all_files"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="CALL_RECORDING_FORMAT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        CALL_RECORDING_FORMAT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Call recording format value
+ 0: AMR_WB
+ 1: MPEG_4
+ Default: 0
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "call_recording_format"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMERA_LAUNCH"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        CAMERA_LAUNCH
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to launch secure camera app when key is longpressed
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "camera_launch"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMERA_SLEEP_ON_RELEASE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        CAMERA_SLEEP_ON_RELEASE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether or not to send device back to sleep if Camera button is released ("Peek")
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "camera_sleep_on_release"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMERA_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        CAMERA_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the camera key half-press.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "camera_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DIALER_OPENCNAM_ACCOUNT_SID"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DIALER_OPENCNAM_ACCOUNT_SID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The OpenCNAM paid account ID to be utilized by the Dialer
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "dialer_opencnam_account_sid"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DIALER_OPENCNAM_AUTH_TOKEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DIALER_OPENCNAM_AUTH_TOKEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The OpenCNAM authentication token to be utilized by the Dialer
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "dialer_opencnam_auth_token"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_AUTO_OUTDOOR_MODE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_AUTO_OUTDOOR_MODE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Automatic outdoor mode
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_auto_outdoor_mode"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_COLOR_ADJUSTMENT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_COLOR_ADJUSTMENT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Manual display color adjustments (RGB values as floats, separated by spaces)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_color_adjustment"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_COLOR_ENHANCE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_COLOR_ENHANCE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Use color enhancement feature of display
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_color_enhance"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_LOW_POWER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_LOW_POWER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Use display power saving features such as CABC or CABL
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_low_power"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_TEMPERATURE_DAY"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_TEMPERATURE_DAY
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Color temperature of the display during the day
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_temperature_day"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_TEMPERATURE_MODE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_TEMPERATURE_MODE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_temperature_mode"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISPLAY_TEMPERATURE_NIGHT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DISPLAY_TEMPERATURE_NIGHT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Color temperature of the display at night
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "display_temperature_night"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DOUBLE_TAP_SLEEP_GESTURE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DOUBLE_TAP_SLEEP_GESTURE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable statusbar double tap gesture on to put device to sleep
+  0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "double_tap_sleep_gesture"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ENABLE_FORWARD_LOOKUP"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ENABLE_FORWARD_LOOKUP
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable looking up of phone numbers of nearby places
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "enable_forward_lookup"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ENABLE_PEOPLE_LOOKUP"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ENABLE_PEOPLE_LOOKUP
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable looking up of phone numbers of people
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "enable_people_lookup"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ENABLE_REVERSE_LOOKUP"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ENABLE_REVERSE_LOOKUP
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable looking up of information of phone numbers not in the contacts
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "enable_reverse_lookup"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FORWARD_LOOKUP_PROVIDER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        FORWARD_LOOKUP_PROVIDER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The forward lookup provider to be utilized by the Dialer
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "forward_lookup_provider"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="HIGH_TOUCH_SENSITIVITY_ENABLE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        HIGH_TOUCH_SENSITIVITY_ENABLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether the HighTouchSensitivity is activated or not.
+ 0 = off, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "high_touch_sensitivity_enable"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="HOME_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        HOME_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the home key, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "home_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INCREASING_RING"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INCREASING_RING
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether the phone ringtone should be played in an increasing manner
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "increasing_ring"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INCREASING_RING_RAMP_UP_TIME"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INCREASING_RING_RAMP_UP_TIME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Ramp up time (seconds) for increasing ring
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "increasing_ring_ramp_up_time"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INCREASING_RING_START_VOLUME"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INCREASING_RING_START_VOLUME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Start volume fraction for increasing ring volume
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "increasing_ring_start_vol"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_APP_SWITCH_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_APP_SWITCH_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the app switch key is pressed. (Default is 2)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_app_switch_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_APP_SWITCH_LONG_PRESS_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_APP_SWITCH_LONG_PRESS_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the app switch key is long-pressed. (Default is 0)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_app_switch_long_press_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_ASSIST_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_ASSIST_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the assistant (search) key is pressed. (Default is 3)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_assist_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_ASSIST_LONG_PRESS_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_ASSIST_LONG_PRESS_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the assistant (search) key is long-pressed. (Default is 4)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_assist_long_press_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_HOME_DOUBLE_TAP_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_HOME_DOUBLE_TAP_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the home key is double-tapped.
+ (Default can be configured via config_doubleTapOnHomeBehavior)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_home_double_tap_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_HOME_LONG_PRESS_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_HOME_LONG_PRESS_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the home key is long-pressed.
+ (Default can be configured via config_longPressOnHomeBehavior)
+ 0 - Nothing
+ 1 - Menu
+ 2 - App-switch
+ 3 - Search
+ 4 - Voice search
+ 5 - In-app search
+ 6 - Launch Camera
+ 7 - Action Sleep
+ 8 - Last app
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_home_long_press_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_MENU_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_MENU_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the menu key is pressed. (Default is 1)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_menu_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="KEY_MENU_LONG_PRESS_ACTION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        KEY_MENU_LONG_PRESS_ACTION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action to perform when the menu key is long-pressed.
+ (Default is 0 on devices with a search key, 3 on devices without)
+ (See KEY_HOME_LONG_PRESS_ACTION for valid values)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "key_menu_long_press_action"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="LOCKSCREEN_PIN_SCRAMBLE_LAYOUT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        LOCKSCREEN_PIN_SCRAMBLE_LAYOUT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to scramble a pin unlock layout
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "lockscreen_scramble_pin_layout"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MENU_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MENU_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the menu key, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "menu_wake_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NAVBAR_LEFT_IN_LANDSCAPE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NAVBAR_LEFT_IN_LANDSCAPE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether navigation bar is placed on the left side in landscape mode
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "navigation_bar_left"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NAVIGATION_BAR_MENU_ARROW_KEYS"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NAVIGATION_BAR_MENU_ARROW_KEYS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>boolean value. toggles using arrow key locations on nav bar
+ as left and right dpad keys
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "navigation_bar_menu_arrow_keys"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NAV_BUTTONS"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NAV_BUTTONS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Navigation controls to Use
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "nav_buttons"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Contains the notifications light maximum brightness to use.
+ Values range from 1 to 255
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_brightness_level"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to use the all the LEDs for the notifications or just one.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_multiple_leds_enable"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_CALL_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_CALL_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the missed call notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_call_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to wait between flashes for the missed call notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_call_led_off"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_CALL_LED_ON"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_CALL_LED_ON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to flash the missed call notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_call_led_on"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to use the custom LED values for the notification pulse LED.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_custom_enable"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Which custom LED values to use for the notification pulse LED.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_custom_values"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the notification LED by default
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_default_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to wait between flashes for the notification LED by default
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_default_led_off"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to flash the notification LED by default
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_default_led_on"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>What color to use for the voicemail notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_vmail_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to wait between flashes for the voicemail notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_vmail_led_off"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>How long to flash the voicemail notification LED
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_pulse_vmail_led_on"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_LIGHT_SCREEN_ON"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_LIGHT_SCREEN_ON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to allow notifications with the screen on or DayDreams.
+ The value is boolean (1 or 0). Default will always be false.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_light_screen_on_enable"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTIFICATION_PLAY_QUEUE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        NOTIFICATION_PLAY_QUEUE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to attach a queue to media notifications.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "notification_play_queue"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PEOPLE_LOOKUP_PROVIDER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PEOPLE_LOOKUP_PROVIDER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The people lookup provider to be utilized by the Dialer
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "people_lookup_provider"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROXIMITY_ON_WAKE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PROXIMITY_ON_WAKE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Check the proximity sensor during wakeup
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "proximity_on_wake"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="QS_SHOW_BRIGHTNESS_SLIDER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        QS_SHOW_BRIGHTNESS_SLIDER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to show the brightness slider in quick settings panel.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "qs_show_brightness_slider"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="RECENTS_SHOW_SEARCH_BAR"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        RECENTS_SHOW_SEARCH_BAR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Show search bar in recents
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "recents_show_search_bar"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="REVERSE_LOOKUP_PROVIDER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        REVERSE_LOOKUP_PROVIDER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The reverse lookup provider to be utilized by the Dialer
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "reverse_lookup_provider"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SHOW_ALARM_ICON"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        SHOW_ALARM_ICON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to show the alarm clock icon in the status bar.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "show_alarm_icon"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_AM_PM"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_AM_PM
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Display style of AM/PM next to clock in status bar
+ 0: Normal display (Eclair stock)
+ 1: Small display (Froyo stock)
+ 2: No display (Gingerbread/ICS stock)
+ default: 2
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_am_pm"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_BATTERY_STYLE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_BATTERY_STYLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Display style of the status bar battery information
+ 0: Display the battery an icon in portrait mode
+ 2: Display the battery as a circle
+ 4: Hide the battery status information
+ 5: Display the battery an icon in landscape mode
+ 6: Display the battery as plain text
+ default: 0
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_battery_style"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_BRIGHTNESS_CONTROL"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_BRIGHTNESS_CONTROL
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to control brightness from status bar
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_brightness_control"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_CLOCK"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_CLOCK
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to hide the clock, show it in the right or left
+ position or show it in the center
+ 0: don't show the clock
+ 1: show the clock in the right position (LTR)
+ 2: show the clock in the center
+ 3: show the clock in the left position (LTR)
+ default: 1
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_clock"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_IME_SWITCHER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_IME_SWITCHER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to show the IME switcher in the status bar
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_ime_switcher"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_NOTIF_COUNT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_NOTIF_COUNT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Show the pending notification counts as overlays on the status bar
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_notif_count"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_QUICK_QS_PULLDOWN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_QUICK_QS_PULLDOWN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to allow one finger quick settings expansion on the right side of the statusbar.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "qs_quick_pulldown"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_SHOW_BATTERY_PERCENT"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_SHOW_BATTERY_PERCENT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Status bar battery %
+ 0: Hide the battery percentage
+ 1: Display the battery percentage inside the icon
+ 2: Display the battery percentage next to the icon
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_show_battery_percent"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUS_BAR_SHOW_WEATHER"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUS_BAR_SHOW_WEATHER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Boolean value on whether to show weather in the statusbar
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_bar_show_weather"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SWAP_VOLUME_KEYS_ON_ROTATION"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        SWAP_VOLUME_KEYS_ON_ROTATION
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Swap volume buttons when the screen is rotated
+ 0 - Disabled
+ 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
+ 2 - Enabled (screen is rotated by 180 or 270 degrees: tablet)
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "swap_volume_keys_on_rotation"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SYSTEM_PROFILES_ENABLED"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        SYSTEM_PROFILES_ENABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to enable system profiles feature
+ 0 = off, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "system_profiles_enabled"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="SYS_PROP_CM_SETTING_VERSION"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -1279,6 +5702,262 @@ From class
         <span>
             
                 "sys.cm_settings_system_version"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="T9_SEARCH_INPUT_LOCALE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        T9_SEARCH_INPUT_LOCALE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Locale for secondary overlay on dialer for t9 search input
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "t9_search_input_locale"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="USE_EDGE_SERVICE_FOR_GESTURES"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        USE_EDGE_SERVICE_FOR_GESTURES
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Use EdgeGesture Service for system gestures in PhoneWindowManager
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "edge_service_for_gestures"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="VOLBTN_MUSIC_CONTROLS"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        VOLBTN_MUSIC_CONTROLS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether or not volume button music controls should be enabled to seek media tracks
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "volbtn_music_controls"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="VOLUME_ADJUST_SOUNDS_ENABLED"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        VOLUME_ADJUST_SOUNDS_ENABLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Volume Adjust Sounds Enable, This is the noise made when using volume hard buttons
+ Defaults to 1 - sounds enabled
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "volume_adjust_sounds_enabled"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="VOLUME_KEYS_CONTROL_RING_STREAM"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        VOLUME_KEYS_CONTROL_RING_STREAM
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Volume key controls ringtone or media sound stream
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "volume_keys_control_ring_stream"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="VOLUME_WAKE_SCREEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        VOLUME_WAKE_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether to wake the screen with the volume keys, the value is boolean.
+ 0 = 0ff, 1 = on
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "volume_wake_screen"
             
         </span>
         </div>
@@ -1824,7 +6503,7 @@ From class
 
 <A NAME="getUriFor(java.lang.String)"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-3"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1838,7 +6517,8 @@ From class
       <span class="normal">(String name)</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 3</a></div>
         
   
 
