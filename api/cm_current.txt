@@ -305,6 +305,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.Profile getProfile(java.util.UUID);
     method public java.lang.String[] getProfileNames();
     method public cyanogenmod.app.Profile[] getProfiles();
+    method public boolean isProfilesEnabled();
     method public boolean profileExists(java.lang.String);
     method public boolean profileExists(java.util.UUID);
     method public void removeProfile(cyanogenmod.app.Profile);
@@ -351,6 +352,18 @@ package cyanogenmod.app {
 
 }
 
+package cyanogenmod.content {
+
+  public class Intent {
+    ctor public Intent();
+    field public static final java.lang.String ACTION_PROTECTED = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
+    field public static final java.lang.String ACTION_PROTECTED_CHANGED = "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
+    field public static final java.lang.String EXTRA_PROTECTED_COMPONENTS = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
+    field public static final java.lang.String EXTRA_PROTECTED_STATE = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
+  }
+
+}
+
 package cyanogenmod.hardware {
 
   public final class CMHardwareManager {
@@ -379,6 +392,7 @@ package cyanogenmod.hardware {
     method public int getVibratorMaxIntensity();
     method public int getVibratorMinIntensity();
     method public int getVibratorWarningIntensity();
+    method public boolean isSunlightEnhancementSelfManaged();
     method public boolean isSupported(int);
     method public byte[] readPersistentBytes(java.lang.String);
     method public int readPersistentInt(java.lang.String);
@@ -468,6 +482,7 @@ package cyanogenmod.os {
   public class Build {
     ctor public Build();
     method public static java.lang.String getNameForSDKInt(int);
+    field public static final java.lang.String CYANOGENMOD_DISPLAY_VERSION = "ro.cm.display.version";
     field public static final java.lang.String UNKNOWN = "unknown";
   }
 
@@ -481,6 +496,7 @@ package cyanogenmod.os {
     field public static final int APRICOT = 1; // 0x1
     field public static final int BOYSENBERRY = 2; // 0x2
     field public static final int CANTALOUPE = 3; // 0x3
+    field public static final int DRAGON_FRUIT = 4; // 0x4
   }
 
 }
@@ -501,9 +517,11 @@ package cyanogenmod.platform {
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
+    field public static final java.lang.String PROTECTED_APP = "cyanogenmod.permission.PROTECTED_APP";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
+    field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
@@ -529,12 +547,35 @@ package cyanogenmod.platform {
     ctor public R.drawable();
   }
 
+  public static final class R.integer {
+    ctor public R.integer();
+  }
+
   public static final class R.string {
     ctor public R.string();
   }
 
   public static final class R.xml {
     ctor public R.xml();
+  }
+
+}
+
+package cyanogenmod.power {
+
+  public class PerformanceManager {
+    method public static cyanogenmod.power.PerformanceManager getInstance(android.content.Context);
+    method public int getNumberOfProfiles();
+    method public int getPowerProfile();
+    method public boolean getProfileHasAppProfiles(int);
+    method public boolean setPowerProfile(int);
+    field public static final java.lang.String POWER_PROFILE_CHANGED = "cyanogenmod.power.PROFILE_CHANGED";
+    field public static final int PROFILE_BALANCED = 1; // 0x1
+    field public static final int PROFILE_BIAS_PERFORMANCE = 4; // 0x4
+    field public static final int PROFILE_BIAS_POWER_SAVE = 3; // 0x3
+    field public static final int PROFILE_HIGH_PERFORMANCE = 2; // 0x2
+    field public static final int PROFILE_POWER_SAVE = 0; // 0x0
+    field public static final java.lang.String TAG = "PerformanceManager";
   }
 
 }
@@ -683,7 +724,6 @@ package cyanogenmod.providers {
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
     method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
     field public static final android.net.Uri CONTENT_URI;
-    field public static final java.lang.String NAME_THEME_CONFIG = "name_theme_config";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_secure_version";
   }
 
@@ -701,8 +741,91 @@ package cyanogenmod.providers {
     method public static boolean putInt(android.content.ContentResolver, java.lang.String, int);
     method public static boolean putLong(android.content.ContentResolver, java.lang.String, long);
     method public static boolean putString(android.content.ContentResolver, java.lang.String, java.lang.String);
+    field public static final java.lang.String APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
+    field public static final java.lang.String ASSIST_WAKE_SCREEN = "assist_wake_screen";
+    field public static final java.lang.String BACK_WAKE_SCREEN = "back_wake_screen";
+    field public static final java.lang.String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+    field public static final java.lang.String BATTERY_LIGHT_FULL_COLOR = "battery_light_full_color";
+    field public static final java.lang.String BATTERY_LIGHT_LOW_COLOR = "battery_light_low_color";
+    field public static final java.lang.String BATTERY_LIGHT_MEDIUM_COLOR = "battery_light_medium_color";
+    field public static final java.lang.String BATTERY_LIGHT_PULSE = "battery_light_pulse";
+    field public static final java.lang.String BLUETOOTH_ACCEPT_ALL_FILES = "bluetooth_accept_all_files";
+    field public static final java.lang.String CALL_RECORDING_FORMAT = "call_recording_format";
+    field public static final java.lang.String CAMERA_LAUNCH = "camera_launch";
+    field public static final java.lang.String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+    field public static final java.lang.String CAMERA_WAKE_SCREEN = "camera_wake_screen";
     field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String DIALER_OPENCNAM_ACCOUNT_SID = "dialer_opencnam_account_sid";
+    field public static final java.lang.String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
+    field public static final java.lang.String DISPLAY_AUTO_OUTDOOR_MODE = "display_auto_outdoor_mode";
+    field public static final java.lang.String DISPLAY_COLOR_ADJUSTMENT = "display_color_adjustment";
+    field public static final java.lang.String DISPLAY_COLOR_ENHANCE = "display_color_enhance";
+    field public static final java.lang.String DISPLAY_LOW_POWER = "display_low_power";
+    field public static final java.lang.String DISPLAY_TEMPERATURE_DAY = "display_temperature_day";
+    field public static final java.lang.String DISPLAY_TEMPERATURE_MODE = "display_temperature_mode";
+    field public static final java.lang.String DISPLAY_TEMPERATURE_NIGHT = "display_temperature_night";
+    field public static final java.lang.String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+    field public static final java.lang.String ENABLE_FORWARD_LOOKUP = "enable_forward_lookup";
+    field public static final java.lang.String ENABLE_PEOPLE_LOOKUP = "enable_people_lookup";
+    field public static final java.lang.String ENABLE_REVERSE_LOOKUP = "enable_reverse_lookup";
+    field public static final java.lang.String FORWARD_LOOKUP_PROVIDER = "forward_lookup_provider";
+    field public static final java.lang.String HIGH_TOUCH_SENSITIVITY_ENABLE = "high_touch_sensitivity_enable";
+    field public static final java.lang.String HOME_WAKE_SCREEN = "home_wake_screen";
+    field public static final java.lang.String INCREASING_RING = "increasing_ring";
+    field public static final java.lang.String INCREASING_RING_RAMP_UP_TIME = "increasing_ring_ramp_up_time";
+    field public static final java.lang.String INCREASING_RING_START_VOLUME = "increasing_ring_start_vol";
+    field public static final java.lang.String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
+    field public static final java.lang.String KEY_APP_SWITCH_LONG_PRESS_ACTION = "key_app_switch_long_press_action";
+    field public static final java.lang.String KEY_ASSIST_ACTION = "key_assist_action";
+    field public static final java.lang.String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
+    field public static final java.lang.String KEY_HOME_DOUBLE_TAP_ACTION = "key_home_double_tap_action";
+    field public static final java.lang.String KEY_HOME_LONG_PRESS_ACTION = "key_home_long_press_action";
+    field public static final java.lang.String KEY_MENU_ACTION = "key_menu_action";
+    field public static final java.lang.String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
+    field public static final java.lang.String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+    field public static final java.lang.String MENU_WAKE_SCREEN = "menu_wake_screen";
+    field public static final java.lang.String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
+    field public static final java.lang.String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
+    field public static final java.lang.String NAV_BUTTONS = "nav_buttons";
+    field public static final java.lang.String NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL = "notification_light_brightness_level";
+    field public static final java.lang.String NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE = "notification_light_multiple_leds_enable";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_CALL_COLOR = "notification_light_pulse_call_color";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_CALL_LED_OFF = "notification_light_pulse_call_led_off";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_CALL_LED_ON = "notification_light_pulse_call_led_on";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE = "notification_light_pulse_custom_enable";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES = "notification_light_pulse_custom_values";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR = "notification_light_pulse_default_color";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF = "notification_light_pulse_default_led_off";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON = "notification_light_pulse_default_led_on";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_VMAIL_COLOR = "notification_light_pulse_vmail_color";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_OFF = "notification_light_pulse_vmail_led_off";
+    field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON = "notification_light_pulse_vmail_led_on";
+    field public static final java.lang.String NOTIFICATION_LIGHT_SCREEN_ON = "notification_light_screen_on_enable";
+    field public static final java.lang.String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
+    field public static final java.lang.String PEOPLE_LOOKUP_PROVIDER = "people_lookup_provider";
+    field public static final java.lang.String PROXIMITY_ON_WAKE = "proximity_on_wake";
+    field public static final java.lang.String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
+    field public static final java.lang.String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
+    field public static final java.lang.String REVERSE_LOOKUP_PROVIDER = "reverse_lookup_provider";
+    field public static final java.lang.String SHOW_ALARM_ICON = "show_alarm_icon";
+    field public static final java.lang.String STATUS_BAR_AM_PM = "status_bar_am_pm";
+    field public static final java.lang.String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    field public static final java.lang.String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+    field public static final java.lang.String STATUS_BAR_CLOCK = "status_bar_clock";
+    field public static final java.lang.String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
+    field public static final java.lang.String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    field public static final java.lang.String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+    field public static final java.lang.String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    field public static final java.lang.String STATUS_BAR_SHOW_WEATHER = "status_bar_show_weather";
+    field public static final java.lang.String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
+    field public static final java.lang.String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
+    field public static final java.lang.String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+    field public static final java.lang.String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
+    field public static final java.lang.String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
+    field public static final java.lang.String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
+    field public static final java.lang.String VOLUME_KEYS_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
+    field public static final java.lang.String VOLUME_WAKE_SCREEN = "volume_wake_screen";
   }
 
 }
