@@ -105,6 +105,9 @@ LOCAL_MODULE:= org.cyanogenmod.platform.sdk
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
+# Disable jack for default jar creation
+LOCAL_JACK_ENABLED := disabled
+
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(cyanogenmod_src)) \
     $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
