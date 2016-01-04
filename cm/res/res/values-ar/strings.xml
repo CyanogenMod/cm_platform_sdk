@@ -16,6 +16,26 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="cyanogenmod_system_label">نظام CyanogenMod</string>
+  <string name="permlab_publishCustomTile">إنشاء لوحة مخصصة ضمن لوحة الإعدادات السريعة</string>
+  <string name="permdesc_publishCustomTile">السماح للتطبيق بنشر لوحة الإعدادت السريعة.</string>
+  <string name="permlab_modifyNetworkSettings">تغيير إعدادات شبكة الإتصال في النظام</string>
+  <string name="permdesc_modifyNetworkSettings">يسمح للتطبيق بإجراء تغييرات على وضع الطائرة وإعدادات شبكة الهاتف النقالة.</string>
+  <string name="permlab_modifySoundSettings">تغيير إعدادات صوت النظام</string>
+  <string name="permdesc_modifySoundSettings">السماح للتطبيق بإجراء تغيير على إعدادات الصوت في نمط الانقطاع.</string>
+  <string name="permlab_bindCustomTileListenerService">الارتباط بخدمة مستمع اللوحة المخصصة</string>
+  <string name="permdesc_bindCustomTileListenerService">يسمح للتطبيق بالارتباط بالواجهة البرمجية عالية المستوى الخاصة بخدمة المستمع في اللوحة المخصصة.</string>
+  <string name="permlab_readMSPhoneState">عرض حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
+  <string name="permdesc_readMSPhoneState">يسمح للتطبيق بعرض حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <string name="permlab_modifyMSPhoneState">تعديل حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
+  <string name="permdesc_modifyMSPhoneState">يسمح للتطبيق بتعديل حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <string name="permlab_modifyProfiles">تعديل الملفات التعريفية للنظام</string>
+  <string name="permdesc_modifyProfiles">السماح للتطبيق بتعديل الملفات التعريفية للنظام.</string>
+  <string name="permlab_useHardwareFramework">استخدام إطار الجهاز</string>
+  <string name="permdesc_useHardwareFramework">يسمح للتطبيق بالوصول إلى إطار عمل جهاز CM.</string>
+  <string name="permlab_write_alarms">تغيير التنبيهات مباشرةً</string>
+  <string name="permdesc_write_alarms">السماح للتطبيق بإضافة أو تعديل أو حذف كل التنبيهات لديك.</string>
+  <string name="custom_tile_listener_binding_label">مستمع لوح مخصص</string>
   <string name="profileNameDefault">المبدئي</string>
   <string name="profileNameWork">العمل</string>
   <string name="profileNameHome">المنزل</string>
