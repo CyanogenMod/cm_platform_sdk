@@ -1,16 +1,21 @@
 package org.cyanogenmod.tests.settings;
 
+import android.app.INotificationManager;
+import android.content.Context;
+import android.os.ServiceManager;
 import org.cyanogenmod.tests.TestActivity;
 import cyanogenmod.app.PartnerInterface;
+
 
 /**
  * Tests functionality added in {@link cyanogenmod.app.PartnerInterface}
  */
 public class CMPartnerInterfaceTest extends TestActivity {
-
+    private static final String TAG = "CMPartnerInterfaceTest";
     // Zen Mode to 15 minutes
     private static final long ZEN_MODE_DURATION_15_MINUTES_MS = 15 * 60000;
     PartnerInterface mPartnerInterface;
+    INotificationManager mNotificationManager;
     @Override
     protected String tag() {
         return null;
@@ -19,6 +24,8 @@ public class CMPartnerInterfaceTest extends TestActivity {
     @Override
     protected Test[] tests() {
         mPartnerInterface = PartnerInterface.getInstance(this);
+        mNotificationManager = INotificationManager.Stub.asInterface(
+                ServiceManager.getService(Context.NOTIFICATION_SERVICE));
         return mTests;
     }
 
@@ -78,5 +85,5 @@ public class CMPartnerInterfaceTest extends TestActivity {
                     mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF);
                 }
             },
-     };
+    };
 }
