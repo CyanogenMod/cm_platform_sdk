@@ -406,7 +406,7 @@ public abstract class KeyguardExternalViewProviderService extends Service {
          * @param intent An intent specifying an activity to launch.
          * @return True if the call succeeded.
          */
-        protected final boolean dismissAndStartActivity(final Intent intent) {
+        protected final boolean requestDismissAndStartActivity(final Intent intent) {
             return mImpl.requestDismissAndStartActivity(intent);
         }
 
