@@ -17,7 +17,7 @@ package org.cyanogenmod.internal.util;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.pm.PackageInfo;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.UserHandle;
 import android.text.TextUtils;
@@ -32,6 +32,12 @@ public class CmLockPatternUtils extends LockPatternUtils {
      * Third party keyguard component to be displayed within the keyguard
      */
     public static final String THIRD_PARTY_KEYGUARD_COMPONENT = "lockscreen.third_party";
+
+    /**
+     * Action to be broadcasted when the third party keyguard component has been changed
+     */
+    public static final String ACTION_THIRD_PARTY_KEYGUARD_COMPONENT_CHANGED =
+            "org.cyanogenmod.internal.action.THIRD_PARTY_KEYGUARD_COMPONENT_CHANGED";
 
     private Context mContext;
 
@@ -60,6 +66,12 @@ public class CmLockPatternUtils extends LockPatternUtils {
 
         setString(THIRD_PARTY_KEYGUARD_COMPONENT,
                 component != null ? component.flattenToString() : "", getCurrentUser());
+
+        // notify systemui, or whatever other process needs to know, that the third party keyguard
+        // component has changed.  What it changed to is up to the receiver to figure out using
+        // the methods provided in this class.
+        mContext.sendOrderedBroadcast(new Intent(ACTION_THIRD_PARTY_KEYGUARD_COMPONENT_CHANGED),
+                null);
     }
 
     /**
