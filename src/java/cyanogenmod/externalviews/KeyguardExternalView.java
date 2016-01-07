@@ -35,13 +35,28 @@ import android.view.WindowManager;
 import java.util.LinkedList;
 
 /**
- * TODO: unhide once documented and finalized
+ * This class provides a placeholder view for hosting an external view, provided by a
+ * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}, within the lock screen.
+ *
+ * <p>This class is intended to only be used within the SystemUi process.</p>
  * @hide
  */
-public class KeyguardExternalView extends View implements Application.ActivityLifecycleCallbacks,
-        ViewTreeObserver.OnPreDrawListener, IBinder.DeathRecipient {
+public class KeyguardExternalView extends View implements ViewTreeObserver.OnPreDrawListener,
+        IBinder.DeathRecipient {
 
+    /**
+     * An extra passed via an intent that provides a list of permissions that should be requested
+     * from the user.
+     */
     public static final String EXTRA_PERMISSION_LIST = "permissions_list";
+
+    /**
+     * Category defining an activity to call to request permissions that a
+     * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService} will need.  Apps that
+     * provide a {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService} should
+     * check that they have the required permission before making any method calls that would
+     * require a dangerous permission to be granted.
+     */
     public static final String CATEGORY_KEYGUARD_GRANT_PERMISSION
             = "org.cyanogenmod.intent.category.KEYGUARD_GRANT_PERMISSION";
 
@@ -68,13 +83,17 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         this(context, attrs);
     }
 
+    /**
+     * @param context
+     * @param attributeSet
+     * @param componentName The component name for the
+     *                      {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     *                      that will be bound to create the external view.
+     */
     public KeyguardExternalView(Context context, AttributeSet attributeSet, ComponentName componentName) {
         super(context, attributeSet);
         mContext = getContext();
         mExternalViewProperties = new ExternalViewProperties(this, mContext);
-        Application app = (mContext instanceof Activity) ? ((Activity) mContext).getApplication()
-                : (Application) mContext;
-        app.registerActivityLifecycleCallbacks(this);
         if (componentName != null) {
             mContext.bindService(new Intent().setComponent(componentName),
                     mServiceConnection, Context.BIND_AUTO_CREATE);
@@ -117,17 +136,21 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
     private final IKeyguardExternalViewCallbacks mKeyguardExternalViewCallbacks =
             new IKeyguardExternalViewCallbacks.Stub() {
         @Override
-        public void dismiss() throws RemoteException {
+        public boolean requestDismiss() throws RemoteException {
             if (mCallback != null) {
-                mCallback.dismiss();
+                return mCallback.requestDismiss();
             }
+
+            return false;
         }
 
         @Override
-        public void dismissAndStartActivity(Intent intent) throws RemoteException {
+        public boolean requestDismissAndStartActivity(Intent intent) throws RemoteException {
             if (mCallback != null) {
-                mCallback.dismissAndStartActivity(intent);
+                return mCallback.requestDismissAndStartActivity(intent);
             }
+
+            return false;
         }
 
         @Override
@@ -185,76 +208,6 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         return true;
     }
 
-    // Activity lifecycle callbacks
-
-    @Override
-    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-    }
-
-    @Override
-    public void onActivityStarted(Activity activity) {
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.onStart();
-                } catch (RemoteException e) {
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onActivityResumed(Activity activity) {
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.onResume();
-                } catch (RemoteException e) {
-                }
-                getViewTreeObserver().addOnPreDrawListener(KeyguardExternalView.this);
-            }
-        });
-    }
-
-    @Override
-    public void onActivityPaused(Activity activity) {
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.onPause();
-                } catch (RemoteException e) {
-                }
-                getViewTreeObserver().removeOnPreDrawListener(KeyguardExternalView.this);
-            }
-        });
-    }
-
-    @Override
-    public void onActivityStopped(Activity activity) {
-        performAction(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    mExternalViewProvider.onStop();
-                } catch (RemoteException e) {
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-    }
-
-    @Override
-    public void onActivityDestroyed(Activity activity) {
-        mExternalViewProvider = null;
-        mContext.unbindService(mServiceConnection);
-    }
-
     // Placeholder callbacks
 
     @Override
@@ -291,10 +244,11 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
     }
 
     /**
-     * Sets the component of the ExternalViewProviderService to be used for this ExternalView.
-     * If a provider is already connected to this view, it is first unbound before binding to the
-     * new provider.
-     * @param componentName
+     * Sets the component of the {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     * to be used for this ExternalView.  If a provider is already connected to this view, it is
+     * first unbound before binding to the new provider.
+     * @param componentName The {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     *                      to bind to.
      */
     public void setProviderComponent(ComponentName componentName) {
         // unbind any existing external view provider
@@ -307,6 +261,10 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         }
     }
 
+    /**
+     * Called from the host when the keyguard is being shown to the user.
+     * @param screenOn  True if the screen is currently on.
+     */
     public void onKeyguardShowing(final boolean screenOn) {
         performAction(new Runnable() {
             @Override
@@ -319,6 +277,10 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         });
     }
 
+    /**
+     * Called from the host when the user has unlocked the device.  Once this is called the lock
+     * lock screen should no longer displayed.
+     */
     public void onKeyguardDismissed() {
         performAction(new Runnable() {
             @Override
@@ -331,6 +293,12 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         });
     }
 
+    /**
+     * Called from the host when the keyguard is displaying the security screen for the user to
+     * enter their pin, password, or pattern.
+     * @param showing True if the bouncer is being show or false when it is dismissed without the
+     *                device being unlocked.
+     */
     public void onBouncerShowing(final boolean showing) {
         performAction(new Runnable() {
             @Override
@@ -343,6 +311,9 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         });
     }
 
+    /**
+     * Called from the host when the screen is turned on.
+     */
     public void onScreenTurnedOn() {
         performAction(new Runnable() {
             @Override
@@ -355,6 +326,9 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         });
     }
 
+    /**
+     * Called from the host when the screen is turned off.
+     */
     public void onScreenTurnedOff() {
         performAction(new Runnable() {
             @Override
@@ -367,14 +341,38 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         });
     }
 
+    /**
+     * External views provided by a
+     * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService} can be either
+     * interactive or non-interactive.
+     *
+     * <p>A non-interactive component does not receive any input events and functions similar to a
+     * live wallpaper.</p>
+     *
+     * <p>An interactive component can receive input events and allows the user to interact with it
+     * when the notification panel is not being displayed on top of the external view.</p>
+     *
+     * @return True if the current external view is interactive.
+     */
     public boolean isInteractive() {
         return mIsInteractive;
     }
 
+    /**
+     * Registers a {@link cyanogenmod.externalviews.KeyguardExternalView.KeyguardExternalViewCallbacks}
+     * for receiving events from the
+     * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     * @param callback The callback to register
+     */
     public void registerKeyguardExternalViewCallback(KeyguardExternalViewCallbacks callback) {
         mCallback = callback;
     }
 
+    /**
+     * Unregister a previously registered
+     * {@link cyanogenmod.externalviews.KeyguardExternalView.KeyguardExternalViewCallbacks}
+     * @param callback The callback to unregister
+     */
     public void unregisterKeyguardExternalViewCallback(KeyguardExternalViewCallbacks callback) {
         if (mCallback != callback) {
             throw new IllegalArgumentException("Callback not registered");
@@ -382,10 +380,15 @@ public class KeyguardExternalView extends View implements Application.ActivityLi
         mCallback = null;
     }
 
+    /**
+     * Callback interface for a {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     * to send events to the host's registered
+     * {@link cyanogenmod.externalviews.KeyguardExternalView.KeyguardExternalViewCallbacks}
+     */
     public interface KeyguardExternalViewCallbacks {
-        public void dismiss();
-        public void dismissAndStartActivity(Intent intent);
-        public void collapseNotificationPanel();
-        public void providerDied();
+        boolean requestDismiss();
+        boolean requestDismissAndStartActivity(Intent intent);
+        void collapseNotificationPanel();
+        void providerDied();
     }
 }

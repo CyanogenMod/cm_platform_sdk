@@ -123,6 +123,33 @@ LOCAL_INTERMEDIATE_SOURCES := \
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
+# the sdk as a jar for publish, not built as part of full target
+# DO NOT LINK AGAINST THIS IN BUILD
+# ============================================================
+include $(CLEAR_VARS)
+
+LOCAL_MODULE:= org.cyanogenmod.platform.sdk.jar
+LOCAL_MODULE_TAGS := optional
+LOCAL_REQUIRED_MODULES := services
+LOCAL_JACK_ENABLED := disabled
+
+LOCAL_SRC_FILES := \
+    $(call all-java-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+
+# Included aidl files from cyanogenmod.app namespace
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+
+cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
+    $(cm_platform_res)/cyanogenmod/platform/R.java \
+    $(cm_platform_res)/cyanogenmod/platform/Manifest.java
+
+LOCAL_INTERMEDIATE_SOURCES := \
+    $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
+
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
 # full target for use by platform apps
 #
 include $(CLEAR_VARS)
@@ -193,7 +220,7 @@ LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
 LOCAL_DROIDDOC_OPTIONS:= \
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power \
+        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.externalviews \
         -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) \
@@ -224,7 +251,7 @@ LOCAL_MODULE := cm-system-api-stubs
 
 LOCAL_DROIDDOC_OPTIONS:=\
         -stubs $(TARGET_OUT_COMMON_INTERMEDIATES)/JAVA_LIBRARIES/cmsdk_system_stubs_current_intermediates/src \
-        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power \
+        -stubpackages cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.externalviews \
         -showAnnotation android.annotation.SystemApi \
         -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) \
