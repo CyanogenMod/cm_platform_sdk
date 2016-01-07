@@ -46,6 +46,7 @@ package cyanogenmod.alarmclock {
     field public static final int MISSED_STATE = 6; // 0x6
     field public static final java.lang.String MONTH = "month";
     field public static final int POWER_OFF_ALARM_STATE = -1; // 0xffffffff
+    field public static final int PREDISMISSED_STATE = 8; // 0x8
     field public static final int SILENT_STATE = 0; // 0x0
     field public static final int SNOOZE_STATE = 4; // 0x4
     field public static final java.lang.String YEAR = "year";
@@ -200,6 +201,7 @@ package cyanogenmod.app {
     method public void setAirplaneModeEnabled(boolean);
     method public void setMobileDataEnabled(boolean);
     method public boolean setZenMode(int);
+    method public boolean setZenModeWithDuration(int, long);
     method public void shutdownDevice();
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS_PERMISSION = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
@@ -360,6 +362,33 @@ package cyanogenmod.content {
     field public static final java.lang.String ACTION_PROTECTED_CHANGED = "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
     field public static final java.lang.String EXTRA_PROTECTED_COMPONENTS = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
     field public static final java.lang.String EXTRA_PROTECTED_STATE = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
+  }
+
+}
+
+package cyanogenmod.externalviews {
+
+  public abstract class KeyguardExternalViewProviderService extends android.app.Service {
+    ctor public KeyguardExternalViewProviderService();
+    method protected abstract cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider createExternalView(android.os.Bundle);
+    method public final android.os.IBinder onBind(android.content.Intent);
+  }
+
+  protected abstract class KeyguardExternalViewProviderService.Provider {
+    ctor protected KeyguardExternalViewProviderService.Provider(android.os.Bundle);
+    method protected final void collapseNotificationPanel();
+    method protected android.os.Bundle getOptions();
+    method protected void onAttach();
+    method protected abstract void onBouncerShowing(boolean);
+    method protected abstract android.view.View onCreateView();
+    method protected void onDetach();
+    method protected abstract void onKeyguardDismissed();
+    method protected abstract void onKeyguardShowing(boolean);
+    method protected abstract void onScreenTurnedOff();
+    method protected abstract void onScreenTurnedOn();
+    method protected final boolean requestDismiss();
+    method protected final boolean requestDismissAndStartActivity(android.content.Intent);
+    method protected final void setInteractivity(boolean);
   }
 
 }
