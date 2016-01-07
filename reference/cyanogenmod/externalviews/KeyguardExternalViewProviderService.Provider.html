@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>CMTelephonyManager | Android Developers</title>
+<title>KeyguardExternalViewProviderService.Provider | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="4" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -185,11 +185,11 @@ type="text/css">
                 
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
-    <li class="selected api apilevel-1">
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
-    <li class="api apilevel-4">
+    <li class="selected api apilevel-4">
   <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
@@ -221,29 +221,8 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedGridItem.html">CustomTile.ExpandedGridItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedItem.html">CustomTile.ExpandedItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedListItem.html">CustomTile.ExpandedListItem</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ExpandedStyle.html">CustomTile.ExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.GridExpandedStyle.html">CustomTile.GridExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTile.ListExpandedStyle.html">CustomTile.ListExpandedStyle</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/CustomTile.RemoteExpandedStyle.html">CustomTile.RemoteExpandedStyle</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/PartnerInterface.html">PartnerInterface</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.html">Profile</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.DozeMode.html">Profile.DozeMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ExpandedDesktopMode.html">Profile.ExpandedDesktopMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.LockMode.html">Profile.LockMode</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.ProfileTrigger.html">Profile.ProfileTrigger</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerState.html">Profile.TriggerState</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.TriggerType.html">Profile.TriggerType</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/Profile.Type.html">Profile.Type</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/app/ProfileManager.html">ProfileManager</a></li>
-          <li class="api apilevel-1"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-4"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html">KeyguardExternalViewProviderService</a></li>
+          <li class="selected api apilevel-4"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html">KeyguardExternalViewProviderService.Provider</a></li>
       </ul>
     </li>
               
@@ -317,18 +296,18 @@ Summary:
 
 
 
-  <a href="#constants">Constants</a>
+
+
+
+
+
+  <a href="#proctors">Protected Ctors</a>
   
 
 
 
-
-
-
-
-  &#124; <a href="#pubmethods">Methods</a>
+  &#124; <a href="#promethods">Protected Methods</a>
   
-
 
 
   &#124; <a href="#inhmethods">Inherited Methods</a>
@@ -338,7 +317,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
   
   
 
@@ -349,12 +328,12 @@ Summary:
 <!-- ======== START OF CLASS DATA ======== -->
 
 <div id="jd-header">
-    public
+    protected
      
      
-    
+    abstract
     class
-<h1 itemprop="name">CMTelephonyManager</h1>
+<h1 itemprop="name">KeyguardExternalViewProviderService.Provider</h1>
 
 
 
@@ -376,7 +355,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-4">
 <table class="jd-inheritance-table">
 
 
@@ -390,7 +369,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CMTelephonyManager</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider</td>
     </tr>
     
 
@@ -406,11 +385,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">The CMTelephonyManager allows you to view and manage the phone state and
- the data connection, with multiple SIMs support.
-
- <p>
- To get the instance of this class, utilize CMTelephonyManager#getInstance(Context context)
+<p itemprop="articleBody">This class provides an interface for the host and service to communicate to each other.
 </p>
 
 
@@ -451,35 +426,41 @@ Summary:
 
 
 
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
 
 
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#ASK_FOR_SUBSCRIPTION_ID">ASK_FOR_SUBSCRIPTION_ID</a></td>
-        <td class="jd-descrcol" width="100%">
-          Subscription ID used to set the default Phone and SMS to "ask every time".
-          
-    
 
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="proctors" class="jd-sumtable"><tr><th colspan="12">Protected Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
         </td>
-    </tr>
-    
-    
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#KeyguardExternalViewProviderService.Provider(android.os.Bundle)">KeyguardExternalViewProviderService.Provider</a></span>(Bundle options)</nobr>
+        
+  </td></tr>
+
+
 
 </table>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -487,25 +468,25 @@ Summary:
 
 
 <!-- ========== METHOD SUMMARY =========== -->
-<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
 
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
+            final
             
-            static
             
-            <a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#getInstance(android.content.Context)">getInstance</a></span>(Context context)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#collapseNotificationPanel()">collapseNotificationPanel</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code>
+          Call this method when you would like to take focus and hide the notification panel.
           
     
 
@@ -515,21 +496,36 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            List&lt;SubscriptionInfo&gt;</nobr>
+            Bundle</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#getSubInformation()">getSubInformation</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#getOptions()">getOptions</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onAttach()">onAttach</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Gets the list of <code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code> that are registered on the
- phone.
+          Called when the host view is attached to a window.
           
     
 
@@ -539,20 +535,182 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing</a></span>(boolean showing)</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the keyguard is displaying the security screen for the user to
+ enter their pin, password, or pattern.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            View</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onCreateView()">onCreateView</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Callback used for getting the view to be displayed within the host's content.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
             
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onDetach()">onDetach</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called when the host view is detached from a window.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onKeyguardDismissed()">onKeyguardDismissed</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the user has unlocked the device.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onKeyguardShowing(boolean)">onKeyguardShowing</a></span>(boolean screenOn)</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the keyguard is being shown to the user.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onScreenTurnedOff()">onScreenTurnedOff</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the screen is turned off.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onScreenTurnedOn()">onScreenTurnedOn</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the screen is turned on.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
             
             
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isDataConnectionEnabled()">isDataConnectionEnabled</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#requestDismiss()">requestDismiss</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Checks if the network data connection is enabled.
+          Request that the keyguard be dismissed.
           
     
 
@@ -562,21 +720,21 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
-            
+            final
             
             
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isDataConnectionSelectedOnSub(int)">isDataConnectionSelectedOnSub</a></span>(int subId)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#requestDismissAndStartActivity(android.content.Intent)">requestDismissAndStartActivity</a></span>(Intent intent)</nobr>
         
         <div class="jd-descrdiv">
-          Checks if the received subscription received has the data
- connection enabled.
+          Request that the keyguard be dismissed and the activity provided by the given intent be
+ started once the keyguard is dismissed.
           
     
 
@@ -586,112 +744,21 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
-            
-            
-            
-            boolean</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#isSubActive(int)">isSubActive</a></span>(int subId)</nobr>
-        
-        <div class="jd-descrdiv">
-          Returns the state of the SIM by subscription ID.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
+            final
             
             
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDataConnectionState(boolean)">setDataConnectionState</a></span>(boolean state)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#setInteractivity(boolean)">setInteractivity</a></span>(boolean isInteractive)</nobr>
         
         <div class="jd-descrdiv">
-          Sets the network data conection active or inactive.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDefaultPhoneSub(int)">setDefaultPhoneSub</a></span>(int subId)</nobr>
-        
-        <div class="jd-descrdiv">
-          Sets the default phone used to make phone calls as the one received on subId.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setDefaultSmsSub(int)">setDefaultSmsSub</a></span>(int subId)</nobr>
-        
-        <div class="jd-descrdiv">
-          Sets the default phone used to send SMS as the one received on subId.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html#setSubState(int, boolean)">setSubState</a></span>(int subId, boolean state)</nobr>
-        
-        <div class="jd-descrdiv">
-          Sets the state of one of the SIMs by subscription ID.
+          This method should be called when the provided view needs to change from interactive to
+ non-interactive and vice versa.
           
     
 
@@ -702,8 +769,6 @@ Summary:
 
 
 </table>
-
-
 
 
 
@@ -939,56 +1004,6 @@ From class
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="ASK_FOR_SUBSCRIPTION_ID"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        ASK_FOR_SUBSCRIPTION_ID
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Subscription ID used to set the default Phone and SMS to "ask every time".
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                0
-                (0x00000000)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
@@ -999,431 +1014,582 @@ From class
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <!-- Protected ctors -->
 
+<h2>Protected Constructors</h2>
+
+
+
+<A NAME="KeyguardExternalViewProviderService.Provider(android.os.Bundle)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">KeyguardExternalViewProviderService.Provider</span>
+      <span class="normal">(Bundle options)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
 
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
 
-<h2>Public Methods</h2>
-
-
-
-<A NAME="getInstance(android.content.Context)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-         
-         
-         
-        <a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a>
-      </span>
-      <span class="sympad">getInstance</span>
-      <span class="normal">(Context context)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get or create an instance of the <code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/app/CMTelephonyManager.html">CMTelephonyManager</a></code>
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="getSubInformation()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        List&lt;SubscriptionInfo&gt;
-      </span>
-      <span class="sympad">getSubInformation</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Gets the list of <code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code> that are registered on the
- phone.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>The list of SIM subscriptions. The returning list can be null or empty.</li></ul>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/android/telephony/SubscriptionInfo.html">SubscriptionInfo</a></code></li>
-      </ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="isDataConnectionEnabled()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isDataConnectionEnabled</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Checks if the network data connection is enabled.
-
- This method will return <code>true</code> (or <code>false</code> if inactive)
- even when an internet connection is active through Wifi/BT.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code>true</code> if the network data connection is enabled, <code>false</code> otherwise.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="isDataConnectionSelectedOnSub(int)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isDataConnectionSelectedOnSub</span>
-      <span class="normal">(int subId)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Checks if the received subscription received has the data
- connection enabled.
-
- This method will return <code>true</code> (or <code>false</code> if inactive on the SIM)
- even when an internet connection is active through Wifi/BT.
-
- If the subscription ID is not valid the method will return false.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>subId</td>
-          <td>The subscription ID to query.</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code>true</code> if the data connection is enabled on the SIM, <code>false</code> otherwise.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="isSubActive(int)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isSubActive</span>
-      <span class="normal">(int subId)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the state of the SIM by subscription ID.
-
- If the subscription ID is not valid the method will return <code>false</code>.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>subId</td>
-          <td>The subscription ID to query.</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li><code>true</code> if the SIM is activated (even without signal or requesting the
- PIN/PUK), <code>false</code> otherwise.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setDataConnectionState(boolean)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setDataConnectionState</span>
-      <span class="normal">(boolean state)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the network data conection active or inactive.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>state</td>
-          <td>If <code>true</code> enables the network data connection, if <code>false</code> disables it.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setDefaultPhoneSub(int)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setDefaultPhoneSub</span>
-      <span class="normal">(int subId)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the default phone used to make phone calls as the one received on subId.
-
- If ASK_FOR_SUBSCRIPTION_ID is used as a parameter, then the option to choose
- what SIM to use is selected.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>subId</td>
-          <td>The subscription to set as default for phone calls.
-              To select SIM when calling use ASK_FOR_SUBSCRIPTION_ID.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setDefaultSmsSub(int)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setDefaultSmsSub</span>
-      <span class="normal">(int subId)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the default phone used to send SMS as the one received on subId.
-
- If ASK_FOR_SUBSCRIPTION_ID is used as a parameter, then the option to choose
- what SIM to use is selected.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>subId</td>
-          <td>The subscription to set as default for sending SMS.
-              To select SIM when sending SMS use ASK_FOR_SUBSCRIPTION_ID.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setSubState(int, boolean)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setSubState</span>
-      <span class="normal">(int subId, boolean state)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the state of one of the SIMs by subscription ID.
-
- If the subscription ID is not valid or the SIM already
- is in the desired state the method will do nothing.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>subId</td>
-          <td>The subscription ID to change the state.</td>
-        </tr>
-        <tr>
-          <th>state</td>
-          <td><code>true</code> to activate the SIM, <code>false</code> to disable.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-
 
 
 <!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="collapseNotificationPanel()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">collapseNotificationPanel</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Call this method when you would like to take focus and hide the notification panel.
+
+ <p>You should call this method if your component requires focus and the users's
+ attention.  The user will still be able to bring the notifications back into view by
+ sliding down from the status bar.
+ Calling this method has no effect for non-interactive components.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getOptions()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        Bundle
+      </span>
+      <span class="sympad">getOptions</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onAttach()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onAttach</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when the host view is attached to a window.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onBouncerShowing(boolean)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onBouncerShowing</span>
+      <span class="normal">(boolean showing)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the keyguard is displaying the security screen for the user to
+ enter their pin, password, or pattern.
+
+ <p>Interactive components will no longer have focus when the bouncer is displayed and
+ should enter a paused or idle state while the bouncer is being shown.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>showing</td>
+          <td>True if the bouncer is being show or false when it is dismissed without the
+                device being unlocked.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onCreateView()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        View
+      </span>
+      <span class="sympad">onCreateView</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback used for getting the view to be displayed within the host's content.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The view to be displayed within the host's content.  If null is returned no
+         content will be displayed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onDetach()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onDetach</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when the host view is detached from a window.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onKeyguardDismissed()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onKeyguardDismissed</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the user has unlocked the device.  Once this is called the lock
+ lock screen is no longer being displayed.
+
+ <p>The view component should enter a paused state when this is called, and save any state
+ information that may be needed once the lock screen is displayed again.  For example, a
+ non-interactive component that provides animated visuals should pause playback of those
+ animations and save the state, if necessary, of that animation.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onKeyguardShowing(boolean)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onKeyguardShowing</span>
+      <span class="normal">(boolean screenOn)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the keyguard is being shown to the user.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>screenOn</td>
+          <td>True if the screen is currently on.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onScreenTurnedOff()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onScreenTurnedOff</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the screen is turned off.
+
+ <p>The provided view should provided view should pause its activity, if not currently
+ in a paused state, and do any work necessary to be ready when the screen is turned
+ back on.  This will allow for a seamless user experience once the screen is turned on.
+ </p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onScreenTurnedOn()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onScreenTurnedOn</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the screen is turned on.
+
+ <p>The provided view should return to a running state when this is called.  For example,
+ a non-interactive component that provides animated visuals should resume playback of
+ those animations.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="requestDismiss()"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        boolean
+      </span>
+      <span class="sympad">requestDismiss</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Request that the keyguard be dismissed.   Calling this method will dismiss the lock
+ screen, if it is a not secure, or present the user with the security screen for the user
+ to enter their security code to finish dismissing the lock screen.
+
+ <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+ secure code, the lock screen will not be dismissed and
+ <code><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing(boolean)</a></code> will be
+ called with <code>onShowing</code> being set to false, indicating that the lock screen was not
+ dismissed as requested.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the call succeeded.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="requestDismissAndStartActivity(android.content.Intent)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        boolean
+      </span>
+      <span class="sympad">requestDismissAndStartActivity</span>
+      <span class="normal">(Intent intent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Request that the keyguard be dismissed and the activity provided by the given intent be
+ started once the keyguard is dismissed.   If a secure lock screen is being used the user
+ will need to enter their correct security code to finish dismissing the lock screen.
+
+ <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+ secure code, the lock screen will not be dismissed and
+ <code><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing(boolean)</a></code> will be
+ called with onShowing being set to false, indicating that the lock screen was not
+ dismissed as requested.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>intent</td>
+          <td>An intent specifying an activity to launch.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the call succeeded.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setInteractivity(boolean)"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">setInteractivity</span>
+      <span class="normal">(boolean isInteractive)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method should be called when the provided view needs to change from interactive to
+ non-interactive and vice versa.
+
+ <p>Interactive components can receive input focus and receive user interaction while
+ non-interactive components never receive focus and are purely visual.</p></p></div>
+
+    </div>
+</div>
+
+
 
 
 

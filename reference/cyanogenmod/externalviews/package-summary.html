@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>cyanogenmod.alarmclock | Android Developers</title>
+<title>cyanogenmod.externalviews | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -145,7 +145,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="4" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -184,13 +184,13 @@ type="text/css">
 
               <ul>
                 
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
     <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
-    <li class="api apilevel-4">
+    <li class="selected api apilevel-4">
   <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
@@ -219,19 +219,11 @@ type="text/css">
             <ul>
               
               
-    <li><h2>Interfaces</h2>
-      <ul>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></li>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></li>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></li>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></li>
-      </ul>
-    </li>
               
     <li><h2>Classes</h2>
       <ul>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></li>
-        <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></li>
+        <li class="api apilevel-4"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html">KeyguardExternalViewProviderService</a></li>
+        <li class="api apilevel-4"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html">KeyguardExternalViewProviderService.Provider</a></li>
       </ul>
     </li>
               
@@ -288,7 +280,7 @@ type="text/css">
 <div id="api-info-block">
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
   
   
 
@@ -297,12 +289,12 @@ type="text/css">
 
 <div id="jd-header">
   package
-  <h1>cyanogenmod.alarmclock</h1>
+  <h1>cyanogenmod.externalviews</h1>
 </div><!-- end header -->
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-4">
 
 
 
@@ -312,60 +304,6 @@ type="text/css">
   
 
 
-  
-    <h2>Interfaces</h2>
-    <div class="jd-sumtable">
-    
-  
-  <table class="jd-sumtable-expando">
-    
-      <tr class="alt-color api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmsColumns.html">ClockContract.AlarmsColumns</a></td>
-        <td class="jd-descrcol" width="100%">
-          Constants for the Alarms table, which contains the user created alarms.&nbsp;
-          
-    
-
-        </td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.AlarmSettingColumns.html">ClockContract.AlarmSettingColumns</a></td>
-        <td class="jd-descrcol" width="100%">
-          Constants for tables with AlarmSettings.&nbsp;
-          
-    
-
-        </td>
-      </tr>
-      
-    
-      <tr class="alt-color api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.CitiesColumns.html">ClockContract.CitiesColumns</a></td>
-        <td class="jd-descrcol" width="100%">
-          Constants for the Cities table, which contains all selectable cities.&nbsp;
-          
-    
-
-        </td>
-      </tr>
-      
-    
-      <tr class=" api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.InstancesColumns.html">ClockContract.InstancesColumns</a></td>
-        <td class="jd-descrcol" width="100%">
-          Constants for the Instance table, which contains the state of each alarm.&nbsp;
-          
-    
-
-        </td>
-      </tr>
-      
-    
-  </table>
-
-    </div>
   
 
 
@@ -376,11 +314,10 @@ type="text/css">
   
   <table class="jd-sumtable-expando">
     
-      <tr class="alt-color api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/ClockContract.html">ClockContract</a></td>
+      <tr class="alt-color api apilevel-4" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html">KeyguardExternalViewProviderService</a></td>
         <td class="jd-descrcol" width="100%">
-          <p>
- The contract between the clock provider and desk clock.&nbsp;
+          A class for providing a view that can be displayed within the lock screen.&nbsp;
           
     
 
@@ -388,12 +325,10 @@ type="text/css">
       </tr>
       
     
-      <tr class=" api apilevel-2" >
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/alarmclock/CyanogenModAlarmClock.html">CyanogenModAlarmClock</a></td>
+      <tr class=" api apilevel-4" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html">KeyguardExternalViewProviderService.Provider</a></td>
         <td class="jd-descrcol" width="100%">
-          The CyanogenModAlarmClock class contains utilities for interacting with
- a variety of Alarm features that the CyanogenMod AlarmClock application
- (based on AOSP DeskClock) supports.&nbsp;
+          This class provides an interface for the host and service to communicate to each other.&nbsp;
           
     
 

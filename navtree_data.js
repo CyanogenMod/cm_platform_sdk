@@ -6,6 +6,8 @@ var NAVTREE_DATA =
 , null ] ]
 , "1" ], [ "cyanogenmod.content", "reference/cyanogenmod/content/package-summary.html", [ [ "Classes", null, [ [ "Intent", "reference/cyanogenmod/content/Intent.html", null, "4" ] ]
 , null ] ]
+, "4" ], [ "cyanogenmod.externalviews", "reference/cyanogenmod/externalviews/package-summary.html", [ [ "Classes", null, [ [ "KeyguardExternalViewProviderService", "reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html", null, "4" ], [ "KeyguardExternalViewProviderService.Provider", "reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html", null, "4" ] ]
+, null ] ]
 , "4" ], [ "cyanogenmod.hardware", "reference/cyanogenmod/hardware/package-summary.html", [ [ "Interfaces", null, [ [ "IThermalListenerCallback", "reference/cyanogenmod/hardware/IThermalListenerCallback.html", null, "2" ] ]
 , null ], [ "Classes", null, [ [ "CMHardwareManager", "reference/cyanogenmod/hardware/CMHardwareManager.html", null, "2" ], [ "DisplayMode", "reference/cyanogenmod/hardware/DisplayMode.html", null, "2" ], [ "IThermalListenerCallback.Stub", "reference/cyanogenmod/hardware/IThermalListenerCallback.Stub.html", null, "2" ], [ "ThermalListenerCallback", "reference/cyanogenmod/hardware/ThermalListenerCallback.html", null, "2" ], [ "ThermalListenerCallback.State", "reference/cyanogenmod/hardware/ThermalListenerCallback.State.html", null, "2" ] ]
 , null ] ]
