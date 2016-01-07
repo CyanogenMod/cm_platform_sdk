@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>RingModeSettings | Android Developers</title>
+<title>KeyguardExternalViewProviderService.Provider | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -189,7 +189,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
-    <li class="api apilevel-">
+    <li class="selected api apilevel-">
   <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
@@ -201,7 +201,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
@@ -221,14 +221,8 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html">AirplaneModeSettings.BooleanState</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/BrightnessSettings.html">BrightnessSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.html">ConnectionSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.BooleanState.html">ConnectionSettings.BooleanState</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></li>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></li>
+          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html">KeyguardExternalViewProviderService</a></li>
+          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html">KeyguardExternalViewProviderService.Provider</a></li>
       </ul>
     </li>
               
@@ -293,15 +287,6 @@ type="text/css">
   
   
 
-  
-   
-  
-  
-   
-  
-  
-  
-
 
 <div class="sum-details-links">
 
@@ -311,24 +296,18 @@ Summary:
 
 
 
-  <a href="#constants">Constants</a>
-  
-
-
-  &#124; <a href="#inhconstants">Inherited Constants</a>
-  
 
 
 
 
-  &#124; <a href="#pubctors">Ctors</a>
+
+  <a href="#proctors">Protected Ctors</a>
   
 
 
 
-  &#124; <a href="#pubmethods">Methods</a>
+  &#124; <a href="#promethods">Protected Methods</a>
   
-
 
 
   &#124; <a href="#inhmethods">Inherited Methods</a>
@@ -338,7 +317,6 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
   
   
 
@@ -349,12 +327,12 @@ Summary:
 <!-- ======== START OF CLASS DATA ======== -->
 
 <div id="jd-header">
-    public
+    protected
      
-    final 
-    
+     
+    abstract
     class
-<h1 itemprop="name">RingModeSettings</h1>
+<h1 itemprop="name">KeyguardExternalViewProviderService.Provider</h1>
 
 
 
@@ -366,11 +344,6 @@ Summary:
 
   
   
-      implements 
-      
-        Parcelable 
-      
-  
   
 
 
@@ -381,7 +354,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-">
 <table class="jd-inheritance-table">
 
 
@@ -395,7 +368,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.profiles.RingModeSettings</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider</td>
     </tr>
     
 
@@ -411,14 +384,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">The <code><a href="../../../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></code> class allows for creating various <code><a href="../../../reference/android/media/AudioManager.html">AudioManager</a></code>
- overrides on the device depending on their capabilities.
-
- <p>Example for setting the default ring mode to muted:
- <pre class="prettyprint">
- RingModeSettings ringSettings = new RingModeSettings(RING_MODE_MUTE, true));
- profile.setRingMode(ringSettings);
- </pre>
+<p itemprop="articleBody">This class provides an interface for the host and service to communicate to each other.
 </p>
 
 
@@ -459,110 +425,9 @@ Summary:
 
 
 
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RING_MODE_MUTE">RING_MODE_MUTE</a></td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RING_MODE_NORMAL">RING_MODE_NORMAL</a></td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RING_MODE_VIBRATE">RING_MODE_VIBRATE</a></td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-
-</table>
 
 
 
-
-
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="inhconstants" class="jd-sumtable"><tr><th>
-  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
-  <div style="clear:left;">Inherited Constants</div></th></tr>
-
-
-
-
-<tr class="api apilevel-" >
-<td colspan="12">
-
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-android.os.Parcelable" class="jd-expando-trigger closed"
-          ><img id="inherited-constants-android.os.Parcelable-trigger"
-          src="../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>From interface
-android.os.Parcelable
-<div id="inherited-constants-android.os.Parcelable">
-  <div id="inherited-constants-android.os.Parcelable-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-constants-android.os.Parcelable-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-    
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol">CONTENTS_FILE_DESCRIPTOR</td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol">PARCELABLE_WRITE_RETURN_VALUE</td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-</table>
-  </div>
-</div>
-</td></tr>
-
-
-</table>
 
 
 
@@ -573,12 +438,12 @@ android.os.Parcelable
 
 
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+<table id="proctors" class="jd-sumtable"><tr><th colspan="12">Protected Constructors</th></tr>
 
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -588,62 +453,8 @@ android.os.Parcelable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RingModeSettings(android.os.Parcel)">RingModeSettings</a></span>(Parcel parcel)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#KeyguardExternalViewProviderService.Provider(android.os.Bundle)">KeyguardExternalViewProviderService.Provider</a></span>(Bundle options)</nobr>
         
-        <div class="jd-descrdiv">
-          Unwrap <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> from a parcel.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RingModeSettings()">RingModeSettings</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          Construct a <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> with a default state of #RING_MODE_NORMAL.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RingModeSettings(java.lang.String, boolean)">RingModeSettings</a></span>(String value, boolean override)</nobr>
-        
-        <div class="jd-descrdiv">
-          Construct a <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> with a default value and whether or not it should
- override user settings.
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
@@ -656,41 +467,25 @@ android.os.Parcelable
 
 
 <!-- ========== METHOD SUMMARY =========== -->
-<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
 
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
+            final
             
             
-            
-            int</nobr>
+            void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#describeContents()">describeContents</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#getValue()">getValue</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#collapseNotificationPanel()">collapseNotificationPanel</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Get the default value for the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code>
+          Call this method when you would like to take focus and hide the notification panel.
           
     
 
@@ -700,20 +495,221 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
             
+            
+            
+            Bundle</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#getOptions()">getOptions</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onAttach()">onAttach</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called when the host view is attached to a window.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing</a></span>(boolean showing)</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the keyguard is displaying the security screen for the user to
+ enter their pin, password, or pattern.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            View</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onCreateView()">onCreateView</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Callback used for getting the view to be displayed within the host's content.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onDetach()">onDetach</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called when the host view is detached from a window.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onKeyguardDismissed()">onKeyguardDismissed</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the user has unlocked the device.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onKeyguardShowing(boolean)">onKeyguardShowing</a></span>(boolean screenOn)</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the keyguard is being shown to the user.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onScreenTurnedOff()">onScreenTurnedOff</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the screen is turned off.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onScreenTurnedOn()">onScreenTurnedOn</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the screen is turned on.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
             
             
             boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#isOverride()">isOverride</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#requestDismiss()">requestDismiss</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Check whether or not the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> overrides user settings.
+          Request that the keyguard be dismissed.
           
     
 
@@ -723,20 +719,21 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
+            final
             
             
-            
-            void</nobr>
+            boolean</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#setOverride(boolean)">setOverride</a></span>(boolean override)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#requestDismissAndStartActivity(android.content.Intent)">requestDismissAndStartActivity</a></span>(Intent intent)</nobr>
         
         <div class="jd-descrdiv">
-          Set whether or not the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> should override default user values
+          Request that the keyguard be dismissed and the activity provided by the given intent be
+ started once the keyguard is dismissed.
           
     
 
@@ -746,20 +743,21 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
-            
+            final
             
             
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#setValue(java.lang.String)">setValue</a></span>(String value)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#setInteractivity(boolean)">setInteractivity</a></span>(boolean isInteractive)</nobr>
         
         <div class="jd-descrdiv">
-          Set the default value for the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code>
+          This method should be called when the provided view needs to change from interactive to
+ non-interactive and vice versa.
           
     
 
@@ -770,8 +768,6 @@ android.os.Parcelable
 
 
 </table>
-
-
 
 
 
@@ -984,64 +980,6 @@ From class
 </td></tr>
 
 
-
-<tr class="api apilevel-" >
-<td colspan="12">
-  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.os.Parcelable" class="jd-expando-trigger closed"
-          ><img id="inherited-methods-android.os.Parcelable-trigger"
-          src="../../../assets/images/triangle-closed.png"
-          class="jd-expando-trigger-img" /></a>
-From interface
-
-  android.os.Parcelable
-
-<div id="inherited-methods-android.os.Parcelable">
-  <div id="inherited-methods-android.os.Parcelable-list"
-        class="jd-inheritedlinks">
-  </div>
-  <div id="inherited-methods-android.os.Parcelable-summary" style="display: none;">
-    <table class="jd-sumtable-expando">
-    
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">describeContents</span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            abstract
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad">writeToParcel</span>(Parcel arg0, int arg1)</nobr>
-        
-  </td></tr>
-
-
-</table>
-  </div>
-</div>
-</td></tr>
-
-
 </table>
 
 
@@ -1065,295 +1003,37 @@ From interface
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="RING_MODE_MUTE"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        RING_MODE_MUTE
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "mute"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="RING_MODE_NORMAL"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        RING_MODE_NORMAL
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "normal"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="RING_MODE_VIBRATE"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        String
-      </span>
-        RING_MODE_VIBRATE
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                "vibrate"
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
 <!-- Public ctors -->
 
 
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<h2>Public Constructors</h2>
-
-
-
-<A NAME="RingModeSettings(android.os.Parcel)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">RingModeSettings</span>
-      <span class="normal">(Parcel parcel)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Unwrap <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> from a parcel.</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="RingModeSettings()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">RingModeSettings</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> with a default state of #RING_MODE_NORMAL.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="RingModeSettings(java.lang.String, boolean)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">RingModeSettings</span>
-      <span class="normal">(String value, boolean override)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> with a default value and whether or not it should
- override user settings.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td>ex: <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RING_MODE_VIBRATE">RING_MODE_VIBRATE</a></code></td>
-        </tr>
-        <tr>
-          <th>override</td>
-          <td>whether or not the setting should override user settings
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-
-
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <!-- Protected ctors -->
 
-
-
-<!-- ========= METHOD DETAIL ======== -->
-<!-- Public methdos -->
-
-<h2>Public Methods</h2>
+<h2>Protected Constructors</h2>
 
 
 
-<A NAME="describeContents()"></A>
+<A NAME="KeyguardExternalViewProviderService.Provider(android.os.Bundle)"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
       <span class="normal">
-        public 
+        protected 
          
          
          
          
-        int
+        
       </span>
-      <span class="sympad">describeContents</span>
-      <span class="normal">()</span>
+      <span class="sympad">KeyguardExternalViewProviderService.Provider</span>
+      <span class="normal">(Bundle options)</span>
     </h4>
       <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+        <div></div>
         
   
 
@@ -1369,172 +1049,532 @@ From interface
 </div>
 
 
-<A NAME="getValue()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getValue</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>integer value corresponding with its type
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="isOverride()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isOverride</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Check whether or not the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> overrides user settings.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>true if override
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setOverride(boolean)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setOverride</span>
-      <span class="normal">(boolean override)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Set whether or not the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code> should override default user values</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>override</td>
-          <td>boolean override
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setValue(java.lang.String)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setValue</span>
-      <span class="normal">(String value)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Set the default value for the <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td>ex: <code><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html#RING_MODE_VIBRATE">RING_MODE_VIBRATE</a></code>
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
 
 
 
 <!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="collapseNotificationPanel()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">collapseNotificationPanel</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Call this method when you would like to take focus and hide the notification panel.
+
+ <p>You should call this method if your component requires focus and the users's
+ attention.  The user will still be able to bring the notifications back into view by
+ sliding down from the status bar.
+ Calling this method has no effect for non-interactive components.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getOptions()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        Bundle
+      </span>
+      <span class="sympad">getOptions</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onAttach()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onAttach</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when the host view is attached to a window.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onBouncerShowing(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onBouncerShowing</span>
+      <span class="normal">(boolean showing)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the keyguard is displaying the security screen for the user to
+ enter their pin, password, or pattern.
+
+ <p>Interactive components will no longer have focus when the bouncer is displayed and
+ should enter a paused or idle state while the bouncer is being shown.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>showing</td>
+          <td>True if the bouncer is being show or false when it is dismissed without the
+                device being unlocked.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onCreateView()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        View
+      </span>
+      <span class="sympad">onCreateView</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback used for getting the view to be displayed within the host's content.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The view to be displayed within the host's content.  If null is returned no
+         content will be displayed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onDetach()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onDetach</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when the host view is detached from a window.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onKeyguardDismissed()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onKeyguardDismissed</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the user has unlocked the device.  Once this is called the lock
+ lock screen is no longer being displayed.
+
+ <p>The view component should enter a paused state when this is called, and save any state
+ information that may be needed once the lock screen is displayed again.  For example, a
+ non-interactive component that provides animated visuals should pause playback of those
+ animations and save the state, if necessary, of that animation.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onKeyguardShowing(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onKeyguardShowing</span>
+      <span class="normal">(boolean screenOn)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the keyguard is being shown to the user.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>screenOn</td>
+          <td>True if the screen is currently on.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="onScreenTurnedOff()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onScreenTurnedOff</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the screen is turned off.
+
+ <p>The provided view should provided view should pause its activity, if not currently
+ in a paused state, and do any work necessary to be ready when the screen is turned
+ back on.  This will allow for a seamless user experience once the screen is turned on.
+ </p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="onScreenTurnedOn()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        abstract 
+         
+        void
+      </span>
+      <span class="sympad">onScreenTurnedOn</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the screen is turned on.
+
+ <p>The provided view should return to a running state when this is called.  For example,
+ a non-interactive component that provides animated visuals should resume playback of
+ those animations.</p>
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="requestDismiss()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        boolean
+      </span>
+      <span class="sympad">requestDismiss</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Request that the keyguard be dismissed.   Calling this method will dismiss the lock
+ screen, if it is a not secure, or present the user with the security screen for the user
+ to enter their security code to finish dismissing the lock screen.
+
+ <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+ secure code, the lock screen will not be dismissed and
+ <code><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing(boolean)</a></code> will be
+ called with <code>onShowing</code> being set to false, indicating that the lock screen was not
+ dismissed as requested.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the call succeeded.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="requestDismissAndStartActivity(android.content.Intent)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        boolean
+      </span>
+      <span class="sympad">requestDismissAndStartActivity</span>
+      <span class="normal">(Intent intent)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Request that the keyguard be dismissed and the activity provided by the given intent be
+ started once the keyguard is dismissed.   If a secure lock screen is being used the user
+ will need to enter their correct security code to finish dismissing the lock screen.
+
+ <p>If the user has a secure lock screen and dismisses the bouncer without entering their
+ secure code, the lock screen will not be dismissed and
+ <code><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onBouncerShowing(boolean)">onBouncerShowing(boolean)</a></code> will be
+ called with onShowing being set to false, indicating that the lock screen was not
+ dismissed as requested.</p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>intent</td>
+          <td>An intent specifying an activity to launch.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the call succeeded.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setInteractivity(boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">setInteractivity</span>
+      <span class="normal">(boolean isInteractive)</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method should be called when the provided view needs to change from interactive to
+ non-interactive and vice versa.
+
+ <p>Interactive components can receive input focus and receive user interaction while
+ non-interactive components never receive focus and are purely visual.</p></p></div>
+
+    </div>
+</div>
+
+
 
 
 
