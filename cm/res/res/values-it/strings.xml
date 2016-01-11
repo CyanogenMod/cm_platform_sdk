@@ -65,7 +65,7 @@
   <string name="perf_profile_pwrsv">Risparmio energetico</string>
   <string name="perf_profile_bal">Bilanciato</string>
   <string name="perf_profile_perf">Prestazioni</string>
-  <string name="perf_profile_bias_power">Efficente</string>
+  <string name="perf_profile_bias_power">Efficiente</string>
   <string name="perf_profile_bias_perf">Rapido</string>
   <string name="live_display_auto">Automatico</string>
   <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>

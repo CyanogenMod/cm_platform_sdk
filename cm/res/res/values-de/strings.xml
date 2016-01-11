@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Ermöglicht der App, CM-Sicherheits-Systemeinstellungen zu ändern. Nicht für die Nutzung durch normale Anwendungen bestimmt.</string>
   <string name="permlab_managePersistentStorage">permanenten Speicher verwalten</string>
   <string name="permdesc_managePersistentStorage">Ermöglicht der App, Eigenschaften auszulesen oder zu speichern, die auch beim Zurücksetzen auf die Werkseinstellungen erhalten bleiben können.</string>
+  <string name="permlab_accessAppSuggestions">auf die App-Vorschläge zugreifen</string>
+  <string name="permdesc_accessAppSuggestions">Ermöglicht der App den Zugriff auf App-Vorschläge.</string>
   <string name="custom_tile_listener_binding_label">Listener für benutzerdefinierte Kacheln</string>
+  <string name="permlab_protectedApp">geschützten Apps hinzufügen oder entfernen</string>
+  <string name="permdesc_protectedApp">Ermöglicht der App, andere Apps als geschützt zu markieren und diese zu sperren.</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeit</string>
   <string name="profileNameHome">Zu Hause</string>
@@ -58,8 +62,14 @@
   <string name="profileGroupEmail">E-Mail</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Anderes</string>
+  <string name="perf_profile_pwrsv">Energie sparen</string>
+  <string name="perf_profile_bal">Ausgeglichen</string>
+  <string name="perf_profile_perf">Höchstleistung</string>
+  <string name="perf_profile_bias_power">Effizient</string>
+  <string name="perf_profile_bias_perf">Schnell</string>
   <string name="live_display_auto">Automatisch</string>
   <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
+  <string name="live_display_off_summary">Alle Anpassungen deaktivieren</string>
   <string name="live_display_day">Tag</string>
   <string name="live_display_day_summary">Nur Tag-Modus verwenden</string>
   <string name="live_display_night">Nacht</string>

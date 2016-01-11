@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Dovoli programu spreminjanje varnih sistemskih nastavitev CM. Običajni programi tega ne uporabljajo.</string>
   <string name="permlab_managePersistentStorage">upravljanje vztrajne pom. naprave</string>
   <string name="permdesc_managePersistentStorage">Dovoli programu branje ali pisanje lastnosti, ki se ohranijo po ponastavitvi na tovarniške vrednosti.</string>
+  <string name="permlab_accessAppSuggestions">dostop do predlogov programov</string>
+  <string name="permdesc_accessAppSuggestions">Dovoli programu dostop do predlogov programov.</string>
   <string name="custom_tile_listener_binding_label">Poslušalnik ploščic po meri</string>
+  <string name="permlab_protectedApp">dodajanje in odstranjevanje programov k/iz zaščitenih programov</string>
+  <string name="permdesc_protectedApp">Dovoli programu, da označi druge programe kot zaščitene in jih zaklene.</string>
   <string name="profileNameDefault">Privzeto</string>
   <string name="profileNameWork">Služba</string>
   <string name="profileNameHome">Doma</string>
@@ -58,5 +62,22 @@
   <string name="profileGroupEmail">E-pošta</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Ostalo</string>
+  <string name="perf_profile_pwrsv">Varčevanje energije</string>
+  <string name="perf_profile_bal">Uravnoteženo</string>
+  <string name="perf_profile_perf">Zmogljivost</string>
+  <string name="perf_profile_bias_power">Učinkovitost</string>
+  <string name="perf_profile_bias_perf">Hitro</string>
+  <string name="live_display_auto">Samodejno</string>
+  <string name="live_display_auto_summary">Samodejno nastavi barvno temperaturo zaslona po sončnem zahodu in vzhodu</string>
+  <string name="live_display_off">Izklopljeno</string>
+  <string name="live_display_off_summary">Onemogoči vse prilagoditve</string>
+  <string name="live_display_day">Dan</string>
+  <string name="live_display_day_summary">Uporabi samo dnevne nastavitve</string>
   <string name="live_display_night">Noč</string>
+  <string name="live_display_night_summary">Uporabi samo nočne nastavitve</string>
+  <string name="live_display_outdoor">Na prostem (močna svetloba)</string>
+  <string name="live_display_outdoor_summary">Uporabi samo nastavitve na prostem</string>
+  <string name="live_display_hint">LiveDisplay vam lahko pomaga pri zmanjšanju obremenitve oči in spanju ponoči. Kliknite tukaj, da ga preskusite!</string>
+  <string name="permlab_thirdPartyKeyguard">zaslon za zaklepanje tretjih oseb</string>
+  <string name="permdesc_thirdPartyKeyguard">Dovoli, da se program lahko uporabi kot nezanesljiv zaslon za zaklepanje.</string>
 </resources>
