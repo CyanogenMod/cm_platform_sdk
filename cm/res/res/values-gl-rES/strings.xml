@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Permítelle a unha aplicación modificar a configuración de seguridade do sistema CM. As aplicacións normais non deberían utilizar este permiso.</string>
   <string name="permlab_managePersistentStorage">Xestionar almacenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permítelle a unha aplicación ler ou escribir propiedades que poden persisitir tras unha restauración de fábrica.</string>
+  <string name="permlab_accessAppSuggestions">acceder ás suxestións de aplicacións</string>
+  <string name="permdesc_accessAppSuggestions">Permitirlle a unha aplicación acceder ás suxestións de aplicacións.</string>
   <string name="custom_tile_listener_binding_label">Botón de escoita personalizado</string>
+  <string name="permlab_protectedApp">engadir e eliminar apps das aplicacións protexidas</string>
+  <string name="permdesc_protectedApp">Permitirlle a unha aplicación marcar outras como protexidas e bloquealas.</string>
   <string name="profileNameDefault">Predeterminado</string>
   <string name="profileNameWork">Traballo</string>
   <string name="profileNameHome">Inicio</string>
@@ -58,5 +62,22 @@
   <string name="profileGroupEmail">Correo electrónico</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Outro</string>
+  <string name="perf_profile_pwrsv">Aforro de enerxía</string>
+  <string name="perf_profile_bal">Equilibrado</string>
+  <string name="perf_profile_perf">Rendemento</string>
+  <string name="perf_profile_bias_power">Eficiencia</string>
+  <string name="perf_profile_bias_perf">Veloz</string>
+  <string name="live_display_auto">Automático</string>
+  <string name="live_display_auto_summary">Axustar automaticamente as cores de pantalla ao mencer e ao solpor</string>
+  <string name="live_display_off">Apagado</string>
+  <string name="live_display_off_summary">Desactivar todos os axustes</string>
+  <string name="live_display_day">Día</string>
+  <string name="live_display_day_summary">Utilizar tan só os axustes de día</string>
   <string name="live_display_night">Noite</string>
+  <string name="live_display_night_summary">Utilizar tan só os axustes de noite</string>
+  <string name="live_display_outdoor">Exteriores (iluminado)</string>
+  <string name="live_display_outdoor_summary">Utilizar tan só os axustes de exteriores</string>
+  <string name="live_display_hint">O modo LiveDisplay pode axudar coa dor de ollos e a conciliar o sono. Preme aquí para probalo!</string>
+  <string name="permlab_thirdPartyKeyguard">bloqueo de pantalla de terceiros</string>
+  <string name="permdesc_thirdPartyKeyguard">Permitir que unha app sexa usada como bloqueo de pantalla inseguro.</string>
 </resources>

@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
   <string name="permlab_managePersistentStorage">ניהול אחסון מתמיד</string>
   <string name="permdesc_managePersistentStorage">מאפשר ליישום לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
+  <string name="permlab_accessAppSuggestions">גישה להצעות יישומים</string>
+  <string name="permdesc_accessAppSuggestions">מאפשר ליישום לגשת להצעות יישומים.</string>
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
+  <string name="permlab_protectedApp">הוספה והסרה של יישומים מהיישומים המוגנים</string>
+  <string name="permdesc_protectedApp">מאפשר ליישום לסמן יישומים אחרים כמוגנים ולנעול אותם.</string>
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>
   <string name="profileNameHome">בית</string>
