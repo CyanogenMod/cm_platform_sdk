@@ -63,4 +63,5 @@ public class CMMetricsLogger extends MetricsLogger {
     public static final int TILE_SYNC = BASE + 36;
     public static final int TILE_USB_TETHER = BASE + 37;
     public static final int TILE_VOLUME = BASE + 38;
+    public static final int TILE_HEADS_UP = BASE + 39;
 }
