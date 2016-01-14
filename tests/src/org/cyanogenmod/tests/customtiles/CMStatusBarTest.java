@@ -148,6 +148,21 @@ public class CMStatusBarTest extends TestActivity {
                 }
             },
 
+            new Test("test publish tile with long press") {
+                public void run() {
+                    CustomTile customTile = new CustomTile.Builder(CMStatusBarTest.this)
+                            .setLabel("Test Long press From SDK")
+                            .setIcon(R.drawable.ic_launcher)
+                            .setOnLongClickIntent(PendingIntent.getActivity(CMStatusBarTest.this, 0,
+                                    new Intent(CMStatusBarTest.this,DummySettings.class)
+                                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0))
+                            .setContentDescription("Content description")
+                            .build();
+                    CMStatusBarManager.getInstance(CMStatusBarTest.this)
+                            .publishTile(CUSTOM_TILE_SETTINGS_ID, customTile);
+                }
+            },
+
             new Test("test publish tile with delete intent") {
                 public void run() {
                     Intent intent = new Intent(CMStatusBarTest.this, DummySettings.class);
