@@ -54,6 +54,14 @@ public class CustomTile implements Parcelable {
     public PendingIntent onClick;
 
     /**
+     * An optional intent to execute when the custom tile entry is long clicked.  If
+     * this is an activity, it must include the
+     * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
+     * that you take care of task management.
+     **/
+    public PendingIntent onLongClick;
+
+    /**
      * An optional settings intent to execute when the custom tile's detail is shown
      * If this is an activity, it must include the
      * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
@@ -109,6 +117,13 @@ public class CustomTile implements Parcelable {
     public boolean collapsePanel = true;
 
     /**
+     * Boolean that forces the status bar panel to collapse when a user long presses on the
+     * {@link CustomTile}
+     * By default {@link #collapsePanelLongPress} is true
+     */
+    public boolean collapsePanelLongPress = true;
+
+    /**
      * Indicates whether this tile has sensitive data that have to be hidden on
      * secure lockscreens.
      * By default {@link #sensitiveData} is false
@@ -162,6 +177,13 @@ public class CustomTile implements Parcelable {
             this.sensitiveData = (parcel.readInt() == 1);
         }
 
+        if (parcelableVersion >= Build.CM_VERSION_CODES.DRAGON_FRUIT) {
+            if (parcel.readInt() != 0) {
+                this.onLongClick = PendingIntent.CREATOR.createFromParcel(parcel);
+            }
+            this.collapsePanelLongPress = parcel.readInt() == 1;
+        }
+
         parcel.setDataPosition(startPosition + parcelableSize);
     }
 
@@ -196,6 +218,10 @@ public class CustomTile implements Parcelable {
         if (onClick != null) {
             b.append("onClick=" + onClick.toString() + NEW_LINE);
         }
+        if (onLongClick != null) {
+            b.append("onLongClick=" + onLongClick.toString() + NEW_LINE);
+            b.append("collapsePanelLongPress=" + collapsePanelLongPress + NEW_LINE);
+        }
         if (onSettingsClick != null) {
             b.append("onSettingsClick=" + onSettingsClick.toString() + NEW_LINE);
         }
@@ -229,6 +255,7 @@ public class CustomTile implements Parcelable {
     public void cloneInto(CustomTile that) {
         that.resourcesPackageName = this.resourcesPackageName;
         that.onClick = this.onClick;
+        that.onLongClick = this.onLongClick;
         that.onSettingsClick = this.onSettingsClick;
         that.onClickUri = this.onClickUri;
         that.label = this.label;
@@ -236,6 +263,7 @@ public class CustomTile implements Parcelable {
         that.expandedStyle = this.expandedStyle;
         that.icon = this.icon;
         that.collapsePanel = this.collapsePanel;
+        that.collapsePanelLongPress = this.collapsePanelLongPress;
         that.remoteIcon = this.remoteIcon;
         that.deleteIntent = this.deleteIntent;
         that.sensitiveData = this.sensitiveData;
@@ -313,6 +341,15 @@ public class CustomTile implements Parcelable {
             out.writeInt(0);
         }
         out.writeInt(sensitiveData ? 1 : 0);
+
+        // ==== DRAGONFRUIT ====
+        if (onLongClick != null) {
+            out.writeInt(1);
+            onLongClick.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
+        out.writeInt(collapsePanelLongPress ? 1 : 0);
 
         // Go back and write size
         int parcelableSize = out.dataPosition() - startPosition;
@@ -907,6 +944,7 @@ public class CustomTile implements Parcelable {
      */
     public static class Builder {
         private PendingIntent mOnClick;
+        private PendingIntent mOnLongClick;
         private Intent mOnSettingsClick;
         private Uri mOnClickUri;
         private String mLabel;
@@ -916,6 +954,7 @@ public class CustomTile implements Parcelable {
         private Context mContext;
         private ExpandedStyle mExpandedStyle;
         private boolean mCollapsePanel = true;
+        private boolean mCollapsePanelLongPress = true;
         private PendingIntent mDeleteIntent;
         private boolean mSensitiveData = false;
 
@@ -973,6 +1012,18 @@ public class CustomTile implements Parcelable {
          */
         public Builder setOnClickIntent(PendingIntent intent) {
             mOnClick = intent;
+            return this;
+        }
+
+        /**
+         * Set a {@link android.app.PendingIntent} to be fired on custom tile long press
+         * @param intent
+         * @param collapseOnLongPress whether to collapse the statusbar after executing the intent
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder setOnLongClickIntent(PendingIntent intent, boolean collapseOnLongPress) {
+            mOnLongClick = intent;
+            mCollapsePanelLongPress = collapseOnLongPress;
             return this;
         }
 
@@ -1080,6 +1131,7 @@ public class CustomTile implements Parcelable {
             CustomTile tile = new CustomTile();
             tile.resourcesPackageName = mContext.getPackageName();
             tile.onClick = mOnClick;
+            tile.onLongClick = mOnLongClick;
             tile.onSettingsClick = mOnSettingsClick;
             tile.onClickUri = mOnClickUri;
             tile.label = mLabel;
@@ -1087,6 +1139,7 @@ public class CustomTile implements Parcelable {
             tile.expandedStyle = mExpandedStyle;
             tile.icon = mIcon;
             tile.collapsePanel = mCollapsePanel;
+            tile.collapsePanelLongPress = mCollapsePanelLongPress;
             tile.remoteIcon = mRemoteIcon;
             tile.deleteIntent = mDeleteIntent;
             tile.sensitiveData = mSensitiveData;
