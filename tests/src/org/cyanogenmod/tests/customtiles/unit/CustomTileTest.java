@@ -65,6 +65,29 @@ public class CustomTileTest extends AndroidTestCase {
     }
 
     @SmallTest
+    public void testCustomTileOnLongiClickIntentUnravelFromParcel() {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
+        CustomTile expectedCustomTile = new CustomTile.Builder(mContext)
+                .setOnLongClickIntent(pendingIntent)
+                .build();
+
+        // Write to parcel
+        Parcel parcel = Parcel.obtain();
+        expectedCustomTile.writeToParcel(parcel, 0);
+
+        // Rewind
+        parcel.setDataPosition(0);
+
+        // Verify data when unraveling
+        CustomTile fromParcel = CustomTile.CREATOR.createFromParcel(parcel);
+
+        assertNotNull(fromParcel.onLongClick);
+        assertEquals(expectedCustomTile.onLongClick.getIntent().toString(),
+                fromParcel.onLongClick.getIntent().toString());
+    }
+
+    @SmallTest
     public void testCustomTileOnSettingsClickIntentUnravelFromParcel() {
         Intent intent = new Intent(mContext, DummySettings.class);
         CustomTile expectedCustomTile = new CustomTile.Builder(mContext)

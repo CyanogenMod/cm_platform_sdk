@@ -54,6 +54,15 @@ public class CustomTile implements Parcelable {
     public PendingIntent onClick;
 
     /**
+     * An optional intent to execute when the custom tile entry is long clicked.  If
+     * this is an activity, it must include the
+     * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
+     * that you take care of task management. Activities will also automatically trigger
+     * the host panel to automatically collapse after executing the pending intent.
+     **/
+    public PendingIntent onLongClick;
+
+    /**
      * An optional settings intent to execute when the custom tile's detail is shown
      * If this is an activity, it must include the
      * {@link android.content.Intent#FLAG_ACTIVITY_NEW_TASK} flag, which requires
@@ -162,6 +171,12 @@ public class CustomTile implements Parcelable {
             this.sensitiveData = (parcel.readInt() == 1);
         }
 
+        if (parcelableVersion >= Build.CM_VERSION_CODES.DRAGON_FRUIT) {
+            if (parcel.readInt() != 0) {
+                this.onLongClick = PendingIntent.CREATOR.createFromParcel(parcel);
+            }
+        }
+
         parcel.setDataPosition(startPosition + parcelableSize);
     }
 
@@ -196,6 +211,9 @@ public class CustomTile implements Parcelable {
         if (onClick != null) {
             b.append("onClick=" + onClick.toString() + NEW_LINE);
         }
+        if (onLongClick != null) {
+            b.append("onLongClick=" + onLongClick.toString() + NEW_LINE);
+        }
         if (onSettingsClick != null) {
             b.append("onSettingsClick=" + onSettingsClick.toString() + NEW_LINE);
         }
@@ -229,6 +247,7 @@ public class CustomTile implements Parcelable {
     public void cloneInto(CustomTile that) {
         that.resourcesPackageName = this.resourcesPackageName;
         that.onClick = this.onClick;
+        that.onLongClick = this.onLongClick;
         that.onSettingsClick = this.onSettingsClick;
         that.onClickUri = this.onClickUri;
         that.label = this.label;
@@ -313,6 +332,14 @@ public class CustomTile implements Parcelable {
             out.writeInt(0);
         }
         out.writeInt(sensitiveData ? 1 : 0);
+
+        // ==== DRAGONFRUIT ====
+        if (onLongClick != null) {
+            out.writeInt(1);
+            onLongClick.writeToParcel(out, 0);
+        } else {
+            out.writeInt(0);
+        }
 
         // Go back and write size
         int parcelableSize = out.dataPosition() - startPosition;
@@ -907,6 +934,7 @@ public class CustomTile implements Parcelable {
      */
     public static class Builder {
         private PendingIntent mOnClick;
+        private PendingIntent mOnLongClick;
         private Intent mOnSettingsClick;
         private Uri mOnClickUri;
         private String mLabel;
@@ -973,6 +1001,17 @@ public class CustomTile implements Parcelable {
          */
         public Builder setOnClickIntent(PendingIntent intent) {
             mOnClick = intent;
+            return this;
+        }
+
+        /**
+         * Set a {@link android.app.PendingIntent} to be fired on custom tile long press.
+         * Note: if this is an activity, the host panel will automatically collapse.
+         * @param intent
+         * @return {@link cyanogenmod.app.CustomTile.Builder}
+         */
+        public Builder setOnLongClickIntent(PendingIntent intent) {
+            mOnLongClick = intent;
             return this;
         }
 
@@ -1080,6 +1119,7 @@ public class CustomTile implements Parcelable {
             CustomTile tile = new CustomTile();
             tile.resourcesPackageName = mContext.getPackageName();
             tile.onClick = mOnClick;
+            tile.onLongClick = mOnLongClick;
             tile.onSettingsClick = mOnSettingsClick;
             tile.onClickUri = mOnClickUri;
             tile.label = mLabel;
