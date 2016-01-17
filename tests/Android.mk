@@ -19,7 +19,10 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := tests
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.cyanogenmod.platform
+    org.cyanogenmod.platform 
+
+# Include aidl files from cyanogenmod.app namespace as well as internal src aidl files
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src/)
 
