@@ -120,12 +120,22 @@ public class Build {
          */
         public static final int CANTALOUPE = 3;
 
-
         /**
-         * First M Release
+         * January 2016: The 4th iteration of the platform sdk for CyanogenMod
+         *
+         * <p>Applications targeting this or a later version will get access to these
+         * new features:</p>
+         * <ul>
+         * <li>External views api, and specifically Keyguard interfaces for making
+         * live lockscreens via {@link cyanogenmod.externalviews.KeyguardExternalView}</li>
+         * <li>Inclusion of the PerformanceManager interfaces, allowing an application to specify
+         * the type of mode to have the device be placed in via
+         * {@link cyanogenmod.power.PerformanceManager}</li>
+         * <li>Numerous new "System" settings exposed via the
+         * {@link cyanogenmod.providers.CMSettings.System} interface</li>
+         * </ul>
          */
         public static final int DRAGON_FRUIT = 4;
-
     }
 
     /**
