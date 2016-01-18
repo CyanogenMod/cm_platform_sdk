@@ -136,6 +136,11 @@ public class Build {
          * </ul>
          */
         public static final int DRAGON_FRUIT = 4;
+
+        /**
+         * Future M Release - 2nd quarter 2016
+         */
+        public static final int ELDERBERRY = 5;
     }
 
     /**
