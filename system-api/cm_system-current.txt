@@ -105,6 +105,7 @@ package cyanogenmod.app {
     field public java.lang.String label;
     field public android.app.PendingIntent onClick;
     field public android.net.Uri onClickUri;
+    field public android.app.PendingIntent onLongClick;
     field public android.content.Intent onSettingsClick;
     field public android.graphics.Bitmap remoteIcon;
     field public boolean sensitiveData;
@@ -124,6 +125,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.CustomTile.Builder setLabel(int);
     method public cyanogenmod.app.CustomTile.Builder setOnClickIntent(android.app.PendingIntent);
     method public cyanogenmod.app.CustomTile.Builder setOnClickUri(android.net.Uri);
+    method public cyanogenmod.app.CustomTile.Builder setOnLongClickIntent(android.app.PendingIntent);
     method public cyanogenmod.app.CustomTile.Builder setOnSettingsClickIntent(android.content.Intent);
     method public cyanogenmod.app.CustomTile.Builder shouldCollapsePanel(boolean);
   }
@@ -512,6 +514,7 @@ package cyanogenmod.os {
     ctor public Build();
     method public static java.lang.String getNameForSDKInt(int);
     field public static final java.lang.String CYANOGENMOD_DISPLAY_VERSION = "ro.cm.display.version";
+    field public static final java.lang.String CYANOGENMOD_VERSION = "ro.cm.version";
     field public static final java.lang.String UNKNOWN = "unknown";
   }
 
