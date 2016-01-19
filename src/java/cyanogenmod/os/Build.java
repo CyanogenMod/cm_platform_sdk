@@ -36,7 +36,7 @@ public class Build {
      * {@link CM_VERSION_CODES}
      * @hide
      */
-    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.DRAGON_FRUIT;
+    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.ELDERBERRY;
 
     /** A build ID utilized to distinguish cyanogenmod versions */
     public static final String CYANOGENMOD_VERSION = "ro.cm.version";
