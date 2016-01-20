@@ -46,7 +46,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "cmsettings.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     static class CMTableNames {
         static final String TABLE_SYSTEM = "system";
@@ -153,6 +153,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        System.out.println("ON UPGRADE " + oldVersion + " " + newVersion);
         int upgradeVersion = oldVersion;
 
         if (upgradeVersion < 2) {
@@ -166,6 +167,24 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             } finally {
                 db.endTransaction();
             }
+        }
+
+        if (upgradeVersion < 3) {
+            System.out.println("UPGRADING TO V3");
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("INSERT INTO secure(name,value)"
+                        + " VALUES(?,?);");
+                loadStringSetting(stmt, CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
+                        R.string.def_protected_component_managers);
+                stmt.close();
+            } finally {
+                db.endTransaction();
+                if (stmt != null) stmt.close();
+            }
+            db.endTransaction();
+            upgradeVersion = 3;
         }
 
         // *** Remember to update DATABASE_VERSION above!
@@ -239,6 +258,10 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
         loadBooleanSetting(db, CMTableNames.TABLE_SECURE,
                 CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, R.bool.def_lockscreen_visualizer);
+
+        loadStringSetting(db, CMTableNames.TABLE_SECURE,
+                CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
+                R.string.def_protected_component_managers);
     }
 
     private void loadSystemSettings(SQLiteDatabase db) {
@@ -383,5 +406,15 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         contentValues.put(Settings.NameValueTable.VALUE, value);
 
         db.insertWithOnConflict(tableName, null, contentValues, SQLiteDatabase.CONFLICT_IGNORE);
+    }
+
+    private void loadSetting(SQLiteStatement stmt, String key, Object value) {
+        stmt.bindString(1, key);
+        stmt.bindString(2, value.toString());
+        stmt.execute();
+    }
+
+    private void loadStringSetting(SQLiteStatement stmt, String key, int resid) {
+        loadSetting(stmt, key, mContext.getResources().getString(resid));
     }
 }
