@@ -36,7 +36,7 @@ public class Build {
      * {@link CM_VERSION_CODES}
      * @hide
      */
-    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.DRAGON_FRUIT;
+    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.ELDERBERRY;
 
     /** A build ID utilized to distinguish cyanogenmod versions */
     public static final String CYANOGENMOD_VERSION = "ro.cm.version";
@@ -52,6 +52,7 @@ public class Build {
         sdkMap.put(CM_VERSION_CODES.BOYSENBERRY, "Boysenberry");
         sdkMap.put(CM_VERSION_CODES.CANTALOUPE, "Cantaloupe");
         sdkMap.put(CM_VERSION_CODES.DRAGON_FRUIT, "Dragon Fruit");
+        sdkMap.put(CM_VERSION_CODES.ELDERBERRY, "Elderberry");
     }
 
     /** Various version strings. */
@@ -120,12 +121,27 @@ public class Build {
          */
         public static final int CANTALOUPE = 3;
 
-
         /**
-         * First M Release
+         * January 2016: The 4th iteration of the platform sdk for CyanogenMod
+         *
+         * <p>Applications targeting this or a later version will get access to these
+         * new features:</p>
+         * <ul>
+         * <li>External views api, and specifically Keyguard interfaces for making
+         * live lockscreens via {@link cyanogenmod.externalviews.KeyguardExternalView}</li>
+         * <li>Inclusion of the PerformanceManager interfaces, allowing an application to specify
+         * the type of mode to have the device be placed in via
+         * {@link cyanogenmod.power.PerformanceManager}</li>
+         * <li>Numerous new "System" settings exposed via the
+         * {@link cyanogenmod.providers.CMSettings.System} interface</li>
+         * </ul>
          */
         public static final int DRAGON_FRUIT = 4;
 
+        /**
+         * Future M Release - 2nd quarter 2016
+         */
+        public static final int ELDERBERRY = 5;
     }
 
     /**

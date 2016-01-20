@@ -58,6 +58,17 @@ public class CustomTileBuilderTest extends AndroidTestCase {
     }
 
     @SmallTest
+    public void testCustomTileBuilderOnLongClickIntent() {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .setOnLongClickIntent(pendingIntent)
+                .build();
+        assertNotNull(customTile.onLongClick);
+        assertEquals(pendingIntent, customTile.onLongClick);
+    }
+
+    @SmallTest
     public void testCustomTileBuilderOnSettingsClickIntent() {
         Intent intent = new Intent(mContext, DummySettings.class);
         CustomTile customTile = new CustomTile.Builder(mContext)
