@@ -87,6 +87,10 @@
     <bool name="def_notification_pulse_custom_enable">false</bool>
     <string name="def_notification_pulse_custom_value"></string>
 
+    <!-- Default value for swapping volume keys on rotation -->
     <bool name="def_swap_volume_keys_on_rotation">false</bool>
+
+    <!-- Default values for protected component managers -->
+    <string name="def_protected_component_managers" translatable="false">com.android.settings|com.android.launcher3|com.cyanogenmod.trebuchet</string>
 
 </resources>
