@@ -2578,6 +2578,13 @@ public final class CMSettings {
          */
         public static final String LOCKSCREEN_INTERNALLY_ENABLED = "lockscreen_internally_enabled";
 
+        /**
+         * Whether live lock screen is currently enabled/disabled by the user.
+         * Boolean settings. 0 = off, 1 = on
+         * @hide
+         */
+        public static final String LIVE_LOCK_SCREEN_ENABLED = "live_lock_screen_enabled";
+
         // endregion
 
         /**
