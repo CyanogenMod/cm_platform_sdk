@@ -35,7 +35,7 @@ public class PersistentStorageTest extends AndroidTestCase {
     }
 
     @SmallTest
-    public boolean testPersistentString() {
+    public void testPersistentString() {
         assertTrue(mHardwareManager.isSupported(CMHardwareManager.FEATURE_PERSISTENT_STORAGE));
 
         String testKey = UUID.randomUUID().toString();
@@ -52,12 +52,10 @@ public class PersistentStorageTest extends AndroidTestCase {
         // erase + read
         assertTrue(mHardwareManager.deletePersistentObject(testKey));
         assertNull(mHardwareManager.readPersistentString(testKey));
-
-        return true;
     }
 
     @SmallTest
-    public boolean testPersistentInteger() {
+    public void testPersistentInteger() {
         assertTrue(mHardwareManager.isSupported(CMHardwareManager.FEATURE_PERSISTENT_STORAGE));
 
         String testKey = UUID.randomUUID().toString();
@@ -74,12 +72,10 @@ public class PersistentStorageTest extends AndroidTestCase {
         // erase + read
         assertTrue(mHardwareManager.deletePersistentObject(testKey));
         assertEquals(0, mHardwareManager.readPersistentInt(testKey));
-
-        return true;
     }
 
     @SmallTest
-    public boolean testPersistentBytes() {
+    public void testPersistentBytes() {
         assertTrue(mHardwareManager.isSupported(CMHardwareManager.FEATURE_PERSISTENT_STORAGE));
 
         String testKey = UUID.randomUUID().toString();
@@ -100,7 +96,5 @@ public class PersistentStorageTest extends AndroidTestCase {
         // erase + read
         assertTrue(mHardwareManager.deletePersistentObject(testKey));
         assertNull(mHardwareManager.readPersistentBytes(testKey));
-
-        return true;
     }
 }
