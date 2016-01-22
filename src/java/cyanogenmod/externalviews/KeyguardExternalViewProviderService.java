@@ -57,6 +57,18 @@ public abstract class KeyguardExternalViewProviderService extends Service {
     private static final String TAG = KeyguardExternalViewProviderService.class.getSimpleName();
     private static final boolean DEBUG = false;
 
+    /**
+     * The action that must be declared as handled by this service.
+     *
+     * <p>{@code
+     *  <intent-filter>
+     *      <action android:name="cyanogenmod.externalviews.KeyguardExternalViewProviderService"/>
+     *  </intent-filter>
+     *}</p>
+     */
+    public static final String SERVICE_INTERFACE =
+            "cyanogenmod.externalviews.KeyguardExternalViewProviderService";
+
     private WindowManager mWindowManager;
     private final Handler mHandler = new Handler();
 
