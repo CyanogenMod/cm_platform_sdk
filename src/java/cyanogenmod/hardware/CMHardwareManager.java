@@ -428,8 +428,8 @@ public final class CMHardwareManager {
     /**
      * Write a string to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
-     * @param value The UTF-8 encoded string to store
+     * @param key String identifier for this item. Must not exceed 64 characters.
+     * @param value The UTF-8 encoded string to store of at least 1 character. null deletes the key/value pair.
      * @return true on success
      */
     public boolean writePersistentString(String key, String value) {
@@ -448,7 +448,7 @@ public final class CMHardwareManager {
     /**
      * Write an integer to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @param value The integer to store
      * @return true on success
      */
@@ -466,8 +466,8 @@ public final class CMHardwareManager {
     /**
      * Write a byte array to persistent storage, which persists thru factory reset
      *
-     * @param key String identifier for this item
-     * @param value The byte array to store, up to 4096 bytes
+     * @param key String identifier for this item. Must not exceed 64 characters.
+     * @param value The byte array to store, must be 1-4096 bytes. null deletes the key/value pair.
      * @return true on success
      */
     public boolean writePersistentBytes(String key, byte[] value) {
@@ -483,7 +483,7 @@ public final class CMHardwareManager {
     /**
      * Read a string from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored UTF-8 encoded string, null if not found
      */
     public String readPersistentString(String key) {
@@ -504,7 +504,7 @@ public final class CMHardwareManager {
     /**
      * Read an integer from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored integer, zero if not found
      */
     public int readPersistentInt(String key) {
@@ -523,7 +523,7 @@ public final class CMHardwareManager {
     /**
      * Read a byte array from persistent storage
      *
-     * @param key String identifier for this item
+     * @param key String identifier for this item. Must not exceed 64 characters.
      * @return the stored byte array, null if not found
      */
     public byte[] readPersistentBytes(String key) {

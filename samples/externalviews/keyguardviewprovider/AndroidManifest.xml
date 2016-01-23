@@ -27,6 +27,13 @@
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <service android:name=".SampleKeyguardProviderService"
                 android:exported="true">
+            <intent-filter>
+                <action android:name="cyanogenmod.externalviews.KeyguardExternalViewProviderService" />
+            </intent-filter>
+            <meta-data
+                android:name="cyanogenmod.externalviews.keyguard"
+                android:resource="@xml/mylockscreen" />
         </service>
+        <activity android:name=".Settings" />
     </application>
 </manifest>

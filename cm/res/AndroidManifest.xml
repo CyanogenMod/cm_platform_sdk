@@ -139,7 +139,7 @@
     <permission android:name="android.permission.THIRD_PARTY_KEYGUARD"
                 android:label="@string/permlab_thirdPartyKeyguard"
                 android:description="@string/permdesc_thirdPartyKeyguard"
-                android:protectionLevel="signature|privileged" />
+                android:protectionLevel="normal" />
 
     <application android:process="system"
                  android:persistent="true"

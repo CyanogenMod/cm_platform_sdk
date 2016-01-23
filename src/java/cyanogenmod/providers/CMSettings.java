@@ -2578,6 +2578,19 @@ public final class CMSettings {
          */
         public static final String LOCKSCREEN_INTERNALLY_ENABLED = "lockscreen_internally_enabled";
 
+        /**
+         * Delimited list of packages allowed to manage/launch protected apps (used for filtering)
+         * @hide
+         */
+        public static final String PROTECTED_COMPONENT_MANAGERS = "protected_component_managers";
+
+        /**
+         * Whether live lock screen is currently enabled/disabled by the user.
+         * Boolean settings. 0 = off, 1 = on
+         * @hide
+         */
+        public static final String LIVE_LOCK_SCREEN_ENABLED = "live_lock_screen_enabled";
+
         // endregion
 
         /**
@@ -2654,6 +2667,26 @@ public final class CMSettings {
         };
 
         /**
+         * @hide
+         */
+        public static final Validator PROTECTED_COMPONENTS_MANAGER_VALIDATOR = new Validator() {
+            private final String mDelimiter = "|";
+
+            @Override
+            public boolean validate(String value) {
+                if (!TextUtils.isEmpty(value)) {
+                    final String[] array = TextUtils.split(value, Pattern.quote(mDelimiter));
+                    for (String item : array) {
+                        if (TextUtils.isEmpty(item)) {
+                            return false; // Empty components not allowed
+                        }
+                    }
+                }
+                return true;  // Empty list is allowed though.
+            }
+        };
+
+        /**
          * Mapping of validators for all secure settings.  This map is used to validate both valid
          * keys as well as validating the values for those keys.
          *
@@ -2666,6 +2699,7 @@ public final class CMSettings {
                 new ArrayMap<String, Validator>();
         static {
             VALIDATORS.put(PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
+            VALIDATORS.put(PROTECTED_COMPONENT_MANAGERS, PROTECTED_COMPONENTS_MANAGER_VALIDATOR);
         }
 
         /**
