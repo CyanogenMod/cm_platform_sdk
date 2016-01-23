@@ -374,6 +374,8 @@ package cyanogenmod.externalviews {
     ctor public KeyguardExternalViewProviderService();
     method protected abstract cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider createExternalView(android.os.Bundle);
     method public final android.os.IBinder onBind(android.content.Intent);
+    field public static final java.lang.String META_DATA = "cyanogenmod.externalviews.keyguard";
+    field public static final java.lang.String SERVICE_INTERFACE = "cyanogenmod.externalviews.KeyguardExternalViewProviderService";
   }
 
   protected abstract class KeyguardExternalViewProviderService.Provider {
