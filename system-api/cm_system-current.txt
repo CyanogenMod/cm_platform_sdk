@@ -626,7 +626,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_THEMES = "cyanogenmod.permission.READ_THEMES";
     field public static final java.lang.String READ_WEATHER = "cyanogenmod.permission.READ_WEATHER";
-    field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
+    field public static final java.lang.String THIRD_PARTY_KEYGUARD = "cyanogenmod.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_DATAUSAGE = "cyanogenmod.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
