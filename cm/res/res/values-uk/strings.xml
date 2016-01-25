@@ -40,7 +40,11 @@
   <string name="permdesc_writeSettings">Дозволяє додатку змінювати системні налаштування CM.</string>
   <string name="permlab_writeSecureSettings">змінювати налаштування безпеки</string>
   <string name="permdesc_writeSecureSettings">Дозволяє додатку змінювати системні налаштування безпеки. Непотрібно звичайним додаткам.</string>
+  <string name="permlab_accessAppSuggestions">Доступ до рекомендованих додатків</string>
+  <string name="permdesc_accessAppSuggestions">Додаток зможе отримувати доступ до списку рекомендованих додатків.</string>
   <string name="custom_tile_listener_binding_label">Власна служба обробки плиток</string>
+  <string name="permlab_protectedApp">додавання і видалення записів переліку захищених додатків</string>
+  <string name="permdesc_protectedApp">Додаток зможе відмічати інші додатки як захищені і блокувати їх.</string>
   <string name="profileNameDefault">За замовчуванням</string>
   <string name="profileNameWork">Робота</string>
   <string name="profileNameHome">Дім</string>
@@ -53,5 +57,20 @@
   <string name="profileGroupEmail">Електронна пошта</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Інший</string>
+  <string name="perf_profile_pwrsv">Енергозбереження</string>
+  <string name="perf_profile_bal">Збалансований</string>
+  <string name="perf_profile_perf">Продуктивність</string>
+  <string name="perf_profile_bias_power">Ефективність</string>
+  <string name="perf_profile_bias_perf">Швидко</string>
+  <string name="live_display_auto">Автоматично</string>
+  <string name="live_display_off">Вимк</string>
+  <string name="live_display_off_summary">Вимкнути всі налаштування</string>
+  <string name="live_display_day">День</string>
+  <string name="live_display_day_summary">Використовувати параметри для денного освітлення</string>
   <string name="live_display_night">Ніч</string>
+  <string name="live_display_night_summary">Використовувати параметри для нічного освітлення</string>
+  <string name="live_display_outdoor">Надворі (яскраве сонце)</string>
+  <string name="live_display_outdoor_summary">Використовувати параметри для яскравого освітлення надворі</string>
+  <string name="live_display_hint">LiveDisplay допоможе зменшити навантаження на зір та покращить Ваш сон. Натисніть тут, щоб спробувати його!</string>
+  <string name="permlab_thirdPartyKeyguard">Нетиповий екран блокування</string>
 </resources>

@@ -69,6 +69,7 @@
   <string name="perf_profile_bias_perf">Schnell</string>
   <string name="live_display_auto">Automatisch</string>
   <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
+  <string name="live_display_off">Aus</string>
   <string name="live_display_off_summary">Alle Anpassungen deaktivieren</string>
   <string name="live_display_day">Tag</string>
   <string name="live_display_day_summary">Nur Tag-Modus verwenden</string>
@@ -78,4 +79,5 @@
   <string name="live_display_outdoor_summary">Nur Außen-Modus verwenden</string>
   <string name="live_display_hint">LiveDisplay kann gegen eine Überanstrengung der Augen und so beim Einschlafen helfen. Klicken Sie hier, um es auszuprobieren!</string>
   <string name="permlab_thirdPartyKeyguard">Sperrbildschirm eines Drittanbieters</string>
+  <string name="permdesc_thirdPartyKeyguard">Ermöglicht der App, als unsicherer Sperrbildschirm genutzt zu werden.</string>
 </resources>

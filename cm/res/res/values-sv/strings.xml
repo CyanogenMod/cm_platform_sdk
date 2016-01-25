@@ -34,7 +34,9 @@
   <string name="profileGroupEmail">E-post</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Annan</string>
+  <string name="perf_profile_bal">Balanserad</string>
   <string name="live_display_auto">Automatisk</string>
   <string name="live_display_off">Av</string>
+  <string name="live_display_day">Dag</string>
   <string name="live_display_night">Natt</string>
 </resources>
