@@ -48,10 +48,10 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     private static final String DATABASE_NAME = "cmsettings.db";
     private static final int DATABASE_VERSION = 3;
 
-    static class CMTableNames {
-        static final String TABLE_SYSTEM = "system";
-        static final String TABLE_SECURE = "secure";
-        static final String TABLE_GLOBAL = "global";
+    public static class CMTableNames {
+        public static final String TABLE_SYSTEM = "system";
+        public static final String TABLE_SECURE = "secure";
+        public static final String TABLE_GLOBAL = "global";
     }
 
     private static final String CREATE_TABLE_SQL_FORMAT = "CREATE TABLE %s (" +
@@ -231,91 +231,109 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     }
 
     private void loadSecureSettings(SQLiteDatabase db) {
-        // Secure
-        loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.ADVANCED_MODE,
-                R.bool.def_advanced_mode);
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("INSERT OR IGNORE INTO secure(name,value)"
+                    + " VALUES(?,?);");
+            // Secure
+            loadBooleanSetting(stmt, CMSettings.Secure.ADVANCED_MODE,
+                    R.bool.def_advanced_mode);
 
-        loadRegionLockedStringSetting(db, CMTableNames.TABLE_SECURE,
-                CMSettings.Secure.DEFAULT_THEME_COMPONENTS, R.string.def_theme_components);
+            loadRegionLockedStringSetting(stmt,
+                    CMSettings.Secure.DEFAULT_THEME_COMPONENTS, R.string.def_theme_components);
 
-        loadRegionLockedStringSetting(db, CMTableNames.TABLE_SECURE,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE, R.string.def_theme_package);
+            loadRegionLockedStringSetting(stmt,
+                    CMSettings.Secure.DEFAULT_THEME_PACKAGE, R.string.def_theme_package);
 
-        loadIntegerSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
-                R.integer.def_force_show_navbar);
+            loadIntegerSetting(stmt, CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
+                    R.integer.def_force_show_navbar);
 
-        loadStringSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.QS_TILES,
-                R.string.def_qs_tiles);
+            loadStringSetting(stmt, CMSettings.Secure.QS_TILES,
+                    R.string.def_qs_tiles);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.QS_USE_MAIN_TILES,
-                R.bool.def_sysui_qs_main_tiles);
+            loadBooleanSetting(stmt, CMSettings.Secure.QS_USE_MAIN_TILES,
+                    R.bool.def_sysui_qs_main_tiles);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SECURE, CMSettings.Secure.STATS_COLLECTION,
-                R.bool.def_stats_collection);
+            loadBooleanSetting(stmt, CMSettings.Secure.STATS_COLLECTION,
+                    R.bool.def_stats_collection);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SECURE,
-                CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, R.bool.def_lockscreen_visualizer);
+            loadBooleanSetting(stmt, CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
+                    R.bool.def_lockscreen_visualizer);
 
-        loadStringSetting(db, CMTableNames.TABLE_SECURE,
-                CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
-                R.string.def_protected_component_managers);
+            loadStringSetting(stmt,
+                    CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
+                    R.string.def_protected_component_managers);
+        } finally {
+            if (stmt != null) stmt.close();
+        }
     }
 
     private void loadSystemSettings(SQLiteDatabase db) {
-        // System
-        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                R.integer.def_qs_quick_pulldown);
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("INSERT OR IGNORE INTO system(name,value)"
+                    + " VALUES(?,?);");
+            // System
+            loadIntegerSetting(stmt, CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    R.integer.def_qs_quick_pulldown);
 
-        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
-                R.integer.def_notification_brightness_level);
+            loadIntegerSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
+                    R.integer.def_notification_brightness_level);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
-                R.bool.def_notification_multiple_leds);
+            loadBooleanSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
+                    R.bool.def_notification_multiple_leds);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.SYSTEM_PROFILES_ENABLED,
-                R.bool.def_profiles_enabled);
+            loadBooleanSetting(stmt, CMSettings.System.SYSTEM_PROFILES_ENABLED,
+                    R.bool.def_profiles_enabled);
 
-        loadIntegerSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.ENABLE_PEOPLE_LOOKUP,
-                R.integer.def_people_lookup);
+            loadIntegerSetting(stmt, CMSettings.System.ENABLE_PEOPLE_LOOKUP,
+                    R.integer.def_people_lookup);
 
+            loadBooleanSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
+                    R.bool.def_notification_pulse_custom_enable);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
-                R.bool.def_notification_pulse_custom_enable);
+            loadBooleanSetting(stmt, CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
+                    R.bool.def_swap_volume_keys_on_rotation);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
-                R.bool.def_swap_volume_keys_on_rotation);
-
-        if (mContext.getResources().getBoolean(R.bool.def_notification_pulse_custom_enable)) {
-            loadStringSetting(db, CMTableNames.TABLE_SYSTEM, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
-                    R.string.def_notification_pulse_custom_value);
+            if (mContext.getResources().getBoolean(R.bool.def_notification_pulse_custom_enable)) {
+                loadStringSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
+                        R.string.def_notification_pulse_custom_value);
+            }
+        } finally {
+            if (stmt != null) stmt.close();
         }
     }
 
     private void loadGlobalSettings(SQLiteDatabase db) {
-        // Global
-        loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
-                R.bool.def_power_notifications_enabled);
+        SQLiteStatement stmt = null;
+        try {
+            stmt = db.compileStatement("INSERT OR IGNORE INTO global(name,value)"
+                    + " VALUES(?,?);");
+            // Global
+            loadBooleanSetting(stmt,
+                    CMSettings.Global.POWER_NOTIFICATIONS_ENABLED,
+                    R.bool.def_power_notifications_enabled);
 
-        loadBooleanSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
-                R.bool.def_power_notifications_vibrate);
+            loadBooleanSetting(stmt,
+                    CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
+                    R.bool.def_power_notifications_vibrate);
 
-        loadStringSetting(db, CMTableNames.TABLE_GLOBAL,
-                CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
-                R.string.def_power_notifications_ringtone);
+            loadStringSetting(stmt,
+                    CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
+                    R.string.def_power_notifications_ringtone);
+        } finally {
+            if (stmt != null) stmt.close();
+        }
     }
 
     /**
      * Loads a region locked string setting into a database table. If the resource for the specific
      * mcc is not found, the setting is loaded from the default resources.
-     * @param db The {@link SQLiteDatabase} to insert into.
-     * @param tableName The name of the table to insert into.
+     * @param stmt The SQLLiteStatement (transaction) for this setting.
      * @param name The name of the value to insert into the table.
      * @param resId The name of the string resource.
      */
-    private void loadRegionLockedStringSetting(SQLiteDatabase db, String tableName, String name,
-            int resId) {
+    private void loadRegionLockedStringSetting(SQLiteStatement stmt, String name, int resId) {
         String mcc = SystemProperties.get(MCC_PROP_NAME);
         Resources customResources = null;
 
@@ -345,73 +363,47 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
         String value = customResources == null ? mContext.getResources().getString(resId)
                 : customResources.getString(resId);
-        loadSettingsForTable(db, tableName, name, value);
+        loadSetting(stmt, name, value);
     }
 
     /**
      * Loads a string resource into a database table. If a conflict occurs, that value is not
      * inserted into the database table.
-     * @param db The {@link SQLiteDatabase} to insert into.
-     * @param tableName The name of the table to insert into.
+     * @param stmt The SQLLiteStatement (transaction) for this setting.
      * @param name The name of the value to insert into the table.
      * @param resId The name of the string resource.
      */
-    private void loadStringSetting(SQLiteDatabase db, String tableName, String name, int resId) {
-        loadSettingsForTable(db, tableName, name, mContext.getResources().getString(resId));
+    private void loadStringSetting(SQLiteStatement stmt, String name, int resId) {
+        loadSetting(stmt, name, mContext.getResources().getString(resId));
     }
 
     /**
      * Loads a boolean resource into a database table. If a conflict occurs, that value is not
      * inserted into the database table.
-     * @param db The {@link SQLiteDatabase} to insert into.
-     * @param tableName The name of the table to insert into.
+     * @param stmt The SQLLiteStatement (transaction) for this setting.
      * @param name The name of the value to insert into the table.
      * @param resId The name of the boolean resource.
      */
-    private void loadBooleanSetting(SQLiteDatabase db, String tableName, String name, int resId) {
-        loadSettingsForTable(db, tableName, name,
+    private void loadBooleanSetting(SQLiteStatement stmt, String name, int resId) {
+        loadSetting(stmt, name,
                 mContext.getResources().getBoolean(resId) ? "1" : "0");
     }
 
     /**
      * Loads an integer resource into a database table. If a conflict occurs, that value is not
      * inserted into the database table.
-     * @param db The {@link SQLiteDatabase} to insert into.
-     * @param tableName The name of the table to insert into.
+     * @param stmt The SQLLiteStatement (transaction) for this setting.
      * @param name The name of the value to insert into the table.
      * @param resId The name of the integer resource.
      */
-    private void loadIntegerSetting(SQLiteDatabase db, String tableName, String name, int resId) {
-        loadSettingsForTable(db, tableName, name,
+    private void loadIntegerSetting(SQLiteStatement stmt, String name, int resId) {
+        loadSetting(stmt, name,
                 Integer.toString(mContext.getResources().getInteger(resId)));
-    }
-
-    /**
-     * Loads a name/value pair into a database table. If a conflict occurs, that value is not
-     * inserted into the database table.
-     * @param db The {@link SQLiteDatabase} to insert into.
-     * @param tableName The name of the table to insert into.
-     * @param name The name of the value to insert into the table.
-     * @param value The value to insert into the table.
-     */
-    private void loadSettingsForTable(SQLiteDatabase db, String tableName, String name,
-            String value) {
-        if (LOCAL_LOGV) Log.d(TAG, "Loading key: " + name + ", value: " + value);
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(Settings.NameValueTable.NAME, name);
-        contentValues.put(Settings.NameValueTable.VALUE, value);
-
-        db.insertWithOnConflict(tableName, null, contentValues, SQLiteDatabase.CONFLICT_IGNORE);
     }
 
     private void loadSetting(SQLiteStatement stmt, String key, Object value) {
         stmt.bindString(1, key);
         stmt.bindString(2, value.toString());
         stmt.execute();
-    }
-
-    private void loadStringSetting(SQLiteStatement stmt, String key, int resid) {
-        loadSetting(stmt, key, mContext.getResources().getString(resid));
     }
 }
