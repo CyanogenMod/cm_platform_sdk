@@ -55,12 +55,12 @@ import java.util.Set;
  * The CMSettingsProvider serves as a {@link ContentProvider} for CM specific settings
  */
 public class CMSettingsProvider extends ContentProvider {
-    static final String TAG = "CMSettingsProvider";
+    public static final String TAG = "CMSettingsProvider";
     private static final boolean LOCAL_LOGV = false;
 
     private static final boolean USER_CHECK_THROWS = true;
 
-   static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm13_settings";
+    public static final String PREF_HAS_MIGRATED_CM_SETTINGS = "has_migrated_cm13_settings";
 
     private static final Bundle NULL_SETTING = Bundle.forPair("value", null);
 
