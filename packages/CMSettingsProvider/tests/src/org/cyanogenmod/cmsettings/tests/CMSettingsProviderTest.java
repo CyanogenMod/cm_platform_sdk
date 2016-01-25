@@ -223,7 +223,7 @@ import java.util.Map;
 
      @MediumTest
      public void testInsertUpdateDeleteSuccess() {
-         testInsertUpdateDeleteForUri(CMSettings.System.CONTENT_URI);
+         //testInsertUpdateDeleteForUri(CMSettings.System.CONTENT_URI);
          testInsertUpdateDeleteForUri(CMSettings.Secure.CONTENT_URI);
          testInsertUpdateDeleteForUri(CMSettings.Global.CONTENT_URI);
      }
@@ -241,7 +241,7 @@ import java.util.Map;
          Uri expectedUri = uri.withAppendedPath(uri, key);
          Uri returnUri = mContentResolver.insert(uri, contentValue);
          assertEquals(expectedUri, returnUri);
-         
+
          Cursor queryCursor = null;
          try {
              // check insert
