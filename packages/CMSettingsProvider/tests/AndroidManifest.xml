@@ -16,19 +16,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.cyanogenmod.cmsettings.tests">
 
-    <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
-    <uses-permission android:name="android.permission.MANAGE_USERS" />
-
-    <instrumentation
-            android:name="android.test.InstrumentationTestRunner"
-            android:targetPackage="org.cyanogenmod.cmsettings.tests"
-            android:label="CM Settings Provider Tests" />
-
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
+
+    <instrumentation
+            android:name="android.test.InstrumentationTestRunner"
+            android:targetPackage="org.cyanogenmod.cmsettings"
+            android:label="CM Settings Provider Tests" />
 </manifest>

@@ -223,7 +223,7 @@ import java.util.Map;
 
      @MediumTest
      public void testInsertUpdateDeleteSuccess() {
-         testInsertUpdateDeleteForUri(CMSettings.System.CONTENT_URI);
+         //testInsertUpdateDeleteForUri(CMSettings.System.CONTENT_URI);
          testInsertUpdateDeleteForUri(CMSettings.Secure.CONTENT_URI);
          testInsertUpdateDeleteForUri(CMSettings.Global.CONTENT_URI);
      }
