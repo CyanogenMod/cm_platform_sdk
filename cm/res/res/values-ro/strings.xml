@@ -22,6 +22,7 @@
   <string name="permlab_useHardwareFramework">folosește framework-ul hardware</string>
   <string name="permdesc_useHardwareFramework">Permite unei aplicații să acceseze framework-ul CM hardware.</string>
   <string name="permlab_write_alarms">schimbă direct alarme</string>
+  <string name="permlab_manage_alarms">comută alarme programate</string>
   <string name="permlab_read_alarms">accesează alarme programate</string>
   <string name="profileNameDefault">Implicit</string>
   <string name="profileNameWork">Serviciu</string>
@@ -37,8 +38,12 @@
   <string name="wildcardProfile">Altele</string>
   <string name="perf_profile_pwrsv">Economisire baterie</string>
   <string name="perf_profile_bal">Echilibrat</string>
+  <string name="perf_profile_perf">Performanță</string>
   <string name="perf_profile_bias_power">Eficiență</string>
   <string name="perf_profile_bias_perf">Rapid</string>
   <string name="live_display_auto">Automat</string>
+  <string name="live_display_off">Oprit</string>
+  <string name="live_display_day">Zi</string>
   <string name="live_display_night">Noapte</string>
+  <string name="live_display_outdoor">În aer liber (soare strălucitor)</string>
 </resources>
