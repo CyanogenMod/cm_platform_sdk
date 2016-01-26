@@ -56,7 +56,7 @@ import java.util.Set;
  */
 public class CMSettingsProvider extends ContentProvider {
     public static final String TAG = "CMSettingsProvider";
-    private static final boolean LOCAL_LOGV = false;
+    private static final boolean LOCAL_LOGV = true;
 
     private static final boolean USER_CHECK_THROWS = true;
 
@@ -212,6 +212,14 @@ public class CMSettingsProvider extends ContentProvider {
 
             if (LOCAL_LOGV) Log.d(TAG, "Table: " + tableName + ", Key: " + settingsKey + ", Value: "
                     + settingsValue);
+
+            // Don't trample defaults with null values. This is the only scenario where defaults
+            // take precedence over migration values.
+            if (settingsValue == null) {
+                if (LOCAL_LOGV) Log.d(TAG, "Skipping migrating " + settingsKey
+                        + " because of null value");
+                continue;
+            }
 
             ContentValues contentValue = new ContentValues();
             contentValue.put(Settings.NameValueTable.NAME, settingsKey);
