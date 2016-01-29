@@ -812,6 +812,16 @@ public final class CMSettings {
                 new InclusiveIntegerRangeValidator(0, 3);
 
         /**
+         * Whether the notification light will be allowed when in zen mode during downtime
+         * @hide
+         */
+        public static final String ALLOW_LIGHTS = "allow_lights";
+
+        /** @hide */
+        public static final Validator ALLOW_LIGHTS_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Display style of AM/PM next to clock in status bar
          * 0: Normal display (Eclair stock)
          * 1: Small display (Froyo stock)
