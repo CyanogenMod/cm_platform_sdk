@@ -807,6 +807,12 @@ public final class CMSettings {
          */
         public static final String STATUS_BAR_CLOCK = "status_bar_clock";
 
+        /**
+         * Whether the notification light will be allowed when in zen mode during downtime
+         * @hide
+         */
+        public static final String ALLOW_LIGHTS = "allow_lights";
+
         /** @hide */
         public static final Validator STATUS_BAR_CLOCK_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 3);
