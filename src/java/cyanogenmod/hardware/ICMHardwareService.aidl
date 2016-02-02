@@ -41,6 +41,7 @@ interface ICMHardwareService {
     long getLtoDownloadInterval();
 
     String getSerialNumber();
+    String getUniqueDeviceId();
 
     boolean requireAdaptiveBacklightForSunlightEnhancement();
 

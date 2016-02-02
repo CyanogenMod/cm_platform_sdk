@@ -420,6 +420,7 @@ package cyanogenmod.hardware {
     method public java.lang.String getSerialNumber();
     method public int getSupportedFeatures();
     method public int getThermalState();
+    method public java.lang.String getUniqueDeviceId();
     method public int getVibratorDefaultIntensity();
     method public int getVibratorIntensity();
     method public int getVibratorMaxIntensity();
@@ -456,6 +457,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_TAP_TO_WAKE = 512; // 0x200
     field public static final int FEATURE_THERMAL_MONITOR = 32768; // 0x8000
     field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
+    field public static final int FEATURE_UNIQUE_DEVICE_ID = 65536; // 0x10000
     field public static final int FEATURE_VIBRATOR = 1024; // 0x400
   }
 
