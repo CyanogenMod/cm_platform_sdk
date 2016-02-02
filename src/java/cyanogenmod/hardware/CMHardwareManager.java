@@ -124,6 +124,11 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_THERMAL_MONITOR = 0x8000;
 
+    /**
+     * Unique device ID
+     */
+    public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
         FEATURE_COLOR_ENHANCEMENT,
@@ -693,6 +698,19 @@ public final class CMHardwareManager {
         try {
             if (checkService()) {
                 return sService.getSerialNumber();
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return an id that's both unique and deterministic for the device
+     */
+    public String getUniqueDeviceId() {
+        try {
+            if (checkService()) {
+                return sService.getUniqueDeviceId();
             }
         } catch (RemoteException e) {
         }

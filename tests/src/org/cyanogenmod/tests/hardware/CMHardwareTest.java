@@ -118,6 +118,16 @@ public class CMHardwareTest extends TestActivity {
         }
     }
 
+    private boolean uniqueDeviceIdSupported() {
+        if (mHardwareManager.isSupported(CMHardwareManager.FEATURE_UNIQUE_DEVICE_ID)) {
+            return true;
+        } else {
+            Toast.makeText(CMHardwareTest.this, "Unique device ID not supported",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
     private boolean displayModesSupported() {
         if (mHardwareManager.isSupported(CMHardwareManager.FEATURE_DISPLAY_MODES)) {
             return true;
@@ -308,6 +318,16 @@ public class CMHardwareTest extends TestActivity {
                     if (serialSupported()) {
                         Toast.makeText(CMHardwareTest.this, "Serial number " +
                                         mHardwareManager.getSerialNumber(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            },
+            new Test("Test Get Unique Device ID") {
+                @Override
+                protected void run() {
+                    if (uniqueDeviceIdSupported()) {
+                        Toast.makeText(CMHardwareTest.this, "Unique Device ID " +
+                                        mHardwareManager.getUniqueDeviceId(),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
