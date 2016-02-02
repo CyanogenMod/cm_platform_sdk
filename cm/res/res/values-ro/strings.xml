@@ -22,7 +22,9 @@
   <string name="permlab_useHardwareFramework">folosește framework-ul hardware</string>
   <string name="permdesc_useHardwareFramework">Permite unei aplicații să acceseze framework-ul CM hardware.</string>
   <string name="permlab_write_alarms">schimbă direct alarme</string>
+  <string name="permlab_manage_alarms">comută alarme programate</string>
   <string name="permlab_read_alarms">accesează alarme programate</string>
+  <string name="permdesc_read_alarms">Permite unei aplicații să citească alarmele programate.</string>
   <string name="profileNameDefault">Implicit</string>
   <string name="profileNameWork">Serviciu</string>
   <string name="profileNameHome">Acasă</string>
