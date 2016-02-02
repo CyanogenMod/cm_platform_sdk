@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ import org.cyanogenmod.hardware.TapToWake;
 import org.cyanogenmod.hardware.ThermalMonitor;
 import org.cyanogenmod.hardware.ThermalUpdateCallback;
 import org.cyanogenmod.hardware.TouchscreenHovering;
+import org.cyanogenmod.hardware.UniqueDeviceId;
 import org.cyanogenmod.hardware.VibratorHW;
 
 /** @hide */
@@ -83,6 +84,7 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         public long getLtoDownloadInterval();
 
         public String getSerialNumber();
+        public String getUniqueDeviceId();
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement();
         public boolean isSunlightEnhancementSelfManaged();
@@ -133,6 +135,8 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
                 mSupportedFeatures |= CMHardwareManager.FEATURE_PERSISTENT_STORAGE;
             if (ThermalMonitor.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_THERMAL_MONITOR;
+            if (UniqueDeviceId.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_UNIQUE_DEVICE_ID;
         }
 
         public int getSupportedFeatures() {
@@ -293,6 +297,10 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
 
         public String getSerialNumber() {
             return SerialNumber.getSerialNumber();
+        }
+
+        public String getUniqueDeviceId() {
+            return UniqueDeviceId.getUniqueDeviceId();
         }
 
         public boolean requireAdaptiveBacklightForSunlightEnhancement() {
@@ -521,6 +529,17 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
                 return null;
             }
             return mCmHwImpl.getSerialNumber();
+        }
+
+        @Override
+        public String getUniqueDeviceId() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (!isSupported(CMHardwareManager.FEATURE_UNIQUE_DEVICE_ID)) {
+                Log.e(TAG, "Unique device ID is not supported");
+                return null;
+            }
+            return mCmHwImpl.getUniqueDeviceId();
         }
 
         @Override
