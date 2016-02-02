@@ -19,9 +19,13 @@
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">opprett en egendefinert flis i hurtiginnstillingspanelet</string>
   <string name="permdesc_publishCustomTile">Tillater at en app kan publisere en hurtiginnstillingsflis.</string>
+  <string name="permlab_modifyNetworkSettings">endre innstillingene for nettverk</string>
+  <string name="permlab_modifySoundSettings">endre systemets lydinnstillinger</string>
   <string name="permlab_bindCustomTileListenerService">binde til en egendefinert flis-lyttertjeneste</string>
   <string name="permdesc_bindCustomTileListenerService">Tillater at en app kan bindes til det øverste nivået i grensesnittet til en tilpasset flis-lyttertjeneste.</string>
   <string name="permlab_modifyProfiles">endre system profiler</string>
+  <string name="permlab_manage_alarms">veksle planlagte alarmer</string>
+  <string name="permlab_writeSecureSettings">endre CM sikker systeminnstillinger</string>
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeid</string>
