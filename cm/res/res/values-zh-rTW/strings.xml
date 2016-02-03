@@ -21,6 +21,8 @@
   <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
   <string name="permdesc_writeSettings">允許應用程式更改CM系統設定</string>
   <string name="permlab_writeSecureSettings">修改 CM 系統安全設定</string>
+  <string name="permlab_accessAppSuggestions">存取應用程式建議</string>
+  <string name="permdesc_accessAppSuggestions">允許應用程式存取應用程式建議。</string>
   <string name="profileNameDefault">預設</string>
   <string name="profileNameWork">工作</string>
   <string name="profileNameHome">住家</string>

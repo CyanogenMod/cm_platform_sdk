@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,11 @@ public final class CMHardwareManager {
      * Thermal change monitor
      */
     public static final int FEATURE_THERMAL_MONITOR = 0x8000;
+
+    /**
+     * Unique device ID
+     */
+    public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -693,6 +698,19 @@ public final class CMHardwareManager {
         try {
             if (checkService()) {
                 return sService.getSerialNumber();
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return an id that's both unique and deterministic for the device
+     */
+    public String getUniqueDeviceId() {
+        try {
+            if (checkService()) {
+                return sService.getUniqueDeviceId();
             }
         } catch (RemoteException e) {
         }
