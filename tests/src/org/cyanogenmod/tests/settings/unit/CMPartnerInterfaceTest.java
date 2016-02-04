@@ -24,6 +24,7 @@ import android.os.ServiceManager;
 import android.service.notification.Condition;
 import android.service.notification.IConditionListener;
 import android.test.AndroidTestCase;
+import android.test.FlakyTest;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.provider.Settings;
 import android.text.format.DateUtils;
@@ -144,6 +145,7 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         assertEquals(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS, getZenMode());
     }
 
+    @FlakyTest
     @SmallTest
     public void testSetZenModeImportantInterruptionsWithDurations() {
         // 0 duration
@@ -165,6 +167,7 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         assertEquals(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS, getZenMode());
     }
 
+    @FlakyTest
     @SmallTest
     public void testSetZenModeNoInterruptionsWithDurations() {
         // 0 duration
