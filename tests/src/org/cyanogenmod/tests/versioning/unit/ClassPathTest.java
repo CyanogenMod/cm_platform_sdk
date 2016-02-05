@@ -39,7 +39,7 @@ public class ClassPathTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        mKnownSdkClasses = getLoadedClasses();
+        mKnownSdkClasses = MagicalDexHelper.getLoadedClasses(mContext, CYANOGENMOD_NAMESPACE);
     }
 
     @SmallTest
@@ -84,24 +84,6 @@ public class ClassPathTest extends AndroidTestCase {
                         "\nException " + e.toString());
             }
         }
-    }
-
-    private ArrayList<String> getLoadedClasses() {
-        ArrayList<String> listOfClasses = new ArrayList<String>();
-        try {
-            DexFile dexFile = new DexFile(new File(mContext.getPackageCodePath()));
-            Enumeration<String> enumeration = dexFile.entries();
-
-            while (enumeration.hasMoreElements()){
-                String className = enumeration.nextElement();
-                if (className.startsWith(CYANOGENMOD_NAMESPACE)) {
-                    listOfClasses.add(className);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return listOfClasses;
     }
 
     private void processAndCompare(String name) throws ClassPathException {
