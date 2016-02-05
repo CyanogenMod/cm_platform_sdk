@@ -19,7 +19,8 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := tests
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.cyanogenmod.platform.sdk
+    org.cyanogenmod.platform.sdk \
+    android-support-test
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src/)
 
@@ -29,3 +30,11 @@ LOCAL_JAVA_LIBRARIES := android.test.runner
 LOCAL_PROGUARD_ENABLED := disabled
 
 include $(BUILD_PACKAGE)
+
+include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
+    android-support-test:libs/android-support-test.jar
+
+include $(BUILD_MULTI_PREBUILT)
+
