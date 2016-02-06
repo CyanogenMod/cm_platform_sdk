@@ -19,7 +19,11 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+
 import com.android.internal.util.cm.palette.Palette;
+
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Helper class for colorspace conversions, and color-related
@@ -28,9 +32,20 @@ import com.android.internal.util.cm.palette.Palette;
 public class ColorUtils {
 
     private static int[] SOLID_COLORS = new int[] {
-        Color.RED, Color.YELLOW, Color.GREEN, Color.CYAN,
-        Color.BLUE, Color.MAGENTA, Color.WHITE, Color.GRAY
+        Color.RED, 0xFFFFA500, Color.YELLOW, Color.GREEN, Color.CYAN,
+        Color.BLUE, Color.MAGENTA, Color.WHITE, Color.BLACK
     };
+
+    /**
+     * Drop the alpha component from an RGBA packed int and return
+     * a non sign-extended RGB int.
+     *
+     * @param rgba
+     * @return rgb
+     */
+    public static int dropAlpha(int rgba) {
+        return rgba & 0x00FFFFFF;
+    }
 
     /**
      * Converts an RGB packed int into L*a*b space, which is well-suited for finding
@@ -106,37 +121,100 @@ public class ColorUtils {
     }
 
     /**
+     * Calculate the colour difference value between two colours in lab space.
+     * This code is from OpenIMAJ under BSD License
+     *
+     * @param L1 first colour's L component
+     * @param a1 first colour's a component
+     * @param b1 first colour's b component
+     * @param L2 second colour's L component
+     * @param a2 second colour's a component
+     * @param b2 second colour's b component
+     * @return the CIE 2000 colour difference
+     */
+    public static double calculateDeltaE(double L1, double a1, double b1,
+            double L2, double a2, double b2) {
+        double Lmean = (L1 + L2) / 2.0;
+        double C1 = Math.sqrt(a1 * a1 + b1 * b1);
+        double C2 = Math.sqrt(a2 * a2 + b2 * b2);
+        double Cmean = (C1 + C2) / 2.0;
+
+        double G = (1 - Math.sqrt(Math.pow(Cmean, 7) / (Math.pow(Cmean, 7) + Math.pow(25, 7)))) / 2;
+        double a1prime = a1 * (1 + G);
+        double a2prime = a2 * (1 + G);
+
+        double C1prime = Math.sqrt(a1prime * a1prime + b1 * b1);
+        double C2prime = Math.sqrt(a2prime * a2prime + b2 * b2);
+        double Cmeanprime = (C1prime + C2prime) / 2;
+
+        double h1prime = Math.atan2(b1, a1prime)
+                + 2 * Math.PI * (Math.atan2(b1, a1prime) < 0 ? 1 : 0);
+        double h2prime = Math.atan2(b2, a2prime)
+                + 2 * Math.PI * (Math.atan2(b2, a2prime) < 0 ? 1 : 0);
+        double Hmeanprime = ((Math.abs(h1prime - h2prime) > Math.PI)
+                ? (h1prime + h2prime + 2 * Math.PI) / 2 : (h1prime + h2prime) / 2);
+
+        double T = 1.0 - 0.17 * Math.cos(Hmeanprime - Math.PI / 6.0)
+                + 0.24 * Math.cos(2 * Hmeanprime) + 0.32 * Math.cos(3 * Hmeanprime + Math.PI / 30)
+                - 0.2 * Math.cos(4 * Hmeanprime - 21 * Math.PI / 60);
+
+        double deltahprime = ((Math.abs(h1prime - h2prime) <= Math.PI) ? h2prime - h1prime
+                : (h2prime <= h1prime) ? h2prime - h1prime + 2 * Math.PI
+                        : h2prime - h1prime - 2 * Math.PI);
+
+        double deltaLprime = L2 - L1;
+        double deltaCprime = C2prime - C1prime;
+        double deltaHprime = 2.0 * Math.sqrt(C1prime * C2prime) * Math.sin(deltahprime / 2.0);
+        double SL = 1.0 + ((0.015 * (Lmean - 50) * (Lmean - 50))
+                / (Math.sqrt(20 + (Lmean - 50) * (Lmean - 50))));
+        double SC = 1.0 + 0.045 * Cmeanprime;
+        double SH = 1.0 + 0.015 * Cmeanprime * T;
+
+        double deltaTheta = (30 * Math.PI / 180)
+                * Math.exp(-((180 / Math.PI * Hmeanprime - 275) / 25)
+                        * ((180 / Math.PI * Hmeanprime - 275) / 25));
+        double RC = (2
+                * Math.sqrt(Math.pow(Cmeanprime, 7) / (Math.pow(Cmeanprime, 7) + Math.pow(25, 7))));
+        double RT = (-RC * Math.sin(2 * deltaTheta));
+
+        double KL = 1;
+        double KC = 1;
+        double KH = 1;
+
+        double deltaE = Math.sqrt(
+                ((deltaLprime / (KL * SL)) * (deltaLprime / (KL * SL))) +
+                        ((deltaCprime / (KC * SC)) * (deltaCprime / (KC * SC))) +
+                        ((deltaHprime / (KH * SH)) * (deltaHprime / (KH * SH))) +
+                        (RT * (deltaCprime / (KC * SC)) * (deltaHprime / (KH * SH))));
+
+        return deltaE;
+    }
+
+    /**
      * Finds the "perceptually nearest" color from a list of colors to
      * the given RGB value. This is done by converting to
-     * L*a*b colorspace and using a simple distance calculation.
+     * L*a*b colorspace and using the CIE2000 deltaE algorithm.
      *
      * @param rgb The original color to start with
      * @param colors An array of colors to test
      * @return RGB packed int of nearest color in the list
      */
     public static int findPerceptuallyNearestColor(int rgb, int[] colors) {
-        int nearest = 0;
-        double distance = 3 * 255;
-
-        if (rgb <= 0) {
-            return 0;
-        }
+        int nearestColor = 0;
+        double closest = Double.MAX_VALUE;
 
         float[] original = convertRGBtoLAB(rgb);
 
         for (int i = 0; i < colors.length; i++) {
-            int color = colors[i];
-            float[] target = convertRGBtoLAB(color);
-
-            double total = Math.sqrt(Math.pow(original[0] - target[0], 2) +
-                                     Math.pow(original[1] - target[1], 2) +
-                                     Math.pow(original[2] - target[2], 2));
-            if (total < distance) {
-                nearest = color;
-                distance = total;
+            float[] cl = convertRGBtoLAB(colors[i]);
+            double deltaE = calculateDeltaE(original[0], original[1], original[2],
+                                            cl[0], cl[1], cl[2]);
+            if (deltaE < closest) {
+                nearestColor = colors[i];
+                closest = deltaE;
             }
         }
-        return nearest;
+        return nearestColor;
     }
 
     /**
@@ -146,10 +224,26 @@ public class ColorUtils {
      * of colors due to hardware limitations.
      *
      * @param rgb
-     * @return
+     * @return the perceptually nearest color in RGB
      */
     public static int findPerceptuallyNearestSolidColor(int rgb) {
         return findPerceptuallyNearestColor(rgb, SOLID_COLORS);
+    }
+
+    /**
+     * Given a Palette, pick out the dominant swatch based on population
+     *
+     * @param palette
+     * @return the dominant Swatch
+     */
+    public static Palette.Swatch getDominantSwatch(Palette palette) {
+        // find most-represented swatch based on population
+        return Collections.max(palette.getSwatches(), new Comparator<Palette.Swatch>() {
+            @Override
+            public int compare(Palette.Swatch sw1, Palette.Swatch sw2) {
+                return Integer.compare(sw1.getPopulation(), sw2.getPopulation());
+            }
+        });
     }
 
     /**
@@ -162,11 +256,11 @@ public class ColorUtils {
      * @return a suitable solid color which corresponds to the image
      */
     public static int generateAlertColorFromDrawable(Drawable drawable) {
-        int color = 0;
+        int alertColor = Color.BLACK;
         Bitmap bitmap = null;
 
         if (drawable == null) {
-            return 0;
+            return alertColor;
         }
 
         if (drawable instanceof BitmapDrawable) {
@@ -178,13 +272,23 @@ public class ColorUtils {
         }
 
         if (bitmap != null) {
-            Palette p = Palette.generate(bitmap);
-            color = findPerceptuallyNearestSolidColor(p.getVibrantColor(0)) & 0xFFFFFF;
+            Palette p = Palette.from(bitmap).generate();
+
+            // First try the dominant color
+            int iconColor = getDominantSwatch(p).getRgb();
+            alertColor = findPerceptuallyNearestSolidColor(iconColor);
+
+            // Try the most saturated color if we got white or black (boring)
+            if (alertColor == Color.BLACK || alertColor == Color.WHITE) {
+                iconColor = p.getVibrantColor(Color.WHITE);
+                alertColor = findPerceptuallyNearestSolidColor(iconColor);
+            }
+
             if (!(drawable instanceof BitmapDrawable)) {
                 bitmap.recycle();
             }
         }
 
-        return color;
+        return alertColor;
     }
 }
