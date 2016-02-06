@@ -19,7 +19,8 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := tests
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.cyanogenmod.platform.sdk
+    org.cyanogenmod.platform.sdk \
+    android-support-test
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src/)
 
