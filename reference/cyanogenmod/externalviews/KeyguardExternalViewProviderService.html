@@ -172,7 +172,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1', '2', '3', '4' ];
+        var SINCE_DATA = [ '1', '2', '3', '4', '5' ];
         buildApiLevelSelector();
       </script>
                   
@@ -339,6 +339,9 @@ Summary:
 
 
 
+
+  &#124; <a href="#constants">Constants</a>
+  
 
 
   &#124; <a href="#inhconstants">Inherited Constants</a>
@@ -557,6 +560,39 @@ Summary:
 
 
 
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html#META_DATA">META_DATA</a></td>
+        <td class="jd-descrcol" width="100%">
+          Name under which an external keyguard view publishes information about itself.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-4" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.html#SERVICE_INTERFACE">SERVICE_INTERFACE</a></td>
+        <td class="jd-descrcol" width="100%">
+          The action that must be declared as handled by this service.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+
+</table>
 
 
 
@@ -7048,6 +7084,105 @@ From interface
 
 
 <!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="META_DATA"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        META_DATA
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Name under which an external keyguard view publishes information about itself.
+ This meta-data must reference an XML resource containing
+ a <code>&lt;lockscreen&gt;</code>
+ tag.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.externalviews.keyguard"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERVICE_INTERFACE"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        SERVICE_INTERFACE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 4</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The action that must be declared as handled by this service.
+
+ <p><code><intent-filter>
+      <action android:name="cyanogenmod.externalviews.KeyguardExternalViewProviderService"/>
+  </intent-filter>
+</code></p>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.externalviews.KeyguardExternalViewProviderService"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
 
 
 <!-- Fields -->
