@@ -94,6 +94,8 @@ public final class Profile implements Parcelable, Comparable {
 
     private int mDozeMode = DozeMode.DEFAULT;
 
+    private int mNotificationLightMode = NotificationLightMode.DEFAULT;
+
     /**
      * Lock modes of a device
      */
@@ -127,6 +129,18 @@ public final class Profile implements Parcelable, Comparable {
         /** Represents an enabled Doze mode */
         public static final int ENABLE = 1;
         /** Represents an disabled Doze mode */
+        public static final int DISABLE = 2;
+    }
+
+    /**
+     * Notification light modes available on a device
+     */
+    public static class NotificationLightMode {
+        /** Represents a default Notification light mode (user choice) */
+        public static final int DEFAULT = 0;
+        /** Represents an enabled Notification light mode */
+        public static final int ENABLE = 1;
+        /** Represents a disabled Notification light mode */
         public static final int DISABLE = 2;
     }
 
@@ -620,6 +634,7 @@ public final class Profile implements Parcelable, Comparable {
         dest.writeTypedArray(mTriggers.values().toArray(new ProfileTrigger[0]), flags);
         dest.writeInt(mExpandedDesktopMode);
         dest.writeInt(mDozeMode);
+        dest.writeInt(mNotificationLightMode);
 
         // Go back and write size
         int parcelableSize = dest.dataPosition() - startPosition;
@@ -694,6 +709,7 @@ public final class Profile implements Parcelable, Comparable {
             }
             mExpandedDesktopMode = in.readInt();
             mDozeMode = in.readInt();
+            mNotificationLightMode = in.readInt();
         }
 
         in.setDataPosition(startPosition + parcelableSize);
@@ -884,6 +900,28 @@ public final class Profile implements Parcelable, Comparable {
     }
 
     /**
+     * Get the {@link NotificationLightMode} associated with the {@link Profile}
+     * @return
+     */
+    public int getNotificationLightMode() {
+        return mNotificationLightMode;
+    }
+
+    /**
+     * Set the {@link NotificationLightMode} associated with the {@link Profile}
+     * @return
+     */
+    public void setNotificationLightMode(int notificationLightMode) {
+        if (notificationLightMode < NotificationLightMode.DEFAULT
+                || notificationLightMode > NotificationLightMode.DISABLE) {
+            mNotificationLightMode = NotificationLightMode.DEFAULT;
+        } else {
+            mNotificationLightMode = notificationLightMode;
+        }
+        mDirty = true;
+    }
+
+    /**
      * Get the {@link AirplaneModeSettings} associated with the {@link Profile}
      * @return
      */
@@ -992,6 +1030,10 @@ public final class Profile implements Parcelable, Comparable {
         builder.append("<doze-mode>");
         builder.append(mDozeMode);
         builder.append("</doze-mode>\n");
+
+        builder.append("<notification-light-mode>");
+        builder.append(mNotificationLightMode);
+        builder.append("</notification-light-mode>\n");
 
         mAirplaneMode.getXmlString(builder, context);
 
@@ -1141,6 +1183,9 @@ public final class Profile implements Parcelable, Comparable {
                 if (name.equals("doze-mode")) {
                     profile.setDozeMode(Integer.valueOf(xpp.nextText()));
                 }
+                if (name.equals("notification-light-mode")) {
+                    profile.setNotificationLightMode(Integer.valueOf(xpp.nextText()));
+                }
                 if (name.equals("profileGroup")) {
                     ProfileGroup pg = ProfileGroup.fromXml(xpp, context);
                     profile.addProfileGroup(pg);
@@ -1211,6 +1256,14 @@ public final class Profile implements Parcelable, Comparable {
             Settings.Secure.putIntForUser(context.getContentResolver(),
                 Settings.Secure.DOZE_ENABLED,
                     mDozeMode == DozeMode.ENABLE ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+        }
+
+        // Set notification light mode
+        if (mNotificationLightMode != NotificationLightMode.DEFAULT) {
+            Settings.System.putIntForUser(context.getContentResolver(),
+                Settings.System.NOTIFICATION_LIGHT_PULSE,
+                    mNotificationLightMode == NotificationLightMode.ENABLE ? 1 : 0,
                     UserHandle.USER_CURRENT);
         }
     }
