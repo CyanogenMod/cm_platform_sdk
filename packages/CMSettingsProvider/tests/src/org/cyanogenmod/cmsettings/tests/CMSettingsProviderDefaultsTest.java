@@ -99,9 +99,6 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
                 CMSettings.Secure.DEFAULT_THEME_PACKAGE,
                 "R.string.def_theme_package"));
         SECURE_SETTINGS_DEFAULTS.add(new Setting(
-                CMSettings.Secure.QS_TILES,
-                "R.string.def_qs_tiles"));
-        SECURE_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
                 "R.string.def_protected_component_managers"));
     }
