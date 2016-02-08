@@ -40,9 +40,13 @@
     <!-- Defaults for CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR -->
     <integer name="def_force_show_navbar">0</integer>
 
-    <!-- Default for CMSettings.Secure.QS_TILES
-         Comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
-    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,hotspot,live_display</string>
+    <!-- THESE DEFAULTS COME FROM org.cyanogenmod.platform.internal's config_defaultQuickSettingsTiles
+         AND SHOULD BE OVERLAID THERE.
+
+         DO NOT USE:
+         Default for CMSettings.Secure.QS_TILES
+         Comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles
+    <string name="def_qs_tiles">wifi,bt,cell,airplane,rotation,flashlight,location,cast,hotspot,live_display</string> -->
 
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <bool name="def_stats_collection">false</bool>
