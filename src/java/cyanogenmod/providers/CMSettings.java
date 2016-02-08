@@ -2606,6 +2606,12 @@ public final class CMSettings {
          */
         public static final String LIVE_LOCK_SCREEN_ENABLED = "live_lock_screen_enabled";
 
+        /**
+         * Whether keyguard will direct show security view (0 = false, 1 = true)
+         * @hide
+         */
+        public static final String LOCK_PASS_TO_SECURITY_VIEW = "lock_screen_pass_to_security_view";
+
         // endregion
 
         /**
@@ -2652,6 +2658,7 @@ public final class CMSettings {
                 CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED,
                 CMSettings.Secure.QS_LOCATION_ADVANCED,
                 CMSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
+                CMSettings.Secure.LOCK_PASS_TO_SECURITY_VIEW
         };
 
         /**
