@@ -29,6 +29,6 @@ LOCAL_JAVA_LIBRARIES := android.test.runner
 LOCAL_PROGUARD_ENABLED := disabled
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.cyanogenmod.platform.sdk
+    org.cyanogenmod.platform.internal
 
 include $(BUILD_PACKAGE)
