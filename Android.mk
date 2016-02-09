@@ -224,8 +224,7 @@ LOCAL_DROIDDOC_OPTIONS:= \
         -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE) \
-        -nodocs \
-        -verbose
+        -nodocs
 
 LOCAL_UNINSTALLABLE_MODULE := true
 
@@ -256,8 +255,7 @@ LOCAL_DROIDDOC_OPTIONS:=\
         -exclude org.cyanogenmod.platform.internal \
         -api $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE) \
         -removedApi $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE) \
-        -nodocs \
-        -verbose
+        -nodocs
 
 LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:= build/tools/droiddoc/templates-sdk
 
