@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -138,6 +139,9 @@ public abstract class KeyguardExternalViewProviderService extends Service {
 
             public ProviderImpl(Provider provider) {
                 mWindow = new PhoneWindow(KeyguardExternalViewProviderService.this);
+                mWindow.requestFeature(Window.FEATURE_NO_TITLE);
+                mWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
+                mWindow.setFormat(PixelFormat.TRANSPARENT);
                 ((ViewGroup) mWindow.getDecorView()).addView(onCreateView());
 
                 mParams = new WindowManager.LayoutParams();
