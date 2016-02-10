@@ -533,6 +533,7 @@ package cyanogenmod.os {
     field public static final int BOYSENBERRY = 2; // 0x2
     field public static final int CANTALOUPE = 3; // 0x3
     field public static final int DRAGON_FRUIT = 4; // 0x4
+    field public static final int ELDERBERRY = 5; // 0x5
   }
 
 }

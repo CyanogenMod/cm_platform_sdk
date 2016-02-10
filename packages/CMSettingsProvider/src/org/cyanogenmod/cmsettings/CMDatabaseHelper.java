@@ -249,7 +249,8 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                     R.integer.def_force_show_navbar);
 
             loadStringSetting(stmt, CMSettings.Secure.QS_TILES,
-                    R.string.def_qs_tiles);
+                    org.cyanogenmod.platform.internal.
+                            R.string.config_defaultQuickSettingsTiles);
 
             loadBooleanSetting(stmt, CMSettings.Secure.QS_USE_MAIN_TILES,
                     R.bool.def_sysui_qs_main_tiles);
