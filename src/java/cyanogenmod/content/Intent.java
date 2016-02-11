@@ -65,4 +65,11 @@ public class Intent {
      */
     public static final String EXTRA_PROTECTED_COMPONENTS =
             "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
+
+    /**
+     * Intent filter to start Settings.DataUsage
+     */
+    public static final String ACTION_DATA_USAGE = "cyanogenmod.settings.ACTION_DATA_USAGE";
+
+
 }
