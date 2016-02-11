@@ -219,6 +219,7 @@ package cyanogenmod.app {
     method public int describeContents();
     method public cyanogenmod.profiles.AirplaneModeSettings getAirplaneMode();
     method public cyanogenmod.profiles.BrightnessSettings getBrightness();
+    method public cyanogenmod.profiles.ConnectionSettings getConnectionSettingWithSubId(int);
     method public java.util.Collection<cyanogenmod.profiles.ConnectionSettings> getConnectionSettings();
     method public int getDozeMode();
     method public int getExpandedDesktopMode();
@@ -673,9 +674,11 @@ package cyanogenmod.profiles {
     ctor public ConnectionSettings(int, int, boolean);
     method public int describeContents();
     method public int getConnectionId();
+    method public int getSubId();
     method public int getValue();
     method public boolean isOverride();
     method public void setOverride(boolean);
+    method public void setSubId(int);
     method public void setValue(int);
     method public void writeToParcel(android.os.Parcel, int);
     field public static final int PROFILE_CONNECTION_2G3G4G = 9; // 0x9
