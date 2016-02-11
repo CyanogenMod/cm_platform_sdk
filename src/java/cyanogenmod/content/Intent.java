@@ -134,4 +134,9 @@ public class Intent {
      */
     public static final String URI_SCHEME_PACKAGE = "package";
 
+    /**
+     * Intent filter to start Settings.DataUsage
+     */
+    public static final String ACTION_DATA_USAGE = "cyanogenmod.settings.ACTION_DATA_USAGE";
+
 }
