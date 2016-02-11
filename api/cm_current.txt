@@ -223,6 +223,7 @@ package cyanogenmod.app {
     method public int getDozeMode();
     method public int getExpandedDesktopMode();
     method public java.lang.String getName();
+    method public int getNotificationLightMode();
     method public int getProfileType();
     method public cyanogenmod.profiles.RingModeSettings getRingMode();
     method public cyanogenmod.profiles.LockSettings getScreenLockMode();
@@ -240,6 +241,7 @@ package cyanogenmod.app {
     method public void setDozeMode(int);
     method public void setExpandedDesktopMode(int);
     method public void setName(java.lang.String);
+    method public void setNotificationLightMode(int);
     method public void setProfileType(int);
     method public void setRingMode(cyanogenmod.profiles.RingModeSettings);
     method public void setScreenLockMode(cyanogenmod.profiles.LockSettings);
@@ -268,6 +270,13 @@ package cyanogenmod.app {
     field public static final int DEFAULT = 0; // 0x0
     field public static final int DISABLE = 2; // 0x2
     field public static final int INSECURE = 1; // 0x1
+  }
+
+  public static class Profile.NotificationLightMode {
+    ctor public Profile.NotificationLightMode();
+    field public static final int DEFAULT = 0; // 0x0
+    field public static final int DISABLE = 2; // 0x2
+    field public static final int ENABLE = 1; // 0x1
   }
 
   public static class Profile.ProfileTrigger implements android.os.Parcelable {
