@@ -45,9 +45,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 
+import org.cyanogenmod.internal.util.QSConstants;
+import org.cyanogenmod.internal.util.QSUtils;
+
 import cyanogenmod.providers.CMSettings;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -204,6 +208,28 @@ public class CMSettingsProvider extends ContentProvider {
             else if (tableName.equals(CMDatabaseHelper.CMTableNames.TABLE_SECURE)) {
                 settingsValue = Settings.Secure.getStringForUser(contentResolver, settingsKey,
                         userId);
+
+                // insert dnd, edit tiles for upgrade from 12.1 -> 13.0
+                if (CMSettings.Secure.QS_TILES.equals(settingsKey) && (settingsValue != null
+                        && (!settingsValue.contains(QSConstants.TILE_DND)
+                        || !settingsValue.contains(QSConstants.TILE_EDIT)))) {
+                    if (LOCAL_LOGV) {
+                        Log.d(TAG, "Need to insert DND or Edit tile for upgrade, currentValue: "
+                                + settingsValue);
+                    }
+
+                    final List<String> tiles = Settings.Secure.getDelimitedStringAsList(
+                            contentResolver, settingsKey, ",");
+
+                    if (!tiles.contains(QSConstants.TILE_DND)) {
+                        tiles.add(QSConstants.TILE_DND);
+                    }
+                    if (!tiles.contains(QSConstants.TILE_EDIT)) {
+                        tiles.add(QSConstants.TILE_EDIT);
+                    }
+
+                    settingsValue = TextUtils.join(",", tiles);
+                }
             }
             else if (tableName.equals(CMDatabaseHelper.CMTableNames.TABLE_GLOBAL)) {
                 settingsValue = Settings.Global.getStringForUser(contentResolver, settingsKey,
