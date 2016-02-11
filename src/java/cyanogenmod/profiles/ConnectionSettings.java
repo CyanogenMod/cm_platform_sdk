@@ -255,27 +255,8 @@ public final class ConnectionSettings implements Parcelable {
                 break;
             case PROFILE_CONNECTION_2G3G4G:
                 Intent intent = new Intent(ACTION_MODIFY_NETWORK_MODE);
-                switch(getValue()) {
-                    case CM_MODE_2G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_GSM_ONLY);
-                        break;
-                    case CM_MODE_3G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_WCDMA_ONLY);
-                        break;
-                    case CM_MODE_4G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_LTE_ONLY);
-                        break;
-                    case CM_MODE_2G3G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_WCDMA_PREF);
-                        break;
-                    case CM_MODE_ALL:
-                        intent.putExtra(EXTRA_NETWORK_MODE,
-                                RILConstants.NETWORK_MODE_LTE_GSM_WCDMA);
-                        break;
-                    default:
-                        return;
-                }
-                context.sendBroadcast(intent);
+                intent.putExtra(EXTRA_NETWORK_MODE, getValue());
+                context.sendBroadcast(intent, "com.android.phone.CHANGE_NETWORK_MODE");
                 break;
             case PROFILE_CONNECTION_BLUETOOTH:
                 int btstate = bta.getState();
