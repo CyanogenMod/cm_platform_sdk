@@ -59,6 +59,11 @@ public final class ConnectionSettings implements Parcelable {
     private boolean mDirty;
 
     /**
+     * For use with {@link #PROFILE_CONNECTION_2G3G4G} to determine what subscription to control.
+     */
+    private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+
+    /**
      * The {@link #PROFILE_CONNECTION_MOBILEDATA} allows for enabling and disabling the mobile
      * data connection. Boolean connection settings {@link BooleanState}
      */
@@ -116,6 +121,7 @@ public final class ConnectionSettings implements Parcelable {
     private static final String ACTION_MODIFY_NETWORK_MODE =
             "com.android.internal.telephony.MODIFY_NETWORK_MODE";
     private static final String EXTRA_NETWORK_MODE = "networkMode";
+    private static final String EXTRA_SUB_ID = "subId";
 
     /**
      * BooleanStates for specific {@link ConnectionSettings}
@@ -126,12 +132,6 @@ public final class ConnectionSettings implements Parcelable {
         /** Enabled state */
         public static final int STATE_ENABLED = 1;
     }
-
-    private static final int CM_MODE_2G = 0;
-    private static final int CM_MODE_3G = 1;
-    private static final int CM_MODE_4G = 2;
-    private static final int CM_MODE_2G3G = 3;
-    private static final int CM_MODE_ALL = 4;
 
     /** @hide */
     public static final Parcelable.Creator<ConnectionSettings> CREATOR =
@@ -210,12 +210,25 @@ public final class ConnectionSettings implements Parcelable {
         mDirty = true;
     }
 
+    public void setSubId(int subId) {
+        mSubId = subId;
+        mDirty = true;
+    }
+
     /**
      * Check whether or not the {@link ConnectionSettings} overrides user settings.
      * @return true if override
      */
     public boolean isOverride() {
         return mOverride;
+    }
+
+    /**
+     * Get the subscription id which this {@link ConnectionSettings} should apply to.
+     * @return
+     */
+    public int getSubId() {
+        return mSubId;
     }
 
     /** @hide */
@@ -254,28 +267,14 @@ public final class ConnectionSettings implements Parcelable {
                 }
                 break;
             case PROFILE_CONNECTION_2G3G4G:
-                Intent intent = new Intent(ACTION_MODIFY_NETWORK_MODE);
-                switch(getValue()) {
-                    case CM_MODE_2G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_GSM_ONLY);
-                        break;
-                    case CM_MODE_3G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_WCDMA_ONLY);
-                        break;
-                    case CM_MODE_4G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_LTE_ONLY);
-                        break;
-                    case CM_MODE_2G3G:
-                        intent.putExtra(EXTRA_NETWORK_MODE, RILConstants.NETWORK_MODE_WCDMA_PREF);
-                        break;
-                    case CM_MODE_ALL:
-                        intent.putExtra(EXTRA_NETWORK_MODE,
-                                RILConstants.NETWORK_MODE_LTE_GSM_WCDMA);
-                        break;
-                    default:
-                        return;
+                if (Build.CM_VERSION.SDK_INT >= Build.CM_VERSION_CODES.ELDERBERRY) {
+                    Intent intent = new Intent(ACTION_MODIFY_NETWORK_MODE);
+                    intent.putExtra(EXTRA_NETWORK_MODE, getValue());
+                    intent.putExtra(EXTRA_SUB_ID, getSubId());
+                    context.sendBroadcast(intent, "com.android.phone.CHANGE_NETWORK_MODE");
+                } else {
+                    // do old code
                 }
-                context.sendBroadcast(intent);
                 break;
             case PROFILE_CONNECTION_BLUETOOTH:
                 int btstate = bta.getState();
@@ -363,6 +362,8 @@ public final class ConnectionSettings implements Parcelable {
                     connectionDescriptor.mValue = Integer.parseInt(xpp.nextText());
                 } else if (name.equals("override")) {
                     connectionDescriptor.mOverride = Boolean.parseBoolean(xpp.nextText());
+                } else if (name.equals("subId")) {
+                    connectionDescriptor.mSubId = Integer.parseInt(xpp.nextText());
                 }
             } else if (event == XmlPullParser.END_DOCUMENT) {
                 throw new IOException("Premature end of file while parsing connection settings");
@@ -380,7 +381,14 @@ public final class ConnectionSettings implements Parcelable {
         builder.append(mValue);
         builder.append("</value>\n<override>");
         builder.append(mOverride);
-        builder.append("</override>\n</connectionDescriptor>\n");
+        builder.append("</override>\n");
+        if (Build.CM_VERSION.SDK_INT >= Build.CM_VERSION_CODES.ELDERBERRY) {
+            if (mConnectionId == PROFILE_CONNECTION_2G3G4G
+                    && mSubId != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+                builder.append("<subId>").append(mSubId).append("</subId>\n");
+            }
+        }
+        builder.append("</connectionDescriptor>\n");
     }
 
     @Override
@@ -407,6 +415,11 @@ public final class ConnectionSettings implements Parcelable {
         dest.writeInt(mValue);
         dest.writeInt(mDirty ? 1 : 0);
 
+        // === ELDERBERRY ===
+        if (mConnectionId == PROFILE_CONNECTION_2G3G4G) {
+            dest.writeInt(mSubId);
+        }
+
         // Go back and write size
         int parcelableSize = dest.dataPosition() - startPosition;
         dest.setDataPosition(sizePosition);
@@ -430,6 +443,12 @@ public final class ConnectionSettings implements Parcelable {
             mOverride = in.readInt() != 0;
             mValue = in.readInt();
             mDirty = in.readInt() != 0;
+        }
+
+        if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
+            if (mConnectionId == PROFILE_CONNECTION_2G3G4G) {
+                mSubId = in.readInt();
+            }
         }
 
         in.setDataPosition(startPosition + parcelableSize);
