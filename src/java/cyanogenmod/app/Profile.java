@@ -41,6 +41,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,6 +82,8 @@ public final class Profile implements Parcelable, Comparable {
     private Map<String, ProfileTrigger> mTriggers = new HashMap<String, ProfileTrigger>();
 
     private Map<Integer, ConnectionSettings> connections = new HashMap<Integer, ConnectionSettings>();
+
+    private Map<Integer, ConnectionSettings> networkConnectionSubIds = new HashMap<>();
 
     private RingModeSettings mRingMode = new RingModeSettings();
 
@@ -638,6 +641,15 @@ public final class Profile implements Parcelable, Comparable {
         // === ELDERBERRY ===
         dest.writeInt(mNotificationLightMode);
 
+        if (networkConnectionSubIds != null && !networkConnectionSubIds.isEmpty()) {
+            dest.writeInt(1);
+            dest.writeTypedArray(networkConnectionSubIds.values().toArray(
+                    new ConnectionSettings[0]), flags);
+        } else {
+            dest.writeInt(0);
+        }
+
+
         // Go back and write size
         int parcelableSize = dest.dataPosition() - startPosition;
         dest.setDataPosition(sizePosition);
@@ -714,6 +726,13 @@ public final class Profile implements Parcelable, Comparable {
         }
         if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
             mNotificationLightMode = in.readInt();
+            if (in.readInt() != 0) {
+                for (ConnectionSettings connection :
+                        in.createTypedArray(ConnectionSettings.CREATOR)) {
+                    // elderberry can do msim connections
+                    networkConnectionSubIds.put(connection.getSubId(), connection);
+                }
+            }
         }
 
         in.setDataPosition(startPosition + parcelableSize);
@@ -979,6 +998,11 @@ public final class Profile implements Parcelable, Comparable {
                 return true;
             }
         }
+        for (ConnectionSettings conn : networkConnectionSubIds.values()) {
+            if (conn.isDirty()) {
+                return true;
+            }
+        }
         if (mRingMode.isDirty()) {
             return true;
         }
@@ -1052,6 +1076,9 @@ public final class Profile implements Parcelable, Comparable {
             sd.getXmlString(builder, context);
         }
         for (ConnectionSettings cs : connections.values()) {
+            cs.getXmlString(builder, context);
+        }
+        for (ConnectionSettings cs : networkConnectionSubIds.values()) {
             cs.getXmlString(builder, context);
         }
         if (!mTriggers.isEmpty()) {
@@ -1200,7 +1227,12 @@ public final class Profile implements Parcelable, Comparable {
                 }
                 if (name.equals("connectionDescriptor")) {
                     ConnectionSettings cs = ConnectionSettings.fromXml(xpp, context);
-                    profile.connections.put(cs.getConnectionId(), cs);
+                    if (Build.CM_VERSION.SDK_INT >= Build.CM_VERSION_CODES.ELDERBERRY
+                            && cs.getConnectionId() == ConnectionSettings.PROFILE_CONNECTION_2G3G4G) {
+                        profile.networkConnectionSubIds.put(cs.getSubId(), cs);
+                    } else {
+                        profile.connections.put(cs.getConnectionId(), cs);
+                    }
                 }
                 if (name.equals("triggers")) {
                     readTriggersFromXml(xpp, context, profile);
@@ -1232,6 +1264,12 @@ public final class Profile implements Parcelable, Comparable {
                 cs.processOverride(context);
             }
         }
+        for (ConnectionSettings cs : networkConnectionSubIds.values()) {
+            if (cs.isOverride()) {
+                cs.processOverride(context);
+            }
+        }
+
         // Set ring mode
         mRingMode.processOverride(context);
         // Set airplane mode
@@ -1302,15 +1340,37 @@ public final class Profile implements Parcelable, Comparable {
      * @return {@link ConnectionSettings}
      */
     public ConnectionSettings getSettingsForConnection(int connectionId){
+        if (connectionId == ConnectionSettings.PROFILE_CONNECTION_2G3G4G) {
+            if (networkConnectionSubIds.size() > 1) {
+                throw new UnsupportedOperationException("Use getConnectionSettingsWithSubId for MSIM devices!");
+            } else {
+                return networkConnectionSubIds.values().iterator().next();
+            }
+        }
         return connections.get(connectionId);
+    }
+
+    /**
+     * Get the settings for a {@link ConnectionSettings#PROFILE_CONNECTION_2G3G4G} by sub id.
+     *
+     * @param subId the sub id to lookup. Can be {@link android.telephony.SubscriptionManager#INVALID_SUBSCRIPTION_ID}
+     * @return {@link ConnectionSettings}
+     */
+    public ConnectionSettings getConnectionSettingWithSubId(int subId) {
+        return networkConnectionSubIds.get(subId);
     }
 
     /**
      * Set the {@link ConnectionSettings} for the {@link Profile}
      * @param descriptor
      */
-    public void setConnectionSettings(ConnectionSettings descriptor){
-        connections.put(descriptor.getConnectionId(), descriptor);
+    public void setConnectionSettings(ConnectionSettings descriptor) {
+        if (descriptor.getConnectionId() == ConnectionSettings.PROFILE_CONNECTION_2G3G4G) {
+            networkConnectionSubIds.put(descriptor.getSubId(), descriptor);
+        } else {
+            connections.put(descriptor.getConnectionId(), descriptor);
+        }
+        mDirty = true;
     }
 
     /**
@@ -1318,6 +1378,9 @@ public final class Profile implements Parcelable, Comparable {
      * @return {@link Collection<ConnectionSettings>}
      */
     public Collection<ConnectionSettings> getConnectionSettings(){
-        return connections.values();
+        List<ConnectionSettings> combinedList = new ArrayList<>();
+        combinedList.addAll(connections.values());
+        combinedList.addAll(networkConnectionSubIds.values());
+        return combinedList;
     }
 }
