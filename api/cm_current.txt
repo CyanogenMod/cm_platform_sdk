@@ -621,11 +621,13 @@ package cyanogenmod.platform {
     field public static final java.lang.String PROTECTED_APP = "cyanogenmod.permission.PROTECTED_APP";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
+    field public static final java.lang.String READ_DATAUSAGE = "cyanogenmod.permission.READ_DATAUSAGE";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_THEMES = "cyanogenmod.permission.READ_THEMES";
     field public static final java.lang.String READ_WEATHER = "cyanogenmod.permission.READ_WEATHER";
     field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
+    field public static final java.lang.String WRITE_DATAUSAGE = "cyanogenmod.permission.WRITE_DATAUSAGE";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
     field public static final java.lang.String WRITE_THEMES = "cyanogenmod.permission.WRITE_THEMES";
@@ -791,6 +793,7 @@ package cyanogenmod.providers {
 
   public final class CMSettings {
     ctor public CMSettings();
+    field public static final java.lang.String ACTION_DATA_USAGE = "cyanogenmod.settings.ACTION_DATA_USAGE";
     field public static final java.lang.String AUTHORITY = "cmsettings";
   }
 
@@ -937,6 +940,39 @@ package cyanogenmod.providers {
     field public static final java.lang.String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     field public static final java.lang.String ZEN_ALLOW_LIGHTS = "allow_lights";
     field public static final java.lang.String ZEN_PRIORITY_ALLOW_LIGHTS = "zen_priority_allow_lights";
+  }
+
+  public final class DataUsageContract {
+    ctor public DataUsageContract();
+    field public static final java.lang.String ACTIVE = "active";
+    field public static final android.net.Uri BASE_CONTENT_URI;
+    field public static final java.lang.String BYTES = "bytes";
+    field public static final int COLUMN_OF_ACTIVE = 3; // 0x3
+    field public static final int COLUMN_OF_BYTES = 5; // 0x5
+    field public static final int COLUMN_OF_ENABLE = 2; // 0x2
+    field public static final int COLUMN_OF_EXTRA = 10; // 0xa
+    field public static final int COLUMN_OF_FAST_AVG = 8; // 0x8
+    field public static final int COLUMN_OF_FAST_SAMPLES = 9; // 0x9
+    field public static final int COLUMN_OF_ID = 0; // 0x0
+    field public static final int COLUMN_OF_LABEL = 4; // 0x4
+    field public static final int COLUMN_OF_SLOW_AVG = 6; // 0x6
+    field public static final int COLUMN_OF_SLOW_SAMPLES = 7; // 0x7
+    field public static final int COLUMN_OF_UID = 1; // 0x1
+    field public static final java.lang.String CONTENT_ITEM_TYPE = "vnd.android.cursor.itemdatausage_item";
+    field public static final java.lang.String CONTENT_TYPE = "vnd.android.cursor.dirdatausage_item";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String DATAUSAGE_AUTHORITY = "org.cyanogenmod.providers.datausage";
+    field public static final java.lang.String DATAUSAGE_TABLE = "datausage";
+    field public static final java.lang.String ENABLE = "enable";
+    field public static final java.lang.String EXTRA = "extra";
+    field public static final java.lang.String FAST_AVG = "fast_avg";
+    field public static final java.lang.String FAST_SAMPLES = "fast_samples";
+    field public static final java.lang.String LABEL = "label";
+    field public static final java.lang.String[] PROJECTION_ALL;
+    field public static final java.lang.String SLOW_AVG = "slow_avg";
+    field public static final java.lang.String SLOW_SAMPLES = "slow_samples";
+    field public static final java.lang.String UID = "uid";
+    field public static final java.lang.String _ID = "_id";
   }
 
   public class ThemesContract {
