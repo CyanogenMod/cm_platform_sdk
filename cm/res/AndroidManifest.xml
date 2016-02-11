@@ -149,4 +149,12 @@
                  android:killAfterRestore="false"
                  android:supportsRtl="true"/>
 
+    <!-- Permission for reading the DataUsage database -->
+    <permission android:name="cyanogenmod.permission.READ_DATAUSAGE"
+                android:protectionLevel="normal" />
+
+    <!-- Permission for writing the DataUsage database -->
+    <permission android:name="cyanogenmod.permission.WRITE_DATAUSAGE"
+                android:protectionLevel="normal" />
+
 </manifest>
