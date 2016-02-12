@@ -316,12 +316,10 @@ public class CMSettingsProvider extends ContentProvider {
 
         // Framework can't do automatic permission checking for calls, so we need
         // to do it here.
-        if (getContext().checkCallingOrSelfPermission(
-                cyanogenmod.platform.Manifest.permission.WRITE_SETTINGS) !=
-                PackageManager.PERMISSION_GRANTED) {
-            throw new SecurityException(
-                    String.format("Permission denial: writing to settings requires %1$s",
-                            cyanogenmod.platform.Manifest.permission.WRITE_SETTINGS));
+        if (CMSettings.CALL_METHOD_PUT_SYSTEM.equals(method)) {
+            enforceWritePermission(cyanogenmod.platform.Manifest.permission.WRITE_SETTINGS);
+        } else {
+            enforceWritePermission(cyanogenmod.platform.Manifest.permission.WRITE_SECURE_SETTINGS);
         }
 
         // Put methods
@@ -340,6 +338,15 @@ public class CMSettingsProvider extends ContentProvider {
         }
 
         return null;
+    }
+
+    private void enforceWritePermission(String permission) {
+        if (getContext().checkCallingOrSelfPermission(permission)
+                != PackageManager.PERMISSION_GRANTED) {
+            throw new SecurityException(
+                    String.format("Permission denial: writing to settings requires %s",
+                            permission));
+        }
     }
 
     /**
