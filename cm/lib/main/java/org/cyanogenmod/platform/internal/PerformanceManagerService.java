@@ -183,6 +183,20 @@ public class PerformanceManagerService extends SystemService {
             return false;
         }
 
+        boolean isProfileSame = profile == mCurrentProfile;
+
+        if (!isProfileSame) {
+            if (profile == PerformanceManager.PROFILE_POWER_SAVE) {
+                // Handle the case where toggle power saver mode
+                // failed
+                if (!mPm.setPowerSaveMode(true)) {
+                    return false;
+                }
+            } else if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
+                mPm.setPowerSaveMode(false);
+            }
+        }
+
         /**
          * It's possible that mCurrrentProfile != getUserProfile() because of a
          * per-app profile. Store the user's profile preference and then bail
@@ -193,7 +207,7 @@ public class PerformanceManagerService extends SystemService {
                     CMSettings.Secure.PERFORMANCE_PROFILE, profile);
         }
 
-        if (profile == mCurrentProfile) {
+        if (isProfileSame) {
             return false;
         }
 
@@ -239,7 +253,7 @@ public class PerformanceManagerService extends SystemService {
         }
     }
 
-    private void applyProfile() {
+    private void applyProfile(boolean fromUser) {
         if (mNumProfiles < 1) {
             // don't have profiles, bail.
             return;
@@ -249,6 +263,8 @@ public class PerformanceManagerService extends SystemService {
         if (mLowPowerModeEnabled) {
             // LPM always wins
             profile = PerformanceManager.PROFILE_POWER_SAVE;
+        } else if (fromUser && mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
+            profile = PerformanceManager.PROFILE_BALANCED;
         } else {
             profile = getUserProfile();
             // use app specific rules if profile is balanced
@@ -256,8 +272,7 @@ public class PerformanceManagerService extends SystemService {
                 profile = getProfileForActivity(mCurrentActivityName);
             }
         }
-
-        setPowerProfileInternal(profile, false);
+        setPowerProfileInternal(profile, fromUser);
     }
 
     private final IBinder mBinder = new IPerformanceManager.Stub() {
@@ -324,7 +339,7 @@ public class PerformanceManagerService extends SystemService {
             }
 
             mCurrentActivityName = activityName;
-            applyProfile();
+            applyProfile(false);
         }
     }
 
@@ -368,7 +383,7 @@ public class PerformanceManagerService extends SystemService {
                         Slog.d(TAG, "low power mode enabled: " + enabled);
                     }
                     mLowPowerModeEnabled = enabled;
-                    applyProfile();
+                    applyProfile(true);
                 }
             };
 }
