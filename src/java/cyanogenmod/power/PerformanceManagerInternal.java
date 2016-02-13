@@ -26,4 +26,6 @@ public interface PerformanceManagerInternal {
     void cpuBoost(int duration);
     
     void launchBoost();
+
+    void setPowerProfile(int profile);
 }
