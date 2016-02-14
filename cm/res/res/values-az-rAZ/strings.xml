@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Tətbiqetməyə CM təhlükəsiz sistem tənzimləmələrini dəyişmə icazəsi verər. Normal tətbiqetmələr üçün deyil.</string>
   <string name="permlab_managePersistentStorage">davamlı saxlama sahəsini idarə et</string>
   <string name="permdesc_managePersistentStorage">Tətbiqetməyə zavod tənzimləmələrinə qayıtdıqda davamlı qalıcı xüsusiyyətləri oxuma və ya yazma icazəsi verər.</string>
+  <string name="permlab_accessAppSuggestions">tətbiqetmə təkliflərinə müraciət et</string>
+  <string name="permdesc_accessAppSuggestions">Tətbiqetmənin tətbiqetmə təkliflərinə müraciətinə icazə verər.</string>
   <string name="custom_tile_listener_binding_label">Özəl çərçivə dinləyicisi</string>
+  <string name="permlab_protectedApp">qorunan tətbiqetmələrə tətbiq əlavə et və ya çıxart</string>
+  <string name="permdesc_protectedApp">Tətbiqetməyə digər tətbiqetmələri qorunan tətbiq olaraq işarələmə və kilidləmə icazəsi verər.</string>
   <string name="profileNameDefault">İlkin</string>
   <string name="profileNameWork">İş</string>
   <string name="profileNameHome">Ev</string>
@@ -58,5 +62,22 @@
   <string name="profileGroupEmail">E-poçt</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Digər</string>
+  <string name="perf_profile_pwrsv">Enerjiyə qənaət</string>
+  <string name="perf_profile_bal">Tarazlı</string>
+  <string name="perf_profile_perf">Performans</string>
+  <string name="perf_profile_bias_power">Effektiv</string>
+  <string name="perf_profile_bias_perf">Cəld</string>
+  <string name="live_display_auto">Avtomatik</string>
+  <string name="live_display_auto_summary">Gün çıxandan və batandan sonra ekranın rəng hərarətini avtomatik tənzimləyər</string>
+  <string name="live_display_off">Bağlı</string>
+  <string name="live_display_off_summary">Bütün tənzimləmələri ləğv et</string>
+  <string name="live_display_day">Gün</string>
+  <string name="live_display_day_summary">Yalnız gündüz tənzm. istifadə et</string>
   <string name="live_display_night">Gecə</string>
+  <string name="live_display_night_summary">Yalnız gecə tənzm. istifadə et</string>
+  <string name="live_display_outdoor">Açıq hava (parlaq günəş)</string>
+  <string name="live_display_outdoor_summary">Yalnız açıq hava tənzm. istifadə et</string>
+  <string name="live_display_hint">LiveDisplay göz yorğunluğunuzu azaldıb, gecələr yuxulamağınıza kömək edə bilər. Sınamaq üçün bura klikləyin!</string>
+  <string name="permlab_thirdPartyKeyguard">üçüncü tərəf kilid ekranı</string>
+  <string name="permdesc_thirdPartyKeyguard">Tətbiqetməyə şifrəsiz kilid ekranı olaraq istifadə etmə icazəsi verər.</string>
 </resources>

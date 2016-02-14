@@ -28,6 +28,8 @@
   <string name="permlab_writeSecureSettings">endre CM sikker systeminnstillinger</string>
   <string name="permlab_accessAppSuggestions">tilgang app forslag</string>
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
+  <string name="permlab_protectedApp">gjør apper beskyttet/ubeskyttet</string>
+  <string name="permdesc_protectedApp">Tillat en app å merke andre apper som beskyttet og låse dem.</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeid</string>
   <string name="profileNameHome">Hjemme</string>
@@ -55,5 +57,7 @@
   <string name="live_display_night_summary">Bruk kun natt instillinger</string>
   <string name="live_display_outdoor">Utendørs (sterkt sollys)</string>
   <string name="live_display_outdoor_summary">Bruk kun utendørs innstillinger</string>
+  <string name="live_display_hint">LiveDisplay kan redusere øyebelastning og redusere søvnvansker. Trykk her for å prøve det!</string>
   <string name="permlab_thirdPartyKeyguard">tredjeparts låseskjerm</string>
+  <string name="permdesc_thirdPartyKeyguard">Tillater en app å brukes som en usikret låseskjerm.</string>
 </resources>

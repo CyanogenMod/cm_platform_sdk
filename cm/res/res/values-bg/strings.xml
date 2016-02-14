@@ -25,9 +25,9 @@
   <string name="permdesc_modifySoundSettings">Позволява на приложението да направи промени в настройките за прекъсване режим звука.</string>
   <string name="permlab_bindCustomTileListenerService">свържи с услугата за регистриране на докосвания по потребителските бутони</string>
   <string name="permdesc_bindCustomTileListenerService">Позволява на приложението връзката с последното ниво на интерфейса на услугата за регистриране на докосвания по потребителските бутони.</string>
-  <string name="permlab_readMSPhoneState">Преглед на състоянието на вашият телефон и данни с поддръжка на множество СИМ-карти</string>
+  <string name="permlab_readMSPhoneState">Прегледайте състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ-карти</string>
   <string name="permdesc_readMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ-карти.</string>
-  <string name="permlab_modifyMSPhoneState">Преглед на състоянието на вашият телефон и данни с поддръжка на множество СИМ-карти</string>
+  <string name="permlab_modifyMSPhoneState">Промяна в състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ-карти</string>
   <string name="permdesc_modifyMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ-карти.</string>
   <string name="permlab_modifyProfiles">Модифициране на системни профили</string>
   <string name="permdesc_modifyProfiles">Позволява да модифицирате системни профили.</string>
@@ -49,7 +49,7 @@
   <string name="permdesc_accessAppSuggestions">Осигурява достъп до съвети от приложения.</string>
   <string name="custom_tile_listener_binding_label">Регистратор на допир за потребителските бутони</string>
   <string name="permlab_protectedApp">Прибави/Премахни приложение към/от списъка със защитени приложения</string>
-  <string name="permdesc_protectedApp">Позволява на приложението да маркира други приложения като защитени и да ги заключва.</string>
+  <string name="permdesc_protectedApp">Позволява на приложението да маркира други приложения. като защитени и да ги заключва.</string>
   <string name="profileNameDefault">По подразбиране</string>
   <string name="profileNameWork">Работа</string>
   <string name="profileNameHome">Вкъщи</string>
@@ -70,14 +70,14 @@
   <string name="live_display_auto">Автоматичен</string>
   <string name="live_display_auto_summary">Автоматично регулиране на цветовата температура след залез/изгрев</string>
   <string name="live_display_off">Изключен</string>
-  <string name="live_display_off_summary">Отмени всички промени</string>
+  <string name="live_display_off_summary">Няма зададен режим на екрана</string>
   <string name="live_display_day">Дневен</string>
   <string name="live_display_day_summary">Само настройки на дневен режим</string>
   <string name="live_display_night">Нощ</string>
   <string name="live_display_night_summary">Само настройки на нощен режим</string>
   <string name="live_display_outdoor">На открито (ярко слънце)</string>
   <string name="live_display_outdoor_summary">Само настройки на режим на открито</string>
-  <string name="live_display_hint">LiveDisplay може да предотврати преумората на очите и подобри съня. Докосни тук за да опиташ!</string>
+  <string name="live_display_hint">Използването на Адаптивен екран може да помогне за намаляване умората в очите през нощта. Докоснете тук, за да го изпробвате!</string>
   <string name="permlab_thirdPartyKeyguard">Защитен екран от друг автор</string>
   <string name="permdesc_thirdPartyKeyguard">Позволява приложението да бъде ползвано като незаключен защитен екран.</string>
 </resources>
