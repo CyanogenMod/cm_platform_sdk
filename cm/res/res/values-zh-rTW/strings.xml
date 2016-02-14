@@ -23,6 +23,8 @@
   <string name="permlab_writeSecureSettings">修改 CM 系統安全設定</string>
   <string name="permlab_accessAppSuggestions">存取應用程式建議</string>
   <string name="permdesc_accessAppSuggestions">允許應用程式存取應用程式建議。</string>
+  <string name="permlab_protectedApp">新增或移除受保護的應用程式</string>
+  <string name="permdesc_protectedApp">允許應用程式標記其他應用程式為受保護並將其鎖定。</string>
   <string name="profileNameDefault">預設</string>
   <string name="profileNameWork">工作</string>
   <string name="profileNameHome">住家</string>
@@ -35,5 +37,22 @@
   <string name="profileGroupEmail">電子郵件</string>
   <string name="profileGroupSMS">簡訊</string>
   <string name="wildcardProfile">其他</string>
+  <string name="perf_profile_pwrsv">省電</string>
+  <string name="perf_profile_bal">平衡</string>
+  <string name="perf_profile_perf">效能</string>
+  <string name="perf_profile_bias_power">效率</string>
+  <string name="perf_profile_bias_perf">快速</string>
+  <string name="live_display_auto">自動</string>
+  <string name="live_display_auto_summary">依日夜週期自動調節螢幕色溫</string>
+  <string name="live_display_off">關閉</string>
+  <string name="live_display_off_summary">停用所有調整</string>
+  <string name="live_display_day">日間</string>
+  <string name="live_display_day_summary">僅使用日間設定</string>
   <string name="live_display_night">夜晚</string>
+  <string name="live_display_night_summary">僅使用夜間設定</string>
+  <string name="live_display_outdoor">戶外 (陽光)</string>
+  <string name="live_display_outdoor_summary">僅使用戶外設定</string>
+  <string name="live_display_hint">LiveDisplay 可以幫助減少眼睛疲勞及睡前使用造成的不適。按一下此處來試試！</string>
+  <string name="permlab_thirdPartyKeyguard">第三方鎖定畫面</string>
+  <string name="permdesc_thirdPartyKeyguard">允許應用程式用作不安全的鎖定畫面。</string>
 </resources>

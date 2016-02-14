@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Tillader en app at ændre systemindstillinger for CM sikkerhed. Bør ikke anvendes til normale apps.</string>
   <string name="permlab_managePersistentStorage">administrere permanent lager</string>
   <string name="permdesc_managePersistentStorage">Tillader en app at læse eller skrive egenskaber, som kan overleve en gendannelse af fabriksdata.</string>
+  <string name="permlab_accessAppSuggestions">adgang til app-forslag</string>
+  <string name="permdesc_accessAppSuggestions">Tillader en app at få adgang til app-forslag.</string>
   <string name="custom_tile_listener_binding_label">Tilpasset fliseservice-lytter</string>
+  <string name="permlab_protectedApp">tilføj og fjern apps til beskyttet apps</string>
+  <string name="permdesc_protectedApp">Tillader en app at markere andre apps som beskyttet samt låse dem.</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbejde</string>
   <string name="profileNameHome">Hjem</string>
@@ -58,5 +62,22 @@
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Andre</string>
+  <string name="perf_profile_pwrsv">Strømbesparelse</string>
+  <string name="perf_profile_bal">Balanceret</string>
+  <string name="perf_profile_perf">Ydeevne</string>
+  <string name="perf_profile_bias_power">Effektivitet</string>
+  <string name="perf_profile_bias_perf">Hurtig</string>
+  <string name="live_display_auto">Automatisk</string>
+  <string name="live_display_auto_summary">Justerer automatisk farvetemperaturen på skærmen efter solnedgang og solopgang</string>
+  <string name="live_display_off">Fra</string>
+  <string name="live_display_off_summary">Deaktivér alle justeringer</string>
+  <string name="live_display_day">Dag</string>
+  <string name="live_display_day_summary">Brug kun dag-indstillinger</string>
   <string name="live_display_night">Nat</string>
+  <string name="live_display_night_summary">Brug kun nat-indstillinger</string>
+  <string name="live_display_outdoor">Udendørs (stærk sol)</string>
+  <string name="live_display_outdoor_summary">Brug kun udendørsindstillinger</string>
+  <string name="live_display_hint">LiveDisplay kan hjælpe med at reducere overanstrengelse af øjnene og hjælpe dig med at sove om natten. Klik her for at prøve det!</string>
+  <string name="permlab_thirdPartyKeyguard">tredjeparts skærmlås</string>
+  <string name="permdesc_thirdPartyKeyguard">Gør det muligt for en app at blive brugt som en usikker skærmlås.</string>
 </resources>
