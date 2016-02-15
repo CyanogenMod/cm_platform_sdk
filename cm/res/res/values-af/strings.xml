@@ -45,7 +45,11 @@
   <string name="permdesc_writeSecureSettings">Laat \'n toep toe om CM veilige stelsel instellings te verander. Nie vir gebruik deur normale toeps nie.</string>
   <string name="permlab_managePersistentStorage">bestuur aanhoudende spasie</string>
   <string name="permdesc_managePersistentStorage">Laat \'n toep toe om eienskappe te skryf of lees, al word jou toestel herstel na fabriek instellings.</string>
+  <string name="permlab_accessAppSuggestions">toegang na toep voorstelle</string>
+  <string name="permdesc_accessAppSuggestions">Laat \'n toep toegang na toep voorstelle.</string>
   <string name="custom_tile_listener_binding_label">Pasgemaakte teël luisteraar</string>
+  <string name="permlab_protectedApp">voegby of verwyder toeps na beskermde toeps</string>
+  <string name="permdesc_protectedApp">Laat \'n toep toe om ander toeps as beskermde toep te merk en hulle toe te sluit.</string>
   <string name="profileNameDefault">Normaal</string>
   <string name="profileNameWork">Werk</string>
   <string name="profileNameHome">Tuis</string>
@@ -58,5 +62,22 @@
   <string name="profileGroupEmail">Epos</string>
   <string name="profileGroupSMS">SMS</string>
   <string name="wildcardProfile">Ander</string>
+  <string name="perf_profile_pwrsv">Bespaar krag</string>
+  <string name="perf_profile_bal">Gebalanseerd</string>
+  <string name="perf_profile_perf">Werkverrigting</string>
+  <string name="perf_profile_bias_power">Doeltreffendheid</string>
+  <string name="perf_profile_bias_perf">Vinnige</string>
+  <string name="live_display_auto">Outomaties</string>
+  <string name="live_display_auto_summary">Kleurtemperatuur van die skerm sal outomaties aanpas na sononder en sonop</string>
+  <string name="live_display_off">Af</string>
+  <string name="live_display_off_summary">Skakel al die aanpassings af</string>
+  <string name="live_display_day">Dag</string>
+  <string name="live_display_day_summary">Gebruik dag instellings alleenlik</string>
   <string name="live_display_night">Nag</string>
+  <string name="live_display_night_summary">Gebruik nag instellings alleenlik</string>
+  <string name="live_display_outdoor">Buitekant (helder son)</string>
+  <string name="live_display_outdoor_summary">Gebruik buite instellings alleenlik</string>
+  <string name="live_display_hint">LewendigeVertoning kan jou oogspanning verminder en help jou slaap in die nag. Klik hier om dit uit te probeer!</string>
+  <string name="permlab_thirdPartyKeyguard">derde party slotskerm</string>
+  <string name="permdesc_thirdPartyKeyguard">Laat \'n toep toe om gebruik te word as \'n onveilige skermslot.</string>
 </resources>
