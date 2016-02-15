@@ -73,6 +73,9 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                 "R.string.def_notification_pulse_custom_value"));
+        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.System.STATUS_BAR_BATTERY_STYLE,
+                "R.integer.def_battery_style"));
     }
 
     //SECURE
