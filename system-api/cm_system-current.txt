@@ -462,6 +462,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_LONG_TERM_ORBITS = 64; // 0x40
     field public static final int FEATURE_PERSISTENT_STORAGE = 16384; // 0x4000
     field public static final int FEATURE_SERIAL_NUMBER = 128; // 0x80
+    field public static final int FEATURE_SWAP_BUTTONS = 131072; // 0x20000
     field public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 256; // 0x100
     field public static final int FEATURE_TAP_TO_WAKE = 512; // 0x200
     field public static final int FEATURE_THERMAL_MONITOR = 32768; // 0x8000

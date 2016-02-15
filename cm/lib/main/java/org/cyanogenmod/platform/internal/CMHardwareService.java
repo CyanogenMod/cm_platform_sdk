@@ -45,6 +45,7 @@ import org.cyanogenmod.hardware.KeyDisabler;
 import org.cyanogenmod.hardware.LongTermOrbits;
 import org.cyanogenmod.hardware.PersistentStorage;
 import org.cyanogenmod.hardware.SerialNumber;
+import org.cyanogenmod.hardware.SwapButtons;
 import org.cyanogenmod.hardware.SunlightEnhancement;
 import org.cyanogenmod.hardware.TapToWake;
 import org.cyanogenmod.hardware.ThermalMonitor;
@@ -119,6 +120,8 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
                 mSupportedFeatures |= CMHardwareManager.FEATURE_LONG_TERM_ORBITS;
             if (SerialNumber.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_SERIAL_NUMBER;
+            if (SwapButtons.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_SWAP_BUTTONS;
             if (SunlightEnhancement.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT;
             if (TapToWake.isSupported())
@@ -153,6 +156,8 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
                     return HighTouchSensitivity.isEnabled();
                 case CMHardwareManager.FEATURE_KEY_DISABLE:
                     return KeyDisabler.isActive();
+                case CMHardwareManager.FEATURE_SWAP_BUTTONS:
+                    return SwapButtons.isActive();
                 case CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT:
                     return SunlightEnhancement.isEnabled();
                 case CMHardwareManager.FEATURE_TAP_TO_WAKE:
@@ -179,6 +184,8 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
                     return HighTouchSensitivity.setEnabled(enable);
                 case CMHardwareManager.FEATURE_KEY_DISABLE:
                     return KeyDisabler.setActive(enable);
+                case CMHardwareManager.FEATURE_SWAP_BUTTONS:
+                    return SwapButtons.setActive(enable);
                 case CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT:
                     return SunlightEnhancement.setEnabled(enable);
                 case CMHardwareManager.FEATURE_TAP_TO_WAKE:

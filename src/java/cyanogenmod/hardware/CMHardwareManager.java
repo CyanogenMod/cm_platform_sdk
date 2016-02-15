@@ -129,11 +129,17 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
 
+    /**
+     * Swap buttons
+     */
+    public static final int FEATURE_SWAP_BUTTONS = 0x20000;
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
         FEATURE_COLOR_ENHANCEMENT,
         FEATURE_HIGH_TOUCH_SENSITIVITY,
         FEATURE_KEY_DISABLE,
+        FEATURE_SWAP_BUTTONS,
         FEATURE_SUNLIGHT_ENHANCEMENT,
         FEATURE_TAP_TO_WAKE,
         FEATURE_TOUCH_HOVERING,
