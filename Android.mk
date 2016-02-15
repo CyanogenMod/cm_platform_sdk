@@ -120,6 +120,12 @@ cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
 LOCAL_INTERMEDIATE_SOURCES := \
     $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
 
+# Make sure that R.java and Manifest.java are built before we build
+# the source for this library.
+cm_framework_res_R_stamp := \
+    $(call intermediates-dir-for,APPS,org.cyanogenmod.platform-res,,COMMON)/src/R.stamp
+$(full_classes_compiled_jar): $(cm_framework_res_R_stamp)
+$(built_dex_intermediate): $(cm_framework_res_R_stamp)
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
