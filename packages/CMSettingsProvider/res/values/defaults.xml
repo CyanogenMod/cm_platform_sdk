@@ -51,6 +51,9 @@
     <!-- Default for CMSettings.Secure.STATS_COLLECTION -->
     <bool name="def_stats_collection">false</bool>
 
+    <!-- Default for CMSettings.System.STATUS_BAR_BATTERY_STYLE -->
+    <integer name="def_battery_style">2</integer>
+
     <!-- Default for CMSettings.Secure.QS_USE_MAIN_TILES -->
     <bool name="def_sysui_qs_main_tiles">true</bool>
 
