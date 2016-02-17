@@ -189,11 +189,18 @@ public class PerformanceManagerService extends SystemService {
             if (profile == PerformanceManager.PROFILE_POWER_SAVE) {
                 // Handle the case where toggle power saver mode
                 // failed
-                if (!mPm.setPowerSaveMode(true)) {
-                    return false;
+                long token = Binder.clearCallingIdentity();
+                try {
+                    if (!mPm.setPowerSaveMode(true)) {
+                        return false;
+                    }
+                } finally {
+                    Binder.restoreCallingIdentity(token);
                 }
             } else if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
+                long token = Binder.clearCallingIdentity();
                 mPm.setPowerSaveMode(false);
+                Binder.restoreCallingIdentity(token);
             }
         }
 
