@@ -22,6 +22,8 @@
     coreApp="true" android:sharedUserId="android.uid.system"
     android:sharedUserLabel="@string/cyanogenmod_system_label">
 
+    <protected-broadcast android:name="cyanogenmod.intent.action.SCREEN_CAMERA_GESTURE" />
+
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
     <permission android:name="cyanogenmod.permission.BIND_CUSTOM_TILE_LISTENER_SERVICE"
