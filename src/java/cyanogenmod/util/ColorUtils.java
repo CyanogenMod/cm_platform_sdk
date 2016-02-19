@@ -237,6 +237,9 @@ public class ColorUtils {
      * @return the dominant Swatch
      */
     public static Palette.Swatch getDominantSwatch(Palette palette) {
+        if (palette == null || palette.getSwatches().size() == 0) {
+            return null;
+        }
         // find most-represented swatch based on population
         return Collections.max(palette.getSwatches(), new Comparator<Palette.Swatch>() {
             @Override
@@ -273,10 +276,17 @@ public class ColorUtils {
 
         if (bitmap != null) {
             Palette p = Palette.from(bitmap).generate();
+            if (p == null) {
+                return alertColor;
+            }
 
             // First try the dominant color
-            int iconColor = getDominantSwatch(p).getRgb();
-            alertColor = findPerceptuallyNearestSolidColor(iconColor);
+            final Palette.Swatch dominantSwatch = getDominantSwatch(p);
+            int iconColor = alertColor;
+            if (dominantSwatch != null) {
+                iconColor = dominantSwatch.getRgb();
+                alertColor = findPerceptuallyNearestSolidColor(iconColor);
+            }
 
             // Try the most saturated color if we got white or black (boring)
             if (alertColor == Color.BLACK || alertColor == Color.WHITE) {
