@@ -17,14 +17,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">Système CyanogenMod</string>
-  <string name="permlab_publishCustomTile">crée un raccourci personnalisé dans le volet des raccourcis</string>
-  <string name="permdesc_publishCustomTile">Autorise une application à déclarer un raccourci pour le volet des raccourcis.</string>
+  <string name="permlab_publishCustomTile">créer un raccourci personnalisé dans la fenêtre de configuration rapide</string>
+  <string name="permdesc_publishCustomTile">Autorise une application à insérer un raccourci de configuration rapide.</string>
   <string name="permlab_modifyNetworkSettings">modifier les paramètres réseau du système</string>
   <string name="permdesc_modifyNetworkSettings">Autorise à une application à modifier le mode avion et les paramètres de réseau de données mobiles.</string>
   <string name="permlab_modifySoundSettings">modifier les paramètres système de son</string>
   <string name="permdesc_modifySoundSettings">Autorise une application à modifier les réglages du son en mode interruption.</string>
   <string name="permlab_bindCustomTileListenerService">lié au service d\'écoute d\'un raccourci personnalisé</string>
-  <string name="permdesc_bindCustomTileListenerService">Permet à l’application de se lier au service d\'écoute d\'un raccourci personnalisé.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permet à l’application de se lier à l\'interface de haut niveau du service d\'écoute d\'un raccourci personnalisé.</string>
   <string name="permlab_readMSPhoneState">voir l\'état du téléphone et de la connexion de données en gérant le multi-SIM</string>
   <string name="permdesc_readMSPhoneState">Autorise une application à voir l\'état du téléphone et la connexion de données en gérant le multi-SIM.</string>
   <string name="permlab_modifyMSPhoneState">modifier l\'état du téléphone et la connexion de données en gérant le multi-SIM</string>
@@ -41,14 +41,14 @@
   <string name="permdesc_read_alarms">Autorise une application à lire vos alarmes planifiées</string>
   <string name="permlab_writeSettings">modifier les paramètres système CM</string>
   <string name="permdesc_writeSettings">Autorise une application à modifier les paramètres système de CM.</string>
-  <string name="permlab_writeSecureSettings">modifier les paramètres système securisés de CM</string>
+  <string name="permlab_writeSecureSettings">modifier les paramètres système sécurisés de CM</string>
   <string name="permdesc_writeSecureSettings">Autorise une application à modifier des paramètres système sécurisés de CM. Ne pas utiliser pour des applications normales.</string>
   <string name="permlab_managePersistentStorage">gérer le stockage permanent</string>
   <string name="permdesc_managePersistentStorage">Autorise une application à lire ou à écrire des propriétés qui pourraient persister après une réinitialisation d\'usine.</string>
   <string name="permlab_accessAppSuggestions">accès aux suggestions d\'application</string>
   <string name="permdesc_accessAppSuggestions">Autorise une application à accéder aux suggestions d\'applications.</string>
   <string name="custom_tile_listener_binding_label">Service d\'écoute d\'un raccourci personnalisé</string>
-  <string name="profileNameDefault">Défaut</string>
+  <string name="profileNameDefault">Par défaut</string>
   <string name="profileNameWork">Bureau</string>
   <string name="profileNameHome">Maison</string>
   <string name="profileNameSilent">Silencieux</string>
