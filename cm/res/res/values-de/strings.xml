@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
-  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
+  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen erstellen</string>
   <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
   <string name="permlab_modifyNetworkSettings">System-Netzwerkeinstellungen ändern</string>
   <string name="permdesc_modifyNetworkSettings">Ermöglicht der App, Änderungen am Flugmodus und den Einstellungen für mobile Daten vorzunehmen.</string>
@@ -34,7 +34,7 @@
   <string name="permlab_useHardwareFramework">Hardware-Framework verwenden</string>
   <string name="permdesc_useHardwareFramework">Ermöglicht der App, auf das CM-Hardware-Framework zuzugreifen.</string>
   <string name="permlab_write_alarms">Alarme direkt ändern</string>
-  <string name="permdesc_write_alarms">Ermöglicht der App, das Hinzufügen, Ändern oder Löschen Ihrer Alarme.</string>
+  <string name="permdesc_write_alarms">Ermöglicht der App das Hinzufügen, Ändern oder Löschen Ihrer Alarme.</string>
   <string name="permlab_manage_alarms">geplante Alarme aktivieren/deaktivieren</string>
   <string name="permdesc_manage_alarms">Ermöglicht der App, geplante Alarme zu aktivieren oder deaktivieren.</string>
   <string name="permlab_read_alarms">auf geplante Alarme zugreifen</string>
@@ -46,7 +46,7 @@
   <string name="permlab_managePersistentStorage">permanenten Speicher verwalten</string>
   <string name="permdesc_managePersistentStorage">Ermöglicht der App, Eigenschaften auszulesen oder zu speichern, die auch beim Zurücksetzen auf die Werkseinstellungen erhalten bleiben können.</string>
   <string name="permlab_accessAppSuggestions">auf Anwendungsvorschläge zugreifen</string>
-  <string name="permdesc_accessAppSuggestions">Ermöglicht der App, auf die Anwendungsvorschläge zuzugreifen.</string>
+  <string name="permdesc_accessAppSuggestions">Ermöglicht einer App, auf vorgeschlagene Anwendungen zuzugreifen.</string>
   <string name="custom_tile_listener_binding_label">Listener für benutzerdefinierte Kacheln</string>
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeit</string>

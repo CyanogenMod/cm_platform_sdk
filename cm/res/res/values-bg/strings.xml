@@ -25,10 +25,10 @@
   <string name="permdesc_modifySoundSettings">Позволява на приложението да направи промени в настройките за прекъсване режим звука.</string>
   <string name="permlab_bindCustomTileListenerService">свържи с услугата за регистриране на докосвания по потребителските бутони</string>
   <string name="permdesc_bindCustomTileListenerService">Позволява на приложението връзката с последното ниво на интерфейса на услугата за регистриране на докосвания по потребителските бутони.</string>
-  <string name="permlab_readMSPhoneState">Преглед на състоянието на вашият телефон и данни с поддръжка на множество СИМ-карти</string>
-  <string name="permdesc_readMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ-карти.</string>
-  <string name="permlab_modifyMSPhoneState">Преглед на състоянието на вашият телефон и данни с поддръжка на множество СИМ-карти</string>
-  <string name="permdesc_modifyMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ-карти.</string>
+  <string name="permlab_readMSPhoneState">Прегледайте състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ карти</string>
+  <string name="permdesc_readMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ карти.</string>
+  <string name="permlab_modifyMSPhoneState">Промяна в състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ карти</string>
+  <string name="permdesc_modifyMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ карти.</string>
   <string name="permlab_modifyProfiles">Модифициране на системни профили</string>
   <string name="permdesc_modifyProfiles">Позволява да модифицирате системни профили.</string>
   <string name="permlab_useHardwareFramework">Използване на framework хардуер</string>
