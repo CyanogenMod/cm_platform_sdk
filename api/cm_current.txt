@@ -868,6 +868,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
     field public static final java.lang.String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+    field public static final java.lang.String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
     field public static final java.lang.String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
     field public static final java.lang.String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
     field public static final java.lang.String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
