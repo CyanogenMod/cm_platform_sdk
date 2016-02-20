@@ -82,4 +82,15 @@
     <java-symbol type="string" name="config_wifiHotSpotPass" />
     <java-symbol type="string" name="config_wifiDirectName" />
     <java-symbol type="bool" name="config_wifiHotspotSecurityNone" />
+
+    <!-- Device specific settings -->
+    <java-symbol type="string" name="device_settings_app_name" />
+
+    <!-- Touchscreen gestures -->
+    <java-symbol type="string" name="screen_gestures_panel_title" />
+
+    <!-- Touchscreen gesture haptic feedback -->
+    <java-symbol type="string" name="touchscreen_gesture_extras" />
+    <java-symbol type="string" name="touchscreen_gesture_haptic_feedback" />
+    <java-symbol type="string" name="touchscreen_gesture_haptic_feedback_summary" />
 </resources>
