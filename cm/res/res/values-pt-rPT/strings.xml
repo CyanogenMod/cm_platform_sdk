@@ -46,10 +46,10 @@
   <string name="permlab_managePersistentStorage">gerir o armazenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite a uma aplicação ler ou escrever propriedades que podem persistir mesmo após a reposição dos dados de fábrica.</string>
   <string name="permlab_accessAppSuggestions">aceder a sugestões da aplicação</string>
-  <string name="permdesc_accessAppSuggestions">Permite a uma aplicação aceder às sugestões da aplicação.</string>
+  <string name="permdesc_accessAppSuggestions">Permite que uma aplicação aceda às sugestões de aplicações.</string>
   <string name="custom_tile_listener_binding_label">Escuta de mosaicos personalizados</string>
   <string name="permlab_protectedApp">adicionar ou remover aplicações às aplicações protegidas</string>
-  <string name="permdesc_protectedApp">Permite a uma aplicação marcar outras aplicações como protegidas e bloqueá-las.</string>
+  <string name="permdesc_protectedApp">Permite que uma aplicação marque outras aplicações como protegidas e as bloqueie.</string>
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
   <string name="profileNameHome">Casa</string>

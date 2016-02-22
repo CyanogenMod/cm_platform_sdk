@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
-  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen anzeigen</string>
+  <string name="permlab_publishCustomTile">eine Kachel in den Schnelleinstellungen erstellen</string>
   <string name="permdesc_publishCustomTile">Ermöglicht der App, eine Kachel in den Schnelleinstellungen anzuzeigen.</string>
   <string name="permlab_modifyNetworkSettings">System-Netzwerkeinstellungen ändern</string>
   <string name="permdesc_modifyNetworkSettings">Ermöglicht der App, Änderungen am Flugmodus und den Einstellungen für mobile Daten vorzunehmen.</string>
@@ -34,7 +34,7 @@
   <string name="permlab_useHardwareFramework">Hardware-Framework verwenden</string>
   <string name="permdesc_useHardwareFramework">Ermöglicht der App, auf das CM-Hardware-Framework zuzugreifen.</string>
   <string name="permlab_write_alarms">Alarme direkt ändern</string>
-  <string name="permdesc_write_alarms">Ermöglicht der App, das Hinzufügen, Ändern oder Löschen Ihrer Alarme.</string>
+  <string name="permdesc_write_alarms">Ermöglicht der App das Hinzufügen, Ändern oder Löschen Ihrer Alarme.</string>
   <string name="permlab_manage_alarms">geplante Alarme aktivieren/deaktivieren</string>
   <string name="permdesc_manage_alarms">Ermöglicht der App, geplante Alarme zu aktivieren oder deaktivieren.</string>
   <string name="permlab_read_alarms">auf geplante Alarme zugreifen</string>
@@ -64,7 +64,7 @@
   <string name="wildcardProfile">Anderes</string>
   <string name="perf_profile_pwrsv">Energie sparen</string>
   <string name="perf_profile_bal">Ausgeglichen</string>
-  <string name="perf_profile_perf">Höchstleistung</string>
+  <string name="perf_profile_perf">Mehr Leistung</string>
   <string name="perf_profile_bias_power">Effizient</string>
   <string name="perf_profile_bias_perf">Schnell</string>
   <string name="live_display_auto">Automatisch</string>
@@ -77,7 +77,7 @@
   <string name="live_display_night_summary">Nur Nacht-Modus verwenden</string>
   <string name="live_display_outdoor">Außen (helle Sonne)</string>
   <string name="live_display_outdoor_summary">Nur Außen-Modus verwenden</string>
-  <string name="live_display_hint">LiveDisplay kann gegen eine Überanstrengung der Augen und so beim Einschlafen helfen. Klicken Sie hier, um es auszuprobieren!</string>
+  <string name="live_display_hint">LiveDisplay kann gegen eine Überanstrengung der Augen und beim Schlafen in der Nacht helfen. Klicken Sie hier, um es auszuprobieren!</string>
   <string name="permlab_thirdPartyKeyguard">Sperrbildschirm eines Drittanbieters</string>
   <string name="permdesc_thirdPartyKeyguard">Ermöglicht der App, als unsicherer Sperrbildschirm genutzt zu werden.</string>
 </resources>
