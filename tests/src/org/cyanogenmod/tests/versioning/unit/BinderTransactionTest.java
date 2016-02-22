@@ -21,8 +21,11 @@ import android.os.Binder;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.SmallTest;
+import android.util.Log;
+import android.util.Pair;
 import org.cyanogenmod.tests.CyanogenModTestApplication;
 import org.cyanogenmod.tests.versioning.unit.apiv2.ApiV2PriorReleaseInterfaces;
+import org.cyanogenmod.tests.versioning.unit.apiv4.ApiV4PriorReleaseInterfaces;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,6 +41,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * These tests validate the enumerated binder transaction call ids per each
@@ -57,6 +62,7 @@ import java.util.Map;
 @RunWith(Parameterized.class)
 @LargeTest
 public class BinderTransactionTest extends AndroidTestCase {
+    private static final String TAG = BinderTransactionTest.class.getSimpleName();
     private static final String STUB_SUFFIX = "$Stub";
     private static final String CYANOGENMOD_NAMESPACE = "cyanogenmod";
     private static final String TRANSACTION_PREFIX = "TRANSACTION_";
@@ -69,7 +75,8 @@ public class BinderTransactionTest extends AndroidTestCase {
     private static Context sContext;
 
     private static ArrayList<String> mKnownSdkClasses;
-    private static Map<String, Integer> mApiMethodsAndValues = new HashMap<String, Integer>();
+    private static Map<String, Map<String, Integer>> mApiMethodsAndValues =
+            new HashMap<String, Map<String, Integer>>();
 
     @Before
     public void setUp() throws Exception {
@@ -89,14 +96,28 @@ public class BinderTransactionTest extends AndroidTestCase {
         mKnownSdkClasses = MagicalDexHelper.getLoadedClasses(
                 CyanogenModTestApplication.getStaticApplicationContext(), CYANOGENMOD_NAMESPACE);
         sContext = CyanogenModTestApplication.getStaticApplicationContext();
-        mApiMethodsAndValues.putAll(ApiV2PriorReleaseInterfaces.getInterfaces());
+        addInterfaces(ApiV2PriorReleaseInterfaces.getInterfaces());
+        addInterfaces(ApiV4PriorReleaseInterfaces.getInterfaces());
+    }
+
+    private static void addInterfaces(Map<String, Map<String, Integer>> mapToAdd) {
+        for (String key : mapToAdd.keySet()) {
+            if (mApiMethodsAndValues.get(key) != null) {
+                Map<String, Integer> internalMap = mApiMethodsAndValues.get(key);
+                internalMap.putAll(mapToAdd.get(key));
+            } else {
+                Map<String, Integer> internalMap = mapToAdd.get(key);
+                mApiMethodsAndValues.put(key, internalMap);
+            }
+        }
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         doSetup();
         //Ughhh, lets pretend this never happened
-        ArrayList<String> targetFields = new ArrayList<String>();
+        ArrayList<Pair<String, String>> targetClassAndFields =
+                new ArrayList<Pair<String, String>>();
         ArrayList<Integer> actualValues = new ArrayList<Integer>();
 
         for (String sClazz : mKnownSdkClasses) {
@@ -105,12 +126,24 @@ public class BinderTransactionTest extends AndroidTestCase {
                     Class clazz = MagicalDexHelper.loadClassForNameSpace(CyanogenModTestApplication
                             .getStaticApplicationContext(), sClazz);
                     Field[] fields = clazz.getDeclaredFields();
+                    Pattern pattern = Pattern.compile("\\.([\\w]+)\\$");
+                    Matcher matcher = pattern.matcher(clazz.getName());
+                    String className = null;
+                    if (matcher.find()) {
+                        className = matcher.group(1).substring(0, matcher.group(1).length());
+                    }
 
                     for (Field field : fields) {
                         if (field.getName().startsWith(TRANSACTION_PREFIX)) {
                             field.setAccessible(true);
-                            targetFields.add(field.getName()
-                                    .substring(TRANSACTION_PREFIX.length()));
+                            String fieldName = field.getName().substring(
+                                    TRANSACTION_PREFIX.length());
+                            fieldName = fieldName.split("_")[0];
+                            Pair<String, String> classAndField = new Pair<String, String>(
+                                    className, fieldName);
+                            Log.d(TAG, "Adding: " + classAndField.first + " with field "
+                                    + classAndField.second);
+                            targetClassAndFields.add(classAndField);
                             try {
                                 actualValues.add(field.getInt(clazz));
                             } catch (IllegalAccessException e) {
@@ -123,23 +156,28 @@ public class BinderTransactionTest extends AndroidTestCase {
                 }
             }
         }
-        Object[][] values = new Object[targetFields.size()][3];
+        Object[][] values = new Object[targetClassAndFields.size()][3];
 
-        for (int i = 0; i < targetFields.size(); i++) {
-            String targetField = targetFields.get(i);
-            values[i][0] = targetField;
-            values[i][1] = lookupValueForField(targetField);
+        for (int i = 0; i < targetClassAndFields.size(); i++) {
+            Pair<String, String> targetClassAndField = targetClassAndFields.get(i);
+            values[i][0] = targetClassAndField.second;
+            values[i][1] = lookupValueForField(targetClassAndField.first,
+                    targetClassAndField.second);
             values[i][2] = actualValues.get(i);
         }
         return Arrays.asList(values);
     }
 
     //Look up the target fields value from a prior release
-    private static Object lookupValueForField(String fieldName) {
-        if (!mApiMethodsAndValues.containsKey(fieldName)) {
+    private static Object lookupValueForField(String clazz, String fieldName) {
+        Log.d(TAG, "Looking up: " + clazz + " with field "
+                + fieldName);
+        Map<String, Integer> internalMap = mApiMethodsAndValues.get(clazz);
+        if (internalMap == null || !internalMap.containsKey(fieldName)) {
+            Log.d(TAG, "Internal map for " + clazz + " is null or doesn't contain entry");
             return NOT_FROM_PRIOR_RELEASE;
         }
-        return mApiMethodsAndValues.get(fieldName);
+        return internalMap.get(fieldName);
     }
 
     public BinderTransactionTest(String targetField, Integer expectedValue, Integer actualValue) {
@@ -150,7 +188,8 @@ public class BinderTransactionTest extends AndroidTestCase {
 
     @Test
     public void testBinderTransactionValidation() {
-        System.out.print("Testing: " + mField);
+        Log.d(TAG, "Testing: " + mField + " with expected value of " + mExpectedValue
+                + " and actual value of " + mActualValue);
         if (mExpectedValue == NOT_FROM_PRIOR_RELEASE) {
             //This is a new interface, no need to test against
             return;
