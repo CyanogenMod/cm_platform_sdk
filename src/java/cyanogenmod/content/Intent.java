@@ -88,4 +88,19 @@ public class Intent {
     public static final String ACTION_INITIALIZE_CM_HARDWARE =
             "cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE";
 
+    /**
+     * Broadcast Action: Indicate that an unrecoverable error happened during app launch.
+     * Could indicate that curently applied theme is malicious.
+     * @hide
+     */
+    public static final String ACTION_APP_FAILURE = "cyanogenmod.intent.action.APP_FAILURE";
+
+    /**
+     * Used to indicate that a theme package has been installed or un-installed.
+     *
+     * @hide
+     */
+    public static final String CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE =
+            "cyanogenmod.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE";
+
 }
