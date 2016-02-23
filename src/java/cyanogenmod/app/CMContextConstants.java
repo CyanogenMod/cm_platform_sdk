@@ -97,4 +97,18 @@ public final class CMContextConstants {
      * @hide
      */
     public static final String CM_PERFORMANCE_SERVICE = "cmperformance";
+
+    /**
+     * Controls changing and applying themes
+     *
+     * @hide
+     */
+    public static final String CM_THEME_SERVICE = "cmthemes";
+
+    /**
+     * Manages composed icons
+     *
+     * @hide
+     */
+    public static final String CM_ICON_CACHE_SERVICE = "cmiconcache";
 }
