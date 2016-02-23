@@ -82,4 +82,9 @@
     <java-symbol type="string" name="config_wifiHotSpotPass" />
     <java-symbol type="string" name="config_wifiDirectName" />
     <java-symbol type="bool" name="config_wifiHotspotSecurityNone" />
+
+    <!-- Theme install failure notification -->
+    <java-symbol type="string" name="theme_install_error_title" />
+    <java-symbol type="string" name="theme_install_error_message" />
+
 </resources>

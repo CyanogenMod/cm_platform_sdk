@@ -125,4 +125,9 @@
     <string name="permlab_thirdPartyKeyguard">third party lock screen</string>
     <!-- Third party keyguard permission description -->
     <string name="permdesc_thirdPartyKeyguard">Allows an app to be used as an insecure lock screen.</string>
+
+    <!-- Theme installation error notification -->
+    <string name="theme_install_error_title">Failed to install theme</string>
+    <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> failed to install</string>
+
 </resources>
