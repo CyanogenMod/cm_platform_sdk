@@ -24,7 +24,7 @@
   <string name="permlab_modifySoundSettings">Ändra systemets ljudinställningar</string>
   <string name="permdesc_modifySoundSettings">Tillåter att en app ändrar på ljudinställningarnas avbrottsläge.</string>
   <string name="permlab_bindCustomTileListenerService">bind till en anpassad tjänst som lyssnar efter brickor</string>
-  <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad tjänst som lyssnar efter brickor.</string>
+  <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad lyssnartjänst för brickor.</string>
   <string name="permlab_readMSPhoneState">visa telefonens status och dataförbindelsestöd med flera SIM-kort</string>
   <string name="permdesc_readMSPhoneState">Tillåter att en app visar telefonens status och dataförbindelsestöd med flera SIM-kort.</string>
   <string name="permlab_modifyMSPhoneState">ändra telefonens status och dataförbindelsestöd med flera SIM-kort</string>
