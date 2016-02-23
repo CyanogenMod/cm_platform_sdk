@@ -93,4 +93,13 @@
     <java-symbol type="string" name="touchscreen_gesture_extras" />
     <java-symbol type="string" name="touchscreen_gesture_haptic_feedback" />
     <java-symbol type="string" name="touchscreen_gesture_haptic_feedback_summary" />
+
+    <!-- Theme install failure notification -->
+    <java-symbol type="string" name="theme_install_error_title" />
+    <java-symbol type="string" name="theme_install_error_message" />
+
+    <!-- Theme reset notification -->
+    <java-symbol type="string" name="theme_reset_notification_title" />
+    <java-symbol type="string" name="theme_reset_notification_message" />
+
 </resources>
