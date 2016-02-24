@@ -264,13 +264,11 @@ public class PartnerInterfaceService extends SystemService {
 
     public String getHotwordPackageNameInternal() {
         String packageName = null;
-        /*
         try {
             packageName = mAudioService.getCurrentHotwordInputPackageName();
         } catch (RemoteException e) {
             Log.e(TAG, "getHotwordPackageName() failed.");
         }
-        */
         return packageName;
     }
 }
