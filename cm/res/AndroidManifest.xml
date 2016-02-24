@@ -23,6 +23,7 @@
     android:sharedUserLabel="@string/cyanogenmod_system_label">
 
     <protected-broadcast android:name="cyanogenmod.intent.action.SCREEN_CAMERA_GESTURE" />
+    <protected-broadcast android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
 
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
