@@ -61,10 +61,11 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
 
     private final Context mContext;
     private final CMHardwareInterface mCmHwImpl;
+    private final CMHardwarePersistHelper mPersistHelper;
     private int mCurrentThermalState = ThermalListenerCallback.State.STATE_UNKNOWN;
     private RemoteCallbackList<IThermalListenerCallback> mRemoteCallbackList;
 
-    private interface CMHardwareInterface {
+    interface CMHardwareInterface {
         public int getSupportedFeatures();
         public boolean get(int feature);
         public boolean set(int feature, boolean enable);
@@ -240,7 +241,11 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         }
 
         public boolean setDisplayColorCalibration(int[] rgb) {
-            return DisplayColorCalibration.setColors(rgbToString(rgb));
+            boolean success = DisplayColorCalibration.setColors(rgbToString(rgb));
+            if (success) {
+                mPersistHelper.persistDisplayColorCalibration(rgb);
+            }
+            return success;
         }
 
         public int getNumGammaControls() {
@@ -265,7 +270,11 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         }
 
         public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
-            return DisplayGammaCalibration.setGamma(idx, rgbToString(rgb));
+            boolean success = DisplayGammaCalibration.setGamma(idx, rgbToString(rgb));
+            if (success) {
+                mPersistHelper.persistDisplayGammaCalibration(rgb);
+            }
+            return success;
         }
 
         public int[] getVibratorIntensity() {
@@ -279,7 +288,11 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         }
 
         public boolean setVibratorIntensity(int intensity) {
-            return VibratorHW.setIntensity(intensity);
+            boolean success = VibratorHW.setIntensity(intensity);
+            if (success) {
+                mPersistHelper.persistVibratorIntensity(intensity);
+            }
+            return success;
         }
 
         public String getLtoSource() {
@@ -324,7 +337,11 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         }
 
         public boolean setDisplayMode(DisplayMode mode, boolean makeDefault) {
-            return DisplayModeControl.setMode(mode, makeDefault);
+            boolean success = DisplayModeControl.setMode(mode, makeDefault);
+            if (success) {
+                mPersistHelper.persistDisplayMode(mode);
+            }
+            return success;
         }
 
         public boolean writePersistentBytes(String key, byte[] value) {
@@ -344,6 +361,7 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         super(context);
         mContext = context;
         mCmHwImpl = getImpl(context);
+        mPersistHelper = new CMHardwarePersistHelper(context, mCmHwImpl);
         publishBinderService(CMContextConstants.CM_HARDWARE_SERVICE, mService);
     }
 
