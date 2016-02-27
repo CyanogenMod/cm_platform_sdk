@@ -880,3 +880,19 @@ package cyanogenmod.providers {
 
 }
 
+package cyanogenmod.util {
+
+  public class ColorUtils {
+    ctor public ColorUtils();
+    method public static double calculateDeltaE(double, double, double, double, double, double);
+    method public static float[] convertRGBtoLAB(int);
+    method public static int dropAlpha(int);
+    method public static int findPerceptuallyNearestColor(int, int[]);
+    method public static int findPerceptuallyNearestSolidColor(int);
+    method public static int generateAlertColorFromDrawable(android.graphics.drawable.Drawable);
+    method public static com.android.internal.util.cm.palette.Palette.Swatch getDominantSwatch(com.android.internal.util.cm.palette.Palette);
+    method public static float[] temperatureToRGB(int);
+  }
+
+}
+
