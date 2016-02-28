@@ -77,4 +77,15 @@ public class Intent {
     public static final String ACTION_SCREEN_CAMERA_GESTURE =
             "cyanogenmod.intent.action.SCREEN_CAMERA_GESTURE";
 
+    /**
+     * Broadcast action: perform any initialization required for CMHW services.
+     * Runs when the service receives the signal the device has booted, but
+     * should happen before {@link android.content.Intent#ACTION_BOOT_COMPLETED}.
+     *
+     * Requires {@link cyanogenmod.platform.Manifest.permission#HARDWARE_ABSTRACTION_ACCESS}.
+     * @hide
+     */
+    public static final String ACTION_INITIALIZE_CM_HARDWARE =
+            "cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE";
+
 }
