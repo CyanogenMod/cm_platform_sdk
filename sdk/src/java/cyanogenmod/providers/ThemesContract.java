@@ -714,4 +714,97 @@ public class ThemesContract {
             LIVE_LOCK_SCREEN_THUMBNAIL,
         };
     }
+
+    public static class ThemeMixColumns {
+        /**
+         * Uri for accessing theme mixes
+         */
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "theme_mixes");
+
+        /**
+         * Uri for retrieving the previews for the a theme mix.
+         * Querying the themes provider using this URI will return a cursor with a single row
+         * containing all the previews for the components associated with the given theme mix.
+         */
+        public static final Uri PREVIEWS_URI = Uri.withAppendedPath(AUTHORITY_URI,
+                "theme_mix_previews");
+
+        /**
+         * The unique ID for a row.
+         * <P>Type: INTEGER (long)</P>
+         */
+        public static final String _ID = "_id";
+
+        /**
+         * The name of this mix.
+         * <P>Type: TEXT</P>
+         */
+        public static final String TITLE = "title";
+
+    }
+
+    public static class ThemeMixEntryColumns {
+        /**
+         * Uri for accessing theme mix entries.
+         * These are the individual components associated with the saved theme mixes.
+         */
+        public static final Uri CONTENT_URI =
+                Uri.withAppendedPath(AUTHORITY_URI, "theme_mix_entries");
+
+        /**
+         * The unique ID for a row.
+         * <P>Type: INTEGER (long)</P>
+         */
+        public static final String _ID = "_id";
+
+        /**
+         * The unique ID of the theme mix this entry is for
+         * <P>Type: INTEGER (long)</P>
+         */
+        public static final String THEME_MIX_ID = "theme_mix_id";
+
+        /**
+         * The component type this entry is associated with
+         * <P>Type: TEXT</P>
+         * <P>Valid types are:
+         * {@link ThemesColumns#MODIFIES_ALARMS}
+         * {@link ThemesColumns#MODIFIES_BOOT_ANIM}
+         * {@link ThemesColumns#MODIFIES_FONTS}
+         * {@link ThemesColumns#MODIFIES_ICONS}
+         * {@link ThemesColumns#MODIFIES_LAUNCHER}</P>
+         * {@link ThemesColumns#MODIFIES_LIVE_LOCK_SCREEN}
+         * {@link ThemesColumns#MODIFIES_LOCKSCREEN}
+         * {@link ThemesColumns#MODIFIES_NAVIGATION_BAR}
+         * {@link ThemesColumns#MODIFIES_NOTIFICATIONS}
+         * {@link ThemesColumns#MODIFIES_OVERLAYS}
+         * {@link ThemesColumns#MODIFIES_RINGTONES}
+         * {@link ThemesColumns#MODIFIES_STATUS_BAR}
+         */
+        public static final String COMPONENT_TYPE = "component_type";
+
+        /*
+         * The unique ID for the component within a theme.
+         * Always 0 unless multiples of a component exist.
+         * <P>Type: INTEGER (long)</P>
+         */
+        public static final String COMPONENT_ID = "component_id";
+
+        /**
+         * Unique text to identify the theme package associated with this entry.
+         * <P>Type: TEXT</P>
+         */
+        public static final String PACKAGE_NAME = "package_name";
+
+        /**
+         * The name of the theme associated with this entry.
+         * <P>Type: TEXT</P>
+         */
+        public static final String THEME_NAME = "theme_name";
+
+        /**
+         * Whether the theme associated with this entry is currently installed.
+         * <P>Type: INTEGER (0|1)</P>
+         */
+        public static final String IS_INSTALLED = "installed";
+    }
 }
