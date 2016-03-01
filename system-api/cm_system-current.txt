@@ -874,6 +874,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
     field public static final java.lang.String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
+    field public static final java.lang.String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
     field public static final java.lang.String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
     field public static final java.lang.String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
     field public static final java.lang.String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
@@ -887,10 +888,6 @@ package cyanogenmod.providers {
     ctor public ThemesContract();
     field public static final java.lang.String AUTHORITY = "com.cyanogenmod.themes";
     field public static final android.net.Uri AUTHORITY_URI;
-  }
-
-  public static class ThemesContract.Intent {
-    ctor public ThemesContract.Intent();
   }
 
   public static class ThemesContract.MixnMatchColumns {
@@ -955,6 +952,36 @@ package cyanogenmod.providers {
     field public static final java.lang.String WALLPAPER_FULL = "wallpaper_full";
     field public static final java.lang.String WALLPAPER_PREVIEW = "wallpaper_preview";
     field public static final java.lang.String WALLPAPER_THUMBNAIL = "wallpaper_thumbnail";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemeMixColumns {
+    ctor public ThemesContract.ThemeMixColumns();
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String TITLE = "title";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemeMixEntryColumns {
+    ctor public ThemesContract.ThemeMixEntryColumns();
+    field public static final java.lang.String COMPONENT_TYPE = "component_type";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String IS_INSTALLED = "installed";
+    field public static final java.lang.String PACKAGE_NAME = "package_name";
+    field public static final java.lang.String THEME_MIX_ID = "theme_mix_id";
+    field public static final java.lang.String THEME_NAME = "theme_name";
+    field public static final int TYPE_ALARM = 10; // 0xa
+    field public static final int TYPE_BOOT_ANIMATION = 11; // 0xb
+    field public static final int TYPE_FONT = 1; // 0x1
+    field public static final int TYPE_ICON = 2; // 0x2
+    field public static final int TYPE_LIVE_LOCK_SCREEN = 6; // 0x6
+    field public static final int TYPE_LOCK_SCREEN_WALLPAPER = 5; // 0x5
+    field public static final int TYPE_NAVIGATION_BAR = 3; // 0x3
+    field public static final int TYPE_NOTIFICATION = 9; // 0x9
+    field public static final int TYPE_RINGTONE = 8; // 0x8
+    field public static final int TYPE_STATUS_BAR = 0; // 0x0
+    field public static final int TYPE_STYLE = 7; // 0x7
+    field public static final int TYPE_WALLPAPER = 4; // 0x4
     field public static final java.lang.String _ID = "_id";
   }
 

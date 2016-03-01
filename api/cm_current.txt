@@ -955,6 +955,36 @@ package cyanogenmod.providers {
     field public static final java.lang.String _ID = "_id";
   }
 
+  public static class ThemesContract.ThemeMixColumns {
+    ctor public ThemesContract.ThemeMixColumns();
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String TITLE = "title";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemeMixEntryColumns {
+    ctor public ThemesContract.ThemeMixEntryColumns();
+    field public static final java.lang.String COMPONENT_TYPE = "component_type";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String IS_INSTALLED = "installed";
+    field public static final java.lang.String PACKAGE_NAME = "package_name";
+    field public static final java.lang.String THEME_MIX_ID = "theme_mix_id";
+    field public static final java.lang.String THEME_NAME = "theme_name";
+    field public static final int TYPE_ALARM = 10; // 0xa
+    field public static final int TYPE_BOOT_ANIMATION = 11; // 0xb
+    field public static final int TYPE_FONT = 1; // 0x1
+    field public static final int TYPE_ICON = 2; // 0x2
+    field public static final int TYPE_LIVE_LOCK_SCREEN = 6; // 0x6
+    field public static final int TYPE_LOCK_SCREEN_WALLPAPER = 5; // 0x5
+    field public static final int TYPE_NAVIGATION_BAR = 3; // 0x3
+    field public static final int TYPE_NOTIFICATION = 9; // 0x9
+    field public static final int TYPE_RINGTONE = 8; // 0x8
+    field public static final int TYPE_STATUS_BAR = 0; // 0x0
+    field public static final int TYPE_STYLE = 7; // 0x7
+    field public static final int TYPE_WALLPAPER = 4; // 0x4
+    field public static final java.lang.String _ID = "_id";
+  }
+
   public static class ThemesContract.ThemesColumns {
     ctor public ThemesContract.ThemesColumns();
     field public static final java.lang.String AUTHOR = "author";
