@@ -1160,6 +1160,26 @@ package cyanogenmod.providers {
     field public static final java.lang.String _ID = "_id";
   }
 
+  public static class ThemesContract.ThemeMixColumns {
+    ctor public ThemesContract.ThemeMixColumns();
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final android.net.Uri PREVIEWS_URI;
+    field public static final java.lang.String TITLE = "title";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemeMixEntryColumns {
+    ctor public ThemesContract.ThemeMixEntryColumns();
+    field public static final java.lang.String COMPONENT_ID = "component_id";
+    field public static final java.lang.String COMPONENT_TYPE = "component_type";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String IS_INSTALLED = "installed";
+    field public static final java.lang.String PACKAGE_NAME = "package_name";
+    field public static final java.lang.String THEME_MIX_ID = "theme_mix_id";
+    field public static final java.lang.String THEME_NAME = "theme_name";
+    field public static final java.lang.String _ID = "_id";
+  }
+
   public static class ThemesContract.ThemesColumns {
     ctor public ThemesContract.ThemesColumns();
     field public static final java.lang.String AUTHOR = "author";
