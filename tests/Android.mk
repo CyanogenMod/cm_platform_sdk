@@ -22,6 +22,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.sdk \
     android-support-test
 
+LOCAL_DEX_PREOPT := false
+
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src/)
 
 LOCAL_PACKAGE_NAME := CMPlatformTests
