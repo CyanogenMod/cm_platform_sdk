@@ -1,0 +1,13 @@
+-injars ../../../out/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.platform.sdk_intermediates/classes.jack
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+-dontwarn android.hardware.Sensor
+-dontwarn android.test.AndroidTestRunner
+-dontwarn java.util.concurrent.ConcurrentLinkedDeque
+-dontwarn android.cts.util.**
+-dontwarn junit.**
+-forceprocessing
+-dontobfuscate
+-whyareyoukeeping class cyanogenmod.util.ColorUtils
+-verbose
+-dump fuck.txt
