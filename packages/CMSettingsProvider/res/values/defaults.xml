@@ -107,4 +107,7 @@
     <!-- Default values for protected component managers -->
     <string name="def_protected_component_managers" translatable="false">com.android.settings|com.android.launcher3|com.cyanogenmod.trebuchet</string>
 
+    <!-- Default value for COLP -->
+    <bool name="def_connected_line_identification">true</bool>
+
 </resources>
