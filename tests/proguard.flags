@@ -8,6 +8,3 @@
 -dontwarn junit.**
 -forceprocessing
 -dontobfuscate
--whyareyoukeeping class cyanogenmod.util.ColorUtils
--verbose
--dump fuck.txt
