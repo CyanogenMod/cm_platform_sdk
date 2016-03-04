@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Сістэма CyanogenMod</string>
   <string name="permlab_publishCustomTile">Стварэнне самавольных плітак у панэлі хуткіх налад</string>
   <string name="permdesc_publishCustomTile">Дадатак зможа дадаваць пліткі ў панэль хуткіх налад.</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">Дазваляе дадатку змяняць рэжым: перапынення гуку.</string>
   <string name="permlab_bindCustomTileListenerService">Прывязка да службы слухача карыстацкіх плітак</string>
   <string name="permdesc_bindCustomTileListenerService">Дазваляе карыстальніку ўсталёўваць прывязку да інтэрфейсу верхняга роўня службы слухача карыстацкіх плітак.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">прагляд стану тэлефона і перадачы дадзеных з падтрымкай некалькіх SIM-карт</string>
   <string name="permdesc_readMSPhoneState">Дазволіць дадатку доступ да інфармацыі пра стан тэлефона і перадачы дадзеных з падтрымкай некалькіх SIM-карт.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">змена стану тэлефона і перадачы дадзеных з падтрымкай некалькіх SIM-карт</string>
   <string name="permdesc_modifyMSPhoneState">Дазволяе дадатку зменіць стан тэлефона і перадачы дадзеных з падтрымкай некалькіх SIM-карт.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">змена сістэмных профіляў</string>
   <string name="permdesc_modifyProfiles">Дазваляць дадаткам змяняць сістэмныя профілі.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">Узаемадзеянне з абсталяваннем</string>
   <string name="permdesc_useHardwareFramework">Дадатак зможа атрымваць доступ да падсістэмы апаратных абстракцый CyanogenMod.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">змена будзільнікаў</string>
   <string name="permdesc_write_alarms">Дадатак зможа дадаваць, змяняць ці выдаляць любыя будзільнікі.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">змена стану будзільнікаў</string>
   <string name="permdesc_manage_alarms">Дадатак зможа ўключаць ці адключаць усталяваныя будзільнікі.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">доступ да будзільнікаў</string>
   <string name="permdesc_read_alarms">Дадатак зможа праглядаць дадзеныя пра ўсталяваныя будзільнікі.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">змена параметраў сістэмы</string>
   <string name="permdesc_writeSettings">Дадатак зможа змяняць сістэмныя налады СМ.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">змяняць параметры бяспекі сістэмы</string>
   <string name="permdesc_writeSecureSettings">Дадатак зможа змяняць абароненыя налады сістэмы. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">кіраваць месцам захоўвання дадзеных</string>
   <string name="permdesc_managePersistentStorage">Дазваляе дадатку змяняць чытанне ці запіс уласцівасцяў, якія могуць захоўвацца нават пасля скіду налад.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">доступ да спіса рэкамендаваных дадаткаў</string>
   <string name="permdesc_accessAppSuggestions">Дадатак зможа атрымваць доступ да спісу рэкамендаваных дадаткаў.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Слухач карыстацкіх плітак</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">даданне і выдаленне запісаў пераліку абароненых дадаткаў</string>
   <string name="permdesc_protectedApp">Дадатак зможа адзначаць іншыя дадаткі як абароненыя і блакаваць іх.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Па змаўчанні</string>
   <string name="profileNameWork">Праца</string>
   <string name="profileNameHome">На Галоўную старонку</string>
   <string name="profileNameSilent">Ціхі рэжым</string>
   <string name="profileNameNight">Ноч</string>
   <string name="profileNameAutomobile">Аўтамабіль</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Тэлефон</string>
   <string name="profileGroupCalendar">Каляндар</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Электронная пошта</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Iншае</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">Энергазберажэнне</string>
   <string name="perf_profile_bal">Збалансаваны</string>
   <string name="perf_profile_perf">Прадукцыйнасць</string>
   <string name="perf_profile_bias_power">Эфектыўны</string>
   <string name="perf_profile_bias_perf">Хуткі</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">Аўтаматычна</string>
   <string name="live_display_auto_summary">Аўтаматычная падладка колеравай тэмпературы экрана пасля заходу і ўзыходу сонца</string>
   <string name="live_display_off">Адключана</string>
@@ -78,6 +98,16 @@
   <string name="live_display_outdoor">На вуліцы (яскравае сонца)</string>
   <string name="live_display_outdoor_summary">Толькі вулічны рэжым</string>
   <string name="live_display_hint">Жывыя шпалеры дапамогуць зменшыць напружанне на вочы і палепшыць сон. Націсні тут, каб паспрабаваць!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">Іншы экран блакавання</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Дадатак зможа працаваць у якасці небяспечнага метаду блакавання экрана.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">Дадатковыя налады</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Рухі</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Іншае</string>
+  <string name="touchscreen_gesture_haptic_feedback">Вібраводгук</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Вібраваць пры паспяховым распазнанні жэста</string>
 </resources>

@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">System CyanogenMod</string>
   <string name="permlab_publishCustomTile">utwórz niestandardowy przełącznik w panelu szybkich ustawień</string>
   <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">Umożliwia aplikacji zmianę trybu przerwań ustawień dźwięku.</string>
   <string name="permlab_bindCustomTileListenerService">powiąż z niestandardowymi usługami odbiornika</string>
   <string name="permdesc_bindCustomTileListenerService">Pozwala aplikacji na powiązanie z interfejsem najwyższego poziomu niestandardowej usługi odbiornika.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">pokaż stanu telefonu i połączenia danych z wsparciem dla wielu kart SIM</string>
   <string name="permdesc_readMSPhoneState">Pozwala aplikacji na wyświetlenie stanu telefonu i połączenia danych z wsparciem dla wielu kart SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">zmodyfikuj stan telefonu i połączenia danych z wsparciem dla wielu kart SIM</string>
   <string name="permdesc_modifyMSPhoneState">Pozwala aplikacji na modyfikacje stanu telefonu i połączenia danych z wsparciem dla wielu kart SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modyfikuje profile systemowe</string>
   <string name="permdesc_modifyProfiles">Umożliwia aplikacji modyfikację profili systemowych.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">używa sprzętowego frameworka</string>
   <string name="permdesc_useHardwareFramework">Umożliwia aplikacji na dostęp do frameworka CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">bezpośrednio zmienia alarmy</string>
   <string name="permdesc_write_alarms">Pozwala aplikacji na dodanie, modyfikacje lub usunięcie wszystkich twoich alarmów.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">przełącza zaplanowane alarmy</string>
   <string name="permdesc_manage_alarms">Pozwala aplikacji na włączenie lub wyłączenie twoich zaplanowanych alarmów.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">dostęp do zaplanowanych alarmów</string>
   <string name="permdesc_read_alarms">Pozwala aplikacji na odczytywanie twoich zaplanowanych alarmów.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modyfikuje systemowe ustawienia CM</string>
   <string name="permdesc_writeSettings">Pozwala aplikacji na modyfikacje ustawień systemowych CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modyfikuje zabezpieczone ustawienia systemowe CM</string>
   <string name="permdesc_writeSecureSettings">Pozwala aplikacji na modyfikacje zabezpieczonych ustawień systemowych CM. Nie do użytku przez zwykłe aplikacje.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">zarządza trwałą pamięcią</string>
   <string name="permdesc_managePersistentStorage">Umożliwia aplikacji odczyt lub zapis właściwości, które mogą przetrwać reset do ustawień fabrycznych.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">dostęp do sugestii</string>
   <string name="permdesc_accessAppSuggestions">Zezwala aplikacji na dostęp do sugestii.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Niestandardowy odbiornik</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">dodawanie i usuwanie elementów do chronionych aplikacji</string>
   <string name="permdesc_protectedApp">Pozwala na oznaczenie aplikacji jako chroniona i zablokowanie jej.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Domyślny</string>
   <string name="profileNameWork">Praca</string>
   <string name="profileNameHome">Dom</string>
   <string name="profileNameSilent">Cichy</string>
   <string name="profileNameNight">Nocny</string>
   <string name="profileNameAutomobile">Samochód</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalendarz</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Inny</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">Oszczędny</string>
   <string name="perf_profile_bal">Zbalansowany</string>
   <string name="perf_profile_perf">Wydajny</string>
   <string name="perf_profile_bias_power">Oszczędny</string>
-  <string name="perf_profile_bias_perf">Wydajny</string>
+  <string name="perf_profile_bias_perf">Szybki</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatyczny</string>
   <string name="live_display_auto_summary">Automatycznie dostosuj temperaturę kolorów ekranu po zachodzie i wschodzie słońca</string>
   <string name="live_display_off">Wyłączony</string>
@@ -78,6 +98,16 @@
   <string name="live_display_outdoor">Na zewnątrz (jasne światło)</string>
   <string name="live_display_outdoor_summary">Używaj ustawień tylko na zewnątrz</string>
   <string name="live_display_hint">LiveDisplay może pomóc w zredukowaniu efektu zmęczenia oczu oraz pomaga zasnąć w nocy. Kliknij tutaj, aby wypróbować!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">blokada ekranu zewnętrznego dostawcy</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Pozwala na wykorzystanie aplikacji jako niezabezpieczonego ekranu blokady.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">Ustawienia zaawansowane</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Gesty</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Dodatki</string>
+  <string name="touchscreen_gesture_haptic_feedback">Wibracja przy dotknięciu</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Zawibruj, gdy gest zostanie wykryty</string>
 </resources>
