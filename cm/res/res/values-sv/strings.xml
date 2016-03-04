@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">skapa en anpassad bricka inom snabbinställningspanelen</string>
   <string name="permdesc_publishCustomTile">Ger en app tillåtelse att publicera en snabbinställningsbricka.</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">Tillåter att en app ändrar på ljudinställningarnas avbrottsläge.</string>
   <string name="permlab_bindCustomTileListenerService">bind till en anpassad tjänst som lyssnar efter brickor</string>
   <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad lyssnartjänst för brickor.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">visa telefonens status och dataförbindelsestöd med flera SIM-kort</string>
   <string name="permdesc_readMSPhoneState">Tillåter att en app visar telefonens status och dataförbindelsestöd med flera SIM-kort.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">ändra telefonens status och dataförbindelsestöd med flera SIM-kort</string>
   <string name="permdesc_modifyMSPhoneState">Tillåter att en app ändrar telefonens status och dataförbindelsestöd med flera SIM-kort.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">ändra systemprofiler</string>
   <string name="permdesc_modifyProfiles">Tillåter att en app ändrar systemprofiler.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">använda hårdvaruramverk</string>
   <string name="permdesc_useHardwareFramework">Ger en app åtkomst till CyanogenMods hårdvaruramverk.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">ändra alarm direkt</string>
   <string name="permdesc_write_alarms">Tillåter att en app lägger till, ändrar eller tar bort alla dina alarm.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">växla schemalagda alarm</string>
   <string name="permdesc_manage_alarms">Tillåter att en app sätter på eller stänger av dina schemalagda alarm.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">åtkomst till schemalagda alarm</string>
   <string name="permdesc_read_alarms">Tillåt att en app läser dina schemalagda alarm.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">ändra CM systeminställningar</string>
   <string name="permdesc_writeSettings">Tillåt att en app ändrar CM systeminställningar.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">ändra CM säkra systeminställningar</string>
   <string name="permdesc_writeSecureSettings">Tillåt att en app ändrar CM säkra systeminställningar. Inte för användning av normala appar.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">hantera beständig lagring</string>
   <string name="permdesc_managePersistentStorage">Tillåt att en app läser och skriver egenskaper som kan kvarstå efter en fabriksåterställning.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">komma åt appförslag</string>
   <string name="permdesc_accessAppSuggestions">Ger en app åtkomst till appförslag.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Anpassad tjänst som lyssnar efter brickor</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">lägg till och ta bort appar som skyddade appar</string>
   <string name="permdesc_protectedApp">Ger en app tillstånd att markera andra appar som skyddade och låsa dem.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Jobb</string>
   <string name="profileNameHome">Hemma</string>
   <string name="profileNameSilent">Tyst</string>
   <string name="profileNameNight">Natt</string>
   <string name="profileNameAutomobile">Bil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-post</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Annan</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">Energisparläge</string>
   <string name="perf_profile_bal">Balanserad</string>
   <string name="perf_profile_perf">Prestanda</string>
   <string name="perf_profile_bias_power">Effektivitet</string>
   <string name="perf_profile_bias_perf">Snabb</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatisk</string>
   <string name="live_display_auto_summary">Justera automatiskt skärmens färgtemperatur efter solnedgång och soluppgång</string>
   <string name="live_display_off">Av</string>
@@ -78,6 +98,16 @@
   <string name="live_display_outdoor">Utomhus (stark sol)</string>
   <string name="live_display_outdoor_summary">Använd endast utomhusläge</string>
   <string name="live_display_hint">LiveDisplay kan minska överansträngning av ögonen och hjälpa dig med nattsömnen. Klicka här för att prova!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjepartslåsskärm</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Tillåter en applikation att användas som osäker låsskärm.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">Avancerade inställningar</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Gester</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Extra</string>
+  <string name="touchscreen_gesture_haptic_feedback">Haptisk feedback</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrera när en gest upptäcktes</string>
 </resources>

@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod Система</string>
   <string name="permlab_publishCustomTile">създаване на потребителска плочка чрез панел за бързи настройки</string>
   <string name="permdesc_publishCustomTile">Позволява на приложение да публикува плочка с бързи настройки.</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">Позволява на приложението да направи промени в настройките за прекъсване режим звука.</string>
   <string name="permlab_bindCustomTileListenerService">свържи с услугата за регистриране на докосвания по потребителските бутони</string>
   <string name="permdesc_bindCustomTileListenerService">Позволява на приложението връзката с последното ниво на интерфейса на услугата за регистриране на докосвания по потребителските бутони.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">Прегледайте състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ карти</string>
   <string name="permdesc_readMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ карти.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">Промяна в състоянието на вашият телефон и мрежовите данни с поддръжка на множество СИМ карти</string>
   <string name="permdesc_modifyMSPhoneState">Разрешаване за достъп на прилажения до информация за състоянието на телефона с поддръжка на множество СИМ карти.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">Модифициране на системни профили</string>
   <string name="permdesc_modifyProfiles">Позволява да модифицирате системни профили.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">Използване на framework хардуер</string>
   <string name="permdesc_useHardwareFramework">Разрешава на едно приложение да достъпва до framework хардуера на CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">промяна на аларми</string>
   <string name="permdesc_write_alarms">Разрешава на приложението да добавя, променяте или изтрива аларми.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">Промяна на планираните аларми</string>
   <string name="permdesc_manage_alarms">Позволява на приложението да активира/деактивира плануаните аларми.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">достъп до планувана аларма</string>
   <string name="permdesc_read_alarms">Позволява на приложението преглед на плануваните аларми.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">Модифициране на СМ системни настройки</string>
   <string name="permdesc_writeSettings">Позволява на приложението да модифицира СМ системни настройки.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">Модифициране настройките на CM сигурността</string>
   <string name="permdesc_writeSecureSettings">Разрешава на проложението да променя системните настройки на сигурността. Това разрешение не се използва от нормални приложения.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">управлявате места за съхранение на данни</string>
   <string name="permdesc_managePersistentStorage">Позволява на приложенията да четат или пишат свойства, които могат да се запазят и след връщане на първоначални настройки.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">Достъп до съвети от приложения</string>
   <string name="permdesc_accessAppSuggestions">Осигурява достъп до съвети от приложения.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Регистратор на допир за потребителските бутони</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">Прибави/Премахни приложение към/от списъка със защитени приложения</string>
-  <string name="permdesc_protectedApp">Позволява на приложението да маркира други приложения. като защитени и да ги заключва.</string>
+  <string name="permdesc_protectedApp">Позволява на приложението да маркира други приложения, като защитени и да ги заключва.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">По подразбиране</string>
   <string name="profileNameWork">Работа</string>
   <string name="profileNameHome">Вкъщи</string>
   <string name="profileNameSilent">Тих режим</string>
   <string name="profileNameNight">Нощ</string>
   <string name="profileNameAutomobile">Автомобилен режим</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Телефон</string>
   <string name="profileGroupCalendar">Календар</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Имейл</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Други</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">Енергоспестяващ</string>
   <string name="perf_profile_bal">Балансиран</string>
   <string name="perf_profile_perf">Високопроизводителен</string>
   <string name="perf_profile_bias_power">Ефикасен</string>
   <string name="perf_profile_bias_perf">Бърз</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">Автоматичен</string>
   <string name="live_display_auto_summary">Автоматично регулиране на цветовата температура след залез/изгрев</string>
   <string name="live_display_off">Изключен</string>
@@ -77,7 +97,17 @@
   <string name="live_display_night_summary">Само настройки на нощен режим</string>
   <string name="live_display_outdoor">На открито (ярко слънце)</string>
   <string name="live_display_outdoor_summary">Само настройки на режим на открито</string>
-  <string name="live_display_hint">Използването на Адаптивен екран може да помогне за намаляване умората в очите през нощта. Докоснете тук, за да го изпробвате!</string>
+  <string name="live_display_hint">Използването на адаптивен екран може да помогне за намаляване умората в очите през нощта. Докоснете тук, за да го изпробвате!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">Защитен екран от друг автор</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Позволява приложението да бъде ползвано като незаключен защитен екран.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">Допълнителни настройки</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Жестове</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Екстри</string>
+  <string name="touchscreen_gesture_haptic_feedback">Вибрация при докосване (обратна връзка)</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Вибрирай, когато се засече жест</string>
 </resources>
