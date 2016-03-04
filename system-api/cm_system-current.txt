@@ -578,6 +578,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
+    field public static final java.lang.String WRITE_THEMES = "cyanogenmod.permission.WRITE_THEMES";
   }
 
   public final class R {
