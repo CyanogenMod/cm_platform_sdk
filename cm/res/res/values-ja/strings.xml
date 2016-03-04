@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenModシステム</string>
   <string name="permlab_publishCustomTile">クイック設定パネルでのカスタムタイルの作成</string>
   <string name="permdesc_publishCustomTile">クイック設定タイルの作成をアプリに許可します</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">サイレントモードの音の設定を変更することをアプリに許可します。</string>
   <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
   <string name="permdesc_bindCustomTileListenerService">カスタムタイルリスナーサービスのトップレベルインターフェースへのバインドをアプリに許可します</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の表示</string>
   <string name="permdesc_readMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の表示をアプリに許可します。</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更</string>
   <string name="permdesc_modifyMSPhoneState">マルチSIMをサポートする携帯電話の状態とデータ接続の変更をアプリに許可します。</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">システムプロファイルの変更</string>
   <string name="permdesc_modifyProfiles">システムプロファイルの変更をアプリに許可します。</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">ハードウェアフレームワークの使用</string>
   <string name="permdesc_useHardwareFramework">CMハードウェアフレームワークへのアクセスをアプリに許可します。</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">アラームの直接変更</string>
   <string name="permdesc_write_alarms">アラームの追加やすべてのアラームの変更および削除をアプリに許可します。</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">予定されているアラームの切り替え</string>
   <string name="permdesc_manage_alarms">予定されているアラームをONまたはOFFにすることをアプリに許可します。</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">予定されているアラームへのアクセス</string>
   <string name="permdesc_read_alarms">予定されているアラームの読み取りをアプリに許可します。</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">CMシステム設定の変更</string>
   <string name="permdesc_writeSettings">CMシステム設定の変更をアプリに許可します。</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">CMセキュアシステム設定の変更</string>
   <string name="permdesc_writeSecureSettings">CMセキュアシステム設定の変更をアプリに許可します。通常のアプリ用ではありません。</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">持続的ストレージの管理</string>
   <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても持続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">アプリの候補へのアクセス</string>
   <string name="permdesc_accessAppSuggestions">アプリの候補へのアクセスをアプリに許可します。</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">アプリの保護へのアプリの追加と削除</string>
   <string name="permdesc_protectedApp">他のアプリを保護に設定してロックすることをアプリに許可します。</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">デフォルト</string>
   <string name="profileNameWork">仕事</string>
   <string name="profileNameHome">自宅</string>
   <string name="profileNameSilent">サイレント</string>
   <string name="profileNameNight">夜</string>
   <string name="profileNameAutomobile">車</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">電話</string>
   <string name="profileGroupCalendar">カレンダー</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">メール</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">その他</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">省電力</string>
   <string name="perf_profile_bal">バランス</string>
   <string name="perf_profile_perf">パフォーマンス</string>
   <string name="perf_profile_bias_power">効率</string>
   <string name="perf_profile_bias_perf">クイック</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">自動</string>
   <string name="live_display_auto_summary">日中に画面の色温度を自動的に調整する</string>
   <string name="live_display_off">OFF</string>
@@ -78,6 +98,16 @@
   <string name="live_display_outdoor">屋外（日光）</string>
   <string name="live_display_outdoor_summary">屋外の設定のみを使用する</string>
   <string name="live_display_hint">LiveDisplayは目の疲れを軽減し、夜の睡眠を邪魔しません。ここをタップして試してみてください。</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">サードパーティのロック画面</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">パスワードのないロック画面として使用されることをアプリに許可します。</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">詳細設定</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">ジェスチャー</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">その他</string>
+  <string name="touchscreen_gesture_haptic_feedback">タッチ操作バイブ</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">ジェスチャーを検出したときに振動する</string>
 </resources>

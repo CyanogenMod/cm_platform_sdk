@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">מערכת CyanogenMod</string>
   <string name="permlab_publishCustomTile">צור אריח מותאם אישית בתוך לוח ההגדרות המהירות</string>
   <string name="permdesc_publishCustomTile">מאפשר ליישום לפרסם אריח הגדרות מותאם אישית.</string>
@@ -25,48 +26,67 @@
   <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות השמע של מצב ההפרעה.</string>
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
   <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">הצג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_readMSPhoneState">מאפשר ליישום להציג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">שינוי מצב המכשיר וחיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_modifyMSPhoneState">מאפשר ליישום לשנות את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">שינוי פרופילי מערכת</string>
   <string name="permdesc_modifyProfiles">מאפשר ליישום לשנות פרופילי מערכת.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">השתמש במסגרת חומרתית</string>
   <string name="permdesc_useHardwareFramework">אפשר ליישום לגשת למסגרת החומרתית של CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">שינוי שעונים מעוררים ישירות</string>
   <string name="permdesc_write_alarms">מאפשר ליישום להוסיף, לשנות או למחוק את כל השעונים המעוררים שלך.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">הפעלת/כיבוי שעונים מעוררים שנקבעו</string>
   <string name="permdesc_manage_alarms">מאפשר ליישום להפעיל או לכבות שעונים מעוררים שנקבעו.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">גישה לשעונים מעוררים שנקבעו</string>
   <string name="permdesc_read_alarms">מאפשר ליישום לקרוא את השעונים המעוררים שנקבעו.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">שינוי הגדרות מערכת CM</string>
   <string name="permdesc_writeSettings">מאפשר ליישום לשנות את הגדרות מערכת CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">שינוי הגדרות מאובטחות של מערכת CM</string>
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">ניהול אחסון מתמיד</string>
   <string name="permdesc_managePersistentStorage">מאפשר ליישום לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">גישה להצעות יישומים</string>
   <string name="permdesc_accessAppSuggestions">מאפשר ליישום לגשת להצעות יישומים.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">הוספה והסרה של יישומים מהיישומים המוגנים</string>
   <string name="permdesc_protectedApp">מאפשר ליישום לסמן יישומים אחרים כמוגנים ולנעול אותם.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>
   <string name="profileNameHome">בית</string>
   <string name="profileNameSilent">שקט</string>
   <string name="profileNameNight">לילה</string>
   <string name="profileNameAutomobile">רכב</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">טלפון</string>
   <string name="profileGroupCalendar">לוח שנה</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">דוא\"ל</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">אחר</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">חיסכון בסוללה</string>
   <string name="perf_profile_bal">מאוזן</string>
   <string name="perf_profile_perf">ביצועים</string>
   <string name="perf_profile_bias_power">יעילות</string>
   <string name="perf_profile_bias_perf">מהיר</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">אוטומטי</string>
   <string name="live_display_auto_summary">התאם אוטומטית את טמפרטורת הצבע של המסך לאחר הזריחה והשקיעה</string>
   <string name="live_display_off">כבוי</string>
@@ -78,6 +98,16 @@
   <string name="live_display_outdoor">בחוץ (שמש בהירה)</string>
   <string name="live_display_outdoor_summary">השתמש בהגדרות חוץ בלבד</string>
   <string name="live_display_hint">LiveDisplay יכולה למזער את עייפות העין ולעזור לך לישון בלילה. לחץ כאן כדי לנסות!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">מסך נעילה של צד שלישי</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">מאפשר ליישום לשמש כמסך נעילה לא מאובטח.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">הגדרות מתקדמות</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">מחוות</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">תוספות</string>
+  <string name="touchscreen_gesture_haptic_feedback">משוב רטט</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">רטוט כאשר מחווה מזוהה</string>
 </resources>
