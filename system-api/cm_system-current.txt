@@ -1008,6 +1008,100 @@ package cyanogenmod.providers {
 
 }
 
+package cyanogenmod.themes {
+
+  public final class ThemeChangeRequest implements android.os.Parcelable {
+    method public int describeContents();
+    method public java.lang.String getAlarmThemePackageName();
+    method public java.lang.String getBootanimationThemePackageName();
+    method public java.lang.String getFontThemePackageName();
+    method public java.lang.String getIconsThemePackageName();
+    method public java.lang.String getLiveLockScreenThemePackageName();
+    method public java.lang.String getLockWallpaperThemePackageName();
+    method public java.lang.String getNavBarThemePackageName();
+    method public java.lang.String getNotificationThemePackageName();
+    method public int getNumChangesRequested();
+    method public java.lang.String getOverlayThemePackageName();
+    method public final java.util.Map<java.lang.String, java.lang.String> getPerAppOverlays();
+    method public cyanogenmod.themes.ThemeChangeRequest.RequestType getReqeustType();
+    method public java.lang.String getRingtoneThemePackageName();
+    method public java.lang.String getStatusBarThemePackageName();
+    method public final java.util.Map<java.lang.String, java.lang.String> getThemeComponentsMap();
+    method public long getWallpaperId();
+    method public java.lang.String getWallpaperThemePackageName();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.themes.ThemeChangeRequest> CREATOR;
+    field public static final int DEFAULT_WALLPAPER_ID = -1; // 0xffffffff
+  }
+
+  public static class ThemeChangeRequest.Builder {
+    ctor public ThemeChangeRequest.Builder();
+    ctor public ThemeChangeRequest.Builder(android.content.res.ThemeConfig);
+    method public cyanogenmod.themes.ThemeChangeRequest build();
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setAlarm(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setAppOverlay(java.lang.String, java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setBootanimation(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setComponent(java.lang.String, java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setFont(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setIcons(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setLiveLockScreen(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setLockWallpaper(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setNavBar(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setNotification(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setOverlay(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setRequestType(cyanogenmod.themes.ThemeChangeRequest.RequestType);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setRingtone(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setStatusBar(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setWallpaper(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setWallpaperId(long);
+  }
+
+  public static final class ThemeChangeRequest.RequestType extends java.lang.Enum {
+    method public static cyanogenmod.themes.ThemeChangeRequest.RequestType valueOf(java.lang.String);
+    method public static final cyanogenmod.themes.ThemeChangeRequest.RequestType[] values();
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_REMOVED;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_RESET;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_UPDATED;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType USER_REQUEST;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType USER_REQUEST_MIXNMATCH;
+  }
+
+  public class ThemeManager {
+    method public deprecated void addClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void applyDefaultTheme();
+    method public static cyanogenmod.themes.ThemeManager getInstance();
+    method public cyanogenmod.themes.ThemeChangeRequest.RequestType getLastThemeChangeRequestType();
+    method public long getLastThemeChangeTime();
+    method public int getProgress();
+    method public boolean isThemeApplying();
+    method public boolean isThemeBeingProcessed(java.lang.String);
+    method public deprecated void onClientDestroyed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientPaused(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientResumed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public boolean processThemeResources(java.lang.String);
+    method public void registerProcessingListener(cyanogenmod.themes.ThemeManager.ThemeProcessingListener);
+    method public void registerThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void removeClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>);
+    method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>, boolean);
+    method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>);
+    method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>, boolean);
+    method public void requestThemeChange(cyanogenmod.themes.ThemeChangeRequest, boolean);
+    method public void unregisterProcessingListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void unregisterThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+  }
+
+  public static abstract interface ThemeManager.ThemeChangeListener {
+    method public abstract void onFinish(boolean);
+    method public abstract void onProgress(int);
+  }
+
+  public static abstract interface ThemeManager.ThemeProcessingListener {
+    method public abstract void onFinishedProcessing(java.lang.String);
+  }
+
+}
+
 package cyanogenmod.util {
 
   public class ColorUtils {
