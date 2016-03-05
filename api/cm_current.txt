@@ -371,8 +371,13 @@ package cyanogenmod.content {
     ctor public Intent();
     field public static final java.lang.String ACTION_PROTECTED = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
     field public static final java.lang.String ACTION_PROTECTED_CHANGED = "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE";
+    field public static final java.lang.String ACTION_THEME_INSTALLED = "cyanogenmod.intent.action.THEME_INSTALLED";
+    field public static final java.lang.String ACTION_THEME_REMOVED = "cyanogenmod.intent.action.THEME_REMOVED";
+    field public static final java.lang.String ACTION_THEME_UPDATED = "cyanogenmod.intent.action.THEME_UPDATED";
+    field public static final java.lang.String CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE = "cyanogenmod.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE";
     field public static final java.lang.String EXTRA_PROTECTED_COMPONENTS = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
     field public static final java.lang.String EXTRA_PROTECTED_STATE = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
+    field public static final java.lang.String URI_SCHEME_PACKAGE = "package";
   }
 
 }
@@ -556,6 +561,7 @@ package cyanogenmod.platform {
   public static final class Manifest.permission {
     ctor public Manifest.permission();
     field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
+    field public static final java.lang.String ACCESS_THEME_MANAGER = "cyanogenmod.permission.ACCESS_THEME_MANAGER";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
@@ -567,10 +573,12 @@ package cyanogenmod.platform {
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
+    field public static final java.lang.String READ_THEMES = "cyanogenmod.permission.READ_THEMES";
     field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
+    field public static final java.lang.String WRITE_THEMES = "cyanogenmod.permission.WRITE_THEMES";
   }
 
   public final class R {
@@ -876,6 +884,236 @@ package cyanogenmod.providers {
     field public static final java.lang.String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     field public static final java.lang.String ZEN_ALLOW_LIGHTS = "allow_lights";
     field public static final java.lang.String ZEN_PRIORITY_ALLOW_LIGHTS = "zen_priority_allow_lights";
+  }
+
+  public class ThemesContract {
+    ctor public ThemesContract();
+    field public static final java.lang.String AUTHORITY = "com.cyanogenmod.themes";
+    field public static final android.net.Uri AUTHORITY_URI;
+  }
+
+  public static class ThemesContract.MixnMatchColumns {
+    ctor public ThemesContract.MixnMatchColumns();
+    method public static java.lang.String componentToImageColName(java.lang.String);
+    method public static java.lang.String componentToMixNMatchKey(java.lang.String);
+    method public static java.lang.String mixNMatchKeyToComponent(java.lang.String);
+    field public static final java.lang.String COL_COMPONENT_ID = "component_id";
+    field public static final java.lang.String COL_KEY = "key";
+    field public static final java.lang.String COL_PREV_VALUE = "previous_value";
+    field public static final java.lang.String COL_UPDATE_TIME = "update_time";
+    field public static final java.lang.String COL_VALUE = "value";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String KEY_ALARM = "mixnmatch_alarm";
+    field public static final java.lang.String KEY_BOOT_ANIM = "mixnmatch_boot_anim";
+    field public static final java.lang.String KEY_FONT = "mixnmatch_font";
+    field public static final java.lang.String KEY_HOMESCREEN = "mixnmatch_homescreen";
+    field public static final java.lang.String KEY_ICONS = "mixnmatch_icons";
+    field public static final java.lang.String KEY_LIVE_LOCK_SCREEN = "mixnmatch_live_lock_screen";
+    field public static final java.lang.String KEY_LOCKSCREEN = "mixnmatch_lockscreen";
+    field public static final java.lang.String KEY_NAVIGATION_BAR = "mixnmatch_navigation_bar";
+    field public static final java.lang.String KEY_NOTIFICATIONS = "mixnmatch_notifications";
+    field public static final java.lang.String KEY_OVERLAYS = "mixnmatch_overlays";
+    field public static final java.lang.String KEY_RINGTONE = "mixnmatch_ringtone";
+    field public static final java.lang.String KEY_STATUS_BAR = "mixnmatch_status_bar";
+    field public static final java.lang.String[] ROWS;
+  }
+
+  public static class ThemesContract.PreviewColumns {
+    ctor public ThemesContract.PreviewColumns();
+    field public static final android.net.Uri APPLIED_URI;
+    field public static final java.lang.String BOOTANIMATION_THUMBNAIL = "bootanimation_thumbnail";
+    field public static final java.lang.String COL_KEY = "key";
+    field public static final java.lang.String COL_VALUE = "value";
+    field public static final android.net.Uri COMPONENTS_URI;
+    field public static final java.lang.String COMPONENT_ID = "component_id";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String ICON_PREVIEW_1 = "icon_preview_1";
+    field public static final java.lang.String ICON_PREVIEW_2 = "icon_preview_2";
+    field public static final java.lang.String ICON_PREVIEW_3 = "icon_preview_3";
+    field public static final java.lang.String LIVE_LOCK_SCREEN_PREVIEW = "live_lock_screen_preview";
+    field public static final java.lang.String LIVE_LOCK_SCREEN_THUMBNAIL = "live_lock_screen_thumbnail";
+    field public static final java.lang.String LOCK_WALLPAPER_PREVIEW = "lock_wallpaper_preview";
+    field public static final java.lang.String LOCK_WALLPAPER_THUMBNAIL = "lock_wallpaper_thumbnail";
+    field public static final java.lang.String NAVBAR_BACKGROUND = "navbar_background";
+    field public static final java.lang.String NAVBAR_BACK_BUTTON = "navbar_back_button";
+    field public static final java.lang.String NAVBAR_HOME_BUTTON = "navbar_home_button";
+    field public static final java.lang.String NAVBAR_RECENT_BUTTON = "navbar_recent_button";
+    field public static final java.lang.String STATUSBAR_BACKGROUND = "statusbar_background";
+    field public static final java.lang.String STATUSBAR_BATTERY_CIRCLE = "statusbar_battery_circle";
+    field public static final java.lang.String STATUSBAR_BATTERY_LANDSCAPE = "statusbar_battery_landscape";
+    field public static final java.lang.String STATUSBAR_BATTERY_PORTRAIT = "statusbar_battery_portrait";
+    field public static final java.lang.String STATUSBAR_BLUETOOTH_ICON = "statusbar_bluetooth_icon";
+    field public static final java.lang.String STATUSBAR_CLOCK_TEXT_COLOR = "statusbar_clock_text_color";
+    field public static final java.lang.String STATUSBAR_SIGNAL_ICON = "statusbar_signal_icon";
+    field public static final java.lang.String STATUSBAR_WIFI_COMBO_MARGIN_END = "wifi_combo_margin_end";
+    field public static final java.lang.String STATUSBAR_WIFI_ICON = "statusbar_wifi_icon";
+    field public static final java.lang.String STYLE_PREVIEW = "style_preview";
+    field public static final java.lang.String STYLE_THUMBNAIL = "style_thumbnail";
+    field public static final java.lang.String THEME_ID = "theme_id";
+    field public static final java.lang.String[] VALID_KEYS;
+    field public static final java.lang.String WALLPAPER_FULL = "wallpaper_full";
+    field public static final java.lang.String WALLPAPER_PREVIEW = "wallpaper_preview";
+    field public static final java.lang.String WALLPAPER_THUMBNAIL = "wallpaper_thumbnail";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemesColumns {
+    ctor public ThemesContract.ThemesColumns();
+    field public static final java.lang.String AUTHOR = "author";
+    field public static final java.lang.String BOOT_ANIM_URI = "bootanim_uri";
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final java.lang.String DATE_CREATED = "created";
+    field public static final java.lang.String FONT_URI = "font_uri";
+    field public static final java.lang.String HOMESCREEN_URI = "homescreen_uri";
+    field public static final java.lang.String ICON_URI = "icon_uri";
+    field public static final java.lang.String INSTALL_STATE = "install_state";
+    field public static final java.lang.String INSTALL_TIME = "install_time";
+    field public static final java.lang.String IS_DEFAULT_THEME = "is_default_theme";
+    field public static final java.lang.String IS_LEGACY_ICONPACK = "is_legacy_iconpack";
+    field public static final java.lang.String IS_LEGACY_THEME = "is_legacy_theme";
+    field public static final java.lang.String LAST_UPDATE_TIME = "updateTime";
+    field public static final java.lang.String LOCKSCREEN_URI = "lockscreen_uri";
+    field public static final java.lang.String MODIFIES_ALARMS = "mods_alarms";
+    field public static final java.lang.String MODIFIES_BOOT_ANIM = "mods_bootanim";
+    field public static final java.lang.String MODIFIES_FONTS = "mods_fonts";
+    field public static final java.lang.String MODIFIES_ICONS = "mods_icons";
+    field public static final java.lang.String MODIFIES_LAUNCHER = "mods_homescreen";
+    field public static final java.lang.String MODIFIES_LIVE_LOCK_SCREEN = "mods_live_lock_screen";
+    field public static final java.lang.String MODIFIES_LOCKSCREEN = "mods_lockscreen";
+    field public static final java.lang.String MODIFIES_NAVIGATION_BAR = "mods_navigation_bar";
+    field public static final java.lang.String MODIFIES_NOTIFICATIONS = "mods_notifications";
+    field public static final java.lang.String MODIFIES_OVERLAYS = "mods_overlays";
+    field public static final java.lang.String MODIFIES_RINGTONES = "mods_ringtones";
+    field public static final java.lang.String MODIFIES_STATUS_BAR = "mods_status_bar";
+    field public static final java.lang.String OVERLAYS_URI = "overlays_uri";
+    field public static final java.lang.String PKG_NAME = "pkg_name";
+    field public static final java.lang.String PRESENT_AS_THEME = "present_as_theme";
+    field public static final java.lang.String PRIMARY_COLOR = "primary_color";
+    field public static final java.lang.String SECONDARY_COLOR = "secondary_color";
+    field public static final java.lang.String STATUSBAR_URI = "status_uri";
+    field public static final java.lang.String STYLE_URI = "style_uri";
+    field public static final java.lang.String TARGET_API = "target_api";
+    field public static final java.lang.String TITLE = "title";
+    field public static final java.lang.String WALLPAPER_URI = "wallpaper_uri";
+    field public static final java.lang.String _ID = "_id";
+  }
+
+  public static class ThemesContract.ThemesColumns.InstallState {
+    ctor public ThemesContract.ThemesColumns.InstallState();
+    field public static final int INSTALLED = 3; // 0x3
+    field public static final int INSTALLING = 1; // 0x1
+    field public static final int UNKNOWN = 0; // 0x0
+    field public static final int UPDATING = 2; // 0x2
+  }
+
+}
+
+package cyanogenmod.themes {
+
+  public final class ThemeChangeRequest implements android.os.Parcelable {
+    method public int describeContents();
+    method public java.lang.String getAlarmThemePackageName();
+    method public java.lang.String getBootanimationThemePackageName();
+    method public java.lang.String getFontThemePackageName();
+    method public java.lang.String getIconsThemePackageName();
+    method public java.lang.String getLiveLockScreenThemePackageName();
+    method public java.lang.String getLockWallpaperThemePackageName();
+    method public java.lang.String getNavBarThemePackageName();
+    method public java.lang.String getNotificationThemePackageName();
+    method public int getNumChangesRequested();
+    method public java.lang.String getOverlayThemePackageName();
+    method public final java.util.Map<java.lang.String, java.lang.String> getPerAppOverlays();
+    method public cyanogenmod.themes.ThemeChangeRequest.RequestType getReqeustType();
+    method public java.lang.String getRingtoneThemePackageName();
+    method public java.lang.String getStatusBarThemePackageName();
+    method public final java.util.Map<java.lang.String, java.lang.String> getThemeComponentsMap();
+    method public long getWallpaperId();
+    method public java.lang.String getWallpaperThemePackageName();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.themes.ThemeChangeRequest> CREATOR;
+    field public static final int DEFAULT_WALLPAPER_ID = -1; // 0xffffffff
+  }
+
+  public static class ThemeChangeRequest.Builder {
+    ctor public ThemeChangeRequest.Builder();
+    ctor public ThemeChangeRequest.Builder(android.content.res.ThemeConfig);
+    method public cyanogenmod.themes.ThemeChangeRequest build();
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setAlarm(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setAppOverlay(java.lang.String, java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setBootanimation(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setComponent(java.lang.String, java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setFont(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setIcons(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setLiveLockScreen(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setLockWallpaper(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setNavBar(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setNotification(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setOverlay(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setRequestType(cyanogenmod.themes.ThemeChangeRequest.RequestType);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setRingtone(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setStatusBar(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setWallpaper(java.lang.String);
+    method public cyanogenmod.themes.ThemeChangeRequest.Builder setWallpaperId(long);
+  }
+
+  public static final class ThemeChangeRequest.RequestType extends java.lang.Enum {
+    method public static cyanogenmod.themes.ThemeChangeRequest.RequestType valueOf(java.lang.String);
+    method public static final cyanogenmod.themes.ThemeChangeRequest.RequestType[] values();
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_REMOVED;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_RESET;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType THEME_UPDATED;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType USER_REQUEST;
+    enum_constant public static final cyanogenmod.themes.ThemeChangeRequest.RequestType USER_REQUEST_MIXNMATCH;
+  }
+
+  public class ThemeManager {
+    method public deprecated void addClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void applyDefaultTheme();
+    method public static cyanogenmod.themes.ThemeManager getInstance();
+    method public cyanogenmod.themes.ThemeChangeRequest.RequestType getLastThemeChangeRequestType();
+    method public long getLastThemeChangeTime();
+    method public int getProgress();
+    method public boolean isThemeApplying();
+    method public boolean isThemeBeingProcessed(java.lang.String);
+    method public deprecated void onClientDestroyed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientPaused(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientResumed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public boolean processThemeResources(java.lang.String);
+    method public void registerProcessingListener(cyanogenmod.themes.ThemeManager.ThemeProcessingListener);
+    method public void registerThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void removeClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>);
+    method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>, boolean);
+    method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>);
+    method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>, boolean);
+    method public void requestThemeChange(cyanogenmod.themes.ThemeChangeRequest, boolean);
+    method public void unregisterProcessingListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void unregisterThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+  }
+
+  public static abstract interface ThemeManager.ThemeChangeListener {
+    method public abstract void onFinish(boolean);
+    method public abstract void onProgress(int);
+  }
+
+  public static abstract interface ThemeManager.ThemeProcessingListener {
+    method public abstract void onFinishedProcessing(java.lang.String);
+  }
+
+}
+
+package cyanogenmod.util {
+
+  public class ColorUtils {
+    ctor public ColorUtils();
+    method public static double calculateDeltaE(double, double, double, double, double, double);
+    method public static float[] convertRGBtoLAB(int);
+    method public static int dropAlpha(int);
+    method public static int findPerceptuallyNearestColor(int, int[]);
+    method public static int findPerceptuallyNearestSolidColor(int);
+    method public static int generateAlertColorFromDrawable(android.graphics.drawable.Drawable);
+    method public static com.android.internal.util.cm.palette.Palette.Swatch getDominantSwatch(com.android.internal.util.cm.palette.Palette);
+    method public static float[] temperatureToRGB(int);
   }
 
 }

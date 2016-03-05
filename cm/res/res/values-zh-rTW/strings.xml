@@ -16,32 +16,52 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod 系統</string>
   <string name="permlab_publishCustomTile">於快速設定面板中建立自訂標題</string>
   <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permdesc_writeSettings">允許應用程式更改CM系統設定</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">修改 CM 系統安全設定</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">存取應用程式建議</string>
   <string name="permdesc_accessAppSuggestions">允許應用程式存取應用程式建議。</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">新增或移除受保護的應用程式</string>
   <string name="permdesc_protectedApp">允許應用程式標記其他應用程式為受保護並將其鎖定。</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">預設</string>
   <string name="profileNameWork">工作</string>
   <string name="profileNameHome">住家</string>
   <string name="profileNameSilent">安靜</string>
   <string name="profileNameNight">夜晚</string>
   <string name="profileNameAutomobile">汽車</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">電話</string>
   <string name="profileGroupCalendar">日曆</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">電子郵件</string>
   <string name="profileGroupSMS">簡訊</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">其他</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">省電</string>
   <string name="perf_profile_bal">平衡</string>
   <string name="perf_profile_perf">效能</string>
   <string name="perf_profile_bias_power">效率</string>
   <string name="perf_profile_bias_perf">快速</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">自動</string>
   <string name="live_display_auto_summary">依日夜週期自動調節螢幕色溫</string>
   <string name="live_display_off">關閉</string>
@@ -53,6 +73,13 @@
   <string name="live_display_outdoor">戶外 (陽光)</string>
   <string name="live_display_outdoor_summary">僅使用戶外設定</string>
   <string name="live_display_hint">LiveDisplay 可以幫助減少眼睛疲勞及睡前使用造成的不適。按一下此處來試試！</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">第三方鎖定畫面</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">允許應用程式用作不安全的鎖定畫面。</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">進階設定</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">手勢操作</string>
+  <!-- Touchscreen gesture haptic feedback -->
 </resources>

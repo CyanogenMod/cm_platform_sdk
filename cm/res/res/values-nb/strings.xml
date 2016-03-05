@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">opprett en egendefinert flis i hurtiginnstillingspanelet</string>
   <string name="permdesc_publishCustomTile">Tillater at en app kan publisere en hurtiginnstillingsflis.</string>
@@ -23,30 +24,49 @@
   <string name="permlab_modifySoundSettings">endre systemets lydinnstillinger</string>
   <string name="permlab_bindCustomTileListenerService">binde til en egendefinert flis-lyttertjeneste</string>
   <string name="permdesc_bindCustomTileListenerService">Tillater at en app kan bindes til det øverste nivået i grensesnittet til en tilpasset flis-lyttertjeneste.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">endre system profiler</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">veksle planlagte alarmer</string>
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">endre CM sikker systeminnstillinger</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">tilgang app forslag</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
+  <!-- Labels for the PROTECTED_APP permission. -->
   <string name="permlab_protectedApp">gjør apper beskyttet/ubeskyttet</string>
   <string name="permdesc_protectedApp">Tillat en app å merke andre apper som beskyttet og låse dem.</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Arbeid</string>
   <string name="profileNameHome">Hjemme</string>
   <string name="profileNameSilent">Lydløs</string>
   <string name="profileNameNight">Natt</string>
   <string name="profileNameAutomobile">Bil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-post</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Annet</string>
+  <!-- Performance profiles -->
   <string name="perf_profile_pwrsv">Strømsparing</string>
   <string name="perf_profile_bal">Balansert</string>
   <string name="perf_profile_perf">Ytelse</string>
   <string name="perf_profile_bias_power">Effektivitet</string>
   <string name="perf_profile_bias_perf">Rask</string>
+  <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatisk</string>
   <string name="live_display_auto_summary">Juster fargetemperatur på skjermen etter solnedgang og soloppgang</string>
   <string name="live_display_off">Av</string>
@@ -58,6 +78,15 @@
   <string name="live_display_outdoor">Utendørs (sterkt sollys)</string>
   <string name="live_display_outdoor_summary">Bruk kun utendørs innstillinger</string>
   <string name="live_display_hint">LiveDisplay kan redusere øyebelastning og redusere søvnvansker. Trykk her for å prøve det!</string>
+  <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjeparts låseskjerm</string>
+  <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Tillater en app å brukes som en usikret låseskjerm.</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">Avanserte innstillinger</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Bevegelser</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Ekstra</string>
+  <string name="touchscreen_gesture_haptic_feedback">Haptisk tilbakemelding</string>
 </resources>

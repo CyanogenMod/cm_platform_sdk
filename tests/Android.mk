@@ -22,11 +22,14 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.sdk \
     android-support-test
 
+LOCAL_DEX_PREOPT := false
+
 LOCAL_SRC_FILES := $(call all-subdir-java-files, src/)
 
 LOCAL_PACKAGE_NAME := CMPlatformTests
 LOCAL_CERTIFICATE := platform
 LOCAL_JAVA_LIBRARIES := android.test.runner
-LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_PROGUARD_ENABLED := optimization shrinktests
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_PACKAGE)
