@@ -857,6 +857,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String NOTIFICATION_LIGHT_PULSE_VMAIL_LED_ON = "notification_light_pulse_vmail_led_on";
     field public static final java.lang.String NOTIFICATION_LIGHT_SCREEN_ON = "notification_light_screen_on_enable";
     field public static final java.lang.String NOTIFICATION_PLAY_QUEUE = "notification_play_queue";
+    field public static final java.lang.String NOTIFICATION_SLIDER_IGNORE_AUTO = "notification_slider_ignore_auto";
     field public static final java.lang.String PEOPLE_LOOKUP_PROVIDER = "people_lookup_provider";
     field public static final java.lang.String PROXIMITY_ON_WAKE = "proximity_on_wake";
     field public static final java.lang.String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
