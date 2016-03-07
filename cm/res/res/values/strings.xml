@@ -161,4 +161,8 @@
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_writeThemesDesc">Allows the app to insert new themes and modify which theme you have applied.</string>
 
+    <!-- Performance manager permission title -->
+    <string name="permlab_perfAccess">access performance manager</string>
+    <!-- Performance manager permission description -->
+    <string name="permlab_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps</string>
 </resources>
