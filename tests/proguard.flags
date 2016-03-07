@@ -32,6 +32,9 @@
 -keep interface junit.** { *; }
 -keep interface org.junit.** { *; }
 
+# Keep compiled java classes from declared aidl's within the test package
+-keep public class * extends android.os.IInterface { *; }
+
 # Don't warn about the Android Support Test JUnit Runner
 -dontwarn android.support.**
 -dontwarn android.test.**
