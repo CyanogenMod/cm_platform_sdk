@@ -569,6 +569,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
+    field public static final java.lang.String PERFORMANCE_ACCESS = "cyanogenmod.permission.PERFORMANCE_ACCESS";
     field public static final java.lang.String PROTECTED_APP = "cyanogenmod.permission.PROTECTED_APP";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
