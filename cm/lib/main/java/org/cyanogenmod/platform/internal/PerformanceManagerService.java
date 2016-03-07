@@ -218,12 +218,14 @@ public class PerformanceManagerService extends SystemService {
             return false;
         }
 
-        mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DEVICE_POWER, null);
+        // Enforce the performance access permission declared by cm's res package
+        mContext.enforceCallingOrSelfPermission(
+                cyanogenmod.platform.Manifest.permission.PERFORMANCE_ACCESS, null);
 
         long token = Binder.clearCallingIdentity();
 
         mCurrentProfile = profile;
-        
+
         mHandler.removeMessages(MSG_CPU_BOOST);
         mHandler.removeMessages(MSG_LAUNCH_BOOST);
         mHandler.sendMessage(
