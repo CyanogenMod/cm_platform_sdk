@@ -164,5 +164,5 @@
     <!-- Performance manager permission title -->
     <string name="permlab_perfAccess">access performance manager</string>
     <!-- Performance manager permission description -->
-    <string name="permlab_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps</string>
+    <string name="permdesc_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps</string>
 </resources>
