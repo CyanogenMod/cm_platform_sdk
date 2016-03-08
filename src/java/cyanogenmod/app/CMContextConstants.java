@@ -115,6 +115,11 @@ public final class CMContextConstants {
     public static final String CM_ICON_CACHE_SERVICE = "cmiconcache";
 
     /**
+     * @hide
+     */
+    public static final String CM_LIVE_LOCK_SCREEN_SERVICE = "cmlivelockscreen";
+
+    /**
      * Features supported by the CMSDK.
      */
     public static class Features {
