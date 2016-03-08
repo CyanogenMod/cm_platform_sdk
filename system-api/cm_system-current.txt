@@ -196,6 +196,38 @@ package cyanogenmod.app {
     field public static final java.lang.String SERVICE_INTERFACE = "cyanogenmod.app.CustomTileListenerService";
   }
 
+  public class LiveLockScreenInfo implements android.os.Parcelable {
+    ctor public LiveLockScreenInfo(android.content.ComponentName, int);
+    ctor public LiveLockScreenInfo();
+    method public cyanogenmod.app.LiveLockScreenInfo clone();
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.app.LiveLockScreenInfo> CREATOR;
+    field public static final int PRIORITY_DEFAULT = 0; // 0x0
+    field public static final int PRIORITY_HIGH = 1; // 0x1
+    field public static final int PRIORITY_LOW = -1; // 0xffffffff
+    field public static final int PRIORITY_MAX = 2; // 0x2
+    field public static final int PRIORITY_MIN = -2; // 0xfffffffe
+    field public android.content.ComponentName component;
+    field public int priority;
+  }
+
+  public static class LiveLockScreenInfo.Builder {
+    ctor public LiveLockScreenInfo.Builder();
+    method public cyanogenmod.app.LiveLockScreenInfo build();
+    method public cyanogenmod.app.LiveLockScreenInfo.Builder setComponent(android.content.ComponentName);
+    method public cyanogenmod.app.LiveLockScreenInfo.Builder setPriority(int);
+  }
+
+  public class LiveLockScreenManager {
+    method public void cancel(int);
+    method public cyanogenmod.app.LiveLockScreenInfo getDefaultLiveLockScreen();
+    method public static cyanogenmod.app.LiveLockScreenManager getInstance(android.content.Context);
+    method public void setDefaultLiveLockScreen(cyanogenmod.app.LiveLockScreenInfo);
+    method public boolean show(int, cyanogenmod.app.LiveLockScreenInfo);
+    field public static final java.lang.String SERVICE_INTERFACE = "cyanogenmod.app.LiveLockScreenManagerService";
+  }
+
   public class PartnerInterface {
     method public java.lang.String getCurrentHotwordPackageName();
     method public static cyanogenmod.app.PartnerInterface getInstance(android.content.Context);
@@ -564,6 +596,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
     field public static final java.lang.String ACCESS_THEME_MANAGER = "cyanogenmod.permission.ACCESS_THEME_MANAGER";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
+    field public static final java.lang.String LIVE_LOCK_SCREEN_MANAGER_ACCESS = "cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
