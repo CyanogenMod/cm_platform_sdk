@@ -115,6 +115,11 @@ public final class CMContextConstants {
     public static final String CM_ICON_CACHE_SERVICE = "cmiconcache";
 
     /**
+     * @hide
+     */
+    public static final String CM_LIVE_LOCK_SCREEN_SERVICE = "cmlivelockscreen";
+
+    /**
      * Features supported by the CMSDK.
      */
     public static class Features {
@@ -181,5 +186,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PARTNER = "org.cyanogenmod.partner";
+
+        /*
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the Live lock screen
+         * feature.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String LIVE_LOCK_SCREEN = "org.cyanogenmod.livelockscreen";
     }
 }
