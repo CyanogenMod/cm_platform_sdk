@@ -172,6 +172,26 @@
                 android:description="@string/permdesc_perfAccessDesc"
                 android:protectionLevel="signature|privileged" />
 
+    <!-- Allows an application to access the live lock screen manager. -->
+    <permission android:name="cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS"
+                android:label="@string/permlab_accessLiveLockScreenService"
+                android:description="@string/permdesc_accessLiveLockScreenService"
+                android:protectionLevel="dangerous" />
+
+    <!-- Allows system apps privileged access to the live lock screen manager.
+        @hide -->
+    <permission android:name="cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS_PRIVATE"
+                android:label="@string/permlab_accessLiveLockScreenServicePrivate"
+                android:description="@string/permdesc_accessLiveLockScreenServicePrivate"
+                android:protectionLevel="signature|privileged" />
+
+    <!-- Permission required to be held for a service that provides a LiveLockScreenManagerService
+        @hide -->
+    <permission android:name="cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_PROVIDER"
+                android:label="@string/permlab_accessLiveLockScreenServiceProvider"
+                android:description="@string/permdesc_accessLiveLockScreenServiceProvider"
+                android:protectionLevel="signature|privileged" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
