@@ -165,4 +165,19 @@
     <string name="permlab_perfAccess">access performance manager</string>
     <!-- Performance manager permission description -->
     <string name="permdesc_perfAccessDesc">Allows an app to access the performance service. Should never be needed for normal apps.</string>
+
+    <!-- Access live lock screen manager service permission label -->
+    <string name="permlab_accessLiveLockScreenService">access live lock screen manager service</string>
+    <!-- Access live lock screen manager service permission description -->
+    <string name="permdesc_accessLiveLockScreenService">Allows an app to access the live lock screen manager service.</string>
+    <!-- Privileged access live lock screen manager service permission label -->
+    <string name="permlab_accessLiveLockScreenServicePrivate">access live lock screen manager service</string>
+    <!-- Privileged access live lock screen manager service permission description -->
+    <string name="permdesc_accessLiveLockScreenServicePrivate">Allows system apps to access the live lock screen manager service.</string>
+    <!-- Live lock screen manager service provider permission label -->
+    <string name="permlab_accessLiveLockScreenServiceProvider">provide live lock screen manager service</string>
+    <!-- Live lock screen manager service provider permission description -->
+    <string name="permdesc_accessLiveLockScreenServiceProvider">Allows a service to provide the live lock screen manager service.</string>
+
+
 </resources>
