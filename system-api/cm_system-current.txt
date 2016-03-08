@@ -563,6 +563,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
     field public static final java.lang.String ACCESS_THEME_MANAGER = "cyanogenmod.permission.ACCESS_THEME_MANAGER";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
+    field public static final java.lang.String LIVE_LOCK_SCREEN_MANAGER_ACCESS = "cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
     field public static final java.lang.String MODIFY_MSIM_PHONE_STATE = "cyanogenmod.permission.MODIFY_MSIM_PHONE_STATE";
