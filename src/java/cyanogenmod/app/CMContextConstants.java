@@ -126,4 +126,9 @@ public final class CMContextConstants {
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.cyanogenmod.hardware";
     }
+
+    /**
+     * @hide
+     */
+    public static final String CM_LIVE_LOCK_SCREEN_SERVICE = "cmlivelockscreen";
 }
