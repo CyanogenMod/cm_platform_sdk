@@ -1,0 +1,296 @@
+/*
+ * Copyright (C) 2016 The CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.cyanogenmod.platform.internal;
+
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.util.ArraySet;
+import android.util.Slog;
+
+import com.android.server.SystemService;
+
+import cyanogenmod.app.CMContextConstants;
+import cyanogenmod.app.ILiveLockScreenChangeListener;
+import cyanogenmod.app.ILiveLockScreenManager;
+import cyanogenmod.app.LiveLockScreenInfo;
+
+/** {@hide} */
+public class LiveLockScreenServiceBroker extends SystemService{
+    private static final String TAG = LiveLockScreenServiceBroker.class.getSimpleName();
+    private static final boolean DEBUG = true;
+
+    private static final ComponentName LLS_SERVICE_COMPONENT =
+            new ComponentName("org.cyanogenmod.livelockscreen.service",
+                    "org.cyanogenmod.livelockscreen.service.LiveLockScreenManagerService");
+
+    private static final int MSG_TRY_CONNECTING = 1;
+
+    private static final long SERVICE_CONNECTION_WAIT_TIME_MS = 4 * 1000L; // 4 seconds
+
+    private Context mContext;
+    // The actual LLS service to invoke
+    private ILiveLockScreenManager mService;
+
+    // Cached change listeners
+    private ArraySet<ILiveLockScreenChangeListener> mChangeListeners = new ArraySet<>();
+
+    private final Handler mConnectionHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_TRY_CONNECTING:
+                    tryConnecting();
+                    break;
+                default:
+                    Slog.e(TAG, "Unknown message");
+            }
+        }
+    };
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Slog.i(TAG, "LiveLockScreenManagerService connected");
+            synchronized (LiveLockScreenServiceBroker.this) {
+                mService = ILiveLockScreenManager.Stub.asInterface(service);
+                LiveLockScreenServiceBroker.this.notifyAll();
+                // If any change listeners are cached, register them with the newly connected
+                // service.
+                if (mService != null && mChangeListeners.size() > 0) {
+                    for (ILiveLockScreenChangeListener listener : mChangeListeners) {
+                        try {
+                            mService.registerChangeListener(listener);
+                        } catch (RemoteException e) {
+                            /* ignore */
+                        }
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Slog.i(TAG, "LiveLockScreenManagerService unexpectedly disconnected");
+            synchronized (LiveLockScreenServiceBroker.this) {
+                mService = null;
+                LiveLockScreenServiceBroker.this.notifyAll();
+            }
+        }
+    };
+
+    private final ILiveLockScreenManager mServiceStubForFailure = new ILiveLockScreenManager() {
+        @Override
+        public void enqueueLiveLockScreen(String pkg, int id,
+                LiveLockScreenInfo lls) throws RemoteException {
+        }
+
+        @Override
+        public void cancelLiveLockScreen(String pkg, int id) throws RemoteException {
+        }
+
+        @Override
+        public LiveLockScreenInfo getCurrentLiveLockScreen() throws RemoteException {
+            return null;
+        }
+
+        @Override
+        public LiveLockScreenInfo getDefaultLiveLockScreen() throws RemoteException {
+            return null;
+        }
+
+        @Override
+        public void setDefaultLiveLockScreen(LiveLockScreenInfo llsInfo) throws RemoteException {
+        }
+
+        @Override
+        public void setLiveLockScreenEnabled(boolean enabled) throws RemoteException {
+        }
+
+        @Override
+        public boolean getLiveLockScreenEnabled() throws RemoteException {
+            return false;
+        }
+
+        @Override
+        public boolean registerChangeListener(
+                ILiveLockScreenChangeListener listener) throws RemoteException {
+            return false;
+        }
+
+        @Override
+        public boolean unregisterChangeListener(
+                ILiveLockScreenChangeListener listener) throws RemoteException {
+            return false;
+        }
+
+        @Override
+        public IBinder asBinder() {
+            return null;
+        }
+    };
+
+    private final class BinderService extends ILiveLockScreenManager.Stub {
+
+        @Override
+        public void enqueueLiveLockScreen(String pkg, int id,
+                LiveLockScreenInfo lls) throws RemoteException {
+            getServiceGuarded().enqueueLiveLockScreen(pkg, id, lls);
+        }
+
+        @Override
+        public void cancelLiveLockScreen(String pkg, int id) throws RemoteException {
+            getServiceGuarded().cancelLiveLockScreen(pkg, id);
+        }
+
+        @Override
+        public LiveLockScreenInfo getCurrentLiveLockScreen() throws RemoteException {
+            return getServiceGuarded().getCurrentLiveLockScreen();
+        }
+
+        @Override
+        public LiveLockScreenInfo getDefaultLiveLockScreen() throws RemoteException {
+            return getServiceGuarded().getDefaultLiveLockScreen();
+        }
+
+        @Override
+        public void setDefaultLiveLockScreen(LiveLockScreenInfo llsInfo) throws RemoteException {
+            getServiceGuarded().setDefaultLiveLockScreen(llsInfo);
+        }
+
+        @Override
+        public void setLiveLockScreenEnabled(boolean enabled) throws RemoteException {
+            getServiceGuarded().setLiveLockScreenEnabled(enabled);
+        }
+
+        @Override
+        public boolean getLiveLockScreenEnabled() throws RemoteException {
+            return getServiceGuarded().getLiveLockScreenEnabled();
+        }
+
+        @Override
+        public boolean registerChangeListener(
+                ILiveLockScreenChangeListener listener) throws RemoteException {
+            boolean registered = getServiceGuarded().registerChangeListener(listener);
+            if (registered) {
+                mChangeListeners.add(listener);
+            }
+            return getServiceGuarded().registerChangeListener(listener);
+        }
+
+        @Override
+        public boolean unregisterChangeListener(
+                ILiveLockScreenChangeListener listener) throws RemoteException {
+            boolean unregistered = getServiceGuarded().unregisterChangeListener(listener);
+            if (unregistered) {
+                mChangeListeners.remove(listener);
+            }
+            return unregistered;
+        }
+    }
+
+    public LiveLockScreenServiceBroker(Context context) {
+        super(context);
+        mContext = context;
+    }
+
+    @Override
+    public void onStart() {
+        if (DEBUG) Slog.d(TAG, "service started");
+        publishBinderService(CMContextConstants.CM_LIVE_LOCK_SCREEN_SERVICE, new BinderService());
+    }
+
+    @Override
+    public void onBootPhase(int phase) {
+        if (phase == PHASE_THIRD_PARTY_APPS_CAN_START) {
+            if (DEBUG) Slog.d(TAG, "Third party apps ready");
+            tryConnecting();
+        }
+    }
+
+    private void tryConnecting() {
+        Slog.i(TAG, "Connecting to LiveLockScreenManagerService");
+        synchronized (this) {
+            if (mService != null) {
+                Slog.d(TAG, "Already connected");
+                return;
+            }
+            final Intent intent = new Intent();
+            intent.setComponent(LLS_SERVICE_COMPONENT);
+            try {
+                if (!mContext.bindService(intent, mConnection, Context.BIND_AUTO_CREATE)) {
+                    Slog.e(TAG, "Failed to bind to LiveLockScreenManagerService");
+                }
+            } catch (SecurityException e) {
+                Slog.e(TAG, "Forbidden to bind to LiveLockScreenManagerService", e);
+            }
+        }
+    }
+
+    private ILiveLockScreenManager getOrConnectService() {
+        synchronized (this) {
+            if (mService != null) {
+                return mService;
+            }
+            // Service is not connected. Try blocking connecting.
+            Slog.w(TAG, "LiveLockScreenManagerService not connected. Try connecting...");
+            mConnectionHandler.sendMessage(
+                    mConnectionHandler.obtainMessage(MSG_TRY_CONNECTING));
+            final long shouldEnd =
+                    SystemClock.elapsedRealtime() + SERVICE_CONNECTION_WAIT_TIME_MS;
+            long waitTime = SERVICE_CONNECTION_WAIT_TIME_MS;
+            while (waitTime > 0) {
+                try {
+                    // TODO: consider using Java concurrent construct instead of raw object wait
+                    this.wait(waitTime);
+                } catch (InterruptedException e) {
+                    Slog.w(TAG, "Connection wait interrupted", e);
+                }
+                if (mService != null) {
+                    // Success
+                    return mService;
+                }
+                // Calculate remaining waiting time to make sure we wait the full timeout period
+                waitTime = shouldEnd - SystemClock.elapsedRealtime();
+            }
+            // Timed out. Something's really wrong.
+            Slog.e(TAG, "Can not connect to LiveLockScreenManagerService (timed out)");
+            return null;
+        }
+    }
+
+    /**
+     * Make sure to return a non-empty service instance. Return the connected LiveLockScreenManager
+     * instance, if not connected, try connecting. If fail to connect, return a fake service
+     * instance which returns failure to service caller.
+     *
+     * @return a non-empty service instance, real or fake
+     */
+    private ILiveLockScreenManager getServiceGuarded() {
+        final ILiveLockScreenManager service = getOrConnectService();
+        if (service != null) {
+            return service;
+        }
+        return mServiceStubForFailure;
+    }
+}
