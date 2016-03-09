@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
@@ -43,6 +44,7 @@ import java.util.LinkedList;
  */
 public class KeyguardExternalView extends View implements ViewTreeObserver.OnPreDrawListener,
         IBinder.DeathRecipient {
+    private static final String TAG = KeyguardExternalView.class.getSimpleName();
 
     /**
      * An extra passed via an intent that provides a list of permissions that should be requested
@@ -107,14 +109,22 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             try {
-                mExternalViewProvider = IKeyguardExternalViewProvider.Stub.asInterface(
-                        IExternalViewProviderFactory.Stub.asInterface(service).
-                                createExternalView(null));
-                mExternalViewProvider.registerCallback(
-                        KeyguardExternalView.this.mKeyguardExternalViewCallbacks);
-                mService = service;
-                mService.linkToDeath(KeyguardExternalView.this, 0);
-                executeQueue();
+                IExternalViewProviderFactory factory = IExternalViewProviderFactory.Stub.asInterface(service);
+                if (factory != null) {
+                    mExternalViewProvider = IKeyguardExternalViewProvider.Stub.asInterface(
+                            factory.createExternalView(null));
+                    if (mExternalViewProvider != null) {
+                        mExternalViewProvider.registerCallback(
+                                KeyguardExternalView.this.mKeyguardExternalViewCallbacks);
+                        mService = service;
+                        mService.linkToDeath(KeyguardExternalView.this, 0);
+                        executeQueue();
+                    } else {
+                        Log.e(TAG, "Unable to get external view provider");
+                    }
+                } else {
+                    Log.e(TAG, "Unable to get external view provider factory");
+                }
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
