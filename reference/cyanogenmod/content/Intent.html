@@ -205,7 +205,9 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
-    <li class="api apilevel-">
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
+    <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
               </ul><br/>
 
@@ -455,6 +457,54 @@ Summary:
     </tr>
     
     
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_INSTALLED">ACTION_THEME_INSTALLED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action sent from the provider when a theme has been fully installed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_REMOVED">ACTION_THEME_REMOVED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action sent from the provider when a theme has been removed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_UPDATED">ACTION_THEME_UPDATED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Action sent from the provider when a theme has been updated.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE">CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Used to indicate that a theme package has been installed or un-installed.
+          
+    
+
+        </td>
+    </tr>
+    
+    
     <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#EXTRA_PROTECTED_COMPONENTS">EXTRA_PROTECTED_COMPONENTS</a></td>
@@ -472,6 +522,21 @@ Summary:
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#EXTRA_PROTECTED_STATE">EXTRA_PROTECTED_STATE</a></td>
         <td class="jd-descrcol" width="100%">
           This field is part of the intent <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_PROTECTED_CHANGED">ACTION_PROTECTED_CHANGED</a></code>.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/content/Intent.html#URI_SCHEME_PACKAGE">URI_SCHEME_PACKAGE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Uri scheme used to broadcast the theme's package name when broadcasting
+ <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_INSTALLED">ACTION_THEME_INSTALLED</a></code> or
+ <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_REMOVED">ACTION_THEME_REMOVED</a></code>
+
           
     
 
@@ -847,6 +912,182 @@ From class
 
 
 
+<A NAME="ACTION_THEME_INSTALLED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ACTION_THEME_INSTALLED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action sent from the provider when a theme has been fully installed.  Fully installed
+ means that the apk was installed by PackageManager and the theme resources were
+ processed and cached by <code><a href="../../../">ERROR(/org.cyanogenmod.platform.internal.ThemeManagerService)</a></code>
+ Requires the <code><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#READ_THEMES">READ_THEMES</a></code> permission to
+ receive this broadcast.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.action.THEME_INSTALLED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ACTION_THEME_REMOVED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ACTION_THEME_REMOVED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action sent from the provider when a theme has been removed.
+ Requires the <code><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#READ_THEMES">READ_THEMES</a></code> permission to
+ receive this broadcast.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.action.THEME_REMOVED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ACTION_THEME_UPDATED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ACTION_THEME_UPDATED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Action sent from the provider when a theme has been updated.
+ Requires the <code><a href="../../../reference/cyanogenmod/platform/Manifest.permission.html#READ_THEMES">READ_THEMES</a></code> permission to
+ receive this broadcast.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.action.THEME_UPDATED"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Used to indicate that a theme package has been installed or un-installed.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="EXTRA_PROTECTED_COMPONENTS"></A>
 
 <div class="jd-details api apilevel-4"> 
@@ -924,6 +1165,50 @@ From class
         <span>
             
                 "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="URI_SCHEME_PACKAGE"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        URI_SCHEME_PACKAGE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Uri scheme used to broadcast the theme's package name when broadcasting
+ <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_INSTALLED">ACTION_THEME_INSTALLED</a></code> or
+ <code><a href="../../../reference/cyanogenmod/content/Intent.html#ACTION_THEME_REMOVED">ACTION_THEME_REMOVED</a></code>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "package"
             
         </span>
         </div>

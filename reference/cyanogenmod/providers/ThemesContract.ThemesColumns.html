@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>ThemesContract.ThemesColumns | Android Developers</title>
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet"
+href="http://fonts.googleapis.com/css?family=Roboto+Condensed">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold"
+  title="roboto">
+<link href="../../../assets/css/default.css?v=5" rel="stylesheet" type="text/css">
+
+
+<!-- FULLSCREEN STYLESHEET -->
+<link href="../../../assets/css/fullscreen.css" rel="stylesheet" class="fullscreen"
+type="text/css">
+
+
+<!-- JAVASCRIPT -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script src="../../../assets/js/android_3p-bundle.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var toRoot = "../../../";
+  var metaTags = [];
+  var devsite = false;
+</script>
+<script src="../../../assets/js/docs.js?v=3" type="text/javascript"></script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5831155-1', 'android.com');
+  ga('create', 'UA-49880327-2', 'android.com', {'name': 'universal'});  // New tracker);
+  ga('send', 'pageview');
+  ga('universal.send', 'pageview'); // Send page view for new tracker.
+</script>
+
+</head>
+
+<body class="gc-documentation 
+  develop reference" itemscope itemtype="http://schema.org/Article">
+  <div id="doc-api-level" class="5" style="display:none"></div>
+  <a name="top"></a>
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../reference/packages.html" tabindex="-1"><img
+              src="../../../assets/cid_smart.png" alt="CID" width="50" height="50"/>
+          <span id="masthead-title">CyanogenMod Platform SDK</span></a>
+      </div>
+  </div><!-- header -->
+
+
+  <div class="wrap clearfix" id="body-content">
+    <div class="col-4" id="side-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <div id="devdoc-nav">
+      <div id="api-nav-header">
+        <div id="api-level-toggle">
+          <label for="apiLevelCheckbox" class="disabled"
+            title="Select your target API level to dim unavailable APIs">API level: </label>
+          <div class="select-wrapper">
+            <select id="apiLevelSelector">
+              <!-- option elements added by buildApiLevelSelector() -->
+            </select>
+          </div>
+        </div><!-- end toggle -->
+        <div id="api-nav-title">CyanogenMod APIs</div>
+        </div><!-- end nav header -->
+      <script>
+        var SINCE_DATA = [ '1', '2', '3', '4', '5' ];
+        buildApiLevelSelector();
+      </script>
+                  
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav" class="scroll-pane">
+
+              <ul>
+                
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+    <li class="selected api apilevel-2">
+  <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+              </ul><br/>
+
+            </div> <!-- end packages-nav -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav" class="scroll-pane">
+
+
+
+            <ul>
+              
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.html">ThemesContract</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.MixnMatchColumns.html">ThemesContract.MixnMatchColumns</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.PreviewColumns.html">ThemesContract.PreviewColumns</a></li>
+          <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html">ThemesContract.ThemesColumns</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html">ThemesContract.ThemesColumns.InstallState</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.CMSettingNotFoundException.html">CMSettings.CMSettingNotFoundException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+        
+
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none" class="scroll-pane">
+          <div id="tree-list"></div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+      <div id="nav-swap">
+      <a class="fullscreen">fullscreen</a>
+      <a href='#' onclick='swapNav();return false;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>
+      </div>
+    </div> <!-- end devdoc-nav -->
+    </div> <!-- end side-nav -->
+    <script type="text/javascript">
+      // init fullscreen based on user pref
+      var fullscreen = readCookie("fullscreen");
+      if (fullscreen != 0) {
+        if (fullscreen == "false") {
+          toggleFullscreen(false);
+        } else {
+          toggleFullscreen(true);
+        }
+      }
+      // init nav version for mobile
+      if (isMobile) {
+        swapNav(); // tree view should be used on mobile
+        $('#nav-swap').hide();
+      } else {
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        }
+      }
+      // scroll the selected page into view
+      $(document).ready(function() {
+        scrollIntoView("packages-nav");
+        scrollIntoView("classes-nav");
+        });
+    </script>
+
+     
+
+
+
+<div class="col-12"  id="doc-col">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+Summary:
+
+  <a href="#nestedclasses">Nested Classes</a>
+  
+
+
+
+
+
+  &#124; <a href="#constants">Constants</a>
+  
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+     
+    
+    class
+<h1 itemprop="name">ThemesContract.ThemesColumns</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+    
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-5">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.providers.ThemesContract.ThemesColumns</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
+
+
+  
+    <tr class="alt-color api apilevel-5" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html">ThemesContract.ThemesColumns.InstallState</a></td>
+      <td class="jd-descrcol" width="100%">
+        &nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#AUTHOR">AUTHOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          Name of the author of the theme
+ <P>Type: TEXT</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#BOOT_ANIM_URI">BOOT_ANIM_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          TODO: Figure structure for actual animation instead of static
+ URI to an image of the boot_anim.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#DATE_CREATED">DATE_CREATED</a></td>
+        <td class="jd-descrcol" width="100%">
+          The time that this row was created on its originating client (msecs
+ since the epoch).
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#FONT_URI">FONT_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image of the fonts in this theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#HOMESCREEN_URI">HOMESCREEN_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image that shows the homescreen with the theme applied
+ since the epoch).
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#ICON_URI">ICON_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image of the fonts in this theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#INSTALL_STATE">INSTALL_STATE</a></td>
+        <td class="jd-descrcol" width="100%">
+          The install state of the theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#INSTALL_TIME">INSTALL_TIME</a></td>
+        <td class="jd-descrcol" width="100%">
+          install time in millisecs.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#IS_DEFAULT_THEME">IS_DEFAULT_THEME</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if this theme is the system default theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#IS_LEGACY_ICONPACK">IS_LEGACY_ICONPACK</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if this theme is a legacy iconpack.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#IS_LEGACY_THEME">IS_LEGACY_THEME</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if this theme is a legacy theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#LAST_UPDATE_TIME">LAST_UPDATE_TIME</a></td>
+        <td class="jd-descrcol" width="100%">
+          install/update time in millisecs.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#LOCKSCREEN_URI">LOCKSCREEN_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image that shows the lockscreen with theme applied
+ <P>Type: TEXT</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_ALARMS">MODIFIES_ALARMS</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies alarm sounds
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_BOOT_ANIM">MODIFIES_BOOT_ANIM</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies boot animation
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_FONTS">MODIFIES_FONTS</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies fonts
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_ICONS">MODIFIES_ICONS</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies icons else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_LAUNCHER">MODIFIES_LAUNCHER</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies the launcher/homescreen else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_LIVE_LOCK_SCREEN">MODIFIES_LIVE_LOCK_SCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme has a live lock screen
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_LOCKSCREEN">MODIFIES_LOCKSCREEN</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies the lockscreen else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_NAVIGATION_BAR">MODIFIES_NAVIGATION_BAR</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme has an overlay for SystemUI/NavBar
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_NOTIFICATIONS">MODIFIES_NOTIFICATIONS</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies notifications
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_OVERLAYS">MODIFIES_OVERLAYS</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme has overlays
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_RINGTONES">MODIFIES_RINGTONES</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme modifies ringtones
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#MODIFIES_STATUS_BAR">MODIFIES_STATUS_BAR</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if theme has an overlay for SystemUI/StatusBar
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#OVERLAYS_URI">OVERLAYS_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image of the fonts in this theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#PKG_NAME">PKG_NAME</a></td>
+        <td class="jd-descrcol" width="100%">
+          Unique text to identify the apk pkg.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#PRESENT_AS_THEME">PRESENT_AS_THEME</a></td>
+        <td class="jd-descrcol" width="100%">
+          1 if this row should actually be presented as a theme to the user.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#PRIMARY_COLOR">PRIMARY_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          A 32 bit RRGGBB color representative of the themes color scheme
+ <P>Type: INTEGER</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#SECONDARY_COLOR">SECONDARY_COLOR</a></td>
+        <td class="jd-descrcol" width="100%">
+          A 2nd 32 bit RRGGBB color representative of the themes color scheme
+ <P>Type: INTEGER</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#STATUSBAR_URI">STATUSBAR_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image of the status bar for this theme.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#STYLE_URI">STYLE_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to an image that shows the style (aka skin) with theme applied
+ <P>Type: TEXT</P>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#TARGET_API">TARGET_API</a></td>
+        <td class="jd-descrcol" width="100%">
+          The target API this theme supports
+ is populated by the PackageInfo.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#TITLE">TITLE</a></td>
+        <td class="jd-descrcol" width="100%">
+          The user visible title.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#WALLPAPER_URI">WALLPAPER_URI</a></td>
+        <td class="jd-descrcol" width="100%">
+          URI to the theme's wallpaper.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#_ID">_ID</a></td>
+        <td class="jd-descrcol" width="100%">
+          The unique ID for a row.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-5" >
+          <td class="jd-typecol"><nobr>
+          public
+          static
+          final
+          Uri</nobr></td>
+          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#CONTENT_URI">CONTENT_URI</a></td>
+          <td class="jd-descrcol" width="100%">
+            
+            
+    
+
+          </td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html#ThemesContract.ThemesColumns()">ThemesContract.ThemesColumns</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="AUTHOR"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        AUTHOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Name of the author of the theme
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "author"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="BOOT_ANIM_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        BOOT_ANIM_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>TODO: Figure structure for actual animation instead of static
+ URI to an image of the boot_anim.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "bootanim_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="DATE_CREATED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        DATE_CREATED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The time that this row was created on its originating client (msecs
+ since the epoch).
+ <P>Type: INTEGER</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "created"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FONT_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        FONT_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image of the fonts in this theme.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "font_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="HOMESCREEN_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        HOMESCREEN_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image that shows the homescreen with the theme applied
+ since the epoch).
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "homescreen_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ICON_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ICON_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image of the fonts in this theme.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "icon_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INSTALL_STATE"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INSTALL_STATE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The install state of the theme.
+ Can be one of the following:
+ <code><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html#UNKNOWN">UNKNOWN</a></code>
+ <code><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html#INSTALLING">INSTALLING</a></code>
+ <code><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html#UPDATING">UPDATING</a></code>
+ <code><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html#INSTALLED">INSTALLED</a></code>
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "install_state"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="INSTALL_TIME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        INSTALL_TIME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>install time in millisecs. When the row is inserted this column
+ is populated by the PackageInfo.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "install_time"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="IS_DEFAULT_THEME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        IS_DEFAULT_THEME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if this theme is the system default theme.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "is_default_theme"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="IS_LEGACY_ICONPACK"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        IS_LEGACY_ICONPACK
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if this theme is a legacy iconpack. A legacy icon pack is an APK that was written
+ for Trebuchet or a 3rd party launcher.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "is_legacy_iconpack"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="IS_LEGACY_THEME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        IS_LEGACY_THEME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if this theme is a legacy theme.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "is_legacy_theme"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_UPDATE_TIME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        LAST_UPDATE_TIME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>install/update time in millisecs. When the row is inserted this column
+ is populated by the PackageInfo. It is used for syncing to PM
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "updateTime"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="LOCKSCREEN_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        LOCKSCREEN_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image that shows the lockscreen with theme applied
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "lockscreen_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_ALARMS"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_ALARMS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies alarm sounds
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_alarms"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_BOOT_ANIM"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_BOOT_ANIM
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies boot animation
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_bootanim"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_FONTS"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_FONTS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies fonts
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_fonts"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_ICONS"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_ICONS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies icons else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_icons"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_LAUNCHER"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_LAUNCHER
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies the launcher/homescreen else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_homescreen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_LIVE_LOCK_SCREEN"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_LIVE_LOCK_SCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme has a live lock screen
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_live_lock_screen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_LOCKSCREEN"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_LOCKSCREEN
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies the lockscreen else 0
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_lockscreen"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_NAVIGATION_BAR"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_NAVIGATION_BAR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme has an overlay for SystemUI/NavBar
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_navigation_bar"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_NOTIFICATIONS"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_NOTIFICATIONS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies notifications
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_notifications"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_OVERLAYS"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_OVERLAYS
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme has overlays
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_overlays"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_RINGTONES"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_RINGTONES
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme modifies ringtones
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_ringtones"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="MODIFIES_STATUS_BAR"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        MODIFIES_STATUS_BAR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if theme has an overlay for SystemUI/StatusBar
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mods_status_bar"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="OVERLAYS_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        OVERLAYS_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image of the fonts in this theme.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "overlays_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PKG_NAME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PKG_NAME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Unique text to identify the apk pkg. ie "com.foo.bar"
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "pkg_name"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PRESENT_AS_THEME"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PRESENT_AS_THEME
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>1 if this row should actually be presented as a theme to the user.
+ For example if a "theme" only modifies one component (ex icons) then
+ we do not present it to the user under the themes table.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "present_as_theme"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PRIMARY_COLOR"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        PRIMARY_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A 32 bit RRGGBB color representative of the themes color scheme
+ <P>Type: INTEGER</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "primary_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SECONDARY_COLOR"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        SECONDARY_COLOR
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A 2nd 32 bit RRGGBB color representative of the themes color scheme
+ <P>Type: INTEGER</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "secondary_color"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATUSBAR_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STATUSBAR_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image of the status bar for this theme.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "status_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="STYLE_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        STYLE_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to an image that shows the style (aka skin) with theme applied
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "style_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="TARGET_API"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        TARGET_API
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The target API this theme supports
+ is populated by the PackageInfo.
+ <P>Type: INTEGER</P>
+ <P>Default: 0</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "target_api"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="TITLE"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        TITLE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The user visible title.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "title"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="WALLPAPER_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        WALLPAPER_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>URI to the theme's wallpaper. We should support multiple wallpaper
+ but for now we will just have 1.
+ <P>Type: TEXT</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "wallpaper_uri"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="_ID"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        _ID
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The unique ID for a row.
+ <P>Type: INTEGER (long)</P>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "_id"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="CONTENT_URI"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        Uri
+      </span>
+        CONTENT_URI
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="ThemesContract.ThemesColumns()"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ThemesContract.ThemesColumns</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+</script>
+
+</body>
+</html>

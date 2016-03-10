@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="" style="display:none"></div>
+  <div id="doc-api-level" class="5" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -205,7 +205,9 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
-    <li class="selected api apilevel-">
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
+    <li class="selected api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
               </ul><br/>
 
@@ -221,7 +223,7 @@ type="text/css">
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/util/ColorUtils.html">ColorUtils</a></li>
+          <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/util/ColorUtils.html">ColorUtils</a></li>
       </ul>
     </li>
               
@@ -316,6 +318,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
   
   
 
@@ -353,7 +356,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-">
+<div id="jd-content" class="api apilevel-5">
 <table class="jd-inheritance-table">
 
 
@@ -441,7 +444,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -470,7 +473,30 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#calculateDeltaE(double, double, double, double, double, double)">calculateDeltaE</a></span>(double L1, double a1, double b1, double L2, double a2, double b2)</nobr>
+        
+        <div class="jd-descrdiv">
+          Calculate the colour difference value between two colours in lab space.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -494,7 +520,31 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#dropAlpha(int)">dropAlpha</a></span>(int rgba)</nobr>
+        
+        <div class="jd-descrdiv">
+          Drop the alpha component from an RGBA packed int and return
+ a non sign-extended RGB int.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -518,7 +568,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -542,7 +592,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -558,6 +608,52 @@ Summary:
           Takes a drawable and uses Palette to generate a suitable "alert"
  color which can be used for an external notification mechanism
  such as an RGB LED.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            Palette.Swatch</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#getDominantSwatch(com.android.internal.util.cm.palette.Palette)">getDominantSwatch</a></span>(Palette palette)</nobr>
+        
+        <div class="jd-descrdiv">
+          Given a Palette, pick out the dominant swatch based on population
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            float[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/util/ColorUtils.html#temperatureToRGB(int)">temperatureToRGB</a></span>(int degreesK)</nobr>
+        
+        <div class="jd-descrdiv">
+          Convert a color temperature value (in Kelvin) to a RGB units as floats.
           
     
 
@@ -818,7 +914,7 @@ From class
 
 <A NAME="ColorUtils()"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -832,7 +928,8 @@ From class
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
         
   
 
@@ -863,9 +960,77 @@ From class
 
 
 
+<A NAME="calculateDeltaE(double, double, double, double, double, double)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        double
+      </span>
+      <span class="sympad">calculateDeltaE</span>
+      <span class="normal">(double L1, double a1, double b1, double L2, double a2, double b2)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Calculate the colour difference value between two colours in lab space.
+ This code is from OpenIMAJ under BSD License</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>L1</td>
+          <td>first colour's L component</td>
+        </tr>
+        <tr>
+          <th>a1</td>
+          <td>first colour's a component</td>
+        </tr>
+        <tr>
+          <th>b1</td>
+          <td>first colour's b component</td>
+        </tr>
+        <tr>
+          <th>L2</td>
+          <td>second colour's L component</td>
+        </tr>
+        <tr>
+          <th>a2</td>
+          <td>second colour's a component</td>
+        </tr>
+        <tr>
+          <th>b2</td>
+          <td>second colour's b component</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the CIE 2000 colour difference
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="convertRGBtoLAB(int)"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -879,7 +1044,8 @@ From class
       <span class="normal">(int rgb)</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
         
   
 
@@ -910,9 +1076,48 @@ From class
 </div>
 
 
+<A NAME="dropAlpha(int)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">dropAlpha</span>
+      <span class="normal">(int rgba)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Drop the alpha component from an RGBA packed int and return
+ a non sign-extended RGB int.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>rgb
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="findPerceptuallyNearestColor(int, int[])"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -926,7 +1131,8 @@ From class
       <span class="normal">(int rgb, int[] colors)</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
         
   
 
@@ -938,7 +1144,7 @@ From class
       
   <div class="jd-tagdata jd-tagdescr"><p>Finds the "perceptually nearest" color from a list of colors to
  the given RGB value. This is done by converting to
- L*a*b colorspace and using a simple distance calculation.</p></div>
+ L*a*b colorspace and using the CIE2000 deltaE algorithm.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
@@ -964,7 +1170,7 @@ From class
 
 <A NAME="findPerceptuallyNearestSolidColor(int)"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -978,7 +1184,8 @@ From class
       <span class="normal">(int rgb)</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
         
   
 
@@ -992,6 +1199,11 @@ From class
  of either 0 or 255) to the given color. This is useful for cases such as
  LED notification lights which may not be able to display the full range
  of colors due to hardware limitations.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the perceptually nearest color in RGB
+</li></ul>
+  </div>
 
     </div>
 </div>
@@ -999,7 +1211,7 @@ From class
 
 <A NAME="generateAlertColorFromDrawable(android.graphics.drawable.Drawable)"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1013,7 +1225,8 @@ From class
       <span class="normal">(Drawable drawable)</span>
     </h4>
       <div class="api-level">
-        <div></div>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
         
   
 
@@ -1041,6 +1254,78 @@ From class
       <ul class="nolist"><li>a suitable solid color which corresponds to the image
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDominantSwatch(com.android.internal.util.cm.palette.Palette)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Palette.Swatch
+      </span>
+      <span class="sympad">getDominantSwatch</span>
+      <span class="normal">(Palette palette)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Given a Palette, pick out the dominant swatch based on population</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the dominant Swatch
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="temperatureToRGB(int)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        float[]
+      </span>
+      <span class="sympad">temperatureToRGB</span>
+      <span class="normal">(int degreesK)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Convert a color temperature value (in Kelvin) to a RGB units as floats.
+ This can be used in a transform matrix or hardware gamma control.</p></div>
 
     </div>
 </div>
