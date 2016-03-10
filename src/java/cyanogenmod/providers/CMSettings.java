@@ -1495,16 +1495,6 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
-         * Use EdgeGesture Service for system gestures in PhoneWindowManager
-         * 0 = 0ff, 1 = on
-         */
-        public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
-
-        /** @hide */
-        public static final Validator USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * Show the pending notification counts as overlays on the status bar
          */
         public static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
@@ -1844,7 +1834,6 @@ public final class CMSettings {
                 CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                 CMSettings.System.VOLBTN_MUSIC_CONTROLS,
                 CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
-                CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
                 CMSettings.System.STATUS_BAR_NOTIF_COUNT,
                 CMSettings.System.CALL_RECORDING_FORMAT,
                 CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
@@ -1986,8 +1975,6 @@ public final class CMSettings {
             VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL,
                     STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
             VALIDATORS.put(VOLBTN_MUSIC_CONTROLS, VOLBTN_MUSIC_CONTROLS_VALIDATOR);
-            VALIDATORS.put(USE_EDGE_SERVICE_FOR_GESTURES,
-                    USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_NOTIF_COUNT, STATUS_BAR_NOTIF_COUNT_VALIDATOR);
             VALIDATORS.put(CALL_RECORDING_FORMAT, CALL_RECORDING_FORMAT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,

@@ -513,12 +513,6 @@ public final class CMSettings {
         public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
 
         /**
-         * Use EdgeGesture Service for system gestures in PhoneWindowManager
-         * @hide
-         */
-        public static final String USE_EDGE_SERVICE_FOR_GESTURES = "edge_service_for_gestures";
-
-        /**
          * Show the pending notification counts as overlays on the status bar
          * @hide
          */
@@ -691,7 +685,6 @@ public final class CMSettings {
                 CMSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                 CMSettings.System.VOLBTN_MUSIC_CONTROLS,
                 CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
-                CMSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
                 CMSettings.System.STATUS_BAR_NOTIF_COUNT,
                 CMSettings.System.CALL_RECORDING_FORMAT,
                 CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
