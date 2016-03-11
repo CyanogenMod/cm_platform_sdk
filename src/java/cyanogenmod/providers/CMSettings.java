@@ -2660,6 +2660,12 @@ public final class CMSettings {
          */
         public static final String FEATURE_TOUCH_HOVERING = "feature_touch_hovering";
 
+        /**
+         * Vibrator intensity setting for supported devices
+         * @hide
+         */
+        public static final String VIBRATOR_INTENSITY = "vibrator_intensity";
+
         // endregion
 
         /**
