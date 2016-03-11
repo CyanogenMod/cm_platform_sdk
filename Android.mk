@@ -39,7 +39,8 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_JAVA_LIBRARIES := \
     services \
-    org.cyanogenmod.hardware
+    org.cyanogenmod.hardware \
+    telephony-common
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(cyanogenmod_src)) \

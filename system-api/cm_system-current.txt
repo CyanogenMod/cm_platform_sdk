@@ -77,6 +77,7 @@ package cyanogenmod.app {
   }
 
   public class CMTelephonyManager {
+    method public static java.lang.String getExtService(java.lang.String);
     method public static cyanogenmod.app.CMTelephonyManager getInstance(android.content.Context);
     method public java.util.List<android.telephony.SubscriptionInfo> getSubInformation();
     method public boolean isDataConnectionEnabled();
