@@ -245,19 +245,18 @@ public class ThemeManagerService extends SystemService {
         mContext.registerReceiver(mUserChangeReceiver, filter);
 
         mPM = mContext.getPackageManager();
-
-        if (!isThemeApiUpToDate()) {
-            Log.d(TAG, "The system has been upgraded to a theme new api, " +
-                    "checking if currently set theme is compatible");
-            removeObsoleteThemeOverlayIfExists();
-            updateThemeApi();
-        }
     }
 
     @Override
     public void onBootPhase(int phase) {
         super.onBootPhase(phase);
         if (phase == SystemService.PHASE_ACTIVITY_MANAGER_READY) {
+            if (!isThemeApiUpToDate()) {
+                Log.d(TAG, "The system has been upgraded to a theme new api, " +
+                        "checking if currently set theme is compatible");
+                removeObsoleteThemeOverlayIfExists();
+                updateThemeApi();
+            }
             registerAppsFailureReceiver();
             processInstalledThemes();
         }
@@ -303,6 +302,11 @@ public class ThemeManagerService extends SystemService {
             String component = entry.getKey();
             String pkgName = entry.getValue();
             String defaultPkg = defaults.get(component);
+
+            if (defaultPkg == null) {
+                Log.d(TAG, "Default package is null, skipping " + component);
+                continue;
+            }
 
             // Check that the default overlay theme is not currently set
             if (defaultPkg.equals(pkgName)) {
