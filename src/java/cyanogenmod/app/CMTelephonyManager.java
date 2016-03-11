@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 import android.telephony.SubscriptionInfo;
 import android.util.Log;
 import android.util.Slog;
@@ -46,6 +47,10 @@ public class CMTelephonyManager {
     private static ICMTelephonyManager sService;
     private static CMTelephonyManager sCMTelephonyManagerInstance;
     private Context mContext;
+
+    private static final String PROPERTY_TELEPHONY_MANAGER_EXT_SERVICE = "persist.radio.cm.ext";
+    //Set persist.radio.cm.ext to extphone in the case we want to use Qualcomm's qti-telephony-common
+    //private static final String CAF_TELEPHONY_MANAGER_EXT_SERVICE = "extphone";
 
     private CMTelephonyManager(Context context) {
         Context appContext = context.getApplicationContext();
@@ -345,5 +350,24 @@ public class CMTelephonyManager {
         } catch (RemoteException e) {
             Slog.w(TAG, "warning: no cm telephony manager service");
         }
+    }
+
+    /**
+     * Returns name of a service with the given name.
+     *
+     * @param name If the name is set to NULL then the extphone or cmtelephonymanagerext
+     *              is selected based on the property persist.radio.cm.ext. If the
+     *              service name is specified then the service is returned.
+     */
+    public static String getExtService(String name) {
+        String extService = SystemProperties.get(PROPERTY_TELEPHONY_MANAGER_EXT_SERVICE, CMContextConstants.CM_TELEPHONY_MANAGER_EXT_SERVICE);
+
+        if(name != null && !name.isEmpty()) {
+            extService = name;
+        }
+
+        Log.w(TAG, " getting service name : " + extService);
+
+        return extService;
     }
 }
