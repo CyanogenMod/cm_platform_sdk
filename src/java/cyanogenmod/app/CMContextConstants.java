@@ -76,6 +76,18 @@ public final class CMContextConstants {
 
     /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.app.CMTelephonyManager} to manage the phone and
+     * data connection.
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.app.CMTelephonyManager
+     *
+     * @hide
+     */
+    public static final String CM_TELEPHONY_MANAGER_EXT_SERVICE = "cmtelephonymanagerext";
+
+    /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link cyanogenmod.hardware.CMHardwareManager} to manage the extended
      * hardware features of the device.
      *
