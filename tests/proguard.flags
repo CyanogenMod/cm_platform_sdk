@@ -12,20 +12,36 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Make sure to process the dependency jack file from cmsdk compile
--injars ../../../out/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.platform.sdk_intermediates/classes.jack
-
 # Don't skip non public library classes, make sure we're not keeping anything which will get mapped against api verification.
 -dontskipnonpubliclibraryclasses
 
 # Do the same with class members
 -dontskipnonpubliclibraryclassmembers
 
+# Keep test packages
+-keep class android.support.** { *; }
+-keep class android.test.** { *; }
+-keep public class * extends android.support.** { *; }
+-keep public class * extends android.test.** { *; }
+-keep interface android.support.** { *; }
+-keep interface android.test.** { *; }
+
+# Keep all junit classes
+-keep class junit.** { *; }
+-keep class org.junit.** { *; }
+-keep interface junit.** { *; }
+-keep interface org.junit.** { *; }
+
+# Keep compiled java classes from declared aidl's within the test package
+-keep public class * extends android.os.IInterface { *; }
+
 # Don't warn about the Android Support Test JUnit Runner
--dontwarn android.support.test.runner.AndroidJUnitRunner
+-dontwarn android.support.**
+-dontwarn android.test.**
 
 # Don't warn about junit
 -dontwarn junit.**
+-dontwarn org.junit.**
 
 # Always process
 -forceprocessing
