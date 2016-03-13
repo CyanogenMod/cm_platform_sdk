@@ -40,7 +40,7 @@ import java.util.List;
 public final class CMHardwareManager {
     private static final String TAG = "CMHardwareManager";
 
-    private static ICMHardwareService sService;
+    private ICMHardwareService mService;
 
     private Context mContext;
     /**
@@ -153,7 +153,7 @@ public final class CMHardwareManager {
         } else {
             mContext = context;
         }
-        sService = getService();
+        checkService();
     }
 
     /**
@@ -169,14 +169,14 @@ public final class CMHardwareManager {
     }
 
     /** @hide */
-    public static ICMHardwareService getService() {
-        if (sService != null) {
-            return sService;
+    private ICMHardwareService getService() {
+        if (mService != null) {
+            return mService;
         }
         IBinder b = ServiceManager.getService(CMContextConstants.CM_HARDWARE_SERVICE);
         if (b != null) {
-            sService = ICMHardwareService.Stub.asInterface(b);
-            return sService;
+            mService = ICMHardwareService.Stub.asInterface(b);
+            return mService;
         }
         return null;
     }
@@ -187,7 +187,7 @@ public final class CMHardwareManager {
     public int getSupportedFeatures() {
         try {
             if (checkService()) {
-                return sService.getSupportedFeatures();
+                return mService.getSupportedFeatures();
             }
         } catch (RemoteException e) {
         }
@@ -221,7 +221,7 @@ public final class CMHardwareManager {
 
         try {
             if (checkService()) {
-                return sService.get(feature);
+                return mService.get(feature);
             }
         } catch (RemoteException e) {
         }
@@ -245,7 +245,7 @@ public final class CMHardwareManager {
 
         try {
             if (checkService()) {
-                return sService.set(feature, enable);
+                return mService.set(feature, enable);
             }
         } catch (RemoteException e) {
         }
@@ -284,7 +284,7 @@ public final class CMHardwareManager {
     private int[] getVibratorIntensityArray() {
         try {
             if (checkService()) {
-                return sService.getVibratorIntensity();
+                return mService.getVibratorIntensity();
             }
         } catch (RemoteException e) {
         }
@@ -337,7 +337,7 @@ public final class CMHardwareManager {
     public boolean setVibratorIntensity(int intensity) {
         try {
             if (checkService()) {
-                return sService.setVibratorIntensity(intensity);
+                return mService.setVibratorIntensity(intensity);
             }
         } catch (RemoteException e) {
         }
@@ -372,7 +372,7 @@ public final class CMHardwareManager {
     private int[] getDisplayColorCalibrationArray() {
         try {
             if (checkService()) {
-                return sService.getDisplayColorCalibration();
+                return mService.getDisplayColorCalibration();
             }
         } catch (RemoteException e) {
         }
@@ -423,7 +423,7 @@ public final class CMHardwareManager {
     public boolean setDisplayColorCalibration(int[] rgb) {
         try {
             if (checkService()) {
-                return sService.setDisplayColorCalibration(rgb);
+                return mService.setDisplayColorCalibration(rgb);
             }
         } catch (RemoteException e) {
         }
@@ -440,7 +440,7 @@ public final class CMHardwareManager {
     public boolean writePersistentString(String key, String value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key,
+                return mService.writePersistentBytes(key,
                         value == null ? null : value.getBytes("UTF-8"));
             }
         } catch (RemoteException e) {
@@ -460,7 +460,7 @@ public final class CMHardwareManager {
     public boolean writePersistentInt(String key, int value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key,
+                return mService.writePersistentBytes(key,
                         ByteBuffer.allocate(4).putInt(value).array());
             }
         } catch (RemoteException e) {
@@ -478,7 +478,7 @@ public final class CMHardwareManager {
     public boolean writePersistentBytes(String key, byte[] value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key, value);
+                return mService.writePersistentBytes(key, value);
             }
         } catch (RemoteException e) {
         }
@@ -494,7 +494,7 @@ public final class CMHardwareManager {
     public String readPersistentString(String key) {
         try {
             if (checkService()) {
-                byte[] bytes = getService().readPersistentBytes(key);
+                byte[] bytes = mService.readPersistentBytes(key);
                 if (bytes != null) {
                     return new String(bytes, "UTF-8");
                 }
@@ -515,7 +515,7 @@ public final class CMHardwareManager {
     public int readPersistentInt(String key) {
         try {
             if (checkService()) {
-                byte[] bytes = getService().readPersistentBytes(key);
+                byte[] bytes = mService.readPersistentBytes(key);
                 if (bytes != null) {
                     return ByteBuffer.wrap(bytes).getInt();
                 }
@@ -534,7 +534,7 @@ public final class CMHardwareManager {
     public byte[] readPersistentBytes(String key) {
         try {
             if (checkService()) {
-                return getService().readPersistentBytes(key);
+                return mService.readPersistentBytes(key);
             }
         } catch (RemoteException e) {
         }
@@ -549,7 +549,7 @@ public final class CMHardwareManager {
     public boolean deletePersistentObject(String key) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key, null);
+                return mService.writePersistentBytes(key, null);
             }
         } catch (RemoteException e) {
         }
@@ -580,7 +580,7 @@ public final class CMHardwareManager {
     private int[] getDisplayGammaCalibrationArray(int idx) {
         try {
             if (checkService()) {
-                return sService.getDisplayGammaCalibration(idx);
+                return mService.getDisplayGammaCalibration(idx);
             }
         } catch (RemoteException e) {
         }
@@ -594,7 +594,7 @@ public final class CMHardwareManager {
     public int getNumGammaControls() {
         try {
             if (checkService()) {
-                return sService.getNumGammaControls();
+                return mService.getNumGammaControls();
             }
         } catch (RemoteException e) {
         }
@@ -645,7 +645,7 @@ public final class CMHardwareManager {
     public boolean setDisplayGammaCalibration(int idx, int[] rgb) {
         try {
             if (checkService()) {
-                return sService.setDisplayGammaCalibration(idx, rgb);
+                return mService.setDisplayGammaCalibration(idx, rgb);
             }
         } catch (RemoteException e) {
         }
@@ -658,7 +658,7 @@ public final class CMHardwareManager {
     public String getLtoSource() {
         try {
             if (checkService()) {
-                return sService.getLtoSource();
+                return mService.getLtoSource();
             }
         } catch (RemoteException e) {
         }
@@ -671,7 +671,7 @@ public final class CMHardwareManager {
     public String getLtoDestination() {
         try {
             if (checkService()) {
-                return sService.getLtoDestination();
+                return mService.getLtoDestination();
             }
         } catch (RemoteException e) {
         }
@@ -684,7 +684,7 @@ public final class CMHardwareManager {
     public long getLtoDownloadInterval() {
         try {
             if (checkService()) {
-                return sService.getLtoDownloadInterval();
+                return mService.getLtoDownloadInterval();
             }
         } catch (RemoteException e) {
         }
@@ -697,7 +697,7 @@ public final class CMHardwareManager {
     public String getSerialNumber() {
         try {
             if (checkService()) {
-                return sService.getSerialNumber();
+                return mService.getSerialNumber();
             }
         } catch (RemoteException e) {
         }
@@ -710,7 +710,7 @@ public final class CMHardwareManager {
     public String getUniqueDeviceId() {
         try {
             if (checkService()) {
-                return sService.getUniqueDeviceId();
+                return mService.getUniqueDeviceId();
             }
         } catch (RemoteException e) {
         }
@@ -724,7 +724,7 @@ public final class CMHardwareManager {
     public boolean requireAdaptiveBacklightForSunlightEnhancement() {
         try {
             if (checkService()) {
-                return sService.requireAdaptiveBacklightForSunlightEnhancement();
+                return mService.requireAdaptiveBacklightForSunlightEnhancement();
             }
         } catch (RemoteException e) {
         }
@@ -737,7 +737,7 @@ public final class CMHardwareManager {
     public boolean isSunlightEnhancementSelfManaged() {
         try {
             if (checkService()) {
-                return sService.isSunlightEnhancementSelfManaged();
+                return mService.isSunlightEnhancementSelfManaged();
             }
         } catch (RemoteException e) {
         }
@@ -750,7 +750,7 @@ public final class CMHardwareManager {
     public DisplayMode[] getDisplayModes() {
         try {
             if (checkService()) {
-                return sService.getDisplayModes();
+                return mService.getDisplayModes();
             }
         } catch (RemoteException e) {
         }
@@ -763,7 +763,7 @@ public final class CMHardwareManager {
     public DisplayMode getCurrentDisplayMode() {
         try {
             if (checkService()) {
-                return sService.getCurrentDisplayMode();
+                return mService.getCurrentDisplayMode();
             }
         } catch (RemoteException e) {
         }
@@ -776,7 +776,7 @@ public final class CMHardwareManager {
     public DisplayMode getDefaultDisplayMode() {
         try {
             if (checkService()) {
-                return sService.getDefaultDisplayMode();
+                return mService.getDefaultDisplayMode();
             }
         } catch (RemoteException e) {
         }
@@ -789,7 +789,7 @@ public final class CMHardwareManager {
     public boolean setDisplayMode(DisplayMode mode, boolean makeDefault) {
         try {
             if (checkService()) {
-                return sService.setDisplayMode(mode, makeDefault);
+                return mService.setDisplayMode(mode, makeDefault);
             }
         } catch (RemoteException e) {
         }
@@ -800,9 +800,12 @@ public final class CMHardwareManager {
      * @return true if service is valid
      */
     private boolean checkService() {
-        if (sService == null) {
-            Log.w(TAG, "not connected to CMHardwareManagerService");
-            return false;
+        if (mService == null) {
+            mService = getService();
+            if (mService == null) {
+                Log.w(TAG, "not connected to CMHardwareManagerService");
+                return false;
+            }
         }
         return true;
     }
@@ -813,7 +816,7 @@ public final class CMHardwareManager {
     public int getThermalState() {
         try {
             if (checkService()) {
-                return sService.getThermalState();
+                return mService.getThermalState();
             }
         } catch (RemoteException e) {
         }
@@ -827,7 +830,7 @@ public final class CMHardwareManager {
     public boolean registerThermalListener(ThermalListenerCallback thermalCallback) {
         try {
             if (checkService()) {
-                return sService.registerThermalListener(thermalCallback);
+                return mService.registerThermalListener(thermalCallback);
             }
         } catch (RemoteException e) {
         }
@@ -841,7 +844,7 @@ public final class CMHardwareManager {
     public boolean unRegisterThermalListener(ThermalListenerCallback thermalCallback) {
         try {
             if (checkService()) {
-                return sService.unRegisterThermalListener(thermalCallback);
+                return mService.unRegisterThermalListener(thermalCallback);
             }
         } catch (RemoteException e) {
         }
