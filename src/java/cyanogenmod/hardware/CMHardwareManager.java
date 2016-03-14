@@ -154,6 +154,13 @@ public final class CMHardwareManager {
             mContext = context;
         }
         sService = getService();
+
+        if (context.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.HARDWARE_ABSTRACTION) && !checkService()) {
+            throw new RuntimeException("Unable to get CMHardwareService. The service either" +
+                    " crashed, was not started, or the interface has been called to early in" +
+                    " SystemServer init");
+        }
     }
 
     /**
@@ -440,7 +447,7 @@ public final class CMHardwareManager {
     public boolean writePersistentString(String key, String value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key,
+                return sService.writePersistentBytes(key,
                         value == null ? null : value.getBytes("UTF-8"));
             }
         } catch (RemoteException e) {
@@ -460,7 +467,7 @@ public final class CMHardwareManager {
     public boolean writePersistentInt(String key, int value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key,
+                return sService.writePersistentBytes(key,
                         ByteBuffer.allocate(4).putInt(value).array());
             }
         } catch (RemoteException e) {
@@ -478,7 +485,7 @@ public final class CMHardwareManager {
     public boolean writePersistentBytes(String key, byte[] value) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key, value);
+                return sService.writePersistentBytes(key, value);
             }
         } catch (RemoteException e) {
         }
@@ -494,7 +501,7 @@ public final class CMHardwareManager {
     public String readPersistentString(String key) {
         try {
             if (checkService()) {
-                byte[] bytes = getService().readPersistentBytes(key);
+                byte[] bytes = sService.readPersistentBytes(key);
                 if (bytes != null) {
                     return new String(bytes, "UTF-8");
                 }
@@ -515,7 +522,7 @@ public final class CMHardwareManager {
     public int readPersistentInt(String key) {
         try {
             if (checkService()) {
-                byte[] bytes = getService().readPersistentBytes(key);
+                byte[] bytes = sService.readPersistentBytes(key);
                 if (bytes != null) {
                     return ByteBuffer.wrap(bytes).getInt();
                 }
@@ -534,7 +541,7 @@ public final class CMHardwareManager {
     public byte[] readPersistentBytes(String key) {
         try {
             if (checkService()) {
-                return getService().readPersistentBytes(key);
+                return sService.readPersistentBytes(key);
             }
         } catch (RemoteException e) {
         }
@@ -549,7 +556,7 @@ public final class CMHardwareManager {
     public boolean deletePersistentObject(String key) {
         try {
             if (checkService()) {
-                return getService().writePersistentBytes(key, null);
+                return sService.writePersistentBytes(key, null);
             }
         } catch (RemoteException e) {
         }
