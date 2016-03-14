@@ -154,6 +154,13 @@ public final class CMHardwareManager {
             mContext = context;
         }
         sService = getService();
+
+        if (context.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.HARDWARE_ABSTRACTION) && sService == null) {
+            throw new RuntimeException("Unable to get CMHardwareService. The service either" +
+                    " crashed, was not started, or the interface has been called to early in" +
+                    " SystemServer init");
+        }
     }
 
     /**

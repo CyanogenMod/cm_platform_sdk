@@ -16,6 +16,8 @@
 
 package cyanogenmod.app;
 
+import android.annotation.SdkConstant;
+
 /**
  * @hide
  * TODO: We need to somehow make these managers accessible via getSystemService
@@ -111,4 +113,17 @@ public final class CMContextConstants {
      * @hide
      */
     public static final String CM_ICON_CACHE_SERVICE = "cmiconcache";
+
+    /**
+     * Features supported by the CMSDK.
+     */
+    public static class Features {
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the hardware abstraction
+         * framework service utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String HARDWARE_ABSTRACTION = "org.cyanogenmod.hardware";
+    }
 }
