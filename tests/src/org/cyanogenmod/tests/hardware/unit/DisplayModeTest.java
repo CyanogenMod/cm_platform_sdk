@@ -20,6 +20,7 @@ import android.os.Parcel;
 import android.test.AndroidTestCase;
 
 import android.test.suitebuilder.annotation.SmallTest;
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.hardware.DisplayMode;
 
 /**
@@ -29,6 +30,9 @@ public class DisplayModeTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support hardware abstraction
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.HARDWARE_ABSTRACTION));
     }
 
     @SmallTest
