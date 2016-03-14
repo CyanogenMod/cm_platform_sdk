@@ -178,6 +178,9 @@ public final class CMHardwareManager {
             sService = ICMHardwareService.Stub.asInterface(b);
             return sService;
         }
+
+        Log.w(TAG, "Unable to get CMHardwareService. The service either crashed, " +
+                "was not started, or the interface has been called to early in SystemServer init");
         return null;
     }
 
