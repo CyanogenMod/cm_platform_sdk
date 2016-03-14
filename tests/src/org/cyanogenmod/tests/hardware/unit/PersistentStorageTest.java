@@ -18,6 +18,7 @@ package org.cyanogenmod.tests.hardware.unit;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.hardware.CMHardwareManager;
 
 import java.util.Arrays;
@@ -31,6 +32,9 @@ public class PersistentStorageTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support hardware abstraction
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.HARDWARE_ABSTRACTION));
         mHardwareManager = CMHardwareManager.getInstance(mContext);
     }
 
