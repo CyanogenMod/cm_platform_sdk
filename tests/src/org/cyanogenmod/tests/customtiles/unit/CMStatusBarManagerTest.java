@@ -19,6 +19,7 @@ package org.cyanogenmod.tests.customtiles.unit;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
 
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CMStatusBarManager;
 import cyanogenmod.app.ICMStatusBarManager;
 
@@ -31,6 +32,9 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support cm status bar service
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.STATUSBAR));
         mCMStatusBarManager = CMStatusBarManager.getInstance(mContext);
     }
 

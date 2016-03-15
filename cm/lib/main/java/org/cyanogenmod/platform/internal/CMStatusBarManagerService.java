@@ -83,6 +83,12 @@ public class CMStatusBarManagerService extends SystemService {
 
     @Override
     public void onStart() {
+        if (!mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.STATUSBAR)) {
+            Log.wtf(TAG, "CM statusbar service started by system server but feature xml not" +
+                    " declared. Not publishing binder service!");
+            return;
+        }
         Log.d(TAG, "registerCMStatusBar cmstatusbar: " + this);
         mCustomTileListeners = new CustomTileListeners();
         publishBinderService(CMContextConstants.CM_STATUS_BAR_SERVICE, mService);
