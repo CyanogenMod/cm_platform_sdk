@@ -23,6 +23,7 @@ import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.Profile;
 import cyanogenmod.profiles.AirplaneModeSettings;
 import cyanogenmod.profiles.BrightnessSettings;
@@ -39,6 +40,9 @@ public class ProfileTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support profiles service
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PROFILES));
     }
 
     @MediumTest

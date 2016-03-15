@@ -221,6 +221,13 @@ public class ProfileManager {
             mContext = context;
         }
         sService = getService();
+
+        if (context.getPackageManager().hasSystemFeature(
+                cyanogenmod.app.CMContextConstants.Features.PROFILES) && sService == null) {
+            throw new RuntimeException("Unable to get ProfileManagerService. The service either" +
+                    " crashed, was not started, or the interface has been called to early in" +
+                    " SystemServer init");
+        }
     }
 
     /**
