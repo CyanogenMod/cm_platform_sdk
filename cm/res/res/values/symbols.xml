@@ -102,4 +102,6 @@
     <java-symbol type="string" name="theme_reset_notification_title" />
     <java-symbol type="string" name="theme_reset_notification_message" />
 
+    <!-- External CM specific core services -->
+    <java-symbol type="array" name="config_externalCMServices" />
 </resources>
