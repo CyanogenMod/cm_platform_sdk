@@ -40,7 +40,8 @@ public class CMHardwareManagerTest extends AndroidTestCase {
 
     @SmallTest
     public void testManagerServiceIsAvailable() {
-        ICMHardwareService icmStatusBarManager = mCMHardwareManager.getService();
+        //ICMHardwareService icmStatusBarManager = mCMHardwareManager.getService();
+        ICMHardwareService icmStatusBarManager = null;
         assertNotNull(icmStatusBarManager);
     }
 }
