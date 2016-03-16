@@ -106,7 +106,7 @@ public class ProfileManager {
      * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED}:
      * The string representation of the UUID of the previously active profile
      */
-    public static final String EXTRA_LAST_PROFILE_UUID = "uuid";
+    public static final String EXTRA_LAST_PROFILE_UUID = "lastUuid";
 
     /**
      * Activity Action: Shows a profile picker.
