@@ -102,4 +102,22 @@
   <string name="permlab_thirdPartyKeyguard">หน้าจอล็อคบุคคลที่สาม</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">อนุญาตให้ใช้แอปเป็นหน้าจอล็อคแบบไม่ปลอดภัย</string>
+  <!-- Device specific settings -->
+  <string name="device_settings_app_name">การตั้งค่าขั้นสูง</string>
+  <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">ท่าทาง</string>
+  <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">พิเศษ</string>
+  <string name="touchscreen_gesture_haptic_feedback">สั่นเมื่อแตะ</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">สั่นเมื่อพบการเคลื่อนไหว</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>
