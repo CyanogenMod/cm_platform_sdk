@@ -57,9 +57,13 @@
   <string name="permlab_managePersistentStorage">quản lý bộ lưu trữ vĩnh viễn</string>
   <string name="permdesc_managePersistentStorage">Cho phép ứng dụng đọc hoặc ghi thuộc tính có thể vẫn tồn tại sau khi đặt lại mặc định nhà sản xuất.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">truy cập các đề xuất ứng dụng</string>
+  <string name="permdesc_accessAppSuggestions">Cho phép ứng dụng truy cập đề xuất ứng dụng.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Lắng nghe ô tuỳ chỉnh</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">thêm và xoá ứng dụng trong danh sách ứng dụng được bảo vệ</string>
+  <string name="permdesc_protectedApp">Cho phép ứng dụng đánh dấu ứng dụng khác là được bảo vệ và khoá chúng.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Mặc định</string>
@@ -77,15 +81,55 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Khác</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">Tiết kiệm pin</string>
+  <string name="perf_profile_bal">Cân đối</string>
+  <string name="perf_profile_perf">Hiệu suất cao</string>
+  <string name="perf_profile_bias_power">Hiệu quả</string>
+  <string name="perf_profile_bias_perf">Nhanh</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">Tự động</string>
+  <string name="live_display_auto_summary">Tự động chỉnh nhiệt độ màu của màn hình theo ngày và đêm</string>
+  <string name="live_display_off">Tắt</string>
+  <string name="live_display_off_summary">Vô hiệu hoá tất cả điều chỉnh</string>
+  <string name="live_display_day">Ngày</string>
+  <string name="live_display_day_summary">Chỉ sử dụng cài đặt ban ngày</string>
   <string name="live_display_night">Ban đêm</string>
+  <string name="live_display_night_summary">Chỉ sử dụng cài đặt ban đêm</string>
+  <string name="live_display_outdoor">Ngoài trời (ánh sáng mạnh)</string>
+  <string name="live_display_outdoor_summary">Chỉ sử dụng cài đặt ngoài trời</string>
+  <string name="live_display_hint">LiveDisplay có thể giúp giảm mỏi mắt và giúp bạn ngủ vào ban đêm. Nhấn vào đây để thử!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">màn hình khoá bên thứ ba</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">Cho phép ứng dụng được dùng làm màn hình khoá không an toàn.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Cài đặt nâng cao</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Cử chỉ</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Thêm</string>
   <string name="touchscreen_gesture_haptic_feedback">Phản hồi xúc giác</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Rung khi phát hiện cử chỉ</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Không thể cài đặt chủ đề</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> không thể cài đặt</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Đặt lại chủ đề</string>
+  <string name="theme_reset_notification_message">Đã khôi phục chủ đề hệ thống vì nhiều ứng dụng bị lỗi.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">truy cập dịch vụ chủ đề</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Cho phép ứng dụng truy cập dịch vụ chủ đề. Ứng dụng bình thường không bao giờ cần quyền này.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">đọc thông tin chủ đề của bạn</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Cho phép ứng dụng đọc và xác định chủ đề bạn đã áp dụng.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">sửa đổi chủ đề của bạn</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Cho phép ứng dụng chèn các chủ đề mới và sửa đổi chủ đề bạn đã áp dụng.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">truy cập trình quản lý hiệu quả hoạt động</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Cho phép một ứng dụng truy cập dịch vụ hiệu quả hoạt động. Ứng dụng bình thường không bao giờ cần quyền này.</string>
 </resources>

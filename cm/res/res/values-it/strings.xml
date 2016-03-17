@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Extra</string>
   <string name="touchscreen_gesture_haptic_feedback">Feedback tattile</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibra quando viene rilevata una gesture</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Installazione tema fallita</string>
+  <string name="theme_install_error_message">Installazione <xliff:g id="theme">%1$s</xliff:g> fallita</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Ripristino tema</string>
+  <string name="theme_reset_notification_message">Tema di sistema ripristinato a causa di molteplici crash.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">accede al servizio tema</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Consente all\'app di accedere al servizio temi. Non dovrebbe mai essere necessario per le app normali.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">leggi informazioni tema</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Consenti all\'app di leggere i tuoi temi e determinare quale tema hai applicato.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modifica i tuoi temi</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Consente all\'app di inserire nuovi temi e modificare il tema hai applicato.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">accesso gestione performance</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Consente ad un\'app di accedere alla gestione performances. Non dovrebbe essere mai richiesto per le normali app.</string>
 </resources>

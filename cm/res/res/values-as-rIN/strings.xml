@@ -17,28 +17,107 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">CyanogenMod ছিষ্টেম</string>
+  <string name="permlab_publishCustomTile">দ্ৰুত ছেটিংছ পেনেল ভিতৰত এটা কাষ্টম টাইল সৃষ্টি কৰা</string>
+  <string name="permdesc_publishCustomTile">এটা এপ্প্‌ক দ্ৰুত ছেটিং টাইল প্ৰকাশ কৰিবলৈ অনুমতি দিয়ে।</string>
+  <string name="permlab_modifyNetworkSettings">ছিষ্টেম নেটৱৰ্ক ছেটিং পৰিৱৰ্তন কৰা</string>
+  <string name="permdesc_modifyNetworkSettings">এটা এপ্প্‌ক এয়াৰপ্লেন মোড আৰু ম\'বাইল ডাটা নেটৱৰ্ক ছেটিংছ পৰিৱৰ্তন কৰিবলৈ অনুমতি দিয়ে।</string>
+  <string name="permlab_modifySoundSettings">ছিষ্টেম নেটৱৰ্ক ছেটিং পৰিৱৰ্তন কৰা</string>
+  <string name="permdesc_modifySoundSettings">এটা এপ্প্‌ক ব্যাঘাত মোড ধ্বনি ছেটিংছ পৰিৱৰ্তন কৰিবলৈ অনুমতি দিয়ে।</string>
+  <string name="permlab_bindCustomTileListenerService">কাষ্টম টাইল শ্ৰোতা সেৱাৰ সৈতে বাইণ্ড</string>
+  <string name="permdesc_bindCustomTileListenerService">এপ্প্‌টোক কাষ্টম টাইল শ্ৰোতা সেৱাৰ শীৰ্ষ-স্তৰৰ ইণ্টাৰফেচৰ সৈতে বাইণ্ড কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_readMSPhoneState">একাধিক SIMৰ সমৰ্থনত ফোন অৱস্থা আৰু ডাটা সংযোগ চাওক</string>
+  <string name="permdesc_readMSPhoneState">এটা এপ্প্‌ক একাধিক SIMৰ সমৰ্থনত ফোন অৱস্থা আৰু ডাটা সংযোগ চাবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">একাধিক SIMৰ সমৰ্থনত ফোন অৱস্থা আৰু ডাটা সংযোগ সংশোধন কৰক</string>
+  <string name="permdesc_modifyMSPhoneState">এটা এপ্প্‌ক একাধিক SIMৰ সমৰ্থনত ফোন ষ্টেট আৰু ডাটা সংযোগ সংশোধন অনুমতি দিয়ে।</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">ছিষ্টেম প্ৰ\'ফাইল সংশোধন কৰক</string>
+  <string name="permdesc_modifyProfiles">এটা এপ্প্‌ক ছিষ্টেম প্ৰ\'ফাইল সংশোধন কৰিবলৈ অনুমতি দিয়ে</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">হাৰ্ডৱেৰ ফ্ৰেমৱৰ্ক ব্যৱহাৰ কৰক</string>
+  <string name="permdesc_useHardwareFramework">এটা এপ্প্‌ক CM হাৰ্ডৱেৰ ফ্ৰেমৱৰ্কত প্ৰৱেশ কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">প্ৰত্যক্ষভাবে এলাৰ্ম পৰিৱৰ্তন কৰক</string>
+  <string name="permdesc_write_alarms">এটা এপ্প্‌ক আপোনাৰ এলাৰ্ম যোগ কৰিবলৈ, সংশোধন কৰিবলৈ আৰু সকলোবোৰ বিলোপ কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">অনুসূচীত এলাৰ্ম টগল কৰক</string>
+  <string name="permdesc_manage_alarms">এটা এপ্প্‌ক আপোনাৰ অনুসূচীত এলাৰ্মবোৰ অন বা অফ কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">অনুসূচীত এলাৰ্মত প্ৰৱেশ কৰক</string>
+  <string name="permdesc_read_alarms">এটা এপ্প্‌ক আপোনাৰ অনুসূচীত এলাৰ্মবোৰ পঢ়িবলৈ অনুমতি দিয়ে।</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">CM ছিষ্টেম ছেটিংচ সংশোধন কৰক</string>
+  <string name="permdesc_writeSettings">এটা এপ্প্‌ক CM ছিষ্টেম ছেটিং সংশোধন কৰিবলৈ অনুমতি দিয়ে</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">CM চিকিওৰ ছিষ্টেম ছেটিংচ সংশোধন কৰক</string>
+  <string name="permdesc_writeSecureSettings">এটা এপ্প্‌ক CM চিকিওৰ ছিষ্টেম ছেটিং সংশোধন কৰিবলৈ অনুমতি দিয়ে সাধাৰণ এপ্প্‌সমূহৰ ব্যৱহাৰৰ কাৰণে নহয়৷</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">নিৰবিচ্ছিন্ন ষ্ট\'ৰেজ প্ৰবন্ধন কৰক</string>
+  <string name="permdesc_managePersistentStorage">এটা এপ্প্‌ক ধৰ্মবোৰ পঢ়িবলৈ বা লিখিবলৈ অনুমতি দিয়ে যিবোৰ ফেক্টৰী ৰিছেটৰ মাধ্যমত চলি থাকিব পাৰে।</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">এপ্প্‌ পৰামৰ্শত প্ৰৱেশ কৰক</string>
+  <string name="permdesc_accessAppSuggestions">এটা এপ্প্‌ক এপ্প্‌ পৰামৰ্শত প্ৰৱেশ কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">কাষ্টম টাইল শ্ৰোতা</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">প্ৰতিৰোধী এপ্প্‌ৰ পৰা এপ্প্‌ যোগ কৰক আৰু আঁতৰ কৰক</string>
+  <string name="permdesc_protectedApp">এটা এপ্প্‌ক অন্যান্য এপ্প্‌বোৰ প্ৰতিৰোধী হিচাপে চিহ্নিত কৰিবলৈ আৰু লক কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
+  <string name="profileNameDefault">ডিফল্ট</string>
+  <string name="profileNameWork">কৰ্ম</string>
+  <string name="profileNameHome">হোম</string>
+  <string name="profileNameSilent">ছাইলেণ্ট</string>
+  <string name="profileNameNight">নাইট</string>
+  <string name="profileNameAutomobile">অট\'ম\'বাইল</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">ফোন</string>
+  <string name="profileGroupCalendar">কেলেণ্ডাৰ</string>
+  <string name="profileGroupGmail">জিমেইল</string>
+  <string name="profileGroupEmail">ইমেইল</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">অন্যান্য</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">পাৱাৰ সংৰক্ষণ কৰক</string>
+  <string name="perf_profile_bal">সন্তুলিত</string>
+  <string name="perf_profile_perf">কাৰ্য্যকাৰিতা</string>
+  <string name="perf_profile_bias_power">কাৰ্যকাৰিতা</string>
+  <string name="perf_profile_bias_perf">দ্ৰুত</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">স্বয়ংক্ৰিয়</string>
+  <string name="live_display_auto_summary">সূৰ্যাস্ত আৰু সূৰ্যোদয়ৰ পাছত স্বয়ংক্ৰিয়ভাবে স্ক্ৰীণৰ ৰং তাপমাত্ৰা মিলাওক।</string>
+  <string name="live_display_off">অফ</string>
+  <string name="live_display_off_summary">সকলো সমাযোজন অক্ষম কৰক</string>
+  <string name="live_display_day">দিন</string>
+  <string name="live_display_day_summary">কেৱল দিনৰ ছেটিংচ ব্যৱহাৰ কৰক</string>
+  <string name="live_display_night">নাইট</string>
+  <string name="live_display_night_summary">কেৱল ৰাতিৰ ছেটিংচ ব্যৱহাৰ কৰক</string>
+  <string name="live_display_outdoor">আউটডোৰ (উজ্জ্বল ৰ\'দ)</string>
+  <string name="live_display_outdoor_summary">কেৱল আউটডোৰ ছেটিংচ ব্যৱহাৰ কৰক</string>
+  <string name="live_display_hint">লাইভপ্রদর্শন আপোনাৰ চকুৰ ওপৰত চাপ কমাব পাৰে আৰু ৰাতি শোৱাত সহায় কৰিব পাৰে। ইয়াক চেষ্টা কৰি চাবলৈ ইয়াত ক্লিক কৰক!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">তৃতীয় পক্ষৰ লক স্ক্ৰীণ</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">এটা এপ্প্‌ক অসুৰক্ষিত লক স্ক্ৰীণ হিচাপে ব্যৱহাৰ কৰিবলৈ অনুমতি দিয়ে।</string>
   <!-- Device specific settings -->
+  <string name="device_settings_app_name">এডভান্স ছেটিংসমূহ</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">ভঙ্গিমা</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">অতিৰিক্তবোৰ</string>
+  <string name="touchscreen_gesture_haptic_feedback">হেপটিক ফীডবেক</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">ভঙ্গিমা চিনাক্ত কৰিব নোৱাৰিলে কম্পন কৰক</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>

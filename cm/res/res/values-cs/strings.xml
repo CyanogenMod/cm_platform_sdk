@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Doplňky</string>
   <string name="touchscreen_gesture_haptic_feedback">Hmatová odezva</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibrovat při detekci gesta</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Instalace motivu selhala</string>
+  <string name="theme_install_error_message">Instalace <xliff:g id="theme">%1$s</xliff:g> selhala</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Obnovit motiv</string>
+  <string name="theme_reset_notification_message">Kvůli pádům aplikací byl obnoven výchozí systémový motiv.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">přístup ke službě motivu</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Umožňuje přistupovat ke službě motivu. Toto oprávnění by neměla vyžadovat žádná normální aplikace.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">čtení informace o motivu</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Umožňuje načíst motivy a určit, který motiv je použit.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">změnit motiv</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Umožňuje vložit nový motiv a změnit informaci o tom, který motiv je použit.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">přístup ke správci výkonu</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Umožňuje přistupovat ke službě výkonu. Toto oprávnění by neměla vyžadovat žádná normální aplikace.</string>
 </resources>

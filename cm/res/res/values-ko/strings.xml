@@ -110,4 +110,14 @@
   <string name="touchscreen_gesture_extras">추가 기능</string>
   <string name="touchscreen_gesture_haptic_feedback">햅틱 반응</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">제스쳐가 감지되면 진동합니다</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>

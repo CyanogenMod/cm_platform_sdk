@@ -17,28 +17,107 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">CyanogenMod அமைப்பு</string>
+  <string name="permlab_publishCustomTile">விரைவு அமைப்புகள் பேனல் உள்ளே ஒரு தனிப்பயன் டைலை உருவாக்கு</string>
+  <string name="permdesc_publishCustomTile">ஒரு பயன்பாடானது ஒரு விரைவு அமைப்புகள் டைலை பிரசுரிக்க அனுமதிக்கிறது.</string>
+  <string name="permlab_modifyNetworkSettings">அமைப்பின் நெட்வொர்க் அமைப்புகளை மாற்றுதல்</string>
+  <string name="permdesc_modifyNetworkSettings">ஒரு பயன்பாடானது விமான பயன்முறைக்கும்   மொபைல் தரவு பிணைய அமைப்புகளுக்கும் மாற்றத்தை ஏற்படுத்த அனுமதிக்கிறது.</string>
+  <string name="permlab_modifySoundSettings">கணினி ஒலி அமைப்புகளை மாற்றவும்</string>
+  <string name="permdesc_modifySoundSettings">ஒரு பயன்பாடானது இடையூறு பயன்முறை அமைப்புகளுக்கு மாற்றத்தை ஏற்படுத்த அனுமதிக்கிறது.</string>
+  <string name="permlab_bindCustomTileListenerService">தனிப்பயனாக்க டைல் கவனிப்பவர் சேவையுடன் கட்டவும்</string>
+  <string name="permdesc_bindCustomTileListenerService">பயன்பாடானது தனிப்பயனாக்க டைல் கவனிப்பவர் சேவையின் முதல்-நிலை இடைமுகத்தோடு கட்ட அனுமதிக்கிறது.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_readMSPhoneState">தொலைப்பேசி நிலை மற்றும் தரவு இணைப்பை பல SIMகளுக்கான ஆதரவுடன் காண்க</string>
+  <string name="permdesc_readMSPhoneState">பயன்பாடானது தொலைப்பேசி நிலை மற்றும் தரவு இணைப்பை பல SIMகளுக்கான ஆதரவுடன் காண அனுமதிக்கிறது.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">தொலைப்பேசி நிலை மற்றும் தரவு இணைப்பை பல SIMகளுக்கான ஆதரவுடன் மாற்றியமை.</string>
+  <string name="permdesc_modifyMSPhoneState">பயன்பாடானது தொலைப்பேசி நிலை மற்றும் தரவு இணைப்பை பல SIMகளுக்கான ஆதரவுடன் மாற்றியமைக்க அனுமதிக்கிறது.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">கணினி சுயவிவரங்களை மாற்றியமை.</string>
+  <string name="permdesc_modifyProfiles">ஒரு பயன்பாடானது கணினி சுயவிவரங்களை மாற்றியமைக்க அனுமதிக்கிறது.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">வன்பொருள் கட்டமைப்பைப் பயன்படுத்து</string>
+  <string name="permdesc_useHardwareFramework">ஒரு பயன்பாடானது CM வன்பொருள் கட்டமைப்பை அணுக அனுமதிக்கிறது.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">அலாரங்களை நேரடியாக மாற்று</string>
+  <string name="permdesc_write_alarms">ஒரு பயன்பாடானது உங்கள் அலாரங்கள் அனைத்தையும் சேர்க்க, மாற்றியமைக்க அல்லது நீக்க அனுமதிக்கிறது.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">திட்டமிடப்பட்ட அலாரங்களை நிலைமாற்று</string>
+  <string name="permdesc_manage_alarms">ஒரு பயன்பாடானது உங்கள் திட்டமிடப்பட்ட அலாரங்களை ஆன் அல்லது ஆஃப் செய்ய அனுமதிக்கிறது</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">திட்டமிடப்பட்ட அலாரங்களை அணுகு</string>
+  <string name="permdesc_read_alarms">ஒரு பயன்பாடானது உங்கள் திட்டமிடப்பட்ட அலாரங்களை படிக்க அனுமதிக்கிறது.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">CM கணினி அமைப்புகளை மாற்றியமை</string>
+  <string name="permdesc_writeSettings">ஒரு பயன்பாடானது CM கணினி அமைப்புகளை மாற்றியமைக்க அனுமதிக்கிறது</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">CM பாதுகாப்பான கணினி அமைப்புகளை மாற்றியமை</string>
+  <string name="permdesc_writeSecureSettings">ஒரு பயன்பாடானது CM பாதுகாப்பான கணினி அமைப்புகளை மாற்றியமைக்க அனுமதிக்கிறது. இயல்பான பயன்பாடுகளின் பயன்பாட்டிற்காக அல்ல</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">விடாப்பிடியான சேமிப்பகத்தை நிர்வகி</string>
+  <string name="permdesc_managePersistentStorage">ஒரு பயன்பாடானது ஒரு தொழிற்சாலை மீட்டமைத்தலின் மூலம் தொடர்கின்ற பண்புகளை படிக்க அல்லது எழுத அனுமதிக்கிறது</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">பயன்பாட்டு பரிந்துரைகளை அணுகு</string>
+  <string name="permdesc_accessAppSuggestions">ஒரு பயன்பாடானது பயன்பாட்டு பரிந்துரைர்களை அணுக அனுமதிக்கிறது.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">தனிப்பயனாக்க டைல் கவனிப்பவர்</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">பயன்பாடுகளை பாதுகாக்க பயன்பாடுகளை சேர்க்கவும் மற்றும் அகற்றவும்</string>
+  <string name="permdesc_protectedApp">மற்ற பயன்பாடுகள் பாதுகாக்கப்பட்டவை என்று குறிப்பிட்டு அவற்றை பூட்டுவதற்கு ஒரு பயன்பாட்டை அனுமதிக்கிறது.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
+  <string name="profileNameDefault">இயல்புநிலை</string>
+  <string name="profileNameWork">அலுவலகம்</string>
+  <string name="profileNameHome">முகப்பு</string>
+  <string name="profileNameSilent">நிசப்தம்</string>
+  <string name="profileNameNight">இரவு</string>
+  <string name="profileNameAutomobile">தானியங்கி</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">ஃபோன்</string>
+  <string name="profileGroupCalendar">கேலெண்டர்</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">மின்னஞ்சல்</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">பிற</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">சக்தி சேமி</string>
+  <string name="perf_profile_bal">சமன்பாடான</string>
+  <string name="perf_profile_perf">செயல்திறன்</string>
+  <string name="perf_profile_bias_power">செயல்திறன்</string>
+  <string name="perf_profile_bias_perf">விரைவு</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">தானியங்கு</string>
+  <string name="live_display_auto_summary">சூரிய மறைவு மற்றும் சூரிய உதயத்திற்கு பிறகு தானாகவே திரையின் வண்ன தட்பவெப்பங்களை சரிசெய்</string>
+  <string name="live_display_off">முடக்கத்தில்</string>
+  <string name="live_display_off_summary">அனைத்து சரிசெய்தல்களையும் முடக்கு</string>
+  <string name="live_display_day">பகல்</string>
+  <string name="live_display_day_summary">பகல் அமைப்புகளை மட்டும் பயன்படுத்துக</string>
+  <string name="live_display_night">இரவு</string>
+  <string name="live_display_night_summary">இரவு அமைப்புகளை மட்டும் பயன்படுத்து</string>
+  <string name="live_display_outdoor">வெளியிடம் (பிரகாசமான சூரியன்)</string>
+  <string name="live_display_outdoor_summary">வெளிப்புற அமைப்புகளை மட்டுமே பயன்படுத்து.</string>
+  <string name="live_display_hint">LiveDisplay கண்ணழுத்தத்தை குறைத்து, நீங்கள் இரவிலே உறங்க உதவுகிறது. அதை முயற்சிக்க இங்கே கிளிக் செய்க!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">மூன்றாம் தரப்பு பூட்டுத் திரை</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">பாதுகாப்பற்ற பூட்டுத் திரையாக பயன்படுத்தப்பட ஒரு பயன்பாட்டை அனுமதிக்கிறது.</string>
   <!-- Device specific settings -->
+  <string name="device_settings_app_name">மேம்பட்ட அமைப்புகள்</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">சைகைகள்</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">உதிரிகள்</string>
+  <string name="touchscreen_gesture_haptic_feedback">தீண்டும் பின்னூட்டம்</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">குறிப்புணர்வு ஒன்று கண்டுபிடிக்கப்படும்போது அதிர்</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>

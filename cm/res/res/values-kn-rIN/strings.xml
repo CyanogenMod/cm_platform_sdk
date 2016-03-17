@@ -57,9 +57,13 @@
   <string name="permlab_managePersistentStorage">ನಿರಂತರ ಸಂಗ್ರಹಣೆ ನಿರ್ವಹಿಸು</string>
   <string name="permdesc_managePersistentStorage">ಒಂದು ಆಪ್‍ಗೆ ಪ್ರಾಪರ್ಟೀಸನ್ನು ರೀಡ್/ವ್ರೈಟ್ ಮಾಡಲು ಅನುಮತಿಸುತ್ತದೆ ಅದು ಫ್ಯಾಕ್ಟರಿ ಮರುಹೊಂದಿಕೆಯ ನಂತರವೂ ಮುಂದುವರೆಯಬಹುದು.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">ಅಪ್ಲಿ‌ ಸಲಹೆಗಳಿಗೆ ಪ್ರವೇಶ ಪಡೆಯಿರಿ</string>
+  <string name="permdesc_accessAppSuggestions">ಅಪ್ಲಿ‌ ಸಲಹೆಗಳಿಗೆ ಪ್ರವೇಶ ಪಡೆಯಲು ಒಂದು ಅಪ್ಲಿ‌ ಅನುವು ಮಾಡುತ್ತದೆ.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">ಕಸ್ಟಮ್ ಟೈಲ್ ಲಿಸ್ನರ್</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">ಸಂರಕ್ಷಿತ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಿಗೆ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ತೆಗೆಯಿರಿ</string>
+  <string name="permdesc_protectedApp">ಇತರ ಅಪ್ಲಿಗಳನ್ನು ಸಂರಕ್ಷಿತಗೊಳಿಸಲು ಮತ್ತು ಅವುಗಳನ್ನು ಲಾಕ್‌ ಮಾಡಲು ಒಂದು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುವು ಮಾಡಿ</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">ಡೀಫಾಲ್ಟ್</string>
@@ -77,15 +81,43 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">ಇತರೆ</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">ವಿದ್ಯುತ್ ಉಳಿಸು</string>
+  <string name="perf_profile_bal">ಸಮತೋಲಿತ</string>
+  <string name="perf_profile_perf">ಕಾರ್ಯಕ್ಷಮತೆ</string>
+  <string name="perf_profile_bias_power">ದಕ್ಷತೆ</string>
+  <string name="perf_profile_bias_perf">ಕ್ಷಿಪ್ರ</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">ಸ್ವಯಂಚಾಲಿತ</string>
+  <string name="live_display_auto_summary">ಸೂರ್ಯೋದಯ ಮತ್ತು ಸೂರ್ಯಾಸ್ತದ ಬಳಿಕದ ಪರದೆ‌ನ  ಬಣ್ಣದ ತಾಪವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿ</string>
+  <string name="live_display_off">ಆಫ್ ಆಗಿದೆ</string>
+  <string name="live_display_off_summary">ಎಲ್ಲಾ ಹೊಂದಾಣಿಕೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+  <string name="live_display_day">ದಿನ</string>
+  <string name="live_display_day_summary">ಹಗಲಿನ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
   <string name="live_display_night">ರಾತ್ರಿ</string>
+  <string name="live_display_night_summary">ರಾತ್ರಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
+  <string name="live_display_outdoor">ಔಟ್‌ಡೋರ್ (ಪ್ರಕಾಶಮಾನ ಸೂರ್ಯ)</string>
+  <string name="live_display_outdoor_summary">ಔಟ್‌ಡೋರ್‌ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ</string>
+  <string name="live_display_hint">ಕಣ್ಣಿನ ತೊಂದರೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಲು ಲೈವ್ ಡಿಸ್‌ಪ್ಲೇ ನೆರವಾಗುತ್ತದೆ ಮತ್ತು ರಾತ್ರಿಯಲ್ಲಿ ನಿದ್ರೆಗೂ ಸಹಾಯವಾಗುತ್ತದೆ. ಪ್ರಯತ್ನಿಸಲು ಇಲ್ಲಿ ಪ್ರಯತ್ನಿಸಿ!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">ಥರ್ಡ್‌ ಪಾರ್ಟಿ ಲಾಕ್ ಸ್ಕ್ರೀನ್‌</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">ಅಸುರಕ್ಷಿತ ಲಾಕ್‌ ಸ್ಕ್ರೀನ್‌ ಎಂಬುದಾಗಿ ಒಂದು ಅಪ್ಲಿ ಗಳನ್ನು ಬಳಸಲು ಒಂದು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುವು ಮಾಡುತ್ತದೆ.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">ಸುಧಾರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">ಸನ್ನೆ</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">ಹೆಚ್ಚುವರಿ</string>
   <string name="touchscreen_gesture_haptic_feedback">ಸ್ಪಾರ್ಶ ಪ್ರತಿಕ್ರಿಯೆ</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">ಸನ್ನೆ ಪತ್ತೆಯಾದಾಗ ಕಂಪಿಸು</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>
