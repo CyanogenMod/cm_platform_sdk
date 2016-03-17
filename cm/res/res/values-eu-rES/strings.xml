@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Gehigarriak</string>
   <string name="touchscreen_gesture_haptic_feedback">Erantzun haptikoa</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Bibratu keinu bat antzematean</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Ezin izan da gaia instalatu</string>
+  <string name="theme_install_error_message">Ezin izan da <xliff:g id="theme">%1$s</xliff:g> instalatu</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Gaia leheneratu da</string>
+  <string name="theme_reset_notification_message">Sistemaren gaia berrezarri da hainbat aplikazio kraskatu direlako.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">gaien zerbitzurako sarbidea</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Gaien zerbitzura sartzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute hau behar.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">zure gaiari buruzko informazioa irakurri</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Zure gaiak irakurri eta ezarrita duzuna zein den jakitea ahalbidetzen dio aplikazioari.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">zure gaiak aldatu</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Gai berriak sartu eta ezarrita duzuna aldatzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">errendimendu kudeatzailea atzitu</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Errendimendu kudeatzailea atzitzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute hau behar.</string>
 </resources>

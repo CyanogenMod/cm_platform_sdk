@@ -110,4 +110,27 @@
   <string name="touchscreen_gesture_extras">Ekstras</string>
   <string name="touchscreen_gesture_haptic_feedback">Haptiese terugvoer</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibreer wanneer \'n gebaar opgetel word</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Kon nie tema installeer</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> kon nie installeer nie</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Herstel tema</string>
+  <string name="theme_reset_notification_message">Stelsel tema is herstel a. g. v. baie program foute.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">toegang tot tema diens</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Laat \'n toep toe om toegang na die tema diens te verkry. Moet nooit nodig wees vir normale programme nie.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">lees jou tema inligting</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Laat die toep toe om jou temas te lees en 
+       bepaal watter tema jy toegepas het.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">verander jou temas</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Laat die toep toe om nuwe temas by te voeg en verander die tema wat jy toegepas het.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">toegang na prestasie bestuurder</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Laat \'n toep toe om toegang na die prestasie diens te verkry. Moet nooit nodig wees vir normale programme nie.</string>
 </resources>

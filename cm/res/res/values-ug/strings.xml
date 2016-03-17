@@ -17,29 +17,119 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">CyanogenMod سىستېمىسى</string>
+  <string name="permlab_publishCustomTile">تىز تەكشەك تاختىسىدا خاسلاشتۇرۇلغان خىش قۇرۇش</string>
+  <string name="permdesc_publishCustomTile">ئەپنىڭ بىر تىز تەڭشەك خىشى قۇرۇشىغا رۇخسەت قىلىش.</string>
+  <string name="permlab_modifyNetworkSettings">سىستېمىنىڭ تور تەڭشىنى ئۆزگەرتىش</string>
+  <string name="permdesc_modifyNetworkSettings">ئەپنىڭ ئۇچۇش ھالىتى ۋە تور ئېقىم تەڭشىكىنى ئۆزگەرتىشىگە يول قويۇش.</string>
+  <string name="permlab_modifySoundSettings">سىستېما ئاۋاز تەڭشىكىنى ئۆزگەرتىش</string>
+  <string name="permdesc_modifySoundSettings">ئەپنىڭ ئاۋارە قىلىش ھالىتى تەڭشىكىنى ئۆزگەرتىشىگە يول قويۇش.</string>
+  <string name="permlab_bindCustomTileListenerService">خاسلاشتۇرۇلغان خىش ئاڭلىغۇچى مۇلازىمىتېرغا ئۇلاش</string>
+  <string name="permdesc_bindCustomTileListenerService">ئەپنىڭ خاسلاشتۇرۇلغان خىش ئاڭلىغۇچى مۇلازىمىتېرنىڭ ئەڭ يوقىرى قاتلام يۈزىگە ئۇلاشقا يول قويۇش.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_readMSPhoneState">كۆپ SIM كارتا قوللايدىغان تېلېفون ھالىتى ۋە تور ئۇلىنىشىنى كۆرۈش</string>
+  <string name="permdesc_readMSPhoneState">ئەپنىڭ كۆپ SIM كارتا قوللايدىغان تېلېفون ھالىتى ۋە تور ئۇلىنىشىنى كۆرۈشگە يول قويۇش.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">كۆپ SIM كارتا قوللايدىغان تېلېفون ھالىتى ۋە تور ئۇلىنىشىنى ئۆزگەرتىش</string>
+  <string name="permdesc_modifyMSPhoneState">ئەپنىڭ كۆپ SIM كارتا قوللايدىغان تېلېفون ھالىتى ۋە تور ئۇلىنىشىنى كۆرۈشگە يول قويۇش.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">سىستېما سەپلەنمىسىنى ئۆزگەرتىش</string>
+  <string name="permdesc_modifyProfiles">ئەپنىڭ سىستېما سەپلەنمىسىنى ئۆزگەرتىشىگە يول قويۇش.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">قاتتىق دىتال جازىسىنى ئىشلىتىش</string>
+  <string name="permdesc_useHardwareFramework">ئەپنىڭ CM قاتتىق دىتال جازىسىنى زىيارەت قىلىشىغا يول قويۇش.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">قوڭغۇراقنى بىۋاستە ئۆزگەرتىش</string>
+  <string name="permdesc_write_alarms">ئەپنىڭ قوڭغۇراق قوشۇش ياكى ئۆچۈرۈشىگە يول قويۇش.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">پىلاندىكى قوڭغۇراقنى ئېچىپ تاقاش</string>
+  <string name="permdesc_manage_alarms">ئەپنىڭ پىلاندىكى قوڭغۇراقنى ئېچىپ تاقىشىغا يول قويۇش.</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">پىلاندىكى قوڭغۇراقنى زىيارەت قىلىش</string>
+  <string name="permdesc_read_alarms">ئەپنىڭ پىلاندىكى قوڭغۇراقنى زىيارەت قىلىشغا يول قويۇش.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">سىستېما CMنىڭ تەڭشىكىنى ئۆزگەرتىش</string>
+  <string name="permdesc_writeSettings">سىستېما CMنىڭ تەڭشىكىنى ئۆزگەرتىشكە يول قويۇش.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">سىستېما CMنىڭ بىخەتەرلىك تەڭشىكىنى ئۆزگەرتىش</string>
+  <string name="permdesc_writeSecureSettings">ئەپنىڭ سىستېما CMنىڭ بىخەتەرلىك تەڭشىكىنى ئۆزگەرتىشگە يول قويۇش.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">ئەبەدى ساقلىغۇچنى باشقۇرۇش</string>
+  <string name="permdesc_managePersistentStorage">ئەپنىڭ زاۋۇت ئەسلىگە قايتۇرغاندىن كىيىن ئۆزگەرمەيدىغان خۇسۇسىيىتىنى ئوقۇپ ۋە يېزىشىغا يول قويۇش.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">ئەپنىڭ چۈشەندۈرۈلىشىگە ئېرىشىش</string>
+  <string name="permdesc_accessAppSuggestions">بىرەر ئەپنىڭ ئەپ چۈشەندۈرۈشىگە ئېرىشىشگە رۇخسەت قىلىش.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">خىش تىشىغۇچنى خاسلاشتۇرۇش</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">قوغدالغان ئەپ تىزىمىگە ئەپ قوشۇش ياكى چىقىرۋېتىش</string>
+  <string name="permdesc_protectedApp">ئەپنىڭ باشقا ئەپلەرنى قوغداش تىزىملىكىگە قوشۇشىغا ياكى تاقاپ قۇيىشىغا رۇخسەت قىلىش.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
+  <string name="profileNameDefault">كۆڭۈلدىكى</string>
+  <string name="profileNameWork">ئىش</string>
+  <string name="profileNameHome">باش ئېكران</string>
+  <string name="profileNameSilent">ئۈنسىز</string>
+  <string name="profileNameNight">كېچە</string>
+  <string name="profileNameAutomobile">ئاپتوموبىل</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">تېلېفون</string>
+  <string name="profileGroupCalendar">كالېندار</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">ئېلخەت</string>
+  <string name="profileGroupSMS">قىسقا ئۇچۇر</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">باشقا</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">توك تىجەش</string>
+  <string name="perf_profile_bal">تەڭپۇڭ</string>
+  <string name="perf_profile_perf">ئىقتىدار</string>
+  <string name="perf_profile_bias_power">ئۈنۈمى</string>
+  <string name="perf_profile_bias_perf">تىز</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">ئاپتوماتېك</string>
+  <string name="live_display_auto_summary">كۈن چىققان ۋە كۈن پاتقاندىن كېيىن ئېكران رەڭ تېمپېراتورىسىنى ئۆزلۈكىدىن تەڭشەيدۇ</string>
+  <string name="live_display_off">تاقاق</string>
+  <string name="live_display_off_summary">بارلىق تەڭشەشلەرنى چەكلەيدۇ</string>
+  <string name="live_display_day">كۈن</string>
+  <string name="live_display_day_summary">كۈندۈز تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>
+  <string name="live_display_night">كېچە</string>
+  <string name="live_display_night_summary">كېچە تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>
+  <string name="live_display_outdoor">تالا (قۇياش نۇرى)</string>
+  <string name="live_display_outdoor_summary">تالا تەڭشەكلىرىنىلا ئىشلىتىدۇ</string>
+  <string name="live_display_hint">LiveDisplay كۆز چارچىشىنى يېنىكلىتىشكە ياردەم بېرىدۇ، كېچىدە ئۇخلىشىڭىزغا ياردەم بېرىدۇ. سىناش ئۈچۈن بۇ جاينى چېكىڭ!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">ئۈچىنچى تەرەپ ئېكران قۇلۇپى</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">ئەپنىڭ تۇراقسىز ئىكران قۇلۇپى بۇلۇپ ئىشلىتىلىشىگە رۇخسەت قىلىش.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">ئالىي تەڭشەكلەر</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">قول ئىشارەت</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">قوشۇمچە ئىقتىدار</string>
+  <string name="touchscreen_gesture_haptic_feedback">تېگىش ئىنكاسى</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">قوش ئىشارىتىنى بايقىغاندا تىتىرەيدۇ</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">ئۆرنەك ئورنىتالمىدى</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> ئورنىتىش مەغلۇب بولدى</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">باش تېمىنى قايتا بېكىتىش</string>
+  <string name="theme_reset_notification_message">كۆپلىگەن ئەپ ۋەيران بولغانلىقى ئۈچۈن باش تېما ئەسلىگە قايتتى.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">باش تېما مۇلازىمىتىگە كىرىش</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">بىر ئەپنىڭ باش تېما مۇلازىمىتىگە كىرىشىگە رۇخسەت قىلىش. نورمال ئەپ بۇنداق ھوقۇققا ھەرگىز ئېھتىياجلىق ئەمەس.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">باش تېما ئۇچۇرىڭىزنى ئوقۇڭ</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">ئەپنىڭ سىزنىڭ باش تېمىڭىزنى ئوقۇشقا ۋە سىزنىڭ قايسى باش تېمىنى ئىشلەتكىڭىزنى جەزىملەشتۈرۈشكە رۇخسەت قىلىڭ.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">باش تېمىڭىزنى ئۆزگەرتىڭ</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">ئەپنىڭ يېڭى باش تېما قوشۇشىغا ۋە سىزنىڭ قايسى باش تېمىنى ئىشلەتكىڭىزنى جەزىملەشتۈرۈشكە رۇخسەت قىلىڭ.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">ئىقتىدار باشقۇرغۇچنى زىيارەت قىلىش</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">بىر ئەپنىڭ ئىقتىدار مۇلازىمىتىگە كىرىشىگە رۇخسەت قىلىش. نورمال ئەپ بۇنداق ھوقۇققا ھەرگىز ئېھتىياجلىق ئەمەس.</string>
 </resources>

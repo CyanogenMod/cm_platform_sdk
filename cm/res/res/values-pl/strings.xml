@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Dodatki</string>
   <string name="touchscreen_gesture_haptic_feedback">Wibracja przy dotknięciu</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Zawibruj, gdy gest zostanie wykryty</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Nie udało się zainstalować motywu</string>
+  <string name="theme_install_error_message">Nie udało się zainstalować motywu: <xliff:g id="theme">%1$s </xliff:g></string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Reset motywu</string>
+  <string name="theme_reset_notification_message">Domyślny motyw przywrócony z powodu wielu awarii aplikacji.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">dostęp do usługi motywów</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Umożliwia aplikacji dostęp do usługi motywów (nie powinno być wymagane przez standardowe aplikacje).</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">odczytanie informacji o motywie</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Zezwala aplikacji na dostęp do twoich motywów i decydowanie, który z nich ma zostać użyty.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modyfikowanie Twoich motywów</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Zezwala aplikacji na dodawanie nowych motywów i modyfikowanie tego, którego używasz.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">dostęp do menedżera wydajności</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Umożliwia aplikacji dostęp do usługi wydajności (nie powinno być wymagane przez standardowe aplikacje).</string>
 </resources>

@@ -88,4 +88,14 @@
   <string name="touchscreen_gesture_extras">Doplnky</string>
   <string name="touchscreen_gesture_haptic_feedback">Hmatová spätná väzba</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibrovať pri zistení gesta</string>
+  <!-- Theme installation error notification -->
+  <!-- Theme reset notification -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>
