@@ -110,4 +110,27 @@
   <string name="touchscreen_gesture_extras">Extrák</string>
   <string name="touchscreen_gesture_haptic_feedback">Érintési visszajelzés</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Rezeg, mikor egy gesztus érzékelésre kerül</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Téma telepítése sikertelen</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> telepítése sikertelen</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Téma viszaállítása</string>
+  <string name="theme_reset_notification_message">Több alkalmazás összeomlása miatt a rendszertéma visszaállításra került.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">hozzáférés a témaszolgáltatáshoz</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Lehetővé teszi az alkalmazás számára, hogy hozzáférjen a témaszolgáltatáshoz. Általános alkalmazásoknak soha nem kell ilyen engedély.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">téma információjának megtekintése</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Lehetővé teszi az alkalmazás számára,
+       hogy megtekintse a témákat és megállapítsa, melyik téma aktív.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">témák módosítása</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Lehetővé teszi az alkalmazás számára, hogy új témákat hozzon létre és módosítsa a jelenleg aktív témát.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">hozzáférés a teljesítmény kezelőhöz</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Lehetővé teszi az alkalmazás számára, hogy hozzáférjen a teljesítmény szolgáltatáshoz. Általános alkalmazásoknak soha nem kell ilyen engedély.</string>
 </resources>

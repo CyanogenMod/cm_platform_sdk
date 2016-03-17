@@ -99,9 +99,9 @@
   <string name="live_display_outdoor_summary">Uporabi samo nastavitve na prostem</string>
   <string name="live_display_hint">LiveDisplay vam lahko pomaga pri zmanjšanju obremenitve oči in spanju ponoči. Kliknite tukaj, da ga preskusite!</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">zaslon za zaklepanje tretjih oseb</string>
+  <string name="permlab_thirdPartyKeyguard">zaklenjen zaslon tretjih oseb</string>
   <!-- Third party keyguard permission description -->
-  <string name="permdesc_thirdPartyKeyguard">Dovoli, da se aplikacija lahko uporabi kot nezanesljiv zaslon za zaklepanje.</string>
+  <string name="permdesc_thirdPartyKeyguard">Dovoli, da se aplikacija lahko uporabi kot nezanesljiv zaklenjen zaslon.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Napredne nastavitve</string>
   <!-- Touchscreen gestures -->
@@ -110,4 +110,27 @@
   <string name="touchscreen_gesture_extras">Dodatki</string>
   <string name="touchscreen_gesture_haptic_feedback">Haptično zaznavanje</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibriraj ob zaznavi poteze</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Namestitev teme je spodletela</string>
+  <string name="theme_install_error_message">Namestitev <xliff:g id="theme">%1$s</xliff:g> je spodletela</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Ponastavitev teme</string>
+  <string name="theme_reset_notification_message">Sistemska tema obnovljena zaradi večkratnih sesutij aplikacije.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">dostop do storitve tem</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Dovoli aplikaciji dostop do storitve tem. Navadno ni potrebno za običajne aplikacije.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">branje podatkov o temi</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Dovoli aplikaciji branje vaših tem in
+       določanje, katero temo uporabljate.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">spreminjanje tem</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Dovoli aplikaciji vstavljanje novih tem in spreminjanje uporabljene teme.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">dostop do upravljalnika zmogljivosti</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Dovoli aplikaciji dostop do storitve zmogljivosti. Navadno ni potrebno za običajne aplikacije.</string>
 </resources>

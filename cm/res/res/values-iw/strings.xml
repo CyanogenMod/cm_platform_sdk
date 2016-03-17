@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">תוספות</string>
   <string name="touchscreen_gesture_haptic_feedback">משוב רטט</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">רטוט כאשר מחווה מזוהה</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">התקנת ערכת העיצוב נכשלה</string>
+  <string name="theme_install_error_message">התקנת <xliff:g id="theme">%1$s </xliff:g> נכשלה</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">איפוס ערכת עיצוב</string>
+  <string name="theme_reset_notification_message">ערכת העיצוב של המערכת שוחזרה עקב קריסות תהליכים מרובות.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">גישה לשירות ערכות העיצוב</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">מאפשר ליישום לגשת לשירות ערכות העיצוב. לא אמור להידרש ליישומים רגילים.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">קריאת פרטי ערכת העיצוב שלך</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">מאפשר ליישום להיות מודע לערכות העיצוב הקיימות, ולקבוע איזו ערכה החלת.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">שינוי ערכות העיצוב שלך</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">מאפשר ליישום להוסיף ערכות עיצוב חדשות ולשנות את הערכה המוחלת.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">גישה למנהל הביצועים</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">מאפשר ליישום לגשת לשירות ניהול הביצועים. לא אמור להידרש ליישומים רגילים.</string>
 </resources>

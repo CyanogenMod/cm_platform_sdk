@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">附加功能</string>
   <string name="touchscreen_gesture_haptic_feedback">触觉反馈</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">检测到手势时振动</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">安装主题失败</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> 安装失败</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">重置主题</string>
+  <string name="theme_reset_notification_message">由于多个应用崩溃，已还原至系统主题。</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">访问主题服务</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">允许应用访问主题服务。正常应用不应需要此权限。</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">读取您的主题信息</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">允许应用读取您的主题并确定已应用的主题。</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">修改您的主题</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">允许应用插入新的主题和修改已应用的主题。</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">访问性能管理器</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">允许应用访问性能服务。正常应用不应需要此权限。</string>
 </resources>

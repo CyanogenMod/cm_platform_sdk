@@ -17,28 +17,119 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">CyanogenMod સિસ્ટમ</string>
+  <string name="permlab_publishCustomTile">ક્વિક સેટિંગ્સ પૅનલની અંદર કસ્ટમ ટાઇલ સર્જો</string>
+  <string name="permdesc_publishCustomTile">ઍપને ક્વિક સેટિંગ્સ ટાઇલ પ્રકાશિત કરવાની પરવાનગી આપે છે.</string>
+  <string name="permlab_modifyNetworkSettings">સિસ્ટમ નેટવર્ક સેટિંગ્સ પરિવર્તન કરો</string>
+  <string name="permdesc_modifyNetworkSettings">ઍપને એરપ્લેન મોડ અને મોબાઇલ ડેટા નેટવર્ક સેટિંગ્સમાં પરિવર્તનો કરવાની પરવાનગી આપે છે.</string>
+  <string name="permlab_modifySoundSettings">સિસ્ટમ સાઉન્ડ સેટિંગ્સ પરિવર્તન કરો</string>
+  <string name="permdesc_modifySoundSettings">ઍપને વિક્ષેપ મોડ સાઉન્ડ સેટિંગ્સમાં પરિવર્તનો કરવાની પરવાનગી આપે છે.</string>
+  <string name="permlab_bindCustomTileListenerService">કસ્ટમ ટાઇલ લિસ્નર સેવા સાથે બાંધો</string>
+  <string name="permdesc_bindCustomTileListenerService">ઍપને કસ્ટમ ટાઇલ લિસ્નર સેવાના ટોચ-સ્તરના ઇન્ટરફેસ સાથે બંધાવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_readMSPhoneState">બહુવિધ SIMsના સ‌મર્થન સહ ફોન સ્થિતિ અને ડેટા જોડાણ જુઓ</string>
+  <string name="permdesc_readMSPhoneState">ઍપને બહુવિધ SIMsના સ‌મર્થન સહ ફોન સ્થિતિ અને ડેટા જોડાણ જોવાની પરવાનગી કરી આપે છે.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">બહુવિધ SIMsના સ‌મર્થન સહ ફોન સ્થિતિ અને ડેટા જોડાણમાં ફેરફાર કરો</string>
+  <string name="permdesc_modifyMSPhoneState">ઍપને બહુવિધ SIMsના સ‌મર્થન સહ ફોન સ્થિતિ અને ડેટા જોડાણ ફેરફાર કરવાની પરવાનગી કરી આપે છે.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">સિસ્ટમ પ્રોફાઇલ્સમાં ફેરફાર કરો</string>
+  <string name="permdesc_modifyProfiles">ઍપને સિસ્ટમ પ્રોફાઇલ્સમાં ફેરફાર કરવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">હાર્ડવેર ફ્રેમવર્કનો ઉપયોગ કરો</string>
+  <string name="permdesc_useHardwareFramework">ઍપને CM હાર્ડવેર ફ્રેમવર્કની ઍક્સેસની પરવાનગી આપે છે.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">અલાર્મ સીધા પરિવર્તન કરો</string>
+  <string name="permdesc_write_alarms">ઍપને તમારા તમામ અલાર્મ ઉમેરવાની, ફેરફાર કરવાની અને ભૂંસવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">અનુસૂચિત અલાર્મ ટૉગલ કરો</string>
+  <string name="permdesc_manage_alarms">ઍપને તમારા અનુસૂચિત અલાર્મ ચાલુ કરવા અથવા બંધ કરવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">અનુસૂચિત અલાર્મ ઍક્સેસ કરો</string>
+  <string name="permdesc_read_alarms">ઍપને તમારા અનુસૂચિત અલાર્મ વાંચવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">CM સિસ્ટમ સેટિંગ્સમાં ફેરફાર કરો</string>
+  <string name="permdesc_writeSettings">ઍપને CM સિસ્ટમ સેટિંગ્સમાં ફેરફાર કરવાની પરવાનગી આપે છે.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">CM સુ‌રક્ષિત સિસ્ટમ સેટિંગ્સમાં ફેરફાર કરો</string>
+  <string name="permdesc_writeSecureSettings">ઍપને CM સુ‌રક્ષિત સિસ્ટમ સેટિંગ્સમાં ફેરફાર કરવાની પરવાનગી આપે છે. સામાન્ય એપ્સ દ્વારા ઉપયોગ માટે નથી.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">નિરંતર સંગ્રહનું વ્ય‌વસ્થાપન કરો</string>
+  <string name="permdesc_managePersistentStorage">ફેક્ટરી રિસેટ મારફત વળગી રહે એવા ગુણધર્મો વાંચવાની અથવા લખવાની ઍપને પરવાનગી આપે છે.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">ઍક્સેસ એપ્લિકેશન સૂચનો</string>
+  <string name="permdesc_accessAppSuggestions">ઍપને ઍપ્લિકેશન સૂચનોને ઍક્સેસ કરવાની પરવાનગી આપે છે.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">કસ્ટમ ટાઇલ લિસ્નર</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">ઍડ અને કાઢી નાંખો એપ્લિકેશન્સ રક્ષણ કરો</string>
+  <string name="permdesc_protectedApp">ઍપને અન્ય એપ્લિકેશન્સ પર સુરક્ષિત તરીકે અંકિત કરી તે લૉક કરવાની છૂટ આપે છે.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
+  <string name="profileNameDefault">ડિફોલ્ટ</string>
+  <string name="profileNameWork">કાર્યાલય</string>
+  <string name="profileNameHome">ઘર</string>
+  <string name="profileNameSilent">શાંત</string>
+  <string name="profileNameNight">રાત્રિ</string>
+  <string name="profileNameAutomobile">ઓટોમોબાઇલ</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">ફોન</string>
+  <string name="profileGroupCalendar">કૅલેન્ડર</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">ઇમેઇલ</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">અન્ય</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">પાવર બચાવો</string>
+  <string name="perf_profile_bal">સંતુલિત</string>
+  <string name="perf_profile_perf">પ્રદર્શન</string>
+  <string name="perf_profile_bias_power">કાર્યક્ષમતા</string>
+  <string name="perf_profile_bias_perf">ઝડપી</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">સ્વચલિત</string>
+  <string name="live_display_auto_summary">સૂર્યોદય અને સૂર્યાસ્ત પછી સ્ક્રીનના રંગ તાપમાનને સ્વયંચાલિત રીતે સમાયોજિત કરો</string>
+  <string name="live_display_off">બંધ</string>
+  <string name="live_display_off_summary">તમામ ફેરફારો અક્ષમ કરો</string>
+  <string name="live_display_day">દિવસ</string>
+  <string name="live_display_day_summary">ફકત ડે સેટિંગ્સનો ઉપયોગ કરો</string>
+  <string name="live_display_night">રાત્રિ</string>
+  <string name="live_display_night_summary">ફકત નાઇટ સેટિંગ્સનો ઉપયોગ કરો</string>
+  <string name="live_display_outdoor">આઉટડોર (તેજ તડકો)</string>
+  <string name="live_display_outdoor_summary">ફકત આઉટડોર સેટિંગ્સનો ઉપયોગ કરો</string>
+  <string name="live_display_hint">લાઇવડિસ્પ્લેથી આંખો પરની તાણ ઘટાડી શકાય છે અને તમને રાતે સૂવામાં મદદરૂપ થઈ શકે. અજમાવવા અહીં ક્લિક કરો!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">ત્રાહિત પક્ષ લૉક સ્ક્રીન</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">ઍપને અસુરક્ષિત લૉક સ્ક્રીન તરીકે ઉપયોગ કરવાની છૂટ આપે છે.</string>
   <!-- Device specific settings -->
+  <string name="device_settings_app_name">વિગતવાર સેટિંગ્સ</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">જેસ્ચર્સ</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">એક્સ્ટ્રા</string>
+  <string name="touchscreen_gesture_haptic_feedback">હેપ્ટિક પ્રતિસાદ</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">અંગસ્થિતિ સૂચિત થાય ત્યારે વાઇબ્રેટ કરો</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">થીમ ઇન્સ્ટૉલ કરવામાં નિષ્ફળતા</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g>ઇન્સ્ટૉલ કરવામાં નિષ્ફળતા</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">થીમ રિસેટ</string>
+  <string name="theme_reset_notification_message">સિસ્ટમ થીમ ઘણી એપ્લિકેશન ક્રેશ થવાને કારણે પુનઃસ્થાપિત થઈ.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">થીમ સેવા ઍક્સેસ કરો</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">ઍપને થીમ સેવા ઍક્સેસ કરવાની છૂટ આપે છે. સામાન્ય એપ્સ માટે ક્યારેય જરૂર પડવી જોઈએ નહી.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">તમારી થીમ માહિતી વાંચો</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">ઍપને તમારી થીમ વાંચવાની છૂટ આપે છે અને નિર્ધારિત કરે છે કે તમે કઈ થીમ લાગુ કરી છે.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">તમારી થીમમાં ફેરફાર કરો</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">ઍપને નવી થીમ દાખલ કરવાની છૂટ આપે છે અને તમે લાગુ કરેલ થીમમાં ફેરફાર કરવાની છૂટ આપે છે.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">ઍક્સેસ કામગીરી મેનેજર</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">ઍપ ને કામગીરી સેવા ઍક્સેસ કરવાની છૂટ આપે છે. સામાન્ય એપ્સ માટે ક્યારેય જરૂર પડવી જોઈએ નહી.</string>
 </resources>

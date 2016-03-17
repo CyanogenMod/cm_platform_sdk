@@ -109,5 +109,27 @@
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Прочее</string>
   <string name="touchscreen_gesture_haptic_feedback">Виброотклик</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Вибрировать при успешном распознавании жеста</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Вибрировать при распознавании жеста</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Не удалось установить тему</string>
+  <string name="theme_install_error_message">Не удалось установить «<xliff:g id="theme">%1$s</xliff:g>»</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Тема отключена</string>
+  <string name="theme_reset_notification_message">Из-за сбоев приложений восстановлена стандартная тема.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">доступ к службе тем</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Приложение сможет получать доступ к службе тем. Это разрешение не используется обычными приложениями.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">чтение информации о теме</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Приложение сможет считывать темы оформления и определять, какая тема сейчас применена.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">изменение тем</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Приложение сможет осуществлять установку новых тем оформления и изменять текущую тему.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">доступ к менеджеру производительности</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Приложение сможет получать доступ к службе производительности. Это разрешение не используется обычными приложениями.</string>
 </resources>

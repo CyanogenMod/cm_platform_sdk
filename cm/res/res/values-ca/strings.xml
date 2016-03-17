@@ -57,7 +57,7 @@
   <string name="permlab_managePersistentStorage">gestiona l\'emmagatzematge persistent</string>
   <string name="permdesc_managePersistentStorage">Permet a una aplicació llegir o escriure propietats que poden persistir després d\'un reinici als ajustaments de fàbrica.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-  <string name="permlab_accessAppSuggestions">accedir als suggeriments d\'aplicacions</string>
+  <string name="permlab_accessAppSuggestions">accés als suggeriments d\'aplicacions</string>
   <string name="permdesc_accessAppSuggestions">Permet a una aplicació accedir als suggeriments d\'aplicacions.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Escolta de cel·les personalitzades</string>
@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Extres</string>
   <string name="touchscreen_gesture_haptic_feedback">Resposta hàptica</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibra quan es detecti un gest</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">No ha pogut instal·lar el tema</string>
+  <string name="theme_install_error_message">No s\'ha pogut instal·lar <xliff:g id="theme">%1$s</xliff:g></string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Reestableix el tema</string>
+  <string name="theme_reset_notification_message">El tema del sistema s\'ha restaurat degut a múltiples fallades d\'aplicacions.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">accés al servei de temes</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Permet a una aplicació accedir al servei de temes. No s\'hauria de necessitar mai en les aplicacions normals.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">llegeix la informació del teu tema</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Permet a l\'aplicació llegir els teus temes i determinar quin tema has aplicat.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modifica els teus temes</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Permet a l\'aplicació introduir temes nous i modificar quin tema has aplicat.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">accés a l\'administrador de rendiment</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Permet a una aplicació accedir al servei de rendiment. Normalment no hauria de ser necessari en les aplicacions normals.</string>
 </resources>

@@ -88,7 +88,9 @@
   <string name="live_display_off">Oprit</string>
   <string name="live_display_day">Zi</string>
   <string name="live_display_night">Noapte</string>
+  <string name="live_display_night_summary">Utilizați numai setările de noapte</string>
   <string name="live_display_outdoor">În aer liber (soare strălucitor)</string>
+  <string name="live_display_outdoor_summary">Utilizați numai setările în aer liber</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">ecran de blocare terț</string>
   <!-- Third party keyguard permission description -->
@@ -100,4 +102,18 @@
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Mai multe</string>
   <string name="touchscreen_gesture_haptic_feedback">Reacție tactilă</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrează când s-a detectat un gest</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Instalarea temei a eșuat</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Resetare temă</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">accesare serviciul pentru teme</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <!-- Performance manager permission title -->
+  <!-- Performance manager permission description -->
 </resources>
