@@ -52,6 +52,16 @@ public class LiveLockScreenInfo implements Parcelable {
     public static final int PRIORITY_MAX = 2;
 
     /**
+     * Default {@link #type}.
+     */
+    public static final int TYPE_EXPERIENCE = 0;
+
+    /**
+     * Lock screen {@link #type} which is event-based.
+     */
+    public static final int TYPE_EVENT = 1;
+
+    /**
      * The component, which implements
      * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}, to display for this
      * live lock screen.
@@ -63,9 +73,19 @@ public class LiveLockScreenInfo implements Parcelable {
      */
     public int priority;
 
+    /**
+     * Live lock screen type
+     */
+    public int type;
+
     public LiveLockScreenInfo(@NonNull ComponentName component, int priority) {
+        this(component, priority, TYPE_EXPERIENCE);
+    }
+
+    public LiveLockScreenInfo(@NonNull ComponentName component, int priority, int type) {
         this.component = component;
         this.priority = priority;
+        this.type = type;
     }
 
     private LiveLockScreenInfo(Parcel source) {
@@ -77,6 +97,7 @@ public class LiveLockScreenInfo implements Parcelable {
 
         this.priority = source.readInt();
         this.component = ComponentName.unflattenFromString(source.readString());
+        this.type = source.readInt();
 
         source.setDataPosition(start + size);
     }
@@ -99,6 +120,7 @@ public class LiveLockScreenInfo implements Parcelable {
 
         dest.writeInt(priority);
         dest.writeString(component.flattenToString());
+        dest.writeInt(type);
 
         // Go back and write size
         int size = dest.dataPosition() - dataStartPos;
@@ -129,6 +151,7 @@ public class LiveLockScreenInfo implements Parcelable {
     public static class Builder {
         private int mPriority;
         private ComponentName mComponent;
+        private int mType = TYPE_EXPERIENCE;
 
         public Builder setPriority(int priority) {
             mPriority = priority;
@@ -140,8 +163,13 @@ public class LiveLockScreenInfo implements Parcelable {
             return this;
         }
 
+        public Builder setType(int type) {
+            mType = type;
+            return this;
+        }
+
         public LiveLockScreenInfo build() {
-            return new LiveLockScreenInfo(mComponent, mPriority);
+            return new LiveLockScreenInfo(mComponent, mPriority, mType);
         }
     }
 }
