@@ -198,6 +198,7 @@ package cyanogenmod.app {
 
   public class LiveLockScreenInfo implements android.os.Parcelable {
     ctor public LiveLockScreenInfo(android.content.ComponentName, int);
+    ctor public LiveLockScreenInfo(android.content.ComponentName, int, int);
     ctor public LiveLockScreenInfo();
     method public cyanogenmod.app.LiveLockScreenInfo clone();
     method public int describeContents();
@@ -208,8 +209,11 @@ package cyanogenmod.app {
     field public static final int PRIORITY_LOW = -1; // 0xffffffff
     field public static final int PRIORITY_MAX = 2; // 0x2
     field public static final int PRIORITY_MIN = -2; // 0xfffffffe
+    field public static final int TYPE_EVENT = 2; // 0x2
+    field public static final int TYPE_EXPERIENCE = 1; // 0x1
     field public android.content.ComponentName component;
     field public int priority;
+    field public int type;
   }
 
   public static class LiveLockScreenInfo.Builder {
@@ -217,6 +221,7 @@ package cyanogenmod.app {
     method public cyanogenmod.app.LiveLockScreenInfo build();
     method public cyanogenmod.app.LiveLockScreenInfo.Builder setComponent(android.content.ComponentName);
     method public cyanogenmod.app.LiveLockScreenInfo.Builder setPriority(int);
+    method public cyanogenmod.app.LiveLockScreenInfo.Builder setType(int);
   }
 
   public class LiveLockScreenManager {
