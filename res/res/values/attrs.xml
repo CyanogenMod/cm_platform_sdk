@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="LiveLockScreen">
+        <attr name="settingsActivity" format="string" />
+        <attr name="type">
+            <flag name="experience" value="1"/>
+            <flag name="event" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>
