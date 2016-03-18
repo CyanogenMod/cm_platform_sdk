@@ -54,6 +54,16 @@ public class LiveLockScreenInfo implements Parcelable {
     public static final int PRIORITY_MAX = 2;
 
     /**
+     * Default {@link #type}.
+     */
+    public static final int TYPE_EXPERIENCE = 1;
+
+    /**
+     * Lock screen {@link #type} which is event-based.
+     */
+    public static final int TYPE_EVENT = 2;
+
+    /**
      * The component, which implements
      * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}, to display for this
      * live lock screen.
@@ -65,13 +75,26 @@ public class LiveLockScreenInfo implements Parcelable {
      */
     public int priority;
 
+    /*
+     * Live lock screen type flags. Can be one or more.
+     *
+     * see {@link #TYPE_EVENT}
+     * see {@link #TYPE_EXPERIENCE}
+     */
+    public int type;
+
     /**
      * Constructs a LiveLockScreenInfo object with the given values.
      * You might want to consider using {@link Builder} instead.
      */
     public LiveLockScreenInfo(@NonNull ComponentName component, int priority) {
+        this(component, priority, TYPE_EXPERIENCE);
+    }
+
+    public LiveLockScreenInfo(@NonNull ComponentName component, int priority, int type) {
         this.component = component;
         this.priority = priority;
+        this.type = type;
     }
 
     /**
@@ -82,6 +105,7 @@ public class LiveLockScreenInfo implements Parcelable {
     {
         this.component = null;
         this.priority = PRIORITY_DEFAULT;
+        this.type = TYPE_EXPERIENCE;
     }
 
     private LiveLockScreenInfo(Parcel source) {
@@ -93,6 +117,7 @@ public class LiveLockScreenInfo implements Parcelable {
 
         this.priority = source.readInt();
         this.component = ComponentName.unflattenFromString(source.readString());
+        this.type = source.readInt();
 
         source.setDataPosition(start + size);
     }
@@ -115,6 +140,7 @@ public class LiveLockScreenInfo implements Parcelable {
 
         dest.writeInt(priority);
         dest.writeString(component.flattenToString());
+        dest.writeInt(type);
 
         // Go back and write size
         int size = dest.dataPosition() - dataStartPos;
@@ -166,6 +192,7 @@ public class LiveLockScreenInfo implements Parcelable {
     public static class Builder {
         private int mPriority;
         private ComponentName mComponent;
+        private int mType = TYPE_EXPERIENCE;
 
         public Builder setPriority(int priority) {
             mPriority = priority;
@@ -177,8 +204,13 @@ public class LiveLockScreenInfo implements Parcelable {
             return this;
         }
 
+        public Builder setType(int type) {
+            mType = type;
+            return this;
+        }
+
         public LiveLockScreenInfo build() {
-            return new LiveLockScreenInfo(mComponent, mPriority);
+            return new LiveLockScreenInfo(mComponent, mPriority, mType);
         }
     }
 }
