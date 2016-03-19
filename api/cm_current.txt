@@ -329,7 +329,7 @@ package cyanogenmod.app {
     method public void updateProfile(cyanogenmod.app.Profile);
     field public static final java.lang.String ACTION_PROFILE_PICKER = "cyanogenmod.platform.intent.action.PROFILE_PICKER";
     field public static final java.lang.String EXTRA_LAST_PROFILE_NAME = "lastName";
-    field public static final java.lang.String EXTRA_LAST_PROFILE_UUID = "uuid";
+    field public static final java.lang.String EXTRA_LAST_PROFILE_UUID = "lastUuid";
     field public static final java.lang.String EXTRA_PROFILES_STATE = "profile_state";
     field public static final java.lang.String EXTRA_PROFILE_DIALOG_THEME = "cyanogenmod.platform.intent.extra.profile.DIALOG_THEME";
     field public static final java.lang.String EXTRA_PROFILE_EXISTING_UUID = "cyanogenmod.platform.extra.profile.EXISTING_UUID";

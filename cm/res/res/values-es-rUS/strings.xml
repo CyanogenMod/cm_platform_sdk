@@ -17,6 +17,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">Sistema de CyanogenMod</string>
+  <string name="permlab_publishCustomTile">crea un control personalizado en el panel de ajustes rápidos</string>
+  <string name="permdesc_publishCustomTile">Permite que la aplicación pueda publicar un control de ajustes rápidos.</string>
+  <string name="permlab_modifyNetworkSettings">cambiar ajustes de red del sistema</string>
+  <string name="permdesc_modifyNetworkSettings">Permite a una aplicación realizar cambios en el modo avión y sobre la configuración de la red de datos móviles.</string>
+  <string name="permlab_modifySoundSettings">cambiar ajustes de sonido del sistema</string>
+  <string name="permdesc_modifySoundSettings">Permite a una aplicación realizar cambios a los ajustes de sonido del modo de interrupción.</string>
+  <string name="permlab_bindCustomTileListenerService">unirse a un servicio para escuchar controles personalizados</string>
+  <string name="permdesc_bindCustomTileListenerService">Permitir que la aplicación pueda unirse a una interfaz de alto nivel de un servicio para escuchar controles personalizados.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">ver el estado del teléfono y la conexión de datos con soporte SIM múltiple</string>
   <string name="permdesc_readMSPhoneState">Permite a una aplicación ver el estado del teléfono y la conexión de datos con soporte SIM múltiple.</string>
@@ -24,26 +33,69 @@
   <string name="permlab_modifyMSPhoneState">modificar el estado del teléfono y la conexión de datos con soporte SIM múltiple</string>
   <string name="permdesc_modifyMSPhoneState">Permite a una aplicación modificar el estado del teléfono y la conexión de datos con soporte SIM múltiple.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">modificar los perfiles del sistema</string>
+  <string name="permdesc_modifyProfiles">Permite que una aplicación modifique los perfiles del sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">usar framework de hardware</string>
+  <string name="permdesc_useHardwareFramework">Permite que la aplicación acceda al framework de hardware de CM.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">cambiar las alarmas directamente</string>
   <string name="permdesc_write_alarms">Permite a una aplicación añadir, modificar o eliminar todas tus alarmas.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">alternar alarmas programadas</string>
+  <string name="permdesc_manage_alarms">Permite que una aplicación active o desactive tus alarmas programadas.</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">acceder a alarmas programadas</string>
+  <string name="permdesc_read_alarms">Permite que una aplicación lea tus alarmas programadas.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">modificar la configuración del sistema de CM</string>
+  <string name="permdesc_writeSettings">Permite que una aplicación modifique la configuración del sistema de CM.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">modificar la configuración de sistema seguro de CM</string>
+  <string name="permdesc_writeSecureSettings">Permite que una aplicación modifique la configuración del sistema seguro de CM. No es para el uso de aplicaciones normales.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">administrar el almacenamiento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite que una aplicación lea o escriba propiedades que pueden continuar incluso después de una restauración de fábrica.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">acceder a las sugerencias de aplicaciones</string>
+  <string name="permdesc_accessAppSuggestions">Permite a una aplicación acceder a las sugerencias de aplicaciones.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">Escucha de control personalizado</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">añadir y quitar aplicaciones a aplicaciones protegidas</string>
   <string name="permdesc_protectedApp">Permite que una aplicación marque a otras aplicaciones como protegidas y las bloquee.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Predeterminado</string>
+  <string name="profileNameWork">Trabajo</string>
+  <string name="profileNameHome">Casa</string>
+  <string name="profileNameSilent">Silencio</string>
+  <string name="profileNameNight">Noche</string>
+  <string name="profileNameAutomobile">Automóvil</string>
   <!-- Names of application groups. -->
+  <string name="profileGroupPhone">Teléfono</string>
+  <string name="profileGroupCalendar">Calendario</string>
+  <string name="profileGroupGmail">Gmail</string>
+  <string name="profileGroupEmail">Correo electrónico</string>
+  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
+  <string name="wildcardProfile">Otros</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">Ahorro de energía</string>
+  <string name="perf_profile_bal">Equilibrado</string>
+  <string name="perf_profile_perf">Rendimiento</string>
+  <string name="perf_profile_bias_power">Eficiencia</string>
+  <string name="perf_profile_bias_perf">Rápido</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">Automático</string>
+  <string name="live_display_auto_summary">Ajustar automáticamente la temperatura del color de pantalla con el amanecer y el anochecer</string>
+  <string name="live_display_off">Desactivado</string>
+  <string name="live_display_off_summary">Deshabilitar todos los ajustes</string>
+  <string name="live_display_day">Día</string>
+  <string name="live_display_day_summary">Utilizar solo los ajustes de día</string>
+  <string name="live_display_night">Noche</string>
+  <string name="live_display_night_summary">Utilizar solo los ajustes de noche</string>
+  <string name="live_display_outdoor">Al aire libre (luz del sol)</string>
   <string name="live_display_outdoor_summary">Utilizar solo los ajustes de aire libre</string>
   <string name="live_display_hint">LiveDisplay puede ayudar a reducir la fatiga visual y a dormir por la noche. ¡Haz clic aquí para probarlo!</string>
   <!-- Third party keyguard permission label -->
@@ -51,6 +103,33 @@
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Permite a una aplicación ser utilizada como pantalla bloqueada no segura.</string>
   <!-- Device specific settings -->
+  <string name="device_settings_app_name">Opciones avanzadas</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Gestos</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Extras</string>
+  <string name="touchscreen_gesture_haptic_feedback">Respuesta háptica</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrar cuando se detecte un gesto</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">No se pudo instalar el tema</string>
+  <string name="theme_install_error_message">Error al instalar <xliff:g id="theme">%1$s </xliff:g></string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Tema restablecido</string>
+  <string name="theme_reset_notification_message">Tema del sistema restablecido debido a varios cierres de la aplicación.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">acceso al servicio de temas</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Permite que la aplicación acceda al servicio de temas. No debería ser necesario para aplicaciones normales.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">leer información de los temas</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Permite que la aplicación lea los temas instalados y determine cuál es el tema aplicado.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modificar tus temas</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Permite que la aplicación añada temas nuevos y modifique el tema aplicado.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">acceso al administrador de rendimiento</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Permite que la aplicación acceda al rendimiento del servicio. No debería ser necesario para aplicaciones normales.</string>
 </resources>

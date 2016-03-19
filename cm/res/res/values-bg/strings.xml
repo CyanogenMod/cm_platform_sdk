@@ -110,4 +110,26 @@
   <string name="touchscreen_gesture_extras">Екстри</string>
   <string name="touchscreen_gesture_haptic_feedback">Вибрация при докосване (обратна връзка)</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Вибрирай, когато се засече жест</string>
+  <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Неуспешно инсталиране на темата</string>
+  <string name="theme_install_error_message">Инсталирането на <xliff:g id="theme">%1$s</xliff:g>е неуспешно</string>
+  <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Нулиране на темата</string>
+  <string name="theme_reset_notification_message">Стандартната тема е възстановена поради множество грешки.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">достъп до темите</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Позволява на приложението достъп до услугата за теми. Не е необходимо за нормални приложения.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">прочетете информацията за темата</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Разрешава на приложението да чете вашите теми и да определя коя тема сте приложили.</string>
+  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">Модифициране на темите</string>
+  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Разрешава на приложението да добавя нови теми и да променя текущата тема.</string>
+  <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">Достъп до диспечера за производителност</string>
+  <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Осигурява на приложението достъп до диспечера за производителност. Не е необходимо за нормални приложения.</string>
 </resources>
