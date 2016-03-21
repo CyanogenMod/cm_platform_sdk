@@ -563,6 +563,8 @@ package cyanogenmod.platform {
     ctor public Manifest.permission();
     field public static final java.lang.String ACCESS_APP_SUGGESTIONS = "cyanogenmod.permission.ACCESS_APP_SUGGESTIONS";
     field public static final java.lang.String ACCESS_THEME_MANAGER = "cyanogenmod.permission.ACCESS_THEME_MANAGER";
+    field public static final java.lang.String ACCESS_WEATHER_MANAGER = "cyanogenmod.permission.ACCESS_WEATHER_MANAGER";
+    field public static final java.lang.String BIND_WEATHER_PROVIDER_SERVICE = "cyanogenmod.permission.BIND_WEATHER_PROVIDER_SERVICE";
     field public static final java.lang.String HARDWARE_ABSTRACTION_ACCESS = "cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS";
     field public static final java.lang.String MANAGE_ALARMS = "cyanogenmod.permission.MANAGE_ALARMS";
     field public static final java.lang.String MANAGE_PERSISTENT_STORAGE = "cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE";
@@ -576,11 +578,13 @@ package cyanogenmod.platform {
     field public static final java.lang.String READ_ALARMS = "cyanogenmod.permission.READ_ALARMS";
     field public static final java.lang.String READ_MSIM_PHONE_STATE = "cyanogenmod.permission.READ_MSIM_PHONE_STATE";
     field public static final java.lang.String READ_THEMES = "cyanogenmod.permission.READ_THEMES";
+    field public static final java.lang.String READ_WEATHER = "cyanogenmod.permission.READ_WEATHER";
     field public static final java.lang.String THIRD_PARTY_KEYGUARD = "android.permission.THIRD_PARTY_KEYGUARD";
     field public static final java.lang.String WRITE_ALARMS = "cyanogenmod.permission.WRITE_ALARMS";
     field public static final java.lang.String WRITE_SECURE_SETTINGS = "cyanogenmod.permission.WRITE_SECURE_SETTINGS";
     field public static final java.lang.String WRITE_SETTINGS = "cyanogenmod.permission.WRITE_SETTINGS";
     field public static final java.lang.String WRITE_THEMES = "cyanogenmod.permission.WRITE_THEMES";
+    field public static final java.lang.String WRITE_WEATHER = "cyanogenmod.permission.WRITE_WEATHER";
   }
 
   public final class R {
@@ -1010,6 +1014,47 @@ package cyanogenmod.providers {
     field public static final int UPDATING = 2; // 0x2
   }
 
+  public class WeatherContract {
+    ctor public WeatherContract();
+    field public static final java.lang.String AUTHORITY = "com.cyanogenmod.weather";
+    field public static final android.net.Uri AUTHORITY_URI;
+  }
+
+  public static class WeatherContract.WeatherColumns {
+    ctor public WeatherContract.WeatherColumns();
+    field public static final android.net.Uri CONTENT_URI;
+    field public static final android.net.Uri CURRENT_AND_FORECAST_WEATHER_URI;
+    field public static final java.lang.String CURRENT_CITY = "city";
+    field public static final java.lang.String CURRENT_CITY_ID = "city_id";
+    field public static final java.lang.String CURRENT_CONDITION = "condition";
+    field public static final java.lang.String CURRENT_CONDITION_CODE = "condition_code";
+    field public static final java.lang.String CURRENT_HUMIDITY = "humidity";
+    field public static final java.lang.String CURRENT_TEMPERATURE = "temperature";
+    field public static final java.lang.String CURRENT_TEMPERATURE_UNIT = "temperature_unit";
+    field public static final java.lang.String CURRENT_TIMESTAMP = "timestamp";
+    field public static final android.net.Uri CURRENT_WEATHER_URI;
+    field public static final java.lang.String CURRENT_WIND_DIRECTION = "wind_direction";
+    field public static final java.lang.String CURRENT_WIND_SPEED = "wind_speed";
+    field public static final java.lang.String CURRENT_WIND_SPEED_UNIT = "wind_speed_unit";
+    field public static final java.lang.String FORECAST_CONDITION = "forecast_condition";
+    field public static final java.lang.String FORECAST_CONDITION_CODE = "forecast_condition_code";
+    field public static final java.lang.String FORECAST_HIGH = "forecast_high";
+    field public static final java.lang.String FORECAST_LOW = "forecast_low";
+    field public static final android.net.Uri FORECAST_WEATHER_URI;
+  }
+
+  public static class WeatherContract.WeatherColumns.TempUnit {
+    ctor public WeatherContract.WeatherColumns.TempUnit();
+    field public static final int CELSIUS = 1; // 0x1
+    field public static final int FAHRENHEIT = 2; // 0x2
+  }
+
+  public static class WeatherContract.WeatherColumns.WindSpeedUnit {
+    ctor public WeatherContract.WeatherColumns.WindSpeedUnit();
+    field public static final int KPH = 1; // 0x1
+    field public static final int MPH = 2; // 0x2
+  }
+
 }
 
 package cyanogenmod.themes {
@@ -1118,6 +1163,128 @@ package cyanogenmod.util {
     method public static int generateAlertColorFromDrawable(android.graphics.drawable.Drawable);
     method public static com.android.internal.util.cm.palette.Palette.Swatch getDominantSwatch(com.android.internal.util.cm.palette.Palette);
     method public static float[] temperatureToRGB(int);
+  }
+
+}
+
+package cyanogenmod.weather {
+
+  public class CMWeatherManager {
+    method public java.lang.String getActiveWeatherServiceProviderLabel();
+    method public static cyanogenmod.weather.CMWeatherManager getInstance(android.content.Context);
+    method public void lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener);
+    method public void registerWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
+    method public void requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public void requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public void unregisterWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
+    field public static final int WEATHER_REQUEST_ALREADY_IN_PROGRESS = -3; // 0xfffffffd
+    field public static final int WEATHER_REQUEST_COMPLETED = 1; // 0x1
+    field public static final int WEATHER_REQUEST_FAILED = -2; // 0xfffffffe
+    field public static final int WEATHER_REQUEST_SUBMITTED_TOO_SOON = -1; // 0xffffffff
+    field public static final java.lang.String WEATHER_UPDATED_ACTION = "cyanogenmod.weather.WEATHER_UPDATED";
+  }
+
+  public static abstract interface CMWeatherManager.LookupCityRequestListener {
+    method public abstract void onLookupCityRequestCompleted(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>);
+  }
+
+  public static abstract interface CMWeatherManager.WeatherServiceProviderChangeListener {
+    method public abstract void onWeatherServiceProviderChanged(android.content.ComponentName);
+  }
+
+  public static abstract interface CMWeatherManager.WeatherUpdateRequestListener {
+    method public abstract void onWeatherRequestCompleted(int, cyanogenmod.weather.WeatherInfo);
+  }
+
+  public final class RequestInfo implements android.os.Parcelable {
+    method public int describeContents();
+    method public java.lang.String getCityName();
+    method public android.location.Location getLocation();
+    method public int getRequestType();
+    method public cyanogenmod.weather.WeatherLocation getWeatherLocation();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.weather.RequestInfo> CREATOR;
+    field public static final int TYPE_GEO_LOCATION_REQ = 1; // 0x1
+    field public static final int TYPE_LOOKUP_CITY_NAME_REQ = 3; // 0x3
+    field public static final int TYPE_WEATHER_LOCATION_REQ = 2; // 0x2
+  }
+
+  public final class WeatherInfo implements android.os.Parcelable {
+    ctor public WeatherInfo(java.lang.String, java.lang.String, java.lang.String, int, float, int, float, float, float, int, java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast>, long);
+    method public int describeContents();
+    method public java.lang.String getCity();
+    method public java.lang.String getCityId();
+    method public java.lang.String getCondition();
+    method public int getConditionCode();
+    method public java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast> getForecasts();
+    method public float getHumidity();
+    method public float getTemperature();
+    method public int getTemperatureUnit();
+    method public long getTimestamp();
+    method public float getWindDirection();
+    method public float getWindSpeed();
+    method public int getWindSpeedUnit();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.weather.WeatherInfo> CREATOR;
+  }
+
+  public static class WeatherInfo.DayForecast implements android.os.Parcelable {
+    ctor public WeatherInfo.DayForecast(float, float, java.lang.String, int);
+    method public int describeContents();
+    method public java.lang.String getCondition();
+    method public int getConditionCode();
+    method public float getHigh();
+    method public float getLow();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.weather.WeatherInfo.DayForecast> CREATOR;
+  }
+
+  public final class WeatherLocation implements android.os.Parcelable {
+    ctor public WeatherLocation(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+    method public int describeContents();
+    method public java.lang.String getCity();
+    method public java.lang.String getCityId();
+    method public java.lang.String getCountry();
+    method public java.lang.String getCountryId();
+    method public java.lang.String getPostalCode();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.weather.WeatherLocation> CREATOR;
+  }
+
+}
+
+package cyanogenmod.weatherservice {
+
+  public final class ServiceRequest {
+    method public void complete(cyanogenmod.weatherservice.ServiceRequestResult);
+    method public void fail();
+    method public cyanogenmod.weather.RequestInfo getRequestInfo();
+  }
+
+  public final class ServiceRequestResult implements android.os.Parcelable {
+    method public int describeContents();
+    method public java.util.ArrayList<cyanogenmod.weather.WeatherLocation> getLocationLookupList();
+    method public cyanogenmod.weather.WeatherInfo getWeatherInfo();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.weatherservice.ServiceRequestResult> CREATOR;
+  }
+
+  public static class ServiceRequestResult.Builder {
+    ctor public ServiceRequestResult.Builder();
+    method public cyanogenmod.weatherservice.ServiceRequestResult create();
+    method public cyanogenmod.weatherservice.ServiceRequestResult.Builder setLocationLookupList(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>);
+    method public cyanogenmod.weatherservice.ServiceRequestResult.Builder setWeatherInfo(cyanogenmod.weather.WeatherInfo);
+  }
+
+  public abstract class WeatherProviderService extends android.app.Service {
+    ctor public WeatherProviderService();
+    method protected final void attachBaseContext(android.content.Context);
+    method public final android.os.IBinder onBind(android.content.Intent);
+    method protected void onConnected();
+    method protected void onDisconnected();
+    method protected abstract void onRequestCancelled(cyanogenmod.weatherservice.ServiceRequest);
+    method protected abstract void onRequestSubmitted(cyanogenmod.weatherservice.ServiceRequest);
+    field public static final java.lang.String SERVICE_INTERFACE = "cyanogenmod.weatherservice.WeatherProviderService";
   }
 
 }

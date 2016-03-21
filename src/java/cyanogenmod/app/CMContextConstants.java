@@ -115,6 +115,18 @@ public final class CMContextConstants {
     public static final String CM_ICON_CACHE_SERVICE = "cmiconcache";
 
     /**
+     * Use with {@link android.content.Context#getSystemService} to retrieve a
+     * {@link cyanogenmod.weather.CMWeatherManager} to manage the weather service
+     * settings and request weather updates
+     *
+     * @see android.content.Context#getSystemService
+     * @see cyanogenmod.weather.CMWeatherManager
+     *
+     * @hide
+     */
+    public static final String CM_WEATHER_SERVICE = "cmweather";
+
+    /**
      * Features supported by the CMSDK.
      */
     public static class Features {
@@ -125,5 +137,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String HARDWARE_ABSTRACTION = "org.cyanogenmod.hardware";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the weather content provider
+         * and weather services
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String WEATHER_SERVICES = "org.cyanogenmod.weather";
     }
 }
