@@ -2686,6 +2686,13 @@ public final class CMSettings {
          */
         public static final String ENABLED_EVENT_LIVE_LOCKS_KEY = "live_lockscreens_events_enabled";
 
+        /**
+         * Current active & enabled Weather Provider Service
+         *
+         * @hide
+         */
+        public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
+
         // endregion
 
         /**

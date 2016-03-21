@@ -179,5 +179,13 @@
     <!-- Live lock screen manager service provider permission description -->
     <string name="permdesc_accessLiveLockScreenServiceProvider">Allows a service to provide the live lock screen manager service.</string>
 
-
+    <!-- Weather Service strings -->
+    <string name="permlab_weather_read">read weather</string>
+    <string name="permdesc_weather_read">Allows an app to read content from the weather provider</string>
+    <string name="permlab_weather_write">update weather provider</string>
+    <string name="permdesc_weather_write">Allows an app to update the content of the weather provider</string>
+    <string name="permlab_weather_bind">binds as a weather provider service</string>
+    <string name="permdesc_weather_bind">Allows an app to be identified as a weather provider service</string>
+    <string name="permlab_weather_access_mgr">access weather service</string>
+    <string name="permdesc_weather_access_mgr">Allows an app to access the weather service in the system. Should never be needed for normal apps</string>
 </resources>
