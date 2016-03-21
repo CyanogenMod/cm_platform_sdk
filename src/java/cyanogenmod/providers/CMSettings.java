@@ -2680,6 +2680,13 @@ public final class CMSettings {
          */
         public static final String DISPLAY_GAMMA_CALIBRATION_PREFIX = "display_gamma_";
 
+        /**
+         * Current active & enabled Weather Provider Service
+         *
+         * @hide
+         */
+        public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
+
         // endregion
 
         /**

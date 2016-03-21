@@ -90,5 +90,6 @@
         <item>org.cyanogenmod.platform.internal.ThemeManagerService</item>
         <item>org.cyanogenmod.platform.internal.IconCacheManagerService</item>
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
+        <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
     </string-array>
 </resources>
