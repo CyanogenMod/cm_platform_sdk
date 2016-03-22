@@ -137,27 +137,23 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 # ============================================================
 include $(CLEAR_VARS)
 
-LOCAL_MODULE:= org.cyanogenmod.platform.sdk.jar
-LOCAL_MODULE_TAGS := optional
-LOCAL_REQUIRED_MODULES := services
+LOCAL_MODULE := org.cyanogenmod.platform.sdk.aar
+
 LOCAL_JACK_ENABLED := disabled
 
-LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
+# just need to define this, $(TOP)/dummy should not exist
+LOCAL_SRC_FILES := $(call all-java-files-under, dummy)
 
-# Included aidl files from cyanogenmod.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
+LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, sdk/res/res)
+LOCAL_MANIFEST_FILE := res/AndroidManifest.xml
 
-cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
-    $(cm_platform_res)/cyanogenmod/platform/R.java \
-    $(cm_platform_res)/cyanogenmod/platform/Manifest.java
+LOCAL_AAPT_FLAGS := --auto-add-overlay
+LOCAL_JAR_EXCLUDE_FILES := none
 
-LOCAL_INTERMEDIATE_SOURCES := \
-    $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
+LOCAL_STATIC_JAVA_LIBRARIES := org.cyanogenmod.platform.sdk
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
+$(LOCAL_MODULE) : $(built_aar)
 
 # full target for use by platform apps
 #
