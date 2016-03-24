@@ -60,7 +60,8 @@ public class ThemeManager {
         return sInstance;
     }
 
-    private static IThemeService getService() {
+    /** @hide */
+    public static IThemeService getService() {
         if (sService != null) {
             return sService;
         }
