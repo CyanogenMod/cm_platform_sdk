@@ -6,11 +6,11 @@
 
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
 
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
     <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"/>
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_NETWORK_SETTINGS" />
     <uses-permission android:name="cyanogenmod.permission.MODIFY_SOUND_SETTINGS" />
     <uses-permission android:name="cyanogenmod.permission.MANAGE_ALARMS" />
@@ -21,6 +21,10 @@
     <uses-permission android:name="cyanogenmod.permission.MODIFY_PROFILES" />
     <uses-permission android:name="cyanogenmod.permission.MANAGE_PERSISTENT_STORAGE" />
     <uses-permission android:name="cyanogenmod.permission.PERFORMANCE_ACCESS" />
+    <uses-permission android:name="cyanogenmod.permission.READ_THEMES" />
+    <uses-permission android:name="cyanogenmod.permission.WRITE_THEMES" />
+    <uses-permission android:name="cyanogenmod.permission.ACCESS_THEME_MANAGER" />
+
     <uses-permission android:name="android.permission.STATUS_BAR_SERVICE" />
 
     <application android:name=".CyanogenModTestApplication"
