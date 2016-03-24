@@ -16,7 +16,6 @@
 
 package cyanogenmod.externalviews;
 
-import android.annotation.NonNull;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -28,11 +27,18 @@ import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.Log;
+import android.view.ActionMode;
 import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.SearchEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.policy.PhoneWindow;
 
 import java.util.concurrent.Callable;
@@ -126,7 +132,8 @@ public abstract class KeyguardExternalViewProviderService extends Service {
      * This class provides an interface for the host and service to communicate to each other.
      */
     protected abstract class Provider {
-        private final class ProviderImpl extends IKeyguardExternalViewProvider.Stub {
+        private final class ProviderImpl extends IKeyguardExternalViewProvider.Stub
+                implements Window.Callback {
             private final Window mWindow;
             private final WindowManager.LayoutParams mParams;
 
@@ -138,6 +145,7 @@ public abstract class KeyguardExternalViewProviderService extends Service {
 
             public ProviderImpl(Provider provider) {
                 mWindow = new PhoneWindow(KeyguardExternalViewProviderService.this);
+                mWindow.setCallback(this);
                 ((ViewGroup) mWindow.getDecorView()).addView(onCreateView());
 
                 mParams = new WindowManager.LayoutParams();
@@ -316,6 +324,125 @@ public abstract class KeyguardExternalViewProviderService extends Service {
                 mCallbacks.finishBroadcast();
             }
 
+            // region Window callbacks
+            @Override
+            public boolean dispatchKeyEvent(KeyEvent event) {
+                return false;
+            }
+
+            @Override
+            public boolean dispatchKeyShortcutEvent(KeyEvent event) {
+                return false;
+            }
+
+            @Override
+            public boolean dispatchTouchEvent(MotionEvent event) {
+                return false;
+            }
+
+            @Override
+            public boolean dispatchTrackballEvent(MotionEvent event) {
+                return false;
+            }
+
+            @Override
+            public boolean dispatchGenericMotionEvent(MotionEvent event) {
+                return false;
+            }
+
+            @Override
+            public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
+                return false;
+            }
+
+            @Override
+            public View onCreatePanelView(int featureId) {
+                return null;
+            }
+
+            @Override
+            public boolean onCreatePanelMenu(int featureId, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onPreparePanel(int featureId, View view, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onMenuOpened(int featureId, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onMenuItemSelected(int featureId, MenuItem item) {
+                return false;
+            }
+
+            @Override
+            public void onWindowAttributesChanged(WindowManager.LayoutParams attrs) {}
+
+            @Override
+            public void onContentChanged() {}
+
+            @Override
+            public void onWindowFocusChanged(boolean hasFocus) {}
+
+            @Override
+            public void onAttachedToWindow() {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.onAttachedToWindow();
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
+            @Override
+            public void onDetachedFromWindow() {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.onDetachedFromWindow();
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
+
+            @Override
+            public void onPanelClosed(int featureId, Menu menu) {}
+
+            @Override
+            public boolean onSearchRequested() {
+                return false;
+            }
+
+            @Override
+            public boolean onSearchRequested(SearchEvent searchEvent) {
+                return false;
+            }
+
+            @Override
+            public ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
+                return null;
+            }
+
+            @Override
+            public ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int type) {
+                return null;
+            }
+
+            @Override
+            public void onActionModeStarted(ActionMode mode) {}
+
+            @Override
+            public void onActionModeFinished(ActionMode mode) {}
         }
 
         private final ProviderImpl mImpl = new ProviderImpl(this);
