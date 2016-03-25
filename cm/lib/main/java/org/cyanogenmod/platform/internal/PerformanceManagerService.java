@@ -29,6 +29,7 @@ import android.os.Message;
 import android.os.Process;
 import android.os.SystemProperties;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Slog;
 
 import com.android.server.ServiceThread;
@@ -110,7 +111,13 @@ public class PerformanceManagerService extends SystemService {
 
     @Override
     public void onStart() {
-        publishBinderService(CMContextConstants.CM_PERFORMANCE_SERVICE, mBinder);
+        if (mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PERFORMANCE)) {
+            publishBinderService(CMContextConstants.CM_PERFORMANCE_SERVICE, mBinder);
+        } else {
+            Log.wtf(TAG, "CM performance service started by system server but feature xml not" +
+                    " declared. Not publishing binder service!");
+        }
         publishLocalService(PerformanceManagerInternal.class, new LocalService());
     }
 

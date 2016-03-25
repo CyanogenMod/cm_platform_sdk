@@ -17,6 +17,8 @@ package org.cyanogenmod.tests.power.unit;
 
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
+
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.power.IPerformanceManager;
 import cyanogenmod.power.PerformanceManager;
 
@@ -34,6 +36,9 @@ public class PerfomanceManagerTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support performance abstraction
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PERFORMANCE));
         mCMPerformanceManager = PerformanceManager.getInstance(mContext);
         // Save the perf profile for later restore.
         mSavedPerfProfile = mCMPerformanceManager.getPowerProfile();
