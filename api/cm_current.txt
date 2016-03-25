@@ -1073,7 +1073,7 @@ package cyanogenmod.themes {
   public class ThemeManager {
     method public deprecated void addClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
     method public void applyDefaultTheme();
-    method public static cyanogenmod.themes.ThemeManager getInstance();
+    method public static cyanogenmod.themes.ThemeManager getInstance(android.content.Context);
     method public cyanogenmod.themes.ThemeChangeRequest.RequestType getLastThemeChangeRequestType();
     method public long getLastThemeChangeTime();
     method public int getProgress();
