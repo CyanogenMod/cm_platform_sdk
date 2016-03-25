@@ -16,6 +16,7 @@
 
 package cyanogenmod.themes;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -47,14 +48,20 @@ public class ThemeManager {
 
     private Set<ThemeProcessingListener> mProcessingListeners = new ArraySet<>();
 
-    private ThemeManager() {
-        mHandler = new Handler(Looper.getMainLooper());
+    private ThemeManager(Context context) {
         sService = getService();
+        if (context.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.THEMES) && sService == null) {
+            throw new RuntimeException("Unable to get ThemeManagerService. The service either" +
+                    " crashed, was not started, or the interface has been called to early in" +
+                    " SystemServer init");
+        }
+        mHandler = new Handler(Looper.getMainLooper());
     }
 
-    public static ThemeManager getInstance() {
+    public static ThemeManager getInstance(Context context) {
         if (sInstance == null) {
-            sInstance = new ThemeManager();
+            sInstance = new ThemeManager(context);
         }
 
         return sInstance;
