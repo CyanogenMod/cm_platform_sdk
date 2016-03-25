@@ -173,5 +173,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PERFORMANCE = "org.cyanogenmod.performance";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the cm partner service
+         * utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String PARTNER = "org.cyanogenmod.partner";
     }
 }
