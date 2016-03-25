@@ -141,5 +141,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String PROFILES = "org.cyanogenmod.profiles";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the cm app suggest service
+         * utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String APP_SUGGEST = "org.cyanogenmod.appsuggest";
     }
 }
