@@ -42,15 +42,22 @@ public class IconCacheManagerService extends SystemService {
     private static final long PURGED_ICON_CACHE_SIZE = 25165824L; // 24 MB
 
     private long mIconCacheSize = 0L;
+    private Context mContext;
 
     public IconCacheManagerService(Context context) {
         super(context);
+        mContext = context;
     }
 
     @Override
     public void onStart() {
         Log.d(TAG, "registerIconCache cmiconcache: " + this);
-        publishBinderService(CMContextConstants.CM_ICON_CACHE_SERVICE, mService);
+        if (mContext.getPackageManager().hasSystemFeature(CMContextConstants.Features.THEMES)) {
+            publishBinderService(CMContextConstants.CM_ICON_CACHE_SERVICE, mService);
+        } else {
+            Log.wtf(TAG, "IconCache service started by system server but feature xml not" +
+                    " declared. Not publishing binder service!");
+        }
     }
 
     private void purgeIconCache() {
