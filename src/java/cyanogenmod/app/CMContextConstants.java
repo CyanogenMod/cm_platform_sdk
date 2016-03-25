@@ -149,5 +149,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String APP_SUGGEST = "org.cyanogenmod.appsuggest";
+
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the cm telephony service
+         * utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String TELEPHONY = "org.cyanogenmod.telephony";
     }
 }
