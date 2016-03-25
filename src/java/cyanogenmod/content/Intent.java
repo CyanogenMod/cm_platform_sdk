@@ -134,4 +134,11 @@ public class Intent {
      */
     public static final String URI_SCHEME_PACKAGE = "package";
 
+    /**
+     * Implicit action to open live lock screen settings.
+     * @hide
+     */
+    public static final String ACTION_OPEN_LIVE_LOCKSCREEN_SETTINGS =
+            "cyanogenmod.intent.action.OPEN_LIVE_LOCKSCREEN_SETTINGS";
+
 }
