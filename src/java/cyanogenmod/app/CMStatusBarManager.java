@@ -65,6 +65,13 @@ public class CMStatusBarManager {
             mContext = context;
         }
         sService = getService();
+
+        if (context.getPackageManager().hasSystemFeature(
+                cyanogenmod.app.CMContextConstants.Features.STATUSBAR) && sService == null) {
+            throw new RuntimeException("Unable to get CMStatusBarService. The service either" +
+                    " crashed, was not started, or the interface has been called to early in" +
+                    " SystemServer init");
+        }
     }
 
     /**

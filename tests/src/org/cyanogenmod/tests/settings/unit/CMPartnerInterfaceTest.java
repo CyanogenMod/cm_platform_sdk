@@ -29,6 +29,8 @@ import android.test.suitebuilder.annotation.SmallTest;
 import android.provider.Settings;
 import android.text.format.DateUtils;
 import android.util.Log;
+
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.PartnerInterface;
 
 import java.util.List;
@@ -45,6 +47,9 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        // Only run this if we support partner interfaces
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PARTNER));
         mPartnerInterface = PartnerInterface.getInstance(getContext());
 
         setupAirplaneModeTests();

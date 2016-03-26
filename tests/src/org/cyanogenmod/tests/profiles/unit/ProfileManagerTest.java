@@ -18,6 +18,7 @@ package org.cyanogenmod.tests.profiles.unit;
 
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
+import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.ProfileManager;
 import cyanogenmod.app.IProfileManager;
 import cyanogenmod.providers.CMSettings;
@@ -32,6 +33,9 @@ public class ProfileManagerTest extends AndroidTestCase {
     protected void setUp() throws Exception {
         super.setUp();
         mProfileManager = ProfileManager.getInstance(mContext);
+        // Only run this if we support profiles service
+        org.junit.Assume.assumeTrue(mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PROFILES));
     }
 
     @SmallTest

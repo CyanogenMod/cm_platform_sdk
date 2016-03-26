@@ -74,6 +74,12 @@ public class AppSuggestManagerService extends SystemService {
             Slog.i(TAG, "Bound to to suggest provider");
         }
 
-        publishBinderService(CMContextConstants.CM_APP_SUGGEST_SERVICE, mService);
+        if (mContext.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.APP_SUGGEST)) {
+            publishBinderService(CMContextConstants.CM_APP_SUGGEST_SERVICE, mService);
+        } else {
+            Log.wtf(TAG, "CM hardware service started by system server but feature xml not" +
+                    " declared. Not publishing binder service!");
+        }
     }
 }

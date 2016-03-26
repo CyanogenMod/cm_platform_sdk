@@ -78,7 +78,12 @@ public class PerformanceManager {
 
     private PerformanceManager(Context context) {
         sService = getService();
-
+        if (context.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.PERFORMANCE) && sService == null) {
+            throw new RuntimeException("Unable to get PerformanceManagerService. The service" +
+                    " either crashed, was not started, or the interface has been called to early" +
+                    " in SystemServer init");
+        }
         try {
             if (sService != null) {
                 mNumberOfProfiles = sService.getNumberOfProfiles();
@@ -133,7 +138,7 @@ public class PerformanceManager {
     }
 
     /**
-     * Returns the number of supported profiles, zero if unsupported
+     * Returns the number of supported profiles, -1 if unsupported
      * This is queried via the PowerHAL.
      */
     public int getNumberOfProfiles() {

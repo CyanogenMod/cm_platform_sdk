@@ -83,6 +83,12 @@ public class PartnerInterface {
             mContext = context;
         }
         sService = getService();
+        if (context.getPackageManager().hasSystemFeature(
+               CMContextConstants.Features.PARTNER) && sService == null) {
+            throw new RuntimeException("Unable to get PartnerInterfaceService. The service" +
+                    " either crashed, was not started, or the interface has been called to early" +
+                    " in SystemServer init");
+        }
     }
 
     /**
