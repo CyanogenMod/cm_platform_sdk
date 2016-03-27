@@ -111,13 +111,26 @@
   <string name="touchscreen_gesture_haptic_feedback">Вібраводгук</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Вібраваць пры паспяховым распазнанні жэста</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Не атрымалася ўсталяваць тэму</string>
+  <string name="theme_install_error_message">Не атрымалася ўсталяваць <xliff:g id="theme">%1$s</xliff:g></string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Тэма адключана</string>
+  <string name="theme_reset_notification_message">З-за збояў дадаткаў адноўлена стандартная тэма.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">доступ да службы тэм</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Дадатак зможа атрымваць доступ да службы тэм. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">чытанне інфармацыі пра тэму</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Дадатак зможа счытваць тэмы афармлення       
+ і вызначаць, якая тэма цяпер ужыта.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">змена тэм</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Дадатак зможа ўжыццяўляць усталёўку новых тэм афармлення і змяняць бягучую тэму.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">доступ да менеджара прадукцыйнасці</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Дадатак зможа атрымваць доступ да службы прадукцыйнасці. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
 </resources>

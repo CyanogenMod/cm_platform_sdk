@@ -99,9 +99,9 @@
   <string name="live_display_outdoor_summary">Utilizza solo impostazioni all\'aperto</string>
   <string name="live_display_hint">LiveDisplay aiuta a ridurre l\'affaticamento degli occhi e aiuta a dormire di notte. Clicca per provarlo!</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">schermata di sblocco di terzi</string>
+  <string name="permlab_thirdPartyKeyguard">schermata di blocco di terzi</string>
   <!-- Third party keyguard permission description -->
-  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come una schermata di sblocco non sicura.</string>
+  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come una schermata di blocco non sicura.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Impostazioni avanzate</string>
   <!-- Touchscreen gestures -->

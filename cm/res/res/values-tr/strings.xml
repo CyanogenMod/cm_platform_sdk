@@ -111,13 +111,27 @@
   <string name="touchscreen_gesture_haptic_feedback">Dokunmatik geri bildirim</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Bir hareket algılandığında titrer</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Tema yüklenemedi</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> yüklenemedi</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Tema sıfırlandı</string>
+  <string name="theme_reset_notification_message">Uygulama çökmelerinden dolayı sistem temasına geri dönüldü.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">tema hizmetine erişim</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Bir uygulamanın tema hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">tema bilginizi okuyun</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Uygulamanın temalarınızı okumasına ve hangi
+temayı uyguladığınızı belirlemesine izin verir.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">temalarınızı değiştirin</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Uygulamanın yeni temalar eklemesine ve
+uyguladığınız temayı değiştirmesine izin verir.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">performans yöneticisine erişim</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Bir uygulamanın performans hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
 </resources>
