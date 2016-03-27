@@ -17,19 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
-  <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
-  <string name="permlab_publishCustomTile">Buat petak kustom di panel pengaturan cepat</string>
-  <string name="permdesc_publishCustomTile">Mengizinkan aplikasi untuk membuat petak setelan cepat.</string>
-  <string name="permlab_modifyNetworkSettings">ubah pengaturan jaringan sistem</string>
-  <string name="permlab_modifySoundSettings">ubah pengaturan suara sistem</string>
-  <string name="permlab_bindCustomTileListenerService">menautkan ke layanan tile listener kustom</string>
-  <string name="permdesc_bindCustomTileListenerService">Mengizinkan aplikasi untuk menautkan antarmuka level atas dari layanan pendengar petak kustom.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">lihat status ponsel dan koneksi data dengan dukungan untuk beberapa SIM</string>
-  <string name="permdesc_readMSPhoneState">Mengizinkan aplikasi untuk melihat status ponsel dan koneksi data dengan dukungan untuk beberapa SIM.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">ubah status ponsel dan koneksi data dengan dukungan untuk beberapa SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Mengizinkan aplikasi untuk mengubah status ponsel dan koneksi data dengan dukungan untuk beberapa SIM.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <!-- Labels for the WRITE_ALARMS permission. -->
@@ -40,31 +29,16 @@
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Tile listener kustom</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
-  <string name="profileNameDefault">Baku</string>
-  <string name="profileNameWork">Kerja</string>
-  <string name="profileNameHome">Beranda</string>
-  <string name="profileNameSilent">Diam</string>
-  <string name="profileNameNight">Malam</string>
-  <string name="profileNameAutomobile">Mobil</string>
   <!-- Names of application groups. -->
-  <string name="profileGroupPhone">Telepon</string>
-  <string name="profileGroupCalendar">Kalender</string>
-  <string name="profileGroupGmail">Gmail</string>
-  <string name="profileGroupEmail">Surel</string>
-  <string name="profileGroupSMS">SMS</string>
   <!-- Name of wildcard profile. -->
-  <string name="wildcardProfile">Lainnya</string>
   <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
-  <string name="live_display_night">Malam</string>
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
   <!-- Device specific settings -->
-  <string name="device_settings_app_name">Pengaturan lanjut</string>
   <!-- Touchscreen gestures -->
   <!-- Touchscreen gesture haptic feedback -->
   <!-- Theme installation error notification -->
