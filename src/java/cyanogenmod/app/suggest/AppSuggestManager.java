@@ -82,7 +82,8 @@ public class AppSuggestManager {
         mContext = context.getApplicationContext();
     }
 
-    private static synchronized IAppSuggestManager getService() {
+    /** @hide */
+    public static synchronized IAppSuggestManager getService() {
         if (sImpl == null) {
             IBinder b = ServiceManager.getService(CMContextConstants.CM_APP_SUGGEST_SERVICE);
             if (b != null) {
