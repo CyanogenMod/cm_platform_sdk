@@ -20,49 +20,53 @@
   <string name="cyanogenmod_system_label">نظام CyanogenMod</string>
   <string name="permlab_publishCustomTile">إنشاء لوحة مخصصة ضمن لوحة الإعدادات السريعة</string>
   <string name="permdesc_publishCustomTile">السماح للتطبيق بنشر لوحة الإعدادت السريعة.</string>
-  <string name="permlab_modifyNetworkSettings">تغيير إعدادات شبكة الإتصال في النظام</string>
-  <string name="permdesc_modifyNetworkSettings">يسمح للتطبيق بإجراء تغييرات على وضع الطائرة وإعدادات شبكة الهاتف النقالة.</string>
+  <string name="permlab_modifyNetworkSettings">تغيير إعدادات شبكة النظام</string>
+  <string name="permdesc_modifyNetworkSettings">يسمح للتطبيق بإجراء تغييرات على وضع الطائرة وإعدادات شبكة بيانات الهاتف المحمول.</string>
   <string name="permlab_modifySoundSettings">تغيير إعدادات صوت النظام</string>
-  <string name="permdesc_modifySoundSettings">السماح للتطبيق بإجراء تغيير على إعدادات الصوت في نمط الانقطاع.</string>
+  <string name="permdesc_modifySoundSettings">السماح للتطبيق بإجراء تغييرات على إعدادات الصوت في وضع الانقطاع.</string>
   <string name="permlab_bindCustomTileListenerService">الارتباط بخدمة مستمع اللوحة المخصصة</string>
   <string name="permdesc_bindCustomTileListenerService">يسمح للتطبيق بالارتباط بالواجهة البرمجية عالية المستوى الخاصة بخدمة المستمع في اللوحة المخصصة.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_readMSPhoneState">عرض حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
-  <string name="permdesc_readMSPhoneState">يسمح للتطبيق بعرض حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <string name="permlab_readMSPhoneState">عرض حالة الهاتف واتصال البيانات مع دعم SIMs متعددة</string>
+  <string name="permdesc_readMSPhoneState">يسمح للتطبيق بعرض حالة الهاتف واتصال البيانات مع دعم SIMs متعددة.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
-  <string name="permlab_modifyMSPhoneState">تعديل حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
-  <string name="permdesc_modifyMSPhoneState">يسمح للتطبيق بتعديل حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <string name="permlab_modifyMSPhoneState">تعديل حالة الهاتف واتصال البيانات مع دعم شرائح SIM المتعددة</string>
+  <string name="permdesc_modifyMSPhoneState">يسمح للتطبيق بتعديل حالة الهاتف واتصال البيانات مع دعم شرائح SIM المتعددة.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">تعديل الملفات التعريفية للنظام</string>
   <string name="permdesc_modifyProfiles">السماح للتطبيق بتعديل الملفات التعريفية للنظام.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <string name="permlab_useHardwareFramework">استخدام إطار الجهاز</string>
+  <string name="permlab_useHardwareFramework">استخدام إطار عمل الجهاز</string>
   <string name="permdesc_useHardwareFramework">يسمح للتطبيق بالوصول إلى إطار عمل جهاز CM.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">تغيير التنبيهات مباشرةً</string>
-  <string name="permdesc_write_alarms">السماح للتطبيق بإضافة أو تعديل أو حذف كل التنبيهات لديك.</string>
+  <string name="permdesc_write_alarms">السماح للتطبيق بإضافة أو تعديل أو حذف كل التنبيهات الخاصة بك.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">التبديل بين التنبيهات المجدولة</string>
   <string name="permdesc_manage_alarms">السماح للتطبيق بتشغيل أو إيقاف تشغيل التنبيهات المجدولة.</string>
   <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">الوصول إلى التنبيهات المجدولة</string>
-  <string name="permdesc_read_alarms">السماح للتطبيق بقراءة التنبيهات المجدولة.</string>
+  <string name="permdesc_read_alarms">السماح للتطبيق بقراءة تنبيهاتك المجدولة.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
-  <string name="permlab_writeSettings">تعديل إعداد نظام CM</string>
+  <string name="permlab_writeSettings">تعديل إعدادات نظام CM</string>
   <string name="permdesc_writeSettings">السماح للتطبيق بتعديل إعدادات نظام CM.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
-  <string name="permlab_writeSecureSettings">تعديل إعدادات النظام الآمن CM</string>
-  <string name="permdesc_writeSecureSettings">السماح للتطبيق بتعديل إعدادات النظام الآمن CM. غير مخصص للاستخدام بواسطة التطبيقات العادية.</string>
+  <string name="permlab_writeSecureSettings">تعديل إعدادات نظام CM الآمن</string>
+  <string name="permdesc_writeSecureSettings">السماح للتطبيق بتعديل إعدادات نظام CM الآمن. غير مخصص للاستخدام بواسطة التطبيقات العادية.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">إدارة التخزين الدائم</string>
-  <string name="permdesc_managePersistentStorage">السماح للتطبيق بقراءة أو كتابة الخصائص التي تكون دائمة عبر إعادة التعيين بالمصنع.</string>
+  <string name="permdesc_managePersistentStorage">السماح للتطبيق بقراءة أو كتابة الخصائص التي تستمر خلال إعادة تعيين المصنع.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">الوصول إلى اقتراحات التطبيق</string>
+  <string name="permdesc_accessAppSuggestions">السماح للتطبيق بالوصول إلى اقتراحات التطبيق.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">مستمع لوح مخصص</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">إضافة وإزالة تطبيقات إلى التطبيقات المحمية</string>
+  <string name="permdesc_protectedApp">يسمح للتطبيق بوضع علامة على تطبيقات أخرى كمحمية مع قفلها.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
-  <string name="profileNameDefault">المبدئي</string>
+  <string name="profileNameDefault">افتراضي</string>
   <string name="profileNameWork">العمل</string>
   <string name="profileNameHome">المنزل</string>
   <string name="profileNameSilent">صامت</string>
@@ -77,25 +81,57 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">غير ذلك</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">توفير الطاقة</string>
+  <string name="perf_profile_bal">متوازن</string>
+  <string name="perf_profile_perf">تحسين</string>
+  <string name="perf_profile_bias_power">الكفاءة</string>
+  <string name="perf_profile_bias_perf">سريع</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">تلقائي</string>
+  <string name="live_display_auto_summary">ضبط درجة الحرارة اللونية للشاشة تلقائياً بعد غروب الشمس وشروق الشمس</string>
+  <string name="live_display_off">إيقاف تشغيل</string>
+  <string name="live_display_off_summary">تعطيل جميع التعديلات</string>
+  <string name="live_display_day">نهار</string>
+  <string name="live_display_day_summary">استخدام إعدادات النهار فقط</string>
   <string name="live_display_night">الليل</string>
+  <string name="live_display_night_summary">استخدام إعدادات الليل فقط</string>
+  <string name="live_display_outdoor">خارج المنزل ( شمس ساطعة)</string>
+  <string name="live_display_outdoor_summary">استخدم إعدادات خارج المنزل فقط</string>
+  <string name="live_display_hint">يمكن أن تساعد ميزة LiveDisplay في تقليل إجهاد العين ومساعدتك على النوم في الليل. انقر هنا لتجربتها!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">شاشة تأمين جهة أخرى</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">السماح باستخدام تطبيق كشاشة تأمين غير آمنة.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">الإعدادات المتقدمة</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">الإيماءت</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">إضافات</string>
   <string name="touchscreen_gesture_haptic_feedback">التعليقات اللمسية</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">الاهتزاز عند الكشف عن الإيماءة</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">الاهتزاز عند اكتشاف إيماءة</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">فشل تثبيت السمة</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> فشل التثبيت</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">إعادة تعيين السمة</string>
+  <string name="theme_reset_notification_message">تم استرداد سمة النظام بسبب عمليات تعطيل متعددة للتطبيق.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">الوصول إلى خدمة السمة</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">يسمح للتطبيق بالوصول إلى خدمة السمة. ينبغي أن لا تكون ضرورية أبداً للتطبيقات العادية.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">قراءة معلومات السمة لديك</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">يسمح للتطبيق بقراءة السمات الخاصة بك 
+وتحديد السمة التي قمت بتطبيقها.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">تعديل السمات الخاصة بك</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">السماح للتطبيق بإدخال سمات جديدة
+وتعديل السمة التي قمت بتطبيقها.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">الوصول إلى مدير الأداء</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">السماح للتطبيق بالوصول إلى خدمة الأداء. ينبغي ألا يكون ضرورياً للتطبيقات العادية.</string>
 </resources>

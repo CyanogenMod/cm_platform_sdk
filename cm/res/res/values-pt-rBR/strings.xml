@@ -111,13 +111,26 @@
   <string name="touchscreen_gesture_haptic_feedback">Retorno tátil</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibrar quando um gesto for detectado</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Falha ao instalar o tema</string>
+  <string name="theme_install_error_message">Falha ao instalar <xliff:g id="theme">%1$s</xliff:g></string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Redefinir tema</string>
+  <string name="theme_reset_notification_message">O tema do sistema foi restaurado devido a erros nos aplicativos.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">acessar o serviço de temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Permite a um aplicativo acessar o serviço de temas. Nunca deverá ser necessário para aplicativos normais.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">ler informações do tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Permite ao aplicativo ler os seus temas e
+       determinar qual o tema que está aplicado.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modificar seus temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Permite ao aplicativo inserir novos temas e modificar o tema que está aplicado.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">acessar o gerenciador de desempenho</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Permite a um aplicativo acessar o serviço de desempenho. Nunca deverá ser necessário para aplicativos normais.</string>
 </resources>

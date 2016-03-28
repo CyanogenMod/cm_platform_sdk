@@ -111,13 +111,25 @@
   <string name="touchscreen_gesture_haptic_feedback">Повратне информације</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Вибрација кад гест није откривен</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Инсталирање теме није успело</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> неуспешно инсталирано</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Ресетуј тему</string>
+  <string name="theme_reset_notification_message">Системска тема је обновљена због вишеструких падова апликација.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">приступај услузи тема</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Омогућава апликацији да приступи услузи тема. Никада не би требало за нормалне апликације.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">читај информације о теми</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Омогућава апликацији да чита твоје теме и одређује коју си тему применио.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">модификуј своје теме</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Омогућава апликацији да убацује нове теме и модификује коју тему ћеш применити.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">приступ менаџеру перформанси</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Омогућава апликацији да приступи услугама перформанси. Није потребно нормалним апликацијама.</string>
 </resources>
