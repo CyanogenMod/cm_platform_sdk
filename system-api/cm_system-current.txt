@@ -1216,7 +1216,7 @@ package cyanogenmod.themes {
     method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>);
     method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>, boolean);
     method public void requestThemeChange(cyanogenmod.themes.ThemeChangeRequest, boolean);
-    method public void unregisterProcessingListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public void unregisterProcessingListener(cyanogenmod.themes.ThemeManager.ThemeProcessingListener);
     method public void unregisterThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
   }
 
