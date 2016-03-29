@@ -274,8 +274,8 @@ include $(BUILD_DROIDDOC)
 
 # $(gen), i.e. framework.aidl, is also needed while building against the current stub.
 $(full_target): $(cm_framework_built) $(gen)
-$(INTERNAL_CM_PLATFORM_API_FILE): $(full_target)
-$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_API_FILE))
+$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE))
 
 # Documentation
 # ===========================================================
