@@ -19,7 +19,10 @@ package cyanogenmod.weatherservice;
 import android.annotation.NonNull;
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 import cyanogenmod.weather.WeatherLocation;
 import cyanogenmod.weather.WeatherInfo;
 
@@ -37,9 +40,10 @@ public final class ServiceRequestResult implements Parcelable {
     private ServiceRequestResult() {}
 
     private ServiceRequestResult(Parcel in) {
-        int parcelableVersion = in.readInt();
-        int parcelableSize = in.readInt();
-        int startPosition = in.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(in);
+        int parcelableVersion = parcelInfo.getParcelVersion();
+
         if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
             mKey = in.readInt();
             int hasWeatherInfo = in.readInt();
@@ -56,7 +60,9 @@ public final class ServiceRequestResult implements Parcelable {
                 }
             }
         }
-        in.setDataPosition(startPosition + parcelableSize);
+
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public static final Creator<ServiceRequestResult> CREATOR
@@ -79,11 +85,8 @@ public final class ServiceRequestResult implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(Build.PARCELABLE_VERSION);
-
-        int sizePosition = dest.dataPosition();
-        dest.writeInt(0);
-        int startPosition = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         // ==== ELDERBERRY =====
         dest.writeInt(mKey);
@@ -103,10 +106,8 @@ public final class ServiceRequestResult implements Parcelable {
             dest.writeInt(0);
         }
 
-        int parcelableSize = dest.dataPosition() - startPosition;
-        dest.setDataPosition(sizePosition);
-        dest.writeInt(parcelableSize);
-        dest.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public static class Builder {

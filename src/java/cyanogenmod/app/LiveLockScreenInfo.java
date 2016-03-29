@@ -22,7 +22,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import android.text.TextUtils;
+
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 
 /**
  * Data structure defining a Live lock screen.
@@ -86,11 +89,9 @@ public class LiveLockScreenInfo implements Parcelable {
     }
 
     private LiveLockScreenInfo(Parcel source) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int version = source.readInt();
-        int size = source.readInt();
-        int start = source.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(source);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         this.priority = source.readInt();
         String component = source.readString();
@@ -98,7 +99,8 @@ public class LiveLockScreenInfo implements Parcelable {
                 ? ComponentName.unflattenFromString(component)
                 : null;
 
-        source.setDataPosition(start + size);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override
@@ -108,23 +110,14 @@ public class LiveLockScreenInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        dest.writeInt(Build.PARCELABLE_VERSION);
-        int sizePos = dest.dataPosition();
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        dest.writeInt(0);
-        int dataStartPos = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         dest.writeInt(priority);
         dest.writeString(component != null ? component.flattenToString() : "");
 
-        // Go back and write size
-        int size = dest.dataPosition() - dataStartPos;
-        dest.setDataPosition(sizePos);
-        dest.writeInt(size);
-        dest.setDataPosition(dataStartPos + size);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override

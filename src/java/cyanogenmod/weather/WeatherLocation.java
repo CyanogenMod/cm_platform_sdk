@@ -18,7 +18,10 @@ package cyanogenmod.weather;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 
 /**
  * A class representing a geographical location that a weather service provider can use to
@@ -92,9 +95,10 @@ public final class WeatherLocation implements Parcelable{
     }
 
     private WeatherLocation(Parcel in) {
-        int parcelableVersion = in.readInt();
-        int parcelableSize = in.readInt();
-        int startPosition = in.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(in);
+        int parcelableVersion = parcelInfo.getParcelVersion();
+
         if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
             mKey = in.readInt();
             mCityId = in.readString();
@@ -103,7 +107,9 @@ public final class WeatherLocation implements Parcelable{
             mCountryId = in.readString();
             mCountry = in.readString();
         }
-        in.setDataPosition(startPosition + parcelableSize);
+
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public static final Creator<WeatherLocation> CREATOR = new Creator<WeatherLocation>() {
@@ -125,11 +131,8 @@ public final class WeatherLocation implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(Build.PARCELABLE_VERSION);
-
-        int sizePosition = dest.dataPosition();
-        dest.writeInt(0);
-        int startPosition = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         // ==== ELDERBERRY =====
         dest.writeInt(mKey);
@@ -139,10 +142,8 @@ public final class WeatherLocation implements Parcelable{
         dest.writeString(mCountryId);
         dest.writeString(mCountry);
 
-        int parcelableSize = dest.dataPosition() - startPosition;
-        dest.setDataPosition(sizePosition);
-        dest.writeInt(parcelableSize);
-        dest.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override

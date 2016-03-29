@@ -19,7 +19,10 @@ package cyanogenmod.weather;
 import android.annotation.NonNull;
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 import cyanogenmod.providers.WeatherContract;
 import cyanogenmod.weatherservice.ServiceRequest;
 import cyanogenmod.weatherservice.ServiceRequestResult;
@@ -261,9 +264,10 @@ public final class WeatherInfo implements Parcelable {
     }
 
     private WeatherInfo(Parcel parcel) {
-        int parcelableVersion = parcel.readInt();
-        int parcelableSize = parcel.readInt();
-        int startPosition = parcel.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(parcel);
+        int parcelableVersion = parcelInfo.getParcelVersion();
+
         if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
             mKey = parcel.readInt();
             mCityId = parcel.readString();
@@ -283,7 +287,9 @@ public final class WeatherInfo implements Parcelable {
                 forecastListSize--;
             }
         }
-        parcel.setDataPosition(startPosition + parcelableSize);
+
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override
@@ -293,11 +299,8 @@ public final class WeatherInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(Build.PARCELABLE_VERSION);
-
-        int sizePosition = dest.dataPosition();
-        dest.writeInt(0);
-        int startPosition = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         // ==== ELDERBERRY =====
         dest.writeInt(mKey);
@@ -316,10 +319,8 @@ public final class WeatherInfo implements Parcelable {
             dayForecast.writeToParcel(dest, 0);
         }
 
-        int parcelableSize = dest.dataPosition() - startPosition;
-        dest.setDataPosition(sizePosition);
-        dest.writeInt(parcelableSize);
-        dest.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public static final Parcelable.Creator<WeatherInfo> CREATOR =
@@ -414,11 +415,8 @@ public final class WeatherInfo implements Parcelable {
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
-            dest.writeInt(Build.PARCELABLE_VERSION);
-
-            int sizePosition = dest.dataPosition();
-            dest.writeInt(0);
-            int startPosition = dest.dataPosition();
+            // Tell the concierge to prepare the parcel
+            ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
             // ==== ELDERBERRY =====
             dest.writeInt(mKey);
@@ -426,10 +424,8 @@ public final class WeatherInfo implements Parcelable {
             dest.writeFloat(mHigh);
             dest.writeInt(mConditionCode);
 
-            int parcelableSize = dest.dataPosition() - startPosition;
-            dest.setDataPosition(sizePosition);
-            dest.writeInt(parcelableSize);
-            dest.setDataPosition(startPosition + parcelableSize);
+            // Complete parcel info for the concierge
+            parcelInfo.complete();
         }
 
         public static final Parcelable.Creator<DayForecast> CREATOR =
@@ -446,16 +442,19 @@ public final class WeatherInfo implements Parcelable {
                 };
 
         private DayForecast(Parcel parcel) {
-            int parcelableVersion = parcel.readInt();
-            int parcelableSize = parcel.readInt();
-            int startPosition = parcel.dataPosition();
+            // Read parcelable version via the Concierge
+            ParcelInfo parcelInfo = Concierge.receiveParcel(parcel);
+            int parcelableVersion = parcelInfo.getParcelVersion();
+
             if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
                 mKey = parcel.readInt();
                 mLow = parcel.readFloat();
                 mHigh = parcel.readFloat();
                 mConditionCode = parcel.readInt();
             }
-            parcel.setDataPosition(startPosition + parcelableSize);
+
+            // Complete parcel info for the concierge
+            parcelInfo.complete();
         }
 
         @Override

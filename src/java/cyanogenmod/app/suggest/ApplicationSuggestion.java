@@ -20,7 +20,10 @@ import android.annotation.NonNull;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 
 /**
  * @hide
@@ -55,11 +58,9 @@ public class ApplicationSuggestion implements Parcelable {
     }
 
     private ApplicationSuggestion(Parcel in) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int parcelableVersion = in.readInt();
-        int parcelableSize = in.readInt();
-        int startPosition = in.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(in);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         if (parcelableVersion >= Build.CM_VERSION_CODES.APRICOT) {
             mName = in.readString();
@@ -68,7 +69,8 @@ public class ApplicationSuggestion implements Parcelable {
             mThumbnailUri = in.readParcelable(Uri.class.getClassLoader());
         }
 
-        in.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override
@@ -78,26 +80,16 @@ public class ApplicationSuggestion implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        out.writeInt(Build.PARCELABLE_VERSION);
-
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        int sizePosition = out.dataPosition();
-        out.writeInt(0);
-        int startPosition = out.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(out);
 
         out.writeString(mName);
         out.writeString(mPackage);
         out.writeParcelable(mDownloadUri, flags);
         out.writeParcelable(mThumbnailUri, flags);
 
-        // Go back and write size
-        int parcelableSize = out.dataPosition() - startPosition;
-        out.setDataPosition(sizePosition);
-        out.writeInt(parcelableSize);
-        out.setDataPosition(startPosition + parcelableSize);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public String getName() {
