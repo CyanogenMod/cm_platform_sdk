@@ -20,6 +20,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 
 /**
  * Display Modes API
@@ -45,11 +47,9 @@ public class DisplayMode implements Parcelable {
     }
 
     private DisplayMode(Parcel parcel) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int parcelableVersion = parcel.readInt();
-        int parcelableSize = parcel.readInt();
-        int startPosition = parcel.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(parcel);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         // temp vars
         int tmpId = -1;
@@ -65,7 +65,9 @@ public class DisplayMode implements Parcelable {
         // set temps
         this.id = tmpId;
         this.name = tmpName;
-        parcel.setDataPosition(startPosition + parcelableSize);
+
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override
@@ -75,15 +77,8 @@ public class DisplayMode implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        out.writeInt(Build.PARCELABLE_VERSION);
-
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        int sizePosition = out.dataPosition();
-        out.writeInt(0);
-        int startPosition = out.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(out);
 
         // ==== BOYSENBERRY =====
         out.writeInt(id);
@@ -94,11 +89,8 @@ public class DisplayMode implements Parcelable {
             out.writeInt(0);
         }
 
-        // Go back and write size
-        int parcelableSize = out.dataPosition() - startPosition;
-        out.setDataPosition(sizePosition);
-        out.writeInt(parcelableSize);
-        out.setDataPosition(startPosition + parcelableSize);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
     
     /** @hide */

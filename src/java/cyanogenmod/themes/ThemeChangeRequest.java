@@ -19,7 +19,9 @@ import android.content.pm.ThemeUtils;
 import android.content.res.ThemeConfig;
 import android.os.Parcel;
 import android.os.Parcelable;
-import cyanogenmod.os.Build;
+
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -124,11 +126,9 @@ public final class ThemeChangeRequest implements Parcelable {
     }
 
     private ThemeChangeRequest(Parcel source) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int version = source.readInt();
-        int size = source.readInt();
-        int start = source.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(source);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         int numComponents = source.readInt();
         for (int i = 0; i < numComponents; i++) {
@@ -141,7 +141,9 @@ public final class ThemeChangeRequest implements Parcelable {
         }
         mRequestType = RequestType.values()[source.readInt()];
         mWallpaperId = source.readLong();
-        source.setDataPosition(start + size);
+
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     @Override
@@ -151,14 +153,8 @@ public final class ThemeChangeRequest implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        dest.writeInt(Build.PARCELABLE_VERSION);
-        int sizePos = dest.dataPosition();
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        dest.writeInt(0);
-        int dataStartPos = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         dest.writeInt(mThemeComponents.size());
         for (String component : mThemeComponents.keySet()) {
@@ -173,11 +169,8 @@ public final class ThemeChangeRequest implements Parcelable {
         dest.writeInt(mRequestType.ordinal());
         dest.writeLong(mWallpaperId);
 
-        // Go back and write size
-        int size = dest.dataPosition() - dataStartPos;
-        dest.setDataPosition(sizePos);
-        dest.writeInt(size);
-        dest.setDataPosition(dataStartPos + size);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public static final Parcelable.Creator<ThemeChangeRequest> CREATOR =
