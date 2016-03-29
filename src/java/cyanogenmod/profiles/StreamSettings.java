@@ -16,15 +16,19 @@
 
 package cyanogenmod.profiles;
 
-import cyanogenmod.os.Build;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+
+import cyanogenmod.os.Build;
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
+
 import java.io.IOException;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 /**
  * The {@link StreamSettings} class allows for creating various {@link android.media.AudioManager}
@@ -177,15 +181,8 @@ public final class StreamSettings implements Parcelable{
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        dest.writeInt(Build.PARCELABLE_VERSION);
-
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        int sizePosition = dest.dataPosition();
-        dest.writeInt(0);
-        int startPosition = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         // === BOYSENBERRY ===
         dest.writeInt(mStreamId);
@@ -193,20 +190,15 @@ public final class StreamSettings implements Parcelable{
         dest.writeInt(mValue);
         dest.writeInt(mDirty ? 1 : 0);
 
-        // Go back and write size
-        int parcelableSize = dest.dataPosition() - startPosition;
-        dest.setDataPosition(sizePosition);
-        dest.writeInt(parcelableSize);
-        dest.setDataPosition(startPosition + parcelableSize);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int parcelableVersion = in.readInt();
-        int parcelableSize = in.readInt();
-        int startPosition = in.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(in);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         // Pattern here is that all new members should be added to the end of
         // the writeToParcel method. Then we step through each version, until the latest
@@ -218,6 +210,7 @@ public final class StreamSettings implements Parcelable{
             mDirty = in.readInt() != 0;
         }
 
-        in.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 }
