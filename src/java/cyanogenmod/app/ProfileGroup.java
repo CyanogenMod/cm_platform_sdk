@@ -18,9 +18,6 @@ package cyanogenmod.app;
 
 import android.app.Notification;
 import android.app.NotificationGroup;
-import cyanogenmod.os.Build;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -32,8 +29,16 @@ import android.os.ParcelUuid;
 import android.text.TextUtils;
 import android.util.Log;
 
+import cyanogenmod.os.Build;
+
+import cyanogenmod.os.Concierge;
+import cyanogenmod.os.Concierge.ParcelInfo;
+
 import java.io.IOException;
 import java.util.UUID;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 /**
  * @hide
@@ -264,15 +269,8 @@ public final class ProfileGroup implements Parcelable {
     /** @hide */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        // Write parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        dest.writeInt(Build.PARCELABLE_VERSION);
-
-        // Inject a placeholder that will store the parcel size from this point on
-        // (not including the size itself).
-        int sizePosition = dest.dataPosition();
-        dest.writeInt(0);
-        int startPosition = dest.dataPosition();
+        // Tell the concierge to prepare the parcel
+        ParcelInfo parcelInfo = Concierge.prepareParcel(dest);
 
         // === BOYSENBERRY ===
         dest.writeString(mName);
@@ -286,20 +284,15 @@ public final class ProfileGroup implements Parcelable {
         dest.writeString(mVibrateMode.name());
         dest.writeString(mLightsMode.name());
 
-        // Go back and write size
-        int parcelableSize = dest.dataPosition() - startPosition;
-        dest.setDataPosition(sizePosition);
-        dest.writeInt(parcelableSize);
-        dest.setDataPosition(startPosition + parcelableSize);
+        // Complete the parcel info for the concierge
+        parcelInfo.complete();
     }
 
     /** @hide */
     public void readFromParcel(Parcel in) {
-        // Read parcelable version, make sure to define explicit changes
-        // within {@link Build.PARCELABLE_VERSION);
-        int parcelableVersion = in.readInt();
-        int parcelableSize = in.readInt();
-        int startPosition = in.dataPosition();
+        // Read parcelable version via the Concierge
+        ParcelInfo parcelInfo = Concierge.receiveParcel(in);
+        int parcelableVersion = parcelInfo.getParcelVersion();
 
         // Pattern here is that all new members should be added to the end of
         // the writeToParcel method. Then we step through each version, until the latest
@@ -318,7 +311,8 @@ public final class ProfileGroup implements Parcelable {
             mLightsMode = Mode.valueOf(Mode.class, in.readString());
         }
 
-        in.setDataPosition(startPosition + parcelableSize);
+        // Complete parcel info for the concierge
+        parcelInfo.complete();
     }
 
     public enum Mode {
