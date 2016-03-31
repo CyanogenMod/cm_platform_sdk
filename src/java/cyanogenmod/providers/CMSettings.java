@@ -2680,6 +2680,12 @@ public final class CMSettings {
          */
         public static final String DISPLAY_GAMMA_CALIBRATION_PREFIX = "display_gamma_";
 
+        /**
+         * Enabled live lockscreen components. Delimited by "|"
+         * @hide
+         */
+        public static final String ENABLED_EVENT_LIVE_LOCKS_KEY = "live_lockscreens_events_enabled";
+
         // endregion
 
         /**
