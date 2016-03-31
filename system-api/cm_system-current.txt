@@ -529,6 +529,40 @@ package cyanogenmod.hardware {
     method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
   }
 
+  public class LiveDisplayManager {
+    method public float[] getColorAdjustment();
+    method public int getDayTemperature();
+    method public int getDefaultDayTemperature();
+    method public int getDefaultNightTemperature();
+    method public static synchronized cyanogenmod.hardware.LiveDisplayManager getInstance(android.content.Context);
+    method public int getMode();
+    method public int getNightTemperature();
+    method public boolean hasFeature(int);
+    method public boolean isAutoContrastEnabled();
+    method public boolean isAutomaticOutdoorModeEnabled();
+    method public boolean isCABCEnabled();
+    method public boolean isColorEnhancementEnabled();
+    method public boolean setAutoContrastEnabled(boolean);
+    method public boolean setAutomaticOutdoorModeEnabled(boolean);
+    method public boolean setCABCEnabled(boolean);
+    method public boolean setColorAdjustment(float[]);
+    method public boolean setColorEnhancementEnabled(boolean);
+    method public void setDayTemperature(int);
+    method public boolean setMode(int);
+    method public void setNightTemperature(int);
+    field public static final int FEATURE_AUTO_CONTRAST = 11; // 0xb
+    field public static final int FEATURE_CABC = 10; // 0xa
+    field public static final int FEATURE_COLOR_ADJUSTMENT = 13; // 0xd
+    field public static final int FEATURE_COLOR_ENHANCEMENT = 12; // 0xc
+    field public static final int FEATURE_DISPLAY_MODES = 15; // 0xf
+    field public static final int FEATURE_MANAGED_OUTDOOR_MODE = 14; // 0xe
+    field public static final int MODE_AUTO = 2; // 0x2
+    field public static final int MODE_DAY = 4; // 0x4
+    field public static final int MODE_NIGHT = 1; // 0x1
+    field public static final int MODE_OFF = 0; // 0x0
+    field public static final int MODE_OUTDOOR = 3; // 0x3
+  }
+
   public abstract class ThermalListenerCallback extends cyanogenmod.hardware.IThermalListenerCallback.Stub {
     ctor public ThermalListenerCallback();
   }
@@ -868,6 +902,7 @@ package cyanogenmod.providers {
     field public static final android.net.Uri CONTENT_URI;
     field public static final java.lang.String DIALER_OPENCNAM_ACCOUNT_SID = "dialer_opencnam_account_sid";
     field public static final java.lang.String DIALER_OPENCNAM_AUTH_TOKEN = "dialer_opencnam_auth_token";
+    field public static final java.lang.String DISPLAY_AUTO_CONTRAST = "display_auto_contrast";
     field public static final java.lang.String DISPLAY_AUTO_OUTDOOR_MODE = "display_auto_outdoor_mode";
     field public static final java.lang.String DISPLAY_COLOR_ADJUSTMENT = "display_color_adjustment";
     field public static final java.lang.String DISPLAY_COLOR_ENHANCE = "display_color_enhance";

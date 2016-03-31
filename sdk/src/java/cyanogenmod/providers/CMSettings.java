@@ -68,6 +68,16 @@ public final class CMSettings {
      */
     public static final String ACTION_DATA_USAGE = "cyanogenmod.settings.ACTION_DATA_USAGE";
 
+    /**
+     * Activity Action: Show LiveDisplay settings
+     * <p>
+     * Input: Nothing.
+     * <p>
+     * Output: Nothing.
+     */
+    public static final String ACTION_LIVEDISPLAY_SETTINGS =
+            "cyanogenmod.settings.LIVEDISPLAY_SETTINGS";
+
     // region Call Methods
 
     /**
@@ -1335,6 +1345,16 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
+         * Use auto contrast optimization feature of display
+         * 0 = 0ff, 1 = on
+         */
+        public static final String DISPLAY_AUTO_CONTRAST = "display_auto_contrast";
+
+        /** @hide */
+        public static final Validator DISPLAY_AUTO_CONTRAST_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Manual display color adjustments (RGB values as floats, separated by spaces)
          */
         public static final String DISPLAY_COLOR_ADJUSTMENT = "display_color_adjustment";
@@ -1965,6 +1985,7 @@ public final class CMSettings {
             VALIDATORS.put(DISPLAY_TEMPERATURE_DAY, DISPLAY_TEMPERATURE_DAY_VALIDATOR);
             VALIDATORS.put(DISPLAY_TEMPERATURE_NIGHT, DISPLAY_TEMPERATURE_NIGHT_VALIDATOR);
             VALIDATORS.put(DISPLAY_TEMPERATURE_MODE, DISPLAY_TEMPERATURE_MODE_VALIDATOR);
+            VALIDATORS.put(DISPLAY_AUTO_CONTRAST, DISPLAY_AUTO_CONTRAST_VALIDATOR);
             VALIDATORS.put(DISPLAY_AUTO_OUTDOOR_MODE, DISPLAY_AUTO_OUTDOOR_MODE_VALIDATOR);
             VALIDATORS.put(DISPLAY_LOW_POWER, DISPLAY_LOW_POWER_VALIDATOR);
             VALIDATORS.put(DISPLAY_COLOR_ENHANCE, DISPLAY_COLOR_ENHANCE_VALIDATOR);
