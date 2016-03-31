@@ -219,6 +219,13 @@
                 android:description="@string/permdesc_weather_access_mgr"
                 android:protectionLevel="normal"/>
 
+    <!-- Allows an application to manage LiveDisplay -->
+    <permission android:name="cyanogenmod.permission.MANAGE_LIVEDISPLAY"
+                android:label="@string/permlab_manageLiveDisplay"
+                android:description="@string/permdesc_manageLiveDisplay"
+                android:icon="@drawable/ic_launcher_cyanogenmod"
+                android:protectionLevel="normal" />
+
     <application android:process="system"
                  android:persistent="true"
                  android:hasCode="false"
