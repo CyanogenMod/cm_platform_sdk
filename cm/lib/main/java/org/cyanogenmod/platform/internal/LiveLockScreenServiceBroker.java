@@ -30,6 +30,7 @@ import android.os.Message;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.text.TextUtils;
 import android.util.Slog;
 
 import com.android.server.SystemService;
@@ -249,7 +250,7 @@ public class LiveLockScreenServiceBroker extends SystemService {
             // Initialize the default LLS component
             String defComponent = CMSettings.Secure.getString(mContext.getContentResolver(),
                     CMSettings.Secure.DEFAULT_LIVE_LOCK_SCREEN_COMPONENT);
-            if (defComponent != null) {
+            if (!TextUtils.isEmpty(defComponent)) {
                 mDefaultLlsInfo = new LiveLockScreenInfo.Builder()
                         .setComponent(ComponentName.unflattenFromString(defComponent))
                         .build();
