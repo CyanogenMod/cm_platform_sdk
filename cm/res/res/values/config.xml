@@ -51,10 +51,16 @@
     <integer name="config_proximityCheckTimeout">250</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
-    <!-- Default values for display color temperature -->
+    <!-- Default values for LiveDisplay -->
     <integer name="config_dayColorTemperature">6500</integer>
     <integer name="config_nightColorTemperature">4500</integer>
     <integer name="config_outdoorAmbientLux">9000</integer>
+    <integer name="config_defaultLiveDisplayMode">0</integer>
+
+    <bool name="config_defaultAutoContrast">false</bool>
+    <bool name="config_defaultAutoOutdoorMode">true</bool>
+    <bool name="config_defaultColorEnhancement">true</bool>
+    <bool name="config_defaultCABC">true</bool>
 
     <!-- Is the notification LED brightness adjustable ?
          Used to decide if the user can set LED brightness -->
@@ -91,5 +97,6 @@
         <item>org.cyanogenmod.platform.internal.IconCacheManagerService</item>
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
+        <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
     </string-array>
 </resources>
