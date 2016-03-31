@@ -198,4 +198,9 @@
     <string name="permlab_dataUsageRead">read data usage database</string>
     <!-- DataUsageProvider read permission description -->
     <string name="permdesc_dataUsageRead">Allows an app to read content from the data usage database.</string>
+
+    <!-- LiveDisplay manager permission -->
+    <string name="permlab_manageLiveDisplay">manage livedisplay settings</string>
+    <string name="permdesc_manageLiveDisplay">Allows an app to configure advanced display settings.</string>
+
 </resources>
