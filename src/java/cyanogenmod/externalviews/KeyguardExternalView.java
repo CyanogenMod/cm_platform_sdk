@@ -183,6 +183,9 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         @Override
         public void setInteractivity(boolean isInteractive) {
             mIsInteractive = isInteractive;
+            if (mCallback != null) {
+                mCallback.onInteractivityChanged(isInteractive);
+            }
         }
 
         @Override
@@ -453,6 +456,7 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         boolean requestDismissAndStartActivity(Intent intent);
         void collapseNotificationPanel();
         void providerDied();
+        void onInteractivityChanged(boolean isInteractive);
     }
 
     /**
