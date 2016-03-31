@@ -120,6 +120,13 @@ public final class CMContextConstants {
     public static final String CM_LIVE_LOCK_SCREEN_SERVICE = "cmlivelockscreen";
 
     /**
+     * Manages display color adjustments
+     * 
+     * @hide
+     */
+    public static final String CM_LIVEDISPLAY_SERVICE = "cmlivedisplay";
+    
+    /**
      * Features supported by the CMSDK.
      */
     public static class Features {
@@ -194,5 +201,13 @@ public final class CMContextConstants {
          */
         @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
         public static final String LIVE_LOCK_SCREEN = "org.cyanogenmod.livelockscreen";
+        
+        /**
+         * Feature for {@link PackageManager#getSystemAvailableFeatures} and
+         * {@link PackageManager#hasSystemFeature}: The device includes the LiveDisplay service
+         * utilized by the cmsdk.
+         */
+        @SdkConstant(SdkConstant.SdkConstantType.FEATURE)
+        public static final String LIVEDISPLAY = "org.cyanogenmod.livedisplay";
     }
 }
