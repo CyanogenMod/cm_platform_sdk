@@ -209,6 +209,12 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
     <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weather/package-summary.html">cyanogenmod.weather</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/weather/util/package-summary.html">cyanogenmod.weather.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weatherservice/package-summary.html">cyanogenmod.weatherservice</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -653,7 +659,31 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-4" >
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#onLockscreenSlideOffsetChanged(float)">onLockscreenSlideOffsetChanged</a></span>(float swipeProgress)</nobr>
+        
+        <div class="jd-descrdiv">
+          Called from the host when the user is swiping the lockscreen
+ to transition into the live lock screen
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -676,7 +706,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-4" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol"><nobr>
             abstract
             
@@ -699,7 +729,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-4" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
@@ -722,7 +752,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-4" >
+    <tr class="alt-color api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
@@ -746,7 +776,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-4" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
@@ -761,6 +791,30 @@ Summary:
         <div class="jd-descrdiv">
           This method should be called when the provided view needs to change from interactive to
  non-interactive and vice versa.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#slideLockscreenIn()">slideLockscreenIn</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Call this method when you like to slide in the lockscreen on top of
+ your live lockscreen.
           
     
 
@@ -1377,6 +1431,50 @@ From class
 </div>
 
 
+<A NAME="onLockscreenSlideOffsetChanged(float)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onLockscreenSlideOffsetChanged</span>
+      <span class="normal">(float swipeProgress)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called from the host when the user is swiping the lockscreen
+ to transition into the live lock screen</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>swipeProgress</td>
+          <td>[0-1] represents the progress of the swipe
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="onScreenTurnedOff()"></A>
 
 <div class="jd-details api apilevel-4"> 
@@ -1587,6 +1685,42 @@ From class
 
  <p>Interactive components can receive input focus and receive user interaction while
  non-interactive components never receive focus and are purely visual.</p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="slideLockscreenIn()"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+        final 
+         
+         
+        void
+      </span>
+      <span class="sympad">slideLockscreenIn</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Call this method when you like to slide in the lockscreen on top of
+ your live lockscreen. Only relevant if you use
+ <code><a href="../../../reference/cyanogenmod/externalviews/KeyguardExternalViewProviderService.Provider.html#setInteractivity(boolean)">setInteractivity(boolean)</a></code>
+</p></div>
 
     </div>
 </div>

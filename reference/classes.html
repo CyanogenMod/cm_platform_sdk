@@ -208,6 +208,12 @@ type="text/css">
   <a href="../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
     <li class="api apilevel-5">
   <a href="../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../reference/cyanogenmod/weather/package-summary.html">cyanogenmod.weather</a></li>
+    <li class="api apilevel-">
+  <a href="../reference/cyanogenmod/weather/util/package-summary.html">cyanogenmod.weather.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../reference/cyanogenmod/weatherservice/package-summary.html">cyanogenmod.weatherservice</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -283,6 +289,7 @@ type="text/css">
     <a href="#letter_R">R</a>&nbsp;&nbsp;
     <a href="#letter_S">S</a>&nbsp;&nbsp;
     <a href="#letter_T">T</a>&nbsp;&nbsp;
+    <a href="#letter_W">W</a>&nbsp;&nbsp;
 </div>
 
 
@@ -523,10 +530,82 @@ type="text/css">
     
     
         <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></td>
+            <td class="jd-descrcol" width="100%">
+              Provides access to the weather services in the device.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html">CMWeatherManager.LookupCityRequestListener</a></td>
+            <td class="jd-descrcol" width="100%">
+              Interface used to receive notifications upon completion of a request to lookup a city name
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/CMWeatherManager.WeatherServiceProviderChangeListener.html">CMWeatherManager.WeatherServiceProviderChangeListener</a></td>
+            <td class="jd-descrcol" width="100%">
+              Interface used to be notified when the user changes the weather service provider
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a></td>
+            <td class="jd-descrcol" width="100%">
+              Interface used to receive notifications upon completion of a weather update request
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/util/ColorUtils.html">ColorUtils</a></td>
             <td class="jd-descrcol" width="100%">
               Helper class for colorspace conversions, and color-related
  algorithms which may be generally useful.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/os/Concierge.html">Concierge</a></td>
+            <td class="jd-descrcol" width="100%">
+              Simply, Concierge handles your parcels and makes sure they get marshalled and unmarshalled
+ correctly when cross IPC boundaries even when there is a version mismatch between the client
+ sdk level and the framework implementation.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/os/Concierge.ParcelInfo.html">Concierge.ParcelInfo</a></td>
+            <td class="jd-descrcol" width="100%">
+              Parcel header info specific to the Parcel object that is passed in via
+ <code><a href="../reference/cyanogenmod/os/Concierge.html#prepareParcel(android.os.Parcel)">prepareParcel(Parcel)</a></code> or <code><a href="../reference/cyanogenmod/os/Concierge.html#receiveParcel(android.os.Parcel)">receiveParcel(Parcel)</a></code>.&nbsp;
               
     
 
@@ -700,7 +779,21 @@ type="text/css">
 <table class="jd-sumtable">
     
     
-        <tr class="alt-color api apilevel-2" >
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/DataUsageContract.html">DataUsageContract</a></td>
+            <td class="jd-descrcol" width="100%">
+              <p>
+ The DataUsageProvdier contract containing definitions for the supported URIs and columns
+ </p>
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></td>
             <td class="jd-descrcol" width="100%">
               Display Modes API
@@ -790,7 +883,41 @@ type="text/css">
 <table class="jd-sumtable">
     
     
-        <tr class="alt-color api apilevel-2" >
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/LiveLockScreenInfo.html">LiveLockScreenInfo</a></td>
+            <td class="jd-descrcol" width="100%">
+              Data structure defining a Live lock screen.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/LiveLockScreenInfo.Builder.html">LiveLockScreenInfo.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+              Builder class for <code><a href="../reference/cyanogenmod/app/LiveLockScreenInfo.html">LiveLockScreenInfo</a></code> objects.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/LiveLockScreenManager.html">LiveLockScreenManager</a></td>
+            <td class="jd-descrcol" width="100%">
+              Manages enabling/disabling Live lock screens as well as what Live lock screen to display when
+ enabled.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></td>
             <td class="jd-descrcol" width="100%">
               The <code><a href="../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></code> class allows for overriding and setting the
@@ -1111,7 +1238,19 @@ type="text/css">
         </tr>
     
     
-        <tr class="alt-color api apilevel-2" >
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></td>
+            <td class="jd-descrcol" width="100%">
+              This class holds the information of a request submitted to the active weather provider service
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-2" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></td>
             <td class="jd-descrcol" width="100%">
               The <code><a href="../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></code> class allows for creating various <code><a href="../reference/android/media/AudioManager.html">AudioManager</a></code>
@@ -1130,7 +1269,41 @@ type="text/css">
 <table class="jd-sumtable">
     
     
-        <tr class="alt-color api apilevel-1" >
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weatherservice/ServiceRequest.html">ServiceRequest</a></td>
+            <td class="jd-descrcol" width="100%">
+              This class represents a request submitted by the system to the active weather provider service
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weatherservice/ServiceRequestResult.html">ServiceRequestResult</a></td>
+            <td class="jd-descrcol" width="100%">
+              Use this class to build a request result.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weatherservice/ServiceRequestResult.Builder.html">ServiceRequestResult.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-1" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></td>
             <td class="jd-descrcol" width="100%">
               Class encapsulating a Custom Tile.&nbsp;
@@ -1141,7 +1314,7 @@ type="text/css">
         </tr>
     
     
-        <tr class=" api apilevel-2" >
+        <tr class="alt-color api apilevel-2" >
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></td>
             <td class="jd-descrcol" width="100%">
               The <code><a href="../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></code> class allows for creating various <code><a href="../reference/android/media/AudioManager.html">AudioManager</a></code>
@@ -1300,6 +1473,164 @@ type="text/css">
             <td class="jd-linkcol"><a href="../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></td>
             <td class="jd-descrcol" width="100%">
               &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+</table>
+
+
+<h2 id="letter_W">W</h2>
+<table class="jd-sumtable">
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/WeatherContract.html">WeatherContract</a></td>
+            <td class="jd-descrcol" width="100%">
+              The contract between the weather provider and applications.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.html">WeatherContract.WeatherColumns</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.TempUnit.html">WeatherContract.WeatherColumns.TempUnit</a></td>
+            <td class="jd-descrcol" width="100%">
+              Temperature units
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WeatherCode.html">WeatherContract.WeatherColumns.WeatherCode</a></td>
+            <td class="jd-descrcol" width="100%">
+              Weather condition codes
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WindSpeedUnit.html">WeatherContract.WeatherColumns.WindSpeedUnit</a></td>
+            <td class="jd-descrcol" width="100%">
+              Wind speed units
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></td>
+            <td class="jd-descrcol" width="100%">
+              This class represents the weather information that a
+ <code><a href="../reference/cyanogenmod/weatherservice/WeatherProviderService.html">WeatherProviderService</a></code> will use to update the weather content
+ provider.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></td>
+            <td class="jd-descrcol" width="100%">
+              This class represents the weather forecast for a given day
+&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherInfo.DayForecast.Builder.html">WeatherInfo.DayForecast.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></td>
+            <td class="jd-descrcol" width="100%">
+              A class representing a geographical location that a weather service provider can use to
+ get weather data from.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/WeatherLocation.Builder.html">WeatherLocation.Builder</a></td>
+            <td class="jd-descrcol" width="100%">
+              &nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class=" api apilevel-5" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weatherservice/WeatherProviderService.html">WeatherProviderService</a></td>
+            <td class="jd-descrcol" width="100%">
+              This is the base class for implementing a weather provider service.&nbsp;
+              
+    
+
+            </td>
+        </tr>
+    
+    
+        <tr class="alt-color api apilevel-" >
+            <td class="jd-linkcol"><a href="../reference/cyanogenmod/weather/util/WeatherUtils.html">WeatherUtils</a></td>
+            <td class="jd-descrcol" width="100%">
+              Helper class to perform operations and formatting of weather data
+&nbsp;
               
     
 

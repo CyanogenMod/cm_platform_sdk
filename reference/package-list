@@ -11,4 +11,7 @@ cyanogenmod.profiles
 cyanogenmod.providers
 cyanogenmod.themes
 cyanogenmod.util
+cyanogenmod.weather
+cyanogenmod.weather.util
+cyanogenmod.weatherservice
 

@@ -209,6 +209,12 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
     <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weather/package-summary.html">cyanogenmod.weather</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/weather/util/package-summary.html">cyanogenmod.weather.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weatherservice/package-summary.html">cyanogenmod.weatherservice</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -227,11 +233,17 @@ type="text/css">
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/DataUsageContract.html">DataUsageContract</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.html">ThemesContract</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.MixnMatchColumns.html">ThemesContract.MixnMatchColumns</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.PreviewColumns.html">ThemesContract.PreviewColumns</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html">ThemesContract.ThemesColumns</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html">ThemesContract.ThemesColumns.InstallState</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.html">WeatherContract</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.html">WeatherContract.WeatherColumns</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.TempUnit.html">WeatherContract.WeatherColumns.TempUnit</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WeatherCode.html">WeatherContract.WeatherColumns.WeatherCode</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WindSpeedUnit.html">WeatherContract.WeatherColumns.WindSpeedUnit</a></li>
       </ul>
     </li>
               
@@ -524,7 +536,21 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.html#ACTION_DATA_USAGE">ACTION_DATA_USAGE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Activity Action: Show Data Usage Summary
+ <p>
+ Input: Nothing.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">String</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/CMSettings.html#AUTHORITY">AUTHORITY</a></td>
         <td class="jd-descrcol" width="100%">
@@ -817,6 +843,52 @@ From class
 <!-- ========= ENUM CONSTANTS DETAIL ======== -->
 <h2>Constants</h2>
 
+
+
+
+<A NAME="ACTION_DATA_USAGE"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        ACTION_DATA_USAGE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Activity Action: Show Data Usage Summary
+ <p>
+ Input: Nothing.
+ <p>
+ Output: Nothing.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "cyanogenmod.settings.ACTION_DATA_USAGE"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
 
 
 

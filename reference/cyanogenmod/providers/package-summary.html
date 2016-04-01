@@ -210,6 +210,12 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
     <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weather/package-summary.html">cyanogenmod.weather</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/weather/util/package-summary.html">cyanogenmod.weather.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weatherservice/package-summary.html">cyanogenmod.weatherservice</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -228,11 +234,17 @@ type="text/css">
         <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Global.html">CMSettings.Global</a></li>
         <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.Secure.html">CMSettings.Secure</a></li>
         <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/providers/CMSettings.System.html">CMSettings.System</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/DataUsageContract.html">DataUsageContract</a></li>
         <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.html">ThemesContract</a></li>
         <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.MixnMatchColumns.html">ThemesContract.MixnMatchColumns</a></li>
         <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.PreviewColumns.html">ThemesContract.PreviewColumns</a></li>
         <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html">ThemesContract.ThemesColumns</a></li>
         <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html">ThemesContract.ThemesColumns.InstallState</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.html">WeatherContract</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.html">WeatherContract.WeatherColumns</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.TempUnit.html">WeatherContract.WeatherColumns.TempUnit</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WeatherCode.html">WeatherContract.WeatherColumns.WeatherCode</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WindSpeedUnit.html">WeatherContract.WeatherColumns.WindSpeedUnit</a></li>
       </ul>
     </li>
               
@@ -373,6 +385,20 @@ type="text/css">
       
     
       <tr class="alt-color api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/DataUsageContract.html">DataUsageContract</a></td>
+        <td class="jd-descrcol" width="100%">
+          <p>
+ The DataUsageProvdier contract containing definitions for the supported URIs and columns
+ </p>
+&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-5" >
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.html">ThemesContract</a></td>
         <td class="jd-descrcol" width="100%">
           <p>
@@ -384,7 +410,7 @@ type="text/css">
       </tr>
       
     
-      <tr class=" api apilevel-5" >
+      <tr class="alt-color api apilevel-5" >
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.MixnMatchColumns.html">ThemesContract.MixnMatchColumns</a></td>
         <td class="jd-descrcol" width="100%">
           Key-value table which assigns a component (ex wallpaper) to a theme's package
@@ -396,7 +422,7 @@ type="text/css">
       </tr>
       
     
-      <tr class="alt-color api apilevel-5" >
+      <tr class=" api apilevel-5" >
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.PreviewColumns.html">ThemesContract.PreviewColumns</a></td>
         <td class="jd-descrcol" width="100%">
           Table containing cached preview files for a given theme
@@ -408,7 +434,7 @@ type="text/css">
       </tr>
       
     
-      <tr class=" api apilevel-5" >
+      <tr class="alt-color api apilevel-5" >
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.html">ThemesContract.ThemesColumns</a></td>
         <td class="jd-descrcol" width="100%">
           &nbsp;
@@ -419,10 +445,68 @@ type="text/css">
       </tr>
       
     
-      <tr class="alt-color api apilevel-5" >
+      <tr class=" api apilevel-5" >
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/ThemesContract.ThemesColumns.InstallState.html">ThemesContract.ThemesColumns.InstallState</a></td>
         <td class="jd-descrcol" width="100%">
           &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/WeatherContract.html">WeatherContract</a></td>
+        <td class="jd-descrcol" width="100%">
+          The contract between the weather provider and applications.&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.html">WeatherContract.WeatherColumns</a></td>
+        <td class="jd-descrcol" width="100%">
+          &nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.TempUnit.html">WeatherContract.WeatherColumns.TempUnit</a></td>
+        <td class="jd-descrcol" width="100%">
+          Temperature units
+&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WeatherCode.html">WeatherContract.WeatherColumns.WeatherCode</a></td>
+        <td class="jd-descrcol" width="100%">
+          Weather condition codes
+&nbsp;
+          
+    
+
+        </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-5" >
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WindSpeedUnit.html">WeatherContract.WeatherColumns.WindSpeedUnit</a></td>
+        <td class="jd-descrcol" width="100%">
+          Wind speed units
+&nbsp;
           
     
 
