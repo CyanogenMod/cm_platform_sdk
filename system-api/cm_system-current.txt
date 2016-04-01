@@ -435,11 +435,13 @@ package cyanogenmod.externalviews {
     method protected void onDetach();
     method protected abstract void onKeyguardDismissed();
     method protected abstract void onKeyguardShowing(boolean);
+    method protected void onLockscreenSlideOffsetChanged(float);
     method protected abstract void onScreenTurnedOff();
     method protected abstract void onScreenTurnedOn();
     method protected final boolean requestDismiss();
     method protected final boolean requestDismissAndStartActivity(android.content.Intent);
     method protected final void setInteractivity(boolean);
+    method protected final void slideLockscreenIn();
   }
 
 }
