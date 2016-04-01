@@ -198,6 +198,13 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
                 mWindowAttachmentListener.onDetachedFromWindow();
             }
         }
+
+        @Override
+        public void slideLockscreenIn() {
+            if (mCallback != null) {
+                mCallback.slideLockscreenIn();
+            }
+        }
     };
 
     private void executeQueue() {
@@ -376,6 +383,18 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         });
     }
 
+    public void onLockscreenSlideOffsetChanged(final float swipeProgress) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onLockscreenSlideOffsetChanged(swipeProgress);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
     /**
      * External views provided by a
      * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService} can be either
@@ -453,6 +472,7 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         boolean requestDismissAndStartActivity(Intent intent);
         void collapseNotificationPanel();
         void providerDied();
+        void slideLockscreenIn();
     }
 
     /**
