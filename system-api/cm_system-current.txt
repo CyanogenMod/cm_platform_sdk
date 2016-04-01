@@ -585,6 +585,16 @@ package cyanogenmod.os {
     field public static final int ELDERBERRY = 5; // 0x5
   }
 
+  public final class Concierge {
+    method public static cyanogenmod.os.Concierge.ParcelInfo prepareParcel(android.os.Parcel);
+    method public static cyanogenmod.os.Concierge.ParcelInfo receiveParcel(android.os.Parcel);
+  }
+
+  public static final class Concierge.ParcelInfo {
+    method public void complete();
+    method public int getParcelVersion();
+  }
+
 }
 
 package cyanogenmod.platform {

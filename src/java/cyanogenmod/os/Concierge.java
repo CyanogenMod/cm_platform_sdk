@@ -47,8 +47,6 @@ import cyanogenmod.os.Build.CM_VERSION_CODES;
  *     // Complete the process
  *     outgoingParcelInfo.complete();
  * </pre>
- *
- * {@hide} // Unhide?
  */
 public final class Concierge {
 
@@ -92,6 +90,11 @@ public final class Concierge {
         return new ParcelInfo(parcel, PARCELABLE_VERSION);
     }
 
+    /**
+     * Parcel header info specific to the Parcel object that is passed in via
+     * {@link #prepareParcel(Parcel)} or {@link #receiveParcel(Parcel)}. The exposed method
+     * of {@link #getParcelVersion()} gets the api level of the parcel object.
+     */
     public final static class ParcelInfo {
         private Parcel mParcel;
         private int mParcelableVersion;
