@@ -309,7 +309,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -since $(CM_SRC_API_DIR)/2.txt 2 \
         -since $(CM_SRC_API_DIR)/3.txt 3 \
         -since $(CM_SRC_API_DIR)/4.txt 4 \
-        -since $(CM_SRC_API_DIR)/5.txt 5
+        -since $(CM_SRC_API_DIR)/5.txt 5 \
+        -since $(CM_SRC_API_DIR)/6.txt 6
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
