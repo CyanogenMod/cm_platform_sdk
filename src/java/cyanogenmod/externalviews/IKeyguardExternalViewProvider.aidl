@@ -32,6 +32,7 @@ interface IKeyguardExternalViewProvider
     oneway void onBouncerShowing(boolean showing);
     oneway void onScreenTurnedOn();
     oneway void onScreenTurnedOff();
+    oneway void onLockscreenSlideOffsetChanged(float swipeProgress);
 
     oneway void registerCallback(in IKeyguardExternalViewCallbacks callback);
     oneway void unregisterCallback(in IKeyguardExternalViewCallbacks callback);

@@ -94,6 +94,11 @@ public class SampleKeyguardProviderService extends KeyguardExternalViewProviderS
             mImageView.clearAnimation();
         }
 
+        @Override
+        protected void onLockscreenSlideOffsetChanged(float slideProgress) {
+
+        }
+
         /**
          * Called when the view has been attached to a window
          */
