@@ -67,7 +67,8 @@ public class ThemeManager {
         return sInstance;
     }
 
-    private static IThemeService getService() {
+    /** @hide */
+    public static IThemeService getService() {
         if (sService != null) {
             return sService;
         }
@@ -260,7 +261,7 @@ public class ThemeManager {
      * Unregister a {@link ThemeProcessingListener}.
      * @param listener {@link ThemeProcessingListener} to unregister
      */
-    public void unregisterProcessingListener(ThemeChangeListener listener) {
+    public void unregisterProcessingListener(ThemeProcessingListener listener) {
         synchronized (mProcessingListeners) {
             mProcessingListeners.remove(listener);
             if (mProcessingListeners.size() == 0) {

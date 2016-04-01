@@ -73,6 +73,8 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
 
     private KeyguardExternalViewCallbacks mCallback;
 
+    private OnWindowAttachmentChangedListener mWindowAttachmentListener;
+
     public KeyguardExternalView(Context context, AttributeSet attrs) {
         this(context, attrs, null);
     }
@@ -182,6 +184,20 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         public void setInteractivity(boolean isInteractive) {
             mIsInteractive = isInteractive;
         }
+
+        @Override
+        public void onAttachedToWindow() {
+            if (mWindowAttachmentListener != null) {
+                mWindowAttachmentListener.onAttachedToWindow();
+            }
+        }
+
+        @Override
+        public void onDetachedFromWindow() {
+            if (mWindowAttachmentListener != null) {
+                mWindowAttachmentListener.onDetachedFromWindow();
+            }
+        }
     };
 
     private void executeQueue() {
@@ -230,6 +246,7 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
 
     @Override
     public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
         performAction(new Runnable() {
             @Override
             public void run() {
@@ -399,6 +416,34 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
     }
 
     /**
+     * Registers a {@link cyanogenmod.externalviews.KeyguardExternalView.OnWindowAttachmentChangedListener}
+     * for receiving events from the
+     * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
+     * @param listener The callback to register
+     *
+     * @hide
+     */
+    public void registerOnWindowAttachmentChangedListener(
+            OnWindowAttachmentChangedListener listener) {
+        mWindowAttachmentListener = listener;
+    }
+
+    /**
+     * Unregister a previously registered
+     * {@link cyanogenmod.externalviews.KeyguardExternalView.OnWindowAttachmentChangedListener}
+     * @param listener The callback to unregister
+     *
+     * @hide
+     */
+    public void unregisterOnWindowAttachmentChangedListener(
+            OnWindowAttachmentChangedListener listener) {
+        if (mWindowAttachmentListener != listener) {
+            throw new IllegalArgumentException("Callback not registered");
+        }
+        mWindowAttachmentListener = null;
+    }
+
+    /**
      * Callback interface for a {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService}
      * to send events to the host's registered
      * {@link cyanogenmod.externalviews.KeyguardExternalView.KeyguardExternalViewCallbacks}
@@ -408,5 +453,15 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         boolean requestDismissAndStartActivity(Intent intent);
         void collapseNotificationPanel();
         void providerDied();
+    }
+
+    /**
+     * Callback interface for changes to the containing window being attached and detached from the
+     * window manager.
+     * @hide
+     */
+    public interface OnWindowAttachmentChangedListener {
+        void onAttachedToWindow();
+        void onDetachedFromWindow();
     }
 }

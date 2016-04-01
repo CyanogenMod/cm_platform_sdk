@@ -2650,6 +2650,13 @@ public final class CMSettings {
         public static final String LIVE_LOCK_SCREEN_ENABLED = "live_lock_screen_enabled";
 
         /**
+         * The user selected Live lock screen to display
+         * @hide
+         */
+        public static final String DEFAULT_LIVE_LOCK_SCREEN_COMPONENT =
+                "default_live_lock_screen_component";
+
+        /**
          * Whether keyguard will direct show security view (0 = false, 1 = true)
          * @hide
          */
@@ -2673,6 +2680,19 @@ public final class CMSettings {
          * @hide
          */
         public static final String DISPLAY_GAMMA_CALIBRATION_PREFIX = "display_gamma_";
+
+        /**
+         * Enabled live lockscreen components. Delimited by "|"
+         * @hide
+         */
+        public static final String ENABLED_EVENT_LIVE_LOCKS_KEY = "live_lockscreens_events_enabled";
+
+        /**
+         * Current active & enabled Weather Provider Service
+         *
+         * @hide
+         */
+        public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
 
         // endregion
 

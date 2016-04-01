@@ -24,7 +24,7 @@ LOCAL_PATH := $(call my-dir)
 cm_platform_res := APPS/org.cyanogenmod.platform-res_intermediates/src
 
 # List of packages used in cm-api-stubs and cm-system-api-stubs
-cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.externalviews:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.themes:cyanogenmod.util
+cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.externalviews:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.themes:cyanogenmod.util:cyanogenmod.weather:cyanogenmod.weatherservice
 
 # The CyanogenMod Platform Framework Library
 # ============================================================
@@ -274,8 +274,8 @@ include $(BUILD_DROIDDOC)
 
 # $(gen), i.e. framework.aidl, is also needed while building against the current stub.
 $(full_target): $(cm_framework_built) $(gen)
-$(INTERNAL_CM_PLATFORM_API_FILE): $(full_target)
-$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_API_FILE))
+$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE))
 
 # Documentation
 # ===========================================================
