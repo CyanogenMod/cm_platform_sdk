@@ -53,7 +53,7 @@ public class ThemeManager {
         if (context.getPackageManager().hasSystemFeature(
                 CMContextConstants.Features.THEMES) && sService == null) {
             throw new RuntimeException("Unable to get ThemeManagerService. The service either" +
-                    " crashed, was not started, or the interface has been called to early in" +
+                    " crashed, was not started, or the interface has been called too early in" +
                     " SystemServer init");
         }
         mHandler = new Handler(Looper.getMainLooper());
