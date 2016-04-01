@@ -228,6 +228,17 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             }
 
             @Override
+            public void onLockscreenSlideOffsetChanged(final float swipeProgress)
+                    throws RemoteException {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Provider.this.onLockscreenSlideOffsetChanged(swipeProgress);
+                    }
+                });
+            }
+
+            @Override
             public void alterWindow(final int x, final int y, final int width, final int height,
                                     final boolean visible, final Rect clipRect) {
                 mHandler.post(new Runnable() {
@@ -443,6 +454,19 @@ public abstract class KeyguardExternalViewProviderService extends Service {
 
             @Override
             public void onActionModeFinished(ActionMode mode) {}
+
+            @Override
+            public void slideLockscreenIn() {
+                int N = mCallbacks.beginBroadcast();
+                for(int i=0; i < N; i++) {
+                    IKeyguardExternalViewCallbacks callback = mCallbacks.getBroadcastItem(0);
+                    try {
+                        callback.slideLockscreenIn();
+                    } catch(RemoteException e) {
+                    }
+                }
+                mCallbacks.finishBroadcast();
+            }
         }
 
         private final ProviderImpl mImpl = new ProviderImpl(this);
@@ -522,6 +546,14 @@ public abstract class KeyguardExternalViewProviderService extends Service {
          */
         protected abstract void onScreenTurnedOff();
 
+        /**
+         * Called from the host when the user is swiping the lockscreen
+         * to transition into the live lock screen
+         *
+         * @param swipeProgress [0-1] represents the progress of the swipe
+         */
+        protected void onLockscreenSlideOffsetChanged(float swipeProgress) {}
+
         // callbacks from provider to host
 
         /**
@@ -579,6 +611,15 @@ public abstract class KeyguardExternalViewProviderService extends Service {
          */
         protected final void setInteractivity(final boolean isInteractive) {
             mImpl.setInteractivity(isInteractive);
+        }
+
+        /**
+         * Call this method when you like to slide in the lockscreen on top of
+         * your live lockscreen. Only relevant if you use
+         * {@link KeyguardExternalViewProviderService.Provider#setInteractivity(boolean)}
+         */
+        protected final void slideLockscreenIn() {
+            mImpl.slideLockscreenIn();
         }
 
         /*package*/ final int getWindowType() {
