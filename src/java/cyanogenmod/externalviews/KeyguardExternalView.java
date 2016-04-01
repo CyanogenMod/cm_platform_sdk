@@ -198,6 +198,13 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
                 mWindowAttachmentListener.onDetachedFromWindow();
             }
         }
+
+        @Override
+        public void slideLockscreenIn() {
+            if (mCallback != null) {
+                mCallback.slideLockscreenIn();
+            }
+        }
     };
 
     private void executeQueue() {
@@ -377,6 +384,24 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
     }
 
     /**
+     * Called from the host when the user is swiping the lockscreen
+     * to transition into the live lock screen
+     *
+     * @param swipeProgress [0-1] represents the progress of the swipe
+     */
+    public void onLockscreenSlideOffsetChanged(final float swipeProgress) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.onLockscreenSlideOffsetChanged(swipeProgress);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
+
+    /**
      * External views provided by a
      * {@link cyanogenmod.externalviews.KeyguardExternalViewProviderService} can be either
      * interactive or non-interactive.
@@ -453,6 +478,7 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
         boolean requestDismissAndStartActivity(Intent intent);
         void collapseNotificationPanel();
         void providerDied();
+        void slideLockscreenIn();
     }
 
     /**

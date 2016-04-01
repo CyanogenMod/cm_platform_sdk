@@ -38,4 +38,5 @@ interface IKeyguardExternalViewProvider
 
     void alterWindow(in int x, in int y, in int width, in int height, in boolean visible,
             in Rect clipRect);
+    oneway void onLockscreenSlideOffsetChanged(float swipeProgress);
 }
