@@ -59,6 +59,16 @@ public final class CMSettings {
         }
     }
 
+    // Intent actions for Settings
+    /**
+     * Activity Action: Show Data Usage Summary
+     * <p>
+     * Input: Nothing.
+     * <p>
+     * Output: Nothing.
+     */
+    public static final String ACTION_DATA_USAGE = "cyanogenmod.settings.ACTION_DATA_USAGE";
+
     // region Call Methods
 
     /**

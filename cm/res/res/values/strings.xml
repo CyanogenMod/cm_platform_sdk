@@ -188,4 +188,14 @@
     <string name="permdesc_weather_bind">Allows an app to be identified as a weather provider service.</string>
     <string name="permlab_weather_access_mgr">access weather service</string>
     <string name="permdesc_weather_access_mgr">Allows an app to access the weather service in the system. Should never be needed for normal apps.</string>
+
+    <!-- DataUsageProvider write permission title -->
+    <string name="permlab_dataUsageWrite">modify data usage db</string>
+    <!-- DataUsageProvider write permission description -->
+    <string name="permdesc_dataUsageWrite">Allows write access to the DataUsage db</string>
+
+    <!-- DataUsageProvider read permission title -->
+    <string name="permlab_dataUsageRead">read data usage db</string>
+    <!-- DataUsageProvider read permission description -->
+    <string name="permdesc_dataUsageRead">Allows read access to the DataUsage db</string>
 </resources>

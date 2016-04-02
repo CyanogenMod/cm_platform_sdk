@@ -30,8 +30,8 @@ cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:c
 # ============================================================
 include $(CLEAR_VARS)
 
-cyanogenmod_src := src/java/cyanogenmod
-cyanogenmod_internal_src := src/java/org/cyanogenmod/internal
+cyanogenmod_sdk_src := sdk/src/java/cyanogenmod
+cyanogenmod_sdk_internal_src := sdk/src/java/org/cyanogenmod/internal
 library_src := cm/lib/main/java
 
 LOCAL_MODULE := org.cyanogenmod.platform
@@ -42,8 +42,8 @@ LOCAL_JAVA_LIBRARIES := \
     org.cyanogenmod.hardware
 
 LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(cyanogenmod_src)) \
-    $(call all-java-files-under, $(cyanogenmod_internal_src)) \
+    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-java-files-under, $(cyanogenmod_sdk_internal_src)) \
     $(call all-java-files-under, $(library_src))
 
 ## READ ME: ########################################################
@@ -57,8 +57,8 @@ LOCAL_SRC_FILES := \
 ##
 ## READ ME: ########################################################
 LOCAL_SRC_FILES += \
-    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
 
 cmplat_LOCAL_INTERMEDIATE_SOURCES := \
     $(cm_platform_res)/cyanogenmod/platform/R.java \
@@ -69,7 +69,7 @@ LOCAL_INTERMEDIATE_SOURCES := \
     $(cmplat_LOCAL_INTERMEDIATE_SOURCES)
 
 # Include aidl files from cyanogenmod.app namespace as well as internal src aidl files
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 
 include $(BUILD_JAVA_LIBRARY)
 cm_framework_module := $(LOCAL_INSTALLED_MODULE)
@@ -109,12 +109,12 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
 
 # Included aidl files from cyanogenmod.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 
 cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
     $(cm_platform_res)/cyanogenmod/platform/R.java \
@@ -143,12 +143,12 @@ LOCAL_REQUIRED_MODULES := services
 LOCAL_JACK_ENABLED := disabled
 
 LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
 
 # Included aidl files from cyanogenmod.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 
 cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
     $(cm_platform_res)/cyanogenmod/platform/R.java \
@@ -168,13 +168,13 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := services
 
 LOCAL_SRC_FILES := \
-    $(call all-java-files-under, $(cyanogenmod_src)) \
-    $(call all-java-files-under, $(cyanogenmod_internal_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_src)) \
-    $(call all-Iaidl-files-under, $(cyanogenmod_internal_src))
+    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-java-files-under, $(cyanogenmod_sdk_internal_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-Iaidl-files-under, $(cyanogenmod_sdk_internal_src))
 
 # Included aidl files from cyanogenmod.app namespace
-LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src/java
+LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
 
 cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
     $(cm_platform_res)/cyanogenmod/platform/R.java \
@@ -192,8 +192,8 @@ include $(BUILD_STATIC_JAVA_LIBRARY)
 # ===========================================================
 # Common Droiddoc vars
 cmplat_docs_src_files := \
-    $(call all-java-files-under, $(cyanogenmod_src)) \
-    $(call all-html-files-under, $(cyanogenmod_src))
+    $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
+    $(call all-html-files-under, $(cyanogenmod_sdk_src))
 
 cmplat_docs_java_libraries := \
     org.cyanogenmod.platform.sdk
@@ -202,7 +202,7 @@ cmplat_docs_java_libraries := \
 cmplat_docs_SDK_VERSION := 13.0
 
 # release version
-cmplat_docs_SDK_REL_ID := 5
+cmplat_docs_SDK_REL_ID := 6
 
 cmplat_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
@@ -274,8 +274,8 @@ include $(BUILD_DROIDDOC)
 
 # $(gen), i.e. framework.aidl, is also needed while building against the current stub.
 $(full_target): $(cm_framework_built) $(gen)
-$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE): $(full_target)
-$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE))
+$(INTERNAL_CM_PLATFORM_API_FILE): $(full_target)
+$(call dist-for-goals,sdk,$(INTERNAL_CM_PLATFORM_API_FILE))
 
 # Documentation
 # ===========================================================
@@ -309,7 +309,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -since $(CM_SRC_API_DIR)/2.txt 2 \
         -since $(CM_SRC_API_DIR)/3.txt 3 \
         -since $(CM_SRC_API_DIR)/4.txt 4 \
-        -since $(CM_SRC_API_DIR)/5.txt 5
+        -since $(CM_SRC_API_DIR)/5.txt 5 \
+        -since $(CM_SRC_API_DIR)/6.txt 6
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)
