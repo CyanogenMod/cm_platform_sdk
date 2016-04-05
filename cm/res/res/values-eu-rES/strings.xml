@@ -132,4 +132,29 @@
   <string name="permlab_perfAccess">errendimendu kudeatzailea atzitu</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Errendimendu kudeatzailea atzitzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute hau behar.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">blokeo pantaila bizien kudeaketa zerbitzua atzitzea</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Blokeo pantaila bizien kudeaketa zerbitzua atzitzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">blokeo pantaila bizien kudeaketa zerbitzua atzitzea</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Blokeo pantaila bizien kudeaketa zerbitzua atzitzea ahalbidetzen die sistemako aplikazioei.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">blokeo pantaila bizien kudeaketa zerbitzua ematea</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Blokeo pantaila bizien kudeaketa zerbitzua ematea ahalbidetzen dio zerbitzu bati.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">eguraldia irakurri</string>
+  <string name="permdesc_weather_read">Eguraldi hornitzailetik edukia irakurtzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_weather_write">eguraldi hornitzailea eguneratu</string>
+  <string name="permdesc_weather_write">Eguraldi hornitzailearen edukia eguneratzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_weather_bind">eguraldi hornitzaile zerbitzu gisa lotu</string>
+  <string name="permdesc_weather_bind">Eguraldi hornitzaile zerbitzu gisa identifikatzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permlab_weather_access_mgr">eguraldi zerbitzua atzitzea</string>
+  <string name="permdesc_weather_access_mgr">Sistemako eguraldi zerbitzura sartzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute hau behar.</string>
+  <!-- DataUsageProvider write permission title -->
+  <!-- DataUsageProvider write permission description -->
+  <!-- DataUsageProvider read permission title -->
+  <!-- DataUsageProvider read permission description -->
 </resources>
