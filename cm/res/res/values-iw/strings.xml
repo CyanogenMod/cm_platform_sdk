@@ -54,7 +54,7 @@
   <string name="permlab_writeSecureSettings">שנה הגדרות מאובטחות של מערכת CM</string>
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">נהל אחסון מתמיד</string>
+  <string name="permlab_managePersistentStorage">נהל אחסון תמידי</string>
   <string name="permdesc_managePersistentStorage">מאפשר ליישום לקרוא או לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">גישה להצעות יישומים</string>
@@ -90,7 +90,7 @@
   <string name="live_display_auto">אוטומטי</string>
   <string name="live_display_auto_summary">התאם אוטומטית את טמפרטורת הצבע של המסך לאחר הזריחה והשקיעה</string>
   <string name="live_display_off">כבוי</string>
-  <string name="live_display_off_summary">בטל את כל ההתאמות</string>
+  <string name="live_display_off_summary">השבת את כל ההתאמות</string>
   <string name="live_display_day">יום</string>
   <string name="live_display_day_summary">השתמש בהגדרות יום בלבד</string>
   <string name="live_display_night">לילה</string>
@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">גישה למנהל הביצועים</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">מאפשר ליישום לגשת לשירות ניהול הביצועים. לא אמור להידרש ליישומים רגילים לעולם.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">גישה לשירות ניהול מסך הנעילה החי</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">מאפשר ליישום לגשת לשירות ניהול מסך הנעילה החי.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">גישה לשירות ניהול מסך הנעילה החי</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">מאפשר ליישומי מערכת לגשת לשירות ניהול מסך הנעילה החי.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">מתן שירות ניהול מסך נעילה חי</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">מאפשר לשירות לספק את שירות הניהול למסך נעילה חי.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">קרא את מזג האוויר</string>
+  <string name="permdesc_weather_read">מאפשר ליישום לקרוא תוכן של ספק מידע על מזג האוויר.</string>
+  <string name="permlab_weather_write">עדכן את ספק מזג האוויר</string>
+  <string name="permdesc_weather_write">מאפשר ליישום לעדכן את תוכן ספק מידע מזג האוויר.</string>
+  <string name="permlab_weather_bind">התקשרות לשירות ספק מזג האוויר</string>
+  <string name="permdesc_weather_bind">מאפשר ליישום להזדהות כספק מידע מזג אוויר.</string>
+  <string name="permlab_weather_access_mgr">גישה לשירות מידע מזג אוויר</string>
+  <string name="permdesc_weather_access_mgr">מאפשר ליישום לגשת לשירות מזג האוויר של המערכת. לא אמור להידרש ליישומים רגילים לעולם.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">שנה מסד נתונים של השימוש בנתונים</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">מאפשר ליישום לעדכן את תוכן מסד הנתונים של השימוש בנתונים.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">קרא את מסד הנתונים של השימוש בנתונים</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">מאפשר ליישום לקרוא תוכן ממסד הנתונים של השימוש בנתונים.</string>
 </resources>

@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">accés a l\'administrador de rendiment</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Permet a una aplicació accedir al servei de rendiment. Normalment no hauria de ser necessari en les aplicacions normals.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">accedir al servei d\'administració de bloqueig de pantalla animat</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permet a una aplicació accedir al servei d\'administració de bloqueig de pantalla animat.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">accedir al servei d\'administració de bloqueig de pantalla animat</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permet a les aplicacions del sistema accedir al servei d\'administració de bloqueig de pantalla animat.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">proveir el servei d\'administració de bloqueig de pantalla animat</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permet a un servei proveir el servei d\'administració de bloqueig de pantalla animat.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">llegir el temps</string>
+  <string name="permdesc_weather_read">Permet a una aplicació llegir els continguts del proveïdor meteorològic.</string>
+  <string name="permlab_weather_write">actualitzar el proveïdor meteorològic</string>
+  <string name="permdesc_weather_write">Permet a una aplicació actualitzar els continguts del proveïdor meteorològic.</string>
+  <string name="permlab_weather_bind">vincula com a un servei de proveïdor meteorològic</string>
+  <string name="permdesc_weather_bind">Permet a una aplicació ser identificada com un servei de proveïdor meteorològic.</string>
+  <string name="permlab_weather_access_mgr">accés al servei del temps</string>
+  <string name="permdesc_weather_access_mgr">Permet a una aplicació accedir al servei del temps del sistema. No s\'hauria de necessitar mai en les aplicacions normals.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar la base de dades d\'ús de dades</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permet a una aplicació actualitzar el contingut de la base de dades d\'ús de dades.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">llegi la base de dades d\'ús de dades</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permet a una aplicació llegir el contingut de la base de dades d\'ús de dades.</string>
 </resources>

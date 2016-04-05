@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">tilgå ydelsesmanager</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Tillader en app at tilgå ydelsestjenesten. Bør aldrig være nødvendigt for alm. apps.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">tilgå manager service for levende skærmlås</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Tillader en app at tilgå manager service for levende skærmlås.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">tilgå manager service for levende skærmlås</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Tillader system apps at tilgå manager servicen for levende skærmlås.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">udbyd manager service for levende skærmlås</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Tillader en tjeneste at udbyde manager service for levende skærmlås.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">læs vejret</string>
+  <string name="permdesc_weather_read">Tillader en app at læse indholdet fra en vejr-udbyder.</string>
+  <string name="permlab_weather_write">opdater vejr-udbyder</string>
+  <string name="permdesc_weather_write">Tillader en app at opdatere indholdet fra en vejr-udbyder.</string>
+  <string name="permlab_weather_bind">forbind som en vejrudbyder service</string>
+  <string name="permdesc_weather_bind">Tillader at en app kan identificeres som en vejrudbyder service.</string>
+  <string name="permlab_weather_access_mgr">tilgå vejr-tjenesten</string>
+  <string name="permdesc_weather_access_mgr">Tillader en app at tilgå vejrtjenesten i systemet. Bør aldrig være nødvendig for alm. apps.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">ændre database for dataforbrug</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Tillader en app at opdatere indholdet af databasen for dataforbrug.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">læs database for dataforbrug</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Tillader en app at læse indholdet af databasen for dataforbrug.</string>
 </resources>

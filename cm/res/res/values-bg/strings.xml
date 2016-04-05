@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">Достъп до диспечера за производителност</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Осигурява на приложението достъп до диспечера за производителност. Не е необходимо за нормални приложения.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">Достъп до анимиран заключен екран</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Позволява на приложението достъп до анимиран заключен на екран.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">Достъп до анимиран заключен екран</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Позволява на системното приложение достъп до анимиран заключен на екран.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">Осигурява достъп до анимиран заключен екран</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Позволи достъп на услуга до анимиран заключен на екран.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">прочети прогнозата</string>
+  <string name="permdesc_weather_read">Разрешава на приложението да чете данни от доставчика на време.</string>
+  <string name="permlab_weather_write">Актуализиране на доставчика на време</string>
+  <string name="permdesc_weather_write">Разрешава на приложението да актуализира съдържанието на доставчика на време.</string>
+  <string name="permlab_weather_bind">Задай като доставчик на време</string>
+  <string name="permdesc_weather_bind">Позволява на приложение да бъде идентифицирано като доставчик на време.</string>
+  <string name="permlab_weather_access_mgr">Достъп до метеорологична служба</string>
+  <string name="permdesc_weather_access_mgr">Позволява на приложението достъп до услугата за време. Не е необходимо за нормални приложения.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">Промени база данни</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Разрешава на приложението да актуализира съдържанието на базата данни.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">Прочети база данни</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Разрешава на приложението да чете съдържанието на базата данни.</string>
 </resources>
