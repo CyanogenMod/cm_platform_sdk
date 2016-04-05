@@ -34,10 +34,10 @@
   <string name="permdesc_modifyMSPhoneState">Permite que um aplicativo modifique a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
-  <string name="permdesc_modifyProfiles">Permite a um app modificar os perfis de sistema.</string>
+  <string name="permdesc_modifyProfiles">Permite que um aplicativo modifique os perfis de sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">utilizar o framework do hardware</string>
-  <string name="permdesc_useHardwareFramework">Permite o acesso de um app ao framework de acesso ao hardware CM.</string>
+  <string name="permdesc_useHardwareFramework">Permite o acesso de um aplicativo ao framework de acesso ao hardware CM.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">alterar os alarmes diretamente</string>
   <string name="permdesc_write_alarms">Permite a um aplicativo adicionar, modificar ou excluir todos os seus alarmes.</string>
@@ -52,7 +52,7 @@
   <string name="permdesc_writeSettings">Permite que um aplicativo modifique as configurações do sistema da CM.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modificar as configurações de segurança do sistema da CM</string>
-  <string name="permdesc_writeSecureSettings">Permite que um aplicativo modifique as configurações de segurança do sistema da CM. Não para uso por aplicativos normais.</string>
+  <string name="permdesc_writeSecureSettings">Permite que um aplicativo modifique as configurações de segurança do sistema CM. Não deve ser usado por aplicativos normais.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">gerenciar o armazenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite a um app ler ou escrever propriedades que podem persistir mesmo após um reset de fábrica.</string>
@@ -62,8 +62,8 @@
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
   <!-- Labels for the PROTECTED_APP permission. -->
-  <string name="permlab_protectedApp">adicionar e remover aplicativos aos apps protegidos</string>
-  <string name="permdesc_protectedApp">Permite que um aplicativo a marcar outros apps como protegidos e bloqueá-los.</string>
+  <string name="permlab_protectedApp">adicionar e remover aplicativos aos protegidos</string>
+  <string name="permdesc_protectedApp">Permite que um aplicativo marque outros aplicativos como protegidos e os bloqueie.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Padrão</string>
@@ -133,4 +133,33 @@
   <string name="permlab_perfAccess">acessar o gerenciador de desempenho</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Permite a um aplicativo acessar o serviço de desempenho. Nunca deverá ser necessário para aplicativos normais.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">acesso ao serviço de gerenciamento da tela de bloquio animada</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permite que um aplicativo acesse o serviço de gerenciamento da tela de bloqueio animada.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">acesso ao serviço de gerenciamento da tela de bloqueio animada</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permite que os aplicativos do sistema acessem o serviço de gerenciamento da tela de bloqueio animada.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">fornecer o serviço de gerenciador de tela de bloqueio animada</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permite que um serviço forneça o serviço de gerenciador de tela de bloqueio animada.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">ler previsão do tempo</string>
+  <string name="permdesc_weather_read">Permite que um aplicativo leia o conteúdo do provedor da previsão do tempo.</string>
+  <string name="permlab_weather_write">atualizar provedor de provisão do tempo</string>
+  <string name="permdesc_weather_write">Permite que um aplicativo atualize o conteúdo do provedor da previsão do tempo.</string>
+  <string name="permlab_weather_bind">vincular-se como um provedor de previsão do tempo</string>
+  <string name="permdesc_weather_bind">Permite que um aplicativo seja identificado como um provedor de previsão de tempo.</string>
+  <string name="permlab_weather_access_mgr">acesso ao serviço de previsão do tempo</string>
+  <string name="permdesc_weather_access_mgr">Permite que um aplicativo acesse a previsão do tempo no sistema. Nunca deverá ser necessário para aplicativos normais.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar o banco de dados de uso de dados</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permite um aplicativo a atualizar o conteúdo da base de dados de uso de dados.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">ler banco de dados de utilização de dados</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permite um aplicativo ler o conteúdo do banco de dados de uso de dados.</string>
 </resources>

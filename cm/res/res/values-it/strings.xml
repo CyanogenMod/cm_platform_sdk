@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">accesso gestione performance</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Consente ad un\'app di accedere alla gestione performances. Non dovrebbe essere mai richiesto per le normali app.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione schermata di blocco animata</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione schermata di blocco animata</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">accedi al servizio di gestione schermata di blocco animata</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">leggi meteo</string>
+  <string name="permdesc_weather_read">Consenti ad un\'app di leggere contenuti dal provider meteo.</string>
+  <string name="permlab_weather_write">aggiorna provider meteo</string>
+  <string name="permdesc_weather_write">Consenti ad un\'app di aggiornare contenuti nel provider meteo.</string>
+  <string name="permlab_weather_bind">identificazione come provider meteo</string>
+  <string name="permdesc_weather_bind">Consenti ad un\'app di identificarsi come provider meteo.</string>
+  <string name="permlab_weather_access_mgr">accesso servizio meteo</string>
+  <string name="permdesc_weather_access_mgr">Consenti ad un\'app di accedere al servizio meteo nel sistema. Non dovrebbe mai essere necessario per le app normali.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modifica database utilizzo dati</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Consenti ad un\'app di aggiornare i contenuti nel database dati utilizzati.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">leggi database utilizzo dati</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Consenti ad un\'app di leggere i contenuti nel database dati utilizzati.</string>
 </resources>

@@ -52,4 +52,15 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
+  <!-- Access live lock screen manager service permission label -->
+  <!-- Access live lock screen manager service permission description -->
+  <!-- Privileged access live lock screen manager service permission label -->
+  <!-- Privileged access live lock screen manager service permission description -->
+  <!-- Live lock screen manager service provider permission label -->
+  <!-- Live lock screen manager service provider permission description -->
+  <!-- Weather Service strings -->
+  <!-- DataUsageProvider write permission title -->
+  <!-- DataUsageProvider write permission description -->
+  <!-- DataUsageProvider read permission title -->
+  <!-- DataUsageProvider read permission description -->
 </resources>
