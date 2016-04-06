@@ -566,8 +566,8 @@ package cyanogenmod.os {
   public class Build {
     ctor public Build();
     method public static java.lang.String getNameForSDKInt(int);
-    field public static final java.lang.String CYANOGENMOD_DISPLAY_VERSION = "ro.cm.display.version";
-    field public static final java.lang.String CYANOGENMOD_VERSION = "ro.cm.version";
+    field public static final java.lang.String CYANOGENMOD_DISPLAY_VERSION;
+    field public static final java.lang.String CYANOGENMOD_VERSION;
     field public static final java.lang.String UNKNOWN = "unknown";
   }
 
