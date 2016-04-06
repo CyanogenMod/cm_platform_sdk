@@ -1298,12 +1298,13 @@ package cyanogenmod.util {
 package cyanogenmod.weather {
 
   public class CMWeatherManager {
+    method public void cancelRequest(cyanogenmod.weather.RequestInfo);
     method public java.lang.String getActiveWeatherServiceProviderLabel();
     method public static cyanogenmod.weather.CMWeatherManager getInstance(android.content.Context);
-    method public void lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener);
+    method public cyanogenmod.weather.RequestInfo lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener);
     method public void registerWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
-    method public void requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
-    method public void requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public cyanogenmod.weather.RequestInfo requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public cyanogenmod.weather.RequestInfo requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
     method public void unregisterWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
     field public static final int WEATHER_REQUEST_ALREADY_IN_PROGRESS = -3; // 0xfffffffd
     field public static final int WEATHER_REQUEST_COMPLETED = 1; // 0x1
