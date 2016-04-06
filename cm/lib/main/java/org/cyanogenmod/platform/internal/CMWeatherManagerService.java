@@ -355,6 +355,7 @@ public class CMWeatherManagerService extends SystemService{
             mIsWeatherProviderServiceBound = false;
             //We can't talk to the current service anyway...
             mIsProcessingRequest = false;
+            mLastWeatherUpdateRequestTimestamp = -REQUEST_THRESHOLD_MILLIS;
             Slog.d(TAG, "Connection with " + name.flattenToString() + " has been closed");
         }
     };
