@@ -208,7 +208,7 @@ public final class RequestInfo implements Parcelable {
      * otherwise
      */
     public Location getLocation() {
-        return mLocation;
+        return new Location(mLocation);
     }
 
     /**
