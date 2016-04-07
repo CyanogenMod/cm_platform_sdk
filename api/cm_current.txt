@@ -427,7 +427,7 @@ package cyanogenmod.externalviews {
 
   protected abstract class KeyguardExternalViewProviderService.Provider {
     ctor protected KeyguardExternalViewProviderService.Provider(android.os.Bundle);
-    method protected final void collapseNotificationPanel();
+    method protected final deprecated void collapseNotificationPanel();
     method protected android.os.Bundle getOptions();
     method protected void onAttach();
     method protected abstract void onBouncerShowing(boolean);
