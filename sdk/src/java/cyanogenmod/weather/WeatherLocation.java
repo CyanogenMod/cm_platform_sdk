@@ -19,6 +19,7 @@ package cyanogenmod.weather;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import android.text.TextUtils;
 import cyanogenmod.os.Build;
 import cyanogenmod.os.Concierge;
 import cyanogenmod.os.Concierge.ParcelInfo;
@@ -32,6 +33,7 @@ import cyanogenmod.os.Concierge.ParcelInfo;
 public final class WeatherLocation implements Parcelable{
     private String mCityId;
     private String mCity;
+    private String mState;
     private String mPostal;
     private String mCountryId;
     private String mCountry;
@@ -39,33 +41,78 @@ public final class WeatherLocation implements Parcelable{
 
     private WeatherLocation() {}
 
+    /**
+     * Builder class for {@link WeatherLocation}
+     */
     public static class Builder {
-        String mCityId;
-        String mCity;
-        String mPostal;
-        String mCountryId;
-        String mCountry;
+        String mCityId = "";
+        String mCity = "";
+        String mState = "";
+        String mPostal = "";
+        String mCountryId = "";
+        String mCountry = "";
 
+        /**
+         * @param cityId An identifier for the city (for example WOEID - Where On Earth IDentifier)
+         * @param cityName The name of the city
+         */
         public Builder(String cityId, String cityName) {
+            if (cityId == null && cityName == null) {
+                throw new IllegalArgumentException("Illegal to set city id AND city to null");
+            }
             this.mCityId = cityId;
             this.mCity = cityName;
         }
 
-        public Builder setCountry(String countyId, String country) {
-            this.mCountryId = countyId;
+        /**
+         * @param countryId An identifier for the country (for example ISO alpha-2, ISO alpha-3,
+         *                 ISO 3166-1 numeric-3, etc)
+         * @param country The country name
+         * @return The {@link Builder} instance
+         */
+        public Builder setCountry(String countryId, String country) {
+            if (countryId == null && country == null) {
+                throw new IllegalArgumentException("Illegal to set country id AND country to null");
+            }
+            this.mCountryId = countryId;
             this.mCountry = country;
             return this;
         }
 
+        /**
+         * @param postalCode The postal/ZIP code
+         * @return The {@link Builder} instance
+         */
         public Builder setPostalCode(String postalCode) {
+            if (postalCode == null) {
+                throw new IllegalArgumentException("Postal code/ZIP can't be null");
+            }
             this.mPostal = postalCode;
             return this;
         }
 
+        /**
+         * @param state The state or territory where the city is located
+         * @return The {@link Builder} instance
+         */
+        public Builder setState(String state) {
+            if (state == null) {
+                throw new IllegalArgumentException("State can't be null");
+            }
+            this.mState = state;
+            return this;
+        }
+
+        /**
+         * Combine all of the options that have been set and return a new {@link WeatherLocation}
+         * object
+         * @return {@link WeatherLocation}
+         */
         public WeatherLocation build() {
             WeatherLocation weatherLocation = new WeatherLocation();
             weatherLocation.mCityId = this.mCityId;
             weatherLocation.mCity = this.mCity;
+            weatherLocation.mState = this.mState;
             weatherLocation.mPostal = this.mPostal;
             weatherLocation.mCountryId = this.mCountryId;
             weatherLocation.mCountry = this.mCountry;
@@ -74,22 +121,44 @@ public final class WeatherLocation implements Parcelable{
         }
     }
 
+    /**
+     * @return The city ID
+     */
     public String getCityId() {
         return mCityId;
     }
 
+    /**
+     * @return The city name
+     */
     public String getCity() {
         return mCity;
     }
 
+    /**
+     * @return The state name
+     */
+    public String getState() {
+        return mState;
+    }
+
+    /**
+     * @return The postal/ZIP code
+     */
     public String getPostalCode() {
         return mPostal;
     }
 
+    /**
+     * @return The country ID
+     */
     public String getCountryId() {
         return mCountryId;
     }
 
+    /**
+     * @return The country name
+     */
     public String getCountry() {
         return mCountry;
     }
@@ -103,6 +172,7 @@ public final class WeatherLocation implements Parcelable{
             mKey = in.readInt();
             mCityId = in.readString();
             mCity = in.readString();
+            mState = in.readString();
             mPostal = in.readString();
             mCountryId = in.readString();
             mCountry = in.readString();
@@ -138,6 +208,7 @@ public final class WeatherLocation implements Parcelable{
         dest.writeInt(mKey);
         dest.writeString(mCityId);
         dest.writeString(mCity);
+        dest.writeString(mState);
         dest.writeString(mPostal);
         dest.writeString(mCountryId);
         dest.writeString(mCountry);
@@ -151,7 +222,8 @@ public final class WeatherLocation implements Parcelable{
         return new StringBuilder()
                 .append("{ City ID: ").append(mCityId)
                 .append(" City: ").append(mCity)
-                .append(" Postal Code: ").append(mPostal)
+                .append(" State: ").append(mState)
+                .append(" Postal/ZIP Code: ").append(mPostal)
                 .append(" Country Id: ").append(mCountryId)
                 .append(" Country: ").append(mCountry).append("}")
                 .toString();
