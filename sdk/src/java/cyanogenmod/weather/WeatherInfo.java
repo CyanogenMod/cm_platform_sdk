@@ -19,7 +19,6 @@ package cyanogenmod.weather;
 import android.annotation.NonNull;
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import cyanogenmod.os.Build;
 import cyanogenmod.os.Concierge;
 import cyanogenmod.os.Concierge.ParcelInfo;
@@ -41,63 +40,81 @@ import java.util.ArrayList;
  */
 public final class WeatherInfo implements Parcelable {
 
-    private String mCityId;
     private String mCity;
     private int mConditionCode;
-    private float mTemperature;
+    private double mTemperature;
     private int mTempUnit;
-    private float mHumidity;
-    private float mWindSpeed;
-    private float mWindDirection;
+    private double mTodaysHighTemp;
+    private double mTodaysLowTemp;
+    private double mHumidity;
+    private double mWindSpeed;
+    private double mWindDirection;
     private int mWindSpeedUnit;
     private long mTimestamp;
     private ArrayList<DayForecast> mForecastList;
-    int mKey;
+    private int mKey;
 
     private WeatherInfo() {}
 
+    /**
+     * Builder class for {@link WeatherInfo}
+     */
     public static class Builder {
-        private String mCityId;
         private String mCity;
-        private int mConditionCode;
-        private float mTemperature;
+        private int mConditionCode = WeatherContract.WeatherColumns.WeatherCode.NOT_AVAILABLE;
+        private double mTemperature;
         private int mTempUnit;
-        private float mHumidity;
-        private float mWindSpeed;
-        private float mWindDirection;
-        private int mWindSpeedUnit;
-        private long mTimestamp;
-        private ArrayList<DayForecast> mForecastList;
+        private double mTodaysHighTemp = Double.NaN;
+        private double mTodaysLowTemp = Double.NaN;
+        private double mHumidity = Double.NaN;
+        private double mWindSpeed = Double.NaN;
+        private double mWindDirection = Double.NaN;
+        private int mWindSpeedUnit = WeatherContract.WeatherColumns.WindSpeedUnit.MPH;
+        private long mTimestamp = -1;
+        private ArrayList<DayForecast> mForecastList = new ArrayList<>(0);
 
-        public Builder(long timestamp) {
-            mTimestamp = timestamp;
-        }
-
-        public Builder setCity(String cityId, @NonNull String cityName) {
-            if (cityName == null || cityId == null) {
-                throw new IllegalArgumentException("City name and id can't be null");
+        /**
+         * @param cityName A valid city name. Attempting to pass null will get you an
+         *                 IllegalArgumentException
+         * @param temperature A valid temperature value. Attempting pass an invalid double value,
+         *                    will get you an IllegalArgumentException
+         * @param tempUnit A valid temperature unit value. See
+         *                 {@link cyanogenmod.providers.WeatherContract.WeatherColumns.TempUnit} for
+         *                 valid values. Attempting to pass an invalid temperature unit will get you
+         *                 an IllegalArgumentException
+         */
+        public Builder(@NonNull String cityName, double temperature, int tempUnit) {
+            if (cityName == null) {
+                throw new IllegalArgumentException("City name can't be null");
             }
-            mCityId = cityId;
-            mCity = cityName;
-            return this;
-        }
-
-        public Builder setTemperature(float temperature, int tempUnit) {
+            if (Double.isNaN(temperature)) {
+                throw new IllegalArgumentException("Invalid temperature");
+            }
             if (!isValidTempUnit(tempUnit)) {
                 throw new IllegalArgumentException("Invalid temperature unit");
             }
+            this.mCity = cityName;
+            this.mTemperature = temperature;
+            this.mTempUnit = tempUnit;
+        }
 
-            if (Float.isNaN(temperature)) {
-                throw new IllegalArgumentException("Invalid temperature value");
-            }
-
-            mTemperature = temperature;
-            mTempUnit = tempUnit;
+        /**
+         * @param timeStamp A timestamp indicating when this data was generated. If timestamps is
+         *                  not set, then the builder will set it to the time of object creation
+         * @return The {@link Builder} instance
+         */
+        public Builder setTimestamp(long timeStamp) {
+            mTimestamp = timeStamp;
             return this;
         }
 
-        public Builder setHumidity(float humidity) {
-            if (Float.isNaN(humidity)) {
+        /**
+         * @param humidity The weather humidity. Attempting to pass an invalid double value will get
+         *                 you an IllegalArgumentException
+         * @return The {@link Builder} instance
+         */
+        public Builder setHumidity(double humidity) {
+            if (Double.isNaN(humidity)) {
                 throw new IllegalArgumentException("Invalid humidity value");
             }
 
@@ -105,11 +122,22 @@ public final class WeatherInfo implements Parcelable {
             return this;
         }
 
-        public Builder setWind(float windSpeed, float windDirection, int windSpeedUnit) {
-            if (Float.isNaN(windSpeed)) {
+        /**
+         * @param windSpeed The wind speed. Attempting to pass an invalid double value will get you
+         *                  an IllegalArgumentException
+         * @param windDirection The wind direction. Attempting to pass an invalid double value will
+         *                      get you an IllegalArgumentException
+         * @param windSpeedUnit A valid wind speed direction unit. See
+         *                      {@link cyanogenmod.providers.WeatherContract.WeatherColumns.WindSpeedUnit}
+         *                      for valid values. Attempting to pass an invalid speed unit will get
+         *                      you an IllegalArgumentException
+         * @return The {@link Builder} instance
+         */
+        public Builder setWind(double windSpeed, double windDirection, int windSpeedUnit) {
+            if (Double.isNaN(windSpeed)) {
                 throw new IllegalArgumentException("Invalid wind speed value");
             }
-            if (Float.isNaN(windDirection)) {
+            if (Double.isNaN(windDirection)) {
                 throw new IllegalArgumentException("Invalid wind direction value");
             }
             if (!isValidWindSpeedUnit(windSpeedUnit)) {
@@ -121,6 +149,13 @@ public final class WeatherInfo implements Parcelable {
             return this;
         }
 
+        /**
+         * @param conditionCode A valid weather condition code. See
+         *                      {@link cyanogenmod.providers.WeatherContract.WeatherColumns.WeatherCode}
+         *                      for valid codes. Attempting to pass an invalid code will get you an
+         *                      IllegalArgumentException.
+         * @return The {@link Builder} instance
+         */
         public Builder setWeatherCondition(int conditionCode) {
             if (!isValidWeatherCode(conditionCode)) {
                 throw new IllegalArgumentException("Invalid weather condition code");
@@ -129,6 +164,11 @@ public final class WeatherInfo implements Parcelable {
             return this;
         }
 
+        /**
+         * @param forecasts A valid array list of {@link DayForecast} objects. Attempting to pass
+         *                  null will get you an IllegalArgumentException'
+         * @return The {@link Builder} instance
+         */
         public Builder setForecast(@NonNull ArrayList<DayForecast> forecasts) {
             if (forecasts == null) {
                 throw new IllegalArgumentException("Forecast list can't be null");
@@ -137,9 +177,39 @@ public final class WeatherInfo implements Parcelable {
             return this;
         }
 
+        /**
+         *
+         * @param todaysHigh Today's high temperature. Attempting to pass an invalid double value
+         *                   will get you an IllegalArgumentException
+         * @return The {@link Builder} instance
+         */
+        public Builder setTodaysHigh(double todaysHigh) {
+            if (Double.isNaN(todaysHigh)) {
+                throw new IllegalArgumentException("Invalid temperature value");
+            }
+            mTodaysHighTemp = todaysHigh;
+            return this;
+        }
+
+        /**
+         * @param todaysLow Today's low temperature. Attempting to pass an invalid double value will
+         *                  get you an IllegalArgumentException
+         * @return
+         */
+        public Builder setTodaysLow(double todaysLow) {
+            if (Double.isNaN(todaysLow)) {
+                throw new IllegalArgumentException("Invalid temperature value");
+            }
+            mTodaysLowTemp = todaysLow;
+            return this;
+        }
+
+        /**
+         * Combine all of the options that have been set and return a new {@link WeatherInfo} object
+         * @return {@link WeatherInfo}
+         */
         public WeatherInfo build() {
             WeatherInfo info = new WeatherInfo();
-            info.mCityId = this.mCityId;
             info.mCity = this.mCity;
             info.mConditionCode = this.mConditionCode;
             info.mTemperature = this.mTemperature;
@@ -148,7 +218,7 @@ public final class WeatherInfo implements Parcelable {
             info.mWindSpeed = this.mWindSpeed;
             info.mWindDirection = this.mWindDirection;
             info.mWindSpeedUnit = this.mWindSpeedUnit;
-            info.mTimestamp = this.mTimestamp;
+            info.mTimestamp = this.mTimestamp == -1 ? System.currentTimeMillis() : this.mTimestamp;
             info.mForecastList = this.mForecastList;
             info.mKey = this.hashCode();
             return info;
@@ -187,13 +257,6 @@ public final class WeatherInfo implements Parcelable {
     }
 
     /**
-     * @return city id
-     */
-    public String getCityId() {
-        return mCityId;
-    }
-
-    /**
      * @return city name
      */
     public String getCity() {
@@ -210,7 +273,7 @@ public final class WeatherInfo implements Parcelable {
     /**
      * @return humidity
      */
-    public float getHumidity() {
+    public double getHumidity() {
         return mHumidity;
     }
 
@@ -224,14 +287,14 @@ public final class WeatherInfo implements Parcelable {
     /**
      * @return wind direction (degrees)
      */
-    public float getWindDirection() {
+    public double getWindDirection() {
         return mWindDirection;
     }
 
     /**
      * @return wind speed
      */
-    public float getWindSpeed() {
+    public double getWindSpeed() {
         return mWindSpeed;
     }
 
@@ -245,7 +308,7 @@ public final class WeatherInfo implements Parcelable {
     /**
      * @return current temperature
      */
-    public float getTemperature() {
+    public double getTemperature() {
         return mTemperature;
     }
 
@@ -257,10 +320,26 @@ public final class WeatherInfo implements Parcelable {
     }
 
     /**
-     * @return List of {@link cyanogenmod.weather.WeatherInfo.DayForecast}
+     * @return today's high temperature
+     */
+    public double getTodaysHigh() {
+        return mTodaysHighTemp;
+    }
+
+    /**
+     * @return today's low temperature
+     */
+    public double getTodaysLow() {
+        return mTodaysLowTemp;
+    }
+
+    /**
+     * @return List of {@link cyanogenmod.weather.WeatherInfo.DayForecast}. This list will contain
+     * the forecast weather for the upcoming days. If you want to know today's high and low
+     * temperatures, use {@link WeatherInfo#getTodaysHigh()} and {@link WeatherInfo#getTodaysLow()}
      */
     public ArrayList<DayForecast> getForecasts() {
-        return mForecastList;
+        return new ArrayList<>(mForecastList);
     }
 
     private WeatherInfo(Parcel parcel) {
@@ -270,15 +349,16 @@ public final class WeatherInfo implements Parcelable {
 
         if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
             mKey = parcel.readInt();
-            mCityId = parcel.readString();
             mCity = parcel.readString();
             mConditionCode = parcel.readInt();
-            mTemperature = parcel.readFloat();
+            mTemperature = parcel.readDouble();
             mTempUnit = parcel.readInt();
-            mHumidity = parcel.readFloat();
-            mWindSpeed = parcel.readFloat();
-            mWindDirection = parcel.readFloat();
+            mHumidity = parcel.readDouble();
+            mWindSpeed = parcel.readDouble();
+            mWindDirection = parcel.readDouble();
             mWindSpeedUnit = parcel.readInt();
+            mTodaysHighTemp = parcel.readDouble();
+            mTodaysLowTemp = parcel.readDouble();
             mTimestamp = parcel.readLong();
             int forecastListSize = parcel.readInt();
             mForecastList = new ArrayList<>();
@@ -304,15 +384,16 @@ public final class WeatherInfo implements Parcelable {
 
         // ==== ELDERBERRY =====
         dest.writeInt(mKey);
-        dest.writeString(mCityId);
         dest.writeString(mCity);
         dest.writeInt(mConditionCode);
-        dest.writeFloat(mTemperature);
+        dest.writeDouble(mTemperature);
         dest.writeInt(mTempUnit);
-        dest.writeFloat(mHumidity);
-        dest.writeFloat(mWindSpeed);
-        dest.writeFloat(mWindDirection);
+        dest.writeDouble(mHumidity);
+        dest.writeDouble(mWindSpeed);
+        dest.writeDouble(mWindDirection);
         dest.writeInt(mWindSpeedUnit);
+        dest.writeDouble(mTodaysHighTemp);
+        dest.writeDouble(mTodaysLowTemp);
         dest.writeLong(mTimestamp);
         dest.writeInt(mForecastList.size());
         for (DayForecast dayForecast : mForecastList) {
@@ -338,45 +419,72 @@ public final class WeatherInfo implements Parcelable {
             };
 
     /**
-     * This class represents the weather forecast for a given day
+     * This class represents the weather forecast for a given day. Do not add low and high
+     * temperatures for the current day in this list. Use
+     * {@link WeatherInfo.Builder#setTodaysHigh(double)} and
+     * {@link WeatherInfo.Builder#setTodaysLow(double)} instead.
      */
     public static class DayForecast implements Parcelable{
-        float mLow;
-        float mHigh;
+        double mLow;
+        double mHigh;
         int mConditionCode;
         int mKey;
 
         private DayForecast() {}
 
+        /**
+         * Builder class for {@link DayForecast}
+         */
         public static class Builder {
-            float mLow;
-            float mHigh;
+            double mLow = Double.NaN;
+            double mHigh = Double.NaN;
             int mConditionCode;
 
-            public Builder() {}
-            public Builder setHigh(float high) {
-                if (Float.isNaN(high)) {
+            /**
+             * @param conditionCode A valid weather condition code. See
+             * {@link cyanogenmod.providers.WeatherContract.WeatherColumns.WeatherCode} for valid
+             *                      values. Attempting to pass an invalid code will get you an
+             *                      IllegalArgumentException
+             */
+            public Builder(int conditionCode) {
+                if (!isValidWeatherCode(conditionCode)) {
+                    throw new IllegalArgumentException("Invalid weather condition code");
+                }
+                mConditionCode = conditionCode;
+            }
+
+            /**
+             * @param high Forecast high temperature for this day. Attempting to pass an invalid
+             *             double value will get you an IllegalArgumentException
+             * @return The {@link Builder} instance
+             */
+            public Builder setHigh(double high) {
+                if (Double.isNaN(high)) {
                     throw new IllegalArgumentException("Invalid high forecast temperature");
                 }
                 mHigh = high;
                 return this;
             }
-            public Builder setLow(float low) {
-                if (Float.isNaN(low)) {
+
+            /**
+             * @param low Forecast low temperate for this day. Attempting to pass an invalid double
+             *            value will get you an IllegalArgumentException
+             * @return The {@link Builder} instance
+             */
+            public Builder setLow(double low) {
+                if (Double.isNaN(low)) {
                     throw new IllegalArgumentException("Invalid low forecast temperature");
                 }
                 mLow = low;
                 return this;
             }
 
-            public Builder setWeatherCondition(int code) {
-                if (!isValidWeatherCode(code)) {
-                    throw new IllegalArgumentException("Invalid weather condition code");
-                }
-                mConditionCode = code;
-                return this;
-            }
 
+            /**
+             * Combine all of the options that have been set and return a new {@link DayForecast}
+             * object
+             * @return {@link DayForecast}
+             */
             public DayForecast build() {
                 DayForecast forecast = new DayForecast();
                 forecast.mLow = this.mLow;
@@ -390,14 +498,14 @@ public final class WeatherInfo implements Parcelable {
         /**
          * @return forecasted low temperature
          */
-        public float getLow() {
+        public double getLow() {
             return mLow;
         }
 
         /**
          * @return not what you think. Returns the forecasted high temperature
          */
-        public float getHigh() {
+        public double getHigh() {
             return mHigh;
         }
 
@@ -420,8 +528,8 @@ public final class WeatherInfo implements Parcelable {
 
             // ==== ELDERBERRY =====
             dest.writeInt(mKey);
-            dest.writeFloat(mLow);
-            dest.writeFloat(mHigh);
+            dest.writeDouble(mLow);
+            dest.writeDouble(mHigh);
             dest.writeInt(mConditionCode);
 
             // Complete parcel info for the concierge
@@ -448,8 +556,8 @@ public final class WeatherInfo implements Parcelable {
 
             if (parcelableVersion >= Build.CM_VERSION_CODES.ELDERBERRY) {
                 mKey = parcel.readInt();
-                mLow = parcel.readFloat();
-                mHigh = parcel.readFloat();
+                mLow = parcel.readDouble();
+                mHigh = parcel.readDouble();
                 mConditionCode = parcel.readInt();
             }
 
@@ -488,7 +596,6 @@ public final class WeatherInfo implements Parcelable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder()
-            .append("{CityId: ").append(mCityId)
             .append(" City Name: ").append(mCity)
             .append(" Condition Code: ").append(mConditionCode)
             .append(" Temperature: ").append(mTemperature)
@@ -497,6 +604,8 @@ public final class WeatherInfo implements Parcelable {
             .append(" Wind speed: ").append(mWindSpeed)
             .append(" Wind direction: ").append(mWindDirection)
             .append(" Wind Speed Unit: ").append(mWindSpeedUnit)
+            .append(" Today's high temp: ").append(mTodaysHighTemp)
+            .append(" Today's low temp: ").append(mTodaysLowTemp)
             .append(" Timestamp: ").append(mTimestamp).append(" Forecasts: [");
         for (DayForecast dayForecast : mForecastList) {
             builder.append(dayForecast.toString());

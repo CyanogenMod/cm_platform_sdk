@@ -31,8 +31,8 @@ public class WeatherUtils {
      * @param celsius temperature in Celsius
      * @return the temperature in degrees Fahrenheit
      */
-    public static float celsiusToFahrenheit(float celsius) {
-        return ((celsius * (9f/5f)) + 32f);
+    public static double celsiusToFahrenheit(double celsius) {
+        return ((celsius * (9d/5d)) + 32d);
     }
 
     /**
@@ -40,8 +40,8 @@ public class WeatherUtils {
      * @param fahrenheit temperature in Fahrenheit
      * @return the temperature in degrees Celsius
      */
-    public static float fahrenheitToCelsius(float fahrenheit) {
-        return  ((fahrenheit - 32f) * (5f/9f));
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return  ((fahrenheit - 32d) * (5d/9d));
     }
 
     /**
@@ -52,9 +52,9 @@ public class WeatherUtils {
      * @return A string with the format XX&deg;F or XX&deg;C (where XX is the temperature)
      * depending on the temperature unit that was provided or null if an invalid unit is supplied
      */
-    public static String formatTemperature(float temperature, int tempUnit) {
+    public static String formatTemperature(double temperature, int tempUnit) {
         if (!isValidTempUnit(tempUnit)) return null;
-        if (Float.isNaN(temperature)) return "-";
+        if (Double.isNaN(temperature)) return "-";
 
         DecimalFormat noDigitsFormat = new DecimalFormat("0");
         String noDigitsTemp = noDigitsFormat.format(temperature);
