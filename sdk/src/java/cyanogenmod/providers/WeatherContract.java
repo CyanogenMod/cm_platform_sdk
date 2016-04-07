@@ -44,13 +44,6 @@ public class WeatherContract {
                 = Uri.withAppendedPath(CONTENT_URI, "forecast");
 
         /**
-         * A unique ID for the city. NOTE: this value fully depends on the implementation of the
-         * weather provider service and can potentially change when you switch providers.
-         * <P>Type: TEXT</P>
-         */
-        public static final String CURRENT_CITY_ID = "city_id";
-
-        /**
          * The city name
          * <P>Type: TEXT</P>
          */
@@ -72,7 +65,7 @@ public class WeatherContract {
 
         /**
          * The current weather temperature
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String CURRENT_TEMPERATURE = "temperature";
 
@@ -89,19 +82,19 @@ public class WeatherContract {
 
         /**
          * The current weather humidity
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String CURRENT_HUMIDITY = "humidity";
 
         /**
          * The current wind direction (in degrees)
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String CURRENT_WIND_DIRECTION = "wind_direction";
 
         /**
          * The current wind speed
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String CURRENT_WIND_SPEED = "wind_speed";
 
@@ -123,14 +116,26 @@ public class WeatherContract {
         public static final String CURRENT_TIMESTAMP = "timestamp";
 
         /**
+         * Today's high temperature.
+         * <p>Type: DOUBLE</p>
+         */
+        public static final String TODAYS_HIGH_TEMPERATURE = "todays_high";
+
+        /**
+         * Today's low temperature.
+         * <p>Type: DOUBLE</p>
+         */
+        public static final String TODAYS_LOW_TEMPERATURE = "todays_low";
+
+        /**
          * The forecasted low temperature
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String FORECAST_LOW = "forecast_low";
 
         /**
          * The forecasted high temperature
-         * <P>Type: FLOAT</P>
+         * <P>Type: DOUBLE</P>
          */
         public static final String FORECAST_HIGH = "forecast_high";
 
