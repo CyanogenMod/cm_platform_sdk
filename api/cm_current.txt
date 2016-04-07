@@ -1390,6 +1390,7 @@ package cyanogenmod.weather {
     method public java.lang.String getCountry();
     method public java.lang.String getCountryId();
     method public java.lang.String getPostalCode();
+    method public java.lang.String getState();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.weather.WeatherLocation> CREATOR;
   }
@@ -1399,6 +1400,7 @@ package cyanogenmod.weather {
     method public cyanogenmod.weather.WeatherLocation build();
     method public cyanogenmod.weather.WeatherLocation.Builder setCountry(java.lang.String, java.lang.String);
     method public cyanogenmod.weather.WeatherLocation.Builder setPostalCode(java.lang.String);
+    method public cyanogenmod.weather.WeatherLocation.Builder setState(java.lang.String);
   }
 
 }
