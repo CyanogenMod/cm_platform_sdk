@@ -398,16 +398,17 @@ public class CMWeatherManagerService extends SystemService{
         List<ContentValues> contentValuesList = new ArrayList<>(size);
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WeatherColumns.CURRENT_CITY_ID, wi.getCityId());
         contentValues.put(WeatherColumns.CURRENT_CITY, wi.getCity());
-        contentValues.put(WeatherColumns.CURRENT_CONDITION_CODE, wi.getConditionCode());
-        contentValues.put(WeatherColumns.CURRENT_HUMIDITY, wi.getHumidity());
         contentValues.put(WeatherColumns.CURRENT_TEMPERATURE, wi.getTemperature());
         contentValues.put(WeatherColumns.CURRENT_TEMPERATURE_UNIT, wi.getTemperatureUnit());
-        contentValues.put(WeatherColumns.CURRENT_TIMESTAMP, wi.getTimestamp());
-        contentValues.put(WeatherColumns.CURRENT_WIND_DIRECTION, wi.getWindDirection());
+        contentValues.put(WeatherColumns.CURRENT_CONDITION_CODE, wi.getConditionCode());
+        contentValues.put(WeatherColumns.CURRENT_HUMIDITY, wi.getHumidity());
         contentValues.put(WeatherColumns.CURRENT_WIND_SPEED, wi.getWindSpeed());
+        contentValues.put(WeatherColumns.CURRENT_WIND_DIRECTION, wi.getWindDirection());
         contentValues.put(WeatherColumns.CURRENT_WIND_SPEED_UNIT, wi.getWindSpeedUnit());
+        contentValues.put(WeatherColumns.CURRENT_TIMESTAMP, wi.getTimestamp());
+        contentValues.put(WeatherColumns.TODAYS_HIGH_TEMPERATURE, wi.getTodaysHigh());
+        contentValues.put(WeatherColumns.TODAYS_LOW_TEMPERATURE, wi.getTodaysLow());
         contentValuesList.add(contentValues);
 
         for (WeatherInfo.DayForecast df : wi.getForecasts()) {
