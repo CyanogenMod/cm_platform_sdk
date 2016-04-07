@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">přístup ke správci výkonu</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Umožňuje přistupovat ke službě výkonu. Toto oprávnění by neměla vyžadovat žádná normální aplikace.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">přístup ke službě správce živého zámku obrazovky</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Umožní přistupovat ke správci služby živého zámku obrazovky.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">přístup ke službě správce živého zámku obrazovky</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Umožní systému přistupovat ke správci služby živého zámku obrazovky.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">poskytovat správce služby živého zámku obrazovky</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Umožní poskytovat správce služby živého zámku obrazovky.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">číst počasí</string>
+  <string name="permdesc_weather_read">Umožní číst obsah od poskytovatele počasí.</string>
+  <string name="permlab_weather_write">aktualizovat poskytovatele počasí</string>
+  <string name="permdesc_weather_write">Umožní aktualizovat obsah poskytovatele počasí.</string>
+  <string name="permlab_weather_bind">vázat se jako služba poskytovatele počasí</string>
+  <string name="permdesc_weather_bind">Umožní identifikaci jako služba poskytovatele počasí.</string>
+  <string name="permlab_weather_access_mgr">přistupovat ke službě počasí</string>
+  <string name="permdesc_weather_access_mgr">Umožní přistupovat ke službě počasí v systému. Toto oprávnění by neměla vyžadovat žádná normální aplikace.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">měnit databázi využití dat</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Umožní aktualizovat obsah databáze využití dat.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">čist databázi využití dat</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Umožní číst obsah databáze využití dat.</string>
 </resources>

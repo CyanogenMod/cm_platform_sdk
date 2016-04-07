@@ -133,4 +133,15 @@
   <string name="permlab_perfAccess">доступ да менеджара прадукцыйнасці</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Дадатак зможа атрымваць доступ да службы прадукцыйнасці. Гэты дазвол не выкарыстоўваецца звычайнымі дадаткамі.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <!-- Access live lock screen manager service permission description -->
+  <!-- Privileged access live lock screen manager service permission label -->
+  <!-- Privileged access live lock screen manager service permission description -->
+  <!-- Live lock screen manager service provider permission label -->
+  <!-- Live lock screen manager service provider permission description -->
+  <!-- Weather Service strings -->
+  <!-- DataUsageProvider write permission title -->
+  <!-- DataUsageProvider write permission description -->
+  <!-- DataUsageProvider read permission title -->
+  <!-- DataUsageProvider read permission description -->
 </resources>

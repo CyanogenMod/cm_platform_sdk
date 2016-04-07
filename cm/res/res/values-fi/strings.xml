@@ -132,4 +132,33 @@
   <string name="permlab_perfAccess">pääse suorituskyvyn hallintaan</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Sallii sovelluksen pääsyn suorityskyvyn hallinnan palveluun. Tavalliset sovellukset eivät koskaan tarvitse tätä.</string>
+  <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">käytä live-lukitusnäytön hallintapalvelua</string>
+  <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Sallii sovelluksen käyttää live-lukitusnäytön hallintapalvelua.</string>
+  <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">käytä live-lukitusnäytön hallintapalvelua</string>
+  <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Sallii järjestelmän käyttää live-lukitusnäytön hallintapalvelua.</string>
+  <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">käytä live-lukitusnäytön hallintapalveluna</string>
+  <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Sallii palvelua käytettävän live-lukitusnäytön hallintapalveluna.</string>
+  <!-- Weather Service strings -->
+  <string name="permlab_weather_read">lue säätä</string>
+  <string name="permdesc_weather_read">Sallii sovelluksen lukea sisältöä säätarjoajalta.</string>
+  <string name="permlab_weather_write">päivitä säätarjoajaa</string>
+  <string name="permdesc_weather_write">Sallii sovelluksen päivittää säätarjoajan sisältöä.</string>
+  <string name="permlab_weather_bind">aseta säätarjoajapalveluksi</string>
+  <string name="permdesc_weather_bind">Sallii sovellusta käytettävän säätarjoajapalveluna.</string>
+  <string name="permlab_weather_access_mgr">pääsy sääpalveluun</string>
+  <string name="permdesc_weather_access_mgr">Sallii sovelluksen päästä järjestelmän sääpalveluun. Tavalliset sovellukset ei koskaan tarvitse tätä.</string>
+  <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">muokkaa datan käytön tietokantaa</string>
+  <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Sallii sovelluksen päivittää datan käytön tietokantaa.</string>
+  <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">lue datan käytön tietokantaa</string>
+  <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Sallii sovelluksen lukea datan käytön tietokantaa.</string>
 </resources>
