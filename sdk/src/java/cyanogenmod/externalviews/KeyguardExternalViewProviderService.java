@@ -595,9 +595,12 @@ public abstract class KeyguardExternalViewProviderService extends Service {
          * attention.  The user will still be able to bring the notifications back into view by
          * sliding down from the status bar.
          * Calling this method has no effect for non-interactive components.</p>
+         * @deprecated As of SDK version {@link cyanogenmod.os.Build.CM_VERSION_CODES#ELDERBERRY}
+         * this does nothing.
          */
+        @Deprecated
         protected final void collapseNotificationPanel() {
-            mImpl.collapseNotificationPanel();
+            /* do nothing */
         }
 
         /**
