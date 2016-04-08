@@ -56,8 +56,8 @@ public final class ServiceRequest {
             try {
                 final int requestType = mInfo.getRequestType();
                 switch (requestType) {
-                    case RequestInfo.TYPE_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         if (result.getWeatherInfo() == null) {
                             throw new IllegalStateException("The service request result does not"
                              + " contain a valid WeatherInfo object");
@@ -91,8 +91,8 @@ public final class ServiceRequest {
             try {
                 final int requestType = mInfo.getRequestType();
                 switch (requestType) {
-                    case RequestInfo.TYPE_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         mClient.setServiceRequestState(mInfo, null,
                                 CMWeatherManager.WEATHER_REQUEST_FAILED);
                         break;
