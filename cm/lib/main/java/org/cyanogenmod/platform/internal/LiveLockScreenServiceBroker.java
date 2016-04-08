@@ -92,15 +92,17 @@ public class LiveLockScreenServiceBroker extends SystemService {
                 LiveLockScreenServiceBroker.this.notifyAll();
                 // If any change listeners are cached, register them with the newly connected
                 // service.
-                int N = mChangeListeners.getRegisteredCallbackCount();
-                if (mService != null && N > 0) {
-                    for (int i = 0; i < N; i++) {
-                        try {
+                try {
+                    int N = mChangeListeners.beginBroadcast();
+                    if (mService != null && N > 0) {
+                        for (int i = 0; i < N; i++) {
                             mService.registerChangeListener(mChangeListeners.getBroadcastItem(i));
-                        } catch (RemoteException e) {
-                            /* ignore */
                         }
                     }
+                } catch (RemoteException e) {
+                    /* ignore */
+                } finally {
+                    mChangeListeners.finishBroadcast();
                 }
             }
         }
