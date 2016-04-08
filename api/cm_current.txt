@@ -1334,9 +1334,9 @@ package cyanogenmod.weather {
     method public cyanogenmod.weather.WeatherLocation getWeatherLocation();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.weather.RequestInfo> CREATOR;
-    field public static final int TYPE_GEO_LOCATION_REQ = 1; // 0x1
     field public static final int TYPE_LOOKUP_CITY_NAME_REQ = 3; // 0x3
-    field public static final int TYPE_WEATHER_LOCATION_REQ = 2; // 0x2
+    field public static final int TYPE_WEATHER_BY_GEO_LOCATION_REQ = 1; // 0x1
+    field public static final int TYPE_WEATHER_BY_WEATHER_LOCATION_REQ = 2; // 0x2
   }
 
   public final class WeatherInfo implements android.os.Parcelable {

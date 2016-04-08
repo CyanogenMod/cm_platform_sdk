@@ -42,11 +42,11 @@ public final class RequestInfo implements Parcelable {
     /**
      * A request to update the weather data using a geographical {@link android.location.Location}
      */
-    public static final int TYPE_GEO_LOCATION_REQ = 1;
+    public static final int TYPE_WEATHER_BY_GEO_LOCATION_REQ = 1;
     /**
      * A request to update the weather data using a {@link WeatherLocation}
      */
-    public static final int TYPE_WEATHER_LOCATION_REQ = 2;
+    public static final int TYPE_WEATHER_BY_WEATHER_LOCATION_REQ = 2;
 
     /**
      * A request to look up a city name
@@ -70,9 +70,13 @@ public final class RequestInfo implements Parcelable {
 
         /**
          * Sets the city name and identifies this request as a {@link #TYPE_LOOKUP_CITY_NAME_REQ}
-         * request. If set, will null out the location and weather location.
+         * request. If set, will null out the location and weather location. Attempting to set
+         * a null city name will get you an IllegalArgumentException
          */
         public Builder setCityName(String cityName) {
+            if (cityName == null) {
+                throw new IllegalArgumentException("City name can't be null");
+            }
             this.mCityName = cityName;
             this.mRequestType = TYPE_LOOKUP_CITY_NAME_REQ;
             this.mLocation = null;
@@ -81,26 +85,36 @@ public final class RequestInfo implements Parcelable {
         }
 
         /**
-         * Sets the Location and identifies this request as a {@link #TYPE_GEO_LOCATION_REQ}. If
-         * set, will null out the city name and weather location.
+         * Sets the Location and identifies this request as a
+         * {@link #TYPE_WEATHER_BY_GEO_LOCATION_REQ}. If set, will null out the city name and
+         * weather location. Attempting to set a null location will get you an
+         * IllegalArgumentException
          */
         public Builder setLocation(Location location) {
+            if (location == null) {
+                throw new IllegalArgumentException("Location can't be null");
+            }
             this.mLocation = new Location(location);
             this.mCityName = null;
             this.mWeatherLocation = null;
-            this.mRequestType = TYPE_GEO_LOCATION_REQ;
+            this.mRequestType = TYPE_WEATHER_BY_GEO_LOCATION_REQ;
             return this;
         }
 
         /**
          * Sets the weather location and identifies this request as a
-         * {@link #TYPE_WEATHER_LOCATION_REQ}. If set, will null out the location and city name
+         * {@link #TYPE_WEATHER_BY_WEATHER_LOCATION_REQ}. If set, will null out the location and
+         * city name. Attempting to set a null weather location will get you an
+         * IllegalArgumentException
          */
         public Builder setWeatherLocation(WeatherLocation weatherLocation) {
+            if (weatherLocation == null) {
+                throw new IllegalArgumentException("WeatherLocation can't be null");
+            }
             this.mWeatherLocation = weatherLocation;
             this.mLocation = null;
             this.mCityName = null;
-            this.mRequestType = TYPE_WEATHER_LOCATION_REQ;
+            this.mRequestType = TYPE_WEATHER_BY_WEATHER_LOCATION_REQ;
             return this;
         }
 
@@ -130,8 +144,8 @@ public final class RequestInfo implements Parcelable {
          */
         public Builder queryOnly() {
             switch (mRequestType) {
-                case TYPE_GEO_LOCATION_REQ:
-                case TYPE_WEATHER_LOCATION_REQ:
+                case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                     this.mIsQueryOnly = true;
                     break;
                 default:
@@ -175,11 +189,11 @@ public final class RequestInfo implements Parcelable {
             mKey = parcel.readInt();
             mRequestType = parcel.readInt();
             switch (mRequestType) {
-                case TYPE_GEO_LOCATION_REQ:
+                case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
                     mLocation = Location.CREATOR.createFromParcel(parcel);
                     mTempUnit = parcel.readInt();
                     break;
-                case TYPE_WEATHER_LOCATION_REQ:
+                case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                     mWeatherLocation = WeatherLocation.CREATOR.createFromParcel(parcel);
                     mTempUnit = parcel.readInt();
                     break;
@@ -238,8 +252,8 @@ public final class RequestInfo implements Parcelable {
      */
     public int getTemperatureUnit() {
         switch (mRequestType) {
-            case TYPE_GEO_LOCATION_REQ:
-            case TYPE_WEATHER_LOCATION_REQ:
+            case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+            case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 return mTempUnit;
             default:
                 return -1;
@@ -253,8 +267,8 @@ public final class RequestInfo implements Parcelable {
      */
     public boolean isQueryOnlyWeatherRequest() {
         switch (mRequestType) {
-            case TYPE_GEO_LOCATION_REQ:
-            case TYPE_WEATHER_LOCATION_REQ:
+            case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+            case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 return mIsQueryOnly;
             default:
                 return false;
@@ -287,11 +301,11 @@ public final class RequestInfo implements Parcelable {
         dest.writeInt(mKey);
         dest.writeInt(mRequestType);
         switch (mRequestType) {
-            case TYPE_GEO_LOCATION_REQ:
+            case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
                 mLocation.writeToParcel(dest, 0);
                 dest.writeInt(mTempUnit);
                 break;
-            case TYPE_WEATHER_LOCATION_REQ:
+            case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 mWeatherLocation.writeToParcel(dest, 0);
                 dest.writeInt(mTempUnit);
                 break;
@@ -311,7 +325,7 @@ public final class RequestInfo implements Parcelable {
         StringBuilder builder = new StringBuilder();
         builder.append("{ Request for ");
         switch (mRequestType) {
-            case TYPE_GEO_LOCATION_REQ:
+            case TYPE_WEATHER_BY_GEO_LOCATION_REQ:
                 builder.append("Location: ").append(mLocation);
                 builder.append(" Temp Unit: ");
                 if (mTempUnit == WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT) {
@@ -320,7 +334,7 @@ public final class RequestInfo implements Parcelable {
                     builder.append(" Celsius");
                 }
                 break;
-            case TYPE_WEATHER_LOCATION_REQ:
+            case TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 builder.append("WeatherLocation: ").append(mWeatherLocation);
                 builder.append(" Temp Unit: ");
                 if (mTempUnit == WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT) {

@@ -91,8 +91,8 @@ public class CMWeatherManagerService extends SystemService{
                 final int requestType = requestInfo.getRequestType();
 
                 switch (requestType) {
-                    case RequestInfo.TYPE_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         if (!isValidRequestInfoState(requestType, state)) {
                             //We received an invalid state, silently disregard the request
                             mIsProcessingRequest = false;
@@ -142,8 +142,8 @@ public class CMWeatherManagerService extends SystemService{
 
     private boolean isValidRequestInfoState(int requestType, int state) {
         switch (requestType) {
-            case RequestInfo.TYPE_GEO_LOCATION_REQ:
-            case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+            case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+            case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 switch (state) {
                     case CMWeatherManager.WEATHER_REQUEST_COMPLETED:
                     case CMWeatherManager.WEATHER_REQUEST_SUBMITTED_TOO_SOON:
