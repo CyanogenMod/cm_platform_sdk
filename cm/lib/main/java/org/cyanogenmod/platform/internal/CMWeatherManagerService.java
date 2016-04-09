@@ -91,8 +91,8 @@ public class CMWeatherManagerService extends SystemService{
                 final int requestType = requestInfo.getRequestType();
 
                 switch (requestType) {
-                    case RequestInfo.TYPE_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         if (!isValidRequestInfoState(requestType, state)) {
                             //We received an invalid state, silently disregard the request
                             mIsProcessingRequest = false;
@@ -142,8 +142,8 @@ public class CMWeatherManagerService extends SystemService{
 
     private boolean isValidRequestInfoState(int requestType, int state) {
         switch (requestType) {
-            case RequestInfo.TYPE_GEO_LOCATION_REQ:
-            case RequestInfo.TYPE_WEATHER_LOCATION_REQ:
+            case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+            case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                 switch (state) {
                     case CMWeatherManager.WEATHER_REQUEST_COMPLETED:
                     case CMWeatherManager.WEATHER_REQUEST_SUBMITTED_TOO_SOON:
@@ -219,6 +219,12 @@ public class CMWeatherManagerService extends SystemService{
                 Binder.restoreCallingIdentity(identity);
             }
             return null;
+        }
+
+        @Override
+        public void cancelRequest(RequestInfo info) {
+            enforcePermission();
+            processCancelRequest(info);
         }
     };
 
@@ -334,6 +340,15 @@ public class CMWeatherManagerService extends SystemService{
         }
     }
 
+    private void processCancelRequest(RequestInfo info) {
+        if (mIsWeatherProviderServiceBound) {
+            try {
+                mWeatherProviderService.cancelRequest(info);
+            } catch (RemoteException e) {
+            }
+        }
+    }
+
     private ServiceConnection mWeatherServiceProviderConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -383,16 +398,17 @@ public class CMWeatherManagerService extends SystemService{
         List<ContentValues> contentValuesList = new ArrayList<>(size);
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WeatherColumns.CURRENT_CITY_ID, wi.getCityId());
         contentValues.put(WeatherColumns.CURRENT_CITY, wi.getCity());
-        contentValues.put(WeatherColumns.CURRENT_CONDITION_CODE, wi.getConditionCode());
-        contentValues.put(WeatherColumns.CURRENT_HUMIDITY, wi.getHumidity());
         contentValues.put(WeatherColumns.CURRENT_TEMPERATURE, wi.getTemperature());
         contentValues.put(WeatherColumns.CURRENT_TEMPERATURE_UNIT, wi.getTemperatureUnit());
-        contentValues.put(WeatherColumns.CURRENT_TIMESTAMP, wi.getTimestamp());
-        contentValues.put(WeatherColumns.CURRENT_WIND_DIRECTION, wi.getWindDirection());
+        contentValues.put(WeatherColumns.CURRENT_CONDITION_CODE, wi.getConditionCode());
+        contentValues.put(WeatherColumns.CURRENT_HUMIDITY, wi.getHumidity());
         contentValues.put(WeatherColumns.CURRENT_WIND_SPEED, wi.getWindSpeed());
+        contentValues.put(WeatherColumns.CURRENT_WIND_DIRECTION, wi.getWindDirection());
         contentValues.put(WeatherColumns.CURRENT_WIND_SPEED_UNIT, wi.getWindSpeedUnit());
+        contentValues.put(WeatherColumns.CURRENT_TIMESTAMP, wi.getTimestamp());
+        contentValues.put(WeatherColumns.TODAYS_HIGH_TEMPERATURE, wi.getTodaysHigh());
+        contentValues.put(WeatherColumns.TODAYS_LOW_TEMPERATURE, wi.getTodaysLow());
         contentValuesList.add(contentValues);
 
         for (WeatherInfo.DayForecast df : wi.getForecasts()) {
