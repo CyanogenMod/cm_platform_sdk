@@ -590,7 +590,7 @@ public class ThemeManagerService extends SystemService {
     }
 
     private boolean updateBootAnim(String pkgName) {
-        if (SYSTEM_DEFAULT.equals(pkgName)) {
+        if (TextUtils.isEmpty(pkgName) || SYSTEM_DEFAULT.equals(pkgName)) {
             clearBootAnimation();
             return true;
         }
