@@ -2729,6 +2729,32 @@ public final class CMSettings {
          */
         public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
 
+        /**
+         * Motion action
+         *
+         * @hide
+         */
+        public static final String MOTION_BEHAVIOR = "motion_behavior";
+
+        /**
+         * MOTION_BEHAVIOR value for "do nothing".
+         * @hide
+         */
+        public static final int MOTION_BEHAVIOR_NOTHING = 0x0;
+
+        /**
+         * MOTION_BEHAVIOR value for "flip to mute incoming call".
+         * @hide
+         */
+        public static final int MOTION_BEHAVIOR_FLIP_TO_MUTE_INCOMING_CALL  = 0x1;
+
+        /**
+         * MOTION_BEHAVIOR default value.
+         * @hide
+         */
+        public static final int MOTION_BEHAVIOR_DEFAULT =
+                MOTION_BEHAVIOR_FLIP_TO_MUTE_INCOMING_CALL;
+
         // endregion
 
         /**
