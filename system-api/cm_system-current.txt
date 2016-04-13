@@ -1351,13 +1351,13 @@ package cyanogenmod.util {
 package cyanogenmod.weather {
 
   public class CMWeatherManager {
-    method public void cancelRequest(cyanogenmod.weather.RequestInfo);
+    method public void cancelRequest(int);
     method public java.lang.String getActiveWeatherServiceProviderLabel();
     method public static cyanogenmod.weather.CMWeatherManager getInstance(android.content.Context);
-    method public cyanogenmod.weather.RequestInfo lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener);
+    method public int lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener);
     method public void registerWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
-    method public cyanogenmod.weather.RequestInfo requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
-    method public cyanogenmod.weather.RequestInfo requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public int requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
+    method public int requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
     method public void unregisterWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
     field public static final int WEATHER_REQUEST_ALREADY_IN_PROGRESS = -3; // 0xfffffffd
     field public static final int WEATHER_REQUEST_COMPLETED = 1; // 0x1
@@ -1366,7 +1366,7 @@ package cyanogenmod.weather {
   }
 
   public static abstract interface CMWeatherManager.LookupCityRequestListener {
-    method public abstract void onLookupCityRequestCompleted(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>);
+    method public abstract void onLookupCityRequestCompleted(java.util.List<cyanogenmod.weather.WeatherLocation>);
   }
 
   public static abstract interface CMWeatherManager.WeatherServiceProviderChangeListener {
@@ -1395,7 +1395,7 @@ package cyanogenmod.weather {
     method public int describeContents();
     method public java.lang.String getCity();
     method public int getConditionCode();
-    method public java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast> getForecasts();
+    method public java.util.List<cyanogenmod.weather.WeatherInfo.DayForecast> getForecasts();
     method public double getHumidity();
     method public double getTemperature();
     method public int getTemperatureUnit();
@@ -1412,7 +1412,7 @@ package cyanogenmod.weather {
   public static class WeatherInfo.Builder {
     ctor public WeatherInfo.Builder(java.lang.String, double, int);
     method public cyanogenmod.weather.WeatherInfo build();
-    method public cyanogenmod.weather.WeatherInfo.Builder setForecast(java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast>);
+    method public cyanogenmod.weather.WeatherInfo.Builder setForecast(java.util.List<cyanogenmod.weather.WeatherInfo.DayForecast>);
     method public cyanogenmod.weather.WeatherInfo.Builder setHumidity(double);
     method public cyanogenmod.weather.WeatherInfo.Builder setTimestamp(long);
     method public cyanogenmod.weather.WeatherInfo.Builder setTodaysHigh(double);
@@ -1451,8 +1451,10 @@ package cyanogenmod.weather {
 
   public static class WeatherLocation.Builder {
     ctor public WeatherLocation.Builder(java.lang.String, java.lang.String);
+    ctor public WeatherLocation.Builder(java.lang.String);
     method public cyanogenmod.weather.WeatherLocation build();
-    method public cyanogenmod.weather.WeatherLocation.Builder setCountry(java.lang.String, java.lang.String);
+    method public cyanogenmod.weather.WeatherLocation.Builder setCountry(java.lang.String);
+    method public cyanogenmod.weather.WeatherLocation.Builder setCountryId(java.lang.String);
     method public cyanogenmod.weather.WeatherLocation.Builder setPostalCode(java.lang.String);
     method public cyanogenmod.weather.WeatherLocation.Builder setState(java.lang.String);
   }
@@ -1469,7 +1471,7 @@ package cyanogenmod.weatherservice {
 
   public final class ServiceRequestResult implements android.os.Parcelable {
     method public int describeContents();
-    method public java.util.ArrayList<cyanogenmod.weather.WeatherLocation> getLocationLookupList();
+    method public java.util.List<cyanogenmod.weather.WeatherLocation> getLocationLookupList();
     method public cyanogenmod.weather.WeatherInfo getWeatherInfo();
     method public void writeToParcel(android.os.Parcel, int);
     field public static final android.os.Parcelable.Creator<cyanogenmod.weatherservice.ServiceRequestResult> CREATOR;
@@ -1477,9 +1479,9 @@ package cyanogenmod.weatherservice {
 
   public static class ServiceRequestResult.Builder {
     ctor public ServiceRequestResult.Builder();
+    ctor public ServiceRequestResult.Builder(cyanogenmod.weather.WeatherInfo);
+    ctor public ServiceRequestResult.Builder(java.util.List<cyanogenmod.weather.WeatherLocation>);
     method public cyanogenmod.weatherservice.ServiceRequestResult build();
-    method public cyanogenmod.weatherservice.ServiceRequestResult.Builder setLocationLookupList(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>);
-    method public cyanogenmod.weatherservice.ServiceRequestResult.Builder setWeatherInfo(cyanogenmod.weather.WeatherInfo);
   }
 
   public abstract class WeatherProviderService extends android.app.Service {
