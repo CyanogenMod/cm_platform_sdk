@@ -142,9 +142,12 @@ public class CMWeatherManager {
         }
 
         try {
+            int tempUnit = sWeatherManagerService.getTemperatureUnit();
+
             RequestInfo info = new RequestInfo
                     .Builder(mRequestInfoListener)
                     .setLocation(location)
+                    .setTemperatureUnit(tempUnit)
                     .build();
             if (listener != null) mWeatherUpdateRequestListeners.put(info, listener);
             sWeatherManagerService.updateWeather(info);
@@ -175,9 +178,12 @@ public class CMWeatherManager {
         }
 
         try {
+            int tempUnit = sWeatherManagerService.getTemperatureUnit();
+
             RequestInfo info = new RequestInfo
                     .Builder(mRequestInfoListener)
                     .setWeatherLocation(weatherLocation)
+                    .setTemperatureUnit(tempUnit)
                     .build();
             if (listener != null) mWeatherUpdateRequestListeners.put(info, listener);
             sWeatherManagerService.updateWeather(info);

@@ -29,4 +29,5 @@ interface ICMWeatherManager {
         in IWeatherServiceProviderChangeListener listener);
     String getActiveWeatherServiceProviderLabel();
     oneway void cancelRequest(int requestId);
+    int getTemperatureUnit();
 }
