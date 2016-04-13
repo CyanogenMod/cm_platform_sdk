@@ -1308,14 +1308,19 @@ package cyanogenmod.weather {
     method public int requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
     method public int requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener);
     method public void unregisterWeatherServiceProviderChangeListener(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener);
-    field public static final int WEATHER_REQUEST_ALREADY_IN_PROGRESS = -3; // 0xfffffffd
-    field public static final int WEATHER_REQUEST_COMPLETED = 1; // 0x1
-    field public static final int WEATHER_REQUEST_FAILED = -2; // 0xfffffffe
-    field public static final int WEATHER_REQUEST_SUBMITTED_TOO_SOON = -1; // 0xffffffff
   }
 
   public static abstract interface CMWeatherManager.LookupCityRequestListener {
-    method public abstract void onLookupCityRequestCompleted(java.util.List<cyanogenmod.weather.WeatherLocation>);
+    method public abstract void onLookupCityRequestCompleted(int, java.util.List<cyanogenmod.weather.WeatherLocation>);
+  }
+
+  public static class CMWeatherManager.RequestStatus {
+    ctor public CMWeatherManager.RequestStatus();
+    field public static final int ALREADY_IN_PROGRESS = -3; // 0xfffffffd
+    field public static final int COMPLETED = 1; // 0x1
+    field public static final int FAILED = -1; // 0xffffffff
+    field public static final int NO_MATCH_FOUND = -4; // 0xfffffffc
+    field public static final int SUBMITTED_TOO_SOON = -2; // 0xfffffffe
   }
 
   public static abstract interface CMWeatherManager.WeatherServiceProviderChangeListener {
@@ -1416,6 +1421,7 @@ package cyanogenmod.weatherservice {
     method public void complete(cyanogenmod.weatherservice.ServiceRequestResult);
     method public void fail();
     method public cyanogenmod.weather.RequestInfo getRequestInfo();
+    method public void reject(int);
   }
 
   public final class ServiceRequestResult implements android.os.Parcelable {
