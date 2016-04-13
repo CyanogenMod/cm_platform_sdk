@@ -3254,6 +3254,14 @@ public final class CMSettings {
          * @hide
          */
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
+
+        /**
+         * Global temperature unit in which the weather data will be reported
+         * Valid values are:
+         * <p>{@link cyanogenmod.providers.WeatherContract.WeatherColumns.TempUnit#CELSIUS}</p>
+         * <p>{@link cyanogenmod.providers.WeatherContract.WeatherColumns.TempUnit#FAHRENHEIT}</p>
+         */
+        public static final String WEATHER_TEMPERATURE_UNIT = "weather_temperature_unit";
         // endregion
 
         /**
