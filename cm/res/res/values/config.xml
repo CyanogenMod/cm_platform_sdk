@@ -113,6 +113,7 @@
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
         <item>org.cyanogenmod.platform.internal.CMAudioServiceBroker</item>
+        <item>org.cyanogenmod.platform.internal.MotionActionService</item>
     </string-array>
 
     <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
