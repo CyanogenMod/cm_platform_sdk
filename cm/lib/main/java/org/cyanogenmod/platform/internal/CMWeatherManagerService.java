@@ -226,6 +226,12 @@ public class CMWeatherManagerService extends SystemService{
             enforcePermission();
             processCancelRequest(requestId);
         }
+
+        @Override
+        public int getTemperatureUnit(){
+            enforcePermission();
+            return getTemperatureUnitFromSettings();
+        }
     };
 
     private String getComponentLabel(ComponentName componentName) {
@@ -237,6 +243,17 @@ public class CMWeatherManagerService extends SystemService{
             return resolveInfo.loadLabel(pm).toString();
         }
         return null;
+    }
+
+    private int getTemperatureUnitFromSettings() {
+        long identity = Binder.clearCallingIdentity();
+        try {
+            int tempUnit = CMSettings.Secure.getInt(mContext.getContentResolver(),
+                    CMSettings.Secure.WEATHER_TEMPERATURE_UNIT, WeatherColumns.TempUnit.FAHRENHEIT);
+            return tempUnit;
+        } finally {
+            Binder.restoreCallingIdentity(identity);
+        }
     }
 
     public CMWeatherManagerService(Context context) {
