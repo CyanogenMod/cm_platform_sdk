@@ -61,6 +61,7 @@ public class CMWeatherManager {
      * again.
      * <p>Please bear in mind that the weather does not change very often. A threshold of 10 minutes
      * is enforced by the system</p>
+     * @hide
      */
     public static final int WEATHER_REQUEST_SUBMITTED_TOO_SOON = -1;
 
@@ -73,6 +74,7 @@ public class CMWeatherManager {
 
     /**
      * Weather update request state: Only one update request can be processed at a given time.
+     * @hide
      */
     public static final int WEATHER_REQUEST_ALREADY_IN_PROGRESS = -3;
 

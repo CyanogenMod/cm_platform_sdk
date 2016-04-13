@@ -31,7 +31,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
-import android.os.SystemClock;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Slog;
@@ -54,25 +53,20 @@ import cyanogenmod.weatherservice.ServiceRequestResult;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CMWeatherManagerService extends SystemService{
 
     private static final String TAG = CMWeatherManagerService.class.getSimpleName();
-    /**
-     * How long clients will have to wait until a new weather update request can be honored
-     * TODO Allow weather service providers to specify this threshold
-     */
-    private static final long REQUEST_THRESHOLD_MILLIS = 1000L * 60L * 10L;
 
     private IWeatherProviderService mWeatherProviderService;
     private boolean mIsWeatherProviderServiceBound;
-    private long mLastWeatherUpdateRequestTimestamp = -REQUEST_THRESHOLD_MILLIS;
-    private boolean mIsProcessingRequest = false;
     private Object mMutex = new Object();
     private Context mContext;
     private final RemoteCallbackList<IWeatherServiceProviderChangeListener> mProviderChangeListeners
             = new RemoteCallbackList<>();
     private volatile boolean mReconnectedDuePkgModified = false;
+    final private AtomicInteger mOutstandingRequestsCount = new AtomicInteger(0);
 
     private final IWeatherProviderServiceClient mServiceClient
             = new IWeatherProviderServiceClient.Stub() {
@@ -83,7 +77,6 @@ public class CMWeatherManagerService extends SystemService{
 
                 if (requestInfo == null) {
                     //Invalid request info object
-                    mIsProcessingRequest = false;
                     return;
                 }
 
@@ -95,8 +88,7 @@ public class CMWeatherManagerService extends SystemService{
                     case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
                         if (!isValidRequestInfoState(requestType, state)) {
                             //We received an invalid state, silently disregard the request
-                            mIsProcessingRequest = false;
-                            return;
+                            break;
                         }
                         WeatherInfo weatherInfo = null;
                         if (state == CMWeatherManager.WEATHER_REQUEST_COMPLETED) {
@@ -135,7 +127,7 @@ public class CMWeatherManagerService extends SystemService{
                         }
                         break;
                 }
-                mIsProcessingRequest = false;
+                mOutstandingRequestsCount.decrementAndGet();
             }
         }
     };
@@ -288,30 +280,8 @@ public class CMWeatherManagerService extends SystemService{
         }
     }
 
-    private boolean canProcessWeatherUpdateRequest(RequestInfo info, long currentTimeMillis) {
+    private boolean canProcessWeatherUpdateRequest(RequestInfo info) {
         final IRequestInfoListener listener = info.getRequestListener();
-
-        if ((mLastWeatherUpdateRequestTimestamp + REQUEST_THRESHOLD_MILLIS) > currentTimeMillis) {
-            if (listener != null && listener.asBinder().pingBinder()) {
-                try {
-                    listener.onWeatherRequestCompleted(info,
-                            CMWeatherManager.WEATHER_REQUEST_SUBMITTED_TOO_SOON, null);
-                } catch (RemoteException e) {
-                }
-            }
-            return false;
-        }
-
-        if (mIsProcessingRequest) {
-            if (listener != null && listener.asBinder().pingBinder()) {
-                try {
-                    listener.onWeatherRequestCompleted(info,
-                            CMWeatherManager.WEATHER_REQUEST_ALREADY_IN_PROGRESS, null);
-                } catch (RemoteException e) {
-                }
-            }
-            return false;
-        }
 
         if (!mIsWeatherProviderServiceBound) {
             if (listener != null && listener.asBinder().pingBinder()) {
@@ -327,12 +297,8 @@ public class CMWeatherManagerService extends SystemService{
     }
 
     private synchronized void processWeatherUpdateRequest(RequestInfo info) {
-        final long currentTimeMillis = SystemClock.elapsedRealtime();
-
-        if (!canProcessWeatherUpdateRequest(info, currentTimeMillis)) return;
-
-        mLastWeatherUpdateRequestTimestamp = currentTimeMillis;
-        mIsProcessingRequest = true;
+        if (!canProcessWeatherUpdateRequest(info)) return;
+        mOutstandingRequestsCount.incrementAndGet();
         try {
             mWeatherProviderService.processWeatherUpdateRequest(info);
         } catch (RemoteException e) {
@@ -350,7 +316,7 @@ public class CMWeatherManagerService extends SystemService{
             }
             return;
         }
-
+        mOutstandingRequestsCount.incrementAndGet();
         try {
             mWeatherProviderService.processCityNameLookupRequest(info);
         } catch(RemoteException e){
@@ -360,6 +326,7 @@ public class CMWeatherManagerService extends SystemService{
     private void processCancelRequest(int requestId) {
         if (mIsWeatherProviderServiceBound) {
             try {
+                mOutstandingRequestsCount.decrementAndGet();
                 mWeatherProviderService.cancelRequest(requestId);
             } catch (RemoteException e) {
             }
@@ -386,8 +353,7 @@ public class CMWeatherManagerService extends SystemService{
             mWeatherProviderService = null;
             mIsWeatherProviderServiceBound = false;
             //We can't talk to the current service anyway...
-            mIsProcessingRequest = false;
-            mLastWeatherUpdateRequestTimestamp = -REQUEST_THRESHOLD_MILLIS;
+            mOutstandingRequestsCount.set(0);
             Slog.d(TAG, "Connection with " + name.flattenToString() + " has been closed");
         }
     };
@@ -560,12 +526,12 @@ public class CMWeatherManagerService extends SystemService{
 
     private synchronized void disconnectClient() {
         if (mIsWeatherProviderServiceBound) {
-            if (mIsProcessingRequest) {
+            final int requests = mOutstandingRequestsCount.getAndSet(0);
+            if (requests > 0) {
                 try {
                     mWeatherProviderService.cancelOngoingRequests();
                 } catch (RemoteException e) {
                 }
-                mIsProcessingRequest = false;
             }
             try {
                 mWeatherProviderService.setServiceClient(null);
