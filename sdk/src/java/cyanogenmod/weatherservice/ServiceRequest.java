@@ -29,15 +29,15 @@ public final class ServiceRequest {
     private final RequestInfo mInfo;
     private final IWeatherProviderServiceClient mClient;
 
-    /**
-     * If a request is marked as cancelled, it means the client does not want to know anything about
-     * this request anymore
-     */
-    private volatile boolean mCancelled;
+    private enum Status {
+        IN_PROGRESS, COMPLETED, CANCELLED, FAILED, REJECTED
+    }
+    private Status mStatus;
 
     /* package */ ServiceRequest(RequestInfo info, IWeatherProviderServiceClient client) {
         mInfo = info;
         mClient = client;
+        mStatus = Status.IN_PROGRESS;
     }
 
     /**
@@ -52,32 +52,36 @@ public final class ServiceRequest {
      * This method should be called once the request has been completed
      */
     public void complete(@NonNull ServiceRequestResult result) {
-        if (!mCancelled) {
-            try {
-                final int requestType = mInfo.getRequestType();
-                switch (requestType) {
-                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
-                        if (result.getWeatherInfo() == null) {
-                            throw new IllegalStateException("The service request result does not"
-                             + " contain a valid WeatherInfo object");
-                        }
-                        mClient.setServiceRequestState(mInfo, result,
-                                CMWeatherManager.WEATHER_REQUEST_COMPLETED);
-                        break;
-                    case RequestInfo.TYPE_LOOKUP_CITY_NAME_REQ:
-                        if (result.getLocationLookupList() == null) {
-                            //In case the user decided to mark this request as completed with an
-                            //empty list. It's not necessarily a failure
-                            mClient.setServiceRequestState(mInfo, null,
-                                    CMWeatherManager.LOOKUP_REQUEST_NO_MATCH_FOUND);
-                        } else {
+        synchronized (this) {
+            if (mStatus.equals(Status.IN_PROGRESS)) {
+                try {
+                    final int requestType = mInfo.getRequestType();
+                    switch (requestType) {
+                        case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                        case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
+                            if (result.getWeatherInfo() == null) {
+                                throw new IllegalStateException("The service request result doesn't"
+                                        + " contain a valid WeatherInfo object");
+                            }
                             mClient.setServiceRequestState(mInfo, result,
-                                    CMWeatherManager.LOOKUP_REQUEST_COMPLETED);
-                        }
-                        break;
+                                    CMWeatherManager.RequestStatus.COMPLETED);
+                            break;
+                        case RequestInfo.TYPE_LOOKUP_CITY_NAME_REQ:
+                            if (result.getLocationLookupList() == null
+                                    || result.getLocationLookupList().size() <= 0) {
+                                //In case the user decided to mark this request as completed with
+                                //null or empty list. It's not necessarily a failure
+                                mClient.setServiceRequestState(mInfo, null,
+                                        CMWeatherManager.RequestStatus.NO_MATCH_FOUND);
+                            } else {
+                                mClient.setServiceRequestState(mInfo, result,
+                                        CMWeatherManager.RequestStatus.COMPLETED);
+                            }
+                            break;
+                    }
+                } catch (RemoteException e) {
                 }
-            } catch (RemoteException e) {
+                mStatus = Status.COMPLETED;
             }
         }
     }
@@ -87,21 +91,54 @@ public final class ServiceRequest {
      * (no internet connection, time out, etc.)
      */
     public void fail() {
-        if (!mCancelled) {
-            try {
-                final int requestType = mInfo.getRequestType();
-                switch (requestType) {
-                    case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
-                    case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
-                        mClient.setServiceRequestState(mInfo, null,
-                                CMWeatherManager.WEATHER_REQUEST_FAILED);
-                        break;
-                    case RequestInfo.TYPE_LOOKUP_CITY_NAME_REQ:
-                        mClient.setServiceRequestState(mInfo, null,
-                                CMWeatherManager.LOOKUP_REQUEST_FAILED);
-                        break;
+        synchronized (this) {
+            if (mStatus.equals(Status.IN_PROGRESS)) {
+                try {
+                    final int requestType = mInfo.getRequestType();
+                    switch (requestType) {
+                        case RequestInfo.TYPE_WEATHER_BY_GEO_LOCATION_REQ:
+                        case RequestInfo.TYPE_WEATHER_BY_WEATHER_LOCATION_REQ:
+                            mClient.setServiceRequestState(mInfo, null,
+                                    CMWeatherManager.RequestStatus.FAILED);
+                            break;
+                        case RequestInfo.TYPE_LOOKUP_CITY_NAME_REQ:
+                            mClient.setServiceRequestState(mInfo, null,
+                                    CMWeatherManager.RequestStatus.FAILED);
+                            break;
+                    }
+                } catch (RemoteException e) {
                 }
-            } catch (RemoteException e) {
+                mStatus = Status.FAILED;
+            }
+        }
+    }
+
+    /**
+     * This method should be called if the service decides not to honor the request. Note this
+     * method will accept only the following values.
+     * <ul>
+     * <li>{@link cyanogenmod.weather.CMWeatherManager.RequestStatus#SUBMITTED_TOO_SOON}</li>
+     * <li>{@link cyanogenmod.weather.CMWeatherManager.RequestStatus#ALREADY_IN_PROGRESS}</li>
+     * </ul>
+     * Attempting to pass any other value will get you an IllegalArgumentException
+     * @param status
+     */
+    public void reject(int status) {
+        synchronized (this) {
+            if (mStatus.equals(Status.IN_PROGRESS)) {
+                switch (status) {
+                    case CMWeatherManager.RequestStatus.ALREADY_IN_PROGRESS:
+                    case CMWeatherManager.RequestStatus.SUBMITTED_TOO_SOON:
+                        try {
+                            mClient.setServiceRequestState(mInfo, null, status);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Can't reject with status " + status);
+                }
+                mStatus = Status.REJECTED;
             }
         }
     }
@@ -113,6 +150,8 @@ public final class ServiceRequest {
      * @hide
      */
     public void cancel() {
-        mCancelled = true;
+        synchronized (this) {
+            mStatus = Status.CANCELLED;
+        }
     }
 }
