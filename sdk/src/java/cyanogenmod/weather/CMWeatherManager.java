@@ -26,6 +26,8 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.ArraySet;
 import cyanogenmod.app.CMContextConstants;
+import cyanogenmod.providers.CMSettings;
+import cyanogenmod.providers.WeatherContract;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -142,9 +144,14 @@ public class CMWeatherManager {
         }
 
         try {
+            int tempUnit = CMSettings.Global.getInt(mContext.getContentResolver(),
+                    CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                        WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT);
+
             RequestInfo info = new RequestInfo
                     .Builder(mRequestInfoListener)
                     .setLocation(location)
+                    .setTemperatureUnit(tempUnit)
                     .build();
             if (listener != null) mWeatherUpdateRequestListeners.put(info, listener);
             sWeatherManagerService.updateWeather(info);
@@ -175,9 +182,14 @@ public class CMWeatherManager {
         }
 
         try {
+            int tempUnit = CMSettings.Global.getInt(mContext.getContentResolver(),
+                    CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                        WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT);
+
             RequestInfo info = new RequestInfo
                     .Builder(mRequestInfoListener)
                     .setWeatherLocation(weatherLocation)
+                    .setTemperatureUnit(tempUnit)
                     .build();
             if (listener != null) mWeatherUpdateRequestListeners.put(info, listener);
             sWeatherManagerService.updateWeather(info);
