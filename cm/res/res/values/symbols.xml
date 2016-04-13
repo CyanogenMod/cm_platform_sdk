@@ -69,6 +69,11 @@
     <java-symbol type="integer" name="config_dayColorTemperature" />
     <java-symbol type="integer" name="config_nightColorTemperature" />
     <java-symbol type="integer" name="config_outdoorAmbientLux" />
+    <java-symbol type="integer" name="config_defaultLiveDisplayMode" />
+    <java-symbol type="bool" name="config_defaultAutoContrast" />
+    <java-symbol type="bool" name="config_defaultAutoOutdoorMode" />
+    <java-symbol type="bool" name="config_defaultColorEnhancement" />
+    <java-symbol type="bool" name="config_defaultCABC" />
 
     <!-- Notification and battery light -->
     <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
