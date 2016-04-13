@@ -105,5 +105,6 @@
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
         <item>org.cyanogenmod.platform.internal.CMAudioService</item>
+        <item>org.cyanogenmod.platform.internal.MotionActionService</item>
     </string-array>
 </resources>
