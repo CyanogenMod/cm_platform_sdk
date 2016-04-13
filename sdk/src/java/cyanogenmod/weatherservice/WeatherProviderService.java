@@ -108,13 +108,29 @@ public abstract class WeatherProviderService extends Service {
 
         @Override
         public void cancelOngoingRequests() {
-            mHandler.obtainMessage(ServiceHandler.MSG_CANCEL_ALL_OUTSTANDING_REQUESTS)
-                    .sendToTarget();
+            synchronized (mWeakRequestsSet) {
+                for (final ServiceRequest request : mWeakRequestsSet) {
+                    request.cancel();
+                    mWeakRequestsSet.remove(request);
+                    mHandler.obtainMessage(ServiceHandler.MSG_CANCEL_REQUEST, request)
+                            .sendToTarget();
+                }
+            }
         }
 
         @Override
-        public void cancelRequest(RequestInfo info) {
-            mHandler.obtainMessage(ServiceHandler.MSG_CANCEL_REQUEST, info).sendToTarget();
+        public void cancelRequest(int requestId) {
+            synchronized (mWeakRequestsSet) {
+                for (final ServiceRequest request : mWeakRequestsSet) {
+                    if (request.getRequestInfo().hashCode() == requestId) {
+                        mWeakRequestsSet.remove(request);
+                        request.cancel();
+                        mHandler.obtainMessage(ServiceHandler.MSG_CANCEL_REQUEST, request)
+                                .sendToTarget();
+                        break;
+                    }
+                }
+            }
         }
     };
 
@@ -125,8 +141,7 @@ public abstract class WeatherProviderService extends Service {
         }
         public static final int MSG_SET_CLIENT = 1;
         public static final int MSG_ON_NEW_REQUEST = 2;
-        public static final int MSG_CANCEL_ALL_OUTSTANDING_REQUESTS = 3;
-        public static final int MSG_CANCEL_REQUEST = 4;
+        public static final int MSG_CANCEL_REQUEST = 3;
 
         @Override
         public void handleMessage(Message msg) {
@@ -151,41 +166,9 @@ public abstract class WeatherProviderService extends Service {
                     }
                     return;
                 }
-                case MSG_CANCEL_ALL_OUTSTANDING_REQUESTS: {
-                    synchronized (mWeakRequestsSet) {
-                        for (final ServiceRequest request : mWeakRequestsSet) {
-                            if (request != null) {
-                                request.cancel();
-                                mWeakRequestsSet.remove(request);
-                                mHandler.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        onRequestCancelled(request);
-                                    }
-                                });
-                            }
-                        }
-                    }
-                    return;
-                }
                 case MSG_CANCEL_REQUEST: {
-                    synchronized (mWeakRequestsSet) {
-                        RequestInfo info = (RequestInfo) msg.obj;
-                        if (info == null) return;
-                        for (final ServiceRequest request : mWeakRequestsSet) {
-                            if (request.getRequestInfo().equals(info)) {
-                                request.cancel();
-                                mWeakRequestsSet.remove(request);
-                                mHandler.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        onRequestCancelled(request);
-                                    }
-                                });
-                                break;
-                            }
-                        }
-                    }
+                    ServiceRequest request = (ServiceRequest) msg.obj;
+                    onRequestCancelled(request);
                     return;
                 }
             }
