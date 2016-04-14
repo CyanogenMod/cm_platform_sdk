@@ -1,0 +1,2180 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CMSDK API Coverage</title>
+<script type="text/javascript">
+                    function toggleVisibility(id) {
+                        element = document.getElementById(id); 
+                        if (element.style.display == "none") {
+                            element.style.display = ""; 
+                        } else { 
+                            element.style.display = "none";
+                        } 
+                    }
+                </script>
+<style type="text/css">
+                    body {
+                        background-color: #CCCCCC;
+                        font-family: sans-serif;
+                        margin: 10px;
+                    }
+
+                    .info {
+                        margin-bottom: 10px;
+                    }
+
+                    .apks, .package, .class {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+
+                    .packageDetails {
+                        padding-left: 20px;
+                    }
+
+                    .classDetails {
+                        padding-left: 40px;
+                    }
+
+                    .method {
+                        font-family: courier;
+                        white-space: nowrap;
+                    }
+
+                    .red {
+                        background-color: #FF6666;
+                    }
+
+                    .yellow {
+                        background-color: #FFFF66;
+                    }
+
+                    .green {
+                        background-color: #66FF66;
+                    }
+
+                    .deprecated {
+                        text-decoration: line-through;
+                    }
+                </style>
+</head>
+<body>
+<h1>CTS API Coverage</h1>
+<div class="info">
+                    Generated: Thu, Apr 14, 2016 3:25 PM PDT</div>
+<div class="total">
+                    Total:&nbsp;53%
+                &nbsp;(258/487)
+                </div>
+<div class="apks" onclick="toggleVisibility('sourceApks')">
+                    Source Modules (1)
+                </div>
+<div id="sourceApks" style="display: none">
+<ul>
+<li>/Volumes/CM/CM13/out/target/product/angler/obj/APPS/CMPlatformTests_intermediates/package.apk</li>
+</ul>
+</div>
+<ul>
+<li class="package" onclick="toggleVisibility('cyanogenmod.hardware')">
+<span class="red "><b>cyanogenmod.hardware</b>
+                &nbsp;44%
+                &nbsp;(35/79)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.hardware" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayManager')">
+<span class="red "><b>LiveDisplayManager</b>
+                &nbsp;0%
+                &nbsp;(0/18)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayManager" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;float[]<b>&nbsp;getColorAdjustment</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.hardware.LiveDisplayConfig<b>&nbsp;getConfig</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDayColorTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.LiveDisplayManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNightColorTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutoContrastEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutomaticOutdoorModeEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isCABCEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isColorEnhancementEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutoContrastEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutomaticOutdoorModeEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setCABCEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorAdjustment</b>(float[])
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorEnhancementEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDayColorTemperature</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setMode</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setNightColorTemperature</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayConfig')">
+<span class="red "><b>LiveDisplayConfig</b>
+                &nbsp;17%
+                &nbsp;(2/12)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayConfig" style="display: none">
+<span class="method ">[ ]<b>&nbsp;LiveDisplayConfig</b>(java.util.BitSet,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoContrast</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoOutdoorMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultCABC</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultColorEnhancement</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultDayTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultNightTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;hasFeature</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAvailable</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.ThermalListenerCallback.State')">
+<span class="red "><b>ThermalListenerCallback.State</b>
+                &nbsp;0%
+                &nbsp;(0/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.ThermalListenerCallback.State" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;final&nbsp;java.lang.String<b>&nbsp;toString</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.CMHardwareManager')">
+<span class="yellow "><b>CMHardwareManager</b>
+                &nbsp;64%
+                &nbsp;(27/42)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.CMHardwareManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;deletePersistentObject</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;get</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getCurrentDisplayMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getDefaultDisplayMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayColorCalibration</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationDefault</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMax</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMin</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayGammaCalibration</b>(int)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMax</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMin</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode[]<b>&nbsp;getDisplayModes</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.CMHardwareManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoDestination</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;long<b>&nbsp;getLtoDownloadInterval</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoSource</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNumGammaControls</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getSerialNumber</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getSupportedFeatures</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getThermalState</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getUniqueDeviceId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorDefaultIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMaxIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMinIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorWarningIntensity</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isSunlightEnhancementSelfManaged</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isSupported</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;byte[]<b>&nbsp;readPersistentBytes</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;readPersistentInt</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;readPersistentString</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;registerThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;requireAdaptiveBacklightForSunlightEnhancement</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;set</b>(int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayColorCalibration</b>(int[])
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayGammaCalibration</b>(int,&nbsp;int[])
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayMode</b>(cyanogenmod.hardware.DisplayMode,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setVibratorIntensity</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;unRegisterThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentBytes</b>(java.lang.String,&nbsp;byte[])
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentInt</b>(java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentString</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.DisplayMode')">
+<span class="green "><b>DisplayMode</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.DisplayMode" style="display: none">
+<span class="method ">[X]<b>&nbsp;DisplayMode</b>(int,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.IThermalListenerCallback.Stub')">
+<span class="green "><b>IThermalListenerCallback.Stub</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.IThermalListenerCallback.Stub" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;android.os.IBinder<b>&nbsp;asBinder</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.IThermalListenerCallback<b>&nbsp;asInterface</b>(android.os.IBinder)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;onTransact</b>(int,&nbsp;android.os.Parcel,&nbsp;android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.weather')">
+<span class="red "><b>cyanogenmod.weather</b>
+                &nbsp;13%
+                &nbsp;(8/62)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.weather" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo')">
+<span class="red "><b>WeatherInfo</b>
+                &nbsp;14%
+                &nbsp;(2/14)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.List<b>&nbsp;getForecasts</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getHumidity</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;long<b>&nbsp;getTimestamp</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTodaysHigh</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTodaysLow</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getWindDirection</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getWindSpeed</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getWindSpeedUnit</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.Builder')">
+<span class="red "><b>WeatherInfo.Builder</b>
+                &nbsp;0%
+                &nbsp;(0/9)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.Builder" style="display: none">
+<span class="method ">[ ]<b>&nbsp;WeatherInfo.Builder</b>(java.lang.String,&nbsp;double,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setForecast</b>(java.util.List)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setHumidity</b>(double)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTimestamp</b>(long)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysHigh</b>(double)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysLow</b>(double)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWeatherCondition</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWind</b>(double,&nbsp;double,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation')">
+<span class="red "><b>WeatherLocation</b>
+                &nbsp;25%
+                &nbsp;(2/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherLocation" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityId</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountry</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountryId</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getPostalCode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getState</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.CMWeatherManager')">
+<span class="red "><b>CMWeatherManager</b>
+                &nbsp;0%
+                &nbsp;(0/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.CMWeatherManager" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;cancelRequest</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getActiveWeatherServiceProviderLabel</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.weather.CMWeatherManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;lookupCity</b>(java.lang.String,&nbsp;cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;registerWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(android.location.Location,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(cyanogenmod.weather.WeatherLocation,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;unregisterWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation.Builder')">
+<span class="red "><b>WeatherLocation.Builder</b>
+                &nbsp;0%
+                &nbsp;(0/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherLocation.Builder" style="display: none">
+<span class="method ">[ ]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountry</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountryId</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setPostalCode</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setState</b>(java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.RequestInfo')">
+<span class="red "><b>RequestInfo</b>
+                &nbsp;29%
+                &nbsp;(2/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.RequestInfo" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityName</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;android.location.Location<b>&nbsp;getLocation</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getRequestType</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;getWeatherLocation</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast')">
+<span class="red "><b>WeatherInfo.DayForecast</b>
+                &nbsp;40%
+                &nbsp;(2/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getHigh</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getLow</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast.Builder')">
+<span class="red "><b>WeatherInfo.DayForecast.Builder</b>
+                &nbsp;0%
+                &nbsp;(0/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast.Builder" style="display: none">
+<span class="method ">[ ]<b>&nbsp;WeatherInfo.DayForecast.Builder</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setHigh</b>(double)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setLow</b>(double)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.providers')">
+<span class="red "><b>cyanogenmod.providers</b>
+                &nbsp;20%
+                &nbsp;(8/40)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.providers" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.providers.CMSettings.Secure')">
+<span class="red "><b>CMSettings.Secure</b>
+                &nbsp;8%
+                &nbsp;(1/12)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.providers.CMSettings.Secure" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;getString</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;android.net.Uri<b>&nbsp;getUriFor</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putString</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.providers.CMSettings.System')">
+<span class="red "><b>CMSettings.System</b>
+                &nbsp;25%
+                &nbsp;(3/12)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.providers.CMSettings.System" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;getString</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;android.net.Uri<b>&nbsp;getUriFor</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putString</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.providers.CMSettings.Global')">
+<span class="red "><b>CMSettings.Global</b>
+                &nbsp;25%
+                &nbsp;(3/12)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.providers.CMSettings.Global" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float<b>&nbsp;getFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;getInt</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;long<b>&nbsp;getLong</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;getString</b>(android.content.ContentResolver,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;android.net.Uri<b>&nbsp;getUriFor</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putFloat</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putInt</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putLong</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;boolean<b>&nbsp;putString</b>(android.content.ContentResolver,&nbsp;java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.providers.ThemesContract.MixnMatchColumns')">
+<span class="red "><b>ThemesContract.MixnMatchColumns</b>
+                &nbsp;33%
+                &nbsp;(1/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.providers.ThemesContract.MixnMatchColumns" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;componentToImageColName</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;componentToMixNMatchKey</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;mixNMatchKeyToComponent</b>(java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.providers.CMSettings.CMSettingNotFoundException')">
+<span class="red "><b>CMSettings.CMSettingNotFoundException</b>
+                &nbsp;0%
+                &nbsp;(0/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.providers.CMSettings.CMSettingNotFoundException" style="display: none">
+<span class="method ">[ ]<b>&nbsp;CMSettings.CMSettingNotFoundException</b>(java.lang.String)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.externalviews')">
+<span class="red "><b>cyanogenmod.externalviews</b>
+                &nbsp;0%
+                &nbsp;(0/18)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.externalviews" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider')">
+<span class="red "><b>KeyguardExternalViewProviderService.Provider</b>
+                &nbsp;0%
+                &nbsp;(0/16)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider" style="display: none">
+<span class="method ">[ ]<b>&nbsp;KeyguardExternalViewProviderService.Provider</b>(android.os.Bundle)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;protected&nbsp;final&nbsp;void<b>&nbsp;collapseNotificationPanel</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;android.os.Bundle<b>&nbsp;getOptions</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;void<b>&nbsp;onAttach</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onBouncerShowing</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;android.view.View<b>&nbsp;onCreateView</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;void<b>&nbsp;onDetach</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onKeyguardDismissed</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onKeyguardShowing</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;void<b>&nbsp;onLockscreenSlideOffsetChanged</b>(float)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onScreenTurnedOff</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onScreenTurnedOn</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;final&nbsp;boolean<b>&nbsp;requestDismiss</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;final&nbsp;boolean<b>&nbsp;requestDismissAndStartActivity</b>(android.content.Intent)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;final&nbsp;void<b>&nbsp;setInteractivity</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;final&nbsp;void<b>&nbsp;slideLockscreenIn</b>()
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.externalviews.KeyguardExternalViewProviderService')">
+<span class="red "><b>KeyguardExternalViewProviderService</b>
+                &nbsp;0%
+                &nbsp;(0/2)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.externalviews.KeyguardExternalViewProviderService" style="display: none">
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;cyanogenmod.externalviews.KeyguardExternalViewProviderService.Provider<b>&nbsp;createExternalView</b>(android.os.Bundle)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;final&nbsp;android.os.IBinder<b>&nbsp;onBind</b>(android.content.Intent)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.weatherservice')">
+<span class="red "><b>cyanogenmod.weatherservice</b>
+                &nbsp;12%
+                &nbsp;(2/17)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.weatherservice" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.WeatherProviderService')">
+<span class="red "><b>WeatherProviderService</b>
+                &nbsp;0%
+                &nbsp;(0/6)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weatherservice.WeatherProviderService" style="display: none">
+<span class="method ">[ ]&nbsp;protected&nbsp;final&nbsp;void<b>&nbsp;attachBaseContext</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;final&nbsp;android.os.IBinder<b>&nbsp;onBind</b>(android.content.Intent)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;void<b>&nbsp;onConnected</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;void<b>&nbsp;onDisconnected</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onRequestCancelled</b>(cyanogenmod.weatherservice.ServiceRequest)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;protected&nbsp;abstract&nbsp;void<b>&nbsp;onRequestSubmitted</b>(cyanogenmod.weatherservice.ServiceRequest)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequestResult')">
+<span class="red "><b>ServiceRequestResult</b>
+                &nbsp;50%
+                &nbsp;(2/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequestResult" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.List<b>&nbsp;getLocationLookupList</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;getWeatherInfo</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequest')">
+<span class="red "><b>ServiceRequest</b>
+                &nbsp;0%
+                &nbsp;(0/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequest" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;complete</b>(cyanogenmod.weatherservice.ServiceRequestResult)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;fail</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.RequestInfo<b>&nbsp;getRequestInfo</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;reject</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequestResult.Builder')">
+<span class="red "><b>ServiceRequestResult.Builder</b>
+                &nbsp;0%
+                &nbsp;(0/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequestResult.Builder" style="display: none">
+<span class="method ">[ ]<b>&nbsp;ServiceRequestResult.Builder</b>(cyanogenmod.weather.WeatherInfo)
+  </span>
+<br>
+<span class="method ">[ ]<b>&nbsp;ServiceRequestResult.Builder</b>(java.util.List)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weatherservice.ServiceRequestResult<b>&nbsp;build</b>()
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.util')">
+<span class="red "><b>cyanogenmod.util</b>
+                &nbsp;0%
+                &nbsp;(0/8)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.util" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.util.ColorUtils')">
+<span class="red "><b>ColorUtils</b>
+                &nbsp;0%
+                &nbsp;(0/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.util.ColorUtils" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;double<b>&nbsp;calculateDeltaE</b>(double,&nbsp;double,&nbsp;double,&nbsp;double,&nbsp;double,&nbsp;double)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float[]<b>&nbsp;convertRGBtoLAB</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;dropAlpha</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;findPerceptuallyNearestColor</b>(int,&nbsp;int[])
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;findPerceptuallyNearestSolidColor</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;int<b>&nbsp;generateAlertColorFromDrawable</b>(android.graphics.drawable.Drawable)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;com.android.internal.util.cm.palette.Palette.Swatch<b>&nbsp;getDominantSwatch</b>(com.android.internal.util.cm.palette.Palette)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float[]<b>&nbsp;temperatureToRGB</b>(int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.app')">
+<span class="yellow "><b>cyanogenmod.app</b>
+                &nbsp;71%
+                &nbsp;(109/154)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.app" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.Profile.ProfileTrigger')">
+<span class="red "><b>Profile.ProfileTrigger</b>
+                &nbsp;29%
+                &nbsp;(2/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.Profile.ProfileTrigger" style="display: none">
+<span class="method ">[ ]<b>&nbsp;Profile.ProfileTrigger</b>(int,&nbsp;java.lang.String,&nbsp;int,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getId</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getName</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getState</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getType</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTileListenerService')">
+<span class="red "><b>CustomTileListenerService</b>
+                &nbsp;0%
+                &nbsp;(0/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTileListenerService" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;android.os.IBinder<b>&nbsp;onBind</b>(android.content.Intent)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;onCustomTilePosted</b>(cyanogenmod.app.StatusBarPanelCustomTile)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;onCustomTileRemoved</b>(cyanogenmod.app.StatusBarPanelCustomTile)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;onListenerConnected</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;final&nbsp;void<b>&nbsp;removeCustomTile</b>(java.lang.String,&nbsp;java.lang.String,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.LiveLockScreenManager')">
+<span class="red "><b>LiveLockScreenManager</b>
+                &nbsp;0%
+                &nbsp;(0/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.LiveLockScreenManager" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;cancel</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.LiveLockScreenInfo<b>&nbsp;getDefaultLiveLockScreen</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.app.LiveLockScreenManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setDefaultLiveLockScreen</b>(cyanogenmod.app.LiveLockScreenInfo)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;show</b>(int,&nbsp;cyanogenmod.app.LiveLockScreenInfo)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.Profile')">
+<span class="yellow "><b>Profile</b>
+                &nbsp;62%
+                &nbsp;(23/37)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.Profile" style="display: none">
+<span class="method ">[X]<b>&nbsp;Profile</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;addSecondaryUuid</b>(java.util.UUID)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;compareTo</b>(java.lang.Object)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.AirplaneModeSettings<b>&nbsp;getAirplaneMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.BrightnessSettings<b>&nbsp;getBrightness</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.profiles.ConnectionSettings<b>&nbsp;getConnectionSettingWithSubId</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.Collection<b>&nbsp;getConnectionSettings</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDozeMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getExpandedDesktopMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getName</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNotificationLightMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getProfileType</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.RingModeSettings<b>&nbsp;getRingMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.LockSettings<b>&nbsp;getScreenLockMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.UUID[]<b>&nbsp;getSecondaryUuids</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.ConnectionSettings<b>&nbsp;getSettingsForConnection</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.profiles.StreamSettings<b>&nbsp;getSettingsForStream</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.Collection<b>&nbsp;getStreamSettings</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTriggerState</b>(int,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.util.ArrayList<b>&nbsp;getTriggersFromType</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.util.UUID<b>&nbsp;getUuid</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isConditionalType</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setAirplaneMode</b>(cyanogenmod.profiles.AirplaneModeSettings)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setBrightness</b>(cyanogenmod.profiles.BrightnessSettings)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setConnectionSettings</b>(cyanogenmod.profiles.ConnectionSettings)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setDozeMode</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedDesktopMode</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setName</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setNotificationLightMode</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setProfileType</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setRingMode</b>(cyanogenmod.profiles.RingModeSettings)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setScreenLockMode</b>(cyanogenmod.profiles.LockSettings)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setSecondaryUuids</b>(java.util.List)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setStreamSettings</b>(cyanogenmod.profiles.StreamSettings)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setTrigger</b>(cyanogenmod.app.Profile.ProfileTrigger)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.ProfileManager')">
+<span class="yellow "><b>ProfileManager</b>
+                &nbsp;53%
+                &nbsp;(8/15)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.ProfileManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;addProfile</b>(cyanogenmod.app.Profile)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.Profile<b>&nbsp;getActiveProfile</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.app.ProfileManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method deprecated">[X]&nbsp;public&nbsp;cyanogenmod.app.Profile<b>&nbsp;getProfile</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.Profile<b>&nbsp;getProfile</b>(java.util.UUID)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String[]<b>&nbsp;getProfileNames</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.Profile[]<b>&nbsp;getProfiles</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isProfilesEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;profileExists</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;profileExists</b>(java.util.UUID)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;removeProfile</b>(cyanogenmod.app.Profile)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;resetAll</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;setActiveProfile</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setActiveProfile</b>(java.util.UUID)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;updateProfile</b>(cyanogenmod.app.Profile)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.StatusBarPanelCustomTile')">
+<span class="yellow "><b>StatusBarPanelCustomTile</b>
+                &nbsp;71%
+                &nbsp;(10/14)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.StatusBarPanelCustomTile" style="display: none">
+<span class="method ">[X]<b>&nbsp;StatusBarPanelCustomTile</b>(java.lang.String,&nbsp;java.lang.String,&nbsp;java.lang.String,&nbsp;int,&nbsp;java.lang.String,&nbsp;int,&nbsp;int,&nbsp;cyanogenmod.app.CustomTile,&nbsp;android.os.UserHandle)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;StatusBarPanelCustomTile</b>(java.lang.String,&nbsp;java.lang.String,&nbsp;java.lang.String,&nbsp;int,&nbsp;java.lang.String,&nbsp;int,&nbsp;int,&nbsp;cyanogenmod.app.CustomTile,&nbsp;android.os.UserHandle,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;StatusBarPanelCustomTile</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.StatusBarPanelCustomTile<b>&nbsp;clone</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.CustomTile<b>&nbsp;getCustomTile</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getId</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getKey</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getPackage</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;long<b>&nbsp;getPostTime</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getTag</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;android.os.UserHandle<b>&nbsp;getUser</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getUserId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CMStatusBarManager')">
+<span class="yellow "><b>CMStatusBarManager</b>
+                &nbsp;71%
+                &nbsp;(5/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CMStatusBarManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.app.CMStatusBarManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;publishTile</b>(int,&nbsp;cyanogenmod.app.CustomTile)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;publishTile</b>(java.lang.String,&nbsp;int,&nbsp;cyanogenmod.app.CustomTile)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;publishTileAsUser</b>(java.lang.String,&nbsp;int,&nbsp;cyanogenmod.app.CustomTile,&nbsp;android.os.UserHandle)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;removeTile</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;removeTile</b>(java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;removeTileAsUser</b>(java.lang.String,&nbsp;int,&nbsp;android.os.UserHandle)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.Builder')">
+<span class="green "><b>CustomTile.Builder</b>
+                &nbsp;88%
+                &nbsp;(14/16)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.Builder" style="display: none">
+<span class="method ">[X]<b>&nbsp;CustomTile.Builder</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;hasSensitiveData</b>(boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setContentDescription</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setContentDescription</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setDeleteIntent</b>(android.app.PendingIntent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setExpandedStyle</b>(cyanogenmod.app.CustomTile.ExpandedStyle)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setIcon</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setIcon</b>(android.graphics.Bitmap)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setLabel</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setLabel</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setOnClickIntent</b>(android.app.PendingIntent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setOnClickUri</b>(android.net.Uri)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setOnLongClickIntent</b>(android.app.PendingIntent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;setOnSettingsClickIntent</b>(android.content.Intent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.Builder<b>&nbsp;shouldCollapsePanel</b>(boolean)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CMTelephonyManager')">
+<span class="green "><b>CMTelephonyManager</b>
+                &nbsp;100%
+                &nbsp;(9/9)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CMTelephonyManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.app.CMTelephonyManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.util.List<b>&nbsp;getSubInformation</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isDataConnectionEnabled</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isDataConnectionSelectedOnSub</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isSubActive</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setDataConnectionState</b>(boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setDefaultPhoneSub</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setDefaultSmsSub</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setSubState</b>(int,&nbsp;boolean)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.PartnerInterface')">
+<span class="green "><b>PartnerInterface</b>
+                &nbsp;88%
+                &nbsp;(7/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.PartnerInterface" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCurrentHotwordPackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.app.PartnerInterface<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;rebootDevice</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setAirplaneModeEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setMobileDataEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setZenMode</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setZenModeWithDuration</b>(int,&nbsp;long)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;shutdownDevice</b>()
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.ExpandedStyle')">
+<span class="green "><b>CustomTile.ExpandedStyle</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.ExpandedStyle" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;android.widget.RemoteViews<b>&nbsp;getContentViews</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile.ExpandedItem[]<b>&nbsp;getExpandedItems</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getStyle</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.ExpandedListItem')">
+<span class="green "><b>CustomTile.ExpandedListItem</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.ExpandedListItem" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedListItemBitmap</b>(android.graphics.Bitmap)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedListItemDrawable</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedListItemOnClickIntent</b>(android.app.PendingIntent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedListItemSummary</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedListItemTitle</b>(java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.ExpandedGridItem')">
+<span class="green "><b>CustomTile.ExpandedGridItem</b>
+                &nbsp;100%
+                &nbsp;(4/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.ExpandedGridItem" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedGridItemBitmap</b>(android.graphics.Bitmap)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedGridItemDrawable</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedGridItemOnClickIntent</b>(android.app.PendingIntent)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setExpandedGridItemTitle</b>(java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile')">
+<span class="green "><b>CustomTile</b>
+                &nbsp;100%
+                &nbsp;(4/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile" style="display: none">
+<span class="method ">[X]<b>&nbsp;CustomTile</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.CustomTile<b>&nbsp;clone</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.LiveLockScreenInfo')">
+<span class="green "><b>LiveLockScreenInfo</b>
+                &nbsp;100%
+                &nbsp;(4/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.LiveLockScreenInfo" style="display: none">
+<span class="method ">[X]<b>&nbsp;LiveLockScreenInfo</b>(android.content.ComponentName,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.LiveLockScreenInfo<b>&nbsp;clone</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.LiveLockScreenInfo.Builder')">
+<span class="green "><b>LiveLockScreenInfo.Builder</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.LiveLockScreenInfo.Builder" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.LiveLockScreenInfo<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.LiveLockScreenInfo.Builder<b>&nbsp;setComponent</b>(android.content.ComponentName)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.app.LiveLockScreenInfo.Builder<b>&nbsp;setPriority</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.ExpandedItem')">
+<span class="green "><b>CustomTile.ExpandedItem</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.ExpandedItem" style="display: none">
+<span class="method ">[X]<b>&nbsp;CustomTile.ExpandedItem</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.RemoteExpandedStyle')">
+<span class="green "><b>CustomTile.RemoteExpandedStyle</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.RemoteExpandedStyle" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setRemoteViews</b>(android.widget.RemoteViews)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.ListExpandedStyle')">
+<span class="green "><b>CustomTile.ListExpandedStyle</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.ListExpandedStyle" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setListItems</b>(java.util.ArrayList)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.app.CustomTile.GridExpandedStyle')">
+<span class="green "><b>CustomTile.GridExpandedStyle</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.app.CustomTile.GridExpandedStyle" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setGridItems</b>(java.util.ArrayList)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.profiles')">
+<span class="yellow "><b>cyanogenmod.profiles</b>
+                &nbsp;73%
+                &nbsp;(38/52)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.profiles" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.ConnectionSettings')">
+<span class="yellow "><b>ConnectionSettings</b>
+                &nbsp;67%
+                &nbsp;(8/12)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.ConnectionSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;ConnectionSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[ ]<b>&nbsp;ConnectionSettings</b>(int)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;ConnectionSettings</b>(int,&nbsp;int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getConnectionId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getSubId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isOverride</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setOverride</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setSubId</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.StreamSettings')">
+<span class="yellow "><b>StreamSettings</b>
+                &nbsp;70%
+                &nbsp;(7/10)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.StreamSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;StreamSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[ ]<b>&nbsp;StreamSettings</b>(int)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;StreamSettings</b>(int,&nbsp;int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getStreamId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isOverride</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setOverride</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.RingModeSettings')">
+<span class="yellow "><b>RingModeSettings</b>
+                &nbsp;75%
+                &nbsp;(6/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.RingModeSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;RingModeSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;RingModeSettings</b>(java.lang.String,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isOverride</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setOverride</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.BrightnessSettings')">
+<span class="yellow "><b>BrightnessSettings</b>
+                &nbsp;75%
+                &nbsp;(6/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.BrightnessSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;BrightnessSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;BrightnessSettings</b>(int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isOverride</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setOverride</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.AirplaneModeSettings')">
+<span class="yellow "><b>AirplaneModeSettings</b>
+                &nbsp;75%
+                &nbsp;(6/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.AirplaneModeSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;AirplaneModeSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;AirplaneModeSettings</b>(int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isOverride</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setOverride</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.profiles.LockSettings')">
+<span class="green "><b>LockSettings</b>
+                &nbsp;83%
+                &nbsp;(5/6)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.profiles.LockSettings" style="display: none">
+<span class="method ">[X]<b>&nbsp;LockSettings</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;LockSettings</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getValue</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;setValue</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.themes')">
+<span class="green "><b>cyanogenmod.themes</b>
+                &nbsp;81%
+                &nbsp;(48/59)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.themes" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.themes.ThemeManager')">
+<span class="red "><b>ThemeManager</b>
+                &nbsp;50%
+                &nbsp;(11/22)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.themes.ThemeManager" style="display: none">
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;addClient</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;applyDefaultTheme</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.themes.ThemeManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.RequestType<b>&nbsp;getLastThemeChangeRequestType</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;long<b>&nbsp;getLastThemeChangeTime</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getProgress</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isThemeApplying</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isThemeBeingProcessed</b>(java.lang.String)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;onClientDestroyed</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;onClientPaused</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;onClientResumed</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;processThemeResources</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;registerProcessingListener</b>(cyanogenmod.themes.ThemeManager.ThemeProcessingListener)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;registerThemeChangeListener</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;void<b>&nbsp;removeClient</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;requestThemeChange</b>(java.lang.String,&nbsp;java.util.List)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;requestThemeChange</b>(java.lang.String,&nbsp;java.util.List,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;requestThemeChange</b>(java.util.Map)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;requestThemeChange</b>(java.util.Map,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;requestThemeChange</b>(cyanogenmod.themes.ThemeChangeRequest,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;unregisterProcessingListener</b>(cyanogenmod.themes.ThemeManager.ThemeProcessingListener)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;unregisterThemeChangeListener</b>(cyanogenmod.themes.ThemeManager.ThemeChangeListener)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.themes.ThemeChangeRequest')">
+<span class="green "><b>ThemeChangeRequest</b>
+                &nbsp;100%
+                &nbsp;(19/19)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.themes.ThemeChangeRequest" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getAlarmThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getBootanimationThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getFontThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getIconsThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLiveLockScreenThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLockWallpaperThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getNavBarThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getNotificationThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getNumChangesRequested</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getOverlayThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;final&nbsp;java.util.Map<b>&nbsp;getPerAppOverlays</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.RequestType<b>&nbsp;getReqeustType</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getRingtoneThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getStatusBarThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;final&nbsp;java.util.Map<b>&nbsp;getThemeComponentsMap</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;long<b>&nbsp;getWallpaperId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getWallpaperThemePackageName</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.themes.ThemeChangeRequest.Builder')">
+<span class="green "><b>ThemeChangeRequest.Builder</b>
+                &nbsp;100%
+                &nbsp;(18/18)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.themes.ThemeChangeRequest.Builder" style="display: none">
+<span class="method ">[X]<b>&nbsp;ThemeChangeRequest.Builder</b>(android.content.res.ThemeConfig)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setAlarm</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setAppOverlay</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setBootanimation</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setComponent</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setFont</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setIcons</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setLiveLockScreen</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setLockWallpaper</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setNavBar</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setNotification</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setOverlay</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setRequestType</b>(cyanogenmod.themes.ThemeChangeRequest.RequestType)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setRingtone</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setStatusBar</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setWallpaper</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.themes.ThemeChangeRequest.Builder<b>&nbsp;setWallpaperId</b>(long)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.power')">
+<span class="green "><b>cyanogenmod.power</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.power" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.power.PerformanceManager')">
+<span class="green "><b>PerformanceManager</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.power.PerformanceManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.power.PerformanceManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getNumberOfProfiles</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getPowerProfile</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;getProfileHasAppProfiles</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setPowerProfile</b>(int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.os')">
+<span class="green "><b>cyanogenmod.os</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.os" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.os.Concierge.ParcelInfo')">
+<span class="green "><b>Concierge.ParcelInfo</b>
+                &nbsp;100%
+                &nbsp;(2/2)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.os.Concierge.ParcelInfo" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;complete</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getParcelVersion</b>()
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.os.Concierge')">
+<span class="green "><b>Concierge</b>
+                &nbsp;100%
+                &nbsp;(2/2)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.os.Concierge" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.os.Concierge.ParcelInfo<b>&nbsp;prepareParcel</b>(android.os.Parcel)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.os.Concierge.ParcelInfo<b>&nbsp;receiveParcel</b>(android.os.Parcel)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.os.Build')">
+<span class="green "><b>Build</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.os.Build" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;java.lang.String<b>&nbsp;getNameForSDKInt</b>(int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.alarmclock')">
+<span class="green "><b>cyanogenmod.alarmclock</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.alarmclock" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.alarmclock.CyanogenModAlarmClock')">
+<span class="green "><b>CyanogenModAlarmClock</b>
+                &nbsp;100%
+                &nbsp;(1/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.alarmclock.CyanogenModAlarmClock" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;android.content.Intent<b>&nbsp;createAlarmIntent</b>(android.content.Context)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+</ul>
+</body>
+</html>
