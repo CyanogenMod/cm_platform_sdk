@@ -63,6 +63,9 @@
     <java-symbol type="string" name="live_display_outdoor_summary" />
     <java-symbol type="drawable" name="ic_livedisplay_notif" />
 
+    <java-symbol type="array" name="live_display_announcement" />
+    <java-symbol type="array" name="live_display_description" />
+    <java-symbol type="array" name="live_display_drawables" />
     <java-symbol type="array" name="live_display_entries" />
     <java-symbol type="array" name="live_display_summaries" />
     <java-symbol type="array" name="live_display_values" />
