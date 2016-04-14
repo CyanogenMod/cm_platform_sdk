@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -474,19 +475,6 @@ Summary:
     
     <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html#TYPE_GEO_LOCATION_REQ">TYPE_GEO_LOCATION_REQ</a></td>
-        <td class="jd-descrcol" width="100%">
-          A request to update the weather data using a geographical <code><a href="../../../reference/android/location/Location.html">Location</a></code>
-
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html#TYPE_LOOKUP_CITY_NAME_REQ">TYPE_LOOKUP_CITY_NAME_REQ</a></td>
         <td class="jd-descrcol" width="100%">
           A request to look up a city name
@@ -498,9 +486,22 @@ Summary:
     </tr>
     
     
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html#TYPE_WEATHER_BY_GEO_LOCATION_REQ">TYPE_WEATHER_BY_GEO_LOCATION_REQ</a></td>
+        <td class="jd-descrcol" width="100%">
+          A request to update the weather data using a geographical <code><a href="../../../reference/android/location/Location.html">Location</a></code>
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
     <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html#TYPE_WEATHER_LOCATION_REQ">TYPE_WEATHER_LOCATION_REQ</a></td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html#TYPE_WEATHER_BY_WEATHER_LOCATION_REQ">TYPE_WEATHER_BY_WEATHER_LOCATION_REQ</a></td>
         <td class="jd-descrcol" width="100%">
           A request to update the weather data using a <code><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></code>
 
@@ -1080,49 +1081,6 @@ From interface
 
 
 
-<A NAME="TYPE_GEO_LOCATION_REQ"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        TYPE_GEO_LOCATION_REQ
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>A request to update the weather data using a geographical <code><a href="../../../reference/android/location/Location.html">Location</a></code>
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                1
-                (0x00000001)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
 <A NAME="TYPE_LOOKUP_CITY_NAME_REQ"></A>
 
 <div class="jd-details api apilevel-5"> 
@@ -1166,7 +1124,7 @@ From interface
 
 
 
-<A NAME="TYPE_WEATHER_LOCATION_REQ"></A>
+<A NAME="TYPE_WEATHER_BY_GEO_LOCATION_REQ"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -1176,7 +1134,50 @@ From interface
         final 
         int
       </span>
-        TYPE_WEATHER_LOCATION_REQ
+        TYPE_WEATHER_BY_GEO_LOCATION_REQ
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A request to update the weather data using a geographical <code><a href="../../../reference/android/location/Location.html">Location</a></code>
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="TYPE_WEATHER_BY_WEATHER_LOCATION_REQ"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        TYPE_WEATHER_BY_WEATHER_LOCATION_REQ
     </h4>
       <div class="api-level">
         

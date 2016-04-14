@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -432,7 +433,7 @@ type="text/css">
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html#onWeatherRequestCompleted(int, cyanogenmod.weather.WeatherInfo)">onWeatherRequestCompleted</a></span>(int state, <a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a> weatherInfo)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html#onWeatherRequestCompleted(int, cyanogenmod.weather.WeatherInfo)">onWeatherRequestCompleted</a></span>(int status, <a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a> weatherInfo)</nobr>
         
         <div class="jd-descrdiv">
           This method will be called when the weather service provider has finished processing the
@@ -506,7 +507,7 @@ type="text/css">
         void
       </span>
       <span class="sympad">onWeatherRequestCompleted</span>
-      <span class="normal">(int state, <a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a> weatherInfo)</span>
+      <span class="normal">(int status, <a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a> weatherInfo)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -526,17 +527,13 @@ type="text/css">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>state</td>
-          <td>Any of the following values
-              <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_COMPLETED">WEATHER_REQUEST_COMPLETED</a></code>
-              <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_ALREADY_IN_PROGRESS">WEATHER_REQUEST_ALREADY_IN_PROGRESS</a></code>
-              <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_SUBMITTED_TOO_SOON">WEATHER_REQUEST_SUBMITTED_TOO_SOON</a></code>
-              <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_FAILED">WEATHER_REQUEST_FAILED</a></code></td>
+          <th>status</td>
+          <td>See <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></code></td>
         </tr>
         <tr>
           <th>weatherInfo</td>
           <td>A fully populated <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code> if state is
-                    <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_COMPLETED">WEATHER_REQUEST_COMPLETED</a></code>, null otherwise
+                    <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#COMPLETED">COMPLETED</a></code>, null otherwise
 </td>
         </tr>
       </table>

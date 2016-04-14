@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -426,7 +427,10 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">This class represents the weather forecast for a given day
+<p itemprop="articleBody">This class represents the weather forecast for a given day. Do not add low and high
+ temperatures for the current day in this list. Use
+ <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTodaysHigh(double)">setTodaysHigh(double)</a></code> and
+ <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTodaysLow(double)">setTodaysLow(double)</a></code> instead.
 </p>
 
 
@@ -471,7 +475,8 @@ Summary:
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.Builder.html">WeatherInfo.DayForecast.Builder</a></td>
       <td class="jd-descrcol" width="100%">
-        &nbsp;
+        Builder class for <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></code>
+&nbsp;
         
     
 
@@ -650,7 +655,7 @@ android.os.Parcelable
             
             
             
-            float</nobr>
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html#getHigh()">getHigh</a></span>()</nobr>
@@ -666,7 +671,7 @@ android.os.Parcelable
             
             
             
-            float</nobr>
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html#getLow()">getLow</a></span>()</nobr>
@@ -1190,7 +1195,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getHigh</span>
       <span class="normal">()</span>
@@ -1228,7 +1233,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getLow</span>
       <span class="normal">()</span>

@@ -497,8 +497,8 @@ Summary:
  can handle weather update requests and update the weather content provider data by processing
  a <code><a href="../../../reference/cyanogenmod/weatherservice/ServiceRequest.html">ServiceRequest</a></code>
 
- A print service is declared as any other service in an AndroidManifest.xml but it must also
- specify that in handles the <code><a href="../../../reference/android/content/Intent.html">Intent</a></code> with action
+ A weather provider service is declared as any other service in an AndroidManifest.xml but it must
+ also specify that in handles the <code><a href="../../../reference/android/content/Intent.html">Intent</a></code> with action
  <code><a href="../../../reference/cyanogenmod/weatherservice/WeatherProviderService.html#SERVICE_INTERFACE">cyanogenmod.weatherservice.WeatherProviderService</a></code>. Failure to declare
  this intent will cause the system to ignore the weather provider service. Additionally, a
  weather provider service must request the

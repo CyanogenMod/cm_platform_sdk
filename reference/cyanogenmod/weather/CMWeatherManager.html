@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -319,9 +320,6 @@ Summary:
 
 
 
-
-  &#124; <a href="#constants">Constants</a>
-  
 
 
 
@@ -469,6 +467,24 @@ Summary:
          
          
         
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></td>
+      <td class="jd-descrcol" width="100%">
+        The different request statuses
+&nbsp;
+        
+    
+
+      </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
         interface</nobr></td>
       <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherServiceProviderChangeListener.html">CMWeatherManager.WeatherServiceProviderChangeListener</a></td>
       <td class="jd-descrcol" width="100%">
@@ -481,7 +497,7 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
       <td class="jd-typecol"><nobr>
         
          
@@ -512,65 +528,6 @@ Summary:
 
 
 
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_ALREADY_IN_PROGRESS">WEATHER_REQUEST_ALREADY_IN_PROGRESS</a></td>
-        <td class="jd-descrcol" width="100%">
-          Weather update request state: Only one update request can be processed at a given time.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_COMPLETED">WEATHER_REQUEST_COMPLETED</a></td>
-        <td class="jd-descrcol" width="100%">
-          Weather update request state: Successfully completed
-
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_FAILED">WEATHER_REQUEST_FAILED</a></td>
-        <td class="jd-descrcol" width="100%">
-          Weather update request state: An error occurred while trying to update the weather.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_SUBMITTED_TOO_SOON">WEATHER_REQUEST_SUBMITTED_TOO_SOON</a></td>
-        <td class="jd-descrcol" width="100%">
-          Weather update request state: You need to wait a bit longer before requesting an update
- again.
-          
-    
-
-        </td>
-    </tr>
-    
-    
-
-</table>
-
-
 
 
 
@@ -598,6 +555,29 @@ Summary:
             
             
             
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#cancelRequest(int)">cancelRequest</a></span>(int requestId)</nobr>
+        
+        <div class="jd-descrdiv">
+          Cancels a request that was previously submitted to the weather service.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -614,7 +594,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -637,14 +617,14 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            void</nobr>
+            int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#lookupCity(java.lang.String, cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener)">lookupCity</a></span>(String city, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html">CMWeatherManager.LookupCityRequestListener</a> listener)</nobr>
@@ -660,7 +640,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -684,14 +664,14 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            void</nobr>
+            int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#requestWeatherUpdate(cyanogenmod.weather.WeatherLocation, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)">requestWeatherUpdate</a></span>(<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a> weatherLocation, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a> listener)</nobr>
@@ -708,14 +688,14 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            void</nobr>
+            int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#requestWeatherUpdate(android.location.Location, cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)">requestWeatherUpdate</a></span>(Location location, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a> listener)</nobr>
@@ -732,7 +712,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -993,190 +973,6 @@ From class
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="WEATHER_REQUEST_ALREADY_IN_PROGRESS"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        WEATHER_REQUEST_ALREADY_IN_PROGRESS
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Weather update request state: Only one update request can be processed at a given time.
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                -3
-                (0xfffffffd)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="WEATHER_REQUEST_COMPLETED"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        WEATHER_REQUEST_COMPLETED
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Weather update request state: Successfully completed
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                1
-                (0x00000001)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="WEATHER_REQUEST_FAILED"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        WEATHER_REQUEST_FAILED
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Weather update request state: An error occurred while trying to update the weather. You
- should wait before trying again, or your request will be rejected with
- <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html#WEATHER_REQUEST_SUBMITTED_TOO_SOON">WEATHER_REQUEST_SUBMITTED_TOO_SOON</a></code>
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                -2
-                (0xfffffffe)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-<A NAME="WEATHER_REQUEST_SUBMITTED_TOO_SOON"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        WEATHER_REQUEST_SUBMITTED_TOO_SOON
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Weather update request state: You need to wait a bit longer before requesting an update
- again.
- <p>Please bear in mind that the weather does not change very often. A threshold of 10 minutes
- is enforced by the system</p>
-</p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                -1
-                (0xffffffff)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
@@ -1194,6 +990,49 @@ From class
 
 <h2>Public Methods</h2>
 
+
+
+<A NAME="cancelRequest(int)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">cancelRequest</span>
+      <span class="normal">(int requestId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Cancels a request that was previously submitted to the weather service.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>requestId</td>
+          <td>The ID that you received when the request was submitted
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
 
 
 <A NAME="getActiveWeatherServiceProviderLabel()"></A>
@@ -1282,7 +1121,7 @@ From class
          
          
          
-        void
+        int
       </span>
       <span class="sympad">lookupCity</span>
       <span class="normal">(String city, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html">CMWeatherManager.LookupCityRequestListener</a> listener)</span>
@@ -1312,10 +1151,16 @@ From class
           <td><code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html">CMWeatherManager.LookupCityRequestListener</a></code> To be notified once the request has been
                                                   completed. Upon success, a list of
                                                   <code><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></code>
-                                                  will be provided
-</td>
+                                                  will be provided</td>
         </tr>
       </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>An integer that identifies the request submitted to the weather service.
+ Note that this method might return -1 if an error occurred while trying to submit
+ the request.
+</li></ul>
   </div>
 
     </div>
@@ -1376,7 +1221,7 @@ From class
          
          
          
-        void
+        int
       </span>
       <span class="sympad">requestWeatherUpdate</span>
       <span class="normal">(<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a> weatherLocation, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a> listener)</span>
@@ -1408,10 +1253,16 @@ From class
           <th>listener</td>
           <td><code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a></code> To be notified once the active weather
                                                      service provider has finished
-                                                     processing your request
-</td>
+                                                     processing your request</td>
         </tr>
       </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>An integer that identifies the request submitted to the weather service.
+ Note that this method might return -1 if an error occurred while trying to submit
+ the request.
+</li></ul>
   </div>
 
     </div>
@@ -1428,7 +1279,7 @@ From class
          
          
          
-        void
+        int
       </span>
       <span class="sympad">requestWeatherUpdate</span>
       <span class="normal">(Location location, <a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a> listener)</span>
@@ -1458,10 +1309,16 @@ From class
           <th>listener</td>
           <td><code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a></code> To be notified once the active weather
                                                      service provider has finished
-                                                     processing your request
-</td>
+                                                     processing your request</td>
         </tr>
       </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>An integer that identifies the request submitted to the weather service
+ Note that this method might return -1 if an error occurred while trying to submit
+ the request.
+</li></ul>
   </div>
 
     </div>

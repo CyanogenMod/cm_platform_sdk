@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -432,7 +433,7 @@ type="text/css">
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html#onLookupCityRequestCompleted(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>)">onLookupCityRequestCompleted</a></span>(ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a>&gt; locations)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html#onLookupCityRequestCompleted(int, java.util.List<cyanogenmod.weather.WeatherLocation>)">onLookupCityRequestCompleted</a></span>(int status, List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a>&gt; locations)</nobr>
         
         <div class="jd-descrdiv">
           This method will be called when the weather service provider has finished processing the
@@ -493,7 +494,7 @@ type="text/css">
 
 
 
-<A NAME="onLookupCityRequestCompleted(java.util.ArrayList<cyanogenmod.weather.WeatherLocation>)"></A>
+<A NAME="onLookupCityRequestCompleted(int, java.util.List<cyanogenmod.weather.WeatherLocation>)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -506,7 +507,7 @@ type="text/css">
         void
       </span>
       <span class="sympad">onLookupCityRequestCompleted</span>
-      <span class="normal">(ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a>&gt; locations)</span>
+      <span class="normal">(int status, List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a>&gt; locations)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -521,7 +522,22 @@ type="text/css">
 
       
   <div class="jd-tagdata jd-tagdescr"><p>This method will be called when the weather service provider has finished processing the
- request. The argument can be null if the provider couldn't find a match</p></div>
+ request.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>status</td>
+          <td>See <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></code></td>
+        </tr>
+        <tr>
+          <th>locations</td>
+          <td>A list of <code><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></code> if the status is
+ <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#COMPLETED">COMPLETED</a></code>, null otherwise
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>

@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -478,7 +479,8 @@ Summary:
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></td>
       <td class="jd-descrcol" width="100%">
-        &nbsp;
+        Builder class for <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code>
+&nbsp;
         
     
 
@@ -495,8 +497,7 @@ Summary:
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></td>
       <td class="jd-descrcol" width="100%">
-        This class represents the weather forecast for a given day
-&nbsp;
+        This class represents the weather forecast for a given day.&nbsp;
         
     
 
@@ -675,22 +676,6 @@ android.os.Parcelable
             
             
             
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getCityId()">getCityId</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
             int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
@@ -700,14 +685,14 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt;</nobr>
+            List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getForecasts()">getForecasts</a></span>()</nobr>
@@ -716,14 +701,14 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            float</nobr>
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getHumidity()">getHumidity</a></span>()</nobr>
@@ -732,14 +717,14 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            float</nobr>
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getTemperature()">getTemperature</a></span>()</nobr>
@@ -748,7 +733,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -764,7 +749,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -780,6 +765,22 @@ android.os.Parcelable
 
 
 	 
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getTodaysHigh()">getTodaysHigh</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
     <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
@@ -787,10 +788,10 @@ android.os.Parcelable
             
             
             
-            float</nobr>
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getWindDirection()">getWindDirection</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getTodaysLow()">getTodaysLow</a></span>()</nobr>
         
   </td></tr>
 
@@ -803,7 +804,23 @@ android.os.Parcelable
             
             
             
-            float</nobr>
+            double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getWindDirection()">getWindDirection</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            double</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getWindSpeed()">getWindSpeed</a></span>()</nobr>
@@ -812,7 +829,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -828,7 +845,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -844,7 +861,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -860,7 +877,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1333,44 +1350,6 @@ From interface
 </div>
 
 
-<A NAME="getCityId()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getCityId</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>city id
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
 <A NAME="getConditionCode()"></A>
 
 <div class="jd-details api apilevel-5"> 
@@ -1419,7 +1398,7 @@ From interface
          
          
          
-        ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt;
+        List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt;
       </span>
       <span class="sympad">getForecasts</span>
       <span class="normal">()</span>
@@ -1439,7 +1418,9 @@ From interface
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>List of <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></code>
+      <ul class="nolist"><li>List of <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></code>. This list will contain
+ the forecast weather for the upcoming days. If you want to know today's high and low
+ temperatures, use <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getTodaysHigh()">getTodaysHigh()</a></code> and <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html#getTodaysLow()">getTodaysLow()</a></code>
 </li></ul>
   </div>
 
@@ -1457,7 +1438,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getHumidity</span>
       <span class="normal">()</span>
@@ -1495,7 +1476,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getTemperature</span>
       <span class="normal">()</span>
@@ -1599,6 +1580,82 @@ From interface
 </div>
 
 
+<A NAME="getTodaysHigh()"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        double
+      </span>
+      <span class="sympad">getTodaysHigh</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>today's high temperature
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTodaysLow()"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        double
+      </span>
+      <span class="sympad">getTodaysLow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>today's low temperature
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="getWindDirection()"></A>
 
 <div class="jd-details api apilevel-5"> 
@@ -1609,7 +1666,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getWindDirection</span>
       <span class="normal">()</span>
@@ -1647,7 +1704,7 @@ From interface
          
          
          
-        float
+        double
       </span>
       <span class="sympad">getWindSpeed</span>
       <span class="normal">()</span>

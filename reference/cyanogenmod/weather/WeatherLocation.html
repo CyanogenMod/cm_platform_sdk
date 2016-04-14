@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -474,7 +475,8 @@ Summary:
         class</nobr></td>
       <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/WeatherLocation.Builder.html">WeatherLocation.Builder</a></td>
       <td class="jd-descrcol" width="100%">
-        &nbsp;
+        Builder class for <code><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></code>
+&nbsp;
         
     
 
@@ -710,7 +712,23 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html#getState()">getState</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -726,7 +744,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -742,7 +760,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1205,6 +1223,11 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The city name. This method will return an empty string if the city name was not set
+</li></ul>
+  </div>
 
     </div>
 </div>
@@ -1238,6 +1261,11 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The city ID. This method will return an empty string if the city ID was not set
+</li></ul>
+  </div>
 
     </div>
 </div>
@@ -1271,6 +1299,12 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The country name. This method will return an empty string if the country ID was not
+ set
+</li></ul>
+  </div>
 
     </div>
 </div>
@@ -1304,6 +1338,11 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The country ID. This method will return an empty string if the country ID was not set
+</li></ul>
+  </div>
 
     </div>
 </div>
@@ -1337,6 +1376,50 @@ From interface
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The postal/ZIP code. This method will return an empty string if the postal/ZIP code
+ was not set
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getState()"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getState</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The state name. This method will return an empty string if the state was not set
+</li></ul>
+  </div>
 
     </div>
 </div>

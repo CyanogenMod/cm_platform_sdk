@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>CMContextConstants | Android Developers</title>
+<title>CMWeatherManager.RequestStatus | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="" style="display:none"></div>
+  <div id="doc-api-level" class="5" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -153,31 +153,6 @@ type="text/css">
               src="../../../assets/cid_smart.png" alt="CID" width="50" height="50"/>
           <span id="masthead-title">CyanogenMod Platform SDK</span></a>
       </div>
-      <div id="headerRight">
-          <div id="search">
-              <div id="searchForm">
-                  <form accept-charset="utf-8" class="gsc-search-box" onsubmit="return submit_search()">
-                    <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
-                        <tr>
-                          <td class="gsc-input">
-                            <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off" title="search developer docs" name="q" value="search developer docs" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '../../../../../../')" onkeyup="return search_changed(event, false, '../../../../../../')" style="color: rgb(170, 170, 170);">
-                          <div id="search_filtered_div" class="no-display">
-                              <table id="search_filtered" cellspacing="0">
-                              </table>
-                          </div>
-                          </td>
-                          <td class="gsc-search-button">
-                            <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button">
-                          </td>
-                          <td class="gsc-clear-button">
-                            <div title="clear results" class="gsc-clear-button">&nbsp;</div>
-                          </td>
-                        </tr></tbody>
-                      </table>
-                  </form>
-              </div><!-- searchForm -->
-          </div><!-- search -->
-      </div><!-- headerRight -->
   </div><!-- header -->
 
 
@@ -194,10 +169,10 @@ type="text/css">
             </select>
           </div>
         </div><!-- end toggle -->
-        <div id="api-nav-title">Android APIs</div>
+        <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [  ];
+        var SINCE_DATA = [ '1', '2', '3', '4', '5' ];
         buildApiLevelSelector();
       </script>
                   
@@ -208,10 +183,38 @@ type="text/css">
 
               <ul>
                 
-    <li class="selected api apilevel-">
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/alarmclock/package-summary.html">cyanogenmod.alarmclock</a></li>
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/app/package-summary.html">cyanogenmod.app</a></li>
-    <li class="api apilevel-">
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/cyanogenmod/os/package-summary.html">cyanogenmod.os</a></li>
+    <li class="api apilevel-1">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
+    <li class="api apilevel-2">
+  <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
+    <li class="selected api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weather/package-summary.html">cyanogenmod.weather</a></li>
+    <li class="api apilevel-">
+  <a href="../../../reference/cyanogenmod/weather/util/package-summary.html">cyanogenmod.weather.util</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/cyanogenmod/weatherservice/package-summary.html">cyanogenmod.weatherservice</a></li>
               </ul><br/>
 
             </div> <!-- end packages-nav -->
@@ -223,15 +226,25 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.LookupCityRequestListener.html">CMWeatherManager.LookupCityRequestListener</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherServiceProviderChangeListener.html">CMWeatherManager.WeatherServiceProviderChangeListener</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.WeatherUpdateRequestListener.html">CMWeatherManager.WeatherUpdateRequestListener</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-"><a href="../../../reference/cyanogenmod/app/CMContextConstants.html">CMContextConstants</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.html">CustomTile</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTile.Builder.html">CustomTile.Builder</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/CustomTileListenerService.html">CustomTileListenerService</a></li>
-          <li class="api apilevel-"><a href="../../../reference/cyanogenmod/app/StatusBarPanelCustomTile.html">StatusBarPanelCustomTile</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.Builder.html">WeatherInfo.DayForecast.Builder</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherLocation.html">WeatherLocation</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherLocation.Builder.html">WeatherLocation.Builder</a></li>
       </ul>
     </li>
               
@@ -323,6 +336,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
   
   
 
@@ -334,11 +348,11 @@ Summary:
 
 <div id="jd-header">
     public
-     
-     
+    static 
+    final 
     
     class
-<h1 itemprop="name">CMContextConstants</h1>
+<h1 itemprop="name">CMWeatherManager.RequestStatus</h1>
 
 
 
@@ -360,7 +374,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-">
+<div id="jd-content" class="api apilevel-5">
 <table class="jd-inheritance-table">
 
 
@@ -374,7 +388,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.app.CMContextConstants</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.weather.CMWeatherManager.RequestStatus</td>
     </tr>
     
 
@@ -390,8 +404,7 @@ Summary:
 
 
 <h2>Class Overview</h2>
-<p itemprop="articleBody">Constants to be used with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code>
- to retrieve published system services
+<p itemprop="articleBody">The different request statuses
 </p>
 
 
@@ -437,13 +450,64 @@ Summary:
 
 
     
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">String</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/app/CMContextConstants.html#CM_STATUS_BAR_SERVICE">CM_STATUS_BAR_SERVICE</a></td>
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#ALREADY_IN_PROGRESS">ALREADY_IN_PROGRESS</a></td>
         <td class="jd-descrcol" width="100%">
-          Use with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code> to retrieve a
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> for informing the user of
- background events.
+          Another request is already in progress
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#COMPLETED">COMPLETED</a></td>
+        <td class="jd-descrcol" width="100%">
+          Request successfully completed
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#FAILED">FAILED</a></td>
+        <td class="jd-descrcol" width="100%">
+          An error occurred while trying to honor the request
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#NO_MATCH_FOUND">NO_MATCH_FOUND</a></td>
+        <td class="jd-descrcol" width="100%">
+          No match found for the query
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-5" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#SUBMITTED_TOO_SOON">SUBMITTED_TOO_SOON</a></td>
+        <td class="jd-descrcol" width="100%">
+          The request can't be processed at this time
+
           
     
 
@@ -710,20 +774,21 @@ From class
 
 
 
-<A NAME="CM_STATUS_BAR_SERVICE"></A>
+<A NAME="ALREADY_IN_PROGRESS"></A>
 
-<div class="jd-details api apilevel-"> 
+<div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
         static 
         final 
-        String
+        int
       </span>
-        CM_STATUS_BAR_SERVICE
+        ALREADY_IN_PROGRESS
     </h4>
       <div class="api-level">
         
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
         
   
 
@@ -733,21 +798,188 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Use with <code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code> to retrieve a
- <code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code> for informing the user of
- background events.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">See Also</h5>
-      <ul class="nolist"><li><code><a href="../../../reference/android/content/Context.html#getSystemService(java.lang.String)">getSystemService(String)</a></code></li><li><code><a href="../../../reference/cyanogenmod/app/CMStatusBarManager.html">CMStatusBarManager</a></code></li>
-      </ul>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p>Another request is already in progress
+</p></div>
 
     
         <div class="jd-tagdata">
         <span class="jd-tagtitle">Constant Value: </span>
         <span>
             
-                "cmstatusbar"
+                -3
+                (0xfffffffd)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="COMPLETED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        COMPLETED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Request successfully completed
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FAILED"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FAILED
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>An error occurred while trying to honor the request
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -1
+                (0xffffffff)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NO_MATCH_FOUND"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        NO_MATCH_FOUND
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>No match found for the query
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -4
+                (0xfffffffc)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUBMITTED_TOO_SOON"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SUBMITTED_TOO_SOON
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The request can't be processed at this time
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                -2
+                (0xfffffffe)
             
         </span>
         </div>

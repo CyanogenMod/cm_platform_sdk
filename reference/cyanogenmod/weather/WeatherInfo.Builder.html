@@ -237,6 +237,7 @@ type="text/css">
     <li><h2>Classes</h2>
       <ul>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html">CMWeatherManager.RequestStatus</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></li>
           <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></li>
           <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></li>
@@ -405,6 +406,10 @@ Summary:
 <div class="jd-descr">
 
 
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Builder class for <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code>
+</p>
+
 
 
 
@@ -469,7 +474,7 @@ Summary:
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#WeatherInfo.Builder(long)">WeatherInfo.Builder</a></span>(long timestamp)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#WeatherInfo.Builder(java.lang.String, double, int)">WeatherInfo.Builder</a></span>(String cityName, double temperature, int tempUnit)</nobr>
         
   </td></tr>
 
@@ -500,6 +505,13 @@ Summary:
         <td class="jd-linkcol" width="100%"><nobr>
         <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#build()">build</a></span>()</nobr>
         
+        <div class="jd-descrdiv">
+          Combine all of the options that have been set and return a new <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code> object
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
@@ -514,7 +526,7 @@ Summary:
             <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setCity(java.lang.String, java.lang.String)">setCity</a></span>(String cityId, String cityName)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setForecast(java.util.List<cyanogenmod.weather.WeatherInfo.DayForecast>)">setForecast</a></span>(List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt; forecasts)</nobr>
         
   </td></tr>
 
@@ -530,7 +542,7 @@ Summary:
             <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setForecast(java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast>)">setForecast</a></span>(ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt; forecasts)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setHumidity(double)">setHumidity</a></span>(double humidity)</nobr>
         
   </td></tr>
 
@@ -546,7 +558,7 @@ Summary:
             <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setHumidity(float)">setHumidity</a></span>(float humidity)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTimestamp(long)">setTimestamp</a></span>(long timeStamp)</nobr>
         
   </td></tr>
 
@@ -562,13 +574,29 @@ Summary:
             <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTemperature(float, int)">setTemperature</a></span>(float temperature, int tempUnit)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTodaysHigh(double)">setTodaysHigh</a></span>(double todaysHigh)</nobr>
         
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setTodaysLow(double)">setTodaysLow</a></span>(double todaysLow)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -584,7 +612,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -594,7 +622,7 @@ Summary:
             <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setWind(float, float, int)">setWind</a></span>(float windSpeed, float windDirection, int windSpeedUnit)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html#setWind(double, double, int)">setWind</a></span>(double windSpeed, double windDirection, int windSpeedUnit)</nobr>
         
   </td></tr>
 
@@ -849,7 +877,7 @@ From class
 
 
 
-<A NAME="WeatherInfo.Builder(long)"></A>
+<A NAME="WeatherInfo.Builder(java.lang.String, double, int)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -862,7 +890,7 @@ From class
         
       </span>
       <span class="sympad">WeatherInfo.Builder</span>
-      <span class="normal">(long timestamp)</span>
+      <span class="normal">(String cityName, double temperature, int tempUnit)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -877,6 +905,29 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>cityName</td>
+          <td>A valid city name. Attempting to pass null will get you an
+                 IllegalArgumentException</td>
+        </tr>
+        <tr>
+          <th>temperature</td>
+          <td>A valid temperature value. Attempting pass an invalid double value,
+                    will get you an IllegalArgumentException</td>
+        </tr>
+        <tr>
+          <th>tempUnit</td>
+          <td>A valid temperature unit value. See
+                 <code><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.TempUnit.html">WeatherContract.WeatherColumns.TempUnit</a></code> for
+                 valid values. Attempting to pass an invalid temperature unit will get you
+                 an IllegalArgumentException
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -924,46 +975,18 @@ From class
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Combine all of the options that have been set and return a new <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code> object</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.html">WeatherInfo</a></code>
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="setCity(java.lang.String, java.lang.String)"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
-      </span>
-      <span class="sympad">setCity</span>
-      <span class="normal">(String cityId, String cityName)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="setForecast(java.util.ArrayList<cyanogenmod.weather.WeatherInfo.DayForecast>)"></A>
+<A NAME="setForecast(java.util.List<cyanogenmod.weather.WeatherInfo.DayForecast>)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -976,7 +999,7 @@ From class
         <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
       </span>
       <span class="sympad">setForecast</span>
-      <span class="normal">(ArrayList&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt; forecasts)</span>
+      <span class="normal">(List&lt;<a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a>&gt; forecasts)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -991,12 +1014,27 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>forecasts</td>
+          <td>A valid array list of <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.DayForecast.html">WeatherInfo.DayForecast</a></code> objects. Attempting to pass
+                  null will get you an IllegalArgumentException'</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="setHumidity(float)"></A>
+<A NAME="setHumidity(double)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -1009,7 +1047,7 @@ From class
         <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
       </span>
       <span class="sympad">setHumidity</span>
-      <span class="normal">(float humidity)</span>
+      <span class="normal">(double humidity)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1024,12 +1062,27 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>humidity</td>
+          <td>The weather humidity. Attempting to pass an invalid double value will get
+                 you an IllegalArgumentException</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="setTemperature(float, int)"></A>
+<A NAME="setTimestamp(long)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -1041,8 +1094,8 @@ From class
          
         <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
       </span>
-      <span class="sympad">setTemperature</span>
-      <span class="normal">(float temperature, int tempUnit)</span>
+      <span class="sympad">setTimestamp</span>
+      <span class="normal">(long timeStamp)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1057,6 +1110,112 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>timeStamp</td>
+          <td>A timestamp indicating when this data was generated. If timestamps is
+                  not set, then the builder will set it to the time of object creation</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setTodaysHigh(double)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
+      </span>
+      <span class="sympad">setTodaysHigh</span>
+      <span class="normal">(double todaysHigh)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>todaysHigh</td>
+          <td>Today's high temperature. Attempting to pass an invalid double value
+                   will get you an IllegalArgumentException</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setTodaysLow(double)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
+      </span>
+      <span class="sympad">setTodaysLow</span>
+      <span class="normal">(double todaysLow)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>todaysLow</td>
+          <td>Today's low temperature. Attempting to pass an invalid double value will
+                  get you an IllegalArgumentException</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -1090,12 +1249,29 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>conditionCode</td>
+          <td>A valid weather condition code. See
+                      <code><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WeatherCode.html">WeatherContract.WeatherColumns.WeatherCode</a></code>
+                      for valid codes. Attempting to pass an invalid code will get you an
+                      IllegalArgumentException.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="setWind(float, float, int)"></A>
+<A NAME="setWind(double, double, int)"></A>
 
 <div class="jd-details api apilevel-5"> 
     <h4 class="jd-details-title">
@@ -1108,7 +1284,7 @@ From class
         <a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a>
       </span>
       <span class="sympad">setWind</span>
-      <span class="normal">(float windSpeed, float windDirection, int windSpeedUnit)</span>
+      <span class="normal">(double windSpeed, double windDirection, int windSpeedUnit)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1123,6 +1299,33 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>windSpeed</td>
+          <td>The wind speed. Attempting to pass an invalid double value will get you
+                  an IllegalArgumentException</td>
+        </tr>
+        <tr>
+          <th>windDirection</td>
+          <td>The wind direction. Attempting to pass an invalid double value will
+                      get you an IllegalArgumentException</td>
+        </tr>
+        <tr>
+          <th>windSpeedUnit</td>
+          <td>A valid wind speed direction unit. See
+                      <code><a href="../../../reference/cyanogenmod/providers/WeatherContract.WeatherColumns.WindSpeedUnit.html">WeatherContract.WeatherColumns.WindSpeedUnit</a></code>
+                      for valid values. Attempting to pass an invalid speed unit will get
+                      you an IllegalArgumentException</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The <code><a href="../../../reference/cyanogenmod/weather/WeatherInfo.Builder.html">WeatherInfo.Builder</a></code> instance
+</li></ul>
+  </div>
 
     </div>
 </div>

@@ -524,6 +524,29 @@ Summary:
   </td></tr>
 
 
+	 
+    <tr class=" api apilevel-5" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/weatherservice/ServiceRequest.html#reject(int)">reject</a></span>(int status)</nobr>
+        
+        <div class="jd-descrdiv">
+          This method should be called if the service decides not to honor the request.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
 
 </table>
 
@@ -884,6 +907,45 @@ From class
       <ul class="nolist"><li><code><a href="../../../reference/cyanogenmod/weather/RequestInfo.html">RequestInfo</a></code>
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<A NAME="reject(int)"></A>
+
+<div class="jd-details api apilevel-5"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">reject</span>
+      <span class="normal">(int status)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This method should be called if the service decides not to honor the request. Note this
+ method will accept only the following values.
+ <ul>
+ <li><code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#SUBMITTED_TOO_SOON">SUBMITTED_TOO_SOON</a></code></li>
+ <li><code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.RequestStatus.html#ALREADY_IN_PROGRESS">ALREADY_IN_PROGRESS</a></code></li>
+ </ul>
+ Attempting to pass any other value will get you an IllegalArgumentException</p></div>
 
     </div>
 </div>
