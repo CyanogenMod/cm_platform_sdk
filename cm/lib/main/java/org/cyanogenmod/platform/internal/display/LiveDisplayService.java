@@ -15,14 +15,25 @@
  */
 package org.cyanogenmod.platform.internal.display;
 
+import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MODE;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.hardware.display.DisplayManager;
 import android.net.Uri;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -33,6 +44,7 @@ import android.os.UserHandle;
 import android.util.Log;
 import android.view.Display;
 
+import com.android.internal.util.ArrayUtils;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
 import com.android.server.SystemService;
@@ -40,6 +52,10 @@ import com.android.server.pm.UserContentObserver;
 import com.android.server.twilight.TwilightListener;
 import com.android.server.twilight.TwilightManager;
 import com.android.server.twilight.TwilightState;
+
+import org.cyanogenmod.internal.util.QSConstants;
+import org.cyanogenmod.internal.util.QSUtils;
+import org.cyanogenmod.platform.internal.R;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -49,11 +65,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import cyanogenmod.app.CMContextConstants;
+import cyanogenmod.app.CMStatusBarManager;
+import cyanogenmod.app.CustomTile;
 import cyanogenmod.hardware.ILiveDisplayService;
 import cyanogenmod.hardware.LiveDisplayConfig;
 import cyanogenmod.providers.CMSettings;
-
-import static cyanogenmod.hardware.LiveDisplayManager.*;
 
 /**
  * LiveDisplay is an advanced set of features for improving
@@ -96,6 +112,16 @@ public class LiveDisplayService extends SystemService {
 
     private LiveDisplayConfig mConfig;
 
+    // QS tile
+    private String[] mTileEntries;
+    private String[] mTileDescriptionEntries;
+    private String[] mTileAnnouncementEntries;
+    private String[] mTileValues;
+    private int[] mTileEntryIconRes;
+
+    private static String ACTION_NEXT_MODE = "cyanogenmod.hardware.NEXT_LIVEDISPLAY_MODE";
+    private static String EXTRA_NEXT_MODE = "next_mode";
+
     public LiveDisplayService(Context context) {
         super(context);
 
@@ -106,6 +132,8 @@ public class LiveDisplayService extends SystemService {
                 Process.THREAD_PRIORITY_DISPLAY + 1, false /*allowIo*/);
         mHandlerThread.start();
         mHandler = new LiveDisplayHandler(mHandlerThread.getLooper());
+
+        updateCustomTileEntries();
     }
 
     @Override
@@ -169,9 +197,124 @@ public class LiveDisplayService extends SystemService {
             mModeObserver = new ModeObserver(mHandler);
             mModeObserver.update();
 
+            mContext.registerReceiver(mNextModeReceiver,
+                    new IntentFilter(ACTION_NEXT_MODE));
+            publishCustomTile();
+
             mInitialized = true;
         }
     }
+
+    private void updateCustomTileEntries() {
+        Resources res = mContext.getResources();
+        mTileEntries = res.getStringArray(R.array.live_display_entries);
+        mTileDescriptionEntries = res.getStringArray(R.array.live_display_description);
+        mTileAnnouncementEntries = res.getStringArray(R.array.live_display_announcement);
+        mTileValues = res.getStringArray(R.array.live_display_values);
+        TypedArray typedArray = res.obtainTypedArray(R.array.live_display_drawables);
+        mTileEntryIconRes = new int[typedArray.length()];
+        for (int i = 0; i < mTileEntryIconRes.length; i++) {
+            mTileEntryIconRes[i] = typedArray.getResourceId(i, 0);
+        }
+        typedArray.recycle();
+    }
+
+    private int getCurrentModeIndex() {
+        return ArrayUtils.indexOf(mTileValues, String.valueOf(mModeObserver.getMode()));
+    }
+
+    private int getNextModeIndex() {
+        int next = getCurrentModeIndex() + 1;
+
+        if (next >= mTileValues.length) {
+            next = 0;
+        }
+
+        int nextMode = 0;
+
+        while (true) {
+            nextMode = Integer.valueOf(mTileValues[next]);
+            // Skip outdoor mode if it's unsupported, and skip the day setting
+            // if it's the same as the off setting
+            if  (((!mConfig.hasFeature(MODE_OUTDOOR) ||
+                    mConfig.hasFeature(FEATURE_MANAGED_OUTDOOR_MODE)
+                            && nextMode == MODE_OUTDOOR)) ||
+                    (mCTC.getDayColorTemperature() == mConfig.getDefaultDayTemperature()
+                            && nextMode == MODE_DAY)) {
+                next++;
+                if (next >= mTileValues.length) {
+                    next = 0;
+                }
+            } else {
+                break;
+            }
+        }
+
+        return nextMode;
+    }
+
+    private void publishCustomTile() {
+        // This action should be performed as system
+        final int userId = UserHandle.myUserId();
+        long token = Binder.clearCallingIdentity();
+        try {
+            int idx = getCurrentModeIndex();
+            final UserHandle user = new UserHandle(userId);
+            final Context resourceContext = QSUtils.getQSTileContext(mContext, userId);
+
+            CMStatusBarManager statusBarManager = CMStatusBarManager.getInstance(mContext);
+            CustomTile tile = new CustomTile.Builder(resourceContext)
+                    .setLabel(mTileEntries[idx])
+                    .setContentDescription(mTileDescriptionEntries[idx])
+                    .setIcon(mTileEntryIconRes[idx])
+                    .setOnLongClickIntent(getCustomTileLongClickPendingIntent())
+                    .setOnClickIntent(getCustomTileNextModePendingIntent())
+                    .shouldCollapsePanel(false)
+                    .build();
+            statusBarManager.publishTileAsUser(QSConstants.TILE_LIVE_DISPLAY,
+                    LiveDisplayService.class.hashCode(), tile, user);
+        } finally {
+            Binder.restoreCallingIdentity(token);
+        }
+    }
+
+    private void unpublishCustomTile() {
+        // This action should be performed as system
+        final int userId = UserHandle.myUserId();
+        long token = Binder.clearCallingIdentity();
+        try {
+            CMStatusBarManager statusBarManager = CMStatusBarManager.getInstance(mContext);
+            statusBarManager.removeTileAsUser(QSConstants.TILE_LIVE_DISPLAY,
+                    LiveDisplayService.class.hashCode(), new UserHandle(userId));
+        } finally {
+            Binder.restoreCallingIdentity(token);
+        }
+    }
+
+    private PendingIntent getCustomTileNextModePendingIntent() {
+        Intent i = new Intent(ACTION_NEXT_MODE);
+        i.putExtra(EXTRA_NEXT_MODE, getNextModeIndex());
+        return PendingIntent.getBroadcastAsUser(mContext, 0, i,
+                PendingIntent.FLAG_UPDATE_CURRENT, UserHandle.CURRENT);
+    }
+
+    private PendingIntent getCustomTileLongClickPendingIntent() {
+        Intent i = new Intent(CMSettings.ACTION_LIVEDISPLAY_SETTINGS);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return PendingIntent.getActivityAsUser(mContext, 0, i,
+                PendingIntent.FLAG_UPDATE_CURRENT, null, UserHandle.CURRENT);
+    }
+
+    private final BroadcastReceiver mNextModeReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int mode = intent.getIntExtra(EXTRA_NEXT_MODE, mConfig.getDefaultMode());
+            if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
+                putInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
+            }
+        }
+    };
 
     private final IBinder mBinder = new ILiveDisplayService.Stub() {
 
@@ -354,6 +497,7 @@ public class LiveDisplayService extends SystemService {
         @Override
         protected void update() {
             mHandler.obtainMessage(MSG_MODE_CHANGED, getMode(), 0).sendToTarget();
+            publishCustomTile();
         }
 
         int getMode() {
