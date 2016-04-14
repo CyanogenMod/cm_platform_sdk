@@ -57,13 +57,16 @@ public class CMWeatherManager {
     /**
      * The different request statuses
      */
-    public static class RequestStatus {
+    public static final class RequestStatus {
+
+        private RequestStatus() {}
+
         /**
-         * Request Successfully completed
+         * Request successfully completed
          */
         public static final int COMPLETED = 1;
         /**
-         * An error occurred while trying to honor the request.
+         * An error occurred while trying to honor the request
          */
         public static final int FAILED = -1;
         /**
@@ -71,7 +74,7 @@ public class CMWeatherManager {
          */
         public static final int SUBMITTED_TOO_SOON = -2;
         /**
-         * Another request in already in progress
+         * Another request is already in progress
          */
         public static final int ALREADY_IN_PROGRESS = -3;
         /**
