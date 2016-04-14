@@ -350,27 +350,27 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             // region Window callbacks
             @Override
             public boolean dispatchKeyEvent(KeyEvent event) {
-                return false;
+                return mWindow.superDispatchKeyEvent(event);
             }
 
             @Override
             public boolean dispatchKeyShortcutEvent(KeyEvent event) {
-                return false;
+                return mWindow.superDispatchKeyShortcutEvent(event);
             }
 
             @Override
             public boolean dispatchTouchEvent(MotionEvent event) {
-                return false;
+                return mWindow.superDispatchTouchEvent(event);
             }
 
             @Override
             public boolean dispatchTrackballEvent(MotionEvent event) {
-                return false;
+                return mWindow.superDispatchTrackballEvent(event);
             }
 
             @Override
             public boolean dispatchGenericMotionEvent(MotionEvent event) {
-                return false;
+                return mWindow.superDispatchGenericMotionEvent(event);
             }
 
             @Override
