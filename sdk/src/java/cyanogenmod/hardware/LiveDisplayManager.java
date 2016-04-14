@@ -127,8 +127,8 @@ public class LiveDisplayManager {
         }
         sService = getService();
 
-        if (context.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.LIVEDISPLAY) && !checkService()) {
+        if (!context.getPackageManager().hasSystemFeature(
+                CMContextConstants.Features.LIVEDISPLAY) || !checkService()) {
             throw new RuntimeException("Unable to get LiveDisplayService. The service either" +
                     " crashed, was not started, or the interface has been called to early in" +
                     " SystemServer init");
@@ -136,6 +136,9 @@ public class LiveDisplayManager {
 
         try {
             mConfig = sService.getConfig();
+            if (mConfig == null) {
+                throw new RuntimeException("Unable to get LiveDisplay configuration!");
+            }
         } catch (RemoteException e) {
             throw new RuntimeException("Unable to fetch LiveDisplay configuration!", e);
         }
