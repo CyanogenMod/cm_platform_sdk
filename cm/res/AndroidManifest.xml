@@ -139,7 +139,7 @@
                 android:protectionLevel="signature|privileged" />
 
     <!-- Allows an application to be used as a third party keyguard -->
-    <permission android:name="android.permission.THIRD_PARTY_KEYGUARD"
+    <permission android:name="cyanogenmod.permission.THIRD_PARTY_KEYGUARD"
                 android:label="@string/permlab_thirdPartyKeyguard"
                 android:description="@string/permdesc_thirdPartyKeyguard"
                 android:protectionLevel="normal" />
