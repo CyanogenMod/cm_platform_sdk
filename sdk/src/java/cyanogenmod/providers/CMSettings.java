@@ -2729,6 +2729,14 @@ public final class CMSettings {
          */
         public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
 
+        /**
+         * Set to 0 when we enter the CM Setup Wizard.
+         * Set to 1 when we exit the CM Setup Wizard.
+         *
+         * @hide
+         */
+        public static final String CM_SETUP_WIZARD_COMPLETED = "cm_setup_wizard_completed";
+
         // endregion
 
         /**
