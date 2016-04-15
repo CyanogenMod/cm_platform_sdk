@@ -39,6 +39,8 @@ import cyanogenmod.os.Concierge.ParcelInfo;
 public class LiveDisplayConfig implements Parcelable {
 
     private final BitSet mCapabilities;
+    private final BitSet mAllModes = new BitSet();
+
     private final int mDefaultDayTemperature;
     private final int mDefaultNightTemperature;
     private final int mDefaultMode;
@@ -54,6 +56,7 @@ public class LiveDisplayConfig implements Parcelable {
             boolean defaultCABC, boolean defaultColorEnhancement) {
         super();
         mCapabilities = (BitSet) capabilities.clone();
+        mAllModes.set(MODE_FIRST, MODE_LAST);
         mDefaultMode = defaultMode;
         mDefaultDayTemperature = defaultDayTemperature;
         mDefaultNightTemperature = defaultNightTemperature;
@@ -91,6 +94,7 @@ public class LiveDisplayConfig implements Parcelable {
 
         // set temps
         mCapabilities = BitSet.valueOf(new long[] { capabilities });
+        mAllModes.set(MODE_FIRST, MODE_LAST);
         mDefaultMode = defaultMode;
         mDefaultDayTemperature = defaultDayTemperature;
         mDefaultNightTemperature = defaultNightTemperature;
@@ -160,6 +164,15 @@ public class LiveDisplayConfig implements Parcelable {
      */
     public boolean isAvailable() {
         return !mCapabilities.isEmpty();
+    }
+
+    /**
+     * Checks if LiveDisplay has support for adaptive modes.
+     *
+     * @return true if adaptive modes are available
+     */
+    public boolean hasModeSupport() {
+        return isAvailable() && mCapabilities.intersects(mAllModes);
     }
 
     /**

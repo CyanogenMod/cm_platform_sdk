@@ -194,12 +194,14 @@ public class LiveDisplayService extends SystemService {
 
             updateDisplayState(mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY).getState());
 
-            mModeObserver = new ModeObserver(mHandler);
-            mModeObserver.update();
+            if (mConfig.hasModeSupport()) {
+                mModeObserver = new ModeObserver(mHandler);
+                mModeObserver.update();
 
-            mContext.registerReceiver(mNextModeReceiver,
-                    new IntentFilter(ACTION_NEXT_MODE));
-            publishCustomTile();
+                mContext.registerReceiver(mNextModeReceiver,
+                        new IntentFilter(ACTION_NEXT_MODE));
+                publishCustomTile();
+            }
 
             mInitialized = true;
         }
