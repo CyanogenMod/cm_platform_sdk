@@ -19,7 +19,6 @@ import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MO
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.app.Notification;
@@ -155,13 +154,12 @@ public class LiveDisplayService extends SystemService {
             mAwaitingNudge = getSunsetCounter() < 1;
 
             mDHC = new DisplayHardwareController(mContext, mHandler);
-            mFeatures.add(mDHC);
-
             mCTC = new ColorTemperatureController(mContext, mHandler, mDHC);
-            mFeatures.add(mCTC);
-
             mOMC = new OutdoorModeController(mContext, mHandler);
+
+            mFeatures.add(mCTC);
             mFeatures.add(mOMC);
+            mFeatures.add(mDHC); // last
 
             // Call onStart of each feature and get it's capabilities
             final BitSet capabilities = new BitSet();
@@ -673,7 +671,7 @@ public class LiveDisplayService extends SystemService {
                     break;
                 case MSG_MODE_CHANGED:
                     stopNudgingMe();
-                    int mode = msg.obj == null ? MODE_OFF : (Integer)msg.obj;
+                    int mode = msg.obj == null ? mConfig.getDefaultMode() : (Integer)msg.obj;
                     updateMode(mode);
                     break;
             }
