@@ -235,23 +235,30 @@ public class LiveDisplayService extends SystemService {
             next = 0;
         }
 
-        int nextMode = 0;
+        int nextMode;
 
         while (true) {
             nextMode = Integer.valueOf(mTileValues[next]);
-            // Skip outdoor mode if it's unsupported, and skip the day setting
-            // if it's the same as the off setting
-            if  (((!mConfig.hasFeature(MODE_OUTDOOR) ||
-                    mConfig.hasFeature(FEATURE_MANAGED_OUTDOOR_MODE)
-                            && nextMode == MODE_OUTDOOR)) ||
-                    (mCTC.getDayColorTemperature() == mConfig.getDefaultDayTemperature()
-                            && nextMode == MODE_DAY)) {
-                next++;
-                if (next >= mTileValues.length) {
-                    next = 0;
+            if (nextMode == MODE_OUTDOOR) {
+                // Only accept outdoor mode if it's supported by the hardware
+                if (mConfig.hasFeature(MODE_OUTDOOR)
+                        && !mConfig.hasFeature(FEATURE_MANAGED_OUTDOOR_MODE)) {
+                    break;
+                }
+            } else if (nextMode == MODE_DAY) {
+                // Skip the day setting if it's the same as the off setting
+                if (mCTC.getDayColorTemperature() != mConfig.getDefaultDayTemperature()) {
+                    break;
                 }
             } else {
+                // every other mode doesn't have any preconstraints
                 break;
+            }
+
+            // If we come here, we decided to skip the mode
+            next++;
+            if (next >= mTileValues.length) {
+                next = 0;
             }
         }
 
