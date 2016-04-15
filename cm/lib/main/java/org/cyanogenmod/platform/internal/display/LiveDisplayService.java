@@ -19,7 +19,6 @@ import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MO
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.app.Notification;
@@ -200,11 +199,12 @@ public class LiveDisplayService extends SystemService {
 
             mTwilightManager = LocalServices.getService(TwilightManager.class);
             mTwilightManager.registerListener(mTwilightListener, mHandler);
-            updateTwilight();
 
             for (int i = 0; i < mFeatures.size(); i++) {
                 mFeatures.get(i).onSettingsChanged(null);
             }
+
+            updateTwilight();
 
             mInitialized = true;
         }
@@ -673,7 +673,7 @@ public class LiveDisplayService extends SystemService {
                     break;
                 case MSG_MODE_CHANGED:
                     stopNudgingMe();
-                    int mode = msg.obj == null ? MODE_OFF : (Integer)msg.obj;
+                    int mode = msg.obj == null ? mConfig.getDefaultMode() : (Integer)msg.obj;
                     updateMode(mode);
                     break;
             }
