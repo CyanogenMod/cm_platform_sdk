@@ -540,6 +540,7 @@ package cyanogenmod.hardware {
     method public int getDefaultMode();
     method public int getDefaultNightTemperature();
     method public boolean hasFeature(int);
+    method public boolean hasModeSupport();
     method public boolean isAvailable();
     method public void writeToParcel(android.os.Parcel, int);
   }
