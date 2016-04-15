@@ -25,7 +25,6 @@ import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
-import android.os.UserHandle;
 import android.text.format.DateUtils;
 import android.util.MathUtils;
 import android.util.Slog;

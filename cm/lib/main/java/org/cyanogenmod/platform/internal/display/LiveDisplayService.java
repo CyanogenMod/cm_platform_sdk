@@ -19,6 +19,7 @@ import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MO
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.app.Notification;
@@ -184,15 +185,10 @@ public class LiveDisplayService extends SystemService {
             mDisplayManager = (DisplayManager) getContext().getSystemService(
                     Context.DISPLAY_SERVICE);
             mDisplayManager.registerDisplayListener(mDisplayListener, null);
+            updateDisplayState(mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY).getState());
 
             PowerManagerInternal pmi = LocalServices.getService(PowerManagerInternal.class);
             pmi.registerLowPowerModeObserver(mLowPowerModeListener);
-
-            mTwilightManager = LocalServices.getService(TwilightManager.class);
-            mTwilightManager.registerListener(mTwilightListener, mHandler);
-            updateTwilight();
-
-            updateDisplayState(mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY).getState());
 
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
@@ -200,7 +196,14 @@ public class LiveDisplayService extends SystemService {
 
                 mContext.registerReceiver(mNextModeReceiver,
                         new IntentFilter(ACTION_NEXT_MODE));
-                publishCustomTile();
+            }
+
+            mTwilightManager = LocalServices.getService(TwilightManager.class);
+            mTwilightManager.registerListener(mTwilightListener, mHandler);
+            updateTwilight();
+
+            for (int i = 0; i < mFeatures.size(); i++) {
+                mFeatures.get(i).onSettingsChanged(null);
             }
 
             mInitialized = true;
@@ -312,9 +315,7 @@ public class LiveDisplayService extends SystemService {
         @Override
         public void onReceive(Context context, Intent intent) {
             int mode = intent.getIntExtra(EXTRA_NEXT_MODE, mConfig.getDefaultMode());
-            if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
-                putInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
-            }
+            mModeObserver.setMode(mode);
         }
     };
 
@@ -334,11 +335,7 @@ public class LiveDisplayService extends SystemService {
         public boolean setMode(int mode) {
             mContext.enforceCallingOrSelfPermission(
                     cyanogenmod.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
-            if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
-                putInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
-                return true;
-            }
-            return false;
+            return mModeObserver.setMode(mode);
         }
 
         @Override
@@ -498,13 +495,21 @@ public class LiveDisplayService extends SystemService {
 
         @Override
         protected void update() {
-            mHandler.obtainMessage(MSG_MODE_CHANGED, getMode(), 0).sendToTarget();
+            mHandler.obtainMessage(MSG_MODE_CHANGED, getMode()).sendToTarget();
             publishCustomTile();
         }
 
         int getMode() {
             return getInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE,
                     mConfig.getDefaultMode());
+        }
+
+        boolean setMode(int mode) {
+            if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
+                putInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
+                return true;
+            }
+            return false;
         }
     }
 
@@ -661,7 +666,8 @@ public class LiveDisplayService extends SystemService {
                     break;
                 case MSG_MODE_CHANGED:
                     stopNudgingMe();
-                    updateMode(msg.arg1);
+                    int mode = msg.obj == null ? MODE_OFF : (Integer)msg.obj;
+                    updateMode(mode);
                     break;
             }
         }
