@@ -184,7 +184,8 @@
     <permission android:name="cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS_PRIVATE"
                 android:label="@string/permlab_accessLiveLockScreenServicePrivate"
                 android:description="@string/permdesc_accessLiveLockScreenServicePrivate"
-                android:protectionLevel="signature|privileged" />
+                android:protectionLevel="signature|privileged"
+                androidprv:allowViaWhitelist="true" />
 
     <!-- Permission required to be held for a service that provides a LiveLockScreenManagerService
         @hide -->
