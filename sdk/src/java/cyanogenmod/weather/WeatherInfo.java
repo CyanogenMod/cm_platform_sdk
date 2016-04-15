@@ -223,6 +223,8 @@ public final class WeatherInfo implements Parcelable {
             info.mWindSpeedUnit = this.mWindSpeedUnit;
             info.mTimestamp = this.mTimestamp == -1 ? System.currentTimeMillis() : this.mTimestamp;
             info.mForecastList = this.mForecastList;
+            info.mTodaysHighTemp = this.mTodaysHighTemp;
+            info.mTodaysLowTemp = this.mTodaysLowTemp;
             info.mKey = UUID.randomUUID().toString();
             return info;
         }
