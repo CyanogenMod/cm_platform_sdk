@@ -161,4 +161,5 @@
   <string name="permlab_dataUsageRead">čist databázi využití dat</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Umožní číst obsah databáze využití dat.</string>
+  <!-- LiveDisplay manager permission -->
 </resources>

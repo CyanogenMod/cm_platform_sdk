@@ -161,4 +161,5 @@
   <string name="permlab_dataUsageRead">læs database for dataforbrug</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Tillader en app at læse indholdet af databasen for dataforbrug.</string>
+  <!-- LiveDisplay manager permission -->
 </resources>

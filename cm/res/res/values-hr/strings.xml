@@ -105,7 +105,7 @@
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Napredne postavke</string>
   <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Pokreti</string>
+  <string name="screen_gestures_panel_title">Geste</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Dodatno</string>
   <string name="touchscreen_gesture_haptic_feedback">Haptic povratne informacije</string>
@@ -133,14 +133,33 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Dopušta aplikaciji pristup servisu performansi. Za obične aplikacije nikada ne bi trebao biti potreban.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">pristup upravitelju usluge aktivnog zaključanog zaslona</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Omogućuje aplikaciji pristup usluzi aktivnog zaključanog zaslona.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">pristup upravitelju usluge aktivnog zaključanog zaslona</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Dopušta sistemskim aplikacijama pristup usluzi aktivnog zaključanog zaslona.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">pružanje usluge upravitelju aktivnog zaključanog zaslona</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Dopuštenje usluge dobavljača za uslugu menadžeru aktivnog zaključanog zaslona.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">čitanje vremenske prognoze</string>
+  <string name="permdesc_weather_read">Dopušta aplikaciji čitati sadržaj vremenske prognoze.</string>
+  <string name="permlab_weather_write">ažuriranje vremenske prognoze</string>
+  <string name="permdesc_weather_write">Dopušta aplikaciji ažurirati sadržaj vremenske prognoze.</string>
+  <string name="permlab_weather_bind">povezan kao dobavljač vremenske prognoze</string>
+  <string name="permdesc_weather_bind">Dopušta aplikaciji da se identificira kao dobavljač vremenske prognoze.</string>
+  <string name="permlab_weather_access_mgr">pristup usluzi vremenske prognoze</string>
+  <string name="permdesc_weather_access_mgr">Omogućuje aplikaciji pristupiti uslugama vremenske prognoze u sustavu. Nije potrebno normalnim aplikacijama.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">izmijena baze podataka podatkovnog prometa</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Aplikaciji omogućuje ažuriranje sadržaja baze podataka s podacima.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">čitanje upotrebe baze podataka</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Omogućuje aplikaciji čitanje sadržaja baze podataka s podacima.</string>
+  <!-- LiveDisplay manager permission -->
 </resources>
