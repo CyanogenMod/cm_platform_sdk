@@ -161,4 +161,7 @@
   <string name="permlab_dataUsageRead">Прочети база данни</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Разрешава на приложението да чете съдържанието на базата данни.</string>
+  <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">управление на настройките за Адаптивен екран</string>
+  <string name="permdesc_manageLiveDisplay">Позволява на приложението да променя разширените настройки на екрана.</string>
 </resources>

@@ -162,4 +162,5 @@
   <string name="permlab_dataUsageRead">ler a base de dados de utilização de dados</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Permite que uma aplicação leia o conteúdo da base de dados de utilização de dados.</string>
+  <!-- LiveDisplay manager permission -->
 </resources>

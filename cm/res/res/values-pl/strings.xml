@@ -133,14 +133,25 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Umożliwia aplikacji dostęp do usługi wydajności (nie powinno być wymagane przez standardowe aplikacje).</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">dostęp do usługi menadżera animowanego ekranu blokady</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Zezwala aplikacji na dostęp do usługi menedżera animowanego ekranu blokady.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">dostęp do usługi menadżera animowanego ekranu blokady</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Zezwala systemowym aplikacjom na dostęp do usługi menedżera animowanego ekranu blokady.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">dostarcza usługę menadżera animowanego ekranu blokady</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Zezwala usłudze na dostarczenie dostępu do usługi menedżera animowanego ekranu blokady.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">odczyt pogody</string>
+  <string name="permdesc_weather_read">Umożliwia aplikacji odczyt danych od dostawcy pogody.</string>
+  <string name="permlab_weather_write">aktualizacja dostawcy pogody</string>
+  <string name="permdesc_weather_write">Umożliwia aplikacji na aktualizację danych dostawcy pogody.</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <!-- LiveDisplay manager permission -->
 </resources>

@@ -19,13 +19,13 @@
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <string name="permlab_publishCustomTile">criar um botão personalizado no painel de configurações rápidas</string>
-  <string name="permdesc_publishCustomTile">Permite que um app insira um botão nas configurações rápidas.</string>
+  <string name="permdesc_publishCustomTile">Permite que um aplicativo insira um botão nas configurações rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as configurações de rede do sistema</string>
   <string name="permdesc_modifyNetworkSettings">Permite que um aplicativo altere para o modo avião e configurações de rede de dados móvel.</string>
   <string name="permlab_modifySoundSettings">alterar as configurações de som do sistema</string>
   <string name="permdesc_modifySoundSettings">Permite que um aplicativo fazer alterações no modo de interrupção nas configurações de som.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite que o app vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permite que o aplicativo vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">veja a conexão de dados e o estado do telefone com suporte para vários SIMs</string>
   <string name="permdesc_readMSPhoneState">Permite que um aplicativo exiba a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
@@ -57,7 +57,7 @@
   <string name="permlab_managePersistentStorage">gerenciar o armazenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite a um app ler ou escrever propriedades que podem persistir mesmo após um reset de fábrica.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-  <string name="permlab_accessAppSuggestions">acesso a sugestões de apps</string>
+  <string name="permlab_accessAppSuggestions">acesso a sugestões de aplicativos</string>
   <string name="permdesc_accessAppSuggestions">Permite que o aplicativo acesse sugestões de apps.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
@@ -89,19 +89,29 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automático</string>
   <string name="live_display_auto_summary">Ajusta automaticamente a temperatura de cor da tela após o pôr do sol e nascer do sol</string>
-  <string name="live_display_off">Desativado</string>
+  <string name="live_display_off">Desligado</string>
   <string name="live_display_off_summary">Desativar todos os ajustes</string>
   <string name="live_display_day">Dia</string>
-  <string name="live_display_day_summary">Usar apenas configurações de dia</string>
+  <string name="live_display_day_summary">Usar apenas configurações diurnas</string>
   <string name="live_display_night">Noite</string>
-  <string name="live_display_night_summary">Usar apenas configurações de noite</string>
+  <string name="live_display_night_summary">Use apenas configurações noturnas</string>
   <string name="live_display_outdoor">Ao ar livre (sol forte)</string>
   <string name="live_display_outdoor_summary">Usar apenas configurações de ao ar livre</string>
   <string name="live_display_hint">LiveDisplay pode ajudar a reduzir o cansaço visual e ajudá-lo a dormir à noite. Clique aqui para experimentá-lo!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay desligado.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modo diurno.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modo noturno.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modo ao ar livre.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay foi desligado.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay alterado para modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay alterado para modo diurno.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay alterado para modo noturno.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay alterado para modo ao ar livre.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tela de bloqueio de terceiros</string>
   <!-- Third party keyguard permission description -->
-  <string name="permdesc_thirdPartyKeyguard">Permite que um app seja usado como tela de bloqueio insegura.</string>
+  <string name="permdesc_thirdPartyKeyguard">Permite que um aplicativo para ser usado como uma tela de bloqueio insegura.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Configurações avançadas</string>
   <!-- Touchscreen gestures -->
@@ -119,7 +129,7 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_accessThemeService">acessar o serviço de temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Permite a um aplicativo acessar o serviço de temas. Nunca deverá ser necessário para aplicativos normais.</string>
+  <string name="permdesc_accessThemeService">Permite que um aplicativo acesse o serviço de temas. Nunca deve ser necessário para aplicativos normais.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_readThemes">ler informações do tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -132,9 +142,9 @@
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">acessar o gerenciador de desempenho</string>
   <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Permite a um aplicativo acessar o serviço de desempenho. Nunca deverá ser necessário para aplicativos normais.</string>
+  <string name="permdesc_perfAccessDesc">Permite que um aplicativo acesse o serviço de desempenho. Nunca deve ser necessário para aplicativos normais.</string>
   <!-- Access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenService">acesso ao serviço de gerenciamento da tela de bloquio animada</string>
+  <string name="permlab_accessLiveLockScreenService">acesso ao serviço de gerenciamento da tela de bloqueio animada</string>
   <!-- Access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenService">Permite que um aplicativo acesse o serviço de gerenciamento da tela de bloqueio animada.</string>
   <!-- Privileged access live lock screen manager service permission label -->
@@ -162,4 +172,7 @@
   <string name="permlab_dataUsageRead">ler banco de dados de utilização de dados</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Permite um aplicativo ler o conteúdo do banco de dados de uso de dados.</string>
+  <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">gerenciar configurações do LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Permite que um aplicativo configure as definições de visualização avançada.</string>
 </resources>

@@ -133,21 +133,33 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Ermöglicht einer App den Zugriff auf den Leistungsdienst. Wird für normale Apps nicht benötigt.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">auf Verwaltungsdienst der animierten Bildschirmsperre zugreifen</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Ermöglicht einer App, auf den Verwaltungdienst der animierten Bildschirmsperre zuzugreifen.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">auf Verwaltungsdienst der animierten Bildschirmsperre zugreifen</string>
   <!-- Privileged access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenServicePrivate">Ermöglicht System-Apps den Zugriff auf den Verwaltungsdienst der animierten Bildschirmsperre.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">Verwaltungsdienst für animierte Bildschirmsperre anbieten</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Ermöglicht einer App, auf den Verwaltungsdienst der animierten Bildschirmsperre zuzugreifen.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">Wetter auslesen</string>
-  <string name="permdesc_weather_read">Ermöglicht einer App Inhalte des Wetteranbieters auszulesen.</string>
+  <string name="permdesc_weather_read">Ermöglicht einer App, Inhalte des Wetteranbieters auszulesen.</string>
   <string name="permlab_weather_write">Wetteranbieter aktualisieren</string>
-  <string name="permdesc_weather_write">Ermöglicht einer App Inhalte des Wetteranbieters zu aktualisieren.</string>
+  <string name="permdesc_weather_write">Ermöglicht einer App, Inhalte des Wetteranbieters zu aktualisieren.</string>
   <string name="permlab_weather_bind">Anbindung an einen Service für Wetteranbieter</string>
+  <string name="permdesc_weather_bind">Ermöglicht der App, sich als Wetteranbieterdienst zu identifizieren.</string>
   <string name="permlab_weather_access_mgr">auf Wetterdienst zugreifen</string>
+  <string name="permdesc_weather_access_mgr">Ermöglicht der App, auf den Wetterdienst des Systems zuzugreifen. Wird für normale Apps nicht benötigt.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">Datennutzung-Datenbank ändern</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank zu aktualisieren.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">Datennutzung-Datenbank lesen</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank auszulesen.</string>
+  <!-- LiveDisplay manager permission -->
 </resources>
