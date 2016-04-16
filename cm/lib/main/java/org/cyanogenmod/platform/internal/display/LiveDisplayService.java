@@ -19,7 +19,6 @@ import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MO
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.app.Notification;
@@ -37,8 +36,6 @@ import android.net.Uri;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
-import android.os.Message;
 import android.os.PowerManagerInternal;
 import android.os.Process;
 import android.os.UserHandle;
@@ -85,11 +82,6 @@ public class LiveDisplayService extends SystemService {
 
     private static final String TAG = "LiveDisplay";
 
-    private static final int MSG_MODE_CHANGED = 1;
-    private static final int MSG_DISPLAY_CHANGED = 2;
-    private static final int MSG_LOW_POWER_MODE_CHANGED = 3;
-    private static final int MSG_TWILIGHT_UPDATE = 4;
-
     private final Context mContext;
     private final Handler mHandler;
     private final ServiceThread mHandlerThread;
@@ -98,12 +90,8 @@ public class LiveDisplayService extends SystemService {
     private ModeObserver mModeObserver;
     private TwilightManager mTwilightManager;
 
-    private boolean mInitialized = false;
     private boolean mAwaitingNudge = true;
     private boolean mSunset = false;
-
-    private boolean mLowPowerMode;
-    private int mDisplayState = -1;
 
     private final List<LiveDisplayFeature> mFeatures = new ArrayList<LiveDisplayFeature>();
 
@@ -121,18 +109,38 @@ public class LiveDisplayService extends SystemService {
     private int[] mTileEntryIconRes;
 
     private static String ACTION_NEXT_MODE = "cyanogenmod.hardware.NEXT_LIVEDISPLAY_MODE";
-    private static String EXTRA_NEXT_MODE = "next_mode";
+
+    static int MODE_CHANGED = 1;
+    static int DISPLAY_CHANGED = 2;
+    static int TWILIGHT_CHANGED = 4;
+    static int ALL_CHANGED = 255;
+
+    static class State {
+        public boolean mLowPowerMode = false;
+        public boolean mScreenOn = false;
+        public int mMode = -1;
+        public TwilightState mTwilight = null;
+
+        @Override
+        public String toString() {
+            return String.format(
+                    "[mLowPowerMode=%b, mScreenOn=%b, mMode=%d, mTwilight=%s",
+                    mLowPowerMode, mScreenOn, mMode,
+                    (mTwilight == null ? "NULL" : mTwilight.toString()));
+        }
+    }
+
+    private final State mState = new State();
 
     public LiveDisplayService(Context context) {
         super(context);
 
         mContext = context;
 
-        // We want a slightly higher priority thread to handle these requests
         mHandlerThread = new ServiceThread(TAG,
-                Process.THREAD_PRIORITY_DISPLAY + 1, false /*allowIo*/);
+                Process.THREAD_PRIORITY_DEFAULT, false /*allowIo*/);
         mHandlerThread.start();
-        mHandler = new LiveDisplayHandler(mHandlerThread.getLooper());
+        mHandler = new Handler(mHandlerThread.getLooper());
 
         updateCustomTileEntries();
     }
@@ -163,17 +171,16 @@ public class LiveDisplayService extends SystemService {
             mOMC = new OutdoorModeController(mContext, mHandler);
             mFeatures.add(mOMC);
 
-            // Call onStart of each feature and get it's capabilities
+            // Get capabilities, throw out any unused features
             final BitSet capabilities = new BitSet();
             for (Iterator<LiveDisplayFeature> it = mFeatures.iterator(); it.hasNext();) {
                 final LiveDisplayFeature feature = it.next();
-                if (feature.onStart()) {
-                    feature.getCapabilities(capabilities);
-                } else {
+                if (!feature.getCapabilities(capabilities)) {
                     it.remove();
                 }
             }
 
+            // static config
             int defaultMode = mContext.getResources().getInteger(
                     org.cyanogenmod.platform.internal.R.integer.config_defaultLiveDisplayMode);
 
@@ -182,32 +189,49 @@ public class LiveDisplayService extends SystemService {
                     mOMC.getDefaultAutoOutdoorMode(), mDHC.getDefaultAutoContrast(),
                     mDHC.getDefaultCABC(), mDHC.getDefaultColorEnhancement());
 
+            // listeners
             mDisplayManager = (DisplayManager) getContext().getSystemService(
                     Context.DISPLAY_SERVICE);
             mDisplayManager.registerDisplayListener(mDisplayListener, null);
-            updateDisplayState(mDisplayManager.getDisplay(Display.DEFAULT_DISPLAY).getState());
+            mState.mScreenOn = mDisplayManager.getDisplay(
+                    Display.DEFAULT_DISPLAY).getState() == Display.STATE_ON;
 
             PowerManagerInternal pmi = LocalServices.getService(PowerManagerInternal.class);
             pmi.registerLowPowerModeObserver(mLowPowerModeListener);
+            mState.mLowPowerMode = pmi.getLowPowerModeEnabled();
+
+            mTwilightManager = LocalServices.getService(TwilightManager.class);
+            if (mTwilightManager != null) {
+                mTwilightManager.registerListener(mTwilightListener, mHandler);
+                mState.mTwilight = mTwilightManager.getCurrentState();
+            }
 
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
-                mModeObserver.update();
-
+                mState.mMode = mModeObserver.getMode();
                 mContext.registerReceiver(mNextModeReceiver,
                         new IntentFilter(ACTION_NEXT_MODE));
+                publishCustomTile();
             }
 
-            mTwilightManager = LocalServices.getService(TwilightManager.class);
-            mTwilightManager.registerListener(mTwilightListener, mHandler);
-            updateTwilight();
-
+            // start and update all features
             for (int i = 0; i < mFeatures.size(); i++) {
-                mFeatures.get(i).onSettingsChanged(null);
+                mFeatures.get(i).start();
             }
 
-            mInitialized = true;
+            updateFeatures(ALL_CHANGED);
         }
+    }
+
+    private void updateFeatures(final int flags) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < mFeatures.size(); i++) {
+                    mFeatures.get(i).update(flags, mState);
+                }
+            }
+        });
     }
 
     private void updateCustomTileEntries() {
@@ -305,7 +329,6 @@ public class LiveDisplayService extends SystemService {
 
     private PendingIntent getCustomTileNextModePendingIntent() {
         Intent i = new Intent(ACTION_NEXT_MODE);
-        i.putExtra(EXTRA_NEXT_MODE, getNextModeIndex());
         return PendingIntent.getBroadcastAsUser(mContext, 0, i,
                 PendingIntent.FLAG_UPDATE_CURRENT, UserHandle.CURRENT);
     }
@@ -321,8 +344,7 @@ public class LiveDisplayService extends SystemService {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            int mode = intent.getIntExtra(EXTRA_NEXT_MODE, mConfig.getDefaultMode());
-            mModeObserver.setMode(mode);
+            mModeObserver.setMode(getNextModeIndex());
         }
     };
 
@@ -440,10 +462,9 @@ public class LiveDisplayService extends SystemService {
         public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
             pw.println();
             pw.println("LiveDisplay Service State:");
-            pw.println("  mMode=" + mModeObserver.getMode());
-            pw.println("  mDisplayState=" + mDisplayState);
-            pw.println("  mAwaitingNudge=" + mAwaitingNudge);
+            pw.println("  mState=" + mState.toString());
             pw.println("  mConfig=" + mConfig.toString());
+            pw.println("  mAwaitingNudge=" + mAwaitingNudge);
 
             for (int i = 0; i < mFeatures.size(); i++) {
                 mFeatures.get(i).dump(pw);
@@ -465,8 +486,11 @@ public class LiveDisplayService extends SystemService {
         @Override
         public void onDisplayChanged(int displayId) {
             if (displayId == Display.DEFAULT_DISPLAY) {
-                mHandler.obtainMessage(MSG_DISPLAY_CHANGED,
-                        mDisplayManager.getDisplay(displayId).getState(), 0).sendToTarget();
+                boolean screenOn = isScreenOn();
+                if (screenOn != mState.mScreenOn) {
+                    mState.mScreenOn = screenOn;
+                    updateFeatures(DISPLAY_CHANGED);
+                }
             }
         }
     };
@@ -477,10 +501,9 @@ public class LiveDisplayService extends SystemService {
             new PowerManagerInternal.LowPowerModeListener() {
         @Override
         public void onLowPowerModeChanged(boolean lowPowerMode) {
-            if (lowPowerMode != mLowPowerMode) {
-                mLowPowerMode = lowPowerMode;
-                mHandler.obtainMessage(MSG_LOW_POWER_MODE_CHANGED,
-                        (lowPowerMode ? 1 : 0), 0).sendToTarget();
+            if (lowPowerMode != mState.mLowPowerMode) {
+                mState.mLowPowerMode = lowPowerMode;
+                updateFeatures(MODE_CHANGED);
             }
          }
     };
@@ -502,8 +525,13 @@ public class LiveDisplayService extends SystemService {
 
         @Override
         protected void update() {
-            mHandler.obtainMessage(MSG_MODE_CHANGED, getMode()).sendToTarget();
-            publishCustomTile();
+            int mode = getMode();
+            if (mode != mState.mMode) {
+                mState.mMode = mode;
+
+                updateFeatures(MODE_CHANGED);
+                publishCustomTile();
+            }
         }
 
         int getMode() {
@@ -514,6 +542,9 @@ public class LiveDisplayService extends SystemService {
         boolean setMode(int mode) {
             if (mConfig.hasFeature(mode) && mode >= MODE_FIRST && mode <= MODE_LAST) {
                 putInt(CMSettings.System.DISPLAY_TEMPERATURE_MODE, mode);
+                if (mode != mConfig.getDefaultMode()) {
+                    stopNudgingMe();
+                }
                 return true;
             }
             return false;
@@ -524,10 +555,16 @@ public class LiveDisplayService extends SystemService {
     private final TwilightListener mTwilightListener = new TwilightListener() {
         @Override
         public void onTwilightStateChanged() {
-            mHandler.obtainMessage(MSG_TWILIGHT_UPDATE,
-                    mTwilightManager.getCurrentState()).sendToTarget();
+            mState.mTwilight = mTwilightManager.getCurrentState();
+            updateFeatures(TWILIGHT_CHANGED);
+            nudge();
         }
     };
+
+    private boolean isScreenOn() {
+        return mDisplayManager.getDisplay(
+                Display.DEFAULT_DISPLAY).getState() == Display.STATE_ON;
+    }
 
     private int getSunsetCounter() {
         // Counter used to determine when we should tell the user about this feature.
@@ -614,69 +651,5 @@ public class LiveDisplayService extends SystemService {
     private void putInt(String setting, int value) {
         CMSettings.System.putIntForUser(mContext.getContentResolver(),
                 setting, value, UserHandle.USER_CURRENT);
-    }
-
-    private synchronized void updateTwilight() {
-        final TwilightState twilight = mTwilightManager.getCurrentState();
-        for (int i = 0; i < mFeatures.size(); i++) {
-            mFeatures.get(i).onTwilightUpdated(twilight);
-        }
-    }
-
-    private synchronized void updateDisplayState(int displayState) {
-        if (mDisplayState != displayState) {
-            mDisplayState = displayState;
-
-            for (int i = 0; i < mFeatures.size(); i++) {
-                mFeatures.get(i).onDisplayStateChanged(displayState == Display.STATE_ON);
-            }
-        }
-    }
-
-    private synchronized void updateMode(int mode) {
-        for (int i = 0; i < mFeatures.size(); i++) {
-            mFeatures.get(i).onModeChanged(mode);
-        }
-    }
-
-    private synchronized void updateLowPowerMode(boolean lowPowerMode) {
-        if (mLowPowerMode != lowPowerMode) {
-            mLowPowerMode = lowPowerMode;
-
-            for (int i = 0; i < mFeatures.size(); i++) {
-                mFeatures.get(i).onLowPowerModeChanged(mLowPowerMode);
-            }
-        }
-    }
-
-    private final class LiveDisplayHandler extends Handler {
-        public LiveDisplayHandler(Looper looper) {
-            super(looper, null, true /*async*/);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            if (!mInitialized) {
-                return;
-            }
-
-            switch (msg.what) {
-                case MSG_DISPLAY_CHANGED:
-                    updateDisplayState(msg.arg1);
-                    break;
-                case MSG_LOW_POWER_MODE_CHANGED:
-                    updateLowPowerMode(msg.arg1 == 1);
-                    break;
-                case MSG_TWILIGHT_UPDATE:
-                    updateTwilight();
-                    nudge();
-                    break;
-                case MSG_MODE_CHANGED:
-                    stopNudgingMe();
-                    int mode = msg.obj == null ? MODE_OFF : (Integer)msg.obj;
-                    updateMode(mode);
-                    break;
-            }
-        }
     }
 }
