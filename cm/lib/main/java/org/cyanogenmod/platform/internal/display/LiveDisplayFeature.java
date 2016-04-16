@@ -15,6 +15,11 @@
  */
 package org.cyanogenmod.platform.internal.display;
 
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.ALL_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.MODE_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.TWILIGHT_CHANGED;
+
 import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
@@ -24,6 +29,8 @@ import android.util.Log;
 
 import com.android.server.pm.UserContentObserver;
 import com.android.server.twilight.TwilightState;
+
+import org.cyanogenmod.platform.internal.display.LiveDisplayService.State;
 
 import java.io.PrintWriter;
 import java.util.BitSet;
@@ -38,50 +45,67 @@ public abstract class LiveDisplayFeature {
     protected final Context mContext;
     protected final Handler mHandler;
 
-    private TwilightState mTwilight;
-    private boolean mLowPowerMode = false;
-    private boolean mScreenOn = false;
-    private int mMode = 0;
-
-    private final SettingsObserver mSettingsObserver;
+    private SettingsObserver mSettingsObserver;
+    private State mState;
 
     public LiveDisplayFeature(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        mSettingsObserver = new SettingsObserver(handler);
     }
 
-    public abstract boolean onStart();
+    public abstract void onStart();
 
-    public abstract void onSettingsChanged(Uri uri);
+    protected abstract void onSettingsChanged(Uri uri);
 
-    public void onModeChanged(int mode) {
-        mMode = mode;
+    public abstract void dump(PrintWriter pw);
+
+    public abstract boolean getCapabilities(final BitSet caps);
+
+    protected abstract void onUpdate();
+
+    void update(final int flags, final State state) {
+        mState = state;
+        if ((flags & DISPLAY_CHANGED) != 0) {
+            onScreenStateChanged();
+        }
+        if (((flags & TWILIGHT_CHANGED) != 0) && mState.mTwilight != null) {
+            onTwilightUpdated();
+        }
+        if ((flags & MODE_CHANGED) != 0) {
+            onUpdate();
+        }
+        if ((flags & ALL_CHANGED) != 0) {
+            onSettingsChanged(null);
+        }
     }
 
-    public void onDisplayStateChanged(boolean screenOn) {
-        mScreenOn = screenOn;
-    }
-
-    public void onLowPowerModeChanged(boolean lowPowerMode) {
-        mLowPowerMode = lowPowerMode;
-    }
-
-    public void onTwilightUpdated(TwilightState twilight) {
-        mTwilight = twilight;
+    void start() {
+        if (mSettingsObserver == null) {
+            mSettingsObserver = new SettingsObserver(mHandler);
+            onStart();
+        }
     }
 
     public void onDestroy() {
         mSettingsObserver.unregister();
     }
 
-    public abstract void dump(PrintWriter pw);
+    protected void onScreenStateChanged() { }
 
-    abstract void getCapabilities(final BitSet caps);
+    protected void onTwilightUpdated() { }
 
     protected final void registerSettings(Uri... settings) {
         mSettingsObserver.register(settings);
-        onSettingsChanged(null);
+    }
+
+    protected final boolean getBoolean(String setting, boolean defaultValue) {
+        return CMSettings.System.getIntForUser(mContext.getContentResolver(),
+                setting, (defaultValue ? 1 : 0), UserHandle.USER_CURRENT) == 1;
+    }
+
+    protected final void putBoolean(String setting, boolean value) {
+        CMSettings.System.putIntForUser(mContext.getContentResolver(),
+                setting, (value ? 1 : 0), UserHandle.USER_CURRENT);
     }
 
     protected final int getInt(String setting, int defaultValue) {
@@ -105,23 +129,23 @@ public abstract class LiveDisplayFeature {
     }
 
     protected final boolean isLowPowerMode() {
-        return mLowPowerMode;
+        return mState.mLowPowerMode;
     }
 
     protected final int getMode() {
-        return mMode;
+        return mState.mMode;
     }
 
     protected final boolean isScreenOn() {
-        return mScreenOn;
+        return mState.mScreenOn;
     }
 
     protected final TwilightState getTwilight() {
-        return mTwilight;
+        return mState.mTwilight;
     }
 
     protected final boolean isNight() {
-        return mTwilight != null && mTwilight.isNight();
+        return mState.mTwilight != null && mState.mTwilight.isNight();
     }
 
     final class SettingsObserver extends UserContentObserver {

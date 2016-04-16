@@ -23,8 +23,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 
-import com.android.server.twilight.TwilightState;
-
 import java.io.PrintWriter;
 import java.util.BitSet;
 
@@ -34,19 +32,16 @@ import cyanogenmod.providers.CMSettings;
 
 public class OutdoorModeController extends LiveDisplayFeature {
 
-    private CMHardwareManager mHardware;
+    private final CMHardwareManager mHardware;
     private AmbientLuxObserver mLuxObserver;
 
     // hardware capabilities
-    private boolean mUseOutdoorMode;
-    private boolean mSelfManaged;
+    private final boolean mUseOutdoorMode;
 
     // default values
-    private int mDefaultOutdoorLux;
-    private boolean mDefaultAutoOutdoorMode;
-
-    // current values
-    private boolean mAutoOutdoorMode;
+    private final int mDefaultOutdoorLux;
+    private final boolean mDefaultAutoOutdoorMode;
+    private final boolean mSelfManaged;
 
     // internal state
     private boolean mIsOutdoor;
@@ -57,23 +52,23 @@ public class OutdoorModeController extends LiveDisplayFeature {
 
     public OutdoorModeController(Context context, Handler handler) {
         super(context, handler);
-    }
 
-    @Override
-    public boolean onStart() {
         mHardware = CMHardwareManager.getInstance(mContext);
-        if (!mHardware.isSupported(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT)) {
-            return false;
-        }
-
-        mUseOutdoorMode = true;
+        mUseOutdoorMode = mHardware.isSupported(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT);
+        mSelfManaged = mUseOutdoorMode && mHardware.isSunlightEnhancementSelfManaged();
 
         mDefaultOutdoorLux = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_outdoorAmbientLux);
         mDefaultAutoOutdoorMode = mContext.getResources().getBoolean(
                 org.cyanogenmod.platform.internal.R.bool.config_defaultAutoOutdoorMode);
+    }
 
-        mSelfManaged = mHardware.isSunlightEnhancementSelfManaged();
+    @Override
+    public void onStart() {
+        if (!mUseOutdoorMode) {
+            return;
+        }
+
         if (!mSelfManaged) {
             mLuxObserver = new AmbientLuxObserver(mContext, mHandler.getLooper(),
                     mDefaultOutdoorLux, SENSOR_WINDOW_MS);
@@ -81,50 +76,48 @@ public class OutdoorModeController extends LiveDisplayFeature {
 
         registerSettings(
                 CMSettings.System.getUriFor(CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE));
-        return true;
     }
 
     @Override
-    void getCapabilities(final BitSet caps) {
+    public boolean getCapabilities(final BitSet caps) {
         if (mUseOutdoorMode) {
             caps.set(LiveDisplayManager.MODE_OUTDOOR);
             if (mSelfManaged) {
                 caps.set(LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MODE);
             }
         }
+        return mUseOutdoorMode;
     }
 
     @Override
-    public void onModeChanged(int mode) {
-        super.onModeChanged(mode);
+    protected void onUpdate() {
         updateOutdoorMode();
     }
 
     @Override
-    public void onDisplayStateChanged(boolean screenOn) {
-        super.onDisplayStateChanged(screenOn);
-        if (mSelfManaged) {
+    protected void onTwilightUpdated() {
+        updateOutdoorMode();
+    }
+
+    @Override
+    protected synchronized void onScreenStateChanged() {
+        if (!mUseOutdoorMode) {
             return;
         }
-        updateOutdoorMode();
-    }
 
-    @Override
-    public void onLowPowerModeChanged(boolean lowPowerMode) {
-        super.onLowPowerModeChanged(lowPowerMode);
-        updateOutdoorMode();
+        // toggle the sensor when screen on/off
+        updateSensorState();
+
+        // Disable outdoor mode on screen off so that we don't melt the users
+        // face if they turn it back on in normal conditions
+        if (!isScreenOn() && !mSelfManaged && getMode() != MODE_OUTDOOR) {
+            mIsOutdoor = false;
+            mHardware.set(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, false);
+        }
     }
 
     @Override
     public synchronized void onSettingsChanged(Uri uri) {
-        mAutoOutdoorMode = getInt(CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
-                (mDefaultAutoOutdoorMode ? 1 : 0)) == 1;
-        updateOutdoorMode();
-    }
-
-    @Override
-    public void onTwilightUpdated(TwilightState twilight) {
-        super.onTwilightUpdated(twilight);
         updateOutdoorMode();
     }
 
@@ -137,31 +130,34 @@ public class OutdoorModeController extends LiveDisplayFeature {
             pw.println("  mDefaultOutdoorLux=" + mDefaultOutdoorLux);
             pw.println();
             pw.println("  OutdoorModeController State:");
-            pw.println("    mAutoOutdoorMode=" + mAutoOutdoorMode);
+            pw.println("    mAutoOutdoorMode=" + isAutomaticOutdoorModeEnabled());
             pw.println("    mIsOutdoor=" + mIsOutdoor);
             pw.println("    mIsNight=" + isNight());
+            pw.println("    hardware state=" +
+                    mHardware.get(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT));
         }
         mLuxObserver.dump(pw);
     }
 
-    boolean setAutomaticOutdoorModeEnabled(boolean enabled) {
-        if (!mUseOutdoorMode) {
-            return false;
+    private synchronized void updateSensorState() {
+        if (!mUseOutdoorMode || mLuxObserver == null) {
+            return;
         }
-        putInt(CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE, (enabled ? 1 : 0));
-        return true;
-    }
 
-    boolean isAutomaticOutdoorModeEnabled() {
-        return mUseOutdoorMode;
-    }
-
-    boolean getDefaultAutoOutdoorMode() {
-        return mDefaultAutoOutdoorMode;
-    }
-
-    private void observeAmbientLuxLocked(boolean observe) {
-        mLuxObserver.setTransitionListener(observe ? mListener : null);
+        /* Sensor:
+         *  Enabled in day mode
+         *  Enabled in auto mode if it's not night
+         *  Disabled if outdoor mode explicitly selected
+         *  Disabled in low power mode
+         *  Disabled if screen is off
+         */
+        boolean sensorEnabled = !mSelfManaged && !isLowPowerMode() && isScreenOn() &&
+                getMode() != MODE_OUTDOOR && isAutomaticOutdoorModeEnabled() &&
+                ((getMode() == MODE_AUTO && !isNight()) || getMode() == MODE_DAY);
+        if (mIsSensorEnabled != sensorEnabled) {
+            mIsSensorEnabled = sensorEnabled;
+            mLuxObserver.setTransitionListener(sensorEnabled ? mListener : null);
+        }
     }
 
     /**
@@ -171,31 +167,25 @@ public class OutdoorModeController extends LiveDisplayFeature {
      * TODO: Use the camera or RGB sensor to determine if it's really sunlight
      */
     private synchronized void updateOutdoorMode() {
+        if (!mUseOutdoorMode) {
+            return;
+        }
+
         /*
          * Hardware toggle:
          *   Enabled if outdoor mode explictly selected
          *   Enabled if outdoor lux exceeded and day mode or auto mode (if not night)
+         *   Enabled if backend is self-managed
          */
-        boolean enabled = !isLowPowerMode() &&
-                 (getMode() == MODE_OUTDOOR ||
-                 (mAutoOutdoorMode && (mSelfManaged || mIsOutdoor) &&
-                 ((getMode() == MODE_AUTO && !isNight()) || getMode() == MODE_DAY)));
-        mHardware.set(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, enabled);
-
-        /* Sensor:
-         *  Enabled in day mode
-         *  Enabled in auto mode if it's not night
-         *  Disabled if outdoor mode explicitly selected
-         *  Disabled in low power mode
-         *  Disabled if screen is off
-         */
-        boolean sensorEnabled = !isLowPowerMode() && isScreenOn() &&
-                getMode() != MODE_OUTDOOR && mAutoOutdoorMode &&
-                ((getMode() == MODE_AUTO && !isNight()) || getMode() == MODE_DAY);
-        if (mIsSensorEnabled != sensorEnabled) {
-            mIsSensorEnabled = sensorEnabled;
-            observeAmbientLuxLocked(sensorEnabled);
+        if (isScreenOn()) {
+            boolean enabled = !isLowPowerMode() &&
+                    (getMode() == MODE_OUTDOOR ||
+                    (isAutomaticOutdoorModeEnabled() && (mSelfManaged || mIsOutdoor) &&
+                    ((getMode() == MODE_AUTO && !isNight()) || getMode() == MODE_DAY)));
+            mHardware.set(CMHardwareManager.FEATURE_SUNLIGHT_ENHANCEMENT, enabled);
         }
+
+        updateSensorState();
     }
 
     private final AmbientLuxObserver.TransitionListener mListener =
@@ -214,4 +204,21 @@ public class OutdoorModeController extends LiveDisplayFeature {
         }
     };
 
+    boolean setAutomaticOutdoorModeEnabled(boolean enabled) {
+        if (!mUseOutdoorMode) {
+            return false;
+        }
+        putBoolean(CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE, enabled);
+        return true;
+    }
+
+    boolean isAutomaticOutdoorModeEnabled() {
+        return mUseOutdoorMode &&
+                getBoolean(CMSettings.System.DISPLAY_AUTO_OUTDOOR_MODE,
+                           getDefaultAutoOutdoorMode());
+    }
+
+    boolean getDefaultAutoOutdoorMode() {
+        return mDefaultAutoOutdoorMode;
+    }
 }

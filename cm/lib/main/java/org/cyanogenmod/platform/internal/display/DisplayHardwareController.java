@@ -15,6 +15,9 @@
  */
 package org.cyanogenmod.platform.internal.display;
 
+import android.animation.FloatArrayEvaluator;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
@@ -23,6 +26,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Slog;
+import android.view.animation.LinearInterpolator;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -35,28 +39,27 @@ import cyanogenmod.providers.CMSettings;
 
 public class DisplayHardwareController extends LiveDisplayFeature {
 
-    private CMHardwareManager mHardware;
+    private final CMHardwareManager mHardware;
 
     // hardware capabilities
-    private boolean mUseAutoContrast;
-    private boolean mUseColorAdjustment;
-    private boolean mUseColorEnhancement;
-    private boolean mUseCABC;
+    private final boolean mUseAutoContrast;
+    private final boolean mUseColorAdjustment;
+    private final boolean mUseColorEnhancement;
+    private final boolean mUseCABC;
 
     // default values
-    private boolean mDefaultAutoContrast;
-    private boolean mDefaultColorEnhancement;
-    private boolean mDefaultCABC;
-
-    // current values
-    private boolean mAutoContrast;
-    private boolean mColorEnhancement;
-    private boolean mCABC;
+    private final boolean mDefaultAutoContrast;
+    private final boolean mDefaultColorEnhancement;
+    private final boolean mDefaultCABC;
 
     // color adjustment holders
-    private final float[] mColorAdjustment = new float[] { 1.0f, 1.0f, 1.0f };
-    private final float[] mAdditionalAdjustment = new float[] { 1.0f, 1.0f, 1.0f };
-    private final float[] mRGB = new float[] { 1.0f, 1.0f, 1.0f };
+    private final float[] mAdditionalAdjustment = getDefaultAdjustment();
+    private final float[] mColorAdjustment = getDefaultAdjustment();
+
+    private ValueAnimator mAnimator;
+    private boolean mDirty = false;
+
+    private final int mMaxColor;
 
     // settings uris
     private static final Uri DISPLAY_AUTO_CONTRAST =
@@ -70,56 +73,54 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     public DisplayHardwareController(Context context, Handler handler) {
         super(context, handler);
-    }
-
-    @Override
-    public boolean onStart() {
-        final ArrayList<Uri> settings = new ArrayList<Uri>();
 
         mHardware = CMHardwareManager.getInstance(mContext);
         mUseCABC = mHardware
                 .isSupported(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
-        if (mUseCABC) {
-            mDefaultCABC = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultCABC);
-            mCABC = mHardware.get(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
-            settings.add(DISPLAY_CABC);
-        }
+        mDefaultCABC = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultCABC);
 
         mUseColorEnhancement = mHardware
                 .isSupported(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT);
-        if (mUseColorEnhancement) {
-            mDefaultColorEnhancement = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultColorEnhancement);
-            mColorEnhancement = mHardware.get(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT);
-            settings.add(DISPLAY_COLOR_ENHANCE);
-        }
+        mDefaultColorEnhancement = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultColorEnhancement);
 
         mUseAutoContrast = mHardware
                 .isSupported(CMHardwareManager.FEATURE_AUTO_CONTRAST);
-        if (mUseAutoContrast) {
-            mDefaultAutoContrast = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultAutoContrast);
-            mAutoContrast = mHardware.get(CMHardwareManager.FEATURE_AUTO_CONTRAST);
-            settings.add(DISPLAY_AUTO_CONTRAST);
-        }
+        mDefaultAutoContrast = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultAutoContrast);
 
         mUseColorAdjustment = mHardware
                 .isSupported(CMHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION);
+        mMaxColor = mHardware.getDisplayColorCalibrationMax();
+    }
+
+    @Override
+    public void onStart() {
+        final ArrayList<Uri> settings = new ArrayList<Uri>();
+
+        if (mUseCABC) {
+            settings.add(DISPLAY_CABC);
+        }
+        if (mUseColorEnhancement) {
+            settings.add(DISPLAY_COLOR_ENHANCE);
+        }
+        if (mUseAutoContrast) {
+            settings.add(DISPLAY_AUTO_CONTRAST);
+        }
         if (mUseColorAdjustment) {
             settings.add(DISPLAY_COLOR_ADJUSTMENT);
         }
 
         if (settings.size() == 0) {
-            return false;
+            return;
         }
 
         registerSettings(settings.toArray(new Uri[settings.size()]));
-        return true;
     }
 
     @Override
-    void getCapabilities(final BitSet caps) {
+    public boolean getCapabilities(final BitSet caps) {
         if (mUseAutoContrast) {
             caps.set(LiveDisplayManager.FEATURE_AUTO_CONTRAST);
         }
@@ -132,6 +133,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (mUseColorAdjustment) {
             caps.set(LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT);
         }
+        return mUseAutoContrast || mUseColorEnhancement || mUseCABC || mUseColorAdjustment;
     }
 
     @Override
@@ -145,19 +147,37 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (uri == null || uri.equals(DISPLAY_COLOR_ENHANCE)) {
             updateColorEnhancement();
         }
-        if (uri == null || uri.equals(DISPLAY_COLOR_ADJUSTMENT)) {
-            System.arraycopy(
-                    parseColorAdjustment(getString(CMSettings.System.DISPLAY_COLOR_ADJUSTMENT)),
-                    0, mColorAdjustment, 0, 3);
+        if (uri == null || uri.equals(DISPLAY_COLOR_ADJUSTMENT) &&
+                parseColorAdjustment(getString(
+                    CMSettings.System.DISPLAY_COLOR_ADJUSTMENT), mColorAdjustment)) {
             updateColorAdjustment();
         }
     }
 
+    private synchronized void updateHardware() {
+        if (isScreenOn()) {
+            updateCABCMode();
+            updateAutoContrast();
+            updateColorEnhancement();
+        }
+    }
+
     @Override
-    public synchronized void onLowPowerModeChanged(boolean lowPowerMode) {
-        updateCABCMode();
-        updateAutoContrast();
-        updateColorEnhancement();
+    protected void onUpdate() {
+        updateHardware();
+    }
+
+    @Override
+    protected synchronized void onScreenStateChanged() {
+        if (mUseColorAdjustment) {
+            if (mAnimator != null && mAnimator.isRunning() && !isScreenOn()) {
+                mAnimator.cancel();
+                mDirty = true;
+            } else if (mDirty && isScreenOn()) {
+                updateColorAdjustment();
+                mDirty = false;
+            }
+        }
     }
 
     @Override
@@ -170,106 +190,45 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         pw.println("  mUseCABC=" + mUseCABC);
         pw.println();
         pw.println("  DisplayHardwareController State:");
-        pw.println("    mAutoContrast=" + mAutoContrast);
-        pw.println("    mColorEnhancement=" + mColorEnhancement);
-        pw.println("    mCABC=" + mCABC);
+        pw.println("    mAutoContrast=" + isAutoContrastEnabled());
+        pw.println("    mColorEnhancement=" + isColorEnhancementEnabled());
+        pw.println("    mCABC=" + isCABCEnabled());
         pw.println("    mColorAdjustment=" + Arrays.toString(mColorAdjustment));
         pw.println("    mAdditionalAdjustment=" + Arrays.toString(mAdditionalAdjustment));
-        pw.println("    mRGB=" + Arrays.toString(mRGB));
-    }
-
-    boolean hasColorAdjustment() {
-        return mUseColorAdjustment;
-    }
-
-    /**
-     * Additional adjustments provided by night mode
-     *
-     * @param adj
-     */
-    synchronized void setAdditionalAdjustment(float[] adj) {
-        if (DEBUG) {
-            Slog.d(TAG, "setAdditionalAdjustment: " + Arrays.toString(adj));
-        }
-        // Sanity check this so we don't mangle the display
-        if (adj != null && adj.length == 3 &&
-                !(adj[0] <= 0.0f && adj[1] <= 0.0f && adj[2] <= 0.0f)) {
-            for (int i = 0; i < 3; i++) {
-                if (adj[i] > 1.0f) {
-                    adj[i] = 1.0f;
-                }
-            }
-            System.arraycopy(adj, 0, mAdditionalAdjustment, 0, 3);
-            updateColorAdjustment();
-        } else {
-            mAdditionalAdjustment[0] = 1.0f;
-            mAdditionalAdjustment[1] = 1.0f;
-            mAdditionalAdjustment[2] = 1.0f;
-        }
-
+        pw.println("    hardware setting=" + Arrays.toString(mHardware.getDisplayColorCalibration()));
     }
 
     /**
      * Automatic contrast optimization
      */
-    private synchronized void updateAutoContrast() {
+    private void updateAutoContrast() {
         if (!mUseAutoContrast) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_AUTO_CONTRAST,
-                (mDefaultAutoContrast ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mAutoContrast) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_AUTO_CONTRAST, enabled);
-        mAutoContrast = enabled;
+        mHardware.set(CMHardwareManager.FEATURE_AUTO_CONTRAST,
+                !isLowPowerMode() && isAutoContrastEnabled());
     }
 
     /**
      * Color enhancement is optional
      */
-    private synchronized void updateColorEnhancement() {
+    private void updateColorEnhancement() {
         if (!mUseColorEnhancement) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_COLOR_ENHANCE,
-                (mDefaultColorEnhancement ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mColorEnhancement) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT, enabled);
-        mColorEnhancement = enabled;
+        mHardware.set(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT,
+                !isLowPowerMode() && isColorEnhancementEnabled());
     }
 
     /**
      * Adaptive backlight / low power mode. Turn it off when under very bright light.
      */
-    private synchronized void updateCABCMode() {
+    private void updateCABCMode() {
         if (!mUseCABC) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_CABC,
-                (mDefaultCABC ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mCABC) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT, value);
-        mCABC = value;
+        mHardware.set(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT,
+                !isLowPowerMode() && isCABCEnabled());
     }
 
     private synchronized void updateColorAdjustment() {
@@ -277,34 +236,76 @@ public class DisplayHardwareController extends LiveDisplayFeature {
             return;
         }
 
-        final float[] rgb = new float[] { 1.0f, 1.0f, 1.0f };
+        final float[] rgb = getDefaultAdjustment();
 
         if (!isLowPowerMode()) {
-
             System.arraycopy(mAdditionalAdjustment, 0, rgb, 0, 3);
             rgb[0] *= mColorAdjustment[0];
             rgb[1] *= mColorAdjustment[1];
             rgb[2] *= mColorAdjustment[2];
         }
 
-        if (rgb[0] == mRGB[0] && rgb[1] == mRGB[1] && rgb[2] == mRGB[2]) {
-            // no changes
-            return;
-        }
-
         if (DEBUG) {
             Slog.d(TAG, "updateColorAdjustment: " + Arrays.toString(rgb));
         }
 
-        int max = mHardware.getDisplayColorCalibrationMax();
-        mHardware.setDisplayColorCalibration(new int[] {
-            (int) Math.ceil(rgb[0] * max),
-            (int) Math.ceil(rgb[1] * max),
-            (int) Math.ceil(rgb[2] * max)
-        });
-        System.arraycopy(rgb, 0, mRGB, 0, 3);
+        if (validateColors(rgb)) {
+            animateDisplayColor(rgb);
+        }
+    }
 
-        screenRefresh();
+    /**
+     * Smoothly animate the current display colors to the new value.
+     */
+    private synchronized void animateDisplayColor(float[] targetColors) {
+
+        // always start with the current values in the hardware
+        int[] currentInts = mHardware.getDisplayColorCalibration();
+        float[] currentColors = new float[] {
+                (float)currentInts[0] / (float)mMaxColor,
+                (float)currentInts[1] / (float)mMaxColor,
+                (float)currentInts[2] / (float)mMaxColor };
+
+        if (currentColors[0] == targetColors[0] &&
+                currentColors[1] == targetColors[1] &&
+                currentColors[2] == targetColors[2]) {
+            return;
+        }
+
+        // max 500 ms, scaled vs. the largest delta
+        long duration = (long)(750 * (Math.max(Math.max(
+                Math.abs(currentColors[0] - targetColors[0]),
+                Math.abs(currentColors[1] - targetColors[1])),
+                Math.abs(currentColors[2] - targetColors[2]))));
+
+        if (DEBUG) {
+            Slog.d(TAG, "animateDisplayColor current=" + Arrays.toString(currentColors) +
+                    " targetColors=" + Arrays.toString(targetColors) + " duration=" + duration);
+        }
+
+        if (mAnimator != null) {
+            mAnimator.cancel();
+            mAnimator.removeAllUpdateListeners();
+        }
+
+        mAnimator = ValueAnimator.ofObject(
+                new FloatArrayEvaluator(new float[3]), currentColors, targetColors);
+        mAnimator.setDuration(duration);
+        mAnimator.setInterpolator(new LinearInterpolator());
+        mAnimator.addUpdateListener(new AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(final ValueAnimator animation) {
+                synchronized (DisplayHardwareController.this) {
+                    float[] value = (float[])animation.getAnimatedValue();
+                    mHardware.setDisplayColorCalibration(new int[] {
+                            (int)(value[0] * mMaxColor),
+                            (int)(value[1] * mMaxColor),
+                            (int)(value[2] * mMaxColor) });
+                    screenRefresh();
+                }
+            }
+        });
+        mAnimator.start();
     }
 
     /**
@@ -325,6 +326,75 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         }
     }
 
+    /**
+     * Ensure all values are within range
+     *
+     * @param colors
+     * @return true if valid
+     */
+    private boolean validateColors(float[] colors) {
+        if (colors != null && colors.length == 3 &&
+                !(colors[0] <= 0.0f && colors[1] <= 0.0f && colors[2] <= 0.0f)) {
+            for (int i = 0; i < 3; i++) {
+                if (colors[i] > 1.0f) {
+                    colors[i] = 1.0f;
+                }
+            }
+            return true;
+        }
+
+        colors[0] = 1.0f;
+        colors[1] = 1.0f;
+        colors[2] = 1.0f;
+        return false;
+    }
+
+    /**
+     * Parse and sanity check an RGB triplet from a string.
+     */
+    private boolean parseColorAdjustment(String rgbString, float[] dest) {
+        String[] adj = rgbString == null ? null : rgbString.split(" ");
+
+        if (adj == null || adj.length != 3 || dest == null || dest.length != 3) {
+            return false;
+        }
+
+        try {
+            dest[0] = Float.parseFloat(adj[0]);
+            dest[1] = Float.parseFloat(adj[1]);
+            dest[2] = Float.parseFloat(adj[2]);
+        } catch (NumberFormatException e) {
+            Slog.e(TAG, e.getMessage(), e);
+            return false;
+        }
+
+        // sanity check
+        return validateColors(dest);
+    }
+
+    /**
+     * Additional adjustments provided by night mode
+     *
+     * @param adj
+     */
+    synchronized boolean setAdditionalAdjustment(float[] adj) {
+        if (!mUseColorAdjustment) {
+            return false;
+        }
+
+        if (DEBUG) {
+            Slog.d(TAG, "setAdditionalAdjustment: " + Arrays.toString(adj));
+        }
+
+        // Sanity check this so we don't mangle the display
+        if (validateColors(adj)) {
+            System.arraycopy(adj, 0, mAdditionalAdjustment, 0, 3);
+            updateColorAdjustment();
+            return true;
+        }
+        return false;
+    }
+
     boolean getDefaultCABC() {
         return mDefaultCABC;
     }
@@ -339,97 +409,77 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     boolean isAutoContrastEnabled() {
         return mUseAutoContrast &&
-                getInt(CMSettings.System.DISPLAY_AUTO_CONTRAST,
-                        (mDefaultAutoContrast ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_AUTO_CONTRAST, mDefaultAutoContrast);
     }
 
     boolean setAutoContrastEnabled(boolean enabled) {
         if (!mUseAutoContrast) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_AUTO_CONTRAST, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_AUTO_CONTRAST, enabled);
         return true;
     }
 
     boolean isCABCEnabled() {
         return mUseCABC &&
-                getInt(CMSettings.System.DISPLAY_CABC,
-                        (mDefaultCABC ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_CABC, mDefaultCABC);
     }
 
     boolean setCABCEnabled(boolean enabled) {
         if (!mUseCABC) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_CABC, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_CABC, enabled);
         return true;
     }
 
     boolean isColorEnhancementEnabled() {
         return mUseColorEnhancement &&
-                getInt(CMSettings.System.DISPLAY_COLOR_ENHANCE,
-                        (mDefaultColorEnhancement ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_COLOR_ENHANCE,
+                mDefaultColorEnhancement);
     }
 
     boolean setColorEnhancementEnabled(boolean enabled) {
         if (!mUseColorEnhancement) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_COLOR_ENHANCE, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_COLOR_ENHANCE, enabled);
         return true;
     }
 
-
     float[] getColorAdjustment() {
         if (!mUseColorAdjustment) {
-            return new float[] { 1.0f, 1.0f, 1.0f };
+            return getDefaultAdjustment();
         }
-        return parseColorAdjustment(getString(CMSettings.System.DISPLAY_COLOR_ADJUSTMENT));
+        float[] cur = new float[3];
+        if (!parseColorAdjustment(getString(CMSettings.System.DISPLAY_COLOR_ADJUSTMENT), cur)) {
+            // clear it out if invalid
+            cur = getDefaultAdjustment();
+            saveColorAdjustmentString(cur);
+        }
+        return cur;
     }
 
     boolean setColorAdjustment(float[] adj) {
         // sanity check
-        if (!mUseColorAdjustment || adj.length != 3 ||
-                adj[0] < 0 || adj[0] > 1.0f ||
-                adj[1] < 0 || adj[1] > 1.0f ||
-                adj[2] < 0 || adj[2] > 1.0f) {
+        if (!mUseColorAdjustment || !validateColors(adj)) {
             return false;
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append(adj[0]).append(" ").append(adj[1]).append(" ").append(adj[2]);
-
-        putString(CMSettings.System.DISPLAY_COLOR_ADJUSTMENT, sb.toString());
+        saveColorAdjustmentString(adj);
         return true;
     }
 
-    /**
-     * Parse and sanity check an RGB triplet from a string.
-     */
-    private float[] parseColorAdjustment(String rgbString) {
-        String[] adj = rgbString == null ? null : rgbString.split(" ");
-        float[] parsed = new float[3];
+    private void saveColorAdjustmentString(final float[] adj) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(adj[0]).append(" ").append(adj[1]).append(" ").append(adj[2]);
+        putString(CMSettings.System.DISPLAY_COLOR_ADJUSTMENT, sb.toString());
+    }
 
-        if (adj == null || adj.length != 3) {
-            adj = new String[] { "1.0", "1.0", "1.0" };
-        }
+    boolean hasColorAdjustment() {
+        return mUseColorAdjustment;
+    }
 
-        try {
-            parsed[0] = Float.parseFloat(adj[0]);
-            parsed[1] = Float.parseFloat(adj[1]);
-            parsed[2] = Float.parseFloat(adj[2]);
-        } catch (NumberFormatException e) {
-            Slog.e(TAG, e.getMessage(), e);
-            parsed[0] = 1.0f;
-            parsed[1] = 1.0f;
-            parsed[2] = 1.0f;
-        }
-
-        // sanity check
-        for (int i = 0; i < parsed.length; i++) {
-            if (parsed[i] <= 0.0f || parsed[i] > 1.0f) {
-                parsed[i] = 1.0f;
-            }
-        }
-        return parsed;
+    private static float[] getDefaultAdjustment() {
+        return new float[] { 1.0f, 1.0f, 1.0f };
     }
 }
