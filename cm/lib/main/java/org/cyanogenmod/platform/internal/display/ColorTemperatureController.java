@@ -39,54 +39,52 @@ import cyanogenmod.util.ColorUtils;
 
 public class ColorTemperatureController extends LiveDisplayFeature {
 
-    private ValueAnimator mAnimator;
-    private DisplayHardwareController mDisplayHardware;
+    private final DisplayHardwareController mDisplayHardware;
 
-    private boolean mUseTemperatureAdjustment;
+    private final boolean mUseTemperatureAdjustment;
 
-    private int mDefaultDayTemperature;
-    private int mDefaultNightTemperature;
+    private final int mDefaultDayTemperature;
+    private final int mDefaultNightTemperature;
 
+    private int mColorTemperature = -1;
     private int mDayTemperature;
     private int mNightTemperature;
 
+    private ValueAnimator mAnimator;
+
     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 1;
 
-    private static final int OFF_TEMPERATURE = 6500;
-
-    private int mColorTemperature = OFF_TEMPERATURE;
-
-    public ColorTemperatureController(Context context, Handler handler,
-            DisplayHardwareController displayHardware) {
+    public ColorTemperatureController(Context context,
+            Handler handler, DisplayHardwareController displayHardware) {
         super(context, handler);
         mDisplayHardware = displayHardware;
-    }
-
-    @Override
-    public boolean onStart() {
-        if (!mDisplayHardware.hasColorAdjustment()) {
-            return false;
-        }
-
-        mUseTemperatureAdjustment = true;
+        mUseTemperatureAdjustment = mDisplayHardware.hasColorAdjustment();
 
         mDefaultDayTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_dayColorTemperature);
         mDefaultNightTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_nightColorTemperature);
+        mColorTemperature = mDefaultDayTemperature;
+    }
 
+    @Override
+    public void onStart() {
+        if (!mUseTemperatureAdjustment) {
+            return;
+        }
         registerSettings(
                 CMSettings.System.getUriFor(CMSettings.System.DISPLAY_TEMPERATURE_DAY),
                 CMSettings.System.getUriFor(CMSettings.System.DISPLAY_TEMPERATURE_NIGHT));
-        return true;
     }
 
-    void getCapabilities(final BitSet caps) {
+    @Override
+    public boolean getCapabilities(final BitSet caps) {
         if (mUseTemperatureAdjustment) {
             caps.set(MODE_AUTO);
             caps.set(MODE_DAY);
             caps.set(MODE_NIGHT);
         }
+        return mUseTemperatureAdjustment;
     }
 
     int getDefaultDayTemperature() {
@@ -120,22 +118,24 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     }
 
     @Override
-    public void onModeChanged(int mode) {
-        super.onModeChanged(mode);
+    protected void onUpdate() {
         updateColorTemperature();
     }
 
     @Override
-    public synchronized void onSettingsChanged(Uri uri) {
+    protected void onTwilightUpdated() {
+        if (mColorTemperature < 0) {
+            updateColorTemperature();
+        } else {
+            mHandler.post(mTransitionRunnable);
+        }
+    }
+
+    @Override
+    protected synchronized void onSettingsChanged(Uri uri) {
         mDayTemperature = getDayColorTemperature();
         mNightTemperature = getNightColorTemperature();
         updateColorTemperature();
-    }
-
-    @Override
-    public void onTwilightUpdated(TwilightState twilight) {
-        super.onTwilightUpdated(twilight);
-        mHandler.post(mTransitionRunnable);
     }
 
     @Override
@@ -147,9 +147,6 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         pw.println();
         pw.println("  ColorTemperatureController State:");
         pw.println("    mColorTemperature=" + mColorTemperature);
-        if (getTwilight() != null) {
-            pw.println("    mTwilight=" + getTwilight().toString());
-        }
         pw.println("    transitioning=" + mHandler.hasCallbacks(mTransitionRunnable));
     }
 
@@ -171,18 +168,23 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         }
     };
 
-    private void updateColorTemperature() {
-        mHandler.removeCallbacks(mTransitionRunnable);
-
+    private synchronized void updateColorTemperature() {
+        if (!mUseTemperatureAdjustment || !isScreenOn()) {
+            return;
+        }
         int temperature = mDayTemperature;
         int mode = getMode();
 
-        if (mode == MODE_OFF || isLowPowerMode()) {
-            temperature = OFF_TEMPERATURE;
+        if (mode == MODE_OFF || isLowPowerMode() ) {
+            temperature = mDefaultDayTemperature;
         } else if (mode == MODE_NIGHT) {
             temperature = mNightTemperature;
         } else if (mode == MODE_AUTO) {
             temperature = getTwilightK();
+        }
+
+        if (temperature == mColorTemperature) {
+            return;
         }
 
         if (DEBUG) {
@@ -190,6 +192,13 @@ public class ColorTemperatureController extends LiveDisplayFeature {
                        " temperature=" + temperature + " mColorTemperature=" + mColorTemperature);
         }
 
+        // jump directly to the chosen color on the first run
+        if (mColorTemperature < 0) {
+            setDisplayTemperature(temperature);
+            return;
+        }
+
+        // otherwise animate to the target temperature
         if (mAnimator != null) {
             mAnimator.cancel();
             mAnimator.removeAllUpdateListeners();
@@ -233,18 +242,18 @@ public class ColorTemperatureController extends LiveDisplayFeature {
      */
     private static float adj(long now, long sunset, long sunrise) {
         if (sunset < 0 || sunrise < 0
-                || now < sunset || now > sunrise) {
+                || now < sunset || now > (sunrise + TWILIGHT_ADJUSTMENT_TIME)) {
             return 1.0f;
         }
 
-        if (now < sunset + TWILIGHT_ADJUSTMENT_TIME) {
+        if (now <= (sunset + TWILIGHT_ADJUSTMENT_TIME)) {
             return MathUtils.lerp(1.0f, 0.0f,
                     (float)(now - sunset) / TWILIGHT_ADJUSTMENT_TIME);
         }
 
-        if (now > sunrise - TWILIGHT_ADJUSTMENT_TIME) {
+        if (now >= sunrise) {
             return MathUtils.lerp(1.0f, 0.0f,
-                    (float)(sunrise - now) / TWILIGHT_ADJUSTMENT_TIME);
+                    (float)((sunrise + TWILIGHT_ADJUSTMENT_TIME) - now) / TWILIGHT_ADJUSTMENT_TIME);
         }
 
         return 0.0f;

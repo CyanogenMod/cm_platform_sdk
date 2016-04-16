@@ -35,23 +35,18 @@ import cyanogenmod.providers.CMSettings;
 
 public class DisplayHardwareController extends LiveDisplayFeature {
 
-    private CMHardwareManager mHardware;
+    private final CMHardwareManager mHardware;
 
     // hardware capabilities
-    private boolean mUseAutoContrast;
-    private boolean mUseColorAdjustment;
-    private boolean mUseColorEnhancement;
-    private boolean mUseCABC;
+    private final boolean mUseAutoContrast;
+    private final boolean mUseColorAdjustment;
+    private final boolean mUseColorEnhancement;
+    private final boolean mUseCABC;
 
     // default values
-    private boolean mDefaultAutoContrast;
-    private boolean mDefaultColorEnhancement;
-    private boolean mDefaultCABC;
-
-    // current values
-    private boolean mAutoContrast;
-    private boolean mColorEnhancement;
-    private boolean mCABC;
+    private final boolean mDefaultAutoContrast;
+    private final boolean mDefaultColorEnhancement;
+    private final boolean mDefaultCABC;
 
     // color adjustment holders
     private final float[] mColorAdjustment = new float[] { 1.0f, 1.0f, 1.0f };
@@ -70,56 +65,53 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     public DisplayHardwareController(Context context, Handler handler) {
         super(context, handler);
-    }
-
-    @Override
-    public boolean onStart() {
-        final ArrayList<Uri> settings = new ArrayList<Uri>();
 
         mHardware = CMHardwareManager.getInstance(mContext);
         mUseCABC = mHardware
                 .isSupported(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
-        if (mUseCABC) {
-            mDefaultCABC = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultCABC);
-            mCABC = mHardware.get(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT);
-            settings.add(DISPLAY_CABC);
-        }
+        mDefaultCABC = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultCABC);
 
         mUseColorEnhancement = mHardware
                 .isSupported(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT);
-        if (mUseColorEnhancement) {
-            mDefaultColorEnhancement = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultColorEnhancement);
-            mColorEnhancement = mHardware.get(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT);
-            settings.add(DISPLAY_COLOR_ENHANCE);
-        }
+        mDefaultColorEnhancement = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultColorEnhancement);
 
         mUseAutoContrast = mHardware
                 .isSupported(CMHardwareManager.FEATURE_AUTO_CONTRAST);
-        if (mUseAutoContrast) {
-            mDefaultAutoContrast = mContext.getResources().getBoolean(
-                    org.cyanogenmod.platform.internal.R.bool.config_defaultAutoContrast);
-            mAutoContrast = mHardware.get(CMHardwareManager.FEATURE_AUTO_CONTRAST);
-            settings.add(DISPLAY_AUTO_CONTRAST);
-        }
+        mDefaultAutoContrast = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_defaultAutoContrast);
 
         mUseColorAdjustment = mHardware
                 .isSupported(CMHardwareManager.FEATURE_DISPLAY_COLOR_CALIBRATION);
+    }
+
+    @Override
+    public void onStart() {
+        final ArrayList<Uri> settings = new ArrayList<Uri>();
+
+        if (mUseCABC) {
+            settings.add(DISPLAY_CABC);
+        }
+        if (mUseColorEnhancement) {
+            settings.add(DISPLAY_COLOR_ENHANCE);
+        }
+        if (mUseAutoContrast) {
+            settings.add(DISPLAY_AUTO_CONTRAST);
+        }
         if (mUseColorAdjustment) {
             settings.add(DISPLAY_COLOR_ADJUSTMENT);
         }
 
         if (settings.size() == 0) {
-            return false;
+            return;
         }
 
         registerSettings(settings.toArray(new Uri[settings.size()]));
-        return true;
     }
 
     @Override
-    void getCapabilities(final BitSet caps) {
+    public boolean getCapabilities(final BitSet caps) {
         if (mUseAutoContrast) {
             caps.set(LiveDisplayManager.FEATURE_AUTO_CONTRAST);
         }
@@ -132,6 +124,7 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (mUseColorAdjustment) {
             caps.set(LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT);
         }
+        return mUseAutoContrast || mUseColorEnhancement || mUseCABC || mUseColorAdjustment;
     }
 
     @Override
@@ -153,11 +146,17 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         }
     }
 
+    private synchronized void updateHardware() {
+        if (isScreenOn()) {
+            updateCABCMode();
+            updateAutoContrast();
+            updateColorEnhancement();
+        }
+    }
+
     @Override
-    public synchronized void onLowPowerModeChanged(boolean lowPowerMode) {
-        updateCABCMode();
-        updateAutoContrast();
-        updateColorEnhancement();
+    protected void onUpdate() {
+        updateHardware();
     }
 
     @Override
@@ -170,9 +169,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         pw.println("  mUseCABC=" + mUseCABC);
         pw.println();
         pw.println("  DisplayHardwareController State:");
-        pw.println("    mAutoContrast=" + mAutoContrast);
-        pw.println("    mColorEnhancement=" + mColorEnhancement);
-        pw.println("    mCABC=" + mCABC);
+        pw.println("    mAutoContrast=" + isAutoContrastEnabled());
+        pw.println("    mColorEnhancement=" + isColorEnhancementEnabled());
+        pw.println("    mCABC=" + isCABCEnabled());
         pw.println("    mColorAdjustment=" + Arrays.toString(mColorAdjustment));
         pw.println("    mAdditionalAdjustment=" + Arrays.toString(mAdditionalAdjustment));
         pw.println("    mRGB=" + Arrays.toString(mRGB));
@@ -188,6 +187,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
      * @param adj
      */
     synchronized void setAdditionalAdjustment(float[] adj) {
+        if (!mUseColorAdjustment) {
+            return;
+        }
         if (DEBUG) {
             Slog.d(TAG, "setAdditionalAdjustment: " + Arrays.toString(adj));
         }
@@ -212,75 +214,44 @@ public class DisplayHardwareController extends LiveDisplayFeature {
     /**
      * Automatic contrast optimization
      */
-    private synchronized void updateAutoContrast() {
+    private void updateAutoContrast() {
         if (!mUseAutoContrast) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_AUTO_CONTRAST,
-                (mDefaultAutoContrast ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mAutoContrast) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_AUTO_CONTRAST, enabled);
-        mAutoContrast = enabled;
+        mHardware.set(CMHardwareManager.FEATURE_AUTO_CONTRAST,
+                !isLowPowerMode() && isAutoContrastEnabled());
     }
 
     /**
      * Color enhancement is optional
      */
-    private synchronized void updateColorEnhancement() {
+    private void updateColorEnhancement() {
         if (!mUseColorEnhancement) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_COLOR_ENHANCE,
-                (mDefaultColorEnhancement ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mColorEnhancement) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT, enabled);
-        mColorEnhancement = enabled;
+        mHardware.set(CMHardwareManager.FEATURE_COLOR_ENHANCEMENT,
+                !isLowPowerMode() && isColorEnhancementEnabled());
     }
 
     /**
      * Adaptive backlight / low power mode. Turn it off when under very bright light.
      */
-    private synchronized void updateCABCMode() {
+    private void updateCABCMode() {
         if (!mUseCABC) {
             return;
         }
-
-        boolean value = getInt(CMSettings.System.DISPLAY_CABC,
-                (mDefaultCABC ? 1 : 0)) == 1;
-
-        boolean enabled = !isLowPowerMode() && value;
-
-        if (enabled == mCABC) {
-            return;
-        }
-
-        mHardware.set(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT, value);
-        mCABC = value;
+        mHardware.set(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT,
+                !isLowPowerMode() && isCABCEnabled());
     }
 
     private synchronized void updateColorAdjustment() {
-        if (!mUseColorAdjustment) {
+        if (!mUseColorAdjustment || !isScreenOn()) {
             return;
         }
 
         final float[] rgb = new float[] { 1.0f, 1.0f, 1.0f };
 
         if (!isLowPowerMode()) {
-
             System.arraycopy(mAdditionalAdjustment, 0, rgb, 0, 3);
             rgb[0] *= mColorAdjustment[0];
             rgb[1] *= mColorAdjustment[1];
@@ -339,43 +310,41 @@ public class DisplayHardwareController extends LiveDisplayFeature {
 
     boolean isAutoContrastEnabled() {
         return mUseAutoContrast &&
-                getInt(CMSettings.System.DISPLAY_AUTO_CONTRAST,
-                        (mDefaultAutoContrast ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_AUTO_CONTRAST, mDefaultAutoContrast);
     }
 
     boolean setAutoContrastEnabled(boolean enabled) {
         if (!mUseAutoContrast) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_AUTO_CONTRAST, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_AUTO_CONTRAST, enabled);
         return true;
     }
 
     boolean isCABCEnabled() {
         return mUseCABC &&
-                getInt(CMSettings.System.DISPLAY_CABC,
-                        (mDefaultCABC ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_CABC, mDefaultCABC);
     }
 
     boolean setCABCEnabled(boolean enabled) {
         if (!mUseCABC) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_CABC, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_CABC, enabled);
         return true;
     }
 
     boolean isColorEnhancementEnabled() {
         return mUseColorEnhancement &&
-                getInt(CMSettings.System.DISPLAY_COLOR_ENHANCE,
-                        (mDefaultColorEnhancement ? 1 : 0)) == 1;
+                getBoolean(CMSettings.System.DISPLAY_COLOR_ENHANCE,
+                        mDefaultColorEnhancement);
     }
 
     boolean setColorEnhancementEnabled(boolean enabled) {
         if (!mUseColorEnhancement) {
             return false;
         }
-        putInt(CMSettings.System.DISPLAY_COLOR_ENHANCE, enabled ? 1 : 0);
+        putBoolean(CMSettings.System.DISPLAY_COLOR_ENHANCE, enabled);
         return true;
     }
 
