@@ -152,16 +152,16 @@ public class AmbientLuxObserver {
 
     private void enableLightSensor(boolean enable) {
         if (enable && !mLightSensorEnabled) {
-            mAmbientLux = 0.0f;
-            mState = LOW;
             mLightSensorEnabled = true;
-            mRingBuffer.clear();
             mSensorManager.registerListener(mListener, mLightSensor,
                     mLightSensorRate * 1000, mLuxHandler);
         } else if (!enable && mLightSensorEnabled) {
-            mLightSensorEnabled = false;
             mSensorManager.unregisterListener(mListener);
             mLuxHandler.clear();
+            mAmbientLux = 0.0f;
+            mState = LOW;
+            mLightSensorEnabled = false;
+            mRingBuffer.clear();
         }
     }
 
