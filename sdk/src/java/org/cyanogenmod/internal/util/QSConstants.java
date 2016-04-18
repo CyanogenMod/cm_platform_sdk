@@ -46,7 +46,6 @@ public class QSConstants {
     public static final String TILE_VISUALIZER = "visualizer";
     public static final String TILE_VOLUME = "volume_panel";
     public static final String TILE_SCREEN_TIMEOUT = "screen_timeout";
-    public static final String TILE_LIVE_DISPLAY = "live_display";
     public static final String TILE_USB_TETHER = "usb_tether";
     public static final String TILE_HEADS_UP = "heads_up";
     public static final String TILE_AMBIENT_DISPLAY = "ambient_display";
@@ -60,6 +59,7 @@ public class QSConstants {
     public static final String DYNAMIC_TILE_IME_SELECTOR = "ime_selector";
     public static final String DYNAMIC_TILE_SU = "su";
     public static final String DYNAMIC_TILE_ADB = "adb";
+    public static final String DYNAMIC_TILE_LIVE_DISPLAY = "live_display";
 
     protected static final ArrayList<String> STATIC_TILES_AVAILABLE = new ArrayList<String>();
     protected static final ArrayList<String> DYNAMIC_TILES_AVAILBLE = new ArrayList<String>();
@@ -93,7 +93,6 @@ public class QSConstants {
 //        STATIC_TILES_AVAILABLE.add(TILE_VISUALIZER);
         STATIC_TILES_AVAILABLE.add(TILE_VOLUME);
         STATIC_TILES_AVAILABLE.add(TILE_SCREEN_TIMEOUT);
-        STATIC_TILES_AVAILABLE.add(TILE_LIVE_DISPLAY);
         STATIC_TILES_AVAILABLE.add(TILE_USB_TETHER);
         STATIC_TILES_AVAILABLE.add(TILE_HEADS_UP);
         STATIC_TILES_AVAILABLE.add(TILE_AMBIENT_DISPLAY);
@@ -107,5 +106,6 @@ public class QSConstants {
         DYNAMIC_TILES_AVAILBLE.add(DYNAMIC_TILE_IME_SELECTOR);
         DYNAMIC_TILES_AVAILBLE.add(DYNAMIC_TILE_NEXT_ALARM);
         DYNAMIC_TILES_AVAILBLE.add(DYNAMIC_TILE_SU);
+        DYNAMIC_TILES_AVAILBLE.add(DYNAMIC_TILE_LIVE_DISPLAY);
     }
 }

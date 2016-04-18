@@ -283,7 +283,7 @@ public class LiveDisplayService extends SystemService {
                     .setOnClickIntent(getCustomTileNextModePendingIntent())
                     .shouldCollapsePanel(false)
                     .build();
-            statusBarManager.publishTileAsUser(QSConstants.TILE_LIVE_DISPLAY,
+            statusBarManager.publishTileAsUser(QSConstants.DYNAMIC_TILE_LIVE_DISPLAY,
                     LiveDisplayService.class.hashCode(), tile, user);
         } finally {
             Binder.restoreCallingIdentity(token);
@@ -296,7 +296,7 @@ public class LiveDisplayService extends SystemService {
         long token = Binder.clearCallingIdentity();
         try {
             CMStatusBarManager statusBarManager = CMStatusBarManager.getInstance(mContext);
-            statusBarManager.removeTileAsUser(QSConstants.TILE_LIVE_DISPLAY,
+            statusBarManager.removeTileAsUser(QSConstants.DYNAMIC_TILE_LIVE_DISPLAY,
                     LiveDisplayService.class.hashCode(), new UserHandle(userId));
         } finally {
             Binder.restoreCallingIdentity(token);
