@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod rendszer</string>
   <string name="permlab_publishCustomTile">egy egyedi csempe létrehozása a gyors beállítások panelen</string>
   <string name="permdesc_publishCustomTile">Lehetővé teszi az alkalmazás számára, hogy gyors beállítások csempét hozzon létre.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Lehetővé teszi az alkalmazás számára, hogy módosítsa a zavaró mód hangbeállításait.</string>
   <string name="permlab_bindCustomTileListenerService">egyéni csempe figyelőszolgáltatáshoz kötés</string>
   <string name="permdesc_bindCustomTileListenerService">Lehetővé teszi az alkalmazás számára, hogy a legfelső szintű illesztőjéhez kösse az egyéni csempe figyelőszolgáltatást.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">telefon állapotának és adatkapcsolatának megtekintése több SIM támogatásával</string>
   <string name="permdesc_readMSPhoneState">Lehetővé teszi az alkalmazás számára, hogy megtekintse a telefon állapotát és az adatkapcsolatot több SIM támogatásával.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">telefon állapotának és adatkapcsolatának módosítása több SIM támogatásával</string>
   <string name="permdesc_modifyMSPhoneState">Lehetővé teszi az alkalmazás számára, hogy módosítsa a telefon állapotát és az adatkapcsolatot több SIM támogatásával.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">rendszerprofilok módosítása</string>
   <string name="permdesc_modifyProfiles">Lehetővé teszi az alkalmazás számára a rendszerprofilok módosítását.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">hardver keretrendszert használ</string>
   <string name="permdesc_useHardwareFramework">Lehetővé teszi az alkalmazás számára, hogy a CM hardver hozzáférjen a keretrendszerhez.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">riasztások közvetlen megváltoztatása</string>
   <string name="permdesc_write_alarms">Lehetővé teszi az alkalmazás számára, hogy hozzáadja, módosítsa, vagy törölje az összes riasztást.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">ütemezett riasztások kapcsolása</string>
   <string name="permdesc_manage_alarms">Lehetővé teszi az alkalmazás számára, hogy ki/bekapcsolja az ütemezett riasztásokat.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">hozzáférés ütemezett riasztásokhoz</string>
   <string name="permdesc_read_alarms">Lehetővé teszi az alkalmazás számára, hogy olvassa az ütemezett riasztásait.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">CM rendszer beállításainak módosítása</string>
   <string name="permdesc_writeSettings">Lehetővé teszi egy alkalmazás számára a CM rendszer beállításainak módosítását.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">CM biztonsági rendszer beállításainak módosítása</string>
   <string name="permdesc_writeSecureSettings">Lehetővé teszi egy alkalmazás számára a CM biztonsági rendszer beállításainak módosítását. Szokásos alkalmazások számára nem használható.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">állandó tároló kezelése</string>
   <string name="permdesc_managePersistentStorage">Lehetővé teszi az alkalmazás számára olyan tulajdonságok írását vagy olvasását, amelyek a gyári beállítások visszaállítása során is megmaradnak.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">hozzáférés alkalmazás javaslatokhoz</string>
   <string name="permdesc_accessAppSuggestions">Lehetővé teszi az alkalmazás számára, hogy hozzáférjen az alkalmazás javaslatokhoz.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Egyéni csempe figyelőszolgáltatás</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Alapértelmezett</string>
   <string name="profileNameWork">Munka</string>
   <string name="profileNameHome">Otthon</string>
   <string name="profileNameSilent">Néma</string>
   <string name="profileNameNight">Éjszaka</string>
   <string name="profileNameAutomobile">Autóban</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Naptár</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Egyéb</string>
 </resources>

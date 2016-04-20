@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">create a custom tile within quick settings panel</string>
   <string name="permdesc_publishCustomTile">Allows an app to publish a quick settings tile.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Allows an app to make changes to the interruption mode sound settings.</string>
   <string name="permlab_bindCustomTileListenerService">bind to a custom tile listener service</string>
   <string name="permdesc_bindCustomTileListenerService">Allows the app to bind to the top-level interface of a custom tile listener service.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">view the phone state and data connection with support to multiple SIMs</string>
   <string name="permdesc_readMSPhoneState">Allows an app to view the phone state and data connection with support to multiple SIMs.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">Modify the phone state and data connection with support to multiple SIMs</string>
   <string name="permdesc_modifyMSPhoneState">Allows an app to modify the phone state and data connection with support to multiple SIMs.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">Modify system profiles</string>
   <string name="permdesc_modifyProfiles">Allows an app to modify system profiles.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">use hardware framework</string>
   <string name="permdesc_useHardwareFramework">Allows an app access to the CM hardware framework.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">directly change alarms</string>
   <string name="permdesc_write_alarms">Allows an app to add, modify or delete all of your alarms.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">toggle scheduled alarms</string>
   <string name="permdesc_manage_alarms">Allows an app to turn on or off your scheduled alarms.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">access scheduled alarms</string>
   <string name="permdesc_read_alarms">Allows an app to read your scheduled alarms.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modify CM system settings</string>
   <string name="permdesc_writeSettings">Allows an app to modify CM system settings.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modify CM secure system settings</string>
   <string name="permdesc_writeSecureSettings">Allows an app to modify CM secure system settings. Not for use by normal apps.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">manage persistent storage</string>
   <string name="permdesc_managePersistentStorage">Allows an app to read or write properties which may persist thrοugh a factory reset.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">access application suggestions</string>
   <string name="permdesc_accessAppSuggestions">Allows an app to access application suggestions.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Custom tile listener</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Default</string>
   <string name="profileNameWork">Work</string>
   <string name="profileNameHome">Home</string>
   <string name="profileNameSilent">Silent</string>
   <string name="profileNameNight">Night</string>
   <string name="profileNameAutomobile">Automobile</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Phone</string>
   <string name="profileGroupCalendar">Calendar</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Email</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Other</string>
 </resources>

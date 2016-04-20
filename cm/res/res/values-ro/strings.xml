@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
   <string name="permlab_publishCustomTile">creează un chenar personalizat în panoul de setări rapide</string>
   <string name="permdesc_publishCustomTile">Permite unei aplicații să publice un chenar de setări rapide.</string>
@@ -25,37 +26,53 @@
   <string name="permdesc_modifySoundSettings">Permite unei aplicații să facă modificări în setările modului de întrerupere al sunetului.</string>
   <string name="permlab_bindCustomTileListenerService">leagă de un chenar personalizat al serviciului de ascultare</string>
   <string name="permdesc_bindCustomTileListenerService">Permite unei aplicații să se lege de interfața de nivel superior a unui chenar personalizat al serviciului de ascultare.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">citește starea telefonului și a conexiunii de date cu suport pentru SIM-uri multiple</string>
   <string name="permdesc_readMSPhoneState">Permite unei aplicații să citească starea telefonului și a conexiunii de date cu suport pentru SIM-uri multiple.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">modifică starea telefonului și a conexiunii de date cu suport pentru SIM-uri multiple</string>
   <string name="permdesc_modifyMSPhoneState">Permite unei aplicații să modifice starea telefonului și a conexiunii de date cu suport pentru SIM-uri multiple.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modifică profiluri de sistem</string>
   <string name="permdesc_modifyProfiles">Permite unei aplicații să modifice profilurile de sistem.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">folosește framework-ul hardware</string>
   <string name="permdesc_useHardwareFramework">Permite unei aplicații să acceseze framework-ul CM hardware.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">schimbă direct alarme</string>
   <string name="permdesc_write_alarms">Permite unei aplicații să adauge, modifice sau să șteargă toate alarmele.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">comută alarme programate</string>
   <string name="permdesc_manage_alarms">Permite unei aplicații să pornească sau să oprească alarmele programate.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">accesează alarme programate</string>
   <string name="permdesc_read_alarms">Permite unei aplicații să citească alarmele programate.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modifică setările de sistem CM</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modifică setările de siguranță sistem CM</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">gestionează stocare persistentă</string>
   <string name="permdesc_managePersistentStorage">Permite unei aplicații să citească sau să scrie proprietăți ce se pot menține în urma unei reveniri la setările din fabrică.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">accesează sugestiile aplicației</string>
   <string name="permdesc_accessAppSuggestions">Permite unei aplicații să aceseze aplicațiile sugerate.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Urmăritor de chenar personalizat</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Implicit</string>
   <string name="profileNameWork">Serviciu</string>
   <string name="profileNameHome">Acasă</string>
   <string name="profileNameSilent">Silențios</string>
   <string name="profileNameNight">Noapte</string>
   <string name="profileNameAutomobile">Automobil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Calendar</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Email</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Altele</string>
 </resources>

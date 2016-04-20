@@ -16,15 +16,32 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameWork">Trabayu</string>
   <string name="profileNameHome">Home</string>
   <string name="profileNameSilent">Silenciu</string>
   <string name="profileNameNight">Nueche</string>
   <string name="profileNameAutomobile">Automóvil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Teléfonu</string>
   <string name="profileGroupCalendar">Calendariu</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Corréu</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Otru</string>
 </resources>

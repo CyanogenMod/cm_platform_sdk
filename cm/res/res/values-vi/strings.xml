@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Hệ thống CyanogenMod</string>
   <string name="permlab_publishCustomTile">tạo một ô tùy chỉnh trong bảng cài đặt nhanh</string>
   <string name="permdesc_publishCustomTile">Cho phép một ứng dụng taọ ô mới trong cài đặt nhanh.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Cho phép ứng dụng thay đổi cài đặt âm thanh chế độ gián đoạn.</string>
   <string name="permlab_bindCustomTileListenerService">liên kết với một dịch vụ lắng nghe ô tùy chỉnh</string>
   <string name="permdesc_bindCustomTileListenerService">Cho phép ứng dụng liên kết với giao diện cấp cao nhất của dịch vụ lắng nghe ô tuỳ chỉnh.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">xem tình trạng điện thoại và kết nối dữ liệu với hỗ trợ đa SIM</string>
   <string name="permdesc_readMSPhoneState">Cho phép ứng dụng xem tình trạng điện thoại và kết nối dữ liệu với hỗ trợ đa SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">thay đổi tình trạng điện thoại và kết nối dữ liệu với hỗ trợ đa SIM</string>
   <string name="permdesc_modifyMSPhoneState">Cho phép ứng dụng thay đổi tình trạng điện thoại và kết nối dữ liệu với hỗ trợ đa SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">sửa đổi cấu hình hệ thống</string>
   <string name="permdesc_modifyProfiles">Cho phép một ứng dụng sửa đổi cấu hình hệ thống.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">dùng khung làm việc phần cứng</string>
   <string name="permdesc_useHardwareFramework">Cho phép ứng dụng truy cập khung làm việc phần cứng CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">trực tiếp thay đổi báo thức</string>
   <string name="permdesc_write_alarms">Cho phép ứng dụng thêm, chỉnh sửa hoặc xóa tất cả các báo thức của bạn.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">bật/tắt báo thức đã lên lịch</string>
   <string name="permdesc_manage_alarms">Cho phép ứng dụng bật hoặc tắt các báo thức đã lên lịch của bạn.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">truy cập các báo thức đã lên lịch</string>
   <string name="permdesc_read_alarms">Cho phép ứng dụng đọc các báo thức đã lên lịch của bạn.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">sửa đổi cài đặt hệ thống CM</string>
   <string name="permdesc_writeSettings">Cho phép một ứng dụng sửa đổi cài đặt hệ thống CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">sửa đổi cài đặt hệ thống an toàn CM</string>
   <string name="permdesc_writeSecureSettings">Cho phép ứng dụng sửa đổi cài đặt hệ thống an toàn CM. Không cho ứng dụng bình thường sử dụng.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">quản lý bộ lưu trữ vĩnh viễn</string>
   <string name="permdesc_managePersistentStorage">Cho phép ứng dụng đọc hoặc ghi thuộc tính có thể vẫn tồn tại sau khi đặt lại mặc định nhà sản xuất.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">truy cập đề xuất ứng dụng</string>
   <string name="permdesc_accessAppSuggestions">Cho phép ứng dụng truy cập đề xuất ứng dụng.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Lắng nghe ô tuỳ chỉnh</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Mặc định</string>
   <string name="profileNameWork">Văn phòng</string>
   <string name="profileNameHome">Ở nhà</string>
   <string name="profileNameSilent">Im lặng</string>
   <string name="profileNameNight">Ban đêm</string>
   <string name="profileNameAutomobile">Trên ôtô</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Điện thoại</string>
   <string name="profileGroupCalendar">Lịch</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Email</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Khác</string>
 </resources>

@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
   <string name="permlab_publishCustomTile">ustvari ploščico po meri na plošči za hitre nastavitve</string>
   <string name="permdesc_publishCustomTile">Dovoli aplikaciji, da objavi ploščico za hitre nastavitve.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Dovoli aplikaciji, da naredi spremembe v zvočnih nastavitvah načina prekinitve.</string>
   <string name="permlab_bindCustomTileListenerService">veži na storitev poslušalnika ploščic po meri</string>
   <string name="permdesc_bindCustomTileListenerService">Dovoli aplikaciji, da se veže na vrhnji vmesnik storitve poslušalnika ploščic po meri.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">ogled stanja telefona in podatkovnih povezav s podporo za več kartic SIM</string>
   <string name="permdesc_readMSPhoneState">Dovoli aplikaciji ogled stanja telefona in podatkovnih povezav s podporo za več kartic SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">spreminjanje stanja telefona in podatkovnih povezav s podporo za več kartic SIM</string>
   <string name="permdesc_modifyMSPhoneState">Dovoli aplikaciji spreminjanje stanja telefona in podatkovnih povezav s podporo za več kartic SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">spreminjanje sistemskih profilov</string>
   <string name="permdesc_modifyProfiles">Dovoli aplikaciji spreminjanje sistemskih profilov.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">uporabi strojno ogrodje</string>
   <string name="permdesc_useHardwareFramework">Dovoli aplikaciji dostop do strojnega ogrodja CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">neposredno spreminjanje budilk</string>
   <string name="permdesc_write_alarms">Dovoli aplikaciji dodajanje, spreminjanje in brisanje vseh vaših budilk.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">preklop načrtovanih budilk</string>
   <string name="permdesc_manage_alarms">Dovoli aplikaciji vklop in izklop vaših načrtovanih budilk.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">dostop do načrtovanih budilk</string>
   <string name="permdesc_read_alarms">Dovoli aplikaciji branje vaših načrtovanih budilk.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">spreminjanje sistemskih nastavitev CM</string>
   <string name="permdesc_writeSettings">Dovoli aplikaciji spreminjanje sistemskih nastavitev CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">spreminjanje varnih sistemskih nastavitev CM</string>
   <string name="permdesc_writeSecureSettings">Dovoli aplikaciji spreminjanje varnih sistemskih nastavitev CM. Običajne aplikacije tega ne uporabljajo.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">upravljanje vztrajne pom. naprave</string>
   <string name="permdesc_managePersistentStorage">Dovoli aplikaciji branje ali pisanje lastnosti, ki se ohranijo po ponastavitvi na tovarniške vrednosti.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">dostop do predlogov aplikacij</string>
   <string name="permdesc_accessAppSuggestions">Dovoli aplikaciji dostop do predlogov aplikacij.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Poslušalnik ploščic po meri</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Privzeto</string>
   <string name="profileNameWork">Služba</string>
   <string name="profileNameHome">Doma</string>
   <string name="profileNameSilent">Tiho</string>
   <string name="profileNameNight">Noč</string>
   <string name="profileNameAutomobile">Avto</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Koledar</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-pošta</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Ostalo</string>
 </resources>

@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
   <string name="permlab_publishCustomTile">eng Kachel an de séieren Astellungen uweisen</string>
   <string name="permdesc_publishCustomTile">Erlaabt der App, eng Kachel an de séieren Astellungen uweisen.</string>
@@ -23,23 +24,39 @@
   <string name="permlab_modifySoundSettings">Tounastellunge vum System änneren</string>
   <string name="permlab_bindCustomTileListenerService">en eegenene Kachel-Lauschter-Service ubannen</string>
   <string name="permdesc_bindCustomTileListenerService">Erlaabt der App, sech op dem ieweschtem Niveau un d\'Schnëttstell vun engem Kachel-Lauschter-Service unzebannen.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">Systemstatus an Dateconnectioun op Ënnerstëtzung vu méi SIM-Kaarten iwwerpréiwen</string>
   <string name="permdesc_readMSPhoneState">Erlaabt der App, de Systemstatus an d\'Dateconnectioun op Ënnerstëtzung vu méi SIM-Kaarten z\'iwwerpréiwen.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">Telefonsstatus an Dateconnectioun op Ënnerstëtzung vu méi SIM-Kaarten iwwerpréiwen</string>
   <string name="permdesc_modifyMSPhoneState">Erlaabt der App, den Telefonsstatus an d\'Dateconnectioun op Ënnerstëtzung vu méi SIM-Kaarten z\'iwwerpréiwen.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">Hardware-Framework benotzen</string>
   <string name="permdesc_useHardwareFramework">Erlaabt der App, den Accès op den CM-Hardware-Framework.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Eegene Kachel-Lauschter-Service</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Aarbecht</string>
   <string name="profileNameHome">Doheem</string>
   <string name="profileNameSilent">Roueg</string>
   <string name="profileNameNight">Nuecht</string>
   <string name="profileNameAutomobile">Auto</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalenner</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-Mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Aner</string>
 </resources>

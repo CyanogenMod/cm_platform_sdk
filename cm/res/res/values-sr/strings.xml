@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod систем</string>
   <string name="permlab_publishCustomTile">направи прилагођену плочицу у панелу брзог подешавања</string>
   <string name="permdesc_publishCustomTile">Омогући апликацији да избаци плочицу брзог подешавања.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Дозволи апликацији да промени подешавања за мод прекидања звука.</string>
   <string name="permlab_bindCustomTileListenerService">везује за подразумевану плочицу сервиса надгледања</string>
   <string name="permdesc_bindCustomTileListenerService">Омогућава апликацији да се веже за интерфејс највишег нивоа прилагођене плочице сервиса надгледања.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">приказ стања телефона и конекције уз подршку за више SIM-ова</string>
   <string name="permdesc_readMSPhoneState">Дозволи апликацији да види стање телефона и конекцију уз подршку за више SIM-ова.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">промена стања телефона и конекције уз подршку за више SIM-ова</string>
   <string name="permdesc_modifyMSPhoneState">Дозволи апликацији да мења стање телефона и конекције уз подршку за више SIM-ова.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">Измени системске профиле</string>
   <string name="permdesc_modifyProfiles">Дозволи апликацији да мења системске профиле.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">користи хардверски оквир</string>
   <string name="permdesc_useHardwareFramework">Дозвољава апликацији приступ CM хардверском оквиру.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">директна промена аларма</string>
   <string name="permdesc_write_alarms">Дозвола апликацији да дода, промени или обрише све твоје аларме.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">Укључи/искључи заказане аларме</string>
   <string name="permdesc_manage_alarms">Дозвола апликацији да укључи или искључи заказане аларме.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">приступ заказаним алармима</string>
   <string name="permdesc_read_alarms">Дозвола апликацији да чита заказане аларме.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">промени CM системска подешавања</string>
   <string name="permdesc_writeSettings">Омогућава апликацији да промени CM системска подешавања.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">промени CM системска подешавања сигурности</string>
   <string name="permdesc_writeSecureSettings">Омогући апликацији да промени CM системска подешавања сигурности. Није за коришћење код нормалних апликација.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">Управљај сталним складиштем</string>
   <string name="permdesc_managePersistentStorage">омогући апликацији да чита и пише својства која остају после фабричког ресета.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">приступ апликацији сугестије</string>
   <string name="permdesc_accessAppSuggestions">Омогући апликацији да приступа сугестијама апликације.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Прилагођена плочица надгледања</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Подразумевано</string>
   <string name="profileNameWork">Посао</string>
   <string name="profileNameHome">Кући</string>
   <string name="profileNameSilent">Тишина</string>
   <string name="profileNameNight">Ноћ</string>
   <string name="profileNameAutomobile">Аутомобил</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Телефон</string>
   <string name="profileGroupCalendar">Календар</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Е-пошта</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Друго</string>
 </resources>

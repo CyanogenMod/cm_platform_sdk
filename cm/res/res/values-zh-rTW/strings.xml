@@ -16,21 +16,38 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod 系統</string>
   <string name="permlab_publishCustomTile">於快速設定面板中建立自訂標題</string>
   <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permdesc_writeSettings">允許應用程式更改CM系統設定</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">修改 CM 系統安全設定</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">預設</string>
   <string name="profileNameWork">工作</string>
   <string name="profileNameHome">住家</string>
   <string name="profileNameSilent">安靜</string>
   <string name="profileNameNight">夜晚</string>
   <string name="profileNameAutomobile">汽車</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">電話</string>
   <string name="profileGroupCalendar">日曆</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">電子郵件</string>
   <string name="profileGroupSMS">簡訊</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">其他</string>
 </resources>

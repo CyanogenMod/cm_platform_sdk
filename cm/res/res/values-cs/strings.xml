@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Systém CyanogenMod</string>
   <string name="permlab_publishCustomTile">vytvoření vlastní dlaždice do panelu rychlého nastavení</string>
   <string name="permdesc_publishCustomTile">Umožní vytvořit vlastní dlaždici v panelu rychlého nastavení.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Umožňuje změnit nastavení režimu přerušení zvuku.</string>
   <string name="permlab_bindCustomTileListenerService">vázat službu na vlastní dlaždici</string>
   <string name="permdesc_bindCustomTileListenerService">Umožní navázat rozhraní nejvyšší úrovně na službu dlaždice.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">zobrazit stav telefonu a datové připojení s podporou více SIM</string>
   <string name="permdesc_readMSPhoneState">Umožňuj prohlížet stav telefonu a datového spojení s podporou více SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">změnit stav telefonu a datového spojení s podporou více SIM</string>
   <string name="permdesc_modifyMSPhoneState">Umožňuje změnit stav telefonu a datového spojení s podporou více SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">změnit systémové profily</string>
   <string name="permdesc_modifyProfiles">Umožňuje upravovat systémové profily.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">využití hardware zařízení</string>
   <string name="permdesc_useHardwareFramework">Umožní přistupovat k hardware pomocí CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">přímá změna budíků</string>
   <string name="permdesc_write_alarms">Umožňuje přidat, změnit nebo odebrat všechn budíky.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">přepnutí naplánovaných budíků</string>
   <string name="permdesc_manage_alarms">Umožňuje vypnout nebo zapnout naplánované budíky.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">přístup k naplánovaným budíkům</string>
   <string name="permdesc_read_alarms">Umožní číst naplánované budíky.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">změnit CM systémové nastavení</string>
   <string name="permdesc_writeSettings">Umožní měnit systémové nastavení CyanogenMod.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">upravit nastavení zabezpečení systému CM</string>
   <string name="permdesc_writeSecureSettings">Umožní změnit nastavení zabezpečení systému CyanogenMod. Není určeno pro normální aplikace.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">spravovat trvalé úložiště</string>
   <string name="permdesc_managePersistentStorage">Umožňuje číst a zapisovat vlastnosti, které mohou přetrvat při tovární obnově.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">přístup k návrhům aplikací</string>
   <string name="permdesc_accessAppSuggestions">Umožňuje přístup k návrhům aplikací.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Služba vlastní dlaždice</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Výchozí</string>
   <string name="profileNameWork">Práce</string>
   <string name="profileNameHome">Doma</string>
   <string name="profileNameSilent">Tichý</string>
   <string name="profileNameNight">Noc</string>
   <string name="profileNameAutomobile">Automobil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalendář</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Ostatní</string>
 </resources>
