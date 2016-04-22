@@ -48,8 +48,6 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private int mDayTemperature;
     private int mNightTemperature;
 
-    private boolean mTransitioning = false;
-
     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 1;
 
     private static final Uri DISPLAY_TEMPERATURE_DAY =
@@ -99,7 +97,7 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     @Override
     protected void onScreenStateChanged() {
         // pause/continue transition
-        if (mTransitioning) {
+        if (isTransitioning()) {
             if (isScreenOn()) {
                 mHandler.post(mTransitionRunnable);
             } else {
@@ -133,26 +131,21 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         pw.println();
         pw.println("  ColorTemperatureController State:");
         pw.println("    mColorTemperature=" + mColorTemperature);
-        pw.println("    mTransitioning=" + mTransitioning);
+        pw.println("    isTransitioning=" + isTransitioning());
     }
 
     private final Runnable mTransitionRunnable = new Runnable() {
         @Override
         public void run() {
-            synchronized (ColorTemperatureController.this) {
-                updateColorTemperature();
-
-                mTransitioning = getMode() == MODE_AUTO &&
-                        mColorTemperature != mDayTemperature &&
-                        mColorTemperature != mNightTemperature;
-
-                if (mTransitioning) {
-                    // fire again in a minute
-                    mHandler.postDelayed(mTransitionRunnable, DateUtils.MINUTE_IN_MILLIS);
-                }
-            }
+            updateColorTemperature();
         }
     };
+
+    private boolean isTransitioning() {
+        return getMode() == MODE_AUTO &&
+                mColorTemperature != mDayTemperature &&
+                mColorTemperature != mNightTemperature;
+    }
 
     private synchronized void updateColorTemperature() {
         if (!mUseTemperatureAdjustment || !isScreenOn()) {
@@ -175,6 +168,11 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         }
 
         setDisplayTemperature(temperature);
+
+        if (isTransitioning()) {
+            // fire again in a minute
+            mHandler.postDelayed(mTransitionRunnable, DateUtils.MINUTE_IN_MILLIS);
+        }
     }
 
 
