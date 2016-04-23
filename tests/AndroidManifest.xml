@@ -26,6 +26,7 @@
     <uses-permission android:name="cyanogenmod.permission.WRITE_THEMES" />
     <uses-permission android:name="cyanogenmod.permission.ACCESS_THEME_MANAGER" />
     <uses-permission android:name="cyanogenmod.permission.MANAGE_LIVEDISPLAY" />
+    <uses-permission android:name="cyanogenmod.permission.OBSERVE_AUDIO_SESSIONS" />
 
     <uses-permission android:name="android.permission.STATUS_BAR_SERVICE" />
 
