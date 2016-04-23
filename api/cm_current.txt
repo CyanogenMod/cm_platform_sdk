@@ -595,6 +595,26 @@ package cyanogenmod.hardware {
 
 package cyanogenmod.media {
 
+  public final class AudioSessionInfo implements android.os.Parcelable {
+    ctor public AudioSessionInfo(int, int, int, int, int);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.media.AudioSessionInfo> CREATOR;
+    field public final int mChannelMask;
+    field public final int mFlags;
+    field public final int mSessionId;
+    field public final int mStream;
+    field public final int mUid;
+  }
+
+  public class CMAudioManager {
+    method public static synchronized cyanogenmod.media.CMAudioManager getInstance(android.content.Context);
+    method public java.util.List<cyanogenmod.media.AudioSessionInfo> listAudioSessions(int);
+    field public static final java.lang.String ACTION_AUDIO_SESSIONS_CHANGED = "cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED";
+    field public static final java.lang.String EXTRA_SESSION_ADDED = "added";
+    field public static final java.lang.String EXTRA_SESSION_INFO = "session_info";
+  }
+
   public class MediaRecorder {
     ctor public MediaRecorder();
     field public static final java.lang.String ACTION_HOTWORD_INPUT_CHANGED = "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED";
@@ -667,6 +687,7 @@ package cyanogenmod.platform {
     field public static final java.lang.String MODIFY_NETWORK_SETTINGS = "cyanogenmod.permission.MODIFY_NETWORK_SETTINGS";
     field public static final java.lang.String MODIFY_PROFILES = "cyanogenmod.permission.MODIFY_PROFILES";
     field public static final java.lang.String MODIFY_SOUND_SETTINGS = "cyanogenmod.permission.MODIFY_SOUND_SETTINGS";
+    field public static final java.lang.String OBSERVE_AUDIO_SESSIONS = "cyanogenmod.permission.OBSERVE_AUDIO_SESSIONS";
     field public static final java.lang.String PERFORMANCE_ACCESS = "cyanogenmod.permission.PERFORMANCE_ACCESS";
     field public static final java.lang.String PROTECTED_APP = "cyanogenmod.permission.PROTECTED_APP";
     field public static final java.lang.String PUBLISH_CUSTOM_TILE = "cyanogenmod.permission.PUBLISH_CUSTOM_TILE";
