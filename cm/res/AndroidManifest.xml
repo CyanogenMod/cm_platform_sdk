@@ -24,6 +24,7 @@
 
     <protected-broadcast android:name="cyanogenmod.intent.action.SCREEN_CAMERA_GESTURE" />
     <protected-broadcast android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
+    <protected-broadcast android:name="cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED" />
 
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
@@ -210,6 +211,14 @@
                 android:label="@string/permlab_weather_bind"
                 android:description="@string/permdesc_weather_bind"
                 android:protectionLevel="signature"/>
+
+    <!-- Allows an application to observe system-wide changes to audio sessions
+         @hide -->
+    <permission android:name="cyanogenmod.permission.OBSERVE_AUDIO_SESSIONS"
+                android:label="@string/permlab_observe_audio_sessions"
+                android:description="@string/permdesc_observe_audio_sessions"
+                android:protectionLevel="normal"/>
+
 
     <!-- Allows an application to access the weather service.
         <p>Although the protection is normal, this permission should be required ONLY by those apps

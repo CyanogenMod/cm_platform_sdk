@@ -198,4 +198,9 @@
     <string name="permlab_dataUsageRead">read data usage db</string>
     <!-- DataUsageProvider read permission description -->
     <string name="permdesc_dataUsageRead">Allows read access to the DataUsage db</string>
+
+    <!-- CMAudioService - observe session changes permission -->
+    <string name="permlab_observe_audio_sessions">observe audio session changes</string>
+    <string name="permdesc_observe_audio_sessions">Allows an app to observe audio streams being created and destroyed.</string>
+
 </resources>
