@@ -98,5 +98,6 @@
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
+        <item>org.cyanogenmod.platform.internal.CMAudioService</item>
     </string-array>
 </resources>
