@@ -595,6 +595,27 @@ package cyanogenmod.hardware {
 
 package cyanogenmod.media {
 
+  public class AudioSessionObserver {
+    ctor public AudioSessionObserver();
+    method public static boolean addCallback(cyanogenmod.media.AudioSessionObserver.AudioSessionCallback);
+    method public static java.util.List<cyanogenmod.media.AudioSessionObserver.AudioSessionInfo> listAudioSessions(int);
+    method public static boolean removeCallback(cyanogenmod.media.AudioSessionObserver.AudioSessionCallback);
+  }
+
+  public static abstract interface AudioSessionObserver.AudioSessionCallback {
+    method public abstract void onSessionAdded(cyanogenmod.media.AudioSessionObserver.AudioSessionInfo);
+    method public abstract void onSessionRemoved(cyanogenmod.media.AudioSessionObserver.AudioSessionInfo);
+  }
+
+  public class AudioSessionObserver.AudioSessionInfo {
+    ctor public AudioSessionObserver.AudioSessionInfo(int, int, int, int, int);
+    field public final int mChannelMask;
+    field public final int mFlags;
+    field public final int mSessionId;
+    field public final int mStream;
+    field public final int mUid;
+  }
+
   public class MediaRecorder {
     ctor public MediaRecorder();
     field public static final java.lang.String ACTION_HOTWORD_INPUT_CHANGED = "com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED";
