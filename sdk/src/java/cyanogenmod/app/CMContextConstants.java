@@ -32,6 +32,11 @@ public final class CMContextConstants {
     }
 
     /**
+     * @hide
+     */
+    public static final String CM_PLATFORM = "cmplatform";
+
+    /**
      * Use with {@link android.content.Context#getSystemService} to retrieve a
      * {@link cyanogenmod.app.CMStatusBarManager} for informing the user of
      * background events.
