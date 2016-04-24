@@ -74,7 +74,7 @@ public abstract class LiveDisplayFeature {
         if ((flags & MODE_CHANGED) != 0) {
             onUpdate();
         }
-        if ((flags & ALL_CHANGED) != 0) {
+        if (flags == ALL_CHANGED) {
             onSettingsChanged(null);
         }
     }
