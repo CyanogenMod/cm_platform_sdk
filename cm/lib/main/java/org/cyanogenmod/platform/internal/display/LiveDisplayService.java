@@ -19,6 +19,7 @@ import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MO
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.app.Notification;
@@ -357,13 +358,20 @@ public class LiveDisplayService extends SystemService {
 
         @Override
         public int getMode() {
-            return mModeObserver.getMode();
+            if (mConfig.hasModeSupport()) {
+                return mModeObserver.getMode();
+            } else {
+                return MODE_OFF;
+            }
         }
 
         @Override
         public boolean setMode(int mode) {
             mContext.enforceCallingOrSelfPermission(
                     cyanogenmod.platform.Manifest.permission.MANAGE_LIVEDISPLAY, null);
+            if (!mConfig.hasModeSupport()) {
+                return false;
+            }
             return mModeObserver.setMode(mode);
         }
 
