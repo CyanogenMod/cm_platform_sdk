@@ -132,7 +132,8 @@ public class LiveDisplayConfig implements Parcelable {
         ParcelInfo parcelInfo = Concierge.prepareParcel(out);
 
         // ==== FIG =====
-        out.writeLong(mCapabilities.toLongArray()[0]);
+        long[] caps = mCapabilities.toLongArray();
+        out.writeLong(caps != null && caps.length > 0 ? caps[0] : 0L);
         out.writeInt(mDefaultMode);
         out.writeInt(mDefaultDayTemperature);
         out.writeInt(mDefaultNightTemperature);
