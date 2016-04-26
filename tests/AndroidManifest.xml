@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
     <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
@@ -24,6 +25,7 @@
     <uses-permission android:name="cyanogenmod.permission.READ_THEMES" />
     <uses-permission android:name="cyanogenmod.permission.WRITE_THEMES" />
     <uses-permission android:name="cyanogenmod.permission.ACCESS_THEME_MANAGER" />
+    <uses-permission android:name="cyanogenmod.permission.MANAGE_LIVEDISPLAY" />
 
     <uses-permission android:name="android.permission.STATUS_BAR_SERVICE" />
 
