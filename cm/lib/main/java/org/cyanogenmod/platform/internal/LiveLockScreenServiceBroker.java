@@ -237,14 +237,7 @@ public class LiveLockScreenServiceBroker extends SystemService {
     @Override
     public void onStart() {
         if (DEBUG) Slog.d(TAG, "service started");
-        if (mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.LIVE_LOCK_SCREEN)) {
-            publishBinderService(CMContextConstants.CM_LIVE_LOCK_SCREEN_SERVICE,
-                    new BinderService());
-        } else {
-            Slog.wtf(TAG, "CM live lock screen service started by system server but feature xml " +
-                    "not declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_LIVE_LOCK_SCREEN_SERVICE, new BinderService());
     }
 
     @Override

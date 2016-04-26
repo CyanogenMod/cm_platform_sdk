@@ -344,13 +344,7 @@ public class CMHardwareService extends SystemService implements ThermalUpdateCal
         super(context);
         mContext = context;
         mCmHwImpl = getImpl(context);
-        if (context.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.HARDWARE_ABSTRACTION)) {
-            publishBinderService(CMContextConstants.CM_HARDWARE_SERVICE, mService);
-        } else {
-            Log.wtf(TAG, "CM hardware service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_HARDWARE_SERVICE, mService);
     }
 
     @Override

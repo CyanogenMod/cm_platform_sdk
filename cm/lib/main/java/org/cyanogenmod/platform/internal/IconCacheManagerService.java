@@ -52,12 +52,7 @@ public class IconCacheManagerService extends SystemService {
     @Override
     public void onStart() {
         Log.d(TAG, "registerIconCache cmiconcache: " + this);
-        if (mContext.getPackageManager().hasSystemFeature(CMContextConstants.Features.THEMES)) {
-            publishBinderService(CMContextConstants.CM_ICON_CACHE_SERVICE, mService);
-        } else {
-            Log.wtf(TAG, "IconCache service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_ICON_CACHE_SERVICE, mService);
     }
 
     private void purgeIconCache() {
