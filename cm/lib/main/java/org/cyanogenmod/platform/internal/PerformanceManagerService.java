@@ -111,13 +111,7 @@ public class PerformanceManagerService extends SystemService {
 
     @Override
     public void onStart() {
-        if (mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.PERFORMANCE)) {
-            publishBinderService(CMContextConstants.CM_PERFORMANCE_SERVICE, mBinder);
-        } else {
-            Log.wtf(TAG, "CM performance service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_PERFORMANCE_SERVICE, mBinder);
         publishLocalService(PerformanceManagerInternal.class, new LocalService());
     }
 
