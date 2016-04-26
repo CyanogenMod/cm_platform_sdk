@@ -26,7 +26,6 @@ import com.android.server.SystemService;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.suggest.ApplicationSuggestion;
 import cyanogenmod.app.suggest.IAppSuggestManager;
-import cyanogenmod.platform.Manifest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,13 +72,6 @@ public class AppSuggestManagerService extends SystemService {
         } else {
             Slog.i(TAG, "Bound to to suggest provider");
         }
-
-        if (mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.APP_SUGGEST)) {
-            publishBinderService(CMContextConstants.CM_APP_SUGGEST_SERVICE, mService);
-        } else {
-            Log.wtf(TAG, "CM hardware service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_APP_SUGGEST_SERVICE, mService);
     }
 }

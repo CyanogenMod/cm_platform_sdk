@@ -95,7 +95,7 @@ public final class CMAudioManager {
 
         if (!context.getPackageManager().hasSystemFeature(
                 CMContextConstants.Features.AUDIO) || !checkService()) {
-            throw new RuntimeException("Unable to get CMAudioService. The service either" +
+            Log.wtf(TAG, "Unable to get CMAudioService. The service either" +
                     " crashed, was not started, or the interface has been called to early in" +
                     " SystemServer init");
         }

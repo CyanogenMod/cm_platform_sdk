@@ -118,4 +118,7 @@
     <java-symbol type="string" name="qs_themes_label" />
     <java-symbol type="string" name="qs_themes_content_description" />
     <java-symbol type="drawable" name="ic_qs_themes" />
+
+    <!-- CM system server -->
+    <java-symbol type="string" name="config_externalSystemServer" />
 </resources>

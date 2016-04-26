@@ -56,13 +56,6 @@ public class CMAudioService extends SystemService {
 
     @Override
     public void onStart() {
-        if (!mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.AUDIO)) {
-            Log.wtf(TAG, "CM Audio service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-            return;
-        }
-
         if (!NativeHelper.isNativeLibraryAvailable()) {
             Log.wtf(TAG, "CM Audio service started by system server by native library is" +
                     "unavailable. Service will be unavailable.");

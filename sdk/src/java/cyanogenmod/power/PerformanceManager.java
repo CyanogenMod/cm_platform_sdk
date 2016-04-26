@@ -91,7 +91,7 @@ public class PerformanceManager {
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
                 CMContextConstants.Features.PERFORMANCE) && sService == null) {
-            throw new RuntimeException("Unable to get PerformanceManagerService. The service" +
+            Log.wtf(TAG, "Unable to get PerformanceManagerService. The service" +
                     " either crashed, was not started, or the interface has been called to early" +
                     " in SystemServer init");
         }
