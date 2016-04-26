@@ -36,7 +36,7 @@ import cyanogenmod.app.ICMTelephonyManager;
  *
  * @hide
  */
-public class CMTelephonyManagerService extends SystemService {
+public class CMTelephonyManagerService extends CMSystemService {
     private static final String TAG = "CMTelephonyManagerSrv";
     private static boolean localLOGD = Log.isLoggable(TAG, Log.DEBUG);
 
@@ -182,17 +182,16 @@ public class CMTelephonyManagerService extends SystemService {
     }
 
     @Override
+    public String getFeatureDeclaration() {
+        return CMContextConstants.Features.TELEPHONY;
+    }
+
+    @Override
     public void onStart() {
         if (localLOGD) {
             Log.d(TAG, "CM telephony manager service start: " + this);
         }
-        if (mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.TELEPHONY)) {
-            publishBinderService(CMContextConstants.CM_TELEPHONY_MANAGER_SERVICE, mService);
-        } else {
-            Log.wtf(TAG, "CM telephony service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_TELEPHONY_MANAGER_SERVICE, mService);
         mTelephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
     }
 
