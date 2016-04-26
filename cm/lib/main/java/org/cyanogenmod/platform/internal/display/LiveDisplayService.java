@@ -148,13 +148,7 @@ public class LiveDisplayService extends SystemService {
 
     @Override
     public void onStart() {
-        if (mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.LIVEDISPLAY)) {
-            publishBinderService(CMContextConstants.CM_LIVEDISPLAY_SERVICE, mBinder);
-        } else {
-            Log.wtf(TAG, "CM LiveDisplay service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_LIVEDISPLAY_SERVICE, mBinder);
     }
 
     @Override
