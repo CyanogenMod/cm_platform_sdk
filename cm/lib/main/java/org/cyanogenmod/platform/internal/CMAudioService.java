@@ -36,7 +36,7 @@ import cyanogenmod.media.CMAudioManager;
 import cyanogenmod.media.ICMAudioService;
 import cyanogenmod.platform.Manifest;
 
-public class CMAudioService extends SystemService {
+public class CMAudioService extends CMSystemService {
 
     private static final String TAG = "CMAudioService";
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.DEBUG);
@@ -55,14 +55,12 @@ public class CMAudioService extends SystemService {
     }
 
     @Override
-    public void onStart() {
-        if (!mContext.getPackageManager().hasSystemFeature(
-                CMContextConstants.Features.AUDIO)) {
-            Log.wtf(TAG, "CM Audio service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-            return;
-        }
+    public String getFeatureDeclaration() {
+        return CMContextConstants.Features.AUDIO;
+    }
 
+    @Override
+    public void onStart() {
         if (!NativeHelper.isNativeLibraryAvailable()) {
             Log.wtf(TAG, "CM Audio service started by system server by native library is" +
                     "unavailable. Service will be unavailable.");
