@@ -89,7 +89,7 @@
     <!-- Default wi-fi direct name -->
     <string name="config_wifiDirectName" translatable="false"></string>
 
-    <!-- Defines external services to be started by the SystemServer at boot. The service itself
+    <!-- Defines external services to be started by the CMSystemServer at boot. The service itself
          should publish as a binder services in its onStart -->
     <string-array name="config_externalCMServices">
         <item>org.cyanogenmod.platform.internal.CMStatusBarManagerService</item>
@@ -106,4 +106,7 @@
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
         <item>org.cyanogenmod.platform.internal.CMAudioService</item>
     </string-array>
+
+    <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
+    <string name="config_externalSystemServer" translatable="false">org.cyanogenmod.platform.internal.CMSystemServer</string>
 </resources>
