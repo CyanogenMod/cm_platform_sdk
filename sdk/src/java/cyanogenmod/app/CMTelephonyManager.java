@@ -60,7 +60,7 @@ public class CMTelephonyManager {
 
         if (context.getPackageManager().hasSystemFeature(CMContextConstants.Features.TELEPHONY)
                 && sService == null) {
-            throw new RuntimeException("Unable to get CMTelephonyManagerService. " +
+            Log.wtf(TAG, "Unable to get CMTelephonyManagerService. " +
                     "The service either crashed, was not started, or the interface has been " +
                     "called to early in SystemServer init");
         }

@@ -236,12 +236,7 @@ public class ThemeManagerService extends SystemService {
 
     @Override
     public void onStart() {
-        if (mContext.getPackageManager().hasSystemFeature(CMContextConstants.Features.THEMES)) {
-            publishBinderService(CMContextConstants.CM_THEME_SERVICE, mService);
-        } else {
-            Log.wtf(TAG, "Theme service started by system server but feature xml not" +
-                    " declared. Not publishing binder service!");
-        }
+        publishBinderService(CMContextConstants.CM_THEME_SERVICE, mService);
         // listen for wallpaper changes
         IntentFilter filter = new IntentFilter(Intent.ACTION_WALLPAPER_CHANGED);
         mContext.registerReceiver(mWallpaperChangeReceiver, filter);
