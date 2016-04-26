@@ -49,7 +49,7 @@ public class LiveLockScreenManager {
         sService = getService();
         if (context.getPackageManager().hasSystemFeature(
                 CMContextConstants.Features.LIVE_LOCK_SCREEN) && sService == null) {
-            throw new RuntimeException("Unable to get LiveLockScreenManagerService. " +
+            Log.wtf(TAG, "Unable to get LiveLockScreenManagerService. " +
                     "The service either crashed, was not started, or the interface has " +
                     "been called to early in SystemServer init");
         }

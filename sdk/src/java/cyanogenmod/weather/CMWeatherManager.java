@@ -25,6 +25,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.ArraySet;
+import android.util.Log;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.providers.CMSettings;
 import cyanogenmod.providers.WeatherContract;
@@ -90,7 +91,7 @@ public class CMWeatherManager {
 
         if (context.getPackageManager().hasSystemFeature(
                 CMContextConstants.Features.WEATHER_SERVICES) && (sWeatherManagerService == null)) {
-            throw new RuntimeException("Unable to bind the CMWeatherManagerService");
+            Log.wtf(TAG, "Unable to bind the CMWeatherManagerService");
         }
         mHandler = new Handler(appContext.getMainLooper());
     }
