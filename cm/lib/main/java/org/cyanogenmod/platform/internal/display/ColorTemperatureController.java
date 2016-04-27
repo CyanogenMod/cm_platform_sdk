@@ -96,19 +96,12 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
     @Override
     protected void onScreenStateChanged() {
-        // pause/continue transition
-        if (isTransitioning()) {
-            if (isScreenOn()) {
-                mHandler.post(mTransitionRunnable);
-            } else {
-                mHandler.removeCallbacks(mTransitionRunnable);
-            }
-        }
+        updateColorTemperature();
     }
 
     @Override
     protected void onTwilightUpdated() {
-        mHandler.post(mTransitionRunnable);
+        updateColorTemperature();
     }
 
     @Override
