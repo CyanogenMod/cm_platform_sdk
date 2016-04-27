@@ -66,6 +66,17 @@ public class PerformanceManager {
      */
     public static final int PROFILE_BIAS_PERFORMANCE = 4;
 
+    /**
+     * @hide
+     */
+    public static final int[] POSSIBLE_POWER_PROFILES = new int[] {
+            PROFILE_POWER_SAVE,
+            PROFILE_BALANCED,
+            PROFILE_HIGH_PERFORMANCE,
+            PROFILE_BIAS_POWER_SAVE,
+            PROFILE_BIAS_PERFORMANCE
+    };
+
     private int mNumberOfProfiles = 0;
 
     /**

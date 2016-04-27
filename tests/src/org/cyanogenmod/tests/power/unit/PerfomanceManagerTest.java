@@ -56,9 +56,15 @@ public class PerfomanceManagerTest extends AndroidTestCase {
     }
 
     @SmallTest
-    public void testGetNumberOfPerformanceProfiles() {
-        // Assert that we can even set perf profiles
-        assertTrue(mCMPerformanceManager.getNumberOfProfiles() > 0);
+    public void testPowerProfileCantBeSetIfNoneSupported() {
+        // Assert that if we attempt to set a power profile if none supported
+        // then we receive a failed response from the service.
+        if (mCMPerformanceManager.getNumberOfProfiles() == 0) {
+            for (int powerProfile = 0; powerProfile <
+                    PerformanceManager.POSSIBLE_POWER_PROFILES.length; powerProfile++) {
+                assertFalse(mCMPerformanceManager.setPowerProfile(powerProfile));
+            }
+        }
     }
 
     @SmallTest
@@ -68,18 +74,20 @@ public class PerfomanceManagerTest extends AndroidTestCase {
 
     @SmallTest
     public void testSetAndGetPowerProfile() {
-        int[] expectedStates = new int[] { PerformanceManager.PROFILE_POWER_SAVE,
-                PerformanceManager.PROFILE_BALANCED,
-                PerformanceManager.PROFILE_HIGH_PERFORMANCE};
-
-        // Set the state
-        for (int profile : expectedStates) {
-            // If the target perf profile is the same as the current one,
-            // setPowerProfile will noop, ignore that scenario
-            if (mCMPerformanceManager.getPowerProfile() != profile) {
-                mCMPerformanceManager.setPowerProfile(profile);
-                // Verify that it was set correctly.
-                assertEquals(profile, mCMPerformanceManager.getPowerProfile());
+        // Identify what power profiles are supported. The api currently returns
+        // the total number of profiles supported in an ordered manner, thus we can
+        // assume what they are and if we can set everything correctly.
+        for (int powerProfile = 0; powerProfile <
+                PerformanceManager.POSSIBLE_POWER_PROFILES.length; powerProfile++) {
+            if (powerProfile < mCMPerformanceManager.getNumberOfProfiles()) {
+                //It is supported, set it and test if it was set
+                if (mCMPerformanceManager.getPowerProfile() != powerProfile) {
+                    mCMPerformanceManager.setPowerProfile(powerProfile);
+                    // Verify that it was set correctly.
+                    assertEquals(powerProfile, mCMPerformanceManager.getPowerProfile());
+                }
+            } else {
+                assertFalse(mCMPerformanceManager.setPowerProfile(powerProfile));
             }
         }
     }
