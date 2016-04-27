@@ -1,7 +1,7 @@
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CMSDK API Coverage</title>
+<title>CTS API Coverage</title>
 <script type="text/javascript">
                     function toggleVisibility(id) {
                         element = document.getElementById(id); 
@@ -61,10 +61,10 @@
 <body>
 <h1>CTS API Coverage</h1>
 <div class="info">
-                    Generated: Thu, Apr 14, 2016 3:25 PM PDT</div>
+                    Generated: Wed, Apr 27, 2016 4:20 PM PDT</div>
 <div class="total">
-                    Total:&nbsp;53%
-                &nbsp;(258/487)
+                    Total:&nbsp;65%
+                &nbsp;(319/488)
                 </div>
 <div class="apks" onclick="toggleVisibility('sourceApks')">
                     Source Modules (1)
@@ -75,561 +75,6 @@
 </ul>
 </div>
 <ul>
-<li class="package" onclick="toggleVisibility('cyanogenmod.hardware')">
-<span class="red "><b>cyanogenmod.hardware</b>
-                &nbsp;44%
-                &nbsp;(35/79)
-            </span>
-</li>
-<div class="packageDetails" id="cyanogenmod.hardware" style="display: none">
-<ul>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayManager')">
-<span class="red "><b>LiveDisplayManager</b>
-                &nbsp;0%
-                &nbsp;(0/18)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayManager" style="display: none">
-<span class="method ">[ ]&nbsp;public&nbsp;float[]<b>&nbsp;getColorAdjustment</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.hardware.LiveDisplayConfig<b>&nbsp;getConfig</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDayColorTemperature</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.LiveDisplayManager<b>&nbsp;getInstance</b>(android.content.Context)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getMode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNightColorTemperature</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutoContrastEnabled</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutomaticOutdoorModeEnabled</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isCABCEnabled</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isColorEnhancementEnabled</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutoContrastEnabled</b>(boolean)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutomaticOutdoorModeEnabled</b>(boolean)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setCABCEnabled</b>(boolean)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorAdjustment</b>(float[])
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorEnhancementEnabled</b>(boolean)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDayColorTemperature</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setMode</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setNightColorTemperature</b>(int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayConfig')">
-<span class="red "><b>LiveDisplayConfig</b>
-                &nbsp;17%
-                &nbsp;(2/12)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayConfig" style="display: none">
-<span class="method ">[ ]<b>&nbsp;LiveDisplayConfig</b>(java.util.BitSet,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoContrast</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoOutdoorMode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultCABC</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultColorEnhancement</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultDayTemperature</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultMode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultNightTemperature</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;hasFeature</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAvailable</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.ThermalListenerCallback.State')">
-<span class="red "><b>ThermalListenerCallback.State</b>
-                &nbsp;0%
-                &nbsp;(0/1)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.ThermalListenerCallback.State" style="display: none">
-<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;final&nbsp;java.lang.String<b>&nbsp;toString</b>(int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.CMHardwareManager')">
-<span class="yellow "><b>CMHardwareManager</b>
-                &nbsp;64%
-                &nbsp;(27/42)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.CMHardwareManager" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;deletePersistentObject</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;get</b>(int)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getCurrentDisplayMode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getDefaultDisplayMode</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayColorCalibration</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationDefault</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMax</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMin</b>()
-  </span>
-<br>
-<span class="method deprecated">[ ]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayGammaCalibration</b>(int)
-  </span>
-<br>
-<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMax</b>()
-  </span>
-<br>
-<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMin</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode[]<b>&nbsp;getDisplayModes</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.CMHardwareManager<b>&nbsp;getInstance</b>(android.content.Context)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoDestination</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;long<b>&nbsp;getLtoDownloadInterval</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoSource</b>()
-  </span>
-<br>
-<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNumGammaControls</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getSerialNumber</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getSupportedFeatures</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getThermalState</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getUniqueDeviceId</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorDefaultIntensity</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorIntensity</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMaxIntensity</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMinIntensity</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorWarningIntensity</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isSunlightEnhancementSelfManaged</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isSupported</b>(int)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;byte[]<b>&nbsp;readPersistentBytes</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;readPersistentInt</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;readPersistentString</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;registerThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;requireAdaptiveBacklightForSunlightEnhancement</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;set</b>(int,&nbsp;boolean)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayColorCalibration</b>(int[])
-  </span>
-<br>
-<span class="method deprecated">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayGammaCalibration</b>(int,&nbsp;int[])
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayMode</b>(cyanogenmod.hardware.DisplayMode,&nbsp;boolean)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setVibratorIntensity</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;unRegisterThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentBytes</b>(java.lang.String,&nbsp;byte[])
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentInt</b>(java.lang.String,&nbsp;int)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentString</b>(java.lang.String,&nbsp;java.lang.String)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.DisplayMode')">
-<span class="green "><b>DisplayMode</b>
-                &nbsp;100%
-                &nbsp;(3/3)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.DisplayMode" style="display: none">
-<span class="method ">[X]<b>&nbsp;DisplayMode</b>(int,&nbsp;java.lang.String)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.IThermalListenerCallback.Stub')">
-<span class="green "><b>IThermalListenerCallback.Stub</b>
-                &nbsp;100%
-                &nbsp;(3/3)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.hardware.IThermalListenerCallback.Stub" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;android.os.IBinder<b>&nbsp;asBinder</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.IThermalListenerCallback<b>&nbsp;asInterface</b>(android.os.IBinder)
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;onTransact</b>(int,&nbsp;android.os.Parcel,&nbsp;android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-</ul>
-</div>
-<li class="package" onclick="toggleVisibility('cyanogenmod.weather')">
-<span class="red "><b>cyanogenmod.weather</b>
-                &nbsp;13%
-                &nbsp;(8/62)
-            </span>
-</li>
-<div class="packageDetails" id="cyanogenmod.weather" style="display: none">
-<ul>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo')">
-<span class="red "><b>WeatherInfo</b>
-                &nbsp;14%
-                &nbsp;(2/14)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherInfo" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.util.List<b>&nbsp;getForecasts</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getHumidity</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTemperature</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;long<b>&nbsp;getTimestamp</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTodaysHigh</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getTodaysLow</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getWindDirection</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getWindSpeed</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getWindSpeedUnit</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.Builder')">
-<span class="red "><b>WeatherInfo.Builder</b>
-                &nbsp;0%
-                &nbsp;(0/9)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.Builder" style="display: none">
-<span class="method ">[ ]<b>&nbsp;WeatherInfo.Builder</b>(java.lang.String,&nbsp;double,&nbsp;int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;build</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setForecast</b>(java.util.List)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setHumidity</b>(double)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTimestamp</b>(long)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysHigh</b>(double)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysLow</b>(double)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWeatherCondition</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWind</b>(double,&nbsp;double,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation')">
-<span class="red "><b>WeatherLocation</b>
-                &nbsp;25%
-                &nbsp;(2/8)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherLocation" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityId</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountry</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountryId</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getPostalCode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getState</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.CMWeatherManager')">
-<span class="red "><b>CMWeatherManager</b>
-                &nbsp;0%
-                &nbsp;(0/8)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.CMWeatherManager" style="display: none">
-<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;cancelRequest</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getActiveWeatherServiceProviderLabel</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.weather.CMWeatherManager<b>&nbsp;getInstance</b>(android.content.Context)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;lookupCity</b>(java.lang.String,&nbsp;cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;registerWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(android.location.Location,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(cyanogenmod.weather.WeatherLocation,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;unregisterWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation.Builder')">
-<span class="red "><b>WeatherLocation.Builder</b>
-                &nbsp;0%
-                &nbsp;(0/7)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherLocation.Builder" style="display: none">
-<span class="method ">[ ]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String,&nbsp;java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;build</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountry</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountryId</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setPostalCode</b>(java.lang.String)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setState</b>(java.lang.String)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.RequestInfo')">
-<span class="red "><b>RequestInfo</b>
-                &nbsp;29%
-                &nbsp;(2/7)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.RequestInfo" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityName</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;android.location.Location<b>&nbsp;getLocation</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getRequestType</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;getWeatherLocation</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast')">
-<span class="red "><b>WeatherInfo.DayForecast</b>
-                &nbsp;40%
-                &nbsp;(2/5)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getHigh</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;double<b>&nbsp;getLow</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast.Builder')">
-<span class="red "><b>WeatherInfo.DayForecast.Builder</b>
-                &nbsp;0%
-                &nbsp;(0/4)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast.Builder" style="display: none">
-<span class="method ">[ ]<b>&nbsp;WeatherInfo.DayForecast.Builder</b>(int)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast<b>&nbsp;build</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setHigh</b>(double)
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setLow</b>(double)
-  </span>
-<br>
-</div>
-</ul>
-</div>
 <li class="package" onclick="toggleVisibility('cyanogenmod.providers')">
 <span class="red "><b>cyanogenmod.providers</b>
                 &nbsp;20%
@@ -882,8 +327,8 @@
 </div>
 <li class="package" onclick="toggleVisibility('cyanogenmod.weatherservice')">
 <span class="red "><b>cyanogenmod.weatherservice</b>
-                &nbsp;12%
-                &nbsp;(2/17)
+                &nbsp;41%
+                &nbsp;(7/17)
             </span>
 </li>
 <div class="packageDetails" id="cyanogenmod.weatherservice" style="display: none">
@@ -914,26 +359,6 @@
   </span>
 <br>
 </div>
-<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequestResult')">
-<span class="red "><b>ServiceRequestResult</b>
-                &nbsp;50%
-                &nbsp;(2/4)
-            </span>
-</li>
-<div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequestResult" style="display: none">
-<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;java.util.List<b>&nbsp;getLocationLookupList</b>()
-  </span>
-<br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;getWeatherInfo</b>()
-  </span>
-<br>
-<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
-  </span>
-<br>
-</div>
 <li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequest')">
 <span class="red "><b>ServiceRequest</b>
                 &nbsp;0%
@@ -954,20 +379,40 @@
   </span>
 <br>
 </div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequestResult')">
+<span class="green "><b>ServiceRequestResult</b>
+                &nbsp;100%
+                &nbsp;(4/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequestResult" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.util.List<b>&nbsp;getLocationLookupList</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;getWeatherInfo</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
 <li class="class" onclick="toggleVisibility('cyanogenmod.weatherservice.ServiceRequestResult.Builder')">
-<span class="red "><b>ServiceRequestResult.Builder</b>
-                &nbsp;0%
-                &nbsp;(0/3)
+<span class="green "><b>ServiceRequestResult.Builder</b>
+                &nbsp;100%
+                &nbsp;(3/3)
             </span>
 </li>
 <div class="classDetails" id="cyanogenmod.weatherservice.ServiceRequestResult.Builder" style="display: none">
-<span class="method ">[ ]<b>&nbsp;ServiceRequestResult.Builder</b>(cyanogenmod.weather.WeatherInfo)
+<span class="method ">[X]<b>&nbsp;ServiceRequestResult.Builder</b>(cyanogenmod.weather.WeatherInfo)
   </span>
 <br>
-<span class="method ">[ ]<b>&nbsp;ServiceRequestResult.Builder</b>(java.util.List)
+<span class="method ">[X]<b>&nbsp;ServiceRequestResult.Builder</b>(java.util.List)
   </span>
 <br>
-<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weatherservice.ServiceRequestResult<b>&nbsp;build</b>()
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weatherservice.ServiceRequestResult<b>&nbsp;build</b>()
   </span>
 <br>
 </div>
@@ -975,16 +420,16 @@
 </div>
 <li class="package" onclick="toggleVisibility('cyanogenmod.util')">
 <span class="red "><b>cyanogenmod.util</b>
-                &nbsp;0%
-                &nbsp;(0/8)
+                &nbsp;13%
+                &nbsp;(1/8)
             </span>
 </li>
 <div class="packageDetails" id="cyanogenmod.util" style="display: none">
 <ul>
 <li class="class" onclick="toggleVisibility('cyanogenmod.util.ColorUtils')">
 <span class="red "><b>ColorUtils</b>
-                &nbsp;0%
-                &nbsp;(0/8)
+                &nbsp;13%
+                &nbsp;(1/8)
             </span>
 </li>
 <div class="classDetails" id="cyanogenmod.util.ColorUtils" style="display: none">
@@ -1009,7 +454,7 @@
 <span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;com.android.internal.util.cm.palette.Palette.Swatch<b>&nbsp;getDominantSwatch</b>(com.android.internal.util.cm.palette.Palette)
   </span>
 <br>
-<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;float[]<b>&nbsp;temperatureToRGB</b>(int)
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;float[]<b>&nbsp;temperatureToRGB</b>(int)
   </span>
 <br>
 </div>
@@ -1642,6 +1087,564 @@
 </li>
 <div class="classDetails" id="cyanogenmod.app.CustomTile.GridExpandedStyle" style="display: none">
 <span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;setGridItems</b>(java.util.ArrayList)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.hardware')">
+<span class="yellow "><b>cyanogenmod.hardware</b>
+                &nbsp;61%
+                &nbsp;(49/80)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.hardware" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayManager')">
+<span class="red "><b>LiveDisplayManager</b>
+                &nbsp;44%
+                &nbsp;(8/18)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayManager" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;float[]<b>&nbsp;getColorAdjustment</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.LiveDisplayConfig<b>&nbsp;getConfig</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDayColorTemperature</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.LiveDisplayManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getNightColorTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutoContrastEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isAutomaticOutdoorModeEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isCABCEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isColorEnhancementEnabled</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutoContrastEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setAutomaticOutdoorModeEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setCABCEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorAdjustment</b>(float[])
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setColorEnhancementEnabled</b>(boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setDayColorTemperature</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setMode</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setNightColorTemperature</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.ThermalListenerCallback.State')">
+<span class="red "><b>ThermalListenerCallback.State</b>
+                &nbsp;0%
+                &nbsp;(0/1)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.ThermalListenerCallback.State" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;final&nbsp;java.lang.String<b>&nbsp;toString</b>(int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.CMHardwareManager')">
+<span class="yellow "><b>CMHardwareManager</b>
+                &nbsp;67%
+                &nbsp;(28/42)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.CMHardwareManager" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;deletePersistentObject</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;get</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getCurrentDisplayMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode<b>&nbsp;getDefaultDisplayMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayColorCalibration</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationDefault</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMax</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDisplayColorCalibrationMin</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int[]<b>&nbsp;getDisplayGammaCalibration</b>(int)
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMax</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDisplayGammaCalibrationMin</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.hardware.DisplayMode[]<b>&nbsp;getDisplayModes</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.CMHardwareManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoDestination</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;long<b>&nbsp;getLtoDownloadInterval</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getLtoSource</b>()
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;int<b>&nbsp;getNumGammaControls</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getSerialNumber</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getSupportedFeatures</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getThermalState</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getUniqueDeviceId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorDefaultIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMaxIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorMinIntensity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getVibratorWarningIntensity</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;isSunlightEnhancementSelfManaged</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isSupported</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;byte[]<b>&nbsp;readPersistentBytes</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;readPersistentInt</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;readPersistentString</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;registerThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;requireAdaptiveBacklightForSunlightEnhancement</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;set</b>(int,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayColorCalibration</b>(int[])
+  </span>
+<br>
+<span class="method deprecated">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayGammaCalibration</b>(int,&nbsp;int[])
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setDisplayMode</b>(cyanogenmod.hardware.DisplayMode,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;setVibratorIntensity</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;unRegisterThermalListener</b>(cyanogenmod.hardware.ThermalListenerCallback)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentBytes</b>(java.lang.String,&nbsp;byte[])
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentInt</b>(java.lang.String,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;writePersistentString</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.LiveDisplayConfig')">
+<span class="yellow "><b>LiveDisplayConfig</b>
+                &nbsp;54%
+                &nbsp;(7/13)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.LiveDisplayConfig" style="display: none">
+<span class="method ">[ ]<b>&nbsp;LiveDisplayConfig</b>(java.util.BitSet,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean,&nbsp;boolean)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoContrast</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultAutoOutdoorMode</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultCABC</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;boolean<b>&nbsp;getDefaultColorEnhancement</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDefaultDayTemperature</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getDefaultMode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getDefaultNightTemperature</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;hasFeature</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;hasModeSupport</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;isAvailable</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.DisplayMode')">
+<span class="green "><b>DisplayMode</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.DisplayMode" style="display: none">
+<span class="method ">[X]<b>&nbsp;DisplayMode</b>(int,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.hardware.IThermalListenerCallback.Stub')">
+<span class="green "><b>IThermalListenerCallback.Stub</b>
+                &nbsp;100%
+                &nbsp;(3/3)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.hardware.IThermalListenerCallback.Stub" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;android.os.IBinder<b>&nbsp;asBinder</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;static&nbsp;cyanogenmod.hardware.IThermalListenerCallback<b>&nbsp;asInterface</b>(android.os.IBinder)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;boolean<b>&nbsp;onTransact</b>(int,&nbsp;android.os.Parcel,&nbsp;android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+</ul>
+</div>
+<li class="package" onclick="toggleVisibility('cyanogenmod.weather')">
+<span class="yellow "><b>cyanogenmod.weather</b>
+                &nbsp;79%
+                &nbsp;(49/62)
+            </span>
+</li>
+<div class="packageDetails" id="cyanogenmod.weather" style="display: none">
+<ul>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.CMWeatherManager')">
+<span class="red "><b>CMWeatherManager</b>
+                &nbsp;0%
+                &nbsp;(0/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.CMWeatherManager" style="display: none">
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;cancelRequest</b>(int)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getActiveWeatherServiceProviderLabel</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;static&nbsp;cyanogenmod.weather.CMWeatherManager<b>&nbsp;getInstance</b>(android.content.Context)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;lookupCity</b>(java.lang.String,&nbsp;cyanogenmod.weather.CMWeatherManager.LookupCityRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;registerWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(android.location.Location,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;requestWeatherUpdate</b>(cyanogenmod.weather.WeatherLocation,&nbsp;cyanogenmod.weather.CMWeatherManager.WeatherUpdateRequestListener)
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;void<b>&nbsp;unregisterWeatherServiceProviderChangeListener</b>(cyanogenmod.weather.CMWeatherManager.WeatherServiceProviderChangeListener)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.RequestInfo')">
+<span class="red "><b>RequestInfo</b>
+                &nbsp;29%
+                &nbsp;(2/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.RequestInfo" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityName</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;android.location.Location<b>&nbsp;getLocation</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getRequestType</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
+  </span>
+<br>
+<span class="method ">[ ]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;getWeatherLocation</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo')">
+<span class="green "><b>WeatherInfo</b>
+                &nbsp;100%
+                &nbsp;(14/14)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.util.List<b>&nbsp;getForecasts</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getHumidity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getTemperature</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getTemperatureUnit</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;long<b>&nbsp;getTimestamp</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getTodaysHigh</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getTodaysLow</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getWindDirection</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getWindSpeed</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getWindSpeedUnit</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.Builder')">
+<span class="green "><b>WeatherInfo.Builder</b>
+                &nbsp;100%
+                &nbsp;(9/9)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.Builder" style="display: none">
+<span class="method ">[X]<b>&nbsp;WeatherInfo.Builder</b>(java.lang.String,&nbsp;double,&nbsp;int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setForecast</b>(java.util.List)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setHumidity</b>(double)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTimestamp</b>(long)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysHigh</b>(double)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setTodaysLow</b>(double)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWeatherCondition</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.Builder<b>&nbsp;setWind</b>(double,&nbsp;double,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation')">
+<span class="green "><b>WeatherLocation</b>
+                &nbsp;100%
+                &nbsp;(8/8)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherLocation" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCity</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCityId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountry</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getCountryId</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getPostalCode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;java.lang.String<b>&nbsp;getState</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherLocation.Builder')">
+<span class="green "><b>WeatherLocation.Builder</b>
+                &nbsp;100%
+                &nbsp;(7/7)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherLocation.Builder" style="display: none">
+<span class="method ">[X]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String,&nbsp;java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]<b>&nbsp;WeatherLocation.Builder</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountry</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setCountryId</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setPostalCode</b>(java.lang.String)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherLocation.Builder<b>&nbsp;setState</b>(java.lang.String)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast')">
+<span class="green "><b>WeatherInfo.DayForecast</b>
+                &nbsp;100%
+                &nbsp;(5/5)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast" style="display: none">
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;describeContents</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;int<b>&nbsp;getConditionCode</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getHigh</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;double<b>&nbsp;getLow</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;void<b>&nbsp;writeToParcel</b>(android.os.Parcel,&nbsp;int)
+  </span>
+<br>
+</div>
+<li class="class" onclick="toggleVisibility('cyanogenmod.weather.WeatherInfo.DayForecast.Builder')">
+<span class="green "><b>WeatherInfo.DayForecast.Builder</b>
+                &nbsp;100%
+                &nbsp;(4/4)
+            </span>
+</li>
+<div class="classDetails" id="cyanogenmod.weather.WeatherInfo.DayForecast.Builder" style="display: none">
+<span class="method ">[X]<b>&nbsp;WeatherInfo.DayForecast.Builder</b>(int)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast<b>&nbsp;build</b>()
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setHigh</b>(double)
+  </span>
+<br>
+<span class="method ">[X]&nbsp;public&nbsp;cyanogenmod.weather.WeatherInfo.DayForecast.Builder<b>&nbsp;setLow</b>(double)
   </span>
 <br>
 </div>
