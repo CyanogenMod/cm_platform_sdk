@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Напољу (јако сунце)</string>
   <string name="live_display_outdoor_summary">Користи само подешавања за напоље</string>
   <string name="live_display_hint">LiveDisplay може смањити напрезање очију и помоћи да спавате ноћу. Додирните да пробате!</string>
+  <string name="accessibility_quick_settings_live_display_off">Активни екран искључен.</string>
+  <string name="accessibility_quick_settings_live_display_auto">Активни Екран: ауто режим.</string>
+  <string name="accessibility_quick_settings_live_display_day">Активни Екран: дневни режим.</string>
+  <string name="accessibility_quick_settings_live_display_night">Активни Екран: ноћни режим.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">Активни Екран: режим на отвореном.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">Активни Екран је искључен.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">Активни Екран промењен у ауто режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">Активни Екран промењен у дневни режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">Активни Екран промењен у ноћни режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">Активни Екран промењен у режим на отвореном.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">закључани екран треће стране</string>
   <!-- Third party keyguard permission description -->
@@ -154,8 +164,15 @@
   <string name="permlab_weather_access_mgr">Приступ услузи временске прогнозе</string>
   <string name="permdesc_weather_access_mgr">Омогућава апликацији да приступи услугама временске прогнозе у систему. Није потребно нормалним апликацијама.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">промени коришћење података базе података</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Дозвола апликацији да ажурира садржај података базе података.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">прочитај податке коришћења базе података</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Дозвола апликацији да чита садржај података базе података.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">Управљај подешавањем Активног екрана</string>
+  <string name="permdesc_manageLiveDisplay">Омогућује апликацији да подеси подешавања напредног приказа.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

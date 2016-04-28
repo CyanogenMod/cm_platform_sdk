@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">กลางแจ้ง (แดดจ้ามาก)</string>
   <string name="live_display_outdoor_summary">ใช้การตั้งค่ากลางแจ้งเท่านั้น</string>
   <string name="live_display_hint">LiveDisplay สามารถช่วยลดอาการปวดตา และช่วยให้คุณนอนหลับในเวลากลางคืน คลิกที่นี่เพื่อลอง!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay ปิดอยู่</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: รูปแบบอัตโนมัติ</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: รูปแบบกลางวัน</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: รูปแบบกลางคืน</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: รูปแบบกลางแจ้ง</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay ถูกปิด</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay เปลี่ยนเป็นรูปแบบอัตโนมัติ</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay เปลี่ยนเป็นรูปแบบกลางวัน</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay เปลี่ยนเป็นรูปแบบกลางคืน</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay เปลี่ยนเป็นรูปแบบกลางแจ้ง</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">หน้าจอล็อคบุคคลที่สาม</string>
   <!-- Third party keyguard permission description -->
@@ -133,15 +143,36 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">อนุญาตให้แอปเข้าถึงบริการด้านประสิทธิภาพ ซึ่งไม่จำเป็นสำหรับแอปปกติ</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">เข้าถึงบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">อนุญาตให้แอพสามารถเข้าจัดการ บริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">เข้าถึงบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">อนุญาตให้แอประบบสามารถเข้าใช้งาน บริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">ให้การบริการ หน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">อนุญาตให้บริการสามารถจัดการบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">อ่านสภาพอากาศ</string>
+  <string name="permdesc_weather_read">อนุญาตให้แอปอ่านเนื้อหาจากบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_write">ปรับปรุงบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_write">อนุญาตให้แอพสามารถอัพเดทเนื้อหาของบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_bind">ผูกมัดเป็นบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_bind">อนุญาตให้แอปยืนยันตัวตนเป็นบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_access_mgr">เข้าถึงบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_access_mgr">อนุญาตให้แอปสามารถจัดการบริการรายงานสภาพอากาศในระบบ ปกติแล้วไม่ต้องการใช้งานในแอปทั่วไป</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">แก้ไขฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">อนุญาตให้แอปสามารถปรับปรุงเนื้อหาของฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">อ่านฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">อนุญาตให้แอปสามารถอ่านเนื้อหาจากฐานข้อมูลการใช้งาน</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">จัดการตั้งค่า LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">อนุญาตให้แอปตั้งค่าการแสดงผลขั้นสูง</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

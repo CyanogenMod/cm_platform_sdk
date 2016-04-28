@@ -89,7 +89,7 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatico</string>
   <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>
-  <string name="live_display_off">Spento</string>
+  <string name="live_display_off">Disattivato</string>
   <string name="live_display_off_summary">Disattiva tutte le regolazioni</string>
   <string name="live_display_day">Giorno</string>
   <string name="live_display_day_summary">Usa solo impostazioni giorno</string>
@@ -174,4 +174,5 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">gestisci le impostazioni LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Consenti ad un\'app di configurare impostazioni avanzate del display.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

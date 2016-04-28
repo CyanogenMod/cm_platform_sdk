@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">户外（阳光）</string>
   <string name="live_display_outdoor_summary">仅使用户外设置</string>
   <string name="live_display_hint">LiveDisplay 可以帮助减少眼睛疲劳，帮助您的夜间睡眠。点击此处来试一试！</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay 关闭。</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay：自动模式。</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay：白天模式。</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay：夜晚模式。</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay：户外模式。</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay 已关闭。</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay 已修改为自动模式。</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay 已修改为白天模式。</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay 已修改为夜晚模式。</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay 已修改为户外模式。</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">第三方锁屏</string>
   <!-- Third party keyguard permission description -->
@@ -162,4 +172,7 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">允许应用从数据使用情况数据库中读取内容。</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">管理 LiveDisplay 设置</string>
+  <string name="permdesc_manageLiveDisplay">允许应用配置高级显示设置。</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Kalean (eguzkipean)</string>
   <string name="live_display_outdoor_summary">Erabili kaleko ezarpenak besterik ez</string>
   <string name="live_display_hint">LiveDisplayk begi nekea gutxitu eta gauez lo egiten lagundu dezake. Probatu ezazu!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay ezgaituta.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modu automatikoa.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: eguna modua.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gaua modua.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: kaleko modua.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay ezgaituta.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay modu automatikora aldatu da.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay eguna modura aldatu da.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gaua modura aldatu da.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay kaleko modura aldatu da.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">hirugarrengoen blokeo pantaila</string>
   <!-- Third party keyguard permission description -->
@@ -164,4 +174,5 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplay ezarpenak kudeatu</string>
   <string name="permdesc_manageLiveDisplay">Pantailaren ezarpen aurreratuak ezartzea ahalbidetzen dio aplikazioari.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

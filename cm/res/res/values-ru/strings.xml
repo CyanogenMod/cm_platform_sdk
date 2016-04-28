@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">На улице (яркое солнце)</string>
   <string name="live_display_outdoor_summary">Только уличный режим</string>
   <string name="live_display_hint">LiveDisplay поможет снизить зрительное напряжение и улучшить сон. Нажмите здесь, чтобы попробовать!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay выключен.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay работает в автоматическом режиме.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay работает в дневном режиме.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay работает в ночном режиме.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay работает в режиме «на улице».</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключен.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay переключён в автоматический режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay переключён в дневной режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay переключён в ночной режим.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay переключён в режим «на улице».</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">Сторонний экран блокировки</string>
   <!-- Third party keyguard permission description -->
@@ -144,4 +154,5 @@
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

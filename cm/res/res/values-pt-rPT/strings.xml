@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Exterior (sol brilhante)</string>
   <string name="live_display_outdoor_summary">Usar apenas as definições de exterior</string>
   <string name="live_display_hint">O LiveDisplay pode ajudar a reduzir a fadiga ocular e ajudá-lo a dormir melhor à noite. Toque aqui para experimentar!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay desligado.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modo dia.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modo noite.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modo exterior.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay foi desligado.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay alterado para modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay alterado para modo dia.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay alterado para modo noite.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay alterado para modo exterior.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">ecrã de bloqueio de terceiros</string>
   <!-- Third party keyguard permission description -->
@@ -163,4 +173,7 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Permite que uma aplicação leia o conteúdo da base de dados de utilização de dados.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">gerir as definições do LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Permite que uma aplicação configure definições avançadas do ecrã.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

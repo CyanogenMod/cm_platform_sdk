@@ -174,4 +174,7 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">διαχείριση ρυθμίσεων LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Επιτρέπει σε μια εφαρμογή να τροποποιεί τις ρυθμίσεις οθόνης για προχωρημένους.</string>
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">παρατήρηση αλλαγών στις συνεδρίες ήχου</string>
+  <string name="permdesc_observe_audio_sessions">Επιτρέπει σε μια εφαρμογή να παρατηρεί τις ροές ήχου να δημιουργούνται και να καταστρέφονται.</string>
 </resources>

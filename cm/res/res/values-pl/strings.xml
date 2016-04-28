@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Na zewnątrz (jasne światło)</string>
   <string name="live_display_outdoor_summary">Używaj ustawień tylko na zewnątrz</string>
   <string name="live_display_hint">LiveDisplay może pomóc w zredukowaniu efektu zmęczenia oczu oraz pomaga zasnąć w nocy. Kliknij tutaj, aby wypróbować!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay wyłączony.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: tryb automatyczny.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: tryb dzienny.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: tryb nocny.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: tryb zewnętrzny.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay został wyłączony.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay zmieniony na tryb automatyczny.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay zmieniony na tryb dzienny.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay zmieniony na tryb nocny.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay zmieniony na tryb zewnętrzny.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">blokada ekranu zewnętrznego dostawcy</string>
   <!-- Third party keyguard permission description -->
@@ -149,9 +159,20 @@
   <string name="permdesc_weather_read">Umożliwia aplikacji odczyt danych od dostawcy pogody.</string>
   <string name="permlab_weather_write">aktualizacja dostawcy pogody</string>
   <string name="permdesc_weather_write">Umożliwia aplikacji na aktualizację danych dostawcy pogody.</string>
+  <string name="permlab_weather_bind">powiąż jako usługa dostawcy pogody</string>
+  <string name="permdesc_weather_bind">Zezwala aplikacji na dostarczanie usługi prognozy pogody.</string>
+  <string name="permlab_weather_access_mgr">dostęp do usługi prognozy pogody</string>
+  <string name="permdesc_weather_access_mgr">Zezwala aplikacji na dostęp do usługi prognozy pogody w systemie. Nie powinno być wymagane przez zwykłe aplikacje.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modyfikowanie zawartości licznika danych</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Umożliwia aplikacji aktualizowanie zawartości licznika danych.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">odczyt zawartości licznika danych</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Umożliwia aplikacji odczyt zawartości licznika danych.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">zarządzanie ustawieniami LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Pozwala aplikacji na konfigurację zaawansowanych ustawień wyświetlacza.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

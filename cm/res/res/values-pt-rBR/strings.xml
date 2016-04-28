@@ -175,4 +175,5 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">gerenciar configurações do LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Permite que um aplicativo configure as definições de visualização avançada.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

@@ -162,4 +162,5 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">מאפשר ליישום לקרוא תוכן ממסד הנתונים של השימוש בנתונים.</string>
   <!-- LiveDisplay manager permission -->
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

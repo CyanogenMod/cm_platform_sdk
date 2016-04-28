@@ -175,4 +175,5 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">upravljanje z nastavitvami LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Dovoli aplikaciji nastavljanje naprednih nastavitev zaslona.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

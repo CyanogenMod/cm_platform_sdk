@@ -174,4 +174,5 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">hallitse LiveDisplay-asetuksia</string>
   <string name="permdesc_manageLiveDisplay">Sallii sovelluksen määrittää kehittyneitä näytön asetuksia.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>
