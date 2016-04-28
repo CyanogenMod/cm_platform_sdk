@@ -52,11 +52,12 @@ public class CMStatusBarManager {
     private static final String TAG = "CMStatusBarManager";
     private static boolean localLOGV = false;
 
-    private Context mContext;
+    private final Context mContext;
 
-    private static ICMStatusBarManager sService;
+    private ICMStatusBarManager mService;
 
     private static CMStatusBarManager sCMStatusBarManagerInstance;
+
     private CMStatusBarManager(Context context) {
         Context appContext = context.getApplicationContext();
         if (appContext != null) {
@@ -64,14 +65,27 @@ public class CMStatusBarManager {
         } else {
             mContext = context;
         }
-        sService = getService();
 
-        if (context.getPackageManager().hasSystemFeature(
-                cyanogenmod.app.CMContextConstants.Features.STATUSBAR) && sService == null) {
-            throw new RuntimeException("Unable to get CMStatusBarService. The service either" +
+        checkService();
+    }
+
+    private synchronized boolean checkService() {
+        if (mService != null) {
+            return true;
+        }
+        mService = getService();
+        if (mService != null) {
+            return true;
+        }
+        if (mContext.getPackageManager().hasSystemFeature(
+                cyanogenmod.app.CMContextConstants.Features.STATUSBAR)) {
+            Log.e(TAG, "Unable to get CMStatusBarService. The service either" +
                     " crashed, was not started, or the interface has been called to early in" +
                     " SystemServer init");
+        } else {
+            Log.w(TAG, "Not connected to CMStatusBarManager");
         }
+        return false;
     }
 
     /**
@@ -79,7 +93,7 @@ public class CMStatusBarManager {
      * @param context
      * @return {@link cyanogenmod.app.CMStatusBarManager}
      */
-    public static CMStatusBarManager getInstance(Context context) {
+    public static synchronized CMStatusBarManager getInstance(Context context) {
         if (sCMStatusBarManagerInstance == null) {
             sCMStatusBarManagerInstance = new CMStatusBarManager(context);
         }
@@ -118,8 +132,7 @@ public class CMStatusBarManager {
      *        show the user. Must not be null.
      */
     public void publishTile(String tag, int id, CustomTile customTile) {
-        if (sService == null) {
-            Log.w(TAG, "not connected to CMStatusBarManagerService");
+        if (!checkService()) {
             return;
         }
 
@@ -127,7 +140,7 @@ public class CMStatusBarManager {
         String pkg = mContext.getPackageName();
         if (localLOGV) Log.v(TAG, pkg + ": create(" + id + ", " + customTile + ")");
         try {
-            sService.createCustomTileWithTag(pkg, mContext.getOpPackageName(), tag, id,
+            mService.createCustomTileWithTag(pkg, mContext.getOpPackageName(), tag, id,
                     customTile, idOut, UserHandle.myUserId());
             if (id != idOut[0]) {
                 Log.w(TAG, "notify: id corrupted: sent " + id + ", got back " + idOut[0]);
@@ -152,8 +165,7 @@ public class CMStatusBarManager {
      * @param user A user handle to publish the tile as.
      */
     public void publishTileAsUser(String tag, int id, CustomTile customTile, UserHandle user) {
-        if (sService == null) {
-            Log.w(TAG, "not connected to CMStatusBarManagerService");
+        if (!checkService()) {
             return;
         }
 
@@ -161,7 +173,7 @@ public class CMStatusBarManager {
         String pkg = mContext.getPackageName();
         if (localLOGV) Log.v(TAG, pkg + ": create(" + id + ", " + customTile + ")");
         try {
-            sService.createCustomTileWithTag(pkg, mContext.getOpPackageName(), tag, id,
+            mService.createCustomTileWithTag(pkg, mContext.getOpPackageName(), tag, id,
                     customTile, idOut, user.getIdentifier());
             if (id != idOut[0]) {
                 Log.w(TAG, "notify: id corrupted: sent " + id + ", got back " + idOut[0]);
@@ -193,15 +205,14 @@ public class CMStatusBarManager {
      * @param id The identifier for the custom tile to be removed.
      */
     public void removeTile(String tag, int id) {
-        if (sService == null) {
-            Log.w(TAG, "not connected to CMStatusBarManagerService");
+        if (!checkService()) {
             return;
         }
 
         String pkg = mContext.getPackageName();
         if (localLOGV) Log.v(TAG, pkg + ": remove(" + id + ")");
         try {
-            sService.removeCustomTileWithTag(pkg, tag, id, UserHandle.myUserId());
+            mService.removeCustomTileWithTag(pkg, tag, id, UserHandle.myUserId());
         } catch (RemoteException e) {
             Slog.w("CMStatusBarManager", "warning: no cm status bar service");
         }
@@ -219,28 +230,27 @@ public class CMStatusBarManager {
      * @param user The user handle to remove the tile from.
      */
     public void removeTileAsUser(String tag, int id, UserHandle user) {
-        if (sService == null) {
-            Log.w(TAG, "not connected to CMStatusBarManagerService");
+        if (!checkService()) {
             return;
         }
 
         String pkg = mContext.getPackageName();
         if (localLOGV) Log.v(TAG, pkg + ": remove(" + id + ")");
         try {
-            sService.removeCustomTileWithTag(pkg, tag, id, user.getIdentifier());
+            mService.removeCustomTileWithTag(pkg, tag, id, user.getIdentifier());
         } catch (RemoteException e) {
         }
     }
 
     /** @hide */
     public ICMStatusBarManager getService() {
-        if (sService != null) {
-            return sService;
+        if (mService != null) {
+            return mService;
         }
         IBinder b = ServiceManager.getService(CMContextConstants.CM_STATUS_BAR_SERVICE);
         if (b != null) {
-            sService = ICMStatusBarManager.Stub.asInterface(b);
-            return sService;
+            mService = ICMStatusBarManager.Stub.asInterface(b);
+            return mService;
         }
         return null;
     }
