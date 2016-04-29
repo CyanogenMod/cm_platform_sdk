@@ -81,9 +81,11 @@ public final class AudioSessionInfo implements Parcelable {
         mChannelMask = in.readInt();
         mUid = in.readInt();
 
+        /*
         if (parcelableVersion > Build.CM_VERSION_CODES.FIG) {
             // next-gen mind-altering shit goes here
         }
+        */
 
         // Complete parcel info for the concierge
         parcelInfo.complete();
