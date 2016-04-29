@@ -143,6 +143,7 @@ LOCAL_JACK_ENABLED := disabled
 
 # just need to define this, $(TOP)/dummy should not exist
 LOCAL_SRC_FILES := $(call all-java-files-under, dummy)
+LOCAL_JAVA_RESOURCE_FILES := sdk/proguard.txt
 
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, sdk/res/res)
 LOCAL_MANIFEST_FILE := sdk/AndroidManifest.xml

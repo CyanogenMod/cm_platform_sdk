@@ -1,0 +1,3 @@
+# Ignore CyanogenMod SDK access to private resources
+-dontwarn cyanogenmod.**
+-dontnote cyanogenmod.**
