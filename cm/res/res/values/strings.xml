@@ -218,4 +218,8 @@
     <string name="permlab_observe_audio_sessions">observe audio session changes</string>
     <string name="permdesc_observe_audio_sessions">Allows an app to observe audio streams being created and destroyed.</string>
 
+    <!-- QuickSettings: Themes tile -->
+    <string name="qs_themes_label">Themes</string>
+    <string name="qs_themes_content_description">Customize your theme</string>
+
 </resources>

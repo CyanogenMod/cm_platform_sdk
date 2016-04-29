@@ -113,4 +113,9 @@
 
     <!-- External CM specific core services -->
     <java-symbol type="array" name="config_externalCMServices" />
+
+    <!-- Themes tile -->
+    <java-symbol type="string" name="qs_themes_label" />
+    <java-symbol type="string" name="qs_themes_content_description" />
+    <java-symbol type="drawable" name="ic_qs_themes" />
 </resources>

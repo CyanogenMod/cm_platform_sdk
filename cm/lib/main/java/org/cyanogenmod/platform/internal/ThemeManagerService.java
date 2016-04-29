@@ -21,6 +21,7 @@ import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -55,6 +56,8 @@ import android.util.Log;
 import com.android.server.SystemService;
 
 import cyanogenmod.app.CMContextConstants;
+import cyanogenmod.app.CMStatusBarManager;
+import cyanogenmod.app.CustomTile;
 import cyanogenmod.providers.CMSettings;
 import cyanogenmod.providers.ThemesContract.MixnMatchColumns;
 import cyanogenmod.providers.ThemesContract.ThemesColumns;
@@ -64,6 +67,8 @@ import cyanogenmod.themes.IThemeService;
 import cyanogenmod.themes.ThemeChangeRequest;
 
 import org.cyanogenmod.internal.util.ImageUtils;
+import org.cyanogenmod.internal.util.QSConstants;
+import org.cyanogenmod.internal.util.QSUtils;
 import org.cyanogenmod.internal.util.ThemeUtils;
 import org.cyanogenmod.platform.internal.AppsFailureReceiver;
 
@@ -96,6 +101,8 @@ public class ThemeManagerService extends SystemService {
     private static final String GOOGLE_SETUPWIZARD_PACKAGE = "com.google.android.setupwizard";
     private static final String CM_SETUPWIZARD_PACKAGE = "com.cyanogenmod.setupwizard";
     private static final String MANAGED_PROVISIONING_PACKAGE = "com.android.managedprovisioning";
+
+    private static final String CATEGORY_THEME_CHOOSER = "cyanogenmod.intent.category.APP_THEMES";
 
     // Defines a min and max compatible api level for themes on this system.
     private static final int MIN_COMPATIBLE_VERSION = 21;
@@ -264,6 +271,8 @@ public class ThemeManagerService extends SystemService {
             }
             registerAppsFailureReceiver();
             processInstalledThemes();
+        } else if (phase == SystemService.PHASE_BOOT_COMPLETED) {
+            publishThemesTile();
         }
     }
 
@@ -1114,6 +1123,39 @@ public class ThemeManagerService extends SystemService {
         }
 
         return SYSTEM_DEFAULT;
+    }
+
+    private void publishThemesTile() {
+        // This action should be performed as system
+        final int userId = UserHandle.myUserId();
+        long token = Binder.clearCallingIdentity();
+        try {
+            final UserHandle user = new UserHandle(userId);
+            final Context resourceContext = QSUtils.getQSTileContext(mContext, userId);
+
+            CMStatusBarManager statusBarManager = CMStatusBarManager.getInstance(mContext);
+            final PendingIntent chooserIntent = getThemeChooserPendingIntent();
+            CustomTile tile = new CustomTile.Builder(resourceContext)
+                    .setLabel(R.string.qs_themes_label)
+                    .setContentDescription(R.string.qs_themes_content_description)
+                    .setIcon(R.drawable.ic_qs_themes)
+                    .setOnClickIntent(chooserIntent)
+                    .setOnLongClickIntent(chooserIntent)
+                    .shouldCollapsePanel(true)
+                    .build();
+            statusBarManager.publishTileAsUser(QSConstants.DYNAMIC_TILE_THEMES,
+                    ThemeManagerService.class.hashCode(), tile, user);
+        } finally {
+            Binder.restoreCallingIdentity(token);
+        }
+    }
+
+    private PendingIntent getThemeChooserPendingIntent() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(CATEGORY_THEME_CHOOSER);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return PendingIntent.getActivity(mContext, ThemeManagerService.class.hashCode(),
+                intent, 0);
     }
 
     private final IBinder mService = new IThemeService.Stub() {
