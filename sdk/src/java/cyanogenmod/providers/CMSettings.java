@@ -438,6 +438,12 @@ public final class CMSettings {
                 CALL_METHOD_GET_SYSTEM,
                 CALL_METHOD_PUT_SYSTEM);
 
+        protected static final ArraySet<String> MOVED_TO_SECURE;
+        static {
+            MOVED_TO_SECURE = new ArraySet<>(1);
+            MOVED_TO_SECURE.add(Secure.DEV_FORCE_SHOW_NAVBAR);
+        }
+
         // region Methods
 
         /**
@@ -501,6 +507,11 @@ public final class CMSettings {
         /** @hide */
         public static String getStringForUser(ContentResolver resolver, String name,
                 int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from CMSettings.System"
+                        + " to CMSettings.Secure, value is unchanged.");
+                return CMSettings.Secure.getStringForUser(resolver, name, userId);
+            }
             return sNameValueCache.getStringForUser(resolver, name, userId);
         }
 
@@ -1914,7 +1925,15 @@ public final class CMSettings {
          * @hide
          */
         public static boolean shouldInterceptSystemProvider(String key) {
-            return key.equals(System.SYSTEM_PROFILES_ENABLED);
+            switch (key) {
+                case System.SYSTEM_PROFILES_ENABLED:
+                // some apps still query Settings.System.DEV_FORCE_SHOW_NAVBAR;
+                // we intercept the call, and return CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR's value
+                case Secure.DEV_FORCE_SHOW_NAVBAR:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         /**
@@ -2853,7 +2872,15 @@ public final class CMSettings {
          * @hide
          */
         public static boolean shouldInterceptSystemProvider(String key) {
-            return false;
+            switch (key) {
+                // some apps still query Settings.System.DEV_FORCE_SHOW_NAVBAR, and it was moved to
+                // Settings.Secure, then CMSettings.Secure. Forward queries from Settings.Secure
+                // to CMSettings.Secure here just in case an app stuck with the Settings.Secure call
+                case DEV_FORCE_SHOW_NAVBAR:
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 
