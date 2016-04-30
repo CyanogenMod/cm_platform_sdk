@@ -320,6 +320,9 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                 loadStringSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES,
                         R.string.def_notification_pulse_custom_value);
             }
+
+            loadBooleanSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO,
+                    R.bool.def_notification_light_color_auto);
         } finally {
             if (stmt != null) stmt.close();
         }
