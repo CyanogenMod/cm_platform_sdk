@@ -76,6 +76,9 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.System.STATUS_BAR_BATTERY_STYLE,
                 "R.integer.def_battery_style"));
+        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.System.NOTIFICATION_LIGHT_COLOR_AUTO,
+                "R.integer.def_notification_light_color_auto"));
     }
 
     //SECURE
