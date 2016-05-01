@@ -112,7 +112,7 @@ org_cyanogenmod_platform_internal_CMAudioService_listAudioSessions(JNIEnv *env, 
     if (status != NO_ERROR) {
         ALOGE("AudioSystem::listAudioSessions error %d", status);
     } else {
-        ALOGV("AudioSystem::listAudioSessions count=%d", sessions.size());
+        ALOGV("AudioSystem::listAudioSessions count=%zu", sessions.size());
     }
 
     jint jStatus = nativeToJavaStatus(status);
