@@ -446,6 +446,15 @@ package cyanogenmod.externalviews {
 
 }
 
+package cyanogenmod.graphics.drawable {
+
+  public class StopMotionVectorDrawable extends android.graphics.drawable.DrawableWrapper {
+    ctor public StopMotionVectorDrawable(android.graphics.drawable.Drawable);
+    method public void setCurrentFraction(float);
+  }
+
+}
+
 package cyanogenmod.hardware {
 
   public final class CMHardwareManager {
