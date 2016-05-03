@@ -438,6 +438,7 @@ public final class CMSettings {
                 CALL_METHOD_GET_SYSTEM,
                 CALL_METHOD_PUT_SYSTEM);
 
+        /** @hide */
         protected static final ArraySet<String> MOVED_TO_SECURE;
         static {
             MOVED_TO_SECURE = new ArraySet<>(1);
