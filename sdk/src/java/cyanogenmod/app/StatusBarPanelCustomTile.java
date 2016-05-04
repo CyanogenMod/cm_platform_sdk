@@ -132,6 +132,11 @@ public class StatusBarPanelCustomTile implements Parcelable {
         return user.getIdentifier() + "|" + pkg + "|" + id + "|" + tag + "|" + uid;
     }
 
+    /** @hide */
+    public String persistableKey() {
+        return user.getIdentifier() + "|" + pkg + "|" + tag;
+    }
+
     public static final Creator<StatusBarPanelCustomTile> CREATOR
             = new Creator<StatusBarPanelCustomTile>()
     {
