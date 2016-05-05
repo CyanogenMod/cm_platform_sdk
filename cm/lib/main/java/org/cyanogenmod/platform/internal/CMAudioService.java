@@ -113,6 +113,8 @@ public class CMAudioService extends SystemService {
 
         @Override
         public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
+            mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DUMP, TAG);
+
             pw.println();
             pw.println("CMAudio Service State:");
             try {
