@@ -23,6 +23,7 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.util.Log;
 
+import android.content.pm.PackageManager;
 import com.android.server.SystemService;
 
 import java.io.FileDescriptor;
@@ -115,18 +116,21 @@ public class CMAudioService extends SystemService {
         public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
             pw.println();
             pw.println("CMAudio Service State:");
-            try {
-                List<AudioSessionInfo> sessions = listAudioSessions(-1);
-                if (sessions.size() > 0) {
-                    pw.println("  Audio sessions:");
-                    for (AudioSessionInfo info : sessions) {
-                        pw.println("   " + info.toString());
+            if (mContext
+                .checkCallingOrSelfPermission("android.permission.DUMP") != PackageManager.PERMISSION_GRANTED) {
+                try {
+                    List<AudioSessionInfo> sessions = listAudioSessions(-1);
+                    if (sessions.size() > 0) {
+                        pw.println("  Audio sessions:");
+                        for (AudioSessionInfo info : sessions) {
+                            pw.println("   " + info.toString());
+                        }
+                    } else {
+                        pw.println("  No active audio sessions");
                     }
-                } else {
-                    pw.println("  No active audio sessions");
+                } catch (RemoteException e) {
+                    // nothing
                 }
-            } catch (RemoteException e) {
-                // nothing
             }
         }
     };
