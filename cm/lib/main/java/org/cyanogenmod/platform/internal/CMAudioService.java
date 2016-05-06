@@ -48,19 +48,6 @@ public class CMAudioService extends SystemService {
     //keep in sync with include/media/AudioPolicy.h
     private final static int AUDIO_OUTPUT_SESSION_EFFECTS_UPDATE = 10;
 
-    private static boolean sNativeLibraryLoaded;
-
-    static {
-        try {
-            System.loadLibrary("cmsdk_platform_jni");
-            sNativeLibraryLoaded = true;
-
-        } catch (Throwable t) {
-            sNativeLibraryLoaded = false;
-            Log.w(TAG, "CMSDK native platform unavailable");
-        }
-    }
-
     public CMAudioService(Context context) {
         super(context);
 
@@ -76,7 +63,7 @@ public class CMAudioService extends SystemService {
             return;
         }
 
-        if (!sNativeLibraryLoaded) {
+        if (!NativeHelper.isNativeLibraryAvailable()) {
             Log.wtf(TAG, "CM Audio service started by system server by native library is" +
                     "unavailable. Service will be unavailable.");
             return;
@@ -87,7 +74,7 @@ public class CMAudioService extends SystemService {
     @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
-            if (sNativeLibraryLoaded) {
+            if (NativeHelper.isNativeLibraryAvailable()) {
                 native_registerAudioSessionCallback(true);
             }
         }
@@ -98,7 +85,7 @@ public class CMAudioService extends SystemService {
         @Override
         public List<AudioSessionInfo> listAudioSessions(int streamType) throws RemoteException {
             final ArrayList<AudioSessionInfo> sessions = new ArrayList<AudioSessionInfo>();
-            if (!sNativeLibraryLoaded) {
+            if (!NativeHelper.isNativeLibraryAvailable()) {
                 // no sessions for u
                 return sessions;
             }
