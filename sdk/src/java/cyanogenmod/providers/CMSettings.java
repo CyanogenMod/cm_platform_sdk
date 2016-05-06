@@ -2778,7 +2778,6 @@ public final class CMSettings {
                 CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                 CMSettings.Secure.KEYBOARD_BRIGHTNESS,
                 CMSettings.Secure.POWER_MENU_ACTIONS,
-                CMSettings.Secure.STATS_COLLECTION,
                 CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                 CMSettings.Secure.QS_TILES,
                 CMSettings.Secure.QS_USE_MAIN_TILES,
