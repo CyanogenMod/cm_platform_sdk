@@ -208,6 +208,14 @@ public class CMSettingsProvider extends ContentProvider {
             else if (tableName.equals(CMDatabaseHelper.CMTableNames.TABLE_SECURE)) {
                 settingsValue = Settings.Secure.getStringForUser(contentResolver, settingsKey,
                         userId);
+                if (settingsValue != null && settingsKey.equals(CMSettings.Secure.STATS_COLLECTION)
+                        && CMSettings.Secure.getStringForUser(contentResolver, settingsKey, userId)
+                        != null) {
+                    // incorrect migration from YOG4P -> YOG7D failed to remove
+                    // Settings.Secure.STATS_COLLECTION after migration; so it may exist in both
+                    // providers; so if it exists in the new database, prefer it.
+                    continue;
+                }
 
                 // insert dnd, edit tiles for upgrade from 12.1 -> 13.0
                 if (CMSettings.Secure.QS_TILES.equals(settingsKey) && (settingsValue != null
