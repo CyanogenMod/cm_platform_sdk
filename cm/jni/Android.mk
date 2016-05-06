@@ -18,19 +18,22 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     src/org_cyanogenmod_platform_internal_CMAudioService.cpp \
+    src/org_cyanogenmod_platform_internal_PerformanceManagerService.cpp \
     src/onload.cpp
 
 LOCAL_C_INCLUDES := \
     $(JNI_H_INCLUDE) \
     $(TOP)/frameworks/base/core/jni \
-    $(TOP)/frameworks/av/include
+    $(TOP)/frameworks/av/include \
+    $(TOP)/hardware/libhardware/include
 
 LOCAL_SHARED_LIBRARIES := \
     libandroid_runtime \
-    libmedia \
-    liblog \
     libcutils \
-    libutils \
+    libhardware \
+    liblog \
+    libmedia \
+    libutils
 
 LOCAL_MODULE := libcmsdk_platform_jni
 LOCAL_MODULE_TAGS := optional
