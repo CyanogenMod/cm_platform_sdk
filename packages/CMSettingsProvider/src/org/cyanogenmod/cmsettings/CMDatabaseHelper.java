@@ -46,7 +46,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "cmsettings.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     public static class CMTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -201,6 +201,22 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             upgradeVersion = 4;
         }
 
+        if (upgradeVersion < 5) {
+            db.beginTransaction();
+            SQLiteStatement stmt = null;
+            try {
+                stmt = db.compileStatement("INSERT INTO global(name,value)"
+                        + " VALUES(?,?);");
+                loadIntegerSetting(stmt, CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                        R.integer.def_temperature_unit);
+                db.setTransactionSuccessful();
+            } finally {
+                if (stmt != null) stmt.close();
+                db.endTransaction();
+            }
+            upgradeVersion = 5;
+        }
+
         // *** Remember to update DATABASE_VERSION above!
 
         if (upgradeVersion < newVersion) {
@@ -342,6 +358,9 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             loadStringSetting(stmt,
                     CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                     R.string.def_power_notifications_ringtone);
+
+            loadIntegerSetting(stmt, CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                    R.integer.def_temperature_unit);
         } finally {
             if (stmt != null) stmt.close();
         }
