@@ -117,6 +117,9 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
         GLOBAL_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                 "R.string.def_power_notifications_ringtone"));
+        GLOBAL_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                "R.integer.def_temperature_unit"));
     }
 
     @Override
