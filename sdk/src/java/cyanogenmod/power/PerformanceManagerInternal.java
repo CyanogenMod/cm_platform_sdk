@@ -25,5 +25,5 @@ public interface PerformanceManagerInternal {
     
     void cpuBoost(int duration);
     
-    void launchBoost();
+    void launchBoost(int pid, String packageName);
 }
