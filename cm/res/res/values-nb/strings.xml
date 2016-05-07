@@ -23,25 +23,42 @@
   <string name="permlab_modifyNetworkSettings">endre innstillingene for nettverk</string>
   <string name="permdesc_modifyNetworkSettings">Tillat en app å gjøre endringer i flymodus og mobildatainnstillinger.</string>
   <string name="permlab_modifySoundSettings">endre systemets lydinnstillinger</string>
+  <string name="permdesc_modifySoundSettings">Gir en app tilgang til å gjøre endringer i avbrudd-modus lydinnstillingene.</string>
   <string name="permlab_bindCustomTileListenerService">binde til en egendefinert flis-lyttertjeneste</string>
   <string name="permdesc_bindCustomTileListenerService">Tillater at en app kan bindes til det øverste nivået i grensesnittet til en tilpasset flis-lyttertjeneste.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_readMSPhoneState">vis telefonens status og forbindelse med støtte til flere SIM-kort</string>
+  <string name="permdesc_readMSPhoneState">Gir en app tilgang til å se telefonens status og forbindelse med støtte til flere SIM-kort.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">gjøre endringer til telefonens status og forbindelse med støtte til flere SIM-kort</string>
+  <string name="permdesc_modifyMSPhoneState">Gir en app tilgang til å gjøre endringer på telefonens status og forbindelse med støtte til flere SIM-kort.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">endre system profiler</string>
   <string name="permdesc_modifyProfiles">Tillat en app å endre systemprofiler.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">bruk maskinvare framework</string>
+  <string name="permdesc_useHardwareFramework">Gir en app tilgang til CMs maskinvare framework.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">endre alarmer direkte</string>
+  <string name="permdesc_write_alarms">Gir en app tilgang til å legge til, endre eller slette alle alarmene dine.</string>
   <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">veksle planlagte alarmer</string>
+  <string name="permdesc_manage_alarms">Gir en app tilgang til å slå av eller på dine planlagte alarmer.</string>
   <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">tilgang til planlagte alarmer</string>
+  <string name="permdesc_read_alarms">Gir en app tilgang til å lese av dine planlagte alarmer.</string>
   <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">endre CM systeminnstillinger</string>
+  <string name="permdesc_writeSettings">Gir en app tilgang til å endre CMs systeminnstillinger.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">endre CM sikker systeminnstillinger</string>
+  <string name="permdesc_writeSecureSettings">Gir en app tilgang til å endre CM sikkerhets-systeminnstillinger. Tilgangen bør ikke gis til normale apps.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">administrere permanent lager</string>
+  <string name="permdesc_managePersistentStorage">Gir en app tilgang til å lese eller skrive egenskaper, som kan overleve gjenoppretting av fabrikkinnstillinger.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">tilgang til app-forslag</string>
+  <string name="permdesc_accessAppSuggestions">Gir en app tilgang til app-forslag.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
   <!-- Profiles -->
