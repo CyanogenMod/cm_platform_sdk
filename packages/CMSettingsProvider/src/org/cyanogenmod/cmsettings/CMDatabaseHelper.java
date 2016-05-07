@@ -202,17 +202,19 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 5) {
-            db.beginTransaction();
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("INSERT INTO global(name,value)"
-                        + " VALUES(?,?);");
-                loadIntegerSetting(stmt, CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
-                        R.integer.def_temperature_unit);
-                db.setTransactionSuccessful();
-            } finally {
-                if (stmt != null) stmt.close();
-                db.endTransaction();
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("INSERT INTO global(name,value)"
+                            + " VALUES(?,?);");
+                    loadIntegerSetting(stmt, CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
+                            R.integer.def_temperature_unit);
+                    db.setTransactionSuccessful();
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
             }
             upgradeVersion = 5;
         }
