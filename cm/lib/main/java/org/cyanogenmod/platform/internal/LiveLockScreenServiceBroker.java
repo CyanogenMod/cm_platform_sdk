@@ -408,7 +408,7 @@ public class LiveLockScreenServiceBroker extends SystemService {
 
         mDefaultLlsInfo = llsInfo;
         try {
-            mService.updateDefaultLiveLockScreen(llsInfo);
+            getServiceGuarded().updateDefaultLiveLockScreen(llsInfo);
         } catch (RemoteException e) {
             /* ignore */
         }
