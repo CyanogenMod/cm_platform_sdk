@@ -175,4 +175,9 @@
   <string name="permlab_manageLiveDisplay">管理 LiveDisplay 设置</string>
   <string name="permdesc_manageLiveDisplay">允许应用配置高级显示设置。</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">观察音频会话变动</string>
+  <string name="permdesc_observe_audio_sessions">允许应用观察音频流的创建和销毁。</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">主题</string>
+  <string name="qs_themes_content_description">自定义您的主题</string>
 </resources>

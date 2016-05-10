@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Ngoài trời (ánh sáng mạnh)</string>
   <string name="live_display_outdoor_summary">Chỉ sử dụng cài đặt ngoài trời</string>
   <string name="live_display_hint">LiveDisplay có thể giúp giảm mỏi mắt và giúp bạn ngủ vào ban đêm. Nhấn vào đây để thử!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay tắt.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: chế độ tự động.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: chế độ ban ngày.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: chế độ ban đêm.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: chế độ ngoài trời.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay đã tắt.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay đã đổi sang chế độ tự động.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay đã đổi sang chế độ ban ngày.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay đã đổi sang chế độ ban đêm.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay đã đổi sang chế độ ngoài trời.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">màn hình khoá bên thứ ba</string>
   <!-- Third party keyguard permission description -->
@@ -133,16 +143,41 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Cho phép một ứng dụng truy cập dịch vụ hiệu quả hoạt động. Ứng dụng bình thường không bao giờ cần quyền này.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">truy cập dịch vụ quản lý màn hình khóa động</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Cho phép ứng dụng truy cập vào dịch vụ quản lý màn hình khóa động.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">truy cập dịch vụ quản lý màn hình khóa động</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Cho phép các ứng dụng của hệ thống truy cập vào dịch vụ quản lý màn hình khóa động.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">cung cấp dịch vụ quản lý màn hình khóa động</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Cho phép dịch vụ cung cấp dịch vụ quản lý màn hình khóa động.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">đọc thời tiết</string>
+  <string name="permdesc_weather_read">Cho phép ứng dụng đọc nội dung từ nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_write">cập nhật nhà cung cấp thời tiết</string>
+  <string name="permdesc_weather_write">Cho phép ứng dụng cập nhật nội dung của nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_bind">ràng buộc như là dịch vụ của nhà cung cấp thời tiết</string>
+  <string name="permdesc_weather_bind">Cho phép ứng dụng được xác định như là dịch vụ của nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_access_mgr">truy cập dịch vụ thời tiết</string>
+  <string name="permdesc_weather_access_mgr">Cho phép ứng dụng truy cập dịch vụ thời tiết trong hệ thống. Ứng dụng bình thường không bao giờ cần sự cho phép này.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">sửa đổi cơ sở dữ liệu sử dụng dữ liệu</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Cho phép ứng dụng cập nhật nội dung của cơ sở dữ liệu sử dụng dữ liệu.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">đọc cơ sở dữ liệu sử dụng dữ liệu</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Cho phép ứng dụng đọc nội dung từ cơ sở dữ liệu sử dụng dữ liệu.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">quản lý cài đặt LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Cho phép ứng dụng thiết lập cấu hình cài đặt hiển thị nâng cao.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">quan sát các thay đổi về phiên âm thanh</string>
+  <string name="permdesc_observe_audio_sessions">Cho phép ứng dụng quan sát dòng âm thanh được tạo và bị hủy.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Chủ đề</string>
+  <string name="qs_themes_content_description">Tùy chỉnh chủ đề của bạn</string>
 </resources>

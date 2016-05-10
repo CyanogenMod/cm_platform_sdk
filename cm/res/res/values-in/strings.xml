@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Luar ruangan (matahari cerah)</string>
   <string name="live_display_outdoor_summary">Hanya menggunakan pengaturan luar ruangan</string>
   <string name="live_display_hint">LiveDisplay dapat membantu mengurangi kelelahan mata dan membantu Anda tidur di malam hari. Klik di sini untuk mencobanya!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay nonaktif.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modus otomatis.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modus siang.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modus malam.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modus luar ruangan.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay dinonaktifkan.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay diubah menjadi modus otomatis.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay diubah menjadi modus siang.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay diubah menjadi modus malam.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay diubah menjadi modus luar ruangan.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">layar kunci pihak ketiga</string>
   <!-- Third party keyguard permission description -->
@@ -119,30 +129,55 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_accessThemeService">akses layanan tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Mengizinkan sebuah aplikasi untuk mengakses layanan tema. Tidak dibutuhkan untuk aplikasi biasa.</string>
+  <string name="permdesc_accessThemeService">Izinkan sebuah aplikasi untuk mengakses layanan tema. Tidak dibutuhkan untuk aplikasi biasa.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_readThemes">baca info tema Anda</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Mengizinkan aplikasi untuk membaca tema Anda dan memilih tema yang telah Anda terapkan.</string>
+  <string name="permdesc_readThemesDesc">Izinkan aplikasi untuk membaca tema dan memilih tema yang telah Anda terapkan.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_writeThemes">mengubah tema Anda</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Mengizinkan aplikasi untuk memasukkan tema-tema baru dan tema yang telah Anda pergunakan.</string>
+  <string name="permdesc_writeThemesDesc">Izinkan aplikasi untuk memasukkan tema-tema baru dan tema yang telah Anda terapkan.</string>
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">akses pengelola kinerja</string>
   <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Mengizinkan sebuah aplikasi untuk masuk layanan kinerja. Tidak dibutuhkan untuk aplikasi biasa.</string>
+  <string name="permdesc_perfAccessDesc">Izinkan aplikasi untuk mengakses layanan kinerja. Tidak dibutuhkan untuk aplikasi biasa.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">akses layanan manajer untuk layar kunci hidup</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Izinkan aplikasi untuk mengakses layanan manajer untuk layar kunci hidup.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">akses layanan manajer untuk layar kunci hidup</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Izinkan aplikasi sistem untuk mengakses layanan manajer untuk layar kunci hidup.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">sediakan layanan manajer untuk layar kunci hidup</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Izinkan layanan untuk menyediakan layanan manajer untuk layar kunci hidup.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">baca cuaca</string>
+  <string name="permdesc_weather_read">Izinkan aplikasi untuk membaca konten dari penyedia cuaca.</string>
+  <string name="permlab_weather_write">perbarui penyedia cuaca</string>
+  <string name="permdesc_weather_write">Izinkan aplikasi untuk memperbarui konten dari penyedia cuaca.</string>
+  <string name="permlab_weather_bind">ikat sebagai layanan penyedia cuaca</string>
+  <string name="permdesc_weather_bind">Izinkan aplikasi untuk diidentifikasi sebagai layanan penyedia cuaca.</string>
+  <string name="permlab_weather_access_mgr">akses layanan cuaca</string>
+  <string name="permdesc_weather_access_mgr">Izinkan aplikasi untuk mengakses layanan cuaca dalam sistem. Tidak dibutuhkan untuk aplikasi biasa.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">ubah basis data penggunaan data</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Izinkan aplikasi untuk memperbarui konten dari basis data penggunaan data.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">baca basis data penggunaan data</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Izinkan aplikasi untuk membaca konten dari basis data penggunaan data.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">kelola pengaturan LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Izinkan aplikasi untuk mengonfigurasi pengaturan tampilan lanjutan.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">pantau perubahan sesi audio</string>
+  <string name="permdesc_observe_audio_sessions">Izinkan aplikasi untuk memantau pengaliran audio yang dibuat dan dihilangkan.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Tema</string>
+  <string name="qs_themes_content_description">Sesuaikan tema Anda</string>
 </resources>

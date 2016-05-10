@@ -17,9 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permdesc_readMSPhoneState">Permite a una aplicación ver l\'estáu del teléfonu y la conexón de datos con sofitu pa múltiples SIMs.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permdesc_modifyMSPhoneState">Permite a una aplicación modificar l\'estáu del teléfonu y la conexón de datos con sofitu pa múltiples SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permdesc_modifyProfiles">Permite a una aplicación modificar los perfiles del sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <!-- Labels for the WRITE_ALARMS permission. -->
   <!-- Labels for the MANAGE_ALARMS permission. -->
@@ -28,8 +32,12 @@
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">accesu a suxerencies d\'aplicaciones</string>
+  <string name="permdesc_accessAppSuggestions">Permite a una aplicación acceder a suxerencies d\'aplicaciones.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">amiestu y desaniciu d\'aplicaciones p\'aplicaciones protexíes</string>
+  <string name="permdesc_protectedApp">Permite a una aplicación conseñar otres como protexíes y bloquiales.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameWork">Trabayu</string>
@@ -46,10 +54,26 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Otru</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">Aforru d\'enerxía</string>
+  <string name="perf_profile_bal">Balanceáu</string>
+  <string name="perf_profile_perf">Rindimientu</string>
+  <string name="perf_profile_bias_power">Eficiencia</string>
+  <string name="perf_profile_bias_perf">Rápidu</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">Automáticu</string>
+  <string name="live_display_auto_summary">Axusta automáticamente la temperatura de color de la pantalla dempués del tapecer y l\'aséu</string>
+  <string name="live_display_off_summary">Deshabilitar tolos axustes</string>
+  <string name="live_display_day">Día</string>
+  <string name="live_display_day_summary">Usar namái los axustes de día</string>
   <string name="live_display_night">Nueche</string>
+  <string name="live_display_night_summary">Usar namái los axustes de nueche</string>
+  <string name="live_display_outdoor">Esterior (lluz del sol)</string>
+  <string name="live_display_outdoor_summary">Usar namái axustes del esterior</string>
+  <string name="live_display_hint">LiveDisplay pue ayudar a amenorgar el cansanciu de güeyos y ayudate a dormir pela nueche. ¡Toca equí pa probalu!</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">pantalla de bloquéu de terceres partes</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">Permite qu\'una aplicación s\'use como una pantalla de bloquéu insegura.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Axustes avanzaos</string>
   <!-- Touchscreen gestures -->
@@ -77,4 +101,5 @@
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
   <!-- CMAudioService - observe session changes permission -->
+  <!-- QuickSettings: Themes tile -->
 </resources>

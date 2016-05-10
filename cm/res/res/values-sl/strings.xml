@@ -176,4 +176,9 @@
   <string name="permlab_manageLiveDisplay">upravljanje z nastavitvami LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Dovoli aplikaciji nastavljanje naprednih nastavitev zaslona.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">opazovanje sprememb zvočne seje</string>
+  <string name="permdesc_observe_audio_sessions">Dovoli aplikaciji, da opazuje ustvarjanje in uničevanje zvočnih pretokov.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Teme</string>
+  <string name="qs_themes_content_description">Prilagodite svojo temo</string>
 </resources>

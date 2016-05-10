@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Buitekant (helder son)</string>
   <string name="live_display_outdoor_summary">Gebruik buite instellings alleenlik</string>
   <string name="live_display_hint">LewendigeVertoning kan jou oogspanning verminder en help jou slaap in die nag. Klik hier om dit uit te probeer!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay af.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: outo modus.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: dag modus.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nag modus.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: buitelug modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay afgeskakel.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay verander na outo modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay verander na dag modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay verander na nag modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay verander na buitelug modus.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">derde party slotskerm</string>
   <!-- Third party keyguard permission description -->
@@ -140,10 +150,12 @@
   <!-- Live lock screen manager service provider permission label -->
   <!-- Live lock screen manager service provider permission description -->
   <!-- Weather Service strings -->
+  <string name="permlab_weather_access_mgr">toegang na weer diens</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
   <!-- CMAudioService - observe session changes permission -->
+  <!-- QuickSettings: Themes tile -->
 </resources>

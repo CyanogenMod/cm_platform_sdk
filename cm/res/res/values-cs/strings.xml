@@ -175,4 +175,9 @@
   <string name="permlab_manageLiveDisplay">spravovat nastavení LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Umožní nastavovat rozšířené nastavení obrazovky.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">sledovat změny audio relace</string>
+  <string name="permdesc_observe_audio_sessions">Umožní sledovat vytváření a rušení zvukových zdrojů.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Motivy</string>
+  <string name="qs_themes_content_description">Vlastní nastavení motivu</string>
 </resources>

@@ -175,4 +175,9 @@
   <string name="permlab_manageLiveDisplay">LiveDisplay ezarpenak kudeatu</string>
   <string name="permdesc_manageLiveDisplay">Pantailaren ezarpen aurreratuak ezartzea ahalbidetzen dio aplikazioari.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">audio saio aldaketak aztertu</string>
+  <string name="permdesc_observe_audio_sessions">Audio jarioen sorrerak eta suntsiketak aztertzea ahalbidetzen dio aplikazioari.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Gaiak</string>
+  <string name="qs_themes_content_description">Pertsonalizatu zure gaia</string>
 </resources>

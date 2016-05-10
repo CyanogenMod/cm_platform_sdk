@@ -175,4 +175,7 @@
   <string name="permlab_manageLiveDisplay">Управљај подешавањем Активног екрана</string>
   <string name="permdesc_manageLiveDisplay">Омогућује апликацији да подеси подешавања напредног приказа.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">посматрај промене аудио сесије</string>
+  <string name="permdesc_observe_audio_sessions">Дозвољава апликацији да посматра ток аудиа док је креиран и прекинут.</string>
+  <!-- QuickSettings: Themes tile -->
 </resources>

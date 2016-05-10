@@ -175,4 +175,7 @@
   <string name="permlab_manageLiveDisplay">จัดการตั้งค่า LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">อนุญาตให้แอปตั้งค่าการแสดงผลขั้นสูง</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">สังเกตการเปลี่ยนแปลงเซสชันเสียง</string>
+  <string name="permdesc_observe_audio_sessions">อนุญาตให้แอปสังเกตกระแสข้อมูลเสียงที่กำลังถูกสร้างและทำลาย</string>
+  <!-- QuickSettings: Themes tile -->
 </resources>

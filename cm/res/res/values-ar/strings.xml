@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">خارج المنزل ( شمس ساطعة)</string>
   <string name="live_display_outdoor_summary">استخدم إعدادات خارج المنزل فقط</string>
   <string name="live_display_hint">يمكن أن تساعد ميزة LiveDisplay في تقليل إجهاد العين ومساعدتك على النوم في الليل. انقر هنا لتجربتها!</string>
+  <string name="accessibility_quick_settings_live_display_off">إيقاف تشغيل LiveDisplay.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: الوضع التلقائي.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: الوضع النهاري.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: الوضع الليلي.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: وضع الأماكن المفتوحة.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">تم إيقاف تشغيل LiveDisplay.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">تم تغيير LiveDisplay إلى الوضع التلقائي.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">تم تغيير LiveDisplay إلى الوضع النهاري.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">تم تغيير LiveDisplay إلى الوضع الليلي.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">تم تغيير LiveDisplay إلى وضع الأماكن المفتوحة.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">شاشة تأمين جهة أخرى</string>
   <!-- Third party keyguard permission description -->
@@ -135,16 +145,41 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">السماح للتطبيق بالوصول إلى خدمة الأداء. ينبغي ألا يكون ضرورياً للتطبيقات العادية.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">الوصول إلى خدمة مدير شاشة القفل المباشرة</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">يسمح لتطبيق معين بالوصول إلى خدمة مدير شاشة التأمين المباشرة.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">الوصول إلى خدمة مدير شاشة التأمين المباشرة</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">يسمح لتطبيقات النظام معين بالوصول إلى خدمة مدير شاشة التأمين المباشرة.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">توفير خدمة مدير شاشة التأمين المباشرة</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">يسمح لخدمة معينة لتوفير خدمة مدير شاشة التأمين المباشرة.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">قراءة الطقس</string>
+  <string name="permdesc_weather_read">يسمح لتطبيق معين بقراءة المحتوى من موفر الطقس.</string>
+  <string name="permlab_weather_write">تحديث موفر الطقس</string>
+  <string name="permdesc_weather_write">يسمح لتطبيق معين بتحديث المحتوى من موفر الطقس.</string>
+  <string name="permlab_weather_bind">ربط كخدمة موفر الطقس</string>
+  <string name="permdesc_weather_bind">يسمح بتعريف تطبيق كخدمة موفر طقس.</string>
+  <string name="permlab_weather_access_mgr">الوصول إلى خدمة الطقس</string>
+  <string name="permdesc_weather_access_mgr">يسمح لتطبيق معين بالوصول إلى خدمة الطقس في النظام. لا يتعين الاحتياج إليه كليةً للتطبيقات العادية.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">تعديل قاعدة بيانات استخدام البيانات</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">يسمح لتطبيق معين بتحديث المحتوى من قاعدة بيانات استخدام البيانات.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">قراءة قاعدة بيانات استخدام البيانات</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">يسمح لتطبيق معين بقراءة المحتوى من قاعدة بيانات استخدام البيانات.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">إدارة إعدادات LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">يسمح لتطبيق معين بتكوين إعدادات العرض المتقدمة.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">ملاحظة تغييرات جلسة عمل الصوت</string>
+  <string name="permdesc_observe_audio_sessions">يسمح لتطبيق معين لملاحظة تدفقات الصوت الجاري إنشاؤها وتدميرها.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">السمات</string>
+  <string name="qs_themes_content_description">تخصيص  السمة</string>
 </resources>

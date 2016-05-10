@@ -177,4 +177,7 @@
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">παρατήρηση αλλαγών στις συνεδρίες ήχου</string>
   <string name="permdesc_observe_audio_sessions">Επιτρέπει σε μια εφαρμογή να παρατηρεί τις ροές ήχου να δημιουργούνται και να καταστρέφονται.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Θέματα</string>
+  <string name="qs_themes_content_description">Προσαρμόστε το θέμα σας</string>
 </resources>

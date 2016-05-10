@@ -175,4 +175,9 @@
   <string name="permlab_manageLiveDisplay">управление на настройките за Адаптивен екран</string>
   <string name="permdesc_manageLiveDisplay">Позволява на приложението да променя разширените настройки на екрана.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">наблюдава променена аудио сесия</string>
+  <string name="permdesc_observe_audio_sessions">Позволява на приложение да наблюдава създаване и унищожаване на аудио потоци.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Теми</string>
+  <string name="qs_themes_content_description">Персонализирайте вашата тема</string>
 </resources>

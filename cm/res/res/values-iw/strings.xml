@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">בחוץ (שמש בהירה)</string>
   <string name="live_display_outdoor_summary">השתמש בהגדרות חוץ בלבד</string>
   <string name="live_display_hint">LiveDisplay יכולה למזער את עייפות העין ולעזור לך לישון בלילה. לחץ כאן כדי לנסות!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay כבוי.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: מצב אוטומטי.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: מצב יום.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: מצב לילה.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: מצב חוץ.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay כובה.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay שונה למצב אוטומטי.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay שונה למצב יום.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay שונה למצב לילה.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay שונה למצב חוץ.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">מסך נעילה של צד שלישי</string>
   <!-- Third party keyguard permission description -->
@@ -117,7 +127,7 @@
   <string name="theme_reset_notification_title">איפוס ערכת עיצוב</string>
   <string name="theme_reset_notification_message">ערכת העיצוב של המערכת שוחזרה עקב קריסות יישומים מרובות.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">גישה לשירות ערכות העיצוב</string>
+  <string name="permlab_accessThemeService">גש לשירות ערכות העיצוב</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_accessThemeService">מאפשר ליישום לגשת לשירות ערכות העיצוב. לא אמור להידרש ליישומים רגילים לעולם.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -125,11 +135,11 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_readThemesDesc">מאפשר ליישום לקרוא את ערכות העיצוב הקיימות, ולקבוע איזו ערכה החלת.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">שינוי ערכות העיצוב שלך</string>
+  <string name="permlab_writeThemes">שנה את ערכות העיצוב שלך</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_writeThemesDesc">מאפשר ליישום להוסיף ערכות עיצוב חדשות ולשנות את הערכה המוחלת.</string>
   <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">גישה למנהל הביצועים</string>
+  <string name="permlab_perfAccess">גש למנהל הביצועים</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">מאפשר ליישום לגשת לשירות ניהול הביצועים. לא אמור להידרש ליישומים רגילים לעולם.</string>
   <!-- Access live lock screen manager service permission label -->
@@ -137,7 +147,7 @@
   <!-- Access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenService">מאפשר ליישום לגשת לשירות ניהול מסך הנעילה החי.</string>
   <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">גישה לשירות ניהול מסך הנעילה החי</string>
+  <string name="permlab_accessLiveLockScreenServicePrivate">גש לשירות ניהול מסך הנעילה החי</string>
   <!-- Privileged access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenServicePrivate">מאפשר ליישומי מערכת לגשת לשירות ניהול מסך הנעילה החי.</string>
   <!-- Live lock screen manager service provider permission label -->
@@ -162,5 +172,12 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">מאפשר ליישום לקרוא תוכן ממסד הנתונים של השימוש בנתונים.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">נהל הגדרות livedisplay</string>
+  <string name="permdesc_manageLiveDisplay">מאפשר ליישום לקבוע הגדרות תצוגה מתקדמות.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">הרשאה לקבלת עדכוני פעולות במערכת השמע</string>
+  <string name="permdesc_observe_audio_sessions">מאפשר ליישום לקבל עדכוני יצירה וסגירה של זרמי שמע.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">ערכות עיצוב</string>
+  <string name="qs_themes_content_description">התאם אישית את ערכת הנושא שלך</string>
 </resources>

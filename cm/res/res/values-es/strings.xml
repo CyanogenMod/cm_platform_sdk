@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Al aire libre (luz del sol)</string>
   <string name="live_display_outdoor_summary">Utilizar solo los ajustes al aire libre</string>
   <string name="live_display_hint">LiveDisplay puede reducir la fatiga visual y ayudarte a dormir por la noche. ¡Toca aquí para probarlo!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay desactivado.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modo diurno.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modo nocturno.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modo exterior.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay desactivado.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay cambió a modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay ha cambiado a modo diurno.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay ha cambiado a modo nocturno.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiado a modo exterior.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">pantalla de bloqueo con aplicación de terceros</string>
   <!-- Third party keyguard permission description -->
@@ -133,16 +143,39 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Permite que la aplicación acceda al servicio de rendimiento. Nunca debería ser necesario para aplicaciones normales.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">acceder al administrador de servicio de la pantalla de bloqueo animada</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permite que una aplicación acceda al servicio de administración de la pantalla de bloqueo animada.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">acceder al administrador de servicio de pantalla de bloqueo animada</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permite que las aplicaciones de sistema accedan al servicio de administración de pantalla de bloqueo animada.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">proporcionar servicio de administración de pantalla de bloqueo animada</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permite que un servicio provea el servicio de administración de pantalla de bloqueo animada.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">leer el tiempo</string>
+  <string name="permdesc_weather_read">Permite una aplicación leer contenido desde el proveedor de clima.</string>
+  <string name="permlab_weather_write">actualizar proveedor de clima</string>
+  <string name="permdesc_weather_write">Permite una aplicación actualizar el contenido del proveedor de clima.</string>
+  <string name="permlab_weather_bind">establecer como un servicio de proveedor de clima</string>
+  <string name="permdesc_weather_bind">Permite que una aplicación sea identificada como un servicio de proveedor de clima.</string>
+  <string name="permlab_weather_access_mgr">acceder al servicio de clima</string>
+  <string name="permdesc_weather_access_mgr">Permite a una aplicación acceder al servicio de clima en el sistema. Nunca debe ser necesario para aplicaciones normales.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar datos de uso de la base de datos</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permite que una aplicación actualice los datos del contenido de la base de datos.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">leer datos de uso de la base de datos</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permite que una aplicación lea el contenido desde la base de datos.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">administrar la configuración de LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Permite que una aplicación modifique la configuración de pantalla avanzada.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observa los cambios en la sesión de sonido</string>
+  <string name="permdesc_observe_audio_sessions">Permite que una aplicación observe los flujos de sonido que se crean y destruyen.</string>
+  <!-- QuickSettings: Themes tile -->
 </resources>

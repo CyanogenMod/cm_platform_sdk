@@ -176,4 +176,9 @@
   <string name="permlab_manageLiveDisplay">gerir as definições do LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Permite que uma aplicação configure definições avançadas do ecrã.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observar as alterações da sessão de som</string>
+  <string name="permdesc_observe_audio_sessions">Permite que uma aplicação observe a criação e destruição de fluxos de som.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temas</string>
+  <string name="qs_themes_content_description">Personalize o seu tema</string>
 </resources>

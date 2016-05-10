@@ -175,4 +175,9 @@
   <string name="permlab_manageLiveDisplay">hallitse LiveDisplay-asetuksia</string>
   <string name="permdesc_manageLiveDisplay">Sallii sovelluksen määrittää kehittyneitä näytön asetuksia.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">tutki ääni-istunnon muutoksia</string>
+  <string name="permdesc_observe_audio_sessions">Sallii sovelluksen tarkastella milloin ääntä luodaan ja tuhotaan.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Teemat</string>
+  <string name="qs_themes_content_description">Muokkaa teemaa</string>
 </resources>

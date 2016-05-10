@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Açık alan (parlak güneş)</string>
   <string name="live_display_outdoor_summary">Sadece açık alan ayarlarını kullanır</string>
   <string name="live_display_hint">LiveDisplay göz yorgunluğunuzu azaltıp geceleri uyumanıza yardımcı olabilir. Denemek için buraya tıklayın!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay kapalı.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: otomatik mod.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: gündüz modu.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: gece modu.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: açık hava modu.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay kapatıldı.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay otomatik moda geçti.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gündüz moduna geçti.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gece moduna geçti.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay açık hava moduna geçti.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">üçüncü taraf kilit ekranı</string>
   <!-- Third party keyguard permission description -->
@@ -135,16 +145,41 @@ uyguladığınız temayı değiştirmesine izin verir.</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Bir uygulamanın performans hizmetine erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">canlı kilit ekranı yöneticisi hizmetine erişme</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Bir uygulamanın canlı kilit ekranı yöneticisi hizmetine erişmesine izin verir.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">canlı kilit ekranı yöneticisi hizmetine erişme</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Sistem uygulamalarının, canlı kilit ekranı yönetici hizmetine erişimine izin verir.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">canlı kilit ekranı yönetici hizmeti sağlama</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Bir hizmetin canlı kilit ekranı yönetici hizmeti sağlamasına izin verir.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">hava durumunu oku</string>
+  <string name="permdesc_weather_read">Bir uygulamanın hava durumu sağlayıcısından içerik okumasına izin verir.</string>
+  <string name="permlab_weather_write">hava durumu sağlayıcısını güncelleme</string>
+  <string name="permdesc_weather_write">Bir uygulamanın hava durumu sağlayıcısının içeriğini güncellemesine izin verir.</string>
+  <string name="permlab_weather_bind">hava durumu sağlayıcı hizmeti olarak bağla</string>
+  <string name="permdesc_weather_bind">Bir uygulamanın hava durumu sağlayıcısı olarak tanımlanmasına izin verir.</string>
+  <string name="permlab_weather_access_mgr">hava durumu servisine erişme</string>
+  <string name="permdesc_weather_access_mgr">Bir uygulamanın sistemdeki hava durumu hizmetinin erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">veri kullanımı veritabanını değiştir</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Bir uygulamanın veri kullanımı veribatanının içeriğini güncellemesine izin verir.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">veri kullanımı veritabanını oku</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Bir uygulamanın veri kullanımı veritabanındaki içeriği okumasına izin verir.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">LiveDisplay ayarlarını yönet</string>
+  <string name="permdesc_manageLiveDisplay">Uygulamalara gelişmiş ekran ayarlarını düzenleme izni verir.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">ses oturum değişikliklerini gözlemle</string>
+  <string name="permdesc_observe_audio_sessions">Bir uygulamanın, ses akışlarınının oluşturulma ve yok edilmesinde gözlem yapmasına izin verir.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temalar</string>
+  <string name="qs_themes_content_description">Temanızı özelleştirin</string>
 </resources>

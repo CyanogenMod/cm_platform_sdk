@@ -57,7 +57,7 @@
   <string name="permlab_managePersistentStorage">gerenciar o armazenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite a um app ler ou escrever propriedades que podem persistir mesmo após um reset de fábrica.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-  <string name="permlab_accessAppSuggestions">acesso a sugestões de aplicativos</string>
+  <string name="permlab_accessAppSuggestions">acesso a sugestões de apps</string>
   <string name="permdesc_accessAppSuggestions">Permite que o aplicativo acesse sugestões de apps.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
@@ -169,11 +169,16 @@
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Permite um aplicativo a atualizar o conteúdo da base de dados de uso de dados.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">ler banco de dados de utilização de dados</string>
+  <string name="permlab_dataUsageRead">ler banco de dados de uso de dados</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Permite um aplicativo ler o conteúdo do banco de dados de uso de dados.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">gerenciar configurações do LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Permite que um aplicativo configure as definições de visualização avançada.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observar as alterações da sessão de áudio</string>
+  <string name="permdesc_observe_audio_sessions">Permite que um app observe o fluxo de áudio sendo criado e destruído.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temas</string>
+  <string name="qs_themes_content_description">Personalizar os seus temas</string>
 </resources>

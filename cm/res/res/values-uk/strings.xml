@@ -128,4 +128,5 @@
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
   <!-- CMAudioService - observe session changes permission -->
+  <!-- QuickSettings: Themes tile -->
 </resources>

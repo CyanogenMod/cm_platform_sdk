@@ -168,11 +168,16 @@
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank zu aktualisieren.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">Datennutzung-Datenbank lesen</string>
+  <string name="permlab_dataUsageRead">Datennutzungs-Datenbank lesen</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank auszulesen.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplay-Einstellungen verwalten</string>
   <string name="permdesc_manageLiveDisplay">Erlaubt der App, erweiterte Displayeinstellungen vorzunehmen.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">Audiositzungsänderungen überwachen</string>
+  <string name="permdesc_observe_audio_sessions">Erlaubt einer App, die Erstellung und Löschung von Audio-Streams zu überwachen.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Designs</string>
+  <string name="qs_themes_content_description">Passen Sie Ihr Design an</string>
 </resources>

@@ -143,16 +143,41 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Приложение сможет получать доступ к службе производительности. Это разрешение не используется обычными приложениями.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">доступ к управлению живым экраном блокировки</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Позволяет приложению получить доступ к управлению живым экраном блокировки.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">доступ к управлению живым экраном блокировки</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Позволяет системным приложениям получить доступ к управлению живым экраном блокировки.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">предоставить доступ к управлению живым экраном блокировки</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Позволяет службе предоставить доступ к управлению живым экраном блокировки.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">чтение данных о погоде</string>
+  <string name="permdesc_weather_read">Разрешает приложению читать данные от поставщика погоды.</string>
+  <string name="permlab_weather_write">обновление поставщика погоды</string>
+  <string name="permdesc_weather_write">Разрешает приложению обновлять данные поставщика погоды.</string>
+  <string name="permlab_weather_bind">привязать как службу поставщика погоды</string>
+  <string name="permdesc_weather_bind">Разрешает, чтобы приложение определялось как служба поставщика погоды.</string>
+  <string name="permlab_weather_access_mgr">доступ к службе погоды</string>
+  <string name="permdesc_weather_access_mgr">Приложение сможет получать доступ к службе погоды в системе. Это разрешение не используется обычными приложениями.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">изменить данные об использовании БД</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Разрешает приложению обновлять данные об использовании БД.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">чтение данных об использовании БД</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Разрешает приложению читать данные об использовании БД.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">управление настройками LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Разрешает приложению изменять расширенные настройки экрана.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">просмотр изменений аудиосеансов</string>
+  <string name="permdesc_observe_audio_sessions">Приложение сможет просматривать аудиопотоки, которые создаются или уничтожаются.</string>
+  <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Темы</string>
+  <string name="qs_themes_content_description">Настройте свою тему</string>
 </resources>

@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">야외 (밝은 햇빛)</string>
   <string name="live_display_outdoor_summary">야외 설정만으로 사용</string>
   <string name="live_display_hint">LiveDisplay는 눈의 피로를 줄이고 밤에 수면을 돕습니다. 적용하려면 클릭하십시오!</string>
+  <string name="accessibility_quick_settings_live_display_off">라이브 디스플레이 꺼짐.</string>
+  <string name="accessibility_quick_settings_live_display_auto">라이브 디스플레이: 자동 모드.</string>
+  <string name="accessibility_quick_settings_live_display_day">라이브 디스플레이: 낮 모드.</string>
+  <string name="accessibility_quick_settings_live_display_night">라이브 디스플레이: 밤 모드.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">라이브 디스플레이: 야외 모드.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">라이브 디스플레이 꺼짐.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">라이브 디스플레이가 자동 모드로 바뀜.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">라이브 디스플레이가 낮 모드로 바뀜.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">라이브 디스플레이가 밤 모드로 바뀜.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">라이브 디스플레이가 야외 모드로 바뀜.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">서드 파티 잠금 화면</string>
   <!-- Third party keyguard permission description -->
@@ -109,28 +119,63 @@
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">추가 기능</string>
   <string name="touchscreen_gesture_haptic_feedback">햅틱 반응</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">제스쳐가 감지되면 진동합니다</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">제스처가 감지되면 진동합니다</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">테마 설치 실패</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> 설치 실패</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">테마 초기화</string>
+  <string name="theme_reset_notification_message">잦은 앱 충돌로 인해 시스템 테마가 복원되었습니다.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">테마 서비스에 액세스</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">앱이 테마 서비스에 접근할 수 있도록 허용합니다. 일반 앱에서는 필요 없는 권한입니다.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">테마 정보 읽기</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">앱이 설치된 테마들을 읽어들이고 현재 적용된 테마를 확인할 수 있도록 허용합니다.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">테마 정보 수정</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">앱이 새로운 테마를 설치하거나 다른 테마를 적용할 수 있도록 허용합니다.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">성능 관리자에 액세스</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">앱이 성능 서비스에 접근할 수 있도록 허용합니다. 일반 앱에서는 필요 없는 권한입니다.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">라이브 잠금 화면 관리자 서비스에 접근</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">앱이 라이브 잠금 화면 관리자 서비스에 접근할 수 있도록 허용합니다.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">라이브 잠금 화면 관리자 서비스에 접근</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">시스템 앱이 라이브 잠금 화면 관리자 서비스에 접근할 수 있도록 허용합니다.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">라이브 잠금 화면 관리자 서비스 제공</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">앱이 라이브 잠금 화면 관리자 서비스를 제공할 수 있도록 허용합니다.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">날씨 확인</string>
+  <string name="permdesc_weather_read">앱이 날씨 제공자로부터 날씨를 확인할 수 있도록 허용합니다.</string>
+  <string name="permlab_weather_write">날씨 제공자 업데이트</string>
+  <string name="permdesc_weather_write">앱이 날씨 제공자를 업데이트할 수 있도록 허용합니다.</string>
+  <string name="permlab_weather_bind">날씨 제공자 서비스로 연결</string>
+  <string name="permdesc_weather_bind">앱이 날씨 제공자 서비스로 인식되는 것을 허용합니다.</string>
+  <string name="permlab_weather_access_mgr">날씨 서비스에 접근</string>
+  <string name="permdesc_weather_access_mgr">앱이 시스템의 날씨 서비스에 접근할 수 있도록 허용합니다. 일반 앱에서는 필요 없는 권한입니다.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">데이터 사용량 데이터베이스 수정</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">앱이 데이터 사용량 데이터베이스를 수정할 수 있도록 허용합니다.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">데이터 사용량 데이터베이스 읽기</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">앱이 데이터 사용량 데이터베이스를 읽을 수 있도록 허용합니다.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">LiveDisplay 설정 관리</string>
+  <string name="permdesc_manageLiveDisplay">앱이 고급 디스플레이 설정을 변경할 수 있도록 허용합니다.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">오디오 세션 변화 관찰</string>
+  <string name="permdesc_observe_audio_sessions">앱이 오디오 스트림이 생성되고 제거되는 것을 관찰할 수 있도록 허용합니다.</string>
+  <!-- QuickSettings: Themes tile -->
 </resources>
