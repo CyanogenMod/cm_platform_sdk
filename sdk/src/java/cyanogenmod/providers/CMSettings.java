@@ -1482,6 +1482,12 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
+         * Whether keyguard will rotate to landscape mode (0 = false, 1 = true)
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /**
          * Whether to show the alarm clock icon in the status bar.
          * 0 = 0ff, 1 = on
          */
