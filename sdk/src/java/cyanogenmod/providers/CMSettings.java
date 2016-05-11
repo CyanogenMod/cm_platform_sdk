@@ -2692,6 +2692,12 @@ public final class CMSettings {
         public static final String LOCKSCREEN_INTERNALLY_ENABLED = "lockscreen_internally_enabled";
 
         /**
+         * Whether keyguard will rotate to landscape mode (0 = false, 1 = true)
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /**
          * Delimited list of packages allowed to manage/launch protected apps (used for filtering)
          * @hide
          */
