@@ -477,6 +477,12 @@ public final class CMSettings {
                 "lockscreen_scramble_pin_layout";
 
         /**
+         * Whether keyguard will rotate to landscape mode
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /**
          * @hide
          */
         public static final String SHOW_ALARM_ICON = "show_alarm_icon";
