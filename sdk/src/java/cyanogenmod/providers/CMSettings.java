@@ -1487,6 +1487,16 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
+         * Whether keyguard will rotate to landscape mode (0 = false, 1 = true)
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+
+        /** @hide */
+        public static final Validator LOCKSCREEN_ROTATION_VALIDATOR =
+                sBooleanValidator;
+
+        /**
          * Whether to show the alarm clock icon in the status bar.
          * 0 = 0ff, 1 = on
          */
@@ -1880,6 +1890,7 @@ public final class CMSettings {
                 CMSettings.System.T9_SEARCH_INPUT_LOCALE,
                 CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
                 CMSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
+                CMSettings.System.LOCKSCREEN_ROTATION,
                 CMSettings.System.SHOW_ALARM_ICON,
                 CMSettings.System.STATUS_BAR_IME_SWITCHER,
                 CMSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
@@ -2029,6 +2040,7 @@ public final class CMSettings {
             VALIDATORS.put(BLUETOOTH_ACCEPT_ALL_FILES, BLUETOOTH_ACCEPT_ALL_FILES_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT,
                     LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_ROTATION, LOCKSCREEN_ROTATION_VALIDATOR);
             VALIDATORS.put(SHOW_ALARM_ICON, SHOW_ALARM_ICON_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_IME_SWITCHER, STATUS_BAR_IME_SWITCHER_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN,
