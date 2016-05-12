@@ -46,7 +46,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "cmsettings.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     public static class CMTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -219,6 +219,16 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             upgradeVersion = 5;
         }
 
+        if (upgradeVersion < 6) {
+            // Move force_show_navbar to global
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                moveSettingsToNewTable(db, CMTableNames.TABLE_SECURE,
+                        CMTableNames.TABLE_GLOBAL, new String[] {
+                        CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR
+                }, true);
+            }
+            upgradeVersion = 6;
+        }
         // *** Remember to update DATABASE_VERSION above!
 
         if (upgradeVersion < newVersion) {
@@ -234,6 +244,40 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             }
 
             onCreate(db);
+        }
+    }
+
+    private void moveSettingsToNewTable(SQLiteDatabase db,
+                                        String sourceTable, String destTable,
+                                        String[] settingsToMove, boolean doIgnore) {
+        // Copy settings values from the source table to the dest, and remove from the source
+        SQLiteStatement insertStmt = null;
+        SQLiteStatement deleteStmt = null;
+
+        db.beginTransaction();
+        try {
+            insertStmt = db.compileStatement("INSERT "
+                    + (doIgnore ? " OR IGNORE " : "")
+                    + " INTO " + destTable + " (name,value) SELECT name,value FROM "
+                    + sourceTable + " WHERE name=?");
+            deleteStmt = db.compileStatement("DELETE FROM " + sourceTable + " WHERE name=?");
+
+            for (String setting : settingsToMove) {
+                insertStmt.bindString(1, setting);
+                insertStmt.execute();
+
+                deleteStmt.bindString(1, setting);
+                deleteStmt.execute();
+            }
+            db.setTransactionSuccessful();
+        } finally {
+            db.endTransaction();
+            if (insertStmt != null) {
+                insertStmt.close();
+            }
+            if (deleteStmt != null) {
+                deleteStmt.close();
+            }
         }
     }
 

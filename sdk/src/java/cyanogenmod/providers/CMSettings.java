@@ -530,6 +530,11 @@ public final class CMSettings {
         /** @hide */
         public static boolean putStringForUser(ContentResolver resolver, String name, String value,
                int userId) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from CMSettings.System"
+                        + " to CMSettings.Secure, value is unchanged.");
+                return false;
+            }
             return sNameValueCache.putStringForUser(resolver, name, value, userId);
         }
 
@@ -2093,6 +2098,13 @@ public final class CMSettings {
                 CALL_METHOD_GET_SECURE,
                 CALL_METHOD_PUT_SECURE);
 
+        /** @hide */
+        protected static final ArraySet<String> MOVED_TO_GLOBAL;
+        static {
+            MOVED_TO_GLOBAL = new ArraySet<>(1);
+            MOVED_TO_GLOBAL.add(Global.DEV_FORCE_SHOW_NAVBAR);
+        }
+
         // region Methods
 
         /**
@@ -2156,6 +2168,11 @@ public final class CMSettings {
         /** @hide */
         public static String getStringForUser(ContentResolver resolver, String name,
                 int userId) {
+            if (MOVED_TO_GLOBAL.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from CMSettings.Secure"
+                        + " to CMSettings.Global, value is unchanged.");
+                return CMSettings.Global.getStringForUser(resolver, name, userId);
+            }
             return sNameValueCache.getStringForUser(resolver, name, userId);
         }
 
@@ -2173,6 +2190,11 @@ public final class CMSettings {
         /** @hide */
         public static boolean putStringForUser(ContentResolver resolver, String name, String value,
                int userId) {
+            if (MOVED_TO_GLOBAL.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from CMSettings.Secure"
+                        + " to CMSettings.Global, value is unchanged.");
+                return false;
+            }
             return sNameValueCache.putStringForUser(resolver, name, value, userId);
         }
 
@@ -2483,6 +2505,7 @@ public final class CMSettings {
 
         /**
          * Developer options - Navigation Bar show switch
+         * @deprecated
          * @hide
          */
         public static final String DEV_FORCE_SHOW_NAVBAR = "dev_force_show_navbar";
@@ -3298,6 +3321,12 @@ public final class CMSettings {
          * <p>{@link cyanogenmod.providers.WeatherContract.WeatherColumns.TempUnit#FAHRENHEIT}</p>
          */
         public static final String WEATHER_TEMPERATURE_UNIT = "weather_temperature_unit";
+
+        /**
+         * Developer options - Navigation Bar show switch
+         * @hide
+         */
+        public static final String DEV_FORCE_SHOW_NAVBAR = "dev_force_show_navbar";
         // endregion
 
         /**
