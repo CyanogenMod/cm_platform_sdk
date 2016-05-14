@@ -102,45 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">ئۈچىنچى تەرەپ ئېكران قۇلۇپى</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">ئەپنىڭ تۇراقسىز ئىكران قۇلۇپى بۇلۇپ ئىشلىتىلىشىگە رۇخسەت قىلىش.</string>
-  <!-- Device specific settings -->
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">قول ئىشارەت</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">قوشۇمچە ئىقتىدار</string>
-  <string name="touchscreen_gesture_haptic_feedback">تېگىش ئىنكاسى</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">قوش ئىشارىتىنى بايقىغاندا تىتىرەيدۇ</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">ئۆرنەك ئورنىتالمىدى</string>
-  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> ئورنىتىش مەغلۇب بولدى</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">باش تېمىنى قايتا بېكىتىش</string>
-  <string name="theme_reset_notification_message">كۆپلىگەن ئەپ ۋەيران بولغانلىقى ئۈچۈن باش تېما ئەسلىگە قايتتى.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">باش تېما مۇلازىمىتىگە كىرىش</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">بىر ئەپنىڭ باش تېما مۇلازىمىتىگە كىرىشىگە رۇخسەت قىلىش. نورمال ئەپ بۇنداق ھوقۇققا ھەرگىز ئېھتىياجلىق ئەمەس.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">باش تېما ئۇچۇرىڭىزنى ئوقۇڭ</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">ئەپنىڭ سىزنىڭ باش تېمىڭىزنى ئوقۇشقا ۋە سىزنىڭ قايسى باش تېمىنى ئىشلەتكىڭىزنى جەزىملەشتۈرۈشكە رۇخسەت قىلىڭ.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">باش تېمىڭىزنى ئۆزگەرتىڭ</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">ئەپنىڭ يېڭى باش تېما قوشۇشىغا ۋە سىزنىڭ قايسى باش تېمىنى ئىشلەتكىڭىزنى جەزىملەشتۈرۈشكە رۇخسەت قىلىڭ.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">ئىقتىدار باشقۇرغۇچنى زىيارەت قىلىش</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">بىر ئەپنىڭ ئىقتىدار مۇلازىمىتىگە كىرىشىگە رۇخسەت قىلىش. نورمال ئەپ بۇنداق ھوقۇققا ھەرگىز ئېھتىياجلىق ئەمەس.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

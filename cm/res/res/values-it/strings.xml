@@ -89,7 +89,7 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatico</string>
   <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>
-  <string name="live_display_off">Spento</string>
+  <string name="live_display_off">Disattivato</string>
   <string name="live_display_off_summary">Disattiva tutte le regolazioni</string>
   <string name="live_display_day">Giorno</string>
   <string name="live_display_day_summary">Usa solo impostazioni giorno</string>
@@ -98,80 +98,8 @@
   <string name="live_display_outdoor">All\'aperto (sole)</string>
   <string name="live_display_outdoor_summary">Utilizza solo impostazioni all\'aperto</string>
   <string name="live_display_hint">LiveDisplay aiuta a ridurre l\'affaticamento degli occhi e aiuta a dormire di notte. Clicca per provarlo!</string>
-  <string name="accessibility_quick_settings_live_display_off">LiveDisplay off.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modalità automatica.</string>
-  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modalità giorno.</string>
-  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modalità notte.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modalità all\'aperto.</string>
-  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay disattivato.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay cambiato in modalità automatica.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay cambiato in modalità giorno.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay cambiato in modalità notte.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiato in modalità all\'aperto.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">schermata di blocco di terzi</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come una schermata di blocco non sicura.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Impostazioni avanzate</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gesture</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extra</string>
-  <string name="touchscreen_gesture_haptic_feedback">Feedback tattile</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibra quando viene rilevata una gesture</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">Installazione tema fallita</string>
-  <string name="theme_install_error_message">Installazione <xliff:g id="theme">%1$s</xliff:g> fallita</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Ripristino tema</string>
-  <string name="theme_reset_notification_message">Tema di sistema ripristinato a causa di molteplici crash.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">accede al servizio tema</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Consente all\'app di accedere al servizio temi. Non dovrebbe mai essere necessario per le app normali.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">leggi informazioni tema</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Consenti all\'app di leggere i tuoi temi e determinare quale tema hai applicato.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">modifica i tuoi temi</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Consente all\'app di inserire nuovi temi e modificare il tema hai applicato.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">accesso gestione performance</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Consente ad un\'app di accedere alla gestione performances. Non dovrebbe essere mai richiesto per le normali app.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione schermata di blocco animata</string>
-  <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione della schermata di blocco animata.</string>
-  <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione schermata di blocco animata</string>
-  <!-- Privileged access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione della schermata di blocco animata.</string>
-  <!-- Live lock screen manager service provider permission label -->
-  <string name="permlab_accessLiveLockScreenServiceProvider">accedi al servizio di gestione schermata di blocco animata</string>
-  <!-- Live lock screen manager service provider permission description -->
-  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione della schermata di blocco animata.</string>
-  <!-- Weather Service strings -->
-  <string name="permlab_weather_read">leggi meteo</string>
-  <string name="permdesc_weather_read">Consenti ad un\'app di leggere contenuti dal provider meteo.</string>
-  <string name="permlab_weather_write">aggiorna provider meteo</string>
-  <string name="permdesc_weather_write">Consenti ad un\'app di aggiornare contenuti nel provider meteo.</string>
-  <string name="permlab_weather_bind">identificazione come provider meteo</string>
-  <string name="permdesc_weather_bind">Consenti ad un\'app di identificarsi come provider meteo.</string>
-  <string name="permlab_weather_access_mgr">accesso servizio meteo</string>
-  <string name="permdesc_weather_access_mgr">Consenti ad un\'app di accedere al servizio meteo nel sistema. Non dovrebbe mai essere necessario per le app normali.</string>
-  <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">modifica database utilizzo dati</string>
-  <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Consenti ad un\'app di aggiornare i contenuti nel database dati utilizzati.</string>
-  <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">leggi database utilizzo dati</string>
-  <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Consenti ad un\'app di leggere i contenuti nel database dati utilizzati.</string>
-  <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">gestisci le impostazioni LiveDisplay</string>
-  <string name="permdesc_manageLiveDisplay">Consenti ad un\'app di configurare impostazioni avanzate del display.</string>
 </resources>

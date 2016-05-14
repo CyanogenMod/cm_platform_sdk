@@ -67,33 +67,4 @@
   <string name="live_display_night">Nuecht</string>
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Erweidert Astellungen</string>
-  <!-- Touchscreen gestures -->
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extraen</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptesche Feedback</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibréieren, wann e Gest erkannt gëtt</string>
-  <!-- Theme installation error notification -->
-  <!-- Theme reset notification -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Performance manager permission title -->
-  <!-- Performance manager permission description -->
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

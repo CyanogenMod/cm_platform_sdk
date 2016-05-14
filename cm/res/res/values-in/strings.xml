@@ -102,46 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">layar kunci pihak ketiga</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Mengizinkan sebuah aplikasi untuk digunakan sebagai layar kunci yang tidak aman.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Pengaturan lanjut</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gerakan</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Tambahan</string>
-  <string name="touchscreen_gesture_haptic_feedback">Loloh balik haptic</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Bergetar pada saat gerakan terdeteksi</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">Gagal menginstal tema</string>
-  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> gagal diinstal</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Memasang ulang Tema</string>
-  <string name="theme_reset_notification_message">Tema sistem dikembalikan karena beberapa aplikasi mogok (crash).</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">akses layanan tema</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Mengizinkan sebuah aplikasi untuk mengakses layanan tema. Tidak dibutuhkan untuk aplikasi biasa.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">baca info tema Anda</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Mengizinkan aplikasi untuk membaca tema Anda dan memilih tema yang telah Anda terapkan.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">mengubah tema Anda</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Mengizinkan aplikasi untuk memasukkan tema-tema baru dan tema yang telah Anda pergunakan.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">akses pengelola kinerja</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Mengizinkan sebuah aplikasi untuk masuk layanan kinerja. Tidak dibutuhkan untuk aplikasi biasa.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

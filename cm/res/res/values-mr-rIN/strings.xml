@@ -102,46 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">त्रयस्थ पक्ष लॉक स्क्रीन</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">अनुप्रयोगाला एक असुरक्षित लॉक स्क्रीन वापरू देते.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">सुधारीत सेटिंग्स</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">गेश्चर्स</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">अधिक</string>
-  <string name="touchscreen_gesture_haptic_feedback">स्पर्शाने दिलेला अभिप्राय</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">जेव्हा गेश्चर हटकले जाइल टेव्हा कंपन व्हावे</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">थीम स्थापित करण्यात अपयशी</string>
-  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> इंस्टॉल करण्यास अयशस्वी</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">थीम रीसेट</string>
-  <string name="theme_reset_notification_message">अनेक अनुप्रयोग क्रॅश झाल्यामुळे सिस्टिम थीम पुनर्स्थापित केली गेली.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">थीम सेवा ऍक्सेस करा</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">अॅप ला टॉर्च सेवा ऍक्सेस करण्याची परवानगी देते. सामान्य अॅपसाठी कधीही गरज भासू नये.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">तुमची थीम माहिती वाचा</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">अॅप तुमच्या थीम्स वाचू आणि तुम्ही कोणती थीम लागू केली आहे ते ठरवू देते.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">तुमच्या थीम्स सुधारित करा</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">अॅप नवीन थीम्स समाविष्ट करण्याची आणि तुम्ही कोणती थीम लागू केली आहे ती सुधारित करण्याची परवानगी देते.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">प्रवेश कामगिरी व्यवस्थापक</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">अॅप ला टॉर्च सेवा ऍक्सेस करण्याची परवानगी देते. सामान्य अॅपसाठी कधीही गरज भासू नये.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

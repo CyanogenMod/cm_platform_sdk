@@ -102,47 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">tredjepartslåsskärm</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Tillåter en applikation att användas som osäker låsskärm.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Avancerade inställningar</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gester</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extra</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptisk feedback</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrera när en gest upptäcktes</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">Kunde inte installera tema</string>
-  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> kunde inte installeras</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Återställning av tema</string>
-  <string name="theme_reset_notification_message">Systemtemat kommer återställas på grund av att appen kraschat flera gånger.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">få tillgång till tematjänst</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Tillåter en app att få tillgång till tematjänsten. Ska aldrig behövas för vanliga appar.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">läsa information om ditt tema</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Tillåter att appen läser dina teman och avgör vilket tema du har använt.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">modifiera dina teman</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Tillåter att appen infogar nya teman och ändrar vilket tema du har använt.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">komma åt prestandahanteraren</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Ger en app åtkomst till prestandatjänsten. Ska aldrig behövas för vanliga appar.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <string name="permlab_weather_write">uppdatera väderleverantör</string>
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

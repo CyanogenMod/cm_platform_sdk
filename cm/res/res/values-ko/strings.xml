@@ -102,34 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">서드 파티 잠금 화면</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">앱을 안전하지 않은 잠금 화면으로 사용할 수 있도록 허용합니다.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">고급 설정</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">제스처</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">추가 기능</string>
-  <string name="touchscreen_gesture_haptic_feedback">햅틱 반응</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">제스쳐가 감지되면 진동합니다</string>
-  <!-- Theme installation error notification -->
-  <!-- Theme reset notification -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <!-- Performance manager permission title -->
-  <!-- Performance manager permission description -->
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

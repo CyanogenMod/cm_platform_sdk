@@ -102,46 +102,4 @@
   <string name="permlab_thirdPartyKeyguard">màn hình khoá bên thứ ba</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Cho phép ứng dụng được dùng làm màn hình khoá không an toàn.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Cài đặt nâng cao</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Cử chỉ</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Thêm</string>
-  <string name="touchscreen_gesture_haptic_feedback">Phản hồi xúc giác</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Rung khi phát hiện cử chỉ</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">Không thể cài đặt chủ đề</string>
-  <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> không thể cài đặt</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Đặt lại chủ đề</string>
-  <string name="theme_reset_notification_message">Đã khôi phục chủ đề hệ thống vì nhiều ứng dụng bị lỗi.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">truy cập dịch vụ chủ đề</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Cho phép ứng dụng truy cập dịch vụ chủ đề. Ứng dụng bình thường không bao giờ cần quyền này.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">đọc thông tin chủ đề của bạn</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Cho phép ứng dụng đọc và xác định chủ đề bạn đã áp dụng.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">sửa đổi chủ đề của bạn</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Cho phép ứng dụng chèn các chủ đề mới và sửa đổi chủ đề bạn đã áp dụng.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">truy cập trình quản lý hiệu quả hoạt động</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Cho phép một ứng dụng truy cập dịch vụ hiệu quả hoạt động. Ứng dụng bình thường không bao giờ cần quyền này.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <!-- Access live lock screen manager service permission description -->
-  <!-- Privileged access live lock screen manager service permission label -->
-  <!-- Privileged access live lock screen manager service permission description -->
-  <!-- Live lock screen manager service provider permission label -->
-  <!-- Live lock screen manager service provider permission description -->
-  <!-- Weather Service strings -->
-  <!-- DataUsageProvider write permission title -->
-  <!-- DataUsageProvider write permission description -->
-  <!-- DataUsageProvider read permission title -->
-  <!-- DataUsageProvider read permission description -->
-  <!-- LiveDisplay manager permission -->
 </resources>

@@ -98,80 +98,8 @@
   <string name="live_display_outdoor">Ulkoilma (kirkas aurinko)</string>
   <string name="live_display_outdoor_summary">Käytä vain ulkoilma-asetusta</string>
   <string name="live_display_hint">LiveDisplay voi vähentää silmien rasitusta ja auttaa nukkumaan öisin. Kokeile sitä painamalla tästä!</string>
-  <string name="accessibility_quick_settings_live_display_off">LiveDisplay pois.</string>
-  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automaattitila.</string>
-  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: päivätila.</string>
-  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: yötila.</string>
-  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: ulkoilmatila.</string>
-  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay pois päältä.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay asetettu automaattitilaan.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay asetettu päivätilaan.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay asetettu yötilaan.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay asetettu ulkoilmatilaan.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">kolmannen osapuolen lukitusnäyttö</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Sallii sovellusta käytettävän epäturvallisena lukitusnäyttönä.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Lisäasetukset</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Eleet</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Ekstrat</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptinen palaute</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Värise kun ele tunnistetaan</string>
-  <!-- Theme installation error notification -->
-  <string name="theme_install_error_title">Teeman asennus epäonnistui</string>
-  <string name="theme_install_error_message">Teeman <xliff:g id="theme">%1$s</xliff:g> asennus epäonnistui</string>
-  <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Teeman resetointi</string>
-  <string name="theme_reset_notification_message">Järjestelmän teema palautettu lukuisten sovellusvirheiden vuoksi.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">pääsy teemapalveluun</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_accessThemeService">Sallii sovelluksen päästä teemapalveluun. Tavalliset sovellukset ei koskaan tarvitse tätä.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_readThemes">lue teeman tiedot</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_readThemesDesc">Sallii sovelluksen lukea teemojasi, ja tunnistaa käytössä olevan teeman.</string>
-  <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">muokkaa teemoja</string>
-  <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permdesc_writeThemesDesc">Sallii sovelluksen asettaa uusia teemoja ja muokata käytössä olevaa teemaa.</string>
-  <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">pääse suorituskyvyn hallintaan</string>
-  <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Sallii sovelluksen pääsyn suorityskyvyn hallinnan palveluun. Tavalliset sovellukset eivät koskaan tarvitse tätä.</string>
-  <!-- Access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenService">käytä live-lukitusnäytön hallintapalvelua</string>
-  <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Sallii sovelluksen käyttää live-lukitusnäytön hallintapalvelua.</string>
-  <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">käytä live-lukitusnäytön hallintapalvelua</string>
-  <!-- Privileged access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenServicePrivate">Sallii järjestelmän käyttää live-lukitusnäytön hallintapalvelua.</string>
-  <!-- Live lock screen manager service provider permission label -->
-  <string name="permlab_accessLiveLockScreenServiceProvider">käytä live-lukitusnäytön hallintapalveluna</string>
-  <!-- Live lock screen manager service provider permission description -->
-  <string name="permdesc_accessLiveLockScreenServiceProvider">Sallii palvelua käytettävän live-lukitusnäytön hallintapalveluna.</string>
-  <!-- Weather Service strings -->
-  <string name="permlab_weather_read">lue säätä</string>
-  <string name="permdesc_weather_read">Sallii sovelluksen lukea sisältöä säätarjoajalta.</string>
-  <string name="permlab_weather_write">päivitä säätarjoajaa</string>
-  <string name="permdesc_weather_write">Sallii sovelluksen päivittää säätarjoajan sisältöä.</string>
-  <string name="permlab_weather_bind">aseta säätarjoajapalveluksi</string>
-  <string name="permdesc_weather_bind">Sallii sovellusta käytettävän säätarjoajapalveluna.</string>
-  <string name="permlab_weather_access_mgr">pääsy sääpalveluun</string>
-  <string name="permdesc_weather_access_mgr">Sallii sovelluksen päästä järjestelmän sääpalveluun. Tavalliset sovellukset ei koskaan tarvitse tätä.</string>
-  <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">muokkaa datan käytön tietokantaa</string>
-  <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Sallii sovelluksen päivittää datan käytön tietokantaa.</string>
-  <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">lue datan käytön tietokantaa</string>
-  <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Sallii sovelluksen lukea datan käytön tietokantaa.</string>
-  <!-- LiveDisplay manager permission -->
-  <string name="permlab_manageLiveDisplay">hallitse LiveDisplay-asetuksia</string>
-  <string name="permdesc_manageLiveDisplay">Sallii sovelluksen määrittää kehittyneitä näytön asetuksia.</string>
 </resources>
