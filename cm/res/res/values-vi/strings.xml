@@ -133,14 +133,31 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Cho phép một ứng dụng truy cập dịch vụ hiệu quả hoạt động. Ứng dụng bình thường không bao giờ cần quyền này.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">truy cập dịch vụ quản lý màn hình khóa động</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Cho phép ứng dụng truy cập vào dịch vụ quản lý màn hình khóa động.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">truy cập dịch vụ quản lý màn hình khóa động</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Cho phép các ứng dụng của hệ thống truy cập vào dịch vụ quản lý màn hình khóa động.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">cung cấp dịch vụ quản lý màn hình khóa động</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Cho phép dịch vụ cung cấp dịch vụ quản lý màn hình khóa động.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">đọc thời tiết</string>
+  <string name="permdesc_weather_read">Cho phép ứng dụng đọc nội dung từ nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_write">cập nhật nhà cung cấp thời tiết</string>
+  <string name="permdesc_weather_write">Cho phép ứng dụng cập nhật nội dung của nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_bind">ràng buộc như là dịch vụ của nhà cung cấp thời tiết</string>
+  <string name="permdesc_weather_bind">Cho phép ứng dụng được xác định như là dịch vụ của nhà cung cấp thời tiết.</string>
+  <string name="permlab_weather_access_mgr">truy cập dịch vụ thời tiết</string>
+  <string name="permdesc_weather_access_mgr">Cho phép ứng dụng truy cập dịch vụ thời tiết trong hệ thống. Ứng dụng bình thường không bao giờ cần sự cho phép này.</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">quan sát các thay đổi về phiên âm thanh</string>
+  <string name="permdesc_observe_audio_sessions">Cho phép ứng dụng quan sát dòng âm thanh được tạo và bị hủy.</string>
 </resources>

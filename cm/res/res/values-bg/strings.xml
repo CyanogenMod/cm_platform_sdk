@@ -154,11 +154,10 @@
   <string name="permlab_weather_access_mgr">Достъп до метеорологична служба</string>
   <string name="permdesc_weather_access_mgr">Позволява на приложението достъп до услугата за време. Не е необходимо за нормални приложения.</string>
   <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">Промени база данни</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Разрешава на приложението да актуализира съдържанието на базата данни.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">Прочети база данни</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Разрешава на приложението да чете съдържанието на базата данни.</string>
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">наблюдава променена аудио сесия</string>
+  <string name="permdesc_observe_audio_sessions">Позволява на приложение да наблюдава създаване и унищожаване на аудио потоци.</string>
 </resources>

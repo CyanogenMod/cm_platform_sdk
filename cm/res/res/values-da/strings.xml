@@ -154,11 +154,8 @@
   <string name="permlab_weather_access_mgr">tilgå vejr-tjenesten</string>
   <string name="permdesc_weather_access_mgr">Tillader en app at tilgå vejrtjenesten i systemet. Bør aldrig være nødvendig for alm. apps.</string>
   <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">ændre database for dataforbrug</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Tillader en app at opdatere indholdet af databasen for dataforbrug.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">læs database for dataforbrug</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Tillader en app at læse indholdet af databasen for dataforbrug.</string>
+  <!-- CMAudioService - observe session changes permission -->
 </resources>

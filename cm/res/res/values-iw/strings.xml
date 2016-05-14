@@ -117,7 +117,7 @@
   <string name="theme_reset_notification_title">איפוס ערכת עיצוב</string>
   <string name="theme_reset_notification_message">ערכת העיצוב של המערכת שוחזרה עקב קריסות יישומים מרובות.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_accessThemeService">גישה לשירות ערכות העיצוב</string>
+  <string name="permlab_accessThemeService">גש לשירות ערכות העיצוב</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_accessThemeService">מאפשר ליישום לגשת לשירות ערכות העיצוב. לא אמור להידרש ליישומים רגילים לעולם.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -125,11 +125,11 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_readThemesDesc">מאפשר ליישום לקרוא את ערכות העיצוב הקיימות, ולקבוע איזו ערכה החלת.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-  <string name="permlab_writeThemes">שינוי ערכות העיצוב שלך</string>
+  <string name="permlab_writeThemes">שנה את ערכות העיצוב שלך</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_writeThemesDesc">מאפשר ליישום להוסיף ערכות עיצוב חדשות ולשנות את הערכה המוחלת.</string>
   <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">גישה למנהל הביצועים</string>
+  <string name="permlab_perfAccess">גש למנהל הביצועים</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">מאפשר ליישום לגשת לשירות ניהול הביצועים. לא אמור להידרש ליישומים רגילים לעולם.</string>
   <!-- Access live lock screen manager service permission label -->
@@ -137,7 +137,7 @@
   <!-- Access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenService">מאפשר ליישום לגשת לשירות ניהול מסך הנעילה החי.</string>
   <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">גישה לשירות ניהול מסך הנעילה החי</string>
+  <string name="permlab_accessLiveLockScreenServicePrivate">גש לשירות ניהול מסך הנעילה החי</string>
   <!-- Privileged access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenServicePrivate">מאפשר ליישומי מערכת לגשת לשירות ניהול מסך הנעילה החי.</string>
   <!-- Live lock screen manager service provider permission label -->
@@ -154,11 +154,10 @@
   <string name="permlab_weather_access_mgr">גישה לשירות מידע מזג אוויר</string>
   <string name="permdesc_weather_access_mgr">מאפשר ליישום לגשת לשירות מזג האוויר של המערכת. לא אמור להידרש ליישומים רגילים לעולם.</string>
   <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">שנה מסד נתונים של השימוש בנתונים</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">מאפשר ליישום לעדכן את תוכן מסד הנתונים של השימוש בנתונים.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">קרא את מסד הנתונים של השימוש בנתונים</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">מאפשר ליישום לקרוא תוכן ממסד הנתונים של השימוש בנתונים.</string>
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">הרשאה לקבלת עדכוני פעולות במערכת השמע</string>
+  <string name="permdesc_observe_audio_sessions">מאפשר ליישום לקבל עדכוני יצירה וסגירה של זרמי שמע.</string>
 </resources>

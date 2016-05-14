@@ -131,16 +131,33 @@
   <!-- Performance manager permission title -->
   <string name="permlab_perfAccess">acceso al administrador de rendimiento</string>
   <!-- Performance manager permission description -->
-  <string name="permdesc_perfAccessDesc">Permite que la aplicación acceda al rendimiento del servicio. No debería ser necesario para aplicaciones normales.</string>
+  <string name="permdesc_perfAccessDesc">Permite que la aplicación acceda al servicio de rendimiento. Nunca debería ser necesario para aplicaciones normales.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">acceder al administrador de servicio de pantalla de bloqueo animada</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permite que una aplicación acceda al servicio de administración de la pantalla de bloqueo animada.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">acceder al administrador de servicio de pantalla de bloqueo animada</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permite que las aplicaciones de sistema accedan al servicio de administración de pantalla de bloqueo animada.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">proporcionar servicio de administración de pantalla de bloqueo animada</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permite que un servicio provea el servicio de administración de pantalla de bloqueo animada.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">ver el tiempo</string>
+  <string name="permdesc_weather_read">Permite a una aplicación leer contenido desde el proveedor del clima.</string>
+  <string name="permlab_weather_write">actualizar proveedor del clima</string>
+  <string name="permdesc_weather_write">Permite a una aplicación actualizar el contenido del proveedor del clima.</string>
+  <string name="permlab_weather_bind">establecer como servicio de proveedor del clima</string>
+  <string name="permdesc_weather_bind">Permite que una aplicación sea identificada como un servicio de proveedor del clima.</string>
+  <string name="permlab_weather_access_mgr">acceder al servicio del clima</string>
+  <string name="permdesc_weather_access_mgr">Permite a una aplicación acceder al servicio del clima en el sistema. Nunca debería ser necesario para aplicaciones normales.</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observa los cambios en la sesión de sonido</string>
+  <string name="permdesc_observe_audio_sessions">Permite que una aplicación observe los flujos de sonido que se crean y destruyen.</string>
 </resources>
