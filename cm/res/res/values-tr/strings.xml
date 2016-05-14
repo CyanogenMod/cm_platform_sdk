@@ -156,9 +156,13 @@ uyguladığınız temayı değiştirmesine izin verir.</string>
   <string name="permlab_weather_access_mgr">hava durumu servisine erişme</string>
   <string name="permdesc_weather_access_mgr">Bir uygulamanın sistemdeki hava durumu hizmetinin erişimine izin verir. Normal uygulamalar için gerekli değildir.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">veri kullanımı veritabanını değiştir</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Bir uygulamanın veri kullanımı veribatanının içeriğini güncellemesine izin verir.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">veri kullanımı veritabanını oku</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Bir uygulamanın veri kullanımı veritabanındaki içeriği okumasına izin verir.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">ses oturum değişikliklerini gözlemle</string>
   <string name="permdesc_observe_audio_sessions">Bir uygulamanın, ses akışlarınının oluşturulma ve yok edilmesinde gözlem yapmasına izin verir.</string>

@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">Приступ услузи временске прогнозе</string>
   <string name="permdesc_weather_access_mgr">Омогућава апликацији да приступи услугама временске прогнозе у систему. Није потребно нормалним апликацијама.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">промени коришћење података базе података</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Дозвола апликацији да ажурира садржај података базе података.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">прочитај податке коришћења базе података</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Дозвола апликацији да чита садржај података базе података.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">посматрај промене аудио сесије</string>
   <string name="permdesc_observe_audio_sessions">Дозвољава апликацији да посматра ток аудиа док је креиран и прекинут.</string>

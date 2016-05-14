@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">날씨 서비스에 접근</string>
   <string name="permdesc_weather_access_mgr">앱이 시스템의 날씨 서비스에 접근할 수 있도록 허용합니다. 일반 앱에서는 필요 없는 권한입니다.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">데이터 사용량 데이터베이스 수정</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">앱이 데이터 사용량 데이터베이스를 수정할 수 있도록 허용합니다.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">데이터 사용량 데이터베이스 읽기</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">앱이 데이터 사용량 데이터베이스를 읽을 수 있도록 허용합니다.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">오디오 세션 변화 관찰</string>
   <string name="permdesc_observe_audio_sessions">앱이 오디오 스트림이 생성되고 제거되는 것을 관찰할 수 있도록 허용합니다.</string>

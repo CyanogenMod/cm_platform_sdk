@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">eguraldi zerbitzua atzitzea</string>
   <string name="permdesc_weather_access_mgr">Sistemako eguraldi zerbitzura sartzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute hau behar.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">datu erabileraren datu-basea aldatu</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Datu erabileraren datu-baseko edukiak eguneratzea ahalbidetzen dio aplikazioari.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">datu erabilera errealaren datu-basea</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Datu erabileraren datu-baseko edukiak irakurtzea ahalbidetzen dio aplikazioari.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">audio saio aldaketak aztertu</string>
   <string name="permdesc_observe_audio_sessions">Audio jarioen sorrerak eta suntsiketak aztertzea ahalbidetzen dio aplikazioari.</string>

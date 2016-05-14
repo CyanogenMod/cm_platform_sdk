@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">truy cập dịch vụ thời tiết</string>
   <string name="permdesc_weather_access_mgr">Cho phép ứng dụng truy cập dịch vụ thời tiết trong hệ thống. Ứng dụng bình thường không bao giờ cần sự cho phép này.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">sửa đổi cơ sở dữ liệu sử dụng dữ liệu</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Cho phép ứng dụng cập nhật nội dung của cơ sở dữ liệu sử dụng dữ liệu.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">đọc cơ sở dữ liệu sử dụng dữ liệu</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Cho phép ứng dụng đọc nội dung từ cơ sở dữ liệu sử dụng dữ liệu.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">quan sát các thay đổi về phiên âm thanh</string>
   <string name="permdesc_observe_audio_sessions">Cho phép ứng dụng quan sát dòng âm thanh được tạo và bị hủy.</string>

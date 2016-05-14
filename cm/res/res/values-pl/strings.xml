@@ -154,8 +154,12 @@
   <string name="permlab_weather_access_mgr">dostęp do usługi prognozy pogody</string>
   <string name="permdesc_weather_access_mgr">Zezwala aplikacji na dostęp do usługi prognozy pogody w systemie. Nie powinno być wymagane przez zwykłe aplikacje.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modyfikowanie zawartości licznika danych</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Umożliwia aplikacji aktualizowanie zawartości licznika danych.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">odczyt zawartości licznika danych</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Umożliwia aplikacji odczyt zawartości licznika danych.</string>
   <!-- CMAudioService - observe session changes permission -->
 </resources>

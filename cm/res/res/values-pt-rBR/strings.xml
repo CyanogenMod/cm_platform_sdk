@@ -157,11 +157,11 @@
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">modificar o banco de dados de uso de dados</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Permite acesso de escrita ao banco de dados de uso de dados</string>
+  <string name="permdesc_dataUsageWrite">Permite um aplicativo a atualizar o conteúdo da base de dados de uso de dados.</string>
   <!-- DataUsageProvider read permission title -->
   <string name="permlab_dataUsageRead">ler banco de dados de uso de dados</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Permite acesso de leitura ao banco de dados de uso de dados</string>
+  <string name="permdesc_dataUsageRead">Permite um aplicativo ler o conteúdo do banco de dados de uso de dados.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">observar as alterações da sessão de áudio</string>
   <string name="permdesc_observe_audio_sessions">Permite que um app observe o fluxo de áudio sendo criado e destruído.</string>

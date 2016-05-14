@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">เข้าถึงบริการรายงานสภาพอากาศ</string>
   <string name="permdesc_weather_access_mgr">อนุญาตให้แอปสามารถจัดการบริการรายงานสภาพอากาศในระบบ ปกติแล้วไม่ต้องการใช้งานในแอปทั่วไป</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">แก้ไขฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">อนุญาตให้แอปสามารถปรับปรุงเนื้อหาของฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">อ่านฐานข้อมูลการใช้งาน</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">อนุญาตให้แอปสามารถอ่านเนื้อหาจากฐานข้อมูลการใช้งาน</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">สังเกตการเปลี่ยนแปลงเซสชันเสียง</string>
   <string name="permdesc_observe_audio_sessions">อนุญาตให้แอปสังเกตกระแสข้อมูลเสียงที่กำลังถูกสร้างและทำลาย</string>

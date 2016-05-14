@@ -128,9 +128,13 @@
   <string name="permlab_weather_access_mgr">acceder al serviciu metereoloxía</string>
   <string name="permdesc_weather_access_mgr">Permite qu\'una aplicación acceda al serviciu meteorolóxicu nel sistema. Enxamás debería precisase p\'aplicaciones normales.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar base de datos d\'usu de datos</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permite qu\'una aplicación anueve\'l conteníu de la base de datos d\'usu de datos.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">lleer base de datos d\'usu de datos</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permite qu\'una aplicación llea\'l conteníu de la base de datos d\'usu de datos.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">mirar camudancies de sesiones d\'audiu</string>
   <string name="permdesc_observe_audio_sessions">Permite qu\'una aplicación mire los fluxos d\'audiu que se creen y destrúin.</string>

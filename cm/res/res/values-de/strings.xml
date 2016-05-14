@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">auf Wetterdienst zugreifen</string>
   <string name="permdesc_weather_access_mgr">Ermöglicht der App, auf den Wetterdienst des Systems zuzugreifen. Wird für normale Apps nicht benötigt.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">Datennutzung-Datenbank ändern</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank zu aktualisieren.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">Datennutzungs-Datenbank lesen</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Ermöglicht einer App, Inhalte der Datennutzungs-Datenbank auszulesen.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">Audiositzungsänderungen überwachen</string>
   <string name="permdesc_observe_audio_sessions">Erlaubt einer App, die Erstellung und Löschung von Audio-Streams zu überwachen.</string>

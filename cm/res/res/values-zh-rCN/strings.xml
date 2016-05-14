@@ -154,9 +154,13 @@
   <string name="permlab_weather_access_mgr">访问天气服务</string>
   <string name="permdesc_weather_access_mgr">允许应用在系统中访问天气服务。正常应用不应需要此权限。</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">修改数据使用情况数据库</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">允许应用更新数据使用情况数据库。</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">读取数据使用情况数据库。</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">允许应用从数据使用情况数据库中读取内容。</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">观察音频会话变动</string>
   <string name="permdesc_observe_audio_sessions">允许应用观察音频流的创建和销毁。</string>
