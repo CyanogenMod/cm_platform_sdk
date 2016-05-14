@@ -70,7 +70,7 @@
   <string name="profileNameWork">Работа</string>
   <string name="profileNameHome">Вкъщи</string>
   <string name="profileNameSilent">Тих режим</string>
-  <string name="profileNameNight">Нощ</string>
+  <string name="profileNameNight">Нощен</string>
   <string name="profileNameAutomobile">Автомобилен режим</string>
   <!-- Names of application groups. -->
   <string name="profileGroupPhone">Телефон</string>
@@ -93,7 +93,7 @@
   <string name="live_display_off_summary">Няма зададен режим на екрана</string>
   <string name="live_display_day">Дневен</string>
   <string name="live_display_day_summary">Само настройки на дневен режим</string>
-  <string name="live_display_night">Нощ</string>
+  <string name="live_display_night">Нощен</string>
   <string name="live_display_night_summary">Само настройки на нощен режим</string>
   <string name="live_display_outdoor">На открито (ярко слънце)</string>
   <string name="live_display_outdoor_summary">Само настройки на режим на открито</string>
