@@ -62,6 +62,7 @@
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automáticu</string>
   <string name="live_display_auto_summary">Axusta automáticamente la temperatura de color de la pantalla dempués del tapecer y l\'aséu</string>
+  <string name="live_display_off">Desactiváu</string>
   <string name="live_display_off_summary">Deshabilitar tolos axustes</string>
   <string name="live_display_day">Día</string>
   <string name="live_display_day_summary">Usar namái los axustes de día</string>
@@ -70,6 +71,16 @@
   <string name="live_display_outdoor">Esterior (lluz del sol)</string>
   <string name="live_display_outdoor_summary">Usar namái axustes del esterior</string>
   <string name="live_display_hint">LiveDisplay pue ayudar a amenorgar el cansanciu de güeyos y ayudate a dormir pela nueche. ¡Toca equí pa probalu!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay desactiváu.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: mou auto.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: mou diurnu.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: mou nocherniegu.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: mou esterior.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay desactiváu.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay camudó al mou auto.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay camudó al mou diurnu.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay camudó al mou nocherniegu.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay camudó al mou esterior.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">pantalla de bloquéu de terceres partes</string>
   <!-- Third party keyguard permission description -->
@@ -77,29 +88,70 @@
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Axustes avanzaos</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Xestos</string>
   <!-- Touchscreen gesture haptic feedback -->
+  <string name="touchscreen_gesture_extras">Estres</string>
+  <string name="touchscreen_gesture_haptic_feedback">Feedback hápticu</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Vibra al deteutase un xestu</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Fallu al instalase\'l tema</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> falló al instalase</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Tema reafitáu</string>
+  <string name="theme_reset_notification_message">Restauróse\'l tema\'l sistema pola mor de casques d\'aplicación múltiples.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">acceder al serviciu de temes</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Permite qu\'una aplicación acceda al serviciu de temes. Enxamás debería precisase p\'aplicaciones normales.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">lleer la información del to tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Permite que l\'aplicación llea los to temes y
+       determine que tema tienes aplicáu.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modificar los tos temes</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Permite que l\'aplicación inxerte temes nuevos y modifique que tema tienes aplicáu.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">acceder al xestor de rindimientu</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Permite qu\'una aplicación acceda al serviciu de rindimientu. Enxamás debería precisase p\'aplicaciones normales.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">acceder al serviciu de pantalles de bloquéu animaes</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permite qu\'una aplicación acceda al serviciu xestor de pantalles de bloquéu animaes.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">acceder al serviciu xestor de pantalles de bloquéu animaes</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permiten que les aplicaciones del sistema accedan al serviciu xestor de pantalles de bloquéu animaes.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">fornir al serviciu xestor de pantalles de bloquéu animaes</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permite qu\'un serviciu forna al serviciu xestor de pantalles de bloquéu animaes.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">lleer la metereoloxía</string>
+  <string name="permdesc_weather_read">Permite qu\'una aplicación llea\'l conteníu del fornidor meteorolóxicu.</string>
+  <string name="permlab_weather_write">anovar el fornidor meteorolóxicu</string>
+  <string name="permdesc_weather_write">Permite qu\'una aplicación anueve\'l conteníu del fornidor meteorolóxicu.</string>
+  <string name="permlab_weather_bind">arreyar como serviciu fornidor de metereoloxía</string>
+  <string name="permdesc_weather_bind">Permite qu\'una aplicación s\'identifique como un serviciu fornidor de meteoroloxía.</string>
+  <string name="permlab_weather_access_mgr">acceder al serviciu metereoloxía</string>
+  <string name="permdesc_weather_access_mgr">Permite qu\'una aplicación acceda al serviciu meteorolóxicu nel sistema. Enxamás debería precisase p\'aplicaciones normales.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar base de datos d\'usu de datos</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permite qu\'una aplicación anueve\'l conteníu de la base de datos d\'usu de datos.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">lleer base de datos d\'usu de datos</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permite qu\'una aplicación llea\'l conteníu de la base de datos d\'usu de datos.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">xestionar axustes de LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Permite qu\'una aplicación configure los axustes avanzaos de pantalla.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">mirar camudancies de sesiones d\'audiu</string>
+  <string name="permdesc_observe_audio_sessions">Permite qu\'una aplicación mire los fluxos d\'audiu que se creen y destrúin.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temes</string>
+  <string name="qs_themes_content_description">Personaliza\'l to tema</string>
 </resources>

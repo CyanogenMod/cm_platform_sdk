@@ -178,4 +178,5 @@
   <string name="permlab_observe_audio_sessions">посматрај промене аудио сесије</string>
   <string name="permdesc_observe_audio_sessions">Дозвољава апликацији да посматра ток аудиа док је креиран и прекинут.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Теме</string>
 </resources>
