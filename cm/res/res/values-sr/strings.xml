@@ -157,4 +157,7 @@
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">посматрај промене аудио сесије</string>
+  <string name="permdesc_observe_audio_sessions">Дозвољава апликацији да посматра ток аудиа док је креиран и прекинут.</string>
 </resources>

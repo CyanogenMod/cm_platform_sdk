@@ -155,11 +155,10 @@
   <string name="permlab_weather_access_mgr">aceder ao serviço de meteorologia</string>
   <string name="permdesc_weather_access_mgr">Permite que uma aplicação aceda ao serviço de meteorologia do sistema. Nunca deverá ser necessário para aplicações normais.</string>
   <!-- DataUsageProvider write permission title -->
-  <string name="permlab_dataUsageWrite">modificar a base de dados de utilização de dados</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Permite que uma aplicação atualize o conteúdo da base de dados de utilização de dados.</string>
   <!-- DataUsageProvider read permission title -->
-  <string name="permlab_dataUsageRead">ler a base de dados de utilização de dados</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Permite que uma aplicação leia o conteúdo da base de dados de utilização de dados.</string>
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observar as alterações da sessão de som</string>
+  <string name="permdesc_observe_audio_sessions">Permite que uma aplicação observe a criação e destruição de fluxos de som.</string>
 </resources>

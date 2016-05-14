@@ -133,14 +133,31 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">อนุญาตให้แอปเข้าถึงบริการด้านประสิทธิภาพ ซึ่งไม่จำเป็นสำหรับแอปปกติ</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">เข้าถึงบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">อนุญาตให้แอพสามารถเข้าจัดการ บริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">เข้าถึงบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">อนุญาตให้แอประบบสามารถเข้าใช้งาน บริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">ให้การบริการ หน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">อนุญาตให้บริการสามารถจัดการบริการหน้าจอล็อคแบบเคลื่อนไหว</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">อ่านสภาพอากาศ</string>
+  <string name="permdesc_weather_read">อนุญาตให้แอปอ่านเนื้อหาจากบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_write">ปรับปรุงบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_write">อนุญาตให้แอพสามารถอัพเดทเนื้อหาของบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_bind">ผูกมัดเป็นบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_bind">อนุญาตให้แอปยืนยันตัวตนเป็นบริการรายงานสภาพอากาศ</string>
+  <string name="permlab_weather_access_mgr">เข้าถึงบริการรายงานสภาพอากาศ</string>
+  <string name="permdesc_weather_access_mgr">อนุญาตให้แอปสามารถจัดการบริการรายงานสภาพอากาศในระบบ ปกติแล้วไม่ต้องการใช้งานในแอปทั่วไป</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">สังเกตการเปลี่ยนแปลงเซสชันเสียง</string>
+  <string name="permdesc_observe_audio_sessions">อนุญาตให้แอปสังเกตกระแสข้อมูลเสียงที่กำลังถูกสร้างและทำลาย</string>
 </resources>
