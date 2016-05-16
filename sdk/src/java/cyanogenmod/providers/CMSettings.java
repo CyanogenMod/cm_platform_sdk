@@ -2105,6 +2105,13 @@ public final class CMSettings {
             MOVED_TO_GLOBAL.add(Global.DEV_FORCE_SHOW_NAVBAR);
         }
 
+        /**
+         * @hide
+         */
+        public static boolean isMovedToGlobal(String key) {
+            return MOVED_TO_GLOBAL.contains(key);
+        }
+
         // region Methods
 
         /**
