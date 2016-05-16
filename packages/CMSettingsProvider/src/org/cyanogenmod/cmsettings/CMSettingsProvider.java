@@ -51,6 +51,7 @@ import org.cyanogenmod.internal.util.QSUtils;
 import cyanogenmod.providers.CMSettings;
 
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -196,6 +197,7 @@ public class CMSettingsProvider extends ContentProvider {
     private int migrateCMSettingsForTable(int userId, String tableName, String[] settings) {
         ContentResolver contentResolver = getContext().getContentResolver();
         ContentValues[] contentValues = new ContentValues[settings.length];
+        ArrayList<ContentValues> movedToGlobalValues = new ArrayList<>();
 
         int migrateSettingsCount = 0;
         for (String settingsKey : settings) {
@@ -214,6 +216,15 @@ public class CMSettingsProvider extends ContentProvider {
                     // incorrect migration from YOG4P -> YOG7D failed to remove
                     // Settings.Secure.STATS_COLLECTION after migration; so it may exist in both
                     // providers; so if it exists in the new database, prefer it.
+                    continue;
+                }
+
+                if (CMSettings.Secure.isMovedToGlobal(settingsKey) &&
+                        userId == UserHandle.USER_OWNER) {
+                    ContentValues contentValue = new ContentValues();
+                    contentValue.put(Settings.NameValueTable.NAME, settingsKey);
+                    contentValue.put(Settings.NameValueTable.VALUE, settingsValue);
+                    movedToGlobalValues.add(contentValue);
                     continue;
                 }
 
@@ -279,6 +290,11 @@ public class CMSettingsProvider extends ContentProvider {
             Uri uri = mUriBuilder.build();
             uri = uri.buildUpon().appendPath(tableName).build();
             rowsInserted = bulkInsertForUser(userId, uri, contentValues);
+        }
+        if (movedToGlobalValues.size() > 0) {
+            Uri uri = mUriBuilder.build();
+            uri = uri.buildUpon().appendPath(CMDatabaseHelper.CMTableNames.TABLE_GLOBAL).build();
+            rowsInserted += bulkInsertForUser(userId, uri, contentValues);
         }
 
         return rowsInserted;
