@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Buitenshuis (felle zon)</string>
   <string name="live_display_outdoor_summary">Alleen instellingen voor buitenshuis gebruiken</string>
   <string name="live_display_hint">LiveDisplay kan oogvermoeidheid verminderen en helpt u om \'s nachts te slapen. Tik hier om het uit te proberen!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay uit.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatisch.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: dagstand.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nachtstand.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: buitenstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay uitgeschakeld.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay gewijzigd naar automatisch.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay gewijzigd naar dagstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay gewijzigd naar nachtstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay gewijzigd naar buitenstand.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">vergrendelingsscherm van derden</string>
   <!-- Third party keyguard permission description -->
@@ -144,6 +154,7 @@
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">LiveDisplay-instellingen beheren</string>
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
 </resources>
