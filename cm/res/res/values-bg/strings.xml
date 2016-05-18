@@ -67,7 +67,7 @@
   <string name="profileNameWork">Работа</string>
   <string name="profileNameHome">Вкъщи</string>
   <string name="profileNameSilent">Тих режим</string>
-  <string name="profileNameNight">Нощ</string>
+  <string name="profileNameNight">Нощен</string>
   <string name="profileNameAutomobile">Автомобилен режим</string>
   <!-- Names of application groups. -->
   <string name="profileGroupPhone">Телефон</string>

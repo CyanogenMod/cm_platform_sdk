@@ -17,9 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
+  <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <string name="permdesc_readMSPhoneState">Permite a una aplicación ver l\'estáu del teléfonu y la conexón de datos con sofitu pa múltiples SIMs.</string>
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permdesc_modifyMSPhoneState">Permite a una aplicación modificar l\'estáu del teléfonu y la conexón de datos con sofitu pa múltiples SIMs.</string>
   <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permdesc_modifyProfiles">Permite a una aplicación modificar los perfiles del sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <!-- Labels for the WRITE_ALARMS permission. -->
   <!-- Labels for the MANAGE_ALARMS permission. -->
