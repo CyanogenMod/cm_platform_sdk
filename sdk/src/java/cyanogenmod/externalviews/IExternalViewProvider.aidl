@@ -29,4 +29,5 @@ interface IExternalViewProvider
     oneway void onDetach();
 
     void alterWindow(in int x, in int y, in int width, in int height, in boolean visible, in Rect clipRect);
+    void enableTouchEvents(boolean enabled);
 }

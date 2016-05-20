@@ -244,4 +244,16 @@ public class ExternalView extends View implements Application.ActivityLifecycleC
                     mServiceConnection, Context.BIND_AUTO_CREATE);
         }
     }
+
+    public void enableProviderComponentTouch(final boolean enable) {
+        performAction(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    mExternalViewProvider.enableTouchEvents(enable);
+                } catch (RemoteException e) {
+                }
+            }
+        });
+    }
 }
