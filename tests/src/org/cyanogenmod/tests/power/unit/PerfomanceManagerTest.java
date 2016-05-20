@@ -77,7 +77,8 @@ public class PerfomanceManagerTest extends AndroidTestCase {
         // Identify what power profiles are supported. The api currently returns
         // the total number of profiles supported in an ordered manner, thus we can
         // assume what they are and if we can set everything correctly.
-        for (int powerProfile = 0; powerProfile <
+        // TODO: Don't skip powersave. Skipped due to powersave being ignored while device plugged
+        for (int powerProfile = 1; powerProfile <
                 PerformanceManager.POSSIBLE_POWER_PROFILES.length; powerProfile++) {
             if (powerProfile < mCMPerformanceManager.getNumberOfProfiles()) {
                 //It is supported, set it and test if it was set
