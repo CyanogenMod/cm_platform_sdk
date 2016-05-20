@@ -85,11 +85,18 @@ public abstract class ExternalViewProviderService extends Service {
         public static final int DEFAULT_WINDOW_FLAGS =
                 WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
-                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;;
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+
+        public static final int NOTOUCH_WINDOW_FLAGS =
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE |
+                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
 
         private final class ProviderImpl extends IExternalViewProvider.Stub {
             private final Window mWindow;
             private final WindowManager.LayoutParams mParams;
+            private final int mDefaultWindowFlags;
+            private final int mNoTouchWindowFlags;
 
             private boolean mShouldShow = true;
             private boolean mAskedShow = false;
@@ -103,6 +110,10 @@ public abstract class ExternalViewProviderService extends Service {
                 mParams.flags = provider.getWindowFlags();
                 mParams.gravity = Gravity.LEFT | Gravity.TOP;
                 mParams.format = PixelFormat.TRANSPARENT;
+
+                // TODO: might want to rethink this, but for now just stash the alternate window flags
+                mDefaultWindowFlags = provider.getWindowFlags();
+                mNoTouchWindowFlags = provider.getNoTouchWindowFlags();
             }
 
             @Override
@@ -204,6 +215,32 @@ public abstract class ExternalViewProviderService extends Service {
                 mWindow.getDecorView().setVisibility(mShouldShow && mAskedShow ?
                         View.VISIBLE : View.GONE);
             }
+
+            public void enableTouchEvents() {
+                if (DEBUG) Log.d(TAG, "disableTouchEvents");
+                // TODO: pass this along
+                mParams.flags = mDefaultWindowFlags;
+                updateWindowLayoutParams();
+            }
+
+            public void disableTouchEvents() {
+                if (DEBUG) Log.d(TAG, "disableTouchEvents");
+                // TODO: pass this along
+                mParams.flags = mNoTouchWindowFlags;
+                updateWindowLayoutParams();
+            }
+
+            private void updateWindowLayoutParams() {
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (DEBUG) Log.d(TAG, mParams.toString());
+
+                        if (mWindow.getDecorView().getVisibility() != View.GONE)
+                            mWindowManager.updateViewLayout(mWindow.getDecorView(), mParams);
+                    }
+                });
+            }
         }
 
         private final ProviderImpl mImpl = new ProviderImpl(this);
@@ -231,6 +268,18 @@ public abstract class ExternalViewProviderService extends Service {
 
         /*package*/ int getWindowFlags() {
             return DEFAULT_WINDOW_FLAGS;
+        }
+
+        /*package*/ int getNoTouchWindowFlags() {
+            return NOTOUCH_WINDOW_FLAGS;
+        }
+
+        protected void setTouchEnabled(boolean enabled) {
+            if (enabled) {
+                mImpl.enableTouchEvents();
+            } else {
+                mImpl.disableTouchEvents();
+            }
         }
     }
 }
