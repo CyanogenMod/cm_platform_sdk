@@ -101,6 +101,13 @@
   <string name="accessibility_quick_settings_live_display_off">LiveDisplay av.</string>
   <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatisk.</string>
   <string name="accessibility_quick_settings_live_display_day">LiveDisplay: dagmodus.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: natt modus.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: utendørs modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay slått av.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay byttet til automatisk modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay byttet til dag modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay byttet til natt modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay byttet til utendørs modus.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjeparts låseskjerm</string>
   <!-- Third party keyguard permission description -->
@@ -122,6 +129,7 @@
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_accessThemeService">få tilgang til tematjeneste</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Tillater en app å få tilgang til tematjenesten. Skal aldri være nødvendig for normale apper.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_readThemes">les temainformasjon</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
@@ -132,19 +140,45 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_writeThemesDesc">Lar apper installere nye temaer og endre de temaene du har valgt.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">tilgang til ytelsesadministrereren</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Tillater en app å få tilgang til ytelses-tjenesten. Dette skulle aldri vært nødvendig for normale apper.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">tilgang til levende skjermlås administrerings-tjenesten</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Tillater en app å få tilgang til levende skjermlås administrerings-tjenesten.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">tilgang til levende skjermlås administrerings-tjenesten</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Tillater systemapper å få tilgang til levende skjermlås administrerings-tjenesten.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">forsyne levende skjermlås administrerings-tjenesten</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Tillater en tjeneste å forsyne levende skjermlås administrerings-tjenesten.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">lese vær</string>
+  <string name="permdesc_weather_read">Tillater en app å lese av innholdet fra vær leverandøren.</string>
+  <string name="permlab_weather_write">oppdatere vær leverandør</string>
+  <string name="permdesc_weather_write">Tillater en app å oppdatere innholdet til vær leverandøren.</string>
+  <string name="permlab_weather_bind">binde seg som en vær leverandør tjeneste</string>
+  <string name="permdesc_weather_bind">Tillater en app å bli identifisert som en vær leverandør tjeneste.</string>
+  <string name="permlab_weather_access_mgr">få tilgang til vær-tjeneste</string>
+  <string name="permdesc_weather_access_mgr">Tillater en app å få tilgang til værtjenesten i systemet. Skal aldri være nødvendig for normale apper.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">endre databruk databasen</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Tillater en app å oppdatere innholdet til databruk databasen.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">lese av databruk databasen</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Tillater en app å lese av innholdet i databruk databasen.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">behandle LiveDisplay innstillinger</string>
+  <string name="permdesc_manageLiveDisplay">Tillater en app å konfigurere avanserte skjerm innstillinger.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observere lyd-økt endringer</string>
+  <string name="permdesc_observe_audio_sessions">Tillater en app å observere om lyd-strømmer blir lagd eller ødelagt.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temaer</string>
+  <string name="qs_themes_content_description">Tilpass temaet ditt</string>
 </resources>
