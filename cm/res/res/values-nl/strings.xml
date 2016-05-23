@@ -16,48 +16,65 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod-systeem</string>
   <string name="permlab_publishCustomTile">een aangepaste tegel aanmaken in het snelle instellingenpaneel</string>
   <string name="permdesc_publishCustomTile">Hiermee kan een app een tegel toevoegen aan Snelle instellingen.</string>
   <string name="permlab_modifyNetworkSettings">systeemnetwerkinstellingen wijzigen</string>
-  <string name="permdesc_modifyNetworkSettings">Hiermee kan de app wijzigingen aanbrengen in de vliegmodus en de mobiele netwerkinstellingen.</string>
+  <string name="permdesc_modifyNetworkSettings">Hiermee kan de app wijzigingen aanbrengen in de vliegtuigmodus en de mobiele netwerkinstellingen.</string>
   <string name="permlab_modifySoundSettings">systeemgeluidinstellingen wijzigen</string>
   <string name="permdesc_modifySoundSettings">Hiermee kan de app wijzigingen aanbrengen in de onderbrekingsinstellingen van meldingen.</string>
   <string name="permlab_bindCustomTileListenerService">koppelen aan aangepaste tegel-service</string>
   <string name="permdesc_bindCustomTileListenerService">Hiermee kan de app koppelen aan de systeeminterface voor het aanmaken van tegels.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">telefoonstatus en gegevensverbinding bekijken met ondersteuning voor multi-SIM</string>
   <string name="permdesc_readMSPhoneState">Hiermee kan de app de status van de telefoon en de gegevensverbinding weergeven met ondersteuning voor meerdere simkaarten.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">telefoonstatus en gegevensverbinding wijzigen met ondersteuning voor multi-SIM</string>
   <string name="permdesc_modifyMSPhoneState">Hiermee kan de app de status van de telefoon en van de gegevensverbinding wijzigen met ondersteuning voor meerdere simkaarten.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">systeemprofielen wijzigen</string>
   <string name="permdesc_modifyProfiles">Hiermee kan de app systeemprofielen wijzigen.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">hardware-framework gebruiken</string>
   <string name="permdesc_useHardwareFramework">Hiermee kan de app toegang krijgen tot het hardware-framework van CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">rechtstreeks alarmen wijzigen</string>
   <string name="permdesc_write_alarms">Hiermee kan de app alarmen toevoegen, bewerken of verwijderen.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">geplande alarmen in-/uitschakelen</string>
   <string name="permdesc_manage_alarms">Hiermee kan de app uw geplande alarmen in-/uitschakelen.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">toegang tot geplande alarmen</string>
   <string name="permdesc_read_alarms">Hiermee kan de app uw geplande alarmen lezen.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">CM-systeeminstellingen wijzigen</string>
   <string name="permdesc_writeSettings">Hiermee kan de app de systeeminstellingen van CM wijzigen.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">beveiligde CM-systeeminstellingen wijzigen</string>
   <string name="permdesc_writeSecureSettings">Hiermee kan de app de beveiligde systeeminstellingen van CM wijzigen. Niet voor gebruik door normale apps.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">blijvende opslag beheren</string>
   <string name="permdesc_managePersistentStorage">Hiermee kan de app eigenschappen lezen of schrijven die blijven bestaan na terugzetten naar fabrieksinstellingen.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">toegang tot app-suggesties</string>
   <string name="permdesc_accessAppSuggestions">Hiermee kan de app toegang krijgen tot app-suggesties.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Aangepaste tegel-service</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Standaard</string>
   <string name="profileNameWork">Werk</string>
   <string name="profileNameHome">Thuis</string>
   <string name="profileNameSilent">Stil</string>
   <string name="profileNameNight">Nacht</string>
   <string name="profileNameAutomobile">Onderweg</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefoon</string>
   <string name="profileGroupCalendar">Agenda</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">Sms</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Anders</string>
 </resources>

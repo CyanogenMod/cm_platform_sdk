@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Σύστημα CyanogenMod</string>
   <string name="permlab_publishCustomTile">δημιουργία προσαρμοσμένου πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων</string>
   <string name="permdesc_publishCustomTile">Επιτρέπει σε μία εφαρμογή τη δημιουργία πλακιδίου στον Πίνακα Γρήγορων ρυθμίσεων.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Επιτρέπει σε μια εφαρμογή να κάνει αλλαγές στις ρυθμίσεις ήχου για τις διακοπές.</string>
   <string name="permlab_bindCustomTileListenerService">σύνδεση σε ένα listener υπηρεσίας προσαρμοσμένων πλακιδίων</string>
   <string name="permdesc_bindCustomTileListenerService">Επιτρέπει στην εφαρμογή τη σύνδεση στο ανώτατο επίπεδο διασύνδεσης ενός listener υπηρεσίας προσαρμοσμένων πλακιδίων.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">εμφάνιση κατάστασης του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM</string>
   <string name="permdesc_readMSPhoneState">Επιτρέπει σε μια εφαρμογή να εμφανίζει την κατάσταση του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">τροποποίηση κατάστασης του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM</string>
   <string name="permdesc_modifyMSPhoneState">Επιτρέπει σε μια εφαρμογή να τροποποιεί την κατάσταση του τηλεφώνου και της σύνδεσης δεδομένων με υποστήριξη για πολλαπλές SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">τροποποίηση προφίλ συστήματος</string>
   <string name="permdesc_modifyProfiles">Επιτρέπει σε μια εφαρμογή να τροποποιεί τα προφίλ του συστήματος.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">χρήση του πλαισίου υλικού</string>
   <string name="permdesc_useHardwareFramework">Επιτρέπει σε μια εφαρμογή την πρόσβαση στο πλαίσιο υλικού του CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">άμεση επεξεργασία αφυπνίσεων</string>
   <string name="permdesc_write_alarms">Επιτρέπει σε μια εφαρμογή να προσθέσει, να τροποποιήσει ή να διαγράψει όλες τις αφυπνίσεις.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">εναλλαγή προγραμματισμένων αφυπνίσεων</string>
   <string name="permdesc_manage_alarms">Επιτρέπει σε μια εφαρμογή να ενεργοποιήσει ή να απενεργοποιήσει τις προγραμματισμένες αφυπνίσεις.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">ανάγνωση προγραμματισμένων αφυπνίσεων</string>
   <string name="permdesc_read_alarms">Επιτρέπει σε μια εφαρμογή να διαβάσει τις προγραμματισμένες αφυπνίσεις.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">τροποποίηση ρυθμίσεων συστήματος CM</string>
   <string name="permdesc_writeSettings">Επιτρέπει σε μια εφαρμογή να τροποποιεί τις ρυθμίσεις συστήματος του CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">τροποποίηση ασφαλών ρυθμίσεων συστήματος CM</string>
   <string name="permdesc_writeSecureSettings">Επιτρέπει σε μια εφαρμογή να τροποποιεί τις ασφαλείς ρυθμίσεις συστήματος του CM. Δεν χρησιμοποιείται από κανονικές εφαρμογές.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">διαχείριση επίμονου χώρου αποθήκευσης</string>
   <string name="permdesc_managePersistentStorage">Επιτρέπει σε μια εφαρμογή να διαβάσει ή να γράψει ιδιότητες που μπορούν να επιμείνουν ακόμη και μετά από μια επαναφορά εργοστασιακών ρυθμίσεων.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">πρόσβαση στις προτάσεις εφαρμογών</string>
   <string name="permdesc_accessAppSuggestions">Επιτρέπει σε μια εφαρμογή να έχει πρόσβαση στις προτάσεις εφαρμογών.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Listener προσαρμοσμένων πλακιδίων</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Προεπιλογή</string>
   <string name="profileNameWork">Εργασία</string>
   <string name="profileNameHome">Σπίτι</string>
   <string name="profileNameSilent">Αθόρυβο</string>
   <string name="profileNameNight">Νύχτα</string>
   <string name="profileNameAutomobile">Αυτοκίνητο</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Τηλέφωνο</string>
   <string name="profileGroupCalendar">Ημερολόγιο</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Ηλεκτρονικό ταχυδρομείο</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Άλλο</string>
 </resources>

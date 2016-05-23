@@ -16,48 +16,65 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <string name="permlab_publishCustomTile">criar um botão personalizado no painel de configurações rápidas</string>
-  <string name="permdesc_publishCustomTile">Permite que um app insira um botão nas configurações rápidas.</string>
+  <string name="permdesc_publishCustomTile">Permite que um aplicativo insira um botão nas configurações rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as configurações de rede do sistema</string>
   <string name="permdesc_modifyNetworkSettings">Permite que um aplicativo altere para o modo avião e configurações de rede de dados móvel.</string>
   <string name="permlab_modifySoundSettings">alterar as configurações de som do sistema</string>
   <string name="permdesc_modifySoundSettings">Permite que um aplicativo fazer alterações no modo de interrupção nas configurações de som.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de botão personalizado</string>
-  <string name="permdesc_bindCustomTileListenerService">Permite que o app vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
+  <string name="permdesc_bindCustomTileListenerService">Permite que o aplicativo vincule à interface de nível superior de um serviço de monitoramento de botão personalizado.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">veja a conexão de dados e o estado do telefone com suporte para vários SIMs</string>
   <string name="permdesc_readMSPhoneState">Permite que um aplicativo exiba a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">modificar a conexão de dados e o estado do telefone com suporte para vários SIMs</string>
   <string name="permdesc_modifyMSPhoneState">Permite que um aplicativo modifique a conexão de dados e o estado do telefone com suporte para vários SIMs.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
-  <string name="permdesc_modifyProfiles">Permite a um app modificar os perfis de sistema.</string>
+  <string name="permdesc_modifyProfiles">Permite que um aplicativo modifique os perfis de sistema.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">utilizar o framework do hardware</string>
-  <string name="permdesc_useHardwareFramework">Permite o acesso de um app ao framework de acesso ao hardware CM.</string>
+  <string name="permdesc_useHardwareFramework">Permite o acesso de um aplicativo ao framework de acesso ao hardware CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">alterar os alarmes diretamente</string>
   <string name="permdesc_write_alarms">Permite a um aplicativo adicionar, modificar ou excluir todos os seus alarmes.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">alternar os alarmes agendados</string>
   <string name="permdesc_manage_alarms">Permite a um aplicativo ativar ou desativar seus alarmes agendados.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">acessar os alarmes agendados</string>
   <string name="permdesc_read_alarms">Permite a um aplicativo ler os alarmes agendados.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modificar as configurações do sistema da CM</string>
   <string name="permdesc_writeSettings">Permite que um aplicativo modifique as configurações do sistema da CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modificar as configurações de segurança do sistema da CM</string>
-  <string name="permdesc_writeSecureSettings">Permite que um aplicativo modifique as configurações de segurança do sistema da CM. Não para uso por aplicativos normais.</string>
+  <string name="permdesc_writeSecureSettings">Permite que um aplicativo modifique as configurações de segurança do sistema CM. Não deve ser usado por aplicativos normais.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">gerenciar o armazenamento persistente</string>
   <string name="permdesc_managePersistentStorage">Permite a um app ler ou escrever propriedades que podem persistir mesmo após um reset de fábrica.</string>
-  <string name="permlab_accessAppSuggestions">acesso as sugestões de app</string>
-  <string name="permdesc_accessAppSuggestions">Permite que o app acesse as sugestões de aplicação.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">acesso às sugestões de aplicativo</string>
+  <string name="permdesc_accessAppSuggestions">Permite que um aplicativo acesse as sugestões de aplicativo.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Monitoramento de botão personalizado</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
   <string name="profileNameHome">Casa</string>
   <string name="profileNameSilent">Silêncio</string>
   <string name="profileNameNight">Noite</string>
   <string name="profileNameAutomobile">Automóvel</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefone</string>
   <string name="profileGroupCalendar">Calendário</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Outro</string>
 </resources>

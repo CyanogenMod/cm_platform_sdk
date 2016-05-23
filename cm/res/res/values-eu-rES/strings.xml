@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod sistema</string>
   <string name="permlab_publishCustomTile">sortu lauza pertsonalizatu bat ezarpen azkarren panelean</string>
   <string name="permdesc_publishCustomTile">Ezarpen azkarretako lauza bat argitaratzea ahalbidetzen dio aplikazioari.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Etenaldi moduaren soinu ezarpenetan aldaketak egitea ahalbidetzen dio aplikazioari.</string>
   <string name="permlab_bindCustomTileListenerService">lotu lauza entzuteko zerbitzu pertsonalizatu batetara</string>
   <string name="permdesc_bindCustomTileListenerService">Lauza entzuketa zerbitzu pertsonalizatu baten goi mailako interfazera lotzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">ikusi telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
   <string name="permdesc_readMSPhoneState">Telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin ikustea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">aldatu telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin</string>
   <string name="permdesc_modifyMSPhoneState">Telefonoaren egoera eta datu konexioa hainbat SIM txartelentzako euskarriarekin aldatzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">aldatu sistemaren profilak</string>
   <string name="permdesc_modifyProfiles">Sistemaren profilak aldatzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">hardware markoa erabili</string>
   <string name="permdesc_useHardwareFramework">CM hardware markoa atzitzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">zuzenean aldatu alarmak</string>
   <string name="permdesc_write_alarms">Zure alarma guztiak gehitu, aldatu, edo ezabatzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">txandakatu programatutako alarmak</string>
   <string name="permdesc_manage_alarms">Programatutako alarmak piztu edo itzaltzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">atzitu programatutako alarmak</string>
   <string name="permdesc_read_alarms">Programatutako alarmak irakurtzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">aldatu CM sistemaren ezarpenak</string>
-  <string name="permdesc_writeSettings">CM sistema ezarpenak aldatzea ahalbidetzen dio aplikazioari.</string>
+  <string name="permdesc_writeSettings">CM sistemaren ezarpenak aldatzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">aldatu CM sistemaren ezarpen seguruak</string>
-  <string name="permdesc_writeSecureSettings">CM sistema ezarpen seguruak aldatzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute behar.</string>
+  <string name="permdesc_writeSecureSettings">CM sistemaren ezarpen seguruak aldatzea ahalbidetzen dio aplikazioari. Aplikazio arruntek ez dute behar.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">kudeatu behin betiko biltegiratzea</string>
   <string name="permdesc_managePersistentStorage">Gailua lantegiko ezarpenetara leheneratuta ere mantenduko diren ezaugarriak irakurri edo idaztea ahalbidetzen dio aplikazioari.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">aplikazio proposamenak atzitu</string>
   <string name="permdesc_accessAppSuggestions">Aplikazio proposamenak atzitzea ahalbidetzen dio aplikazioari.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Lauza pertsonalizatuaren entzulea</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Lehenetsia</string>
   <string name="profileNameWork">Lanean</string>
   <string name="profileNameHome">Etxean</string>
   <string name="profileNameSilent">Isilik</string>
   <string name="profileNameNight">Gaua</string>
   <string name="profileNameAutomobile">Kotxean</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefonoa</string>
   <string name="profileGroupCalendar">Egutegia</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Eposta</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Beste bat</string>
 </resources>

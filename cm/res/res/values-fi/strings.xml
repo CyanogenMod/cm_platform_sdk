@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod Järjestelmä</string>
   <string name="permlab_publishCustomTile">luo mukautettu tiili pika-asetuspaneeliin</string>
   <string name="permdesc_publishCustomTile">Sallii sovelluksen julkaista pika-asetustiiliä.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Sallii sovelluksen tehdä muutoksia keskeytystilan ääniasetuksiin.</string>
   <string name="permlab_bindCustomTileListenerService">kiinnitä mukautettu tiili kuuntelupalveluun</string>
   <string name="permdesc_bindCustomTileListenerService">Sallii haltijan kiinnittää mukautetun tiilen kuuntelupalvelun käyttöliittymään.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">tarkastele puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>
   <string name="permdesc_readMSPhoneState">Sallii sovelluksen tarkastella puhelimen tilaa ja datayhteyden tietoja usean SIM-kortin tuella.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">muokkaa puhelimen tilaa ja datayhteyttä useamman SIM-kortin tuella</string>
   <string name="permdesc_modifyMSPhoneState">Sallii sovelluksen muokata puhelimen tilaa ja datayhteyden tietoja usean SIM-kortin tuella.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">muokkaa järjestelmän profiileja</string>
   <string name="permdesc_modifyProfiles">Sallii sovelluksen muokata järjestelmäprofiileja.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">käytä laitteiston kehystä</string>
   <string name="permdesc_useHardwareFramework">Sallii sovelluksen pääsyn CM-laitteiston kehykseen.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">muuta hälytyksiä suoraan</string>
   <string name="permdesc_write_alarms">Sallii sovelluksen lisätä, muokata tai poistaa kaikki hälytyksesi.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">ota hälytys käyttöön</string>
   <string name="permdesc_manage_alarms">Sallii sovelluksen ottaa hälytyksen käyttöön tai poistaa sen käytöstä.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">käytä ajoitettua hälytystä</string>
   <string name="permdesc_read_alarms">Sallii sovelluksen lukea ajoitettuja hälytyksiä.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">muokkaa CM-järjestelmän asetuksia</string>
   <string name="permdesc_writeSettings">Sallii sovelluksen muokata CM-järjestelmän asetuksia.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">muokkaa CM-järjestelmän turvallisuusasetuksia</string>
   <string name="permdesc_writeSecureSettings">Sallii sovelluksen muokata CM-järjestelmän turvallisuusasetuksia. Ei normaalin sovelluksen käytettäväksi.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">hallitse pysyvää tallennustilaa</string>
   <string name="permdesc_managePersistentStorage">Sallii sovelluksen lukea tai kirjoittaa ominaisuuksia jotka voivat säilyä tehdasasetusten palautuksen jälkeen.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">käytä sovellusehdotuksia</string>
   <string name="permdesc_accessAppSuggestions">Sallii sovelluksen käyttää sovellusehdotuksia.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Mukautetun tiilen kuuntelija</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Oletus</string>
   <string name="profileNameWork">Työ</string>
   <string name="profileNameHome">Koti</string>
   <string name="profileNameSilent">Äänetön</string>
   <string name="profileNameNight">Yö</string>
   <string name="profileNameAutomobile">Auto</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Puhelin</string>
   <string name="profileGroupCalendar">Kalenteri</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Sähköposti</string>
   <string name="profileGroupSMS">Tekstiviesti</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Muu</string>
 </resources>

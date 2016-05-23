@@ -16,48 +16,65 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <string name="permlab_publishCustomTile">criar um mosaico personalizado no painel de definições rápidas</string>
-  <string name="permdesc_publishCustomTile">Permite a uma aplicação publicar um mosaico de definições rápidas.</string>
+  <string name="permdesc_publishCustomTile">Permite que uma aplicação publique um mosaico de definições rápidas.</string>
   <string name="permlab_modifyNetworkSettings">alterar as definições de rede do sistema</string>
-  <string name="permdesc_modifyNetworkSettings">Permite a uma aplicação fazer alterações ao Modo Avião e definições de rede de dados móveis.</string>
+  <string name="permdesc_modifyNetworkSettings">Permite que uma aplicação altere o estado do modo de voo e as definições dos dados móveis.</string>
   <string name="permlab_modifySoundSettings">alterar as definições de som do sistema</string>
-  <string name="permdesc_modifySoundSettings">Permite a uma aplicação fazer alterações nas definições do modo de interrupção do som.</string>
+  <string name="permdesc_modifySoundSettings">Permite que uma aplicação faça alterações às definições do modo de interrupção do som.</string>
   <string name="permlab_bindCustomTileListenerService">vincular a um serviço de escuta de mosaicos personalizados</string>
   <string name="permdesc_bindCustomTileListenerService">Permite que a aplicação se vincule a uma interface de nível superior de um serviço de escuta de mosaico personalizado.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>
-  <string name="permdesc_readMSPhoneState">Permite a uma aplicação ver o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <string name="permdesc_readMSPhoneState">Permite que uma aplicação veja o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM</string>
-  <string name="permdesc_modifyMSPhoneState">Permite a uma aplicação modificar o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <string name="permdesc_modifyMSPhoneState">Permite que uma aplicação modifique o estado do telefone e a ligação de dados com suporte para vários cartões SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
-  <string name="permdesc_modifyProfiles">Permite a uma aplicação modificar os perfis do sistema.</string>
+  <string name="permdesc_modifyProfiles">Permite que uma aplicação modifique os perfis do sistema.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">utilizar a estrutura de hardware</string>
-  <string name="permdesc_useHardwareFramework">Permite o acesso duma aplicação à estrutura de hardware CM.</string>
+  <string name="permdesc_useHardwareFramework">Permite que uma aplicação aceda à framework de hardware CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">alterar diretamente os alarmes</string>
-  <string name="permdesc_write_alarms">Permite a uma aplicação adicionar, modificar ou eliminar todos os seus alarmes.</string>
+  <string name="permdesc_write_alarms">Permite que uma aplicação adicione, modifique ou elimine todos os seus alarmes.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">alternar os alarmes agendados</string>
-  <string name="permdesc_manage_alarms">Permite a uma aplicação ativar ou desativar os alarmes agendados.</string>
+  <string name="permdesc_manage_alarms">Permite que uma aplicação ative ou desative os alarmes agendados.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">aceder aos alarmes agendados</string>
-  <string name="permdesc_read_alarms">Permite a uma aplicação ler os seus alarmes agendados.</string>
+  <string name="permdesc_read_alarms">Permite que uma aplicação leia os seus alarmes agendados.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modificar as definições de sistema CM</string>
-  <string name="permdesc_writeSettings">Permite a uma aplicação modificar as definições de sistema CM.</string>
+  <string name="permdesc_writeSettings">Permite que uma aplicação modifique as definições de sistema CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modificar as definições de sistema seguro CM</string>
-  <string name="permdesc_writeSecureSettings">Permite a uma aplicação modificar as definições de sistema seguro CM. Não é para ser utilizado por aplicações normais.</string>
+  <string name="permdesc_writeSecureSettings">Permite que uma aplicação modifique as definições de sistema seguro CM. Nunca deverá ser necessário para aplicações normais.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">gerir o armazenamento persistente</string>
-  <string name="permdesc_managePersistentStorage">Permite a uma aplicação ler ou escrever propriedades que podem persistir mesmo após a reposição dos dados de fábrica.</string>
+  <string name="permdesc_managePersistentStorage">Permite que uma aplicação leia ou escreva propriedades que possam persistir mesmo após a reposição dos dados de fábrica.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">aceder a sugestões da aplicação</string>
-  <string name="permdesc_accessAppSuggestions">Permite a uma aplicação aceder a sugestões da aplicação.</string>
+  <string name="permdesc_accessAppSuggestions">Permite que uma aplicação aceda às sugestões de aplicações.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Escuta de mosaicos personalizados</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Padrão</string>
   <string name="profileNameWork">Trabalho</string>
   <string name="profileNameHome">Casa</string>
   <string name="profileNameSilent">Silêncio</string>
   <string name="profileNameNight">Noite</string>
   <string name="profileNameAutomobile">Automóvel</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefone</string>
   <string name="profileGroupCalendar">Calendário</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Outro</string>
 </resources>

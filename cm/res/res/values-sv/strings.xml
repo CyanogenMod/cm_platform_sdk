@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod System</string>
   <string name="permlab_publishCustomTile">skapa en anpassad bricka inom snabbinställningspanelen</string>
   <string name="permdesc_publishCustomTile">Ger en app tillåtelse att publicera en snabbinställningsbricka.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Tillåter att en app ändrar på ljudinställningarnas avbrottsläge.</string>
   <string name="permlab_bindCustomTileListenerService">bind till en anpassad tjänst som lyssnar efter brickor</string>
   <string name="permdesc_bindCustomTileListenerService">Låter appen binda sig till ett högnivågränssnitt för en anpassad lyssnartjänst för brickor.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">visa telefonens status och dataförbindelsestöd med flera SIM-kort</string>
   <string name="permdesc_readMSPhoneState">Tillåter att en app visar telefonens status och dataförbindelsestöd med flera SIM-kort.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">ändra telefonens status och dataförbindelsestöd med flera SIM-kort</string>
   <string name="permdesc_modifyMSPhoneState">Tillåter att en app ändrar telefonens status och dataförbindelsestöd med flera SIM-kort.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">ändra systemprofiler</string>
   <string name="permdesc_modifyProfiles">Tillåter att en app ändrar systemprofiler.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">använda hårdvaruramverk</string>
   <string name="permdesc_useHardwareFramework">Ger en app åtkomst till CyanogenMods hårdvaruramverk.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">ändra alarm direkt</string>
   <string name="permdesc_write_alarms">Tillåter att en app lägger till, ändrar eller tar bort alla dina alarm.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">växla schemalagda alarm</string>
   <string name="permdesc_manage_alarms">Tillåter att en app sätter på eller stänger av dina schemalagda alarm.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">åtkomst till schemalagda alarm</string>
   <string name="permdesc_read_alarms">Tillåt att en app läser dina schemalagda alarm.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">ändra CM systeminställningar</string>
   <string name="permdesc_writeSettings">Tillåt att en app ändrar CM systeminställningar.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">ändra CM säkra systeminställningar</string>
   <string name="permdesc_writeSecureSettings">Tillåt att en app ändrar CM säkra systeminställningar. Inte för användning av normala appar.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">hantera beständig lagring</string>
   <string name="permdesc_managePersistentStorage">Tillåt att en app läser och skriver egenskaper som kan kvarstå efter en fabriksåterställning.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">åtkomst till programförslag</string>
   <string name="permdesc_accessAppSuggestions">Tillåt att en app får åtkomst till programförslag.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Anpassad tjänst som lyssnar efter brickor</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Standard</string>
   <string name="profileNameWork">Jobb</string>
   <string name="profileNameHome">Hemma</string>
   <string name="profileNameSilent">Tyst</string>
   <string name="profileNameNight">Natt</string>
   <string name="profileNameAutomobile">Bil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-post</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Annan</string>
 </resources>

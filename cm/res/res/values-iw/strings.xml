@@ -16,48 +16,65 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">מערכת CyanogenMod</string>
   <string name="permlab_publishCustomTile">צור אריח מותאם אישית בתוך לוח ההגדרות המהירות</string>
   <string name="permdesc_publishCustomTile">מאפשר ליישום לפרסם אריח הגדרות מותאם אישית.</string>
-  <string name="permlab_modifyNetworkSettings">שינוי הגדרות הרשת של המערכת</string>
+  <string name="permlab_modifyNetworkSettings">שנה את הגדרות הרשת של המערכת</string>
   <string name="permdesc_modifyNetworkSettings">מאפשר ליישום לבצע שינויים בהגדרות מצב הטיסה ורשת הנתונים הניידים.</string>
-  <string name="permlab_modifySoundSettings">שינוי הגדרות השמע של המערכת</string>
+  <string name="permlab_modifySoundSettings">שנה את הגדרות השמע של המערכת</string>
   <string name="permdesc_modifySoundSettings">מאפשר ליישום לבצע שינויים בהגדרות השמע של מצב ההפרעה.</string>
   <string name="permlab_bindCustomTileListenerService">קשור לשירות המאזין לאריחים מותאמים אישית</string>
-  <string name="permdesc_bindCustomTileListenerService">אפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
+  <string name="permdesc_bindCustomTileListenerService">מאפשר ליישום להיקשר לממשק רמה עליונה של שירות המאזין לאריחים מותאמים אישית.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">הצג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_readMSPhoneState">מאפשר ליישום להציג את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
-  <string name="permlab_modifyMSPhoneState">שינוי מצב המכשיר וחיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <string name="permlab_modifyMSPhoneState">שנה את מצב המכשיר וחיבור הנתונים עם תמיכה בכרטיסי SIM מרובים</string>
   <string name="permdesc_modifyMSPhoneState">מאפשר ליישום לשנות את מצב המכשיר ואת חיבור הנתונים עם תמיכה בכרטיסי SIM מרובים.</string>
-  <string name="permlab_modifyProfiles">שינוי פרופילי מערכת</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">שנה פרופילי מערכת</string>
   <string name="permdesc_modifyProfiles">מאפשר ליישום לשנות פרופילי מערכת.</string>
-  <string name="permlab_useHardwareFramework">השתמש במסגרת חומרתית</string>
-  <string name="permdesc_useHardwareFramework">אפשר ליישום לגשת למסגרת החומרתית של CM.</string>
-  <string name="permlab_write_alarms">שינוי שעונים מעוררים ישירות</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">השתמש במסגרת חומרה</string>
+  <string name="permdesc_useHardwareFramework">מאפשר ליישום לגשת למסגרת החומרתית של CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">שנה ישירות שעונים מעוררים</string>
   <string name="permdesc_write_alarms">מאפשר ליישום להוסיף, לשנות או למחוק את כל השעונים המעוררים שלך.</string>
-  <string name="permlab_manage_alarms">הפעלת/כיבוי שעונים מעוררים שנקבעו</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">הפעל/כבה שעונים מעוררים שנקבעו</string>
   <string name="permdesc_manage_alarms">מאפשר ליישום להפעיל או לכבות שעונים מעוררים שנקבעו.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">גישה לשעונים מעוררים שנקבעו</string>
   <string name="permdesc_read_alarms">מאפשר ליישום לקרוא את השעונים המעוררים שנקבעו.</string>
-  <string name="permlab_writeSettings">שינוי הגדרות מערכת CM</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">שנה הגדרות מערכת CM</string>
   <string name="permdesc_writeSettings">מאפשר ליישום לשנות את הגדרות מערכת CM.</string>
-  <string name="permlab_writeSecureSettings">שינוי הגדרות מאובטחות של מערכת CM</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">שנה הגדרות מאובטחות של מערכת CM</string>
   <string name="permdesc_writeSecureSettings">מאפשר ליישום לשנות את ההגדרות המאובטחות של מערכת CM. לא לשימוש ביישומים רגילים.</string>
-  <string name="permlab_managePersistentStorage">ניהול אחסון מתמיד</string>
-  <string name="permdesc_managePersistentStorage">מאפשר ליישום לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">נהל אחסון תמידי</string>
+  <string name="permdesc_managePersistentStorage">מאפשר ליישום לקרוא או לכתוב נתונים והגדרות העלולים לשרוד גם לאחר איפוס המכשיר להגדרות היצרן.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">גישה להצעות יישום</string>
   <string name="permdesc_accessAppSuggestions">מאפשר ליישום לגשת להצעות יישום.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">מאזין אריחים מותאמים אישית</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">ברירת מחדל</string>
   <string name="profileNameWork">עבודה</string>
   <string name="profileNameHome">בית</string>
   <string name="profileNameSilent">שקט</string>
   <string name="profileNameNight">לילה</string>
   <string name="profileNameAutomobile">רכב</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">טלפון</string>
   <string name="profileGroupCalendar">לוח שנה</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">דוא\"ל</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">אחר</string>
 </resources>

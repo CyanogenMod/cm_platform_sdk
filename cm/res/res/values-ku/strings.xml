@@ -16,7 +16,24 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">سیستەمی ساینەجنمۆد</string>
   <string name="permlab_bindCustomTileListenerService">گرێدانی دروستکراو لە خزمەتگوزاری گوێگر</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">کاشی دروستکراوی گوێگر</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
+  <!-- Names of application groups. -->
+  <!-- Name of wildcard profile. -->
 </resources>

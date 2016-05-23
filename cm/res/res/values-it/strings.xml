@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistema CyanogenMod</string>
   <string name="permlab_publishCustomTile">creare un tile personalizzato all\'interno del pannello Impostazioni rapide</string>
   <string name="permdesc_publishCustomTile">Consenti ad un\'app di pubblicare un tile personalizzato.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Consente ad un\'app di apportare modifiche alle impostazioni di modalità interruzione audio.</string>
   <string name="permlab_bindCustomTileListenerService">associare ad un servizio listener di tile personalizzato</string>
   <string name="permdesc_bindCustomTileListenerService">Consente ad un\'app di collegarsi ad un interfaccia di un servizio listener di tile personalizzato.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">vedi stato del dispositivo e connessione con supporto a più SIM</string>
   <string name="permdesc_readMSPhoneState">Consenti ad un\'app di vedere lo stato del telefono e della connessione con supporto per SIM multiple.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">modifica stato del dispositivo e connessione con supporto a più SIM</string>
   <string name="permdesc_modifyMSPhoneState">Consenti ad un\'app di modificare lo stato del telefono e della connessione con supporto per SIM multiple.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">modifica profili sistema</string>
   <string name="permdesc_modifyProfiles">Consenti ad un\'app di modificare i profili di sistema.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">utilizza framework hardware</string>
   <string name="permdesc_useHardwareFramework">Consenti ad un\'app di accedere al framework hardware di CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">modifica le sveglie</string>
   <string name="permdesc_write_alarms">Consenti ad un\'app di aggiungere, modificare o eliminare tutti i tuoi allarmi.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">cambia avvisi programmati</string>
   <string name="permdesc_manage_alarms">Consenti ad un\'app di attivare o disattivare i tuoi avvisi programmati.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">accesso avvisi programmati</string>
   <string name="permdesc_read_alarms">Consenti all\'app di leggere i tuoi avvisi programmati.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">modifica le impostazioni di sistema CM</string>
   <string name="permdesc_writeSettings">Consenti ad un\'app di modificare le impostazioni di sistema CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">modifica le impostazioni di sistema sicure CM</string>
   <string name="permdesc_writeSecureSettings">Consenti ad un\'app di modificare le impostazioni di sistema sicure CM. Non per l\'uso di normali applicazioni.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">gestione archivio persistente</string>
   <string name="permdesc_managePersistentStorage">Consenti ad un\'app di leggere o scrivere proprietà che possono persistere ad un ripristino di fabbrica.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">accesso ai suggerimenti applicazioni</string>
   <string name="permdesc_accessAppSuggestions">Consenti ad un\'app di accedere ai suggerimenti delle applicazioni.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Listener tile personalizzato</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Predefinito</string>
   <string name="profileNameWork">Lavoro</string>
   <string name="profileNameHome">Casa</string>
   <string name="profileNameSilent">Silenzioso</string>
   <string name="profileNameNight">Notte</string>
   <string name="profileNameAutomobile">Automobile</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefono</string>
   <string name="profileGroupCalendar">Calendario</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Email</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Altro</string>
 </resources>

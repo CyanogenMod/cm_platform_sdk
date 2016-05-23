@@ -16,8 +16,25 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="permdesc_bindCustomTileListenerService">允許應用程式綁定到自訂按鈕偵聽器服務的最高級介面。</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">使用硬件框架</string>
   <string name="permdesc_useHardwareFramework">允許應用程式存取 CM 硬件框架。</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameSilent">靜音</string>
+  <!-- Names of application groups. -->
+  <!-- Name of wildcard profile. -->
 </resources>

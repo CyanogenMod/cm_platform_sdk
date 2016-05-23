@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">نظام CyanogenMod</string>
   <string name="permlab_publishCustomTile">إنشاء لوحة مخصصة ضمن لوحة الإعدادات السريعة</string>
   <string name="permdesc_publishCustomTile">السماح للتطبيق بنشر لوحة الإعدادت السريعة.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">السماح للتطبيق بإجراء تغيير على إعدادات الصوت في نمط الانقطاع.</string>
   <string name="permlab_bindCustomTileListenerService">الارتباط بخدمة مستمع اللوحة المخصصة</string>
   <string name="permdesc_bindCustomTileListenerService">يسمح للتطبيق بالارتباط بالواجهة البرمجية عالية المستوى الخاصة بخدمة المستمع في اللوحة المخصصة.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">عرض حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
   <string name="permdesc_readMSPhoneState">يسمح للتطبيق بعرض حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">تعديل حالة الهاتف والاتصال بالبيانات مع دعم تعدد شرائح SIM</string>
   <string name="permdesc_modifyMSPhoneState">يسمح للتطبيق بتعديل حالة الهاتف واتصال البيانات مع دعم تعدد شرائح SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">تعديل الملفات التعريفية للنظام</string>
   <string name="permdesc_modifyProfiles">السماح للتطبيق بتعديل الملفات التعريفية للنظام.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">استخدام إطار الجهاز</string>
   <string name="permdesc_useHardwareFramework">يسمح للتطبيق بالوصول إلى إطار عمل جهاز CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">تغيير التنبيهات مباشرةً</string>
   <string name="permdesc_write_alarms">السماح للتطبيق بإضافة أو تعديل أو حذف كل التنبيهات لديك.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">التبديل بين التنبيهات المجدولة</string>
   <string name="permdesc_manage_alarms">السماح للتطبيق بتشغيل أو إيقاف تشغيل التنبيهات المجدولة.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">الوصول إلى التنبيهات المجدولة</string>
   <string name="permdesc_read_alarms">السماح للتطبيق بقراءة التنبيهات المجدولة.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">تعديل إعداد نظام CM</string>
   <string name="permdesc_writeSettings">السماح للتطبيق بتعديل إعدادات نظام CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">تعديل إعدادات النظام الآمن CM</string>
   <string name="permdesc_writeSecureSettings">السماح للتطبيق بتعديل إعدادات النظام الآمن CM. غير مخصص للاستخدام بواسطة التطبيقات العادية.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">إدارة التخزين الدائم</string>
   <string name="permdesc_managePersistentStorage">السماح للتطبيق بقراءة أو كتابة الخصائص التي تكون دائمة عبر إعادة التعيين بالمصنع.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">الوصول إلى اقتراحات التطبيق</string>
   <string name="permdesc_accessAppSuggestions">السماح للتطبيق بالوصول إلى اقتراحات التطبيق.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">مستمع لوح مخصص</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">المبدئي</string>
   <string name="profileNameWork">العمل</string>
   <string name="profileNameHome">المنزل</string>
   <string name="profileNameSilent">صامت</string>
   <string name="profileNameNight">الليل</string>
   <string name="profileNameAutomobile">السيارة</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">الهاتف</string>
   <string name="profileGroupCalendar">التقويم</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">البريد الإلكتروني</string>
   <string name="profileGroupSMS">الرسائل القصيرة</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">غير ذلك</string>
 </resources>

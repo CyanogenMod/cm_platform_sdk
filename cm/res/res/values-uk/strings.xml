@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Система CyanogenMod</string>
   <string name="permlab_publishCustomTile">Створити власну плитку для панелі швидких налаштувань</string>
   <string name="permdesc_publishCustomTile">Дозволяє додатку створити плитку швидких налаштувань.</string>
@@ -23,34 +24,50 @@
   <string name="permlab_modifySoundSettings">змінювати звукові налаштування системи</string>
   <string name="permlab_bindCustomTileListenerService">прив’язати до власної служби</string>
   <string name="permdesc_bindCustomTileListenerService">Дозволяє власникові прив\'язувати плитки до інтерфесу високого рівня служб.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">переглядати стан телефону і з\'єднання даних з підтримкою до декількох SIM</string>
   <string name="permdesc_readMSPhoneState">Дозволяє програмі переглядати стану телефону і з\'єднання даних з підтримкою до декількох SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">змінювати стан телефону і з’єднання даних з підтримкою до декількох SIM</string>
   <string name="permdesc_modifyMSPhoneState">Дозволяє програмі змінювати стан телефону і з’єднання даних з підтримкою до декількох SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">зміна системних профілів</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">Взаємодія із обладнанням</string>
   <string name="permdesc_useHardwareFramework">Додаток зможе отримувати доступ до підсистеми апаратних абстракцій CyanogenMod.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">безпосередньо змінювати установки будильника</string>
   <string name="permdesc_write_alarms">Дозволяє програмі додавати, змінювати або видаляти налаштування сигналів будильника.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">перемикання запланованих будильників</string>
   <string name="permdesc_manage_alarms">Дозволяє програмі вмикати або вимикати будильники.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">доступ до запланованих будильників</string>
   <string name="permdesc_read_alarms">Дозволяє програмі читати заплановані сигнали будильника.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">змінювати налаштування CM</string>
   <string name="permdesc_writeSettings">Дозволяє додатку змінювати системні налаштування CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">змінювати налаштування безпеки</string>
   <string name="permdesc_writeSecureSettings">Дозволяє додатку змінювати системні налаштування безпеки. Непотрібно звичайним додаткам.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Власна служба обробки плиток</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">За замовчуванням</string>
   <string name="profileNameWork">Робота</string>
   <string name="profileNameHome">Дім</string>
   <string name="profileNameSilent">Без звуку</string>
   <string name="profileNameNight">Ніч</string>
   <string name="profileNameAutomobile">Автомобіль</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Телефон</string>
   <string name="profileGroupCalendar">Календар</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Електронна пошта</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Інший</string>
 </resources>

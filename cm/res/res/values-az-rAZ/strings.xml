@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod Sistemi</string>
   <string name="permlab_publishCustomTile">cəld tənzimləmələr panelində özəl bir çərçivə yarat</string>
   <string name="permdesc_publishCustomTile">Tətbiqetməyə cəld tənzimləmələr çərçivəsi yaratmağa icazə verər.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Tətbiqetməyə fasilə rejimi səs tənzimləmələrini dəyişdirmə icazəsi verər.</string>
   <string name="permlab_bindCustomTileListenerService">özəl çərçivə dinləyici xidmətinə bağla</string>
   <string name="permdesc_bindCustomTileListenerService">Tətbiqetməyə özəl çərçivə dinləyici xidmətinin üst səviyyə interfeysinə bağlanmasına icazə verər.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">telefon durumu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstər</string>
   <string name="permdesc_readMSPhoneState">Tətbiqetməyə telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını göstərməyə icazə verər.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını dəyişdir</string>
   <string name="permdesc_modifyMSPhoneState">Tətbiqetməyə telefon durumunu və çoxlu SIM dəstəyi ilə verilənlər bağlantısını dəyişdirmə icazə verər.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">sistem profillərini dəyişdir</string>
   <string name="permdesc_modifyProfiles">Tətbiqetməyə sistem profillərini dəyişdirmə icazəsi verər.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">avadanlıq bünövrəsindən istifadə et</string>
   <string name="permdesc_useHardwareFramework">Tətbiqetmənin CM avadanlıq bünövrəsinə müraciətinə icazə verər.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">birbaşa zəngli saatları dəyişdir</string>
   <string name="permdesc_write_alarms">Tətbiqetməyə zəngli saat əlavə etmə, dəyişdirmə və silmə icazəsi verər.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">müəyyən zəngli saatları aç/bağla</string>
   <string name="permdesc_manage_alarms">Tətbiqetməyə müəyyən zəngli saatları açma və ya bağlama icazəsi verər.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">müəyyən zəngli saatlara müraciət</string>
   <string name="permdesc_read_alarms">Tətbiqetməyə müəyyən zəngli saatları oxuma icazəsi verər.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">CM sistem tənzimləmələrini dəyişdir</string>
   <string name="permdesc_writeSettings">Tətbiqetməyə CM sistem tənzimləmələrini dəyişmə icazəsi verər.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">CM təhlükəsiz sistem tənzimləmələrini dəyişdir</string>
   <string name="permdesc_writeSecureSettings">Tətbiqetməyə CM təhlükəsiz sistem tənzimləmələrini dəyişmə icazəsi verər. Normal tətbiqetmələr üçün deyil.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">davamlı saxlama sahəsini idarə et</string>
   <string name="permdesc_managePersistentStorage">Tətbiqetməyə zavod tənzimləmələrinə qayıtdıqda davamlı qalıcı xüsusiyyətləri oxuma və ya yazma icazəsi verər.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">tətbiqetmə təkliflərinə müraciət</string>
   <string name="permdesc_accessAppSuggestions">Tətbiqetməyə tətbiqetmə təkliflərinə müraciət icazəsi verər.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Özəl çərçivə dinləyicisi</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">İlkin</string>
   <string name="profileNameWork">İş</string>
   <string name="profileNameHome">Ev</string>
   <string name="profileNameSilent">Səssiz</string>
   <string name="profileNameNight">Gecə</string>
   <string name="profileNameAutomobile">Avtomobil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Təqvim</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-poçt</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Digər</string>
 </resources>

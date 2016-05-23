@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod 系统</string>
   <string name="permlab_publishCustomTile">在快速设置面板中创建一个自定义瓷块</string>
   <string name="permdesc_publishCustomTile">允许应用发布一个快速设置瓷片。</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">允许应用修改打扰模式的声音设置。</string>
   <string name="permlab_bindCustomTileListenerService">绑定到自定义瓷片侦听器服务</string>
   <string name="permdesc_bindCustomTileListenerService">允许应用绑定到自定义瓷片侦听器服务的顶层界面。</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">查看支持多 SIM 卡的手机状态和数据连接</string>
   <string name="permdesc_readMSPhoneState">允许应用查看基于多 SIM 卡的手机状态和数据连接情况。</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">修改基于多 SIM 卡的手机状态和数据连接。</string>
   <string name="permdesc_modifyMSPhoneState">允许应用修改基于多 SIM 卡的手机状态和数据连接。</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">修改系统配置</string>
   <string name="permdesc_modifyProfiles">允许应用修改系统配置文件。</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">使用硬件框架</string>
   <string name="permdesc_useHardwareFramework">允许应用访问 CM 硬件框架。</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">直接修改闹钟</string>
   <string name="permdesc_write_alarms">允许应用添加、修改或删除您的闹钟。</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">开关已计划的闹钟</string>
   <string name="permdesc_manage_alarms">允许应用开启或关闭您已计划的闹钟。</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">访问已计划的闹钟</string>
   <string name="permdesc_read_alarms">允许应用读取您已计划的闹钟。</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">修改 CM 系统设置</string>
   <string name="permdesc_writeSettings">允许应用修改 CM 系统设置。</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">修改 CM 系统安全设置</string>
   <string name="permdesc_writeSecureSettings">允许应用修改 CM 系统安全设置。不供正常应用使用。</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">管理永久存储</string>
   <string name="permdesc_managePersistentStorage">允许应用读取或写入出厂设置后仍可保持的属性。</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">访问应用程序建议</string>
   <string name="permdesc_accessAppSuggestions">允许应用访问应用程序建议。</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">自定义瓷片侦听器</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">默认</string>
   <string name="profileNameWork">工作</string>
   <string name="profileNameHome">住宅</string>
   <string name="profileNameSilent">静音</string>
   <string name="profileNameNight">夜晚</string>
   <string name="profileNameAutomobile">汽车</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">电话</string>
   <string name="profileGroupCalendar">日历</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">电子邮件</string>
   <string name="profileGroupSMS">短信</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">其他</string>
 </resources>

@@ -16,28 +16,65 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
-  <string name="permlab_publishCustomTile">Buat petak kustom di panel pengaturan cepat</string>
-  <string name="permdesc_publishCustomTile">Mengizinkan aplikasi untuk membuat petak setelan cepat.</string>
+  <string name="permlab_publishCustomTile">buat ubin khusus di panel pengaturan cepat</string>
+  <string name="permdesc_publishCustomTile">Mengizinkan aplikasi untuk membuat ubin pengaturan cepat.</string>
   <string name="permlab_modifyNetworkSettings">ubah pengaturan jaringan sistem</string>
+  <string name="permdesc_modifyNetworkSettings">Mengizinkan sebuah aplikasi untuk membuat perubahan ke modus pesawat dan pengaturan jaringan data seluler.</string>
   <string name="permlab_modifySoundSettings">ubah pengaturan suara sistem</string>
-  <string name="permlab_bindCustomTileListenerService">menautkan ke layanan tile listener kustom</string>
-  <string name="permdesc_bindCustomTileListenerService">Mengizinkan aplikasi untuk menautkan antarmuka level atas dari layanan pendengar petak kustom.</string>
+  <string name="permdesc_modifySoundSettings">Mengizinkan sebuah aplikasi untuk membuat perubahan pada pengaturan suara modus gangguan.</string>
+  <string name="permlab_bindCustomTileListenerService">menautkan ke layanan pendengar ubin khusus</string>
+  <string name="permdesc_bindCustomTileListenerService">Mengizinkan aplikasi untuk menautkan pada antarmuka level atas dari layanan pendengar ubin khusus.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">lihat status ponsel dan koneksi data dengan dukungan untuk beberapa SIM</string>
   <string name="permdesc_readMSPhoneState">Mengizinkan aplikasi untuk melihat status ponsel dan koneksi data dengan dukungan untuk beberapa SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">ubah status ponsel dan koneksi data dengan dukungan untuk beberapa SIM</string>
   <string name="permdesc_modifyMSPhoneState">Mengizinkan aplikasi untuk mengubah status ponsel dan koneksi data dengan dukungan untuk beberapa SIM.</string>
-  <string name="custom_tile_listener_binding_label">Tile listener kustom</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <string name="permlab_modifyProfiles">memodifikasi profil sistem</string>
+  <string name="permdesc_modifyProfiles">Membolehkan aplikasi untuk mengubah profil sistem.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
+  <string name="permlab_useHardwareFramework">gunakan hardware framework</string>
+  <string name="permdesc_useHardwareFramework">Izinkan aplikasi untuk mengakses hardware framework CM.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <string name="permlab_write_alarms">secara langsung mengubah alarm</string>
+  <string name="permdesc_write_alarms">Mengizinkan aplikasi untuk menambah, mengubah atau menghapus semua alarm.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <string name="permlab_manage_alarms">hidup/matikan alarm terjadwal</string>
+  <string name="permdesc_manage_alarms">Mengizinkan aplikasi untuk menyalakan atau mematikan alarm terjadwal.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
+  <string name="permlab_read_alarms">akses alarm terjadwal</string>
+  <string name="permdesc_read_alarms">Mengizinkan aplikasi untuk melihat alarm terjadwal.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <string name="permlab_writeSettings">mengubah pengaturan sistem CM</string>
+  <string name="permdesc_writeSettings">Mengizinkan aplikasi untuk memodifikasi pengaturan sistem CM.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <string name="permlab_writeSecureSettings">mengubah pengaturan sistem aman CM</string>
+  <string name="permdesc_writeSecureSettings">Memungkinkan aplikasi untuk memodifikasi pengaturan sistem aman CM. Tidak untuk digunakan oleh aplikasi normal.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <string name="permlab_managePersistentStorage">mengatur penyimpanan tetap</string>
+  <string name="permdesc_managePersistentStorage">Memungkinkan aplikasi untuk membaca atau menulis properti yang dapat bertahan dari setel ulang ke pabrik.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">akses saran aplikasi</string>
+  <string name="permdesc_accessAppSuggestions">Memperbolehkan aplikasi untuk mengakses saran aplikasi.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">Pendengar ubin khusus</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Baku</string>
   <string name="profileNameWork">Kerja</string>
   <string name="profileNameHome">Beranda</string>
-  <string name="profileNameSilent">Diam</string>
+  <string name="profileNameSilent">Senyap</string>
   <string name="profileNameNight">Malam</string>
   <string name="profileNameAutomobile">Mobil</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telepon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Surel</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Lainnya</string>
 </resources>

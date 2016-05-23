@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod Süsteem</string>
   <string name="permlab_publishCustomTile">loo kohandatud tahvel kiirseadete paneelil</string>
   <string name="permdesc_publishCustomTile">Lubab rakendusel avaldada kiirseadete tahvli.</string>
@@ -23,23 +24,39 @@
   <string name="permlab_modifySoundSettings">süsteemi helisätete muutmine</string>
   <string name="permlab_bindCustomTileListenerService">Seo kohandatud tahvel kuulaja teenusega</string>
   <string name="permdesc_bindCustomTileListenerService">Võimaldab siduda kõrgema taseme kasutajaliidese kohandatud tahvli kuulaja teenusega.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">telefoni oleku ja andmeühenduse vaatamine, toetades mitmeid SIMe</string>
   <string name="permdesc_readMSPhoneState">Võimaldab rakendusel vaadata telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">telefoni oleku ja andmeühenduse muutmine, toetades mitmeid SIMe</string>
   <string name="permdesc_modifyMSPhoneState">Võimaldab rakendusel muuta telefoni olekut ja andmeühendust, toetades mitmeid SIMe.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">kasutada riistvara raamistikku</string>
   <string name="permdesc_useHardwareFramework">Annab rakendusele ligipääsu CM riistvara raamistikule.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
+  <!-- Labels for the MANAGE_ALARMS permission. -->
+  <!-- Labels for the READ_ALARMS permission. -->
+  <!-- Labels for the WRITE_SETTINGS permission -->
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Kohandatud tahvli kuulaja</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Vaikimisi</string>
   <string name="profileNameWork">Töö</string>
   <string name="profileNameHome">Kodu</string>
   <string name="profileNameSilent">Vaikne</string>
   <string name="profileNameNight">Öö</string>
   <string name="profileNameAutomobile">Sõiduk</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Telefon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">E-mail</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Muud</string>
 </resources>

@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">سیستم سایانوژن‌مود</string>
   <string name="permlab_publishCustomTile">ایجاد کاشی سفارشی در پنل تنظیمات سریع</string>
   <string name="permdesc_publishCustomTile">به برنامه اجازه می‌دهد یک کاشی در تنظیمات سریع ایجاد کند.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">به برنامه اجازه می‌دهد تا در تنظیمات صدا در حالت وقفه ایجاد تغییرات کند.</string>
   <string name="permlab_bindCustomTileListenerService">پیوستن به یک سرویس پیرو کاشی شخصی</string>
   <string name="permdesc_bindCustomTileListenerService">به برنامه اجازه می‌دهد تا به رابط سطح بالای یک سرویس پیرو کاشی شخصی بپیوندد.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">مشاهده وضعیت تلفن و اتصال داده با پشتیبانی از چندین سیم کارت</string>
   <string name="permdesc_readMSPhoneState">به برنامه اجازه مشاهده وضعیت تلفن و اتصال داده را با پشتیبانی از چندین سیم کارت می‌دهد.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">تغییر وضعیت تلفن و اتصال داده با پشتیبانی از چندین سیم کارت</string>
   <string name="permdesc_modifyMSPhoneState">به برنامه اجازه ویرایش وضعیت تلفن و اتصال داده را با پشتیبانی از چندین سیم کارت می‌دهد.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">تغییر پروفایل‌های سیستم</string>
   <string name="permdesc_modifyProfiles">به برنامه اجازه می‌دهد تا پروفایل‌های سیستم را تغییر دهد.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">استفاده از چارچوب سخت‌افزار</string>
   <string name="permdesc_useHardwareFramework">به برنامه اجازه می‌دهد به چارچوب سخت‌افزار CM دسترسی داشته باشد.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">تغییر مستقیم هشدارها</string>
   <string name="permdesc_write_alarms">به برنامه اجازه افزودن، تغییر یا حذف تمام هشدارهای دستگاه را می‌دهد.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">تغییر در وضعیت هشدارهای زمان‌بندی شده</string>
   <string name="permdesc_manage_alarms">به برنامه اجازه می‌دهد هشدارهای زمان‌بندی شده را خاموش یا روشن کند.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">دسترسی به هشدارهای زمان‌بندی شده</string>
   <string name="permdesc_read_alarms">به برنامه اجازه می‌دهد هشدارهای زمان‌بندی شده را مشاهده کند.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">تغییر تنظیمات سیستم CM</string>
   <string name="permdesc_writeSettings">به برنامه اجازه می‌دهد که تنظیمات سیستم CM را تغییر دهد.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">تغییر تنظیمات امنیت سیستم CM</string>
   <string name="permdesc_writeSecureSettings">به برنامه اجازه می‌دهد تا تنظیمات امنیت سیستم CM را تغییر دهد. برای استفاده برنامه‌های عادی پیشنهاد نمی‌شود.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">مدیریت حافظه پایدار</string>
   <string name="permdesc_managePersistentStorage">به برنامه اجازه می‌دهد ویژگی‌هایی را مشاهده و ویرایش کند که بعد از تنظیم مجدد کارخانه ممکن است باقی بماند.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">دسترسی به پیشنهادات کاربردی</string>
   <string name="permdesc_accessAppSuggestions">به برنامه اجازه می‌دهد تا به پیشنهادات کاربردی دسترسی داشته باشد.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">پیرو کاشی شخصی</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">پیش‌فرض</string>
   <string name="profileNameWork">کار</string>
   <string name="profileNameHome">خانه</string>
   <string name="profileNameSilent">بی‌صدا</string>
   <string name="profileNameNight">شب</string>
   <string name="profileNameAutomobile">خودرو</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">گوشی</string>
   <string name="profileGroupCalendar">تقویم</string>
   <string name="profileGroupGmail">جیمیل</string>
   <string name="profileGroupEmail">ایمیل</string>
   <string name="profileGroupSMS">پیامک</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">غیره</string>
 </resources>

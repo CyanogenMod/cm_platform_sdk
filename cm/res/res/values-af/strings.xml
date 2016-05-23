@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod Stelsel</string>
   <string name="permlab_publishCustomTile">Skep \'n persoonlike teël binne die vinnige instellings paneel</string>
   <string name="permdesc_publishCustomTile">Laat \'n program toe om \'n vinnige instellings teël te publiseer.</string>
@@ -25,39 +26,55 @@
   <string name="permdesc_modifySoundSettings">Laat \'n toep toe om veranderinge te maak aan die onderbreking modus klank instellings.</string>
   <string name="permlab_bindCustomTileListenerService">Verbind aan a pasgemaakte teël luisteraar diens</string>
   <string name="permdesc_bindCustomTileListenerService">Laat toe die program om te bind aan a top vlak koppelvlak van \'n pasgemaakte teël luister diens.</string>
+  <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <string name="permlab_readMSPhoneState">kyk na die foon status en data koppeling met ondersteuning na menigvuldige SIMs</string>
   <string name="permdesc_readMSPhoneState">Laat \'n toep toe om te kyk na die foon status en data koppeling met ondersteuning van menigvuldige SIM.</string>
+  <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <string name="permlab_modifyMSPhoneState">verander die foon status en data koppeling met ondersteuning na menigvuldige SIMs</string>
   <string name="permdesc_modifyMSPhoneState">Laat \'n toep toe om veranderinge te maak op jou foon status en data koppeling met ondersteuning van menigvuldige SIM.</string>
+  <!-- Labels for the MODIFY_PROFILES permission. -->
   <string name="permlab_modifyProfiles">verander stelsel profiele</string>
   <string name="permdesc_modifyProfiles">Laat \'n toep toe om stelsel profiele te verander.</string>
+  <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
   <string name="permlab_useHardwareFramework">gebruik hardeware raamwerk</string>
   <string name="permdesc_useHardwareFramework">Laat program toegang tot die CM hardeware raamwerk.</string>
+  <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">verander direk jou wekkers</string>
   <string name="permdesc_write_alarms">Laat \'n toep toe om by te voeg, te verander of al jou alarms te verwyder.</string>
+  <!-- Labels for the MANAGE_ALARMS permission. -->
   <string name="permlab_manage_alarms">verander geskeduleerde wekkers</string>
   <string name="permdesc_manage_alarms">Laat \'n toep toe om geskeduleerde wekkers aan en af te skakel.</string>
+  <!-- Labels for the READ_ALARMS permission. -->
   <string name="permlab_read_alarms">toegang na geskeduleerde wekkers</string>
   <string name="permdesc_read_alarms">Laat \'n toep toe om jou geskeduleerde wekkers te lees.</string>
+  <!-- Labels for the WRITE_SETTINGS permission -->
   <string name="permlab_writeSettings">verander CM stelsel instellings</string>
   <string name="permdesc_writeSettings">Laat \'n toep toe om CM stelsel instellings te verander.</string>
+  <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">verander CM veilige instellings</string>
   <string name="permdesc_writeSecureSettings">Laat \'n toep toe om CM veilige stelsel instellings te verander. Nie vir gebruik deur normale toeps nie.</string>
+  <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">bestuur aanhoudende spasie</string>
   <string name="permdesc_managePersistentStorage">Laat \'n toep toe om eienskappe te skryf of lees, al word jou toestel herstel na fabriek instellings.</string>
+  <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">toegang na program voorstellings</string>
   <string name="permdesc_accessAppSuggestions">Laat \'n toep toegang tot program voorstelle.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Pasgemaakte teël luisteraar</string>
+  <!-- Profiles -->
+  <!-- Names of default profiles. -->
   <string name="profileNameDefault">Normaal</string>
   <string name="profileNameWork">Werk</string>
   <string name="profileNameHome">Tuis</string>
   <string name="profileNameSilent">Stil</string>
   <string name="profileNameNight">Nag</string>
   <string name="profileNameAutomobile">Motor</string>
+  <!-- Names of application groups. -->
   <string name="profileGroupPhone">Foon</string>
   <string name="profileGroupCalendar">Kalender</string>
   <string name="profileGroupGmail">Gmail</string>
   <string name="profileGroupEmail">Epos</string>
   <string name="profileGroupSMS">SMS</string>
+  <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Ander</string>
 </resources>
