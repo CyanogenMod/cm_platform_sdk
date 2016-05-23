@@ -127,8 +127,8 @@ public class KeyguardExternalView extends View implements ViewTreeObserver.OnPre
                 } else {
                     Log.e(TAG, "Unable to get external view provider factory");
                 }
-            } catch (RemoteException e) {
-                e.printStackTrace();
+            } catch (RemoteException | SecurityException e) {
+                Log.e(TAG, "Unable to connect to service", e);
             }
             // We should unbind the service if we failed to connect to the provider
             if (mService != service && service != null) {
