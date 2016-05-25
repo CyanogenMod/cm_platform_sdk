@@ -91,4 +91,14 @@ public final class FileUtils {
 
         return true;
     }
+
+    /**
+     * Checks whether the given file is writable
+     *
+     * @return true if writable, false if not
+     */
+    public static boolean isFileWritable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canWrite();
+    }
 }
