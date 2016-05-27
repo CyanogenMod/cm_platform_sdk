@@ -21,7 +21,7 @@
   <string name="permlab_publishCustomTile">クイック設定パネルでのカスタムタイルの作成</string>
   <string name="permdesc_publishCustomTile">クイック設定タイルの作成をアプリに許可します</string>
   <string name="permlab_modifyNetworkSettings">システムのネットワークの設定の変更</string>
-  <string name="permdesc_modifyNetworkSettings">機内モードとモバイルデータ通信の設定を変更することをアプリに許可します。</string>
+  <string name="permdesc_modifyNetworkSettings">機内モードとモバイルデータネットワークの設定を変更することをアプリに許可します。</string>
   <string name="permlab_modifySoundSettings">システムの音の設定</string>
   <string name="permdesc_modifySoundSettings">サイレントモードの音の設定を変更することをアプリに許可します。</string>
   <string name="permlab_bindCustomTileListenerService">カスタムタイルリスナーサービスのバインド</string>
