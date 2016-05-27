@@ -139,7 +139,7 @@
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_writeThemesDesc">Hiermee kan de app nieuwe thema\'s invoegen en wijzigen welk thema u hebt toegepast.</string>
   <!-- Performance manager permission title -->
-  <string name="permlab_perfAccess">toegang tot prestatiebeheer</string>
+  <string name="permlab_perfAccess">Toegang tot prestatiebeheer</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Hiermee kan de app toegang krijgen tot de prestatieservice. Nooit vereist voor normale apps.</string>
   <!-- Access live lock screen manager service permission label -->
