@@ -162,4 +162,6 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Tillader en app at læse indholdet af databasen for dataforbrug.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observér ændringer for lydsession</string>
+  <string name="permdesc_observe_audio_sessions">Tillader en app at observere når lyd streams bliver oprettet eller ødelagt.</string>
 </resources>
