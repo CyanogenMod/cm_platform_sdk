@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Udendørs (stærk sol)</string>
   <string name="live_display_outdoor_summary">Brug kun udendørsindstillinger</string>
   <string name="live_display_hint">LiveDisplay kan hjælpe med at reducere overanstrengelse af øjnene og hjælpe dig med at sove om natten. Klik her for at prøve det!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay fra.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatisk tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: dag tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nat tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: udendørstilstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay er slået fra.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay ændret til automatisk tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay ændret til dag tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay ændret til nat tilstand.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay ændret til udendørstilstand.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjeparts skærmlås</string>
   <!-- Third party keyguard permission description -->
@@ -162,6 +172,12 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Tillader en app at læse indholdet af databasen for dataforbrug.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">administrer indstillinger for LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Tillader en app at konfigurere avancerede skærmindstillinger.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observér ændringer for lydsession</string>
+  <string name="permdesc_observe_audio_sessions">Tillader en app at observere når lyd streams bliver oprettet eller ødelagt.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temaer</string>
+  <string name="qs_themes_content_description">Tilpas dit tema</string>
 </resources>

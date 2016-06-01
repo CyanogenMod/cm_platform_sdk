@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Kültéri (erős napfény)</string>
   <string name="live_display_outdoor_summary">Csak a kültéri beállítások használata</string>
   <string name="live_display_hint">A LiveDisplay segíthet a szemek terhelésének csökkentésében és a jobb éjszakai alvásban. Kattintson ide, hogy kipróbálja!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay ki.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatikus mód.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: nappali mód.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: éjszakai mód.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: szabadtéri mód.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay kikapcsolva.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay automatikus módra változtatva.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay nappali módra változtatva.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay éjszakai módra változtatva.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay szabadtéri módra változtatva.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">harmadik fél zárképernyő</string>
   <!-- Third party keyguard permission description -->
@@ -134,17 +144,41 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Lehetővé teszi az alkalmazás számára, hogy hozzáférjen a teljesítmény szolgáltatáshoz. Általános alkalmazásoknak soha nem kell ilyen engedély.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">hozzáférés élő zárképernyő-kezelő szolgáltatáshoz</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Lehetővé teszi az alkalmazás számára az élő zárképernyő-kezelő szolgáltatás elérését.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">hozzáférés élő zárképernyő-kezelő szolgáltatáshoz</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Lehetővé teszi a rendszeralkalmazások számára az élő zárképernyő-kezelő szolgáltatás elérését.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">élő zárképernyő-kezelő szolgáltatás biztosítása</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Lehetővé teszi a szolgáltatás számára az élő zárképernyő-kezelő szolgáltatás biztosítását.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">időjárás olvasása</string>
+  <string name="permdesc_weather_read">Lehetővé teszi az alkalmazás számára az időjárás szolgáltatói tartalom olvasását.</string>
+  <string name="permlab_weather_write">időjárás szolgáltató frissítése</string>
+  <string name="permdesc_weather_write">Lehetővé teszi az alkalmazás számár, hogy frissítse az időjárás szolgáltató tartalmát.</string>
+  <string name="permlab_weather_bind">időjárás szolgáltatóként kötés</string>
+  <string name="permdesc_weather_bind">Lehetővé teszi az alkalmazás számára, hogy mint időjárás szolgáltató kerüljön azonosításra.</string>
+  <string name="permlab_weather_access_mgr">hozzáférés időjárás szolgáltatáshoz</string>
+  <string name="permdesc_weather_access_mgr">Lehetővé teszi az alkalmazás számára a rendszer időjárás szolgáltatásának elérését. Általános alkalmazásoknak soha nem kell ilyen engedély.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">adathasználati adatbázis módosítása</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Lehetővé teszi az alkalmazás számára az adathasználati adatbázis tartalmának frissítését.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">adathasználati adatbázis olvasása</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Lehetővé teszi az alkalmazás számára az adathasználati adatbázis tartalmának olvasását.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">LiveDisplay beállítások kezelése</string>
+  <string name="permdesc_manageLiveDisplay">Lehetővé teszi az alkalmazás számára a speciális megjelenítési beállítások konfigurálását.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">audió munkamenet változásainak megfigyelése</string>
+  <string name="permdesc_observe_audio_sessions">Lehetővé teszi az alkalmazás számára, hogy megfigyelje ahogy az audió folyamok létrejönnek és elpusztulnak.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Témák</string>
+  <string name="qs_themes_content_description">Téma testreszabása</string>
 </resources>
