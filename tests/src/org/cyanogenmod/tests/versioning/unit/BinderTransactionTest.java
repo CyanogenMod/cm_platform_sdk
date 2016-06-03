@@ -26,6 +26,7 @@ import android.util.Pair;
 import org.cyanogenmod.tests.CyanogenModTestApplication;
 import org.cyanogenmod.tests.versioning.unit.apiv2.ApiV2PriorReleaseInterfaces;
 import org.cyanogenmod.tests.versioning.unit.apiv4.ApiV4PriorReleaseInterfaces;
+import org.cyanogenmod.tests.versioning.unit.apiv5.ApiV5PriorReleaseInterfaces;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -98,6 +99,7 @@ public class BinderTransactionTest extends AndroidTestCase {
         sContext = CyanogenModTestApplication.getStaticApplicationContext();
         addInterfaces(ApiV2PriorReleaseInterfaces.getInterfaces());
         addInterfaces(ApiV4PriorReleaseInterfaces.getInterfaces());
+        addInterfaces(ApiV5PriorReleaseInterfaces.getInterfaces());
     }
 
     private static void addInterfaces(Map<String, Map<String, Integer>> mapToAdd) {

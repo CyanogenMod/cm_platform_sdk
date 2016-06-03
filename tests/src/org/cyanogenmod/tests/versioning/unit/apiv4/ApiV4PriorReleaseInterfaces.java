@@ -19,9 +19,6 @@ package org.cyanogenmod.tests.versioning.unit.apiv4;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by adnan on 2/19/16.
- */
 public class ApiV4PriorReleaseInterfaces {
     private static Map<String, Map<String, Integer>> mApiMethodsAndValues =
             new HashMap<String, Map<String, Integer>>();
