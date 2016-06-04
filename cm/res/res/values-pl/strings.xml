@@ -162,4 +162,6 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Umożliwia aplikacji odczyt zawartości licznika danych.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">obserwuj zmiany sesji audio</string>
+  <string name="permdesc_observe_audio_sessions">Zezwalaj aplikacji na obserwowanie utworzenia lub zamknięcia strumienia dźwięku.</string>
 </resources>
