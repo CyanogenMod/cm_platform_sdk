@@ -26,9 +26,31 @@ LOCAL_SRC_FILES := $(call all-subdir-java-files)
 
 LOCAL_CERTIFICATE := platform
 LOCAL_JAVA_LIBRARIES := android.test.runner
-LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_PROGUARD_ENABLED := optimization shrinktests
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.internal
 
 include $(BUILD_PACKAGE)
+
+# Register as CMTS
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := tests
+
+LOCAL_PACKAGE_NAME := CmtsCMSettingsProviderTests
+LOCAL_INSTRUMENTATION_FOR := CMSettingsProvider
+
+LOCAL_SRC_FILES := $(call all-subdir-java-files)
+
+LOCAL_CERTIFICATE := platform
+LOCAL_JAVA_LIBRARIES := android.test.runner
+LOCAL_PROGUARD_ENABLED := optimization shrinktests
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    org.cyanogenmod.platform.internal
+
+include $(BUILD_CMTS_PACKAGE)
+
