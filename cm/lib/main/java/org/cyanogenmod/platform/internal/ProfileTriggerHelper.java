@@ -22,17 +22,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiSsid;
-import android.net.wifi.WifiInfo;
+import android.os.Bundle;
 import android.os.Handler;
-
+import android.os.UserHandle;
+import android.text.TextUtils;
 import android.util.Log;
-
 import cyanogenmod.app.Profile;
-
+import cyanogenmod.app.ProfileManager;
 import cyanogenmod.providers.CMSettings;
-import org.cyanogenmod.platform.internal.ProfileManagerService;
 
 import java.util.UUID;
 
@@ -103,16 +104,27 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)) {
-            String activeSSID = getActiveSSID();
-            int triggerState;
-
-            if (activeSSID != null) {
-                triggerState = Profile.TriggerState.ON_CONNECT;
-                mLastConnectedSSID = activeSSID;
-            } else {
-                triggerState = Profile.TriggerState.ON_DISCONNECT;
+            Bundle extras = intent.getExtras();
+            WifiInfo wifiInfo = extras.getParcelable(WifiManager.EXTRA_WIFI_INFO);
+            if (wifiInfo != null) {
+                String ssid = wifiInfo.getSSID();
+                if (ssid != null) {
+                    // SSID will be surrounded by double quotation marks if it can be decoded
+                    // as UTF-8
+                    if (ssid.startsWith("\"") && ssid.endsWith("\"")) {
+                        ssid = ssid.substring(1, ssid.length()-1);
+                    }
+                    if (TextUtils.equals(ssid, WifiSsid.NONE)) {
+                        checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
+                                Profile.TriggerState.ON_DISCONNECT);
+                        mLastConnectedSSID = WifiSsid.NONE;
+                    } else if (!TextUtils.equals(mLastConnectedSSID, ssid)) {
+                        mLastConnectedSSID = ssid;
+                        checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
+                                Profile.TriggerState.ON_CONNECT);
+                    }
+                }
             }
-            checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID, triggerState);
         } else if (action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)
                 || action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
             int triggerState = action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)
@@ -133,15 +145,36 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
     }
 
     private void checkTriggers(int type, String id, int newState) {
+        final Profile activeProfile = mManagerService.getActiveProfileInternal();
+        final UUID currentProfileUuid = activeProfile.getUuid();
+
+        boolean newProfileSelected = false;
         for (Profile p : mManagerService.getProfileList()) {
-            if (newState != p.getTriggerState(type, id)) {
-                continue;
+            final int profileTriggerState = p.getTriggerState(type, id);
+            if (newState != profileTriggerState) {
+                    continue;
             }
 
-            UUID currentProfileUuid = mManagerService.getActiveProfileInternal().getUuid();
             if (!currentProfileUuid.equals(p.getUuid())) {
                 mManagerService.setActiveProfileInternal(p, true);
+                newProfileSelected = true;
             }
+        }
+
+        if (!newProfileSelected) {
+            //Does the active profile actually cares about this event?
+            for (Profile.ProfileTrigger trigger : activeProfile.getTriggersFromType(type)) {
+                if (trigger.getId().equals(id)) {
+                    Intent intent
+                            = new Intent(ProfileManager.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED);
+                    intent.putExtra(ProfileManager.EXTRA_TRIGGER_ID, id);
+                    intent.putExtra(ProfileManager.EXTRA_TRIGGER_TYPE, type);
+                    intent.putExtra(ProfileManager.EXTRA_TRIGGER_STATE, newState);
+                    mContext.sendBroadcastAsUser(intent, UserHandle.ALL);
+                    break;
+                }
+            }
+
         }
     }
 

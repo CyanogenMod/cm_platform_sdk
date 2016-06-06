@@ -84,6 +84,29 @@ public class ProfileManager {
     public static final String INTENT_ACTION_PROFILE_UPDATED =
             "cyanogenmod.platform.intent.action.PROFILE_UPDATED";
 
+
+    /**
+     * @hide
+     */
+    public static final String INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED =
+            "cyanogenmod.platform.intent.action.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED";
+
+    /**
+     * @hide
+     */
+    public static final String EXTRA_TRIGGER_ID = "trigger_id";
+
+    /**
+     * @hide
+     */
+    public static final String EXTRA_TRIGGER_TYPE = "trigger_type";
+
+
+    /**
+     * @hide
+     */
+    public static final String EXTRA_TRIGGER_STATE = "trigger_state";
+
     /**
      * Extra for {@link #INTENT_ACTION_PROFILE_SELECTED} and {@link #INTENT_ACTION_PROFILE_UPDATED}:
      * The name of the newly activated or updated profile
