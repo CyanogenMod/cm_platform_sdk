@@ -385,9 +385,9 @@ public class ThemesContract {
                 throw new IllegalArgumentException("Ringtone mixnmatch component does not have a related column");
             } else if (component.equals(MixnMatchColumns.KEY_OVERLAYS)) {
                 return ThemesColumns.OVERLAYS_URI;
-            } else if (component.equals(MixnMatchColumns.KEY_STATUS_BAR)) {
+            } else if (component.equals(MixnMatchColumns.KEY_ALARM)) {
                 throw new IllegalArgumentException(
-                        "Status bar mixnmatch component does not have a related column");
+                        "Alarm mixnmatch component does not have a related column");
             } else if (component.equals(MixnMatchColumns.KEY_NAVIGATION_BAR)) {
                 throw new IllegalArgumentException(
                         "Navigation bar mixnmatch component does not have a related column");
