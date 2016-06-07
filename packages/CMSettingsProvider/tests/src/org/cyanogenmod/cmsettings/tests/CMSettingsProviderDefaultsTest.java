@@ -81,9 +81,6 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
     //SECURE
     static {
         SECURE_SETTINGS_DEFAULTS.add(new Setting(
-                CMSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
-                "R.integer.def_force_show_navbar"));
-        SECURE_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.Secure.ADVANCED_MODE,
                 "R.bool.def_advanced_mode"));
         SECURE_SETTINGS_DEFAULTS.add(new Setting(
@@ -120,6 +117,9 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
         GLOBAL_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.Global.WEATHER_TEMPERATURE_UNIT,
                 "R.integer.def_temperature_unit"));
+        GLOBAL_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.Global.DEV_FORCE_SHOW_NAVBAR,
+                "R.integer.def_force_show_navbar"));
     }
 
     @Override
