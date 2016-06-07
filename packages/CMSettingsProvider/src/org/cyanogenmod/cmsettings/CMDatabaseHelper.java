@@ -191,8 +191,8 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                 stmt = db.compileStatement("INSERT INTO secure(name,value)"
                         + " VALUES(?,?);");
                 loadSetting(stmt, CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED,
-                        Settings.Global.getString(mContext.getContentResolver(),
-                                Settings.Global.DEVICE_PROVISIONED));
+                        Settings.Global.getStringForUser(mContext.getContentResolver(),
+                                Settings.Global.DEVICE_PROVISIONED, mUserHandle));
                 db.setTransactionSuccessful();
             } finally {
                 if (stmt != null) stmt.close();
