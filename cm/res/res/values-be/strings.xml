@@ -98,6 +98,12 @@
   <string name="live_display_outdoor">На вуліцы (яскравае сонца)</string>
   <string name="live_display_outdoor_summary">Толькі вулічны рэжым</string>
   <string name="live_display_hint">Жывыя шпалеры дапамогуць зменшыць напружанне на вочы і палепшыць сон. Націсні тут, каб паспрабаваць!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay выключаны.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: аўтаматычна.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: дзень.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: ноч.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay выключаны.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay зменены на аўтаматычны рэжым.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">Іншы экран блакавання</string>
   <!-- Third party keyguard permission description -->
@@ -140,11 +146,14 @@
   <!-- Live lock screen manager service provider permission label -->
   <!-- Live lock screen manager service provider permission description -->
   <!-- Weather Service strings -->
+  <string name="permlab_weather_write">Абнавіць звесткі аб надвор’і</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">кіраванне наладамі LiveDisplay</string>
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Знешні выгляд</string>
 </resources>
