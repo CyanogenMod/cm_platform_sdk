@@ -153,6 +153,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (LOCAL_LOGV) Log.d(TAG, "Upgrading from version: " + oldVersion + " to " + newVersion);
         int upgradeVersion = oldVersion;
 
         if (upgradeVersion < 2) {
@@ -185,18 +186,20 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
         }
 
         if (upgradeVersion < 4) {
-            db.beginTransaction();
-            SQLiteStatement stmt = null;
-            try {
-                stmt = db.compileStatement("INSERT INTO secure(name,value)"
-                        + " VALUES(?,?);");
-                loadSetting(stmt, CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED,
-                        Settings.Global.getString(mContext.getContentResolver(),
-                                Settings.Global.DEVICE_PROVISIONED));
-                db.setTransactionSuccessful();
-            } finally {
-                if (stmt != null) stmt.close();
-                db.endTransaction();
+            if (mUserHandle == UserHandle.USER_OWNER) {
+                db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("INSERT INTO secure(name,value)"
+                            + " VALUES(?,?);");
+                    final String provisionedFlag = Settings.Global.getString(
+                            mContext.getContentResolver(), Settings.Global.DEVICE_PROVISIONED);
+                    loadSetting(stmt, CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED, provisionedFlag);
+                    db.setTransactionSuccessful();
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
             }
             upgradeVersion = 4;
         }
@@ -343,6 +346,10 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             loadStringSetting(stmt,
                     CMSettings.Secure.PROTECTED_COMPONENT_MANAGERS,
                     R.string.def_protected_component_managers);
+
+            final String provisionedFlag = Settings.Global.getString(mContext.getContentResolver(),
+                    Settings.Global.DEVICE_PROVISIONED);
+            loadSetting(stmt, CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED, provisionedFlag);
         } finally {
             if (stmt != null) stmt.close();
         }
