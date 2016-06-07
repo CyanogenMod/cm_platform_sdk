@@ -119,6 +119,27 @@ import java.util.Map;
          assertEquals(cmProviderValue, settingsProviderValue);
      }
 
+     /**
+      * The new {@link CMSettings.Secure#CM_SETUP_WIZARD_COMPLETED} cm specific provisioned flag
+      * should be equal to the old {@link Settings.Global#DEVICE_PROVISIONED} flag on boot, or on
+      * upgrade. These flags will almost always be equal, except during the provisioning process,
+      * they may change at slightly different times.
+      *
+      * Test whether the setting was properly set and is not null.
+      */
+     @SmallTest
+     public void testCMProvisionedFlagFallbackSet() {
+         final String newCmFlag = CMSettings.Secure.getStringForUser(
+                 getContext().getContentResolver(), CMSettings.Secure.CM_SETUP_WIZARD_COMPLETED,
+                 UserHandle.USER_OWNER);
+         assertNotNull(newCmFlag);
+
+         final String previousFlag = Settings.Global.getStringForUser(
+                 getContext().getContentResolver(), Settings.Global.DEVICE_PROVISIONED,
+                 UserHandle.USER_OWNER);
+         assertEquals(previousFlag, newCmFlag);
+     }
+
      private void testMigrateSettingsForUser(int userId) {
          // Setup values in Settings
          /*final String expectedPullDownValue = "testQuickPullDownValue";
