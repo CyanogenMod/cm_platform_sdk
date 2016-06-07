@@ -468,6 +468,8 @@ public class LiveDisplayService extends CMSystemService {
 
         @Override
         public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
+            mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DUMP, TAG);
+
             pw.println();
             pw.println("LiveDisplay Service State:");
             pw.println("  mState=" + mState.toString());
