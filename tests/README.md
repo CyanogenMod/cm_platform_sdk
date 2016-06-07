@@ -1,7 +1,6 @@
-## CM Platform SDK Tests
-The tests package contains both functional manual tests as well as unit
-tests which can be ran utilizing the InstrumentationTestRunner from android.
+## CM Settings Provider Tests
+The tests package covers the CMSettingsProvider api and its basic functionality.
 
 To run the tests (on a live device):
   
-  ```adb shell am instrument -w org.cyanogenmod.tests/android.support.test.runner.AndroidJUnitRunner```
+  ```adb shell am instrument -w org.cyanogenmod.cmsettings.tests/android.test.runner.InstrumentationTestRunner```
