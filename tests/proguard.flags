@@ -43,6 +43,12 @@
 -dontwarn junit.**
 -dontwarn org.junit.**
 
+# keep mockito methods
+-keep class org.mockito.** { *; }
+-keep interface org.mockito.** { *; }
+-keep class com.google.dexmaker.** { *; }
+-keep interface com.google.dexmaker.** { *; }
+
 # Always process
 -forceprocessing
 
