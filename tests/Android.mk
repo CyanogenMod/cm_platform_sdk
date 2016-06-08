@@ -40,7 +40,8 @@ LOCAL_MODULE_TAGS := tests
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     org.cyanogenmod.platform.sdk \
-    android-support-test
+    android-support-test \
+    mockito-target
 
 LOCAL_DEX_PREOPT := false
 
