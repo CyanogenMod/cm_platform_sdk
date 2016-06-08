@@ -32,6 +32,8 @@ import cyanogenmod.profiles.LockSettings;
 import cyanogenmod.profiles.RingModeSettings;
 import cyanogenmod.profiles.StreamSettings;
 
+import java.util.UUID;
+
 /**
  * Created by adnan on 7/14/15.
  */
@@ -226,5 +228,39 @@ public class ProfileTest extends AndroidTestCase {
         assertEquals(profile.getProfileType(), fromParcel.getProfileType());
         assertEquals(profile.getDozeMode(), fromParcel.getDozeMode());
         assertEquals(profile.getStatusBarIndicator(), fromParcel.getStatusBarIndicator());
+    }
+
+    private static final int EXPECTED_PROFILE_TRIGGER_TYPE = Profile.TriggerType.WIFI;
+    private static final String EXPECTED_PROFILE_TRIGGER_ID = "1337";
+    private static final int EXPECTED_PROFILE_TRIGGER_STATE = Profile.TriggerState.ON_CONNECT;
+    private static final String EXPECTED_PROFILE_TRIGGER_NAME = "ON_CONNECT_WIFI_TRIGGER";
+    private Profile.ProfileTrigger createSampleProfileTrigger() {
+        return new Profile.ProfileTrigger(EXPECTED_PROFILE_TRIGGER_TYPE,
+                EXPECTED_PROFILE_TRIGGER_ID, EXPECTED_PROFILE_TRIGGER_STATE,
+                EXPECTED_PROFILE_TRIGGER_NAME);
+    }
+
+    @SmallTest
+    public void testProfileTriggerId() {
+        Profile.ProfileTrigger profileTrigger = createSampleProfileTrigger();
+        assertEquals(EXPECTED_PROFILE_TRIGGER_ID, profileTrigger.getId());
+    }
+
+    @SmallTest
+    public void testProfileTriggerName() {
+        Profile.ProfileTrigger profileTrigger = createSampleProfileTrigger();
+        assertEquals(EXPECTED_PROFILE_TRIGGER_NAME, profileTrigger.getName());
+    }
+
+    @SmallTest
+    public void testProfileTriggerState() {
+        Profile.ProfileTrigger profileTrigger = createSampleProfileTrigger();
+        assertEquals(EXPECTED_PROFILE_TRIGGER_STATE, profileTrigger.getState());
+    }
+
+    @SmallTest
+    public void testProfileTriggerType() {
+        Profile.ProfileTrigger profileTrigger = createSampleProfileTrigger();
+        assertEquals(EXPECTED_PROFILE_TRIGGER_STATE, profileTrigger.getType());
     }
 }
