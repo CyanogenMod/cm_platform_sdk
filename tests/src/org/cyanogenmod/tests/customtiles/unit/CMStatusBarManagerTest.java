@@ -16,17 +16,32 @@
 
 package org.cyanogenmod.tests.customtiles.unit;
 
+import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.os.UserHandle;
 import android.test.AndroidTestCase;
+import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
+
+import android.text.TextUtils;
+import android.util.Log;
 
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CMStatusBarManager;
+import cyanogenmod.app.CustomTile;
+import cyanogenmod.app.CustomTileListenerService;
 import cyanogenmod.app.ICMStatusBarManager;
+import org.cyanogenmod.tests.R;
 
-/**
- * Created by adnan on 7/14/15.
- */
+import java.util.concurrent.CountDownLatch;
+
 public class CMStatusBarManagerTest extends AndroidTestCase {
+    private static final String TAG = CMStatusBarManagerTest.class.getSimpleName();
+    private static final int COUNTDOWN = 1;
     private CMStatusBarManager mCMStatusBarManager;
 
     @Override
@@ -47,5 +62,160 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
     public void testManagerServiceIsAvailable() {
         ICMStatusBarManager icmHardwareManagerService = mCMStatusBarManager.getService();
         assertNotNull(icmHardwareManagerService);
+    }
+
+    @MediumTest
+    public void testCustomTileListenerServiceRegisterAndUnregisterAsSystemService() {
+        CustomTileListenerService customTileListenerService = new CustomTileListenerService();
+        registerCustomTileListenerService(customTileListenerService);
+        unregisterCustomTileListenerService(customTileListenerService);
+    }
+
+    @MediumTest
+    public void testCustomTileListenerServiceOnListenerConnected() {
+        final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
+        CustomTileListenerService customTileListenerService =
+                new CustomTileListenerService() {
+                    @Override
+                    public IBinder onBind(Intent intent) {
+                        Log.d(TAG, "Bound");
+                        signal.countDown();
+                        return super.onBind(intent);
+                    }
+                    @Override
+                    public void onListenerConnected() {
+                        Log.d(TAG, "Connected");
+                        super.onListenerConnected();
+                        signal.countDown();
+                    }
+                };
+
+        registerCustomTileListenerService(customTileListenerService);
+
+        // Lock
+        try {
+            signal.await();
+        } catch (InterruptedException e) {
+            throw new AssertionError(e);
+        }
+
+        unregisterCustomTileListenerService(customTileListenerService);
+    }
+
+    @MediumTest
+    public void testCustomTileListenerServiceOnCustomTilePosted() {
+        final CustomTile expectedCustomTile = createSampleCustomTile();
+
+        final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
+        CustomTileListenerService customTileListenerService =
+                new CustomTileListenerService() {
+                    @Override
+                    public void onListenerConnected() {
+                        super.onListenerConnected();
+                        Log.d(TAG, "Connected");
+                        // publish
+                        mCMStatusBarManager.publishTile(1337, expectedCustomTile);
+                    }
+
+                    @Override
+                    public void onCustomTilePosted(cyanogenmod.app.StatusBarPanelCustomTile sbc) {
+                        super.onCustomTilePosted(sbc);
+                        Log.d(TAG, "Posted " + sbc.getCustomTile());
+                        if (TextUtils.equals(expectedCustomTile.label, sbc.getCustomTile().label)) {
+                            signal.countDown();
+                        }
+                    }
+                };
+
+        registerCustomTileListenerService(customTileListenerService);
+
+        // Lock
+        try {
+            signal.await();
+        } catch (InterruptedException e) {
+            throw new AssertionError(e);
+        }
+
+        unregisterCustomTileListenerService(customTileListenerService);
+    }
+
+    @MediumTest
+    public void testCustomTileListenerServiceOnCustomTileRemoved() {
+        final CustomTile expectedCustomTile = createSampleCustomTile();
+
+        final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
+        CustomTileListenerService customTileListenerService =
+                new CustomTileListenerService() {
+                    @Override
+                    public void onListenerConnected() {
+                        super.onListenerConnected();
+                        Log.d(TAG, "Connected");
+                        // publish
+                        mCMStatusBarManager.publishTile(1338, expectedCustomTile);
+                    }
+
+                    @Override
+                    public void onCustomTilePosted(cyanogenmod.app.StatusBarPanelCustomTile sbc) {
+                        super.onCustomTilePosted(sbc);
+                        Log.d(TAG, "Posted " + sbc.getCustomTile());
+                        if (TextUtils.equals(expectedCustomTile.label, sbc.getCustomTile().label)) {
+                            removeCustomTile(mContext.getPackageName(), null, 1338);
+                        }
+                    }
+
+                    @Override
+                    public void onCustomTileRemoved(cyanogenmod.app.StatusBarPanelCustomTile sbc) {
+                        super.onCustomTileRemoved(sbc);
+                        Log.d(TAG, "Removed " + sbc.getCustomTile());
+                        if (TextUtils.equals(expectedCustomTile.label, sbc.getCustomTile().label)) {
+                            signal.countDown();
+                        }
+                    }
+                };
+
+        registerCustomTileListenerService(customTileListenerService);
+
+        // Lock
+        try {
+            signal.await();
+        } catch (InterruptedException e) {
+            throw new AssertionError(e);
+        }
+
+        unregisterCustomTileListenerService(customTileListenerService);
+    }
+
+    private CustomTile createSampleCustomTile() {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
+        return new CustomTile.Builder(mContext)
+                .setLabel("YOLO")
+                .setIcon(R.drawable.ic_launcher)
+                .setOnClickIntent(pendingIntent)
+                .build();
+    }
+
+    private void registerCustomTileListenerService(
+            CustomTileListenerService customTileListenerService) {
+        try {
+            Log.d(TAG, "Registering " + customTileListenerService
+                    + " custom tile listener service");
+            customTileListenerService.registerAsSystemService(mContext,
+                    new ComponentName(mContext.getPackageName(),
+                            CMStatusBarManagerTest.this.getClass().getCanonicalName()),
+                    UserHandle.USER_ALL);
+        } catch (RemoteException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    private void unregisterCustomTileListenerService(CustomTileListenerService customTileListenerService) {
+        try {
+            Log.d(TAG, "Unregistering " + customTileListenerService
+                    + " custom tile listener service");
+            customTileListenerService.unregisterAsSystemService();
+        } catch (RemoteException e) {
+            throw new AssertionError(e);
+        }
     }
 }
