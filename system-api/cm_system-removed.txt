@@ -1,0 +1,12 @@
+package cyanogenmod.themes {
+
+  public class ThemeManager {
+    method public deprecated void addClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientDestroyed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientPaused(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void onClientResumed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+    method public deprecated void removeClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
+  }
+
+}
+
