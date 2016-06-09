@@ -948,6 +948,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String KEY_MENU_ACTION = "key_menu_action";
     field public static final java.lang.String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
     field public static final java.lang.String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+    field public static final java.lang.String LOCKSCREEN_ROTATION = "lockscreen_rotation";
     field public static final java.lang.String MENU_WAKE_SCREEN = "menu_wake_screen";
     field public static final java.lang.String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
     field public static final java.lang.String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
@@ -972,7 +973,6 @@ package cyanogenmod.providers {
     field public static final java.lang.String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     field public static final java.lang.String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
     field public static final java.lang.String REVERSE_LOOKUP_PROVIDER = "reverse_lookup_provider";
-    field public static final java.lang.String LOCKSCREEN_ROTATION = "lockscreen_rotation";
     field public static final java.lang.String SHOW_ALARM_ICON = "show_alarm_icon";
     field public static final java.lang.String STATUS_BAR_AM_PM = "status_bar_am_pm";
     field public static final java.lang.String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -1300,7 +1300,6 @@ package cyanogenmod.themes {
   }
 
   public class ThemeManager {
-    method public deprecated void addClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
     method public void applyDefaultTheme();
     method public static cyanogenmod.themes.ThemeManager getInstance(android.content.Context);
     method public cyanogenmod.themes.ThemeChangeRequest.RequestType getLastThemeChangeRequestType();
@@ -1308,13 +1307,9 @@ package cyanogenmod.themes {
     method public int getProgress();
     method public boolean isThemeApplying();
     method public boolean isThemeBeingProcessed(java.lang.String);
-    method public deprecated void onClientDestroyed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
-    method public deprecated void onClientPaused(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
-    method public deprecated void onClientResumed(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
     method public boolean processThemeResources(java.lang.String);
     method public void registerProcessingListener(cyanogenmod.themes.ThemeManager.ThemeProcessingListener);
     method public void registerThemeChangeListener(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
-    method public deprecated void removeClient(cyanogenmod.themes.ThemeManager.ThemeChangeListener);
     method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>);
     method public void requestThemeChange(java.lang.String, java.util.List<java.lang.String>, boolean);
     method public void requestThemeChange(java.util.Map<java.lang.String, java.lang.String>);
