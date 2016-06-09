@@ -162,44 +162,6 @@ public class ThemeManager {
 
 
     /**
-     * @deprecated Use {@link ThemeManager#registerThemeChangeListener(ThemeChangeListener)} instead
-     */
-    public void addClient(ThemeChangeListener listener) {
-        registerThemeChangeListener(listener);
-    }
-
-    /**
-     * @deprecated Use {@link ThemeManager#unregisterThemeChangeListener(ThemeChangeListener)}
-     * instead
-     */
-    public void removeClient(ThemeChangeListener listener) {
-        unregisterThemeChangeListener(listener);
-    }
-
-    /**
-     * @deprecated Use {@link ThemeManager#unregisterThemeChangeListener(ThemeChangeListener)}
-     * instead
-     */
-    public void onClientPaused(ThemeChangeListener listener) {
-        unregisterThemeChangeListener(listener);
-    }
-
-    /**
-     * @deprecated Use {@link ThemeManager#registerThemeChangeListener(ThemeChangeListener)} instead
-     */
-    public void onClientResumed(ThemeChangeListener listener) {
-        registerThemeChangeListener(listener);
-    }
-
-    /**
-     * @deprecated Use {@link ThemeManager#unregisterThemeChangeListener(ThemeChangeListener)}
-     * instead
-     */
-    public void onClientDestroyed(ThemeChangeListener listener) {
-        unregisterThemeChangeListener(listener);
-    }
-
-    /**
      * Register a {@link ThemeChangeListener} to be notified when a theme is done being processed.
      * @param listener {@link ThemeChangeListener} to register
      */
