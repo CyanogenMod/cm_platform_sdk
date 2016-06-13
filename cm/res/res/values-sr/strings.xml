@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod систем</string>
   <string name="permlab_publishCustomTile">направи прилагођену плочицу у панелу брзог подешавања</string>
   <string name="permdesc_publishCustomTile">Омогући апликацији да избаци плочицу брзог подешавања.</string>
   <string name="permlab_bindCustomTileListenerService">везује за подразумевану плочицу сервиса надгледања</string>
   <string name="permdesc_bindCustomTileListenerService">Омогућава апликацији да се веже за интерфејс највишег нивоа прилагођене плочице сервиса надгледања.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Прилагођена плочица надгледања</string>
 </resources>

@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">سیستم سایانوژن‌مود</string>
-  <string name="permlab_publishCustomTile">ایجاد کاشی شخصی در پنل تنظیمات سریع</string>
-  <string name="permdesc_publishCustomTile">به برنامه برای ایجاد یک کاشی در تنظیمات سریع اجازه می‌دهد.</string>
-  <string name="permlab_bindCustomTileListenerService">پیوستن به یک سرویس مستمع کاشی شخصی</string>
-  <string name="permdesc_bindCustomTileListenerService">به برنامه برای پیوستن به رابط سطح بالای یک سرویس مستمع کاشی شخصی اجازه می‌دهد.</string>
-  <string name="custom_tile_listener_binding_label">مستمع کاشی شخصی</string>
+  <string name="permlab_publishCustomTile">ایجاد کاشی سفارشی در پنل تنظیمات سریع</string>
+  <string name="permdesc_publishCustomTile">به برنامه اجازه می‌دهد یک کاشی در تنظیمات سریع ایجاد کند.</string>
+  <string name="permlab_bindCustomTileListenerService">پیوستن به یک سرویس پیرو کاشی شخصی</string>
+  <string name="permdesc_bindCustomTileListenerService">به برنامه اجازه می‌دهد تا به رابط سطح بالای یک سرویس پیرو کاشی شخصی بپیوندد.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">پیرو کاشی شخصی</string>
 </resources>

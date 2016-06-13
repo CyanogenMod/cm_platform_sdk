@@ -16,7 +16,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">سیستەمی ساینەجنمۆد</string>
   <string name="permlab_bindCustomTileListenerService">گرێدانی دروستکراو لە خزمەتگوزاری گوێگر</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">کاشی دروستکراوی گوێگر</string>
 </resources>

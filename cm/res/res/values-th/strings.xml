@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">ระบบ CyanogenMod</string>
-  <string name="permlab_publishCustomTile">สร้างไทต์กำหนดเองในทางลัดการตั้งค่า</string>
-  <string name="permdesc_publishCustomTile">อนุญาตให้แอปสร้างไทต์ใหม่ในทางลัดการตั้งค่า</string>
-  <string name="permlab_bindCustomTileListenerService">ผูกไว้กับบริการกำหนดเอง</string>
-  <string name="permdesc_bindCustomTileListenerService">อนุญาตให้แอปผูกตัวเองไว้กับบริการต่างๆของเครื่อง</string>
-  <string name="custom_tile_listener_binding_label">บริการกำหนดเองของไทต์</string>
+  <string name="permlab_publishCustomTile">สร้างไทล์ที่กำหนดเองในแผงการตั้งค่าแบบรวดเร็ว</string>
+  <string name="permdesc_publishCustomTile">อนุญาตให้แอปแสดงไทล์การตั้งค่าแบบรวดเร็ว</string>
+  <string name="permlab_bindCustomTileListenerService">ผูกมัดไว้กับบริการผู้ฟังของไทล์ที่กำหนดเอง</string>
+  <string name="permdesc_bindCustomTileListenerService">อนุญาตให้แอปผูกตัวเองไว้กับอินเตอร์เฟซระดับบนของบริการสำหรับไทล์ที่กำหนดเอง</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">บริการกำหนดเองของไทล์</string>
 </resources>

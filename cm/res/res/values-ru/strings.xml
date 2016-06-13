@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Система CyanogenMod</string>
-  <string name="permlab_publishCustomTile">Создание произвольных плиток в панели быстрых настроек</string>
-  <string name="permdesc_publishCustomTile">Приложение сможет добавлять плитки в панель быстрых настроек.</string>
+  <string name="permlab_publishCustomTile">Создание пользовательских плиток на панели быстрых настроек</string>
+  <string name="permdesc_publishCustomTile">Приложение сможет добавлять плитки на панель быстрых настроек.</string>
   <string name="permlab_bindCustomTileListenerService">Привязка к службе слушателя пользовательских плиток</string>
-  <string name="permdesc_bindCustomTileListenerService">Позволяет владельцу устанавливать привязку к интерфейсу верхнего уровня службы слушателя пользовательских плиток.</string>
+  <string name="permdesc_bindCustomTileListenerService">Приложение сможет устанавливать привязку к интерфейсу верхнего уровня службы слушателя пользовательских плиток.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Слушатель пользовательских плиток</string>
 </resources>

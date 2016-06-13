@@ -16,7 +16,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod 系統</string>
   <string name="permlab_publishCustomTile">於快速設定面板中建立自訂標題</string>
   <string name="permdesc_publishCustomTile">允許應用程式發佈快速設定磚</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
 </resources>

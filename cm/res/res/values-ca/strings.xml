@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistema de CyanogenMod</string>
   <string name="permlab_publishCustomTile">crea una cel·la personalitzada al panell d\'ajustos ràpids</string>
   <string name="permdesc_publishCustomTile">Permet a una aplicació publicar una cel·la d\'ajustos ràpids.</string>
   <string name="permlab_bindCustomTileListenerService">uneix-te a un servei d\'escolta de cel·les personalitzades</string>
   <string name="permdesc_bindCustomTileListenerService">Permet a l\'aplicació unir-se a una interfície d\'alt nivell d\'un servei d\'escolta de cel·les personalitzades.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Escolta de cel·les personalitzades</string>
 </resources>

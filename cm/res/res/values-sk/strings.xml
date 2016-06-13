@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Systém CyanogenMod</string>
   <string name="permlab_publishCustomTile">vytvoriť vlastnú dlaždicu v paneli rýchlych nastavení</string>
   <string name="permdesc_publishCustomTile">Umožňuje aplikácii vytvoriť dlaždicu v rýchlych nastaveniach.</string>
   <string name="permlab_bindCustomTileListenerService">viazať službu na vlastnú dlaždicu</string>
   <string name="permdesc_bindCustomTileListenerService">Umožňuje aplikácii nadviazať rozhranie najvyššej úrovne na službu dlaždice.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Služba vlastnej dlaždice</string>
 </resources>

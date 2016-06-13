@@ -16,7 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">System CyanogenMod</string>
   <string name="permlab_publishCustomTile">utwórz niestandardowy przełącznik w panelu szybkich ustawień</string>
   <string name="permdesc_publishCustomTile">Umożliwia aplikacji stworzenie kafelka szybkich ustawień.</string>
+  <string name="permlab_bindCustomTileListenerService">powiąż z niestandardowymi usługami odbiornika</string>
+  <string name="permdesc_bindCustomTileListenerService">Pozwala aplikacji na powiązanie z interfejsem najwyższego poziomu niestandardowej usługi odbiornika.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
+  <string name="custom_tile_listener_binding_label">Niestandardowy odbiornik</string>
 </resources>

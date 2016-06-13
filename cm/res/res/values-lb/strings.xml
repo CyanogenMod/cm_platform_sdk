@@ -16,7 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">CyanogenMod-System</string>
+  <string name="permlab_publishCustomTile">eng Kachel an de séieren Astellungen uweisen</string>
+  <string name="permdesc_publishCustomTile">Erlaabt der App, eng Kachel an de séieren Astellungen uweisen.</string>
   <string name="permlab_bindCustomTileListenerService">en eegenene Kachel-Lauschter-Service ubannen</string>
+  <string name="permdesc_bindCustomTileListenerService">Erlaabt der App, sech op dem ieweschtem Niveau un d\'Schnëttstell vun engem Kachel-Lauschter-Service unzebannen.</string>
+  <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Eegene Kachel-Lauschter-Service</string>
 </resources>
