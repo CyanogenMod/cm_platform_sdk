@@ -422,7 +422,7 @@ public final class CMHardwareManager {
      * Set the display color calibration to the given rgb triplet
      *
      * @param rgb RGB color calibration.  Each value must be between
-     * {@link getDisplayColorCalibrationMin()} and {@link getDisplayColorCalibrationMax()},
+     * {@link #getDisplayColorCalibrationMin()} and {@link #getDisplayColorCalibrationMax()},
      * inclusive.
      *
      * @return true on success, false otherwise.
@@ -609,7 +609,7 @@ public final class CMHardwareManager {
     }
 
     /**
-     * @param the control to query
+     * @param idx the control to query
      *
      * @return the current RGB gamma calibration for the given control
      */
@@ -643,7 +643,7 @@ public final class CMHardwareManager {
      *
      * @param idx the control to set
      * @param rgb RGB color calibration.  Each value must be between
-     * {@link getDisplayGammaCalibrationMin()} and {@link getDisplayGammaCalibrationMax()},
+     * {@link #getDisplayGammaCalibrationMin()} and {@link #getDisplayGammaCalibrationMax()},
      * inclusive.
      *
      * @return true on success, false otherwise.
