@@ -122,6 +122,7 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
                         super.onCustomTilePosted(sbc);
                         Log.d(TAG, "Posted " + sbc.getCustomTile());
                         if (TextUtils.equals(expectedCustomTile.label, sbc.getCustomTile().label)) {
+                            removeCustomTile(mContext.getPackageName(), null, 1337);
                             signal.countDown();
                         }
                     }
