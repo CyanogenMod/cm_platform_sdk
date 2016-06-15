@@ -114,10 +114,29 @@ public class CustomTileBuilderTest extends AndroidTestCase {
     }
 
     @SmallTest
+    public void testCustomTileBuilderLabelAsRes() {
+        String message = mContext.getString(R.string.app_name);
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .setLabel(R.string.app_name).build();
+        assertNotNull(customTile);
+        assertEquals(message, customTile.label);
+    }
+
+    @SmallTest
     public void testCustomTileBuilderContentDescription() {
         String message = "Test content description";
         CustomTile customTile = new CustomTile.Builder(mContext)
                 .setContentDescription(message)
+                .build();
+        assertNotNull(customTile);
+        assertEquals(message, customTile.contentDescription);
+    }
+
+    @SmallTest
+    public void testCustomTileBuilderContentDescriptionAsRes() {
+        String message = mContext.getString(R.string.app_name);
+        CustomTile customTile = new CustomTile.Builder(mContext)
+                .setContentDescription(R.string.app_name)
                 .build();
         assertNotNull(customTile);
         assertEquals(message, customTile.contentDescription);
