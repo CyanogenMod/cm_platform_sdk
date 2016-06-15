@@ -56,13 +56,15 @@ public class StatusBarPanelCustomTileTest extends AndroidTestCase {
         int expectedPid = Binder.getCallingPid();
         CustomTile expectedCustomTile = createSampleCustomTile();
         UserHandle expectedUserHandle = new UserHandle(mContext.getUserId());
+        long expectedPostTime = System.currentTimeMillis();
 
         // public StatusBarPanelCustomTile(String pkg, String resPkg, String opPkg,
-        // int id, String tag, int uid, int initialPid, CustomTile customTile, UserHandle user)
+        // int id, String tag, int uid, int initialPid, CustomTile customTile, UserHandle user,
+        // long postTime)
         StatusBarPanelCustomTile statusBarPanelCustomTile =
                 new StatusBarPanelCustomTile(expectedPackage, expectedOpresPackage,
                         expectedOpPackage, expectedId, expectedTag, expectedUid, expectedPid,
-                        expectedCustomTile, expectedUserHandle);
+                        expectedCustomTile, expectedUserHandle, expectedPostTime);
 
         // Write to parcel
         Parcel parcel = Parcel.obtain();
@@ -77,16 +79,53 @@ public class StatusBarPanelCustomTileTest extends AndroidTestCase {
 
         assertNotNull(fromParcel);
         assertEquals(expectedPackage, fromParcel.getPackage());
+        assertEquals(expectedPostTime, fromParcel.getPostTime());
         assertEquals(expectedOpresPackage, fromParcel.getResPkg());
         assertEquals(expectedOpPackage, fromParcel.getOpPkg());
         assertEquals(expectedId, fromParcel.getId());
+        assertNotNull(fromParcel.getKey());
         assertEquals(expectedTag, fromParcel.getTag());
         assertEquals(expectedUid, fromParcel.getUid());
         assertEquals(expectedPid, fromParcel.getInitialPid());
         //CustomTile validation is excessive
         assertEquals(expectedUserHandle.getIdentifier(), fromParcel.getUser().getIdentifier());
+        assertEquals(expectedUserHandle.getIdentifier(), fromParcel.getUserId());
     }
 
+    @SmallTest
+    public void testDefaultConstructor() {
+        String expectedPackage = "expectedPackage";
+        String expectedOpresPackage = "resPackage";
+        String expectedOpPackage = "opPackage";
+        int expectedId = 1337;
+        String expectedTag = "TAG";
+        int expectedUid = mContext.getUserId();
+        int expectedPid = Binder.getCallingPid();
+        CustomTile expectedCustomTile = createSampleCustomTile();
+        UserHandle expectedUserHandle = new UserHandle(mContext.getUserId());
+
+        // public StatusBarPanelCustomTile(String pkg, String resPkg, String opPkg,
+        // int id, String tag, int uid, int initialPid, CustomTile customTile, UserHandle user)
+        StatusBarPanelCustomTile statusBarPanelCustomTile =
+                new StatusBarPanelCustomTile(expectedPackage, expectedOpresPackage,
+                        expectedOpPackage, expectedId, expectedTag, expectedUid, expectedPid,
+                        expectedCustomTile, expectedUserHandle);
+
+        assertNotNull(statusBarPanelCustomTile);
+        assertEquals(expectedPackage, statusBarPanelCustomTile.getPackage());
+        assertEquals(expectedOpresPackage, statusBarPanelCustomTile.getResPkg());
+        assertEquals(expectedOpPackage, statusBarPanelCustomTile.getOpPkg());
+        assertEquals(expectedId, statusBarPanelCustomTile.getId());
+        assertNotNull(statusBarPanelCustomTile.getKey());
+        assertEquals(expectedTag, statusBarPanelCustomTile.getTag());
+        assertEquals(expectedUid, statusBarPanelCustomTile.getUid());
+        assertEquals(expectedPid, statusBarPanelCustomTile.getInitialPid());
+        //CustomTile validation is excessive
+        assertEquals(expectedUserHandle.getIdentifier(),
+                statusBarPanelCustomTile.getUser().getIdentifier());
+        assertEquals(expectedUserHandle.getIdentifier(),
+                statusBarPanelCustomTile.getUserId());
+    }
 
     private CustomTile createSampleCustomTile() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
