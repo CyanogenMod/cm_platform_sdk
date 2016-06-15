@@ -18,6 +18,11 @@ package org.cyanogenmod.tests.settings.unit;
 
 import android.app.INotificationManager;
 import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -192,6 +197,54 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
     public void testSetZenModeOff() {
         mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF);
         assertEquals(PartnerInterface.ZEN_MODE_OFF, getZenMode());
+    }
+
+    private final static int BUFFER_ELEMENTS_TO_REC = 1024;
+    private final static int BYTES_PER_ELEMENT = 2;
+    private static final int RECORDER_SAMPLERATE = 41000;
+    private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
+    private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
+
+    private static int[] mSampleRates = new int[] { 8000, 11025, 22050, 44100 };
+    public AudioRecord findAudioRecord() {
+        for (int rate : mSampleRates) {
+            for (short audioFormat : new short[] { AudioFormat.ENCODING_PCM_8BIT,
+                    AudioFormat.ENCODING_PCM_16BIT }) {
+                for (short channelConfig : new short[] { AudioFormat.CHANNEL_IN_MONO,
+                        AudioFormat.CHANNEL_IN_STEREO }) {
+                    try {
+                        Log.d(TAG, "Attempting rate " + rate + "Hz, bits: " + audioFormat + ", channel: "
+                                + channelConfig);
+                        int bufferSize = AudioRecord.getMinBufferSize(rate, channelConfig, audioFormat);
+
+                        if (bufferSize != AudioRecord.ERROR_BAD_VALUE) {
+                            AudioRecord recorder = new AudioRecord(
+                                    cyanogenmod.media.MediaRecorder.AudioSource.HOTWORD,
+                                    rate, channelConfig, audioFormat, bufferSize);
+
+                            if (recorder.getState() == AudioRecord.STATE_INITIALIZED)
+                                return recorder;
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, rate + "Exception, keep trying.",e);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    @SmallTest
+    public void testGetCurrentHotwordPackageName() {
+        // make sure no one is actively stealing this as we attempt to
+        assertNull(mPartnerInterface.getCurrentHotwordPackageName());
+
+        // find first viable audio record
+        final AudioRecord audioRecorder = findAudioRecord();
+
+        audioRecorder.startRecording();
+        assertEquals(mContext.getPackageName(), mPartnerInterface.getCurrentHotwordPackageName());
+        audioRecorder.stop();
     }
 
     /**
