@@ -41,6 +41,7 @@ import java.lang.reflect.Field;
 public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProviderService> {
     private WindowManager mWindowManagerMock;
     private IExternalViewProviderFactory mProvider;
+    private IKeyguardExternalViewProvider mView;
 
     public KeyguardExternalProviderTest() {
         super(ViewProviderService.class);
@@ -51,15 +52,15 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         super.setUp();
 
         IBinder bind = bindService((ServiceRunnable) null);
-        assert (bind != null);
+        assertNotNull (bind);
 
         mProvider = IExternalViewProviderFactory.Stub.asInterface(bind);
-        assert (mProvider != null);
+        assertNotNull (mProvider);
 
         final Bundle bundle = new Bundle();
         IBinder bindView = mProvider.createExternalView(bundle);
-        IKeyguardExternalViewProvider view = IKeyguardExternalViewProvider.Stub.asInterface(bindView);
-        assert (view != null);
+        mView = IKeyguardExternalViewProvider.Stub.asInterface(bindView);
+        assertNotNull (mView);
 
         runOnServiceThread(new Runnable() {
             @Override
@@ -68,6 +69,10 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
                         .createExternalView(Mockito.eq(bundle));
                 Mockito.verify(getService().getProvider().getTracker(), Mockito.times(1))
                         .onCreateView();
+
+                // Ensure the bundle we constructed with is intact
+                Bundle b = getService().getProvider().getOptionsImpl();
+                assertEquals (b, bundle);
             }
         });
     }
@@ -116,22 +121,8 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
     }
 
     public void testCallbacks() throws Exception {
-        IBinder bind = getService().onBind(new Intent());
-        final IExternalViewProviderFactory provider = IExternalViewProviderFactory.Stub.asInterface(bind);
-        assert (provider != null);
-
-        // Ensure on bind we were asked to create an external view
-        final Bundle bundle = new Bundle();
-        IBinder bindView = provider.createExternalView(bundle);
-        final IKeyguardExternalViewProvider view = IKeyguardExternalViewProvider.Stub.asInterface(bindView);
-        assert (view != null);
-
-        // Ensure the bundle we constructed with is intact
-        Bundle b = getService().getProvider().getOptionsImpl();
-        assert (b == bundle);
-
         Mockito.reset(getService().getProvider().getTracker());
-        view.onScreenTurnedOff();
+        mView.onScreenTurnedOff();
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -142,7 +133,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onKeyguardDismissed();
+        mView.onKeyguardDismissed();
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -153,7 +144,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onBouncerShowing(true);
+        mView.onBouncerShowing(true);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -164,7 +155,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onKeyguardShowing(true);
+        mView.onKeyguardShowing(true);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -175,7 +166,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onLockscreenSlideOffsetChanged(1f);
+        mView.onLockscreenSlideOffsetChanged(1f);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -186,7 +177,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onAttach(null);
+        mView.onAttach(null);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -201,26 +192,29 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
                         .addView(viewGroup.capture(), params.capture());
 
                 ViewGroup decorView = viewGroup.getAllValues().get(0);
-                assert (decorView.getChildCount() == 1);
-                assert (decorView.getChildAt(0) == getService().getProvider().getView());
+                assertEquals (decorView.getChildCount(), 2);
+                assertEquals (decorView.getChildAt(1), getService().getProvider().getView());
 
                 WindowManager.LayoutParams param = params.getAllValues().get(0);
-                assert ((param.type & WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL) != 0);
+                assertEquals ((param.type & WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL),
+                        WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL);
 
                 int flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
                         WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
                         WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN |
                         WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                         WindowManager.LayoutParams.FLAG_FULLSCREEN;
-                assert ((param.flags & flags) != 0);
+                assertEquals(param.flags & flags, flags);
 
-                assert ((param.gravity & Gravity.LEFT | Gravity.TOP) != 0);
-                assert ((param.format & PixelFormat.TRANSPARENT) != 0);
+                assertEquals ((param.gravity & Gravity.LEFT | Gravity.TOP),
+                        Gravity.LEFT | Gravity.TOP);
+                assertEquals ((param.format & PixelFormat.TRANSPARENT),
+                        PixelFormat.TRANSPARENT);
             }
         });
 
         Mockito.reset(getService().getProvider().getTracker());
-        view.onDetach();
+        mView.onDetach();
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -233,28 +227,16 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
                         .removeView(viewGroup.capture());
 
                 ViewGroup decorView = viewGroup.getAllValues().get(0);
-                assert (decorView.getChildCount() == 1);
-                assert (decorView.getChildAt(0) == getService().getProvider().getView());
+                assertEquals (decorView.getChildCount(), 2);
+                assertEquals (decorView.getChildAt(1), getService().getProvider().getView());
             }
         });
     }
 
     public void testCallbackRegistration() throws Exception {
-        assert (getService() != null);
-
-        IBinder bind = getService().onBind(new Intent());
-        final IExternalViewProviderFactory provider = IExternalViewProviderFactory.Stub.asInterface(bind);
-        assert (provider != null);
-
-        // Ensure on bind we were asked to create an external view
-        final Bundle bundle = new Bundle();
-        IBinder bindView = provider.createExternalView(bundle);
-        final IKeyguardExternalViewProvider view = IKeyguardExternalViewProvider.Stub.asInterface(bindView);
-        assert (view != null);
-
         final IKeyguardExternalViewCallbacks.Stub callback = MockIBinderStubForInterface
                 .getMockInterface(IKeyguardExternalViewCallbacks.Stub.class);
-        view.registerCallback(callback);
+        mView.registerCallback(callback);
         getService().getProvider().requestDismissImpl();
         runOnServiceThread(new Runnable() {
             @Override
@@ -325,22 +307,10 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
     }
 
     public void testAlterWindow() throws Exception {
-        assert (getService() != null);
-
-        IBinder bind = getService().onBind(new Intent());
-        final IExternalViewProviderFactory provider = IExternalViewProviderFactory.Stub.asInterface(bind);
-        assert (provider != null);
-
-        // Ensure on bind we were asked to create an external view
-        final Bundle bundle = new Bundle();
-        IBinder bindView = provider.createExternalView(bundle);
-        final IKeyguardExternalViewProvider view = IKeyguardExternalViewProvider.Stub.asInterface(bindView);
-        assert (view != null);
-
         // Test visible false
         Mockito.reset(mWindowManagerMock);
         final Rect rect = new Rect(0, 0, 100, 100);
-        view.alterWindow(0, 0, 100, 100, false, rect);
+        mView.alterWindow(0, 0, 100, 100, false, rect);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -350,7 +320,7 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
 
         // Test visible true
         Mockito.reset(mWindowManagerMock);
-        view.alterWindow(10, 20, 30, 40, true, rect);
+        mView.alterWindow(10, 20, 30, 40, true, rect);
         runOnServiceThread(new Runnable() {
             @Override
             public void run() {
@@ -362,17 +332,18 @@ public class KeyguardExternalProviderTest extends ThreadServiceTestCase<ViewProv
                         .updateViewLayout(viewGroup.capture(), params.capture());
 
                 ViewGroup decorView = viewGroup.getAllValues().get(0);
-                View child = decorView.getChildAt(0);
-                assert (decorView.getChildCount() == 1);
-                assert (child == getService().getProvider().getView());
-                assert (child.getVisibility() == View.VISIBLE);
-                assert (child.getClipBounds().equals(rect));
+                // First view is actionbar
+                View child = decorView.getChildAt(1);
+                assertEquals (decorView.getChildCount(), 2);
+                assertEquals (child, getService().getProvider().getView());
+                assertEquals (decorView.getVisibility(), View.VISIBLE);
+                assertEquals (decorView.getClipBounds(), rect);
 
                 WindowManager.LayoutParams param = params.getAllValues().get(0);
-                assert (param.x == 10);
-                assert (param.y == 20);
-                assert (param.width == 30);
-                assert (param.height == 40);
+                assertEquals (param.x, 10);
+                assertEquals (param.y, 20);
+                assertEquals (param.width, 30);
+                assertEquals (param.height, 40);
                 Mockito.verifyNoMoreInteractions(mWindowManagerMock);
             }
         });
