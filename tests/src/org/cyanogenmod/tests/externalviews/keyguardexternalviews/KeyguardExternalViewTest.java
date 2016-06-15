@@ -240,7 +240,7 @@ public class KeyguardExternalViewTest extends AndroidTestCase {
         Mockito.verifyNoMoreInteractions(callback);
 
         mKeyguardCallback.setInteractivity(true);
-        assert(mExternalView.isInteractive());
+        assertEquals(mExternalView.isInteractive(), true);
         Mockito.verifyNoMoreInteractions(callback);
 
         mKeyguardCallback.slideLockscreenIn();
