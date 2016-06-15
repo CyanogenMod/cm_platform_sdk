@@ -16,6 +16,7 @@
 package cyanogenmod.util;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -270,9 +271,13 @@ public class ColorUtils {
         if (drawable instanceof BitmapDrawable) {
             bitmap = ((BitmapDrawable) drawable).getBitmap();
         } else {
-            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-                                         drawable.getIntrinsicHeight(),
+            int width = drawable.getIntrinsicWidth();
+            int height = drawable.getIntrinsicHeight();
+            bitmap = Bitmap.createBitmap(Math.max(1, width),
+                                         Math.max(1, height),
                                          Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            drawable.draw(canvas);
         }
 
         if (bitmap != null) {

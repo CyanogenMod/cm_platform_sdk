@@ -21,9 +21,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.test.AndroidTestCase;
-import android.util.MathUtils;
 import cyanogenmod.util.ColorUtils;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 public class ColorUtilTest extends AndroidTestCase {
     private ColorUtils mColorUtils;
@@ -59,12 +62,16 @@ public class ColorUtilTest extends AndroidTestCase {
         assertEquals(color, Color.BLACK);
 
         Bitmap bitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
+        bitmapDrawable.setBounds(0, 0, 10, 10);
         Canvas canvas = new Canvas(bitmap);
         canvas.drawColor(Color.RED);
 
         // Test fully red bitmap
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
         color = mColorUtils.generateAlertColorFromDrawable(bitmapDrawable);
+        assertEquals(color, Color.RED);
+        color = mColorUtils.generateAlertColorFromDrawable(
+                getColorDrawableFromBitmapDrawable(bitmapDrawable));
         assertEquals(color, Color.RED);
 
         // Test blue/red bitmap with blue dominating
@@ -74,11 +81,17 @@ public class ColorUtilTest extends AndroidTestCase {
         canvas.drawRect(0, 0, 8, 8, p);
         color = mColorUtils.generateAlertColorFromDrawable(bitmapDrawable);
         assertEquals(color, Color.BLUE);
+        color = mColorUtils.generateAlertColorFromDrawable(
+                getColorDrawableFromBitmapDrawable(bitmapDrawable));
+        assertEquals(color, Color.BLUE);
 
         // Test large white + small blue scenario
         canvas.drawColor(Color.WHITE);
         canvas.drawRect(0, 0, 2, 2, p);
         color = mColorUtils.generateAlertColorFromDrawable(bitmapDrawable);
+        assertEquals(color, Color.BLUE);
+        color = mColorUtils.generateAlertColorFromDrawable(
+                getColorDrawableFromBitmapDrawable(bitmapDrawable));
         assertEquals(color, Color.BLUE);
 
         // Test large white + small black scenario
@@ -87,8 +100,24 @@ public class ColorUtilTest extends AndroidTestCase {
         canvas.drawRect(0, 0, 2, 2, p);
         color = mColorUtils.generateAlertColorFromDrawable(bitmapDrawable);
         assertEquals(color, Color.WHITE);
+        color = mColorUtils.generateAlertColorFromDrawable(
+                getColorDrawableFromBitmapDrawable(bitmapDrawable));
+        assertEquals(color, Color.WHITE);
 
         assertEquals(bitmap.isRecycled(), false);
         bitmap.recycle();
+    }
+
+    private ColorDrawable getColorDrawableFromBitmapDrawable(final BitmapDrawable bitmapDrawable) {
+        ColorDrawable colorDrawable = Mockito.mock(ColorDrawable.class);
+        Mockito.doAnswer(new Answer() {
+            @Override
+            public Object answer(InvocationOnMock invocation) throws Throwable {
+                Canvas canvas = (Canvas) invocation.getArguments()[0];
+                bitmapDrawable.draw(canvas);
+                return null;
+            }
+        }).when(colorDrawable).draw(Mockito.any(Canvas.class));
+        return colorDrawable;
     }
 }
