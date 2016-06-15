@@ -105,6 +105,7 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
     @MediumTest
     public void testCustomTileListenerServiceOnCustomTilePosted() {
         final CustomTile expectedCustomTile = createSampleCustomTile();
+        final UserHandle expectedUserHandle = new UserHandle(UserHandle.myUserId());
 
         final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
         CustomTileListenerService customTileListenerService =
@@ -114,7 +115,8 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
                         super.onListenerConnected();
                         Log.d(TAG, "Connected");
                         // publish
-                        mCMStatusBarManager.publishTile(1337, expectedCustomTile);
+                        mCMStatusBarManager.publishTileAsUser(null, 1337, expectedCustomTile,
+                                expectedUserHandle);
                     }
 
                     @Override
@@ -122,7 +124,6 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
                         super.onCustomTilePosted(sbc);
                         Log.d(TAG, "Posted " + sbc.getCustomTile());
                         if (TextUtils.equals(expectedCustomTile.label, sbc.getCustomTile().label)) {
-                            removeCustomTile(mContext.getPackageName(), null, 1337);
                             signal.countDown();
                         }
                     }
@@ -136,6 +137,8 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
         } catch (InterruptedException e) {
             throw new AssertionError(e);
         }
+
+        mCMStatusBarManager.removeTileAsUser(null, 1337, expectedUserHandle);
 
         unregisterCustomTileListenerService(customTileListenerService);
     }
@@ -151,7 +154,7 @@ public class CMStatusBarManagerTest extends AndroidTestCase {
                     public void onListenerConnected() {
                         super.onListenerConnected();
                         Log.d(TAG, "Connected");
-                        // publish
+                        // publish as user
                         mCMStatusBarManager.publishTile(1338, expectedCustomTile);
                     }
 
