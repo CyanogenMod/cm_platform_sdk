@@ -18,6 +18,11 @@ package org.cyanogenmod.tests.settings.unit;
 
 import android.app.INotificationManager;
 import android.content.Context;
+import android.media.AudioAttributes;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -32,6 +37,7 @@ import android.util.Log;
 
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.PartnerInterface;
+import org.cyanogenmod.tests.common.AudioRecordHelper;
 
 import java.util.List;
 
@@ -192,6 +198,18 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
     public void testSetZenModeOff() {
         mPartnerInterface.setZenMode(PartnerInterface.ZEN_MODE_OFF);
         assertEquals(PartnerInterface.ZEN_MODE_OFF, getZenMode());
+    }
+
+    @SmallTest
+    public void testGetCurrentHotwordPackageName() {
+        // make sure no one is actively steal this as we attempt to
+        assertNull(mPartnerInterface.getCurrentHotwordPackageName());
+
+        final AudioRecordHelper audioRecorder =
+                AudioRecordHelper.getInstance(MediaRecorder.AudioSource.HOTWORD);
+        audioRecorder.start();
+        assertEquals(mContext.getPackageName(), mPartnerInterface.getCurrentHotwordPackageName());
+        audioRecorder.stop();
     }
 
     /**
