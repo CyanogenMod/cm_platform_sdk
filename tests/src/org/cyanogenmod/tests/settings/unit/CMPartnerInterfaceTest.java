@@ -194,6 +194,12 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         assertEquals(PartnerInterface.ZEN_MODE_OFF, getZenMode());
     }
 
+    @SmallTest
+    public void testGetCurrentHotwordPackageName() {
+        String expectedValue = "com.google.android.googlequicksearchbox"; //HI GOOGLE
+        assertEquals(expectedValue, mPartnerInterface.getCurrentHotwordPackageName());
+    }
+
     /**
      * testZenModeWithDuration: sets Zen Mode with duration and blocks
      * until the duration is verified. Use with care! This does not
