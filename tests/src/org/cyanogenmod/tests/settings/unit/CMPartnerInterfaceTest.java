@@ -155,7 +155,7 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         assertEquals(PartnerInterface.ZEN_MODE_IMPORTANT_INTERRUPTIONS, getZenMode());
     }
 
-    @FlakyTest
+    @FlakyTest(tolerance = 5)
     @SmallTest
     public void testSetZenModeImportantInterruptionsWithDurations() {
         // 0 duration
@@ -177,7 +177,7 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         assertEquals(PartnerInterface.ZEN_MODE_NO_INTERRUPTIONS, getZenMode());
     }
 
-    @FlakyTest
+    @FlakyTest(tolerance = 5)
     @SmallTest
     public void testSetZenModeNoInterruptionsWithDurations() {
         // 0 duration
