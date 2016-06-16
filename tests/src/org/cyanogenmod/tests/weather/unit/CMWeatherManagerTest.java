@@ -46,7 +46,6 @@ public class CMWeatherManagerTest extends AndroidTestCase {
     private static final int REQUEST_ID = 42;
     private static final String MOCKED_WEATHER_PROVIDER_LABEL = "Mock'd Weather Service";
     private ICMWeatherManager.Stub mICMWeatherManagerSpy;
-    private static final String DESCRIPTOR = "cyanogenmod.weather.ICMWeatherManager";
 
     @Override
     protected void setUp() throws Exception {

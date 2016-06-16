@@ -45,6 +45,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
     }
 
     private static final String CITY_NAME = "Seattle";
+    private static final int TIMEOUT = 5000;
 
     public void testCityNameLookupRequest() throws Exception {
         IBinder binder = bindService((ServiceRunnable) null);
@@ -61,7 +62,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
@@ -88,7 +89,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
@@ -117,7 +118,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
@@ -211,7 +212,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
@@ -227,7 +228,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
@@ -243,7 +244,7 @@ public class WeatherProviderServiceTest extends ThreadServiceTestCase<MockWeathe
                 ArgumentCaptor<ServiceRequest> params
                         = ArgumentCaptor.forClass(ServiceRequest.class);
 
-                Mockito.verify(getService().getCallTracker(), Mockito.times(1))
+                Mockito.verify(getService().getCallTracker(), Mockito.timeout(TIMEOUT).times(1))
                         .onRequestSubmitted(params.capture());
 
                 ServiceRequest request = params.getValue();
