@@ -157,11 +157,11 @@
   <string name="permdesc_accessLiveLockScreenServiceProvider">Permite que um serviço forneça o serviço de gestão do ecrã de bloqueio animado.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">ler a meteorologia</string>
-  <string name="permdesc_weather_read">Permite que uma aplicação leia conteúdo através do provedor de meteorologia.</string>
-  <string name="permlab_weather_write">atualizar o provedor de meteorologia</string>
-  <string name="permdesc_weather_write">Permite que uma aplicação atualize o conteúdo do provedor de meteorologia.</string>
-  <string name="permlab_weather_bind">vincular-se como um serviço de provedor de meteorologia</string>
-  <string name="permdesc_weather_bind">Permite que uma aplicação seja identificada como um serviço de provedor de meteorologia.</string>
+  <string name="permdesc_weather_read">Permite que uma aplicação leia conteúdo através do fornecedor de meteorologia.</string>
+  <string name="permlab_weather_write">atualizar o fornecedor de meteorologia</string>
+  <string name="permdesc_weather_write">Permite que uma aplicação atualize o conteúdo do fornecedor de meteorologia.</string>
+  <string name="permlab_weather_bind">vincular-se como um serviço de fornecedor de meteorologia</string>
+  <string name="permdesc_weather_bind">Permite que uma aplicação seja identificada como um serviço de fornecedor de meteorologia.</string>
   <string name="permlab_weather_access_mgr">aceder ao serviço de meteorologia</string>
   <string name="permdesc_weather_access_mgr">Permite que uma aplicação aceda ao serviço de meteorologia do sistema. Nunca deverá ser necessário para aplicações normais.</string>
   <!-- DataUsageProvider write permission title -->
