@@ -485,8 +485,7 @@ public class ThemeManagerService extends CMSystemService {
 
     private void doApplyDefaultTheme() {
         final ContentResolver resolver = mContext.getContentResolver();
-        final String defaultThemePkg = CMSettings.Secure.getString(resolver,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        final String defaultThemePkg = ThemeUtils.getDefaultThemePackageName(mContext);
         if (!TextUtils.isEmpty(defaultThemePkg)) {
             String defaultThemeComponents = CMSettings.Secure.getString(resolver,
                     CMSettings.Secure.DEFAULT_THEME_COMPONENTS);
