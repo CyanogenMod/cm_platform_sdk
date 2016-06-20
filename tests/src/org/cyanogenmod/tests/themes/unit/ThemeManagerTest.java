@@ -18,6 +18,8 @@ package org.cyanogenmod.tests.themes.unit;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.ThemeConfig;
 import android.database.Cursor;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
@@ -33,8 +35,8 @@ import cyanogenmod.providers.CMSettings;
 import cyanogenmod.providers.ThemesContract;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
@@ -43,13 +45,28 @@ public class ThemeManagerTest extends AndroidTestCase {
     private static final int COUNTDOWN = 1;
 
     private ThemeManager mThemeManager;
-    private ContentResolver mContentResolver;
+
+    private static final List<String> ALL_THEME_COMPONENTS = new ArrayList<>();
+
+    static {
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_ALARMS);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_BOOT_ANIM);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_FONTS);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_ICONS);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_LAUNCHER);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_LIVE_LOCK_SCREEN);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_LOCKSCREEN);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_NAVIGATION_BAR);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_NOTIFICATIONS);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_OVERLAYS);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_RINGTONES);
+        ALL_THEME_COMPONENTS.add(ThemesContract.ThemesColumns.MODIFIES_STATUS_BAR);
+    }
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
         mThemeManager = ThemeManager.getInstance(getContext());
-        mContentResolver = mContext.getContentResolver();
     }
 
     @SmallTest
@@ -69,13 +86,10 @@ public class ThemeManagerTest extends AndroidTestCase {
         final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
 
         // Get the default theme package
-        final String defaultThemePkg = CMSettings.Secure.getString(mContentResolver,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        final String defaultThemePkg = getDefaultThemePackageName(mContext);
 
-        // Get the deefault theme components
-        final ArrayList<String> components = new ArrayList<>(
-                Arrays.asList(CMSettings.Secure.getString(mContentResolver,
-                        CMSettings.Secure.DEFAULT_THEME_COMPONENTS).split("\\|")));
+        // Get the default theme components
+        final List<String> components = getSupportedComponentsForTheme(mContext, defaultThemePkg);
 
         // Populate componentkey map since we're going to lock the thread
         for (String component : components) {
@@ -201,14 +215,11 @@ public class ThemeManagerTest extends AndroidTestCase {
         Map<String, String> expectedAppOverlayMap = new HashMap<>();
         final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
 
-        // Get the deefault theme components
-        final ArrayList<String> components = new ArrayList<>(
-                Arrays.asList(CMSettings.Secure.getString(mContentResolver,
-                        CMSettings.Secure.DEFAULT_THEME_COMPONENTS).split("\\|")));
-
         // Get the default theme package
-        final String defaultThemePkg = CMSettings.Secure.getString(mContentResolver,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        final String defaultThemePkg = getDefaultThemePackageName(mContext);
+
+        // Get the default theme components
+        final List<String> components = getSupportedComponentsForTheme(mContext, defaultThemePkg);
 
         for (String component : components) {
             expectedAppOverlayMap.put(component, defaultThemePkg);
@@ -244,14 +255,11 @@ public class ThemeManagerTest extends AndroidTestCase {
     public void testRequestThemeChangeAsStringListAndCallback() {
         final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
 
-        // Get the deefault theme components
-        final ArrayList<String> components = new ArrayList<>(
-                Arrays.asList(CMSettings.Secure.getString(mContentResolver,
-                        CMSettings.Secure.DEFAULT_THEME_COMPONENTS).split("\\|")));
-
         // Get the default theme package
-        final String defaultThemePkg = CMSettings.Secure.getString(mContentResolver,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        final String defaultThemePkg = getDefaultThemePackageName(mContext);
+
+        // Get the default theme components
+        final List<String> components = getSupportedComponentsForTheme(mContext, defaultThemePkg);
 
         mThemeManager.registerThemeChangeListener(new ThemeChangeListener() {
             @Override
@@ -284,8 +292,7 @@ public class ThemeManagerTest extends AndroidTestCase {
         final CountDownLatch signal = new CountDownLatch(COUNTDOWN);
 
         // Get the default theme package
-        final String defaultThemePkg = CMSettings.Secure.getString(mContentResolver,
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        final String defaultThemePkg = getDefaultThemePackageName(mContext);
 
         ThemeChangeRequest request = new ThemeChangeRequest.Builder()
                 .setAlarm(defaultThemePkg)
@@ -326,7 +333,7 @@ public class ThemeManagerTest extends AndroidTestCase {
                 TextUtils.equals(packageName, expectedPackage);
 
         if (systemTheme && !verified) {
-            verified = TextUtils.equals(expectedPackage, "system");
+            verified = TextUtils.equals(expectedPackage, ThemeConfig.SYSTEM_DEFAULT);
         }
 
         return verified;
@@ -351,4 +358,47 @@ public class ThemeManagerTest extends AndroidTestCase {
         return null;
     }
 
+    private static String getDefaultThemePackageName(Context context) {
+        final String defaultThemePkg = CMSettings.Secure.getString(context.getContentResolver(),
+                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
+        if (!TextUtils.isEmpty(defaultThemePkg)) {
+            PackageManager pm = context.getPackageManager();
+            try {
+                if (pm.getPackageInfo(defaultThemePkg, 0) != null) {
+                    return defaultThemePkg;
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                // doesn't exist so system will be default
+                Log.w(TAG, "Default theme " + defaultThemePkg + " not found", e);
+            }
+        }
+
+        return ThemeConfig.SYSTEM_DEFAULT;
+    }
+
+    private static List<String> getSupportedComponentsForTheme(Context context,
+            String themePkgName) {
+        List<String> supportedComponents = new ArrayList<>();
+
+        String selection = ThemesContract.ThemesColumns.PKG_NAME + "= ?";
+        String[] selectionArgs = new String[]{ themePkgName };
+        Cursor c = context.getContentResolver().query(ThemesContract.ThemesColumns.CONTENT_URI,
+                null, selection, selectionArgs, null);
+
+        if (c != null) {
+            try {
+                if (c.moveToFirst()) {
+                    for (String component : ALL_THEME_COMPONENTS) {
+                        int index = c.getColumnIndex(component);
+                        if (c.getInt(index) == 1) {
+                            supportedComponents.add(component);
+                        }
+                    }
+                }
+            } finally {
+                c.close();
+            }
+        }
+        return supportedComponents;
+    }
 }
