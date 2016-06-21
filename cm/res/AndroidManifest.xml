@@ -220,7 +220,6 @@
                 android:description="@string/permdesc_observe_audio_sessions"
                 android:protectionLevel="normal"/>
 
-
     <!-- Allows an application to access the weather service.
         <p>Although the protection is normal, this permission should be required ONLY by those apps
         meant to do something meaningful with the data provided by the service (LockClock, SysUI)-->
@@ -235,6 +234,11 @@
                 android:description="@string/permdesc_manageLiveDisplay"
                 android:icon="@drawable/ic_launcher_cyanogenmod"
                 android:protectionLevel="normal" />
+
+    <!-- Not meant for third parties. Allows brokering core services to other
+         processes @hide -->
+    <permission android:name="cyanogenmod.permission.BIND_CORE_SERVICE"
+                android:protectionLevel="signature|privileged" />
 
     <application android:process="system"
                  android:persistent="true"
