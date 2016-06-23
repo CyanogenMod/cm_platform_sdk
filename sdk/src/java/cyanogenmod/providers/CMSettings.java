@@ -2803,6 +2803,12 @@ public final class CMSettings {
          */
         public static final String LOCK_SCREEN_WEATHER_ENABLED = "lock_screen_weather_enabled";
 
+        /**
+         * Whether to protect notification actions when showing on secure keyguard
+         * @hide
+         */
+        public static final String LOCK_SCREEN_PROTECT_NOTIFICATION_ACTIONS =
+                "lock_screen_notification_protect_actions";
 
         // endregion
 
