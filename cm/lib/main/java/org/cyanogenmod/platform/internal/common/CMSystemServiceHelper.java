@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.platform.internal;
+package org.cyanogenmod.platform.internal.common;
 
 import android.content.Context;
+import org.cyanogenmod.platform.internal.CMSystemService;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
