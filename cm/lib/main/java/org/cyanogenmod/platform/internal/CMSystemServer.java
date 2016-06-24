@@ -19,14 +19,9 @@ package org.cyanogenmod.platform.internal;
 import android.content.Context;
 import android.util.Slog;
 import com.android.server.LocalServices;
-import com.android.server.SystemService;
 import com.android.server.SystemServiceManager;
-import cyanogenmod.app.CMContextConstants;
 
-import org.cyanogenmod.platform.internal.display.LiveDisplayService;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.cyanogenmod.platform.internal.common.CMSystemServiceHelper;
 
 /**
  * Base CM System Server which handles the starting and states of various CM
