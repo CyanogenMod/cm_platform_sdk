@@ -110,4 +110,10 @@
     <!-- Default temperature unit (CELSIUS) -->
     <integer name="def_temperature_unit">2</integer>
 
+    <!-- Default enabled event based LLS components
+         Contains a list of component names for enabled components, separated by '|'
+         ex. com.example.mylls/com.example.mylls.LiveLockScreen|com.example.anotherLls/com.example.anotherLls.MyLls
+    -->
+    <string name="def_enabled_event_lls_components"></string>
+
 </resources>
