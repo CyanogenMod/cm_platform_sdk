@@ -16,13 +16,13 @@
 
 package org.cyanogenmod.platform.internal;
 
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
-import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiSsid;
@@ -30,11 +30,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.text.TextUtils;
+import android.util.ArraySet;
 import android.util.Log;
 import cyanogenmod.app.Profile;
+import cyanogenmod.app.Profile.ProfileTrigger;
 import cyanogenmod.app.ProfileManager;
 import cyanogenmod.providers.CMSettings;
 
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -163,14 +166,23 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
 
         if (!newProfileSelected) {
             //Does the active profile actually cares about this event?
-            for (Profile.ProfileTrigger trigger : activeProfile.getTriggersFromType(type)) {
-                if (trigger.getId().equals(id)) {
+            for (ProfileTrigger trigger : activeProfile.getTriggersFromType(type)) {
+                final String triggerID = trigger.getId();
+                if (triggerID.equals(id)) {
                     Intent intent
                             = new Intent(ProfileManager.INTENT_ACTION_PROFILE_TRIGGER_STATE_CHANGED);
                     intent.putExtra(ProfileManager.EXTRA_TRIGGER_ID, id);
                     intent.putExtra(ProfileManager.EXTRA_TRIGGER_TYPE, type);
                     intent.putExtra(ProfileManager.EXTRA_TRIGGER_STATE, newState);
                     mContext.sendBroadcastAsUser(intent, UserHandle.ALL);
+
+                    final int triggerState = trigger.getState();
+                    if ((newState == Profile.TriggerState.ON_CONNECT
+                            && triggerState == Profile.TriggerState.ON_CONNECT) ||
+                            (newState == Profile.TriggerState.ON_DISCONNECT
+                            && triggerState == Profile.TriggerState.ON_DISCONNECT)) {
+                        activeProfile.doSelect(mContext, null);
+                    }
                     break;
                 }
             }
