@@ -16,11 +16,17 @@
 
 package org.cyanogenmod.platform.internal;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.database.ContentObserver;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiSsid;
 import android.os.Message;
+import android.util.ArraySet;
 import com.android.internal.policy.IKeyguardService;
 import cyanogenmod.providers.CMSettings;
 import org.xmlpull.v1.XmlPullParser;
@@ -58,7 +64,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 /** @hide */
@@ -144,12 +152,68 @@ public class ProfileManagerService extends CMSystemService {
 
                     mContext.sendBroadcastAsUser(newState, UserHandle.ALL);
 
-
+                    if (ProfileManager.PROFILES_STATE_ENABLED == msg.arg1) {
+                        maybeApplyActiveProfile();
+                    }
                     return true;
             }
             return false;
         }
     };
+
+    private void maybeApplyActiveProfile() {
+        final List<Profile.ProfileTrigger> wiFiTriggers
+                = mActiveProfile.getTriggersFromType(Profile.TriggerType.WIFI);
+        final List<Profile.ProfileTrigger> blueToothTriggers
+                = mActiveProfile.getTriggersFromType(Profile.TriggerType.BLUETOOTH);
+
+        boolean selectProfile = false;
+        if (wiFiTriggers.size() == 0 && blueToothTriggers.size() == 0) {
+            selectProfile = true;
+        } else {
+            final String activeSSID = getActiveSSID();
+            if (activeSSID != null) {
+                for (Profile.ProfileTrigger trigger : wiFiTriggers) {
+                    if (trigger.getState() == Profile.TriggerState.ON_CONNECT
+                            && trigger.getId().equals(activeSSID)) {
+                        selectProfile = true;
+                        break;
+                    }
+                }
+            }
+            if (!selectProfile && blueToothTriggers.size() > 0) {
+                final BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+                final Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+                final Set<String> connectedBTDevices = new ArraySet<>();
+                for (BluetoothDevice device : pairedDevices) {
+                    if (device.isConnected()) connectedBTDevices.add(device.getAddress());
+                }
+                for (Profile.ProfileTrigger trigger : blueToothTriggers) {
+                    if (connectedBTDevices.contains(trigger.getId())
+                            && trigger.getState() == Profile.TriggerState.ON_CONNECT) {
+                        selectProfile = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (selectProfile) mActiveProfile.doSelect(mContext, mKeyguardService);
+    }
+
+    private String getActiveSSID() {
+        final WifiManager wifiManager
+                = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
+        final WifiInfo wifiinfo = wifiManager.getConnectionInfo();
+        if (wifiinfo == null) {
+            return null;
+        }
+        final WifiSsid ssid = wifiinfo.getWifiSsid();
+        if (ssid == null) {
+            return null;
+        }
+        return ssid.toString();
+    }
 
     private class ProfilesObserver extends ContentObserver {
         public ProfilesObserver(Handler handler) {
