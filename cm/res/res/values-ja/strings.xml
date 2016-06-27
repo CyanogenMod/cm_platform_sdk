@@ -54,8 +54,8 @@
   <string name="permlab_writeSecureSettings">CMセキュアシステム設定の変更</string>
   <string name="permdesc_writeSecureSettings">CMセキュアシステム設定の変更をアプリに許可します。通常のアプリ用ではありません。</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">持続的ストレージの管理</string>
-  <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても持続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
+  <string name="permlab_managePersistentStorage">永続ストレージの管理</string>
+  <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても永続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">アプリの候補へのアクセス</string>
   <string name="permdesc_accessAppSuggestions">アプリの候補へのアクセスをアプリに許可します。</string>
