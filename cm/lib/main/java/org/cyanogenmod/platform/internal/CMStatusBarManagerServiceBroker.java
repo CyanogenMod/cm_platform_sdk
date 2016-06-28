@@ -21,6 +21,7 @@ import android.app.AppGlobals;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -32,6 +33,9 @@ import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CustomTile;
 import cyanogenmod.app.ICustomTileListener;
 import cyanogenmod.app.ICMStatusBarManager;
+import org.cyanogenmod.platform.internal.common.BrokeredServiceConnection;
+
+import java.util.ArrayList;
 
 /**
  * Internal service broker which manages interactions with system ui elements
@@ -43,12 +47,14 @@ public final class CMStatusBarManagerServiceBroker extends
     private static final ComponentName TARGET_IMPLEMENTATION_COMPONENT =
             new ComponentName("org.cyanogenmod.cmstatusbarservice",
                     "org.cyanogenmod.cmstatusbarservice.CMStatusBarManagerService");
+    private final ArrayList<CustomTileListenerHolder> mCustomTileListeners = new ArrayList<>();
 
     private Context mContext;
 
     public CMStatusBarManagerServiceBroker(Context context) {
         super(context);
         mContext = context;
+        setBrokeredServiceConnection(mServiceConnection);
     }
 
     @Override
@@ -99,13 +105,24 @@ public final class CMStatusBarManagerServiceBroker extends
         public void registerListener(ICustomTileListener listener, ComponentName component,
                 int userid)
                 throws RemoteException {
-
+            synchronized (mCustomTileListeners) {
+                final CustomTileListenerHolder holder =
+                        new CustomTileListenerHolder(listener, component, userid);
+                mCustomTileListeners.add(holder);
+            }
         }
 
         @Override
         public void unregisterListener(ICustomTileListener listener, int userid)
                 throws RemoteException {
-
+            synchronized (mCustomTileListeners) {
+                for (int i = 0; i < mCustomTileListeners.size(); i++) {
+                    CustomTileListenerHolder customTileListenerHolder = mCustomTileListeners.get(i);
+                    if (customTileListenerHolder.mCustomTileListener.equals(listener)) {
+                        mCustomTileListeners.remove(i);
+                    }
+                }
+            }
         }
 
         @Override
@@ -124,8 +141,10 @@ public final class CMStatusBarManagerServiceBroker extends
         public void createCustomTileWithTag(String pkg, String opPkg, String tag, int id,
                CustomTile customTile, int[] idOut, int userId) throws RemoteException {
             enforceCustomTilePublish();
-            getBrokeredService().createCustomTileWithTag(pkg, opPkg,tag, id, customTile,
-                    idOut, userId);
+            if (verifyCallingUidAsPackage(pkg, userId)) {
+                getBrokeredService().createCustomTileWithTag(pkg, opPkg, tag, id, customTile,
+                        idOut, userId);
+            }
         }
 
         /**
@@ -134,10 +153,12 @@ public final class CMStatusBarManagerServiceBroker extends
         @Override
         public void removeCustomTileWithTag(String pkg, String tag, int id, int userId) {
             checkCallerIsSystemOrSameApp(pkg);
-            try {
-                getBrokeredService().removeCustomTileWithTag(pkg, tag, id, userId);
-            } catch (RemoteException e) {
-                Slog.e(TAG, e.toString());
+            if (verifyCallingUidAsPackage(pkg, userId)) {
+                try {
+                    getBrokeredService().removeCustomTileWithTag(pkg, tag, id, userId);
+                } catch (RemoteException e) {
+                    Slog.e(TAG, e.toString());
+                }
             }
         }
 
@@ -152,6 +173,11 @@ public final class CMStatusBarManagerServiceBroker extends
         public void registerListener(final ICustomTileListener listener,
                                      final ComponentName component, final int userid) {
             enforceBindCustomTileListener();
+            synchronized (mCustomTileListeners) {
+                final CustomTileListenerHolder holder =
+                        new CustomTileListenerHolder(listener, component, userid);
+                mCustomTileListeners.add(holder);
+            }
             try {
                 getBrokeredService().registerListener(listener, component, userid);
             } catch (RemoteException e) {
@@ -166,6 +192,14 @@ public final class CMStatusBarManagerServiceBroker extends
         @Override
         public void unregisterListener(ICustomTileListener listener, int userid) {
             enforceBindCustomTileListener();
+            synchronized (mCustomTileListeners) {
+                for (int i = 0; i < mCustomTileListeners.size(); i++) {
+                    CustomTileListenerHolder customTileListenerHolder = mCustomTileListeners.get(i);
+                    if (customTileListenerHolder.mCustomTileListener.equals(listener)) {
+                        mCustomTileListeners.remove(i);
+                    }
+                }
+            }
             try {
                 getBrokeredService().unregisterListener(listener, userid);
             } catch (RemoteException e) {
@@ -188,6 +222,55 @@ public final class CMStatusBarManagerServiceBroker extends
             }
         }
     };
+
+    private final class CustomTileListenerHolder {
+        final ICustomTileListener mCustomTileListener;
+        final ComponentName mComponentName;
+        final int mUserId;
+
+        CustomTileListenerHolder(
+                ICustomTileListener customTileListener, ComponentName componentName, int userId) {
+            mCustomTileListener = customTileListener;
+            mComponentName = componentName;
+            mUserId = userId;
+        }
+    }
+
+    private BrokeredServiceConnection mServiceConnection = new BrokeredServiceConnection() {
+
+        @Override
+        public void onBrokeredServiceConnected() {
+            synchronized (mCustomTileListeners) {
+                for (CustomTileListenerHolder customTileListenerHolder : mCustomTileListeners) {
+                    try {
+                        getBrokeredService().registerListener(
+                                customTileListenerHolder.mCustomTileListener,
+                                customTileListenerHolder.mComponentName,
+                                customTileListenerHolder.mUserId);
+                    } catch (RemoteException e) {
+                        Slog.e(TAG, "Unable to re register listeners");
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void onBrokeredServiceDisconnected() {
+
+        }
+    };
+
+    private boolean verifyCallingUidAsPackage(String pkg, int userId) {
+        final PackageManager packageManager = mContext.getPackageManager();
+        int callingUid = Binder.getCallingUid();
+        int callingUidFromPackage = -1;
+        try {
+            callingUidFromPackage = packageManager.getPackageUid(pkg, userId);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, e.toString());
+        }
+        return callingUid == callingUidFromPackage;
+    }
 
     private static boolean isUidSystem(int uid) {
         final int appid = UserHandle.getAppId(uid);
