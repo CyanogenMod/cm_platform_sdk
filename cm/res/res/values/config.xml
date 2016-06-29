@@ -93,7 +93,7 @@
          should publish as a binder services in its onStart -->
     <string-array name="config_externalCMServices">
         <item>org.cyanogenmod.platform.internal.CMStatusBarManagerServiceBroker</item>
-        <item>org.cyanogenmod.platform.internal.ProfileManagerService</item>
+        <item>org.cyanogenmod.platform.internal.ProfileManagerServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.PartnerInterfaceService</item>
         <item>org.cyanogenmod.platform.internal.CMTelephonyManagerService</item>
         <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
