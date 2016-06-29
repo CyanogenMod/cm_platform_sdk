@@ -258,9 +258,8 @@ public class PerformanceManagerService extends CMSystemService {
             }
         }
         if (duration > 0 && duration <= MAX_CPU_BOOST_TIME) {
-            // Don't send boosts if we're in another power profile
-            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE ||
-                    mCurrentProfile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
+            // Don't send boosts if we're in power save mode
+            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
                 return;
             }
             mHandler.obtainMessage(MSG_CPU_BOOST, duration, 0).sendToTarget();
@@ -340,9 +339,8 @@ public class PerformanceManagerService extends CMSystemService {
                     return;
                 }
             }
-            // Don't send boosts if we're in another power profile
-            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE ||
-                    mCurrentProfile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
+            // Don't send boosts if we're in power save mode
+            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
                 return;
             }
             mHandler.obtainMessage(MSG_LAUNCH_BOOST, pid, 0, packageName).sendToTarget();
