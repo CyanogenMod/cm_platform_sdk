@@ -70,6 +70,7 @@ LOCAL_INTERMEDIATE_SOURCES := \
 
 # Include aidl files from cyanogenmod.app namespace as well as internal src aidl files
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
+LOCAL_AIDL_FLAGS := -n
 
 include $(BUILD_JAVA_LIBRARY)
 cm_framework_module := $(LOCAL_INSTALLED_MODULE)
@@ -173,6 +174,7 @@ LOCAL_SRC_FILES := \
 
 # Included aidl files from cyanogenmod.app namespace
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/sdk/src/java
+LOCAL_AIDL_FLAGS := -n
 
 cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
     $(cm_platform_res)/cyanogenmod/platform/R.java \
