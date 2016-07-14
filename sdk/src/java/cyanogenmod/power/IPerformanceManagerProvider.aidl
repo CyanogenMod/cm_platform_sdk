@@ -19,7 +19,7 @@ package cyanogenmod.power;
 import android.content.Intent;
 
 /** @hide */
-interface IPerformanceManager {
+interface IPerformanceManagerProvider {
 
     oneway void cpuBoost(int duration);
 
@@ -31,7 +31,7 @@ interface IPerformanceManager {
 
     boolean getProfileHasAppProfiles(int profile);
 
-    // callback from broker
+    // from PerformanceManagerInternal.java below
 
     oneway void activityResumed(in Intent intent);
 
@@ -40,5 +40,4 @@ interface IPerformanceManager {
     // extra
 
     oneway void onLowPowerModeChanged(boolean enabled);
-
 }
