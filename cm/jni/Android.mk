@@ -17,7 +17,6 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    src/org_cyanogenmod_platform_internal_PerformanceManagerService.cpp \
     src/onload.cpp
 
 LOCAL_C_INCLUDES := \
