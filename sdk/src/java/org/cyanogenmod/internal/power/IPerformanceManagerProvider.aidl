@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package cyanogenmod.power;
+package org.cyanogenmod.internal.power;
 
 import android.content.Intent;
 
 /** @hide */
-interface IPerformanceManager {
+interface IPerformanceManagerProvider {
 
     oneway void cpuBoost(int duration);
 
@@ -27,8 +27,17 @@ interface IPerformanceManager {
 
     int getPowerProfile();
 
-    int getNumberOfProfiles();
+//    int getNumberOfProfiles();
 
     boolean getProfileHasAppProfiles(int profile);
 
+    // from PerformanceManagerInternal.java below
+
+    oneway void activityResumed(in Intent intent);
+
+    oneway void launchBoost(int pid, String packageName);
+
+    // extra
+
+    oneway void onLowPowerModeChanged(boolean enabled);
 }
