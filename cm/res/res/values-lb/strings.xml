@@ -66,22 +66,34 @@
   <string name="live_display_day">Dag</string>
   <string name="live_display_night">Nuecht</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">Spärschierm vun Drëttubidder</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">Erlaabt der App, als onséchere Spärschierm benotzt ze ginn.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Erweidert Astellungen</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Gesten</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Extraen</string>
   <string name="touchscreen_gesture_haptic_feedback">Haptesche Feedback</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibréieren, wann e Gest erkannt gëtt</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Design konnt net installéiert ginn</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Design-Reset</string>
+  <string name="theme_reset_notification_message">De System-Design gouf wéinst App-Ofstierz recuperéiert.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">op den Design-Service zougräifen</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Erlaabt der App den Accès op den Design-Service. Dat misst fir normal Appen ni gebraucht ginn.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">Design-Info liesen</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Erlaabt der App, d\'Designen auszeliesen an ze kucke wéi en Design applizéiert ass.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">aktiven Design änneren</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Erlaabt der App, nei Designen dobäizesetzen an den aktiven Design z\'änneren.</string>
   <!-- Performance manager permission title -->
   <!-- Performance manager permission description -->
   <!-- Access live lock screen manager service permission label -->
