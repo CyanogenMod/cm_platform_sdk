@@ -107,8 +107,8 @@
         <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
         <item>org.cyanogenmod.platform.internal.AppSuggestManagerService</item>
         <item>org.cyanogenmod.platform.internal.PerformanceManagerService</item>
-        <item>org.cyanogenmod.platform.internal.ThemeManagerService</item>
-        <item>org.cyanogenmod.platform.internal.IconCacheManagerService</item>
+        <item>org.cyanogenmod.platform.internal.ThemeManagerServiceBroker</item>
+        <item>org.cyanogenmod.platform.internal.IconCacheManagerServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
