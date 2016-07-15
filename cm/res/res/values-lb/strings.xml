@@ -66,5 +66,7 @@
   <string name="live_display_day">Dag</string>
   <string name="live_display_night">Nuecht</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">Spärschierm vun Drëttubidder</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">Erlaabt der App, als onséchere Spärschierm benotzt ze ginn.</string>
 </resources>
