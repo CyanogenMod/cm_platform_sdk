@@ -212,7 +212,7 @@
     <permission android:name="cyanogenmod.permission.BIND_WEATHER_PROVIDER_SERVICE"
                 android:label="@string/permlab_weather_bind"
                 android:description="@string/permdesc_weather_bind"
-                android:protectionLevel="signature"/>
+                android:protectionLevel="signature|privileged"/>
 
     <!-- Allows an application to observe system-wide changes to audio sessions
          @hide -->
