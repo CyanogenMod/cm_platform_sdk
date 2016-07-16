@@ -102,7 +102,7 @@
         <item>org.cyanogenmod.platform.internal.ThemeManagerService</item>
         <item>org.cyanogenmod.platform.internal.IconCacheManagerService</item>
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
-        <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
+        <item>org.cyanogenmod.platform.internal.WeatherManagerServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
         <item>org.cyanogenmod.platform.internal.CMAudioService</item>
     </string-array>
