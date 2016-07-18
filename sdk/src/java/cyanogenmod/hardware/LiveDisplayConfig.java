@@ -23,6 +23,7 @@ import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Range;
 
 import java.util.BitSet;
 
@@ -50,10 +51,13 @@ public class LiveDisplayConfig implements Parcelable {
     private final boolean mDefaultCABC;
     private final boolean mDefaultColorEnhancement;
 
+    private final Range<Integer> mColorTemperatureRange;
+
     public LiveDisplayConfig(BitSet capabilities, int defaultMode,
             int defaultDayTemperature, int defaultNightTemperature,
             boolean defaultAutoOutdoorMode, boolean defaultAutoContrast,
-            boolean defaultCABC, boolean defaultColorEnhancement) {
+            boolean defaultCABC, boolean defaultColorEnhancement,
+            Range<Integer> colorTemperatureRange) {
         super();
         mCapabilities = (BitSet) capabilities.clone();
         mAllModes.set(MODE_FIRST, MODE_LAST);
@@ -64,6 +68,7 @@ public class LiveDisplayConfig implements Parcelable {
         mDefaultAutoOutdoorMode = defaultAutoOutdoorMode;
         mDefaultCABC = defaultCABC;
         mDefaultColorEnhancement = defaultColorEnhancement;
+        mColorTemperatureRange = colorTemperatureRange;
     }
 
     private LiveDisplayConfig(Parcel parcel) {
@@ -80,6 +85,8 @@ public class LiveDisplayConfig implements Parcelable {
         boolean defaultAutoOutdoorMode = false;
         boolean defaultCABC = false;
         boolean defaultColorEnhancement = false;
+        int minColorTemperature = 0;
+        int maxColorTemperature = 0;
 
         if (parcelableVersion >= Build.CM_VERSION_CODES.FIG) {
             capabilities = parcel.readLong();
@@ -90,6 +97,8 @@ public class LiveDisplayConfig implements Parcelable {
             defaultAutoOutdoorMode = parcel.readInt() == 1;
             defaultCABC = parcel.readInt() == 1;
             defaultColorEnhancement = parcel.readInt() == 1;
+            minColorTemperature = parcel.readInt();
+            maxColorTemperature = parcel.readInt();
         }
 
         // set temps
@@ -102,6 +111,7 @@ public class LiveDisplayConfig implements Parcelable {
         mDefaultAutoOutdoorMode = defaultAutoOutdoorMode;
         mDefaultCABC = defaultCABC;
         mDefaultColorEnhancement = defaultColorEnhancement;
+        mColorTemperatureRange = Range.create(minColorTemperature, maxColorTemperature);
 
         // Complete parcel info for the concierge
         parcelInfo.complete();
@@ -118,6 +128,7 @@ public class LiveDisplayConfig implements Parcelable {
         sb.append(" defaultAutoContrast=").append(mDefaultAutoContrast);
         sb.append(" defaultCABC=").append(mDefaultCABC);
         sb.append(" defaultColorEnhancement=").append(mDefaultColorEnhancement);
+        sb.append(" colorTemperatureRange=").append(mColorTemperatureRange);
         return sb.toString();
     }
 
@@ -141,6 +152,8 @@ public class LiveDisplayConfig implements Parcelable {
         out.writeInt(mDefaultAutoOutdoorMode ? 1 : 0);
         out.writeInt(mDefaultCABC ? 1 : 0);
         out.writeInt(mDefaultColorEnhancement ? 1 : 0);
+        out.writeInt(mColorTemperatureRange.getLower());
+        out.writeInt(mColorTemperatureRange.getUpper());
 
         // Complete the parcel info for the concierge
         parcelInfo.complete();
@@ -241,6 +254,15 @@ public class LiveDisplayConfig implements Parcelable {
      */
     public boolean getDefaultColorEnhancement() {
         return mDefaultColorEnhancement;
+    }
+
+    /**
+     * Get the range of supported color temperatures
+     *
+     * @return range in Kelvin
+     */
+    public Range<Integer> getColorTemperatureRange() {
+        return mColorTemperatureRange;
     }
 
     /** @hide */

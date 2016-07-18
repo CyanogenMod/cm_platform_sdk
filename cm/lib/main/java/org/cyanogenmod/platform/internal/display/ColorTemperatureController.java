@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.text.format.DateUtils;
 import android.util.MathUtils;
+import android.util.Range;
 import android.util.Slog;
 
 import com.android.server.twilight.TwilightState;
@@ -32,6 +33,8 @@ import com.android.server.twilight.TwilightState;
 import java.io.PrintWriter;
 import java.util.BitSet;
 
+import cyanogenmod.hardware.CMHardwareManager;
+import cyanogenmod.hardware.LiveDisplayManager;
 import cyanogenmod.providers.CMSettings;
 import cyanogenmod.util.ColorUtils;
 
@@ -40,6 +43,9 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private final DisplayHardwareController mDisplayHardware;
 
     private final boolean mUseTemperatureAdjustment;
+    private final boolean mUseColorBalance;
+    private final Range<Integer> mColorBalanceRange;
+    private final Range<Integer> mColorTemperatureRange;
 
     private final int mDefaultDayTemperature;
     private final int mDefaultNightTemperature;
@@ -47,6 +53,8 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private int mColorTemperature = -1;
     private int mDayTemperature;
     private int mNightTemperature;
+
+    private final CMHardwareManager mHardware;
 
     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 1;
 
@@ -59,12 +67,25 @@ public class ColorTemperatureController extends LiveDisplayFeature {
             Handler handler, DisplayHardwareController displayHardware) {
         super(context, handler);
         mDisplayHardware = displayHardware;
-        mUseTemperatureAdjustment = mDisplayHardware.hasColorAdjustment();
+        mHardware = CMHardwareManager.getInstance(mContext);
+
+        mUseColorBalance = mHardware
+                .isSupported(CMHardwareManager.FEATURE_COLOR_BALANCE);
+        mColorBalanceRange = mHardware.getColorBalanceRange();
+
+        mUseTemperatureAdjustment = mUseColorBalance ||
+                mDisplayHardware.hasColorAdjustment();
 
         mDefaultDayTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_dayColorTemperature);
         mDefaultNightTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_nightColorTemperature);
+
+        mColorTemperatureRange = Range.create(
+                mContext.getResources().getInteger(
+                        org.cyanogenmod.platform.internal.R.integer.config_minColorTemperature),
+                mContext.getResources().getInteger(
+                        org.cyanogenmod.platform.internal.R.integer.config_maxColorTemperature));
     }
 
     @Override
@@ -85,6 +106,9 @@ public class ColorTemperatureController extends LiveDisplayFeature {
             caps.set(MODE_AUTO);
             caps.set(MODE_DAY);
             caps.set(MODE_NIGHT);
+            if (mUseColorBalance) {
+                caps.set(LiveDisplayManager.FEATURE_COLOR_BALANCE);
+            }
         }
         return mUseTemperatureAdjustment;
     }
@@ -168,17 +192,40 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         }
     }
 
+    private int mapColorTemperatureToBalance(int temperature) {
+        final int adjTempMin = mColorTemperatureRange.getLower() - mDefaultDayTemperature;
+        final int adjTempMax = mColorTemperatureRange.getUpper() - mDefaultDayTemperature;
+        final int adjTemp = temperature - mDefaultDayTemperature;
+        final int adjTempRange = adjTempMax - adjTempMin;
+        final int balanceRange = mColorBalanceRange.getUpper() - mColorBalanceRange.getLower();
+        return mColorBalanceRange.clamp((((adjTemp - adjTempMin) * balanceRange) / adjTempRange) +
+                mColorBalanceRange.getLower());
+    }
 
     private synchronized void setDisplayTemperature(int temperature) {
-        mColorTemperature = temperature;
+        if (!mColorTemperatureRange.contains(temperature)) {
+            Slog.e(TAG, "Color temperature out of range: " + temperature);
+            return;
+        }
+
+        if (mUseColorBalance) {
+            int balance = mapColorTemperatureToBalance(temperature);
+            Slog.d(TAG, "Set color balance = " + balance + " (temperature=" + temperature + ")");
+            if (!mHardware.setColorBalance(balance)) {
+                Slog.e(TAG, "Failed to set color balance!");
+            } else {
+                mColorTemperature = temperature;
+            }
+            return;
+        }
 
         final float[] rgb = ColorUtils.temperatureToRGB(temperature);
         if (mDisplayHardware.setAdditionalAdjustment(rgb)) {
             if (DEBUG) {
                 Slog.d(TAG, "Adjust display temperature to " + temperature + "K");
             }
+            mColorTemperature = temperature;
         }
-
     }
 
     /**
@@ -256,5 +303,9 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
     void setNightColorTemperature(int temperature) {
         putInt(CMSettings.System.DISPLAY_TEMPERATURE_NIGHT, temperature);
+    }
+
+    Range<Integer> getColorTemperatureRange() {
+        return mColorTemperatureRange;
     }
 }

@@ -20,6 +20,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
+import android.util.Range;
 
 import cyanogenmod.app.CMContextConstants;
 
@@ -128,6 +129,11 @@ public final class CMHardwareManager {
      * Unique device ID
      */
     public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
+
+    /**
+     * Color balance
+     */
+    public static final int FEATURE_COLOR_BALANCE = 0x20000;
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -797,6 +803,39 @@ public final class CMHardwareManager {
         try {
             if (checkService()) {
                 return sService.setDisplayMode(mode, makeDefault);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    public Range<Integer> getColorBalanceRange() {
+        int min = 0;
+        int max = 0;
+        try {
+            if (checkService()) {
+                min = sService.getColorBalanceMin();
+                max = sService.getColorBalanceMax();
+            }
+        } catch (RemoteException e) {
+        }
+        return new Range<Integer>(min, max);
+    }
+
+    public int getColorBalance() {
+        try {
+            if (checkService()) {
+                return sService.getColorBalance();
+            }
+        } catch (RemoteException e) {
+        }
+        return 0;
+    }
+
+    public boolean setColorBalance(int value) {
+        try {
+            if (checkService()) {
+                return sService.setColorBalance(value);
             }
         } catch (RemoteException e) {
         }
