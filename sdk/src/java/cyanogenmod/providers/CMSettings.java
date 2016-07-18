@@ -1311,7 +1311,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator DISPLAY_TEMPERATURE_DAY_VALIDATOR =
-                new InclusiveIntegerRangeValidator(1000, 10000);
+                new InclusiveIntegerRangeValidator(0, 100000);
 
         /**
          * Color temperature of the display at night
@@ -1320,7 +1320,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator DISPLAY_TEMPERATURE_NIGHT_VALIDATOR =
-                new InclusiveIntegerRangeValidator(1000, 10000);
+                new InclusiveIntegerRangeValidator(0, 100000);
 
         /**
          * Display color temperature adjustment mode, one of DAY (default), NIGHT, or AUTO.

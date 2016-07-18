@@ -20,18 +20,24 @@ import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_NIGHT;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
 
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.format.DateUtils;
 import android.util.MathUtils;
+import android.util.Range;
 import android.util.Slog;
+import android.view.animation.LinearInterpolator;
 
 import com.android.server.twilight.TwilightState;
 
 import java.io.PrintWriter;
 import java.util.BitSet;
 
+import cyanogenmod.hardware.CMHardwareManager;
+import cyanogenmod.hardware.LiveDisplayManager;
 import cyanogenmod.providers.CMSettings;
 import cyanogenmod.util.ColorUtils;
 
@@ -40,6 +46,10 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private final DisplayHardwareController mDisplayHardware;
 
     private final boolean mUseTemperatureAdjustment;
+    private final boolean mUseColorBalance;
+    private final Range<Integer> mColorBalanceRange;
+    private final Range<Integer> mColorTemperatureRange;
+    private final double[] mColorBalanceCurve;
 
     private final int mDefaultDayTemperature;
     private final int mDefaultNightTemperature;
@@ -47,6 +57,10 @@ public class ColorTemperatureController extends LiveDisplayFeature {
     private int mColorTemperature = -1;
     private int mDayTemperature;
     private int mNightTemperature;
+
+    private ValueAnimator mAnimator;
+
+    private final CMHardwareManager mHardware;
 
     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 1;
 
@@ -59,12 +73,30 @@ public class ColorTemperatureController extends LiveDisplayFeature {
             Handler handler, DisplayHardwareController displayHardware) {
         super(context, handler);
         mDisplayHardware = displayHardware;
-        mUseTemperatureAdjustment = mDisplayHardware.hasColorAdjustment();
+        mHardware = CMHardwareManager.getInstance(mContext);
+
+        mUseColorBalance = mHardware
+                .isSupported(CMHardwareManager.FEATURE_COLOR_BALANCE);
+        mColorBalanceRange = mHardware.getColorBalanceRange();
+
+        mUseTemperatureAdjustment = mUseColorBalance ||
+                mDisplayHardware.hasColorAdjustment();
 
         mDefaultDayTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_dayColorTemperature);
         mDefaultNightTemperature = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_nightColorTemperature);
+
+        mColorTemperatureRange = Range.create(
+                mContext.getResources().getInteger(
+                        org.cyanogenmod.platform.internal.R.integer.config_minColorTemperature),
+                mContext.getResources().getInteger(
+                        org.cyanogenmod.platform.internal.R.integer.config_maxColorTemperature));
+
+        mColorBalanceCurve = org.cyanogenmod.internal.util.MathUtils.powerCurve(
+                mColorTemperatureRange.getLower(),
+                mDefaultDayTemperature,
+                mColorTemperatureRange.getUpper());
     }
 
     @Override
@@ -85,6 +117,9 @@ public class ColorTemperatureController extends LiveDisplayFeature {
             caps.set(MODE_AUTO);
             caps.set(MODE_DAY);
             caps.set(MODE_NIGHT);
+            if (mUseColorBalance) {
+                caps.set(LiveDisplayManager.FEATURE_COLOR_BALANCE);
+            }
         }
         return mUseTemperatureAdjustment;
     }
@@ -96,7 +131,11 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
     @Override
     protected void onScreenStateChanged() {
-        updateColorTemperature();
+        if (mAnimator != null && mAnimator.isRunning() && !isScreenOn()) {
+            mAnimator.cancel();
+        } else {
+            updateColorTemperature();
+        }
     }
 
     @Override
@@ -168,9 +207,72 @@ public class ColorTemperatureController extends LiveDisplayFeature {
         }
     }
 
+    /**
+     * Smoothly animate the current display color balance
+     */
+    private synchronized void animateColorBalance(int balance) {
+
+        // always start with the current values in the hardware
+        int current = mHardware.getColorBalance();
+
+        if (current == balance) {
+            return;
+        }
+
+        long duration = (long)(5 * Math.abs(current - balance));
+
+
+        if (DEBUG) {
+            Slog.d(TAG, "animateDisplayColor current=" + current +
+                    " target=" + balance + " duration=" + duration);
+        }
+
+        if (mAnimator != null) {
+            mAnimator.cancel();
+            mAnimator.removeAllUpdateListeners();
+        }
+
+        mAnimator = ValueAnimator.ofInt(current, balance);
+        mAnimator.setDuration(duration);
+        mAnimator.setInterpolator(new LinearInterpolator());
+        mAnimator.addUpdateListener(new AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(final ValueAnimator animation) {
+                synchronized (ColorTemperatureController.this) {
+                    if (isScreenOn()) {
+                        int value = (int) animation.getAnimatedValue();
+                        mHardware.setColorBalance(value);
+                    }
+                }
+            }
+        });
+        mAnimator.start();
+    }
+
+    /*
+     * Map the color temperature to a color balance value using a power curve. This assumes the
+     * correct configuration at the device level!
+     */
+    private int mapColorTemperatureToBalance(int temperature) {
+        double z = org.cyanogenmod.internal.util.MathUtils.powerCurveToLinear(mColorBalanceCurve, temperature);
+        return Math.round(MathUtils.lerp((float)mColorBalanceRange.getLower(),
+                (float)mColorBalanceRange.getUpper(), (float)z));
+    }
 
     private synchronized void setDisplayTemperature(int temperature) {
+        if (!mColorTemperatureRange.contains(temperature)) {
+            Slog.e(TAG, "Color temperature out of range: " + temperature);
+            return;
+        }
+
         mColorTemperature = temperature;
+
+        if (mUseColorBalance) {
+            int balance = mapColorTemperatureToBalance(temperature);
+            Slog.d(TAG, "Set color balance = " + balance + " (temperature=" + temperature + ")");
+            animateColorBalance(balance);
+            return;
+        }
 
         final float[] rgb = ColorUtils.temperatureToRGB(temperature);
         if (mDisplayHardware.setAdditionalAdjustment(rgb)) {
@@ -178,7 +280,6 @@ public class ColorTemperatureController extends LiveDisplayFeature {
                 Slog.d(TAG, "Adjust display temperature to " + temperature + "K");
             }
         }
-
     }
 
     /**
@@ -256,5 +357,13 @@ public class ColorTemperatureController extends LiveDisplayFeature {
 
     void setNightColorTemperature(int temperature) {
         putInt(CMSettings.System.DISPLAY_TEMPERATURE_NIGHT, temperature);
+    }
+
+    Range<Integer> getColorTemperatureRange() {
+        return mColorTemperatureRange;
+    }
+
+    Range<Integer> getColorBalanceRange() {
+        return mColorBalanceRange;
     }
 }

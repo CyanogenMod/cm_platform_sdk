@@ -102,10 +102,17 @@ public class LiveDisplayManager {
      */
     public static final int FEATURE_DISPLAY_MODES = 15;
 
+    /**
+     * System supports direct range-based control of display
+     * color balance (temperature). This is preferred over
+     * simple RGB adjustment.
+     */
+    public static final int FEATURE_COLOR_BALANCE = 16;
+
     /** @hide */
     public static final int FEATURE_FIRST = FEATURE_CABC;
     /** @hide */
-    public static final int FEATURE_LAST = FEATURE_DISPLAY_MODES;
+    public static final int FEATURE_LAST = FEATURE_COLOR_BALANCE;
 
     private static final String TAG = "LiveDisplay";
 
