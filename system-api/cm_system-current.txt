@@ -244,7 +244,7 @@ package cyanogenmod.app {
     field public static final int ZEN_MODE_OFF = 0; // 0x0
   }
 
-  public final class Profile implements android.os.Parcelable {
+  public final class Profile implements java.lang.Comparable android.os.Parcelable {
     ctor public Profile(java.lang.String);
     method public void addSecondaryUuid(java.util.UUID);
     method public int compareTo(java.lang.Object);
@@ -451,6 +451,8 @@ package cyanogenmod.hardware {
   public final class CMHardwareManager {
     method public boolean deletePersistentObject(java.lang.String);
     method public boolean get(int);
+    method public int getColorBalance();
+    method public android.util.Range<java.lang.Integer> getColorBalanceRange();
     method public cyanogenmod.hardware.DisplayMode getCurrentDisplayMode();
     method public cyanogenmod.hardware.DisplayMode getDefaultDisplayMode();
     method public int[] getDisplayColorCalibration();
@@ -483,6 +485,7 @@ package cyanogenmod.hardware {
     method public boolean registerThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
     method public boolean requireAdaptiveBacklightForSunlightEnhancement();
     method public boolean set(int, boolean);
+    method public boolean setColorBalance(int);
     method public boolean setDisplayColorCalibration(int[]);
     method public deprecated boolean setDisplayGammaCalibration(int, int[]);
     method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
@@ -493,6 +496,7 @@ package cyanogenmod.hardware {
     method public boolean writePersistentString(java.lang.String, java.lang.String);
     field public static final int FEATURE_ADAPTIVE_BACKLIGHT = 1; // 0x1
     field public static final int FEATURE_AUTO_CONTRAST = 4096; // 0x1000
+    field public static final int FEATURE_COLOR_BALANCE = 131072; // 0x20000
     field public static final int FEATURE_COLOR_ENHANCEMENT = 2; // 0x2
     field public static final int FEATURE_DISPLAY_COLOR_CALIBRATION = 4; // 0x4
     field public static final int FEATURE_DISPLAY_GAMMA_CALIBRATION = 8; // 0x8
@@ -530,8 +534,10 @@ package cyanogenmod.hardware {
   }
 
   public class LiveDisplayConfig implements android.os.Parcelable {
-    ctor public LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean);
+    ctor public LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Integer>);
     method public int describeContents();
+    method public android.util.Range<java.lang.Integer> getColorBalanceRange();
+    method public android.util.Range<java.lang.Integer> getColorTemperatureRange();
     method public boolean getDefaultAutoContrast();
     method public boolean getDefaultAutoOutdoorMode();
     method public boolean getDefaultCABC();
@@ -567,6 +573,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_AUTO_CONTRAST = 11; // 0xb
     field public static final int FEATURE_CABC = 10; // 0xa
     field public static final int FEATURE_COLOR_ADJUSTMENT = 13; // 0xd
+    field public static final int FEATURE_COLOR_BALANCE = 16; // 0x10
     field public static final int FEATURE_COLOR_ENHANCEMENT = 12; // 0xc
     field public static final int FEATURE_DISPLAY_MODES = 15; // 0xf
     field public static final int FEATURE_MANAGED_OUTDOOR_MODE = 14; // 0xe
@@ -948,6 +955,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String KEY_MENU_ACTION = "key_menu_action";
     field public static final java.lang.String KEY_MENU_LONG_PRESS_ACTION = "key_menu_long_press_action";
     field public static final java.lang.String LOCKSCREEN_PIN_SCRAMBLE_LAYOUT = "lockscreen_scramble_pin_layout";
+    field public static final java.lang.String LOCKSCREEN_ROTATION = "lockscreen_rotation";
     field public static final java.lang.String MENU_WAKE_SCREEN = "menu_wake_screen";
     field public static final java.lang.String NAVBAR_LEFT_IN_LANDSCAPE = "navigation_bar_left";
     field public static final java.lang.String NAVIGATION_BAR_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
@@ -972,7 +980,6 @@ package cyanogenmod.providers {
     field public static final java.lang.String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     field public static final java.lang.String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
     field public static final java.lang.String REVERSE_LOOKUP_PROVIDER = "reverse_lookup_provider";
-    field public static final java.lang.String LOCKSCREEN_ROTATION = "lockscreen_rotation";
     field public static final java.lang.String SHOW_ALARM_ICON = "show_alarm_icon";
     field public static final java.lang.String STATUS_BAR_AM_PM = "status_bar_am_pm";
     field public static final java.lang.String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";

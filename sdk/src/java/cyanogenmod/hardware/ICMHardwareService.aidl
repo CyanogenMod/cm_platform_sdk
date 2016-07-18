@@ -58,4 +58,9 @@ interface ICMHardwareService {
     boolean isSunlightEnhancementSelfManaged();
 
     String getUniqueDeviceId();
+
+    int getColorBalanceMin();
+    int getColorBalanceMax();
+    int getColorBalance();
+    boolean setColorBalance(int value);
 }
