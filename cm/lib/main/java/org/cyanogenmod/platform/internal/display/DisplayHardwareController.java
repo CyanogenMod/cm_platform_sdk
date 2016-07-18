@@ -26,6 +26,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.MathUtils;
+import android.util.Range;
 import android.util.Slog;
 import android.view.animation.LinearInterpolator;
 

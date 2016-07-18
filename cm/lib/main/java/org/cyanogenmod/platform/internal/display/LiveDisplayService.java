@@ -188,7 +188,8 @@ public class LiveDisplayService extends CMSystemService {
             mConfig = new LiveDisplayConfig(capabilities, defaultMode,
                     mCTC.getDefaultDayTemperature(), mCTC.getDefaultNightTemperature(),
                     mOMC.getDefaultAutoOutdoorMode(), mDHC.getDefaultAutoContrast(),
-                    mDHC.getDefaultCABC(), mDHC.getDefaultColorEnhancement());
+                    mDHC.getDefaultCABC(), mDHC.getDefaultColorEnhancement(),
+                    mCTC.getColorTemperatureRange());
 
             // listeners
             mDisplayManager = (DisplayManager) getContext().getSystemService(
