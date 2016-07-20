@@ -34,7 +34,7 @@ import java.util.List;
  */
 public class AppSuggestProviderProxy implements AppSuggestProviderInterface {
     private static final String TAG = AppSuggestProviderProxy.class.getSimpleName();
-    private static final boolean DEBUG = AppSuggestManagerService.DEBUG;
+    private static final boolean DEBUG = AppSuggestProviderProxy.DEBUG;
 
     public static AppSuggestProviderProxy createAndBind(
             Context context, String name, String action,
