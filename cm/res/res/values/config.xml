@@ -103,7 +103,7 @@
         <item>org.cyanogenmod.platform.internal.CMStatusBarManagerService</item>
         <item>org.cyanogenmod.platform.internal.ProfileManagerService</item>
         <item>org.cyanogenmod.platform.internal.PartnerInterfaceService</item>
-        <item>org.cyanogenmod.platform.internal.CMTelephonyManagerService</item>
+        <item>org.cyanogenmod.platform.internal.CMTelephonyManagerBroker</item>
         <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
         <item>org.cyanogenmod.platform.internal.AppSuggestManagerService</item>
         <item>org.cyanogenmod.platform.internal.PerformanceManagerService</item>
