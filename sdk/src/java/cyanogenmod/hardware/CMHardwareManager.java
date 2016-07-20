@@ -23,6 +23,7 @@ import android.util.Log;
 import android.util.Range;
 
 import cyanogenmod.app.CMContextConstants;
+import cyanogenmod.hardware.HSIC;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.IllegalArgumentException;
@@ -134,6 +135,12 @@ public final class CMHardwareManager {
      * Color balance
      */
     public static final int FEATURE_COLOR_BALANCE = 0x20000;
+
+    /**
+     * HSIC picture adjustment
+     */
+    public static final int FEATURE_PICTURE_ADJUSTMENT = 0x40000;
+
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -840,6 +847,42 @@ public final class CMHardwareManager {
         } catch (RemoteException e) {
         }
         return false;
+    }
+
+    public HSIC getPictureAdjustment() {
+        try {
+            if (checkService()) {
+                return sService.getPictureAdjustment();
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    public boolean setPictureAdjustment(final HSIC hsic) {
+        try {
+            if (checkService()) {
+                return sService.setPictureAdjustment(hsic);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    public List<Range<Float>> getPictureAdjustmentRanges() {
+        try {
+            if (checkService()) {
+                float[] ranges = sService.getPictureAdjustmentRanges();
+                if (ranges.length == 8) {
+                    return Arrays.asList(new Range<Float>(ranges[0], ranges[1]),
+                            new Range<Float>(ranges[2], ranges[3]),
+                            new Range<Float>(ranges[4], ranges[5]),
+                            new Range<Float>(ranges[6], ranges[7]));
+                }
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
     }
 
     /**
