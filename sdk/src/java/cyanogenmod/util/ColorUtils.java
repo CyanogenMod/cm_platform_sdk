@@ -307,8 +307,8 @@ public class ColorUtils {
      * Convert a color temperature value (in Kelvin) to a RGB units as floats.
      * This can be used in a transform matrix or hardware gamma control.
      *
-     * @param tempK
-     * @return
+     * @param degreesK
+     * @return array of floats representing rgb values 0->1
      */
     public static float[] temperatureToRGB(int degreesK) {
         int k = MathUtils.constrain(degreesK, 1000, 20000);
