@@ -65,6 +65,7 @@ import java.util.List;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CMStatusBarManager;
 import cyanogenmod.app.CustomTile;
+import cyanogenmod.hardware.HSIC;
 import cyanogenmod.hardware.ILiveDisplayService;
 import cyanogenmod.hardware.LiveDisplayConfig;
 import cyanogenmod.providers.CMSettings;
@@ -98,6 +99,7 @@ public class LiveDisplayService extends CMSystemService {
     private ColorTemperatureController mCTC;
     private DisplayHardwareController mDHC;
     private OutdoorModeController mOMC;
+    private PictureAdjustmentController mPAC;
 
     private LiveDisplayConfig mConfig;
 
@@ -170,6 +172,9 @@ public class LiveDisplayService extends CMSystemService {
             mOMC = new OutdoorModeController(mContext, mHandler);
             mFeatures.add(mOMC);
 
+            mPAC = new PictureAdjustmentController(mContext, mHandler);
+            mFeatures.add(mPAC);
+
             // Get capabilities, throw out any unused features
             final BitSet capabilities = new BitSet();
             for (Iterator<LiveDisplayFeature> it = mFeatures.iterator(); it.hasNext();) {
@@ -187,7 +192,9 @@ public class LiveDisplayService extends CMSystemService {
                     mCTC.getDefaultDayTemperature(), mCTC.getDefaultNightTemperature(),
                     mOMC.getDefaultAutoOutdoorMode(), mDHC.getDefaultAutoContrast(),
                     mDHC.getDefaultCABC(), mDHC.getDefaultColorEnhancement(),
-                    mCTC.getColorTemperatureRange(), mCTC.getColorBalanceRange());
+                    mCTC.getColorTemperatureRange(), mCTC.getColorBalanceRange(),
+                    mPAC.getHueRange(), mPAC.getSaturationRange(),
+                    mPAC.getIntensityRange(), mPAC.getContrastRange());
 
             // listeners
             mDisplayManager = (DisplayManager) getContext().getSystemService(
@@ -464,6 +471,15 @@ public class LiveDisplayService extends CMSystemService {
         public int getColorTemperature() {
             return mCTC.getColorTemperature();
         }
+
+        @Override
+        public HSIC getPictureAdjustment() { return mPAC.getPictureAdjustment(); }
+
+        @Override
+        public boolean setPictureAdjustment(final HSIC hsic) { return mPAC.setPictureAdjustment(hsic); }
+
+        @Override
+        public HSIC getDefaultPictureAdjustment() { return mPAC.getDefaultPictureAdjustment(); }
 
         @Override
         public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
