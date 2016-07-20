@@ -15,6 +15,7 @@
  */
 package cyanogenmod.hardware;
 
+import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_COLOR_BALANCE;
 import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_FIRST;
 import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_LAST;
 import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
@@ -25,7 +26,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Range;
 
+import java.util.Arrays;
 import java.util.BitSet;
+import java.util.List;
 
 import cyanogenmod.os.Build;
 import cyanogenmod.os.Concierge;
@@ -53,13 +56,23 @@ public class LiveDisplayConfig implements Parcelable {
 
     private final Range<Integer> mColorTemperatureRange;
     private final Range<Integer> mColorBalanceRange;
+    private final Range<Float> mHueRange;
+    private final Range<Float> mSaturationRange;
+    private final Range<Float> mIntensityRange;
+    private final Range<Float> mContrastRange;
+    private final Range<Float> mSaturationThresholdRange;
 
     public LiveDisplayConfig(BitSet capabilities, int defaultMode,
             int defaultDayTemperature, int defaultNightTemperature,
             boolean defaultAutoOutdoorMode, boolean defaultAutoContrast,
             boolean defaultCABC, boolean defaultColorEnhancement,
             Range<Integer> colorTemperatureRange,
-            Range<Integer> colorBalanceRange) {
+            Range<Integer> colorBalanceRange,
+            Range<Float> hueRange,
+            Range<Float> saturationRange,
+            Range<Float> intensityRange,
+            Range<Float> contrastRange,
+            Range<Float> saturationThresholdRange) {
         super();
         mCapabilities = (BitSet) capabilities.clone();
         mAllModes.set(MODE_FIRST, MODE_LAST);
@@ -72,6 +85,11 @@ public class LiveDisplayConfig implements Parcelable {
         mDefaultColorEnhancement = defaultColorEnhancement;
         mColorTemperatureRange = colorTemperatureRange;
         mColorBalanceRange = colorBalanceRange;
+        mHueRange = hueRange;
+        mSaturationRange = saturationRange;
+        mIntensityRange = intensityRange;
+        mContrastRange = contrastRange;
+        mSaturationThresholdRange = saturationThresholdRange;
     }
 
     private LiveDisplayConfig(Parcel parcel) {
@@ -92,6 +110,7 @@ public class LiveDisplayConfig implements Parcelable {
         int maxColorTemperature = 0;
         int minColorBalance = 0;
         int maxColorBalance = 0;
+        float[] paRanges = new float[10];
 
         if (parcelableVersion >= Build.CM_VERSION_CODES.FIG) {
             capabilities = parcel.readLong();
@@ -106,6 +125,7 @@ public class LiveDisplayConfig implements Parcelable {
             maxColorTemperature = parcel.readInt();
             minColorBalance = parcel.readInt();
             maxColorBalance = parcel.readInt();
+            parcel.readFloatArray(paRanges);
         }
 
         // set temps
@@ -120,6 +140,11 @@ public class LiveDisplayConfig implements Parcelable {
         mDefaultColorEnhancement = defaultColorEnhancement;
         mColorTemperatureRange = Range.create(minColorTemperature, maxColorTemperature);
         mColorBalanceRange = Range.create(minColorBalance, maxColorBalance);
+        mHueRange = Range.create(paRanges[0], paRanges[1]);
+        mSaturationRange = Range.create(paRanges[2], paRanges[3]);
+        mIntensityRange = Range.create(paRanges[4], paRanges[5]);
+        mContrastRange = Range.create(paRanges[6], paRanges[7]);
+        mSaturationThresholdRange = Range.create(paRanges[8], paRanges[9]);
 
         // Complete parcel info for the concierge
         parcelInfo.complete();
@@ -137,7 +162,16 @@ public class LiveDisplayConfig implements Parcelable {
         sb.append(" defaultCABC=").append(mDefaultCABC);
         sb.append(" defaultColorEnhancement=").append(mDefaultColorEnhancement);
         sb.append(" colorTemperatureRange=").append(mColorTemperatureRange);
-        sb.append(" colorBalanceRange=").append(mColorBalanceRange);
+        if (mCapabilities.get(LiveDisplayManager.FEATURE_COLOR_BALANCE)) {
+            sb.append(" colorBalanceRange=").append(mColorBalanceRange);
+        }
+        if (mCapabilities.get(LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT)) {
+            sb.append(" hueRange=").append(mHueRange);
+            sb.append(" saturationRange=").append(mSaturationRange);
+            sb.append(" intensityRange=").append(mIntensityRange);
+            sb.append(" contrastRange=").append(mContrastRange);
+            sb.append(" saturationThresholdRange=").append(mSaturationThresholdRange);
+        }
         return sb.toString();
     }
 
@@ -165,6 +199,12 @@ public class LiveDisplayConfig implements Parcelable {
         out.writeInt(mColorTemperatureRange.getUpper());
         out.writeInt(mColorBalanceRange.getLower());
         out.writeInt(mColorBalanceRange.getUpper());
+        out.writeFloatArray(new float[] {
+                mHueRange.getLower(), mHueRange.getUpper(),
+                mSaturationRange.getLower(), mSaturationRange.getUpper(),
+                mIntensityRange.getLower(), mIntensityRange.getUpper(),
+                mContrastRange.getLower(), mContrastRange.getUpper(),
+                mSaturationThresholdRange.getLower(), mSaturationThresholdRange.getUpper() } );
 
         // Complete the parcel info for the concierge
         parcelInfo.complete();
@@ -283,6 +323,55 @@ public class LiveDisplayConfig implements Parcelable {
      */
     public Range<Integer> getColorBalanceRange() {
         return mColorBalanceRange;
+    }
+
+    /**
+     * Get the supported range for hue adjustment
+     *
+     * @return float range
+     */
+    public Range<Float> getHueRange() { return mHueRange; }
+
+    /**
+     * Get the supported range for saturation adjustment
+     *
+     * @return float range
+     */
+    public Range<Float> getSaturationRange() { return mSaturationRange; }
+
+    /**
+     * Get the supported range for intensity adjustment
+     *
+     * @return float range
+     */
+    public Range<Float> getIntensityRange() { return mIntensityRange; }
+
+    /**
+     * Get the supported range for contrast adjustment
+     *
+     * @return float range
+     */
+    public Range<Float> getContrastRange() { return mContrastRange; }
+
+    /**
+     * Get the supported range for saturation threshold adjustment
+     *
+     * @return float range
+     */
+    public Range<Float> getSaturationThresholdRange() {
+        return mSaturationThresholdRange;
+    }
+
+
+    /**
+     * Convenience method to get a list of all picture adjustment ranges
+     * with a single call.
+     *
+     * @return List of float ranges
+     */
+    public List<Range<Float>> getPictureAdjustmentRanges() {
+        return Arrays.asList(mHueRange, mSaturationRange, mIntensityRange,
+                             mContrastRange, mSaturationThresholdRange);
     }
 
     /** @hide */
