@@ -1356,6 +1356,18 @@ package cyanogenmod.util {
     method public static float[] temperatureToRGB(int);
   }
 
+  public static class ColorUtils.HSV {
+    ctor public ColorUtils.HSV(float, float, float, float);
+    method public static cyanogenmod.util.ColorUtils.HSV createFromFloatArray(float[]);
+    method public static cyanogenmod.util.ColorUtils.HSV createFromRGBArray(int[]);
+    method public float[] toFloatArray();
+    method public int[] toRGB();
+    field public final float mContrast;
+    field public final float mHue;
+    field public final float mSaturation;
+    field public final float mValue;
+  }
+
 }
 
 package cyanogenmod.weather {

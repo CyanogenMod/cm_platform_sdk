@@ -32,6 +32,46 @@ import java.util.Comparator;
  */
 public class ColorUtils {
 
+    public static class HSV {
+        public final float mHue;
+        public final float mSaturation;
+        public final float mValue;
+        public final float mContrast;
+
+        public HSV(float hue, float saturation, float value, float contrast) {
+            mHue = MathUtils.constrain(hue, 0.0f, 360.0f);
+            mSaturation = MathUtils.constrain(saturation, 0.0f, 1.0f);
+            mValue = MathUtils.constrain(value, 0.0f, 1.0f);
+            mContrast = MathUtils.constrain(contrast, 0.0f, 1.0f);
+        }
+
+        public float[] toFloatArray() {
+            return new float[] { mHue, mSaturation, mValue };
+        }
+
+        public static HSV createFromFloatArray(float[] hsv) {
+            if (hsv.length > 2) {
+                float contrast = hsv.length == 4 ? hsv[3] : 0.5f;
+                return new HSV(hsv[0], hsv[1], hsv[2], contrast);
+            }
+            return null;
+        }
+
+        public int[] toRGB() {
+            final int c = Color.HSVToColor(toFloatArray());
+            return new int[] { Color.red(c), Color.green(c), Color.blue(c) };
+        }
+
+        public static HSV createFromRGBArray(int[] rgb) {
+            if (rgb.length != 3) {
+                return null;
+            }
+            final float[] hsv = new float[3];
+            Color.RGBToHSV(rgb[0], rgb[1], rgb[2], hsv);
+            return createFromFloatArray(hsv);
+        }
+    };
+
     private static int[] SOLID_COLORS = new int[] {
         Color.RED, 0xFFFFA500, Color.YELLOW, Color.GREEN, Color.CYAN,
         Color.BLUE, Color.MAGENTA, Color.WHITE, Color.BLACK
