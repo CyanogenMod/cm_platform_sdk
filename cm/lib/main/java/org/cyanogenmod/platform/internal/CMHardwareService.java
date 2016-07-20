@@ -22,6 +22,7 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.util.ArrayMap;
 import android.util.Log;
+import android.util.Range;
 
 import com.android.server.SystemService;
 
@@ -31,10 +32,12 @@ import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.hardware.DisplayMode;
 import cyanogenmod.hardware.IThermalListenerCallback;
 import cyanogenmod.hardware.ThermalListenerCallback;
+import cyanogenmod.hardware.HSIC;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.cyanogenmod.hardware.AdaptiveBacklight;
 import org.cyanogenmod.hardware.AutoContrast;
@@ -47,6 +50,7 @@ import org.cyanogenmod.hardware.HighTouchSensitivity;
 import org.cyanogenmod.hardware.KeyDisabler;
 import org.cyanogenmod.hardware.LongTermOrbits;
 import org.cyanogenmod.hardware.PersistentStorage;
+import org.cyanogenmod.hardware.PictureAdjustment;
 import org.cyanogenmod.hardware.SerialNumber;
 import org.cyanogenmod.hardware.SunlightEnhancement;
 import org.cyanogenmod.hardware.TapToWake;
@@ -108,6 +112,11 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
         public int getColorBalanceMax();
         public int getColorBalance();
         public boolean setColorBalance(int value);
+
+        public HSIC getPictureAdjustment();
+        public HSIC getDefaultPictureAdjustment();
+        public boolean setPictureAdjustment(HSIC hsic);
+        public List<Range<Float>> getPictureAdjustmentRanges();
     }
 
     private class LegacyCMHardware implements CMHardwareInterface {
@@ -151,6 +160,8 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 mSupportedFeatures |= CMHardwareManager.FEATURE_UNIQUE_DEVICE_ID;
             if (ColorBalance.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_COLOR_BALANCE;
+            if (PictureAdjustment.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_PICTURE_ADJUSTMENT;
         }
 
         public int getSupportedFeatures() {
@@ -363,6 +374,21 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
 
         public boolean setColorBalance(int value) {
             return ColorBalance.setValue(value);
+        }
+
+        public HSIC getPictureAdjustment() { return PictureAdjustment.getHSIC(); }
+
+        public HSIC getDefaultPictureAdjustment() { return PictureAdjustment.getDefaultHSIC(); }
+
+        public boolean setPictureAdjustment(HSIC hsic) { return PictureAdjustment.setHSIC(hsic); }
+
+        public List<Range<Float>> getPictureAdjustmentRanges() {
+            return Arrays.asList(
+                    PictureAdjustment.getHueRange(),
+                    PictureAdjustment.getSaturationRange(),
+                    PictureAdjustment.getIntensityRange(),
+                    PictureAdjustment.getContrastRange(),
+                    PictureAdjustment.getSaturationThresholdRange());
         }
     }
 
@@ -793,6 +819,52 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 return mCmHwImpl.setColorBalance(value);
             }
             return false;
+        }
+
+        @Override
+        public HSIC getPictureAdjustment() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
+                return mCmHwImpl.getPictureAdjustment();
+            }
+            return new HSIC(0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        }
+
+        @Override
+        public HSIC getDefaultPictureAdjustment() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_PICTURE_ADJUSTMENT)) {
+                return mCmHwImpl.getDefaultPictureAdjustment();
+            }
+            return new HSIC(0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        }
+
+        @Override
+        public boolean setPictureAdjustment(HSIC hsic) {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_PICTURE_ADJUSTMENT) && hsic != null) {
+                return mCmHwImpl.setPictureAdjustment(hsic);
+            }
+            return false;
+        }
+
+        @Override
+        public float[] getPictureAdjustmentRanges() {
+            mContext.enforceCallingOrSelfPermission(
+                    cyanogenmod.platform.Manifest.permission.HARDWARE_ABSTRACTION_ACCESS, null);
+            if (isSupported(CMHardwareManager.FEATURE_COLOR_BALANCE)) {
+                final List<Range<Float>> r = mCmHwImpl.getPictureAdjustmentRanges();
+                return new float[] {
+                        r.get(0).getLower(), r.get(0).getUpper(),
+                        r.get(1).getLower(), r.get(1).getUpper(),
+                        r.get(2).getLower(), r.get(2).getUpper(),
+                        r.get(3).getLower(), r.get(3).getUpper(),
+                        r.get(4).getUpper(), r.get(4).getUpper() };
+            }
+            return new float[10];
         }
     };
 }
