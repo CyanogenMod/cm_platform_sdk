@@ -17,6 +17,7 @@
 package cyanogenmod.hardware;
 
 import cyanogenmod.hardware.DisplayMode;
+import cyanogenmod.hardware.HSIC;
 import cyanogenmod.hardware.IThermalListenerCallback;
 
 /** @hide */
@@ -63,4 +64,9 @@ interface ICMHardwareService {
     int getColorBalanceMax();
     int getColorBalance();
     boolean setColorBalance(int value);
+
+    HSIC getPictureAdjustment();
+    boolean setPictureAdjustment(in HSIC hsic);
+    float[] getPictureAdjustmentRanges();
+
 }
