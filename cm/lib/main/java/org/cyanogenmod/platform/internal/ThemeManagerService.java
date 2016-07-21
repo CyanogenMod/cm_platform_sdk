@@ -96,6 +96,9 @@ public class ThemeManagerService extends CMSystemService {
 
     private static final String TAG = ThemeManagerService.class.getName();
 
+    //Constant to set Component_id in case of mismatch with mixnmatch_homescreen
+    private static final int DEFAULT_COMPONENT_ID = 0;
+
     private static final boolean DEBUG = false;
 
     private static final String GOOGLE_SETUPWIZARD_PACKAGE = "com.google.android.setupwizard";
@@ -528,6 +531,8 @@ public class ThemeManagerService extends CMSystemService {
             // Add component ID for multiwallpaper
             if (ThemesColumns.MODIFIES_LAUNCHER.equals(component)) {
                 values.put(MixnMatchColumns.COL_COMPONENT_ID, request.getWallpaperId());
+            } else {
+                values.put(MixnMatchColumns.COL_COMPONENT_ID, DEFAULT_COMPONENT_ID);
             }
 
             mContext.getContentResolver().update(MixnMatchColumns.CONTENT_URI, values, where,
