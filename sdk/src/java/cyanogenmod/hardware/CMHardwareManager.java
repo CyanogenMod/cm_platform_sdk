@@ -855,14 +855,10 @@ public final class CMHardwareManager {
 
     /**
      * @return current thermal {@link cyanogenmod.hardware.ThermalListenerCallback.State}
+     *
      */
+    @Deprecated
     public int getThermalState() {
-        try {
-            if (checkService()) {
-                return sService.getThermalState();
-            }
-        } catch (RemoteException e) {
-        }
         return ThermalListenerCallback.State.STATE_UNKNOWN;
     }
 
@@ -870,13 +866,8 @@ public final class CMHardwareManager {
     * Register a callback to be notified of thermal state changes
     * @return boolean indicating whether register succeeded or failed
     */
+    @Deprecated
     public boolean registerThermalListener(ThermalListenerCallback thermalCallback) {
-        try {
-            if (checkService()) {
-                return sService.registerThermalListener(thermalCallback);
-            }
-        } catch (RemoteException e) {
-        }
         return false;
     }
 
@@ -884,13 +875,8 @@ public final class CMHardwareManager {
     * Unregister a callback previously registered to be notified of thermal state changes
     * @return boolean indicating whether un-registering succeeded or failed
     */
+    @Deprecated
     public boolean unRegisterThermalListener(ThermalListenerCallback thermalCallback) {
-        try {
-            if (checkService()) {
-                return sService.unRegisterThermalListener(thermalCallback);
-            }
-        } catch (RemoteException e) {
-        }
         return false;
     }
 }

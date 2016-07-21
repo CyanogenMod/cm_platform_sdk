@@ -470,7 +470,7 @@ package cyanogenmod.hardware {
     method public deprecated int getNumGammaControls();
     method public java.lang.String getSerialNumber();
     method public int getSupportedFeatures();
-    method public int getThermalState();
+    method public deprecated int getThermalState();
     method public java.lang.String getUniqueDeviceId();
     method public int getVibratorDefaultIntensity();
     method public int getVibratorIntensity();
@@ -482,7 +482,7 @@ package cyanogenmod.hardware {
     method public byte[] readPersistentBytes(java.lang.String);
     method public int readPersistentInt(java.lang.String);
     method public java.lang.String readPersistentString(java.lang.String);
-    method public boolean registerThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
+    method public deprecated boolean registerThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
     method public boolean requireAdaptiveBacklightForSunlightEnhancement();
     method public boolean set(int, boolean);
     method public boolean setColorBalance(int);
@@ -490,7 +490,7 @@ package cyanogenmod.hardware {
     method public deprecated boolean setDisplayGammaCalibration(int, int[]);
     method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
     method public boolean setVibratorIntensity(int);
-    method public boolean unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
+    method public deprecated boolean unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
     method public boolean writePersistentBytes(java.lang.String, byte[]);
     method public boolean writePersistentInt(java.lang.String, int);
     method public boolean writePersistentString(java.lang.String, java.lang.String);
