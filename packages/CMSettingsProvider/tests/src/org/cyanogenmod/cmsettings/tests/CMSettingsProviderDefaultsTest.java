@@ -56,8 +56,14 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
                 CMSettings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL,
                 "R.integer.def_notification_brightness_level"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.System.ENABLE_FORWARD_LOOKUP,
+                "R.integer.def_forward_lookup"));
+        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.System.ENABLE_PEOPLE_LOOKUP,
                 "R.integer.def_people_lookup"));
+        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.System.ENABLE_REVERSE_LOOKUP,
+                "R.integer.def_reverse_lookup"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.System.NOTIFICATION_LIGHT_MULTIPLE_LEDS_ENABLE,
                 "R.bool.def_notification_multiple_leds"));
