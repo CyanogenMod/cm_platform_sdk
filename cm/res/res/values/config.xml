@@ -117,4 +117,8 @@
 
     <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
     <string name="config_externalSystemServer" translatable="false">org.cyanogenmod.platform.internal.CMSystemServer</string>
+
+    <!-- Whether to use fancy effects on the boot dexopt screen.
+         Low end devices might want to disable this. -->
+    <bool name="config_bootDexoptIsFancy">true</bool>
 </resources>

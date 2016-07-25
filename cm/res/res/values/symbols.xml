@@ -124,4 +124,14 @@
 
     <!-- CM system server -->
     <java-symbol type="string" name="config_externalSystemServer" />
+
+    <!-- Boot dexopt dialog -->
+    <java-symbol type="bool" name="config_bootDexoptIsFancy" />
+    <java-symbol type="drawable" name="dexopt_brand_logo" />
+    <java-symbol type="layout" name="dexopt_dialog" />
+    <java-symbol type="id" name="dexopt_icon" />
+    <java-symbol type="id" name="dexopt_icon_placeholder" />
+    <java-symbol type="id" name="dexopt_message" />
+    <java-symbol type="id" name="dexopt_message_detail" />
+    <java-symbol type="id" name="dexopt_progress" />
 </resources>
