@@ -177,5 +177,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">오디오 세션 변화 관찰</string>
   <string name="permdesc_observe_audio_sessions">앱이 오디오 스트림이 생성되고 제거되는 것을 관찰할 수 있도록 허용합니다.</string>
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
 </resources>

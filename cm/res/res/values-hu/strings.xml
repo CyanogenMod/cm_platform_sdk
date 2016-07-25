@@ -178,6 +178,7 @@
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">audió munkamenet változásainak megfigyelése</string>
   <string name="permdesc_observe_audio_sessions">Lehetővé teszi az alkalmazás számára, hogy megfigyelje ahogy az audió folyamok létrejönnek és elpusztulnak.</string>
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Témák</string>
   <string name="qs_themes_content_description">Téma testreszabása</string>

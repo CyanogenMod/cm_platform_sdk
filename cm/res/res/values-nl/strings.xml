@@ -156,5 +156,6 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplay-instellingen beheren</string>
   <!-- CMAudioService - observe session changes permission -->
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
 </resources>

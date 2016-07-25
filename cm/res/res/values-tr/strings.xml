@@ -179,6 +179,7 @@ uyguladığınız temayı değiştirmesine izin verir.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">ses oturum değişikliklerini gözlemle</string>
   <string name="permdesc_observe_audio_sessions">Bir uygulamanın, ses akışlarınının oluşturulma ve yok edilmesinde gözlem yapmasına izin verir.</string>
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temalar</string>
   <string name="qs_themes_content_description">Temanızı özelleştirin</string>

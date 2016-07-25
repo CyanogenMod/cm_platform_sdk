@@ -154,6 +154,7 @@
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">кіраванне наладамі LiveDisplay</string>
   <!-- CMAudioService - observe session changes permission -->
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Знешні выгляд</string>
 </resources>

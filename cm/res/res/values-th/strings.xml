@@ -177,6 +177,7 @@
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">สังเกตการเปลี่ยนแปลงเซสชันเสียง</string>
   <string name="permdesc_observe_audio_sessions">อนุญาตให้แอปสังเกตกระแสข้อมูลเสียงที่กำลังถูกสร้างและทำลาย</string>
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">รูปแบบธีม</string>
   <string name="qs_themes_content_description">กำหนดรูปแบบธีมเอง</string>

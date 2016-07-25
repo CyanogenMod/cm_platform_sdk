@@ -177,6 +177,7 @@
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">pantau perubahan sesi audio</string>
   <string name="permdesc_observe_audio_sessions">Izinkan aplikasi untuk memantau pengaliran audio yang dibuat dan dihilangkan.</string>
+  <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Tema</string>
   <string name="qs_themes_content_description">Sesuaikan tema Anda</string>
