@@ -162,6 +162,6 @@
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Разрешава на приложението да чете съдържанието на базата данни.</string>
   <!-- CMAudioService - observe session changes permission -->
-  <string name="permlab_observe_audio_sessions">наблюдава променена аудио сесия</string>
+  <string name="permlab_observe_audio_sessions">преглед на промените в аудио сесии</string>
   <string name="permdesc_observe_audio_sessions">Позволява на приложение да наблюдава създаване и унищожаване на аудио потоци.</string>
 </resources>
