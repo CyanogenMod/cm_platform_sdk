@@ -146,7 +146,6 @@
   <!-- Access live lock screen manager service permission label -->
   <string name="permlab_accessLiveLockScreenService">accès au service de gestion de l\'écran de verrouillage animé</string>
   <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Autorise une application à accéder au service de gestion de l\'écran de verrouillage animé.</string>
   <!-- Privileged access live lock screen manager service permission label -->
   <string name="permlab_accessLiveLockScreenServicePrivate">accès au service de gestion de l\'écran de verrouillage animé</string>
   <!-- Privileged access live lock screen manager service permission description -->
@@ -157,13 +156,10 @@
   <string name="permdesc_accessLiveLockScreenServiceProvider">Permet à un service de fournir le service de gestion de l\'écran de verrouillage animé.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">lire la météo</string>
-  <string name="permdesc_weather_read">Autorise une application à lire le contenu du fournisseur de météo.</string>
   <string name="permlab_weather_write">mettre à jour le fournisseur de météo</string>
-  <string name="permdesc_weather_write">Autorise une application à mettre à jour le contenu du fournisseur de météo.</string>
   <string name="permlab_weather_bind">lier en tant que service de fournisseur de météo</string>
   <string name="permdesc_weather_bind">Permet à une application d\'être identifiée en tant que fournisseur de météo.</string>
   <string name="permlab_weather_access_mgr">accès au fournisseur de météo</string>
-  <string name="permdesc_weather_access_mgr">Autorise une application à accéder au fournisseur de météo du système. Cela ne devrait jamais être nécessaire pour les applications normales.</string>
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">modifier la base de données d\'utilisation des données</string>
   <!-- DataUsageProvider write permission description -->
@@ -171,7 +167,6 @@
   <!-- DataUsageProvider read permission title -->
   <string name="permlab_dataUsageRead">lire la base de données d\'utilisation des données</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Autorise une application à lire le contenu de la base de données d\'utilisation des données.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">gérer les paramètres de LiveDisplay</string>
   <string name="permdesc_manageLiveDisplay">Permet à une application de configurer les paramètres avancés de l\'affichage.</string>

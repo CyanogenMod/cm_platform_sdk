@@ -118,7 +118,7 @@
   <string name="screen_gestures_panel_title">Geste</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Dodatno</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptic povratne informacije</string>
+  <string name="touchscreen_gesture_haptic_feedback">Dodirna povratna informacija</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibriraj kad je gesta prepoznata</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Instalacija teme nije uspjela</string>
