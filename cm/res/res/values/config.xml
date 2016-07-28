@@ -129,4 +129,7 @@
 
     <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
     <string name="config_externalSystemServer" translatable="false">org.cyanogenmod.platform.internal.CMSystemServer</string>
+
+    <!-- Whether to show icon and name of optimized apps on the boot dexopt screen. -->
+    <bool name="config_bootDexoptHideAppDetails">false</bool>
 </resources>
