@@ -46,9 +46,12 @@ public abstract class BrokerableCMSystemService<T extends IInterface> extends CM
     private BrokeredServiceConnection mBrokeredServiceConnection;
     private T mImplementingBinderInterface;
 
+    private final boolean mOnlyCore;
+
     public BrokerableCMSystemService(Context context) {
         super(context);
         mContext = context;
+        mOnlyCore = CMSystemServer.coreAppsOnly();
     }
 
     /**
@@ -112,11 +115,23 @@ public abstract class BrokerableCMSystemService<T extends IInterface> extends CM
      * @return {@link T} that represents the implementing service
      */
     public final T getBrokeredService() {
-        final T service = getOrConnectService();
-        if (service != null) {
-            return service;
+        if (mOnlyCore) {
+            final T service = getOrConnectService();
+            if (service != null) {
+                return service;
+            }
         }
         return getDefaultImplementation();
+    }
+
+    /**
+     * If we are still encrypted, by default we will return
+     * the brokered service. Subclasses can override if
+     * desired.
+     */
+    @Override
+    public boolean isCoreService() {
+        return true;
     }
 
     @Override

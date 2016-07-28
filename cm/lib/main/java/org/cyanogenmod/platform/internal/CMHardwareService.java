@@ -377,6 +377,11 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
     }
 
     @Override
+    public boolean isCoreService() {
+        return true;
+    }
+
+    @Override
     public void onBootPhase(int phase) {
         if (phase == PHASE_BOOT_COMPLETED) {
             Intent intent = new Intent(cyanogenmod.content.Intent.ACTION_INITIALIZE_CM_HARDWARE);
