@@ -25,4 +25,13 @@ public abstract class CMSystemService extends SystemService {
     }
 
     public abstract String getFeatureDeclaration();
+
+
+    /**
+     * Override and return true if the service should be started
+     * before the device is decrypted.
+     */
+    public boolean isCoreService() {
+        return true;
+    }
 }
