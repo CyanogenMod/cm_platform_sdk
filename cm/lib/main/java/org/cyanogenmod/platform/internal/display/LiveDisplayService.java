@@ -151,6 +151,11 @@ public class LiveDisplayService extends CMSystemService {
     }
 
     @Override
+    public boolean isCoreService() {
+        return false;
+    }
+
+    @Override
     public void onStart() {
         publishBinderService(CMContextConstants.CM_LIVEDISPLAY_SERVICE, mBinder);
     }
