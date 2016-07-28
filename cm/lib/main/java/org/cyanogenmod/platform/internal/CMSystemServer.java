@@ -17,6 +17,7 @@
 package org.cyanogenmod.platform.internal;
 
 import android.content.Context;
+import android.os.SystemProperties;
 import android.util.Slog;
 import com.android.server.LocalServices;
 import com.android.server.SystemServiceManager;
@@ -33,9 +34,19 @@ public class CMSystemServer {
     private Context mSystemContext;
     private CMSystemServiceHelper mSystemServiceHelper;
 
+    private static final String ENCRYPTING_STATE = "trigger_restart_min_framework";
+    private static final String ENCRYPTED_STATE = "1";
+
     public CMSystemServer(Context systemContext) {
         mSystemContext = systemContext;
         mSystemServiceHelper = new CMSystemServiceHelper(mSystemContext);
+    }
+
+    public static boolean coreAppsOnly() {
+        // Only run "core" apps+services if we're encrypting the device.
+        final String cryptState = SystemProperties.get("vold.decrypt");
+        return ENCRYPTING_STATE.equals(cryptState) ||
+               ENCRYPTED_STATE.equals(cryptState);
     }
 
     /**
@@ -64,8 +75,13 @@ public class CMSystemServer {
                 CMSystemService cmSystemService =  mSystemServiceHelper.getServiceFor(service);
                 if (context.getPackageManager().hasSystemFeature(
                         cmSystemService.getFeatureDeclaration())) {
-                    Slog.i(TAG, "Starting service " + service);
-                    ssm.startService(cmSystemService.getClass());
+                    if (coreAppsOnly() && !cmSystemService.isCoreService()) {
+                        Slog.d(TAG, "Not starting " + service +
+                                " - only parsing core apps");
+                    } else {
+                        Slog.i(TAG, "Starting service " + service);
+                        ssm.startService(cmSystemService.getClass());
+                    }
                 } else {
                     Slog.i(TAG, "Not starting service " + service +
                             " due to feature not declared on device");
