@@ -178,6 +178,8 @@
   <string name="permlab_observe_audio_sessions">观察音频会话变动</string>
   <string name="permdesc_observe_audio_sessions">允许应用观察音频流的创建和销毁。</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">管理音频会话变动</string>
+  <string name="permdesc_manage_audio_sessions">允许应用发送音频流更新。</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">主题</string>
   <string name="qs_themes_content_description">自定义您的主题</string>
