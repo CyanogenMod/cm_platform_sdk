@@ -742,12 +742,28 @@ package cyanogenmod.platform {
     ctor public R.bool();
   }
 
+  public static final class R.color {
+    ctor public R.color();
+  }
+
+  public static final class R.dimen {
+    ctor public R.dimen();
+  }
+
   public static final class R.drawable {
     ctor public R.drawable();
   }
 
+  public static final class R.id {
+    ctor public R.id();
+  }
+
   public static final class R.integer {
     ctor public R.integer();
+  }
+
+  public static final class R.layout {
+    ctor public R.layout();
   }
 
   public static final class R.string {
