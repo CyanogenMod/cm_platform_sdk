@@ -178,6 +178,8 @@
   <string name="permlab_observe_audio_sessions">observa els canvis en la sessió de so</string>
   <string name="permdesc_observe_audio_sessions">Permet a una aplicació observar els fluxos de so que són creats i destruïts.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">administra els canvis en la sessió de so</string>
+  <string name="permdesc_manage_audio_sessions">Permet a una aplicació enviar actualitzacions de transmissió d\'àudio.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temes</string>
   <string name="qs_themes_content_description">Personalitza els teus temes</string>
