@@ -149,13 +149,18 @@
   <!-- Live lock screen manager service provider permission label -->
   <!-- Live lock screen manager service provider permission description -->
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">weer lezen</string>
+  <string name="permlab_weather_access_mgr">toegang tot weerservice</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplay-instellingen beheren</string>
+  <string name="permdesc_manageLiveDisplay">Hiermee kan de app geavanceerde beeldscherminstellingen wijzigen.</string>
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Thema\'s</string>
+  <string name="qs_themes_content_description">Thema aanpassen</string>
 </resources>
