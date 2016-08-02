@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import android.util.ArrayMap;
 import android.util.Log;
 
 import com.android.server.SystemService;
@@ -32,6 +33,7 @@ import cyanogenmod.hardware.IThermalListenerCallback;
 import cyanogenmod.hardware.ThermalListenerCallback;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.cyanogenmod.hardware.AdaptiveBacklight;
@@ -64,6 +66,10 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
     private final CMHardwareInterface mCmHwImpl;
     private int mCurrentThermalState = ThermalListenerCallback.State.STATE_UNKNOWN;
     private RemoteCallbackList<IThermalListenerCallback> mRemoteCallbackList;
+
+    private final ArrayMap<String, String> mDisplayModeMappings =
+            new ArrayMap<String, String>();
+    private final boolean mFilterDisplayModes;
 
     private interface CMHardwareInterface {
         public int getSupportedFeatures();
@@ -369,6 +375,19 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
         mContext = context;
         mCmHwImpl = getImpl(context);
         publishBinderService(CMContextConstants.CM_HARDWARE_SERVICE, mService);
+
+        final String[] mappings = mContext.getResources().getStringArray(
+                org.cyanogenmod.platform.internal.R.array.config_displayModeMappings);
+        if (mappings != null && mappings.length > 0) {
+            for (String mapping : mappings) {
+                String[] split = mapping.split(":");
+                if (split.length == 2) {
+                    mDisplayModeMappings.put(split[0], split[1]);
+                }
+            }
+        }
+        mFilterDisplayModes = mContext.getResources().getBoolean(
+                org.cyanogenmod.platform.internal.R.bool.config_filterDisplayModes);
     }
 
     @Override
@@ -408,6 +427,19 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
             }
         }
         mRemoteCallbackList.finishBroadcast();
+    }
+
+    private DisplayMode remapDisplayMode(DisplayMode in) {
+        if (in == null) {
+            return null;
+        }
+        if (mDisplayModeMappings.containsKey(in.name)) {
+            return new DisplayMode(in.id, mDisplayModeMappings.get(in.name));
+        }
+        if (!mFilterDisplayModes) {
+            return in;
+        }
+        return null;
     }
 
     private final IBinder mService = new ICMHardwareService.Stub() {
@@ -611,7 +643,18 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return mCmHwImpl.getDisplayModes();
+            final DisplayMode[] modes = mCmHwImpl.getDisplayModes();
+            if (modes == null) {
+                return null;
+            }
+            final ArrayList<DisplayMode> remapped = new ArrayList<DisplayMode>();
+            for (DisplayMode mode : modes) {
+                DisplayMode r = remapDisplayMode(mode);
+                if (r != null) {
+                    remapped.add(r);
+                }
+            }
+            return remapped.toArray(new DisplayMode[remapped.size()]);
         }
 
         @Override
@@ -622,7 +665,7 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return mCmHwImpl.getCurrentDisplayMode();
+            return remapDisplayMode(mCmHwImpl.getCurrentDisplayMode());
         }
 
         @Override
@@ -633,7 +676,7 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 Log.e(TAG, "Display modes are not supported");
                 return null;
             }
-            return mCmHwImpl.getDefaultDisplayMode();
+            return remapDisplayMode(mCmHwImpl.getDefaultDisplayMode());
         }
 
         @Override

@@ -70,6 +70,17 @@
     <bool name="config_defaultColorEnhancement">true</bool>
     <bool name="config_defaultCABC">true</bool>
 
+    <!-- Display mode remapping table.
+         If the mode names returned by the backend do not match
+         the predefined and translated strings in the Settings
+         app, they can be remapped here. The format is
+         "oldname:newname", one per entry. -->
+    <string-array name="config_displayModeMappings" translatable="false">
+    </string-array>
+
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">false</bool>
+
     <!-- Is the notification LED brightness adjustable ?
          Used to decide if the user can set LED brightness -->
     <bool name="config_adjustableNotificationLedBrightness">false</bool>
