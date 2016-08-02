@@ -81,6 +81,9 @@
     <java-symbol type="bool" name="config_defaultColorEnhancement" />
     <java-symbol type="bool" name="config_defaultCABC" />
 
+    <java-symbol type="bool" name="config_filterDisplayModes" />
+    <java-symbol type="array" name="config_displayModeMappings" />
+
     <!-- Notification and battery light -->
     <java-symbol type="bool" name="config_adjustableNotificationLedBrightness" />
     <java-symbol type="bool" name="config_multipleNotificationLeds" />
