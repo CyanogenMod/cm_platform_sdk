@@ -40,6 +40,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
 
     // default values
     private final int mDefaultOutdoorLux;
+    private final int mOutdoorLuxHysteresis;
     private final boolean mDefaultAutoOutdoorMode;
     private final boolean mSelfManaged;
 
@@ -59,6 +60,8 @@ public class OutdoorModeController extends LiveDisplayFeature {
 
         mDefaultOutdoorLux = mContext.getResources().getInteger(
                 org.cyanogenmod.platform.internal.R.integer.config_outdoorAmbientLux);
+        mOutdoorLuxHysteresis = mContext.getResources().getInteger(
+                org.cyanogenmod.platform.internal.R.integer.config_outdoorAmbientLuxHysteresis);
         mDefaultAutoOutdoorMode = mContext.getResources().getBoolean(
                 org.cyanogenmod.platform.internal.R.bool.config_defaultAutoOutdoorMode);
     }
@@ -71,7 +74,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
 
         if (!mSelfManaged) {
             mLuxObserver = new AmbientLuxObserver(mContext, mHandler.getLooper(),
-                    mDefaultOutdoorLux, SENSOR_WINDOW_MS);
+                    mDefaultOutdoorLux, mOutdoorLuxHysteresis, SENSOR_WINDOW_MS);
         }
 
         registerSettings(
@@ -128,6 +131,7 @@ public class OutdoorModeController extends LiveDisplayFeature {
         pw.println("  mSelfManaged=" + mSelfManaged);
         if (!mSelfManaged) {
             pw.println("  mDefaultOutdoorLux=" + mDefaultOutdoorLux);
+            pw.println("  mOutdoorLuxHysteresis=" + mOutdoorLuxHysteresis);
             pw.println();
             pw.println("  OutdoorModeController State:");
             pw.println("    mAutoOutdoorMode=" + isAutomaticOutdoorModeEnabled());
