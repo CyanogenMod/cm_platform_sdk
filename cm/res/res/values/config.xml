@@ -128,4 +128,7 @@
 
     <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
     <string name="config_externalSystemServer" translatable="false">org.cyanogenmod.platform.internal.CMSystemServer</string>
+
+    <!-- Lock screen blur default status -->
+    <bool name="config_lock_screen_blur_default">true</bool>
 </resources>

@@ -127,4 +127,7 @@
 
     <!-- CM system server -->
     <java-symbol type="string" name="config_externalSystemServer" />
+
+    <!-- Lock screen blur default status -->
+    <java-symbol type="bool" name="config_lock_screen_blur_default" />
 </resources>
