@@ -179,6 +179,8 @@
   <string name="permlab_observe_audio_sessions">observere lyd-økt endringer</string>
   <string name="permdesc_observe_audio_sessions">Tillater en app å observere om lyd-strømmer blir lagd eller ødelagt.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">administrer lyd økt endringer</string>
+  <string name="permdesc_manage_audio_sessions">Gir en app tillatelse til å sende lydstrømning oppdateringer.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpass temaet ditt</string>
