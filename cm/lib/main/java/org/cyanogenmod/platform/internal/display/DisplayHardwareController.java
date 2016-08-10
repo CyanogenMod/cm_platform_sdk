@@ -239,8 +239,9 @@ public class DisplayHardwareController extends LiveDisplayFeature {
         if (!mUseCABC) {
             return;
         }
+        // Leave CABC on in low power mode as it saves power
         mHardware.set(CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT,
-                !isLowPowerMode() && isCABCEnabled());
+                isCABCEnabled());
     }
 
     private synchronized void updateColorAdjustment() {
