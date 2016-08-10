@@ -18,8 +18,9 @@ package cyanogenmod.hardware;
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import android.text.TextUtils;
+
+import java.util.Locale;
 
 public class HSIC implements Parcelable {
 
@@ -59,7 +60,7 @@ public class HSIC implements Parcelable {
     }
 
     public String flatten() {
-        return String.format("%f|%f|%f|%f|%f", mHue, mSaturation,
+        return String.format(Locale.US, "%f|%f|%f|%f|%f", mHue, mSaturation,
                 mIntensity, mContrast, mSaturationThreshold);
     }
 
@@ -68,9 +69,9 @@ public class HSIC implements Parcelable {
         if (unflat.length != 4 && unflat.length != 5) {
             throw new NumberFormatException("Failed to unflatten HSIC values: " + flat);
         }
-        return new HSIC(Float.valueOf(unflat[0]), Float.valueOf(unflat[1]),
-                Float.valueOf(unflat[2]), Float.valueOf(unflat[3]),
-                unflat.length == 5 ? Float.valueOf(unflat[4]) : 0.0f);
+        return new HSIC(Float.parseFloat(unflat[0]), Float.parseFloat(unflat[1]),
+                Float.parseFloat(unflat[2]), Float.parseFloat(unflat[3]),
+                unflat.length == 5 ? Float.parseFloat(unflat[4]) : 0.0f);
     }
 
     public int[] toRGB() {
@@ -93,7 +94,7 @@ public class HSIC implements Parcelable {
 
     @Override
     public String toString() {
-        return String.format("HSIC={ hue=%f saturation=%f intensity=%f " +
+        return String.format(Locale.US, "HSIC={ hue=%f saturation=%f intensity=%f " +
                              "contrast=%f saturationThreshold=%f }",
                 mHue, mSaturation, mIntensity, mContrast, mSaturationThreshold);
     }
