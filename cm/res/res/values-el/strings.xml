@@ -181,4 +181,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Θέματα</string>
   <string name="qs_themes_content_description">Προσαρμόστε το θέμα σας</string>
+  <!-- Custom booot dexopt -->
 </resources>

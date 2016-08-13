@@ -183,4 +183,12 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Gaiak</string>
   <string name="qs_themes_content_description">Pertsonalizatu zure gaia</string>
+  <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Aplibazioak abiarazten\u2026</string>
+  <string name="android_upgrading_fstrim">Biltegia optimizatzen\u2026</string>
+  <string name="android_upgrading_complete">Abiatzeko prestatzen\u2026</string>
+  <string name="android_upgrading_complete_details">Optimizazioa burutu da.</string>
+  <string name="android_preparing_apk">%1$s prestatzen\u2026</string>
+  <string name="android_preparing_apk_obscured">Aplikazioak prestatzen\u2026</string>
+  <string name="android_upgrading_apk">%1$d / %2$d aplikazio</string>
 </resources>

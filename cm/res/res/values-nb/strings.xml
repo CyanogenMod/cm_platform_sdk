@@ -184,4 +184,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpass temaet ditt</string>
+  <!-- Custom booot dexopt -->
 </resources>

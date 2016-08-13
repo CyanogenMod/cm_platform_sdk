@@ -163,4 +163,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Thema\'s</string>
   <string name="qs_themes_content_description">Thema aanpassen</string>
+  <!-- Custom booot dexopt -->
 </resources>
