@@ -181,4 +181,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Tema</string>
   <string name="qs_themes_content_description">Sesuaikan tema Anda</string>
+  <!-- Custom booot dexopt -->
 </resources>

@@ -183,4 +183,12 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temi</string>
   <string name="qs_themes_content_description">Personalizza il tuo tema</string>
+  <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Avvio app\u2026</string>
+  <string name="android_upgrading_fstrim">Ottimizzazione memoria\u2026</string>
+  <string name="android_upgrading_complete">Preparazione avvio\u2026</string>
+  <string name="android_upgrading_complete_details">Ottimizzazione completata.</string>
+  <string name="android_preparing_apk">Preparazione %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Preparazione app\u2026</string>
+  <string name="android_upgrading_apk">%1$d di %2$d app</string>
 </resources>

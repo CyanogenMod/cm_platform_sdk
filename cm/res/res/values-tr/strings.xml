@@ -183,4 +183,5 @@ uyguladığınız temayı değiştirmesine izin verir.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temalar</string>
   <string name="qs_themes_content_description">Temanızı özelleştirin</string>
+  <!-- Custom booot dexopt -->
 </resources>
