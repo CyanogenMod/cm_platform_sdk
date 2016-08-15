@@ -57,7 +57,7 @@
   <string name="permlab_managePersistentStorage">administrere permanent lager</string>
   <string name="permdesc_managePersistentStorage">Gir en app tilgang til å lese eller skrive egenskaper, som kan overleve gjenoppretting av fabrikkinnstillinger.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-  <string name="permlab_accessAppSuggestions">tilgang app forslag</string>
+  <string name="permlab_accessAppSuggestions">tilgang til app-forslag</string>
   <string name="permdesc_accessAppSuggestions">Tillat en app tilgang til app forslag.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
