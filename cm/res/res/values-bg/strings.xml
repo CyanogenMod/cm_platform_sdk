@@ -183,4 +183,12 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Теми</string>
   <string name="qs_themes_content_description">Персонализирайте вашата тема</string>
+  <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Стартиране на приложения \u2026</string>
+  <string name="android_upgrading_fstrim">Оптимизиране на хранилището\u2026</string>
+  <string name="android_upgrading_complete">Начало на подготовката \u2026</string>
+  <string name="android_upgrading_complete_details">Оптимизацията е завършена.</string>
+  <string name="android_preparing_apk">Подготовка на %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Подготовка на приложенията\u2026</string>
+  <string name="android_upgrading_apk">%1$d із %2$d приложения</string>
 </resources>

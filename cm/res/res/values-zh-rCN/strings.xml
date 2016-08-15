@@ -183,4 +183,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">主题</string>
   <string name="qs_themes_content_description">自定义您的主题</string>
+  <!-- Custom booot dexopt -->
 </resources>

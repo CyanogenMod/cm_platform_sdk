@@ -183,4 +183,5 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Teme</string>
   <string name="qs_themes_content_description">Prilagodite svoju temu</string>
+  <!-- Custom booot dexopt -->
 </resources>
