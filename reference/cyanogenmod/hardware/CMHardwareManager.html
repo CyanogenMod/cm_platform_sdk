@@ -172,7 +172,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1', '2', '3', '4', '5' ];
+        var SINCE_DATA = [ '1', '2', '3', '4', '5', '6' ];
         buildApiLevelSelector();
       </script>
                   
@@ -236,7 +236,10 @@ type="text/css">
       <ul>
           <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.Stub.html">IThermalListenerCallback.Stub</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html">LiveDisplayConfig</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayManager.html">LiveDisplayManager</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a></li>
           <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></li>
       </ul>
@@ -479,7 +482,20 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_COLOR_BALANCE">FEATURE_COLOR_BALANCE</a></td>
+        <td class="jd-descrcol" width="100%">
+          Color balance
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_COLOR_ENHANCEMENT">FEATURE_COLOR_ENHANCEMENT</a></td>
         <td class="jd-descrcol" width="100%">
@@ -492,7 +508,7 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_DISPLAY_COLOR_CALIBRATION">FEATURE_DISPLAY_COLOR_CALIBRATION</a></td>
         <td class="jd-descrcol" width="100%">
@@ -505,7 +521,7 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_DISPLAY_GAMMA_CALIBRATION">FEATURE_DISPLAY_GAMMA_CALIBRATION</a></td>
         <td class="jd-descrcol" width="100%">
@@ -518,7 +534,7 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_DISPLAY_MODES">FEATURE_DISPLAY_MODES</a></td>
         <td class="jd-descrcol" width="100%">
@@ -531,7 +547,7 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_HIGH_TOUCH_SENSITIVITY">FEATURE_HIGH_TOUCH_SENSITIVITY</a></td>
         <td class="jd-descrcol" width="100%">
@@ -544,7 +560,7 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_KEY_DISABLE">FEATURE_KEY_DISABLE</a></td>
         <td class="jd-descrcol" width="100%">
@@ -557,7 +573,7 @@ Summary:
     </tr>
     
     
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_LONG_TERM_ORBITS">FEATURE_LONG_TERM_ORBITS</a></td>
         <td class="jd-descrcol" width="100%">
@@ -570,11 +586,24 @@ Summary:
     </tr>
     
     
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol">int</td>
         <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_PERSISTENT_STORAGE">FEATURE_PERSISTENT_STORAGE</a></td>
         <td class="jd-descrcol" width="100%">
           Persistent storage
+
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#FEATURE_PICTURE_ADJUSTMENT">FEATURE_PICTURE_ADJUSTMENT</a></td>
+        <td class="jd-descrcol" width="100%">
+          HSIC picture adjustment
 
           
     
@@ -744,6 +773,38 @@ Summary:
 
 
 	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getColorBalance()">getColorBalance</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Integer&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getColorBalanceRange()">getColorBalanceRange</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
     <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
@@ -776,7 +837,30 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getDefaultPictureAdjustment()">getDefaultPictureAdjustment</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the default picture adjustment for the current mode
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -792,7 +876,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -808,7 +892,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -824,7 +908,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -840,7 +924,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -856,7 +940,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -872,7 +956,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -888,7 +972,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -904,7 +988,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -927,7 +1011,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -943,7 +1027,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -959,7 +1043,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -975,7 +1059,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -991,7 +1075,53 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getPictureAdjustment()">getPictureAdjustment</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the current picture adjustment values
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Range&lt;Float&gt;&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getPictureAdjustmentRanges()">getPictureAdjustmentRanges</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get a list of ranges valid for picture adjustment.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1007,7 +1137,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1023,7 +1153,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1039,7 +1169,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class=" api apilevel-5" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1055,7 +1185,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1071,7 +1201,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1087,7 +1217,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1103,7 +1233,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1119,7 +1249,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1135,7 +1265,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-4" >
+    <tr class=" api apilevel-4" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1151,7 +1281,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1174,7 +1304,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1197,7 +1327,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1220,7 +1350,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1243,7 +1373,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1266,7 +1396,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1282,7 +1412,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1298,6 +1428,29 @@ Summary:
           Enable or disable the given feature
 
  Only used for features which have simple enable/disable controls.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#setColorBalance(int)">setColorBalance</a></span>(int value)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the desired color balance.
           
     
 
@@ -1369,7 +1522,30 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#setPictureAdjustment(cyanogenmod.hardware.HSIC)">setPictureAdjustment</a></span>(<a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a> hsic)</nobr>
+        
+        <div class="jd-descrdiv">
+          Sets the desired hue/saturation/intensity/contrast
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1392,7 +1568,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1415,7 +1591,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1438,7 +1614,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class=" api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1461,7 +1637,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-2" >
         <td class="jd-typecol"><nobr>
             
             
@@ -1815,6 +1991,49 @@ From class
 
 
 
+<A NAME="FEATURE_COLOR_BALANCE"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FEATURE_COLOR_BALANCE
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Color balance
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                131072
+                (0x00020000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
 <A NAME="FEATURE_COLOR_ENHANCEMENT"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -2150,6 +2369,49 @@ From class
             
                 16384
                 (0x00004000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FEATURE_PICTURE_ADJUSTMENT"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FEATURE_PICTURE_ADJUSTMENT
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>HSIC picture adjustment
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                262144
+                (0x00040000)
             
         </span>
         </div>
@@ -2576,6 +2838,82 @@ From class
 </div>
 
 
+<A NAME="getColorBalance()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getColorBalance</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the current color balance value
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getColorBalanceRange()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Range&lt;Integer&gt;
+      </span>
+      <span class="sympad">getColorBalanceRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the available range for color temperature adjustments
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="getCurrentDisplayMode()"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -2645,6 +2983,44 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>the default display mode to be set on boot
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDefaultPictureAdjustment()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a>
+      </span>
+      <span class="sympad">getDefaultPictureAdjustment</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the default picture adjustment for the current mode</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>HSIC object with default settings
 </li></ul>
   </div>
 
@@ -2832,6 +3208,15 @@ From class
 
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>idx</td>
+          <td>the control to query</td>
+        </tr>
+      </table>
+  </div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>the current RGB gamma calibration for the given control
@@ -3139,6 +3524,82 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>the number of RGB controls the device supports
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPictureAdjustment()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a>
+      </span>
+      <span class="sympad">getPictureAdjustment</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the current picture adjustment values</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>HSIC object with current settings
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPictureAdjustmentRanges()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Range&lt;Float&gt;&gt;
+      </span>
+      <span class="sympad">getPictureAdjustmentRanges</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get a list of ranges valid for picture adjustment.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>range list
 </li></ul>
   </div>
 
@@ -3844,6 +4305,45 @@ From class
 </div>
 
 
+<A NAME="setColorBalance(int)"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">setColorBalance</span>
+      <span class="normal">(int value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the desired color balance. Must fall within the range obtained from
+ getColorBalanceRange()</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if success
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <A NAME="setDisplayColorCalibration(int[])"></A>
 
 <div class="jd-details api apilevel-2"> 
@@ -3878,7 +4378,7 @@ From class
         <tr>
           <th>rgb</td>
           <td>RGB color calibration.  Each value must be between
- <code><a href="../../../">ERROR(/getDisplayColorCalibrationMin())</a></code> and <code><a href="../../../">ERROR(/getDisplayColorCalibrationMax())</a></code>,
+ <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getDisplayColorCalibrationMin()">getDisplayColorCalibrationMin()</a></code> and <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getDisplayColorCalibrationMax()">getDisplayColorCalibrationMax()</a></code>,
  inclusive.</td>
         </tr>
       </table>
@@ -3931,7 +4431,7 @@ From class
         <tr>
           <th>rgb</td>
           <td>RGB color calibration.  Each value must be between
- <code><a href="../../../">ERROR(/getDisplayGammaCalibrationMin())</a></code> and <code><a href="../../../">ERROR(/getDisplayGammaCalibrationMax())</a></code>,
+ <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getDisplayGammaCalibrationMin()">getDisplayGammaCalibrationMin()</a></code> and <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html#getDisplayGammaCalibrationMax()">getDisplayGammaCalibrationMax()</a></code>,
  inclusive.</td>
         </tr>
       </table>
@@ -3977,6 +4477,44 @@ From class
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>true if setting the mode was successful
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPictureAdjustment(cyanogenmod.hardware.HSIC)"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">setPictureAdjustment</span>
+      <span class="normal">(<a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a> hsic)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the desired hue/saturation/intensity/contrast</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if success
 </li></ul>
   </div>
 

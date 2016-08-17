@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>AirplaneModeSettings | Android Developers</title>
+<title>HSIC | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="2" style="display:none"></div>
+  <div id="doc-api-level" class="6" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -191,7 +191,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
@@ -201,7 +201,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/platform/package-summary.html">cyanogenmod.platform</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/power/package-summary.html">cyanogenmod.power</a></li>
-    <li class="selected api apilevel-2">
+    <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
@@ -226,17 +226,22 @@ type="text/css">
             <ul>
               
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.html">IThermalListenerCallback</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html">AirplaneModeSettings.BooleanState</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/BrightnessSettings.html">BrightnessSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.html">ConnectionSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/ConnectionSettings.BooleanState.html">ConnectionSettings.BooleanState</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/LockSettings.html">LockSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/RingModeSettings.html">RingModeSettings</a></li>
-          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/profiles/StreamSettings.html">StreamSettings</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></li>
+          <li class="selected api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.Stub.html">IThermalListenerCallback.Stub</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html">LiveDisplayConfig</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayManager.html">LiveDisplayManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></li>
       </ul>
     </li>
               
@@ -315,15 +320,12 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
-  
 
 
 
 
 
-
-  &#124; <a href="#inhconstants">Inherited Constants</a>
+  <a href="#inhconstants">Inherited Constants</a>
   
 
 
@@ -346,7 +348,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a>
   
   
 
@@ -359,10 +361,10 @@ Summary:
 <div id="jd-header">
     public
      
-    final 
+     
     
     class
-<h1 itemprop="name">AirplaneModeSettings</h1>
+<h1 itemprop="name">HSIC</h1>
 
 
 
@@ -389,7 +391,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-2">
+<div id="jd-content" class="api apilevel-6">
 <table class="jd-inheritance-table">
 
 
@@ -403,7 +405,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.profiles.AirplaneModeSettings</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.hardware.HSIC</td>
     </tr>
     
 
@@ -417,16 +419,6 @@ Summary:
 
 <div class="jd-descr">
 
-
-<h2>Class Overview</h2>
-<p itemprop="articleBody">The <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> class allows for overriding and setting the airplane mode.
-
- <p>Example for setting the airplane mode to enabled:
- <pre class="prettyprint">
- AirplaneModeSettings airplaneMode = new AirplaneModeSettings(BooleanState.STATE_ENABLED, true)
- profile.setAirplaneMode(airplaneMode);
- </pre>
-</p>
 
 
 
@@ -453,32 +445,6 @@ Summary:
 
 
 <h2>Summary</h2>
-
-
-
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-2" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html">AirplaneModeSettings.BooleanState</a></td>
-      <td class="jd-descrcol" width="100%">
-        BooleanStates for specific <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code>
-&nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
 
 
 
@@ -566,7 +532,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
@@ -576,63 +542,8 @@ android.os.Parcelable
             </nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#AirplaneModeSettings(android.os.Parcel)">AirplaneModeSettings</a></span>(Parcel parcel)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#HSIC(float, float, float, float, float)">HSIC</a></span>(float hue, float saturation, float intensity, float contrast, float saturationThreshold)</nobr>
         
-        <div class="jd-descrdiv">
-          Unwrap <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> from a parcel.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#AirplaneModeSettings()">AirplaneModeSettings</a></span>()</nobr>
-        
-        <div class="jd-descrdiv">
-          Construct a <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> with a default value of
- <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html#STATE_DISALED">STATE_DISALED</a></code>.
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            </nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#AirplaneModeSettings(int, boolean)">AirplaneModeSettings</a></span>(int value, boolean override)</nobr>
-        
-        <div class="jd-descrdiv">
-          Construct a <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> with a default value and whether or not it should
- override user settings.
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
@@ -650,7 +561,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
@@ -660,59 +571,189 @@ android.os.Parcelable
             int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#describeContents()">describeContents</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#describeContents()">describeContents</a></span>()</nobr>
         
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class=" api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            int</nobr>
+            String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#getValue()">getValue</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#flatten()">flatten</a></span>()</nobr>
         
-        <div class="jd-descrdiv">
-          Get the default value for the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code>
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#fromFloatArray(float[])">fromFloatArray</a></span>(float[] hsic)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            boolean</nobr>
+            float</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#isOverride()">isOverride</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#getContrast()">getContrast</a></span>()</nobr>
         
-        <div class="jd-descrdiv">
-          Check whether or not the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> overrides user settings.
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-2" >
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            float</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#getHue()">getHue</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            float</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#getIntensity()">getIntensity</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            float</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#getSaturation()">getSaturation</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            float</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#getSaturationThreshold()">getSaturationThreshold</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            float[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#toFloatArray()">toFloatArray</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#toRGB()">toRGB</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#toString()">toString</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#unflattenFrom(java.lang.String)">unflattenFrom</a></span>(String flat)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
@@ -722,38 +763,8 @@ android.os.Parcelable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#setOverride(boolean)">setOverride</a></span>(boolean override)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/HSIC.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel parcel, int i)</nobr>
         
-        <div class="jd-descrdiv">
-          Set whether or not the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> should override default user values
-          
-    
-
-        </div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-2" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            void</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html#setValue(int)">setValue</a></span>(int value)</nobr>
-        
-        <div class="jd-descrdiv">
-          Set the default value for the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code>
-          
-    
-
-        </div>
-  
   </td></tr>
 
 
@@ -1065,9 +1076,9 @@ From interface
 
 
 
-<A NAME="AirplaneModeSettings(android.os.Parcel)"></A>
+<A NAME="HSIC(float, float, float, float, float)"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1077,12 +1088,12 @@ From interface
          
         
       </span>
-      <span class="sympad">AirplaneModeSettings</span>
-      <span class="normal">(Parcel parcel)</span>
+      <span class="sympad">HSIC</span>
+      <span class="normal">(float hue, float saturation, float intensity, float contrast, float saturationThreshold)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1092,90 +1103,7 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Unwrap <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> from a parcel.</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="AirplaneModeSettings()"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">AirplaneModeSettings</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> with a default value of
- <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html#STATE_DISALED">STATE_DISALED</a></code>.
-</p></div>
-
-    </div>
-</div>
-
-
-<A NAME="AirplaneModeSettings(int, boolean)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        
-      </span>
-      <span class="sympad">AirplaneModeSettings</span>
-      <span class="normal">(int value, boolean override)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Construct a <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> with a default value and whether or not it should
- override user settings.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td>ex: <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html#STATE_DISALED">STATE_DISALED</a></code></td>
-        </tr>
-        <tr>
-          <th>override</td>
-          <td>whether or not the setting should override user settings
-</td>
-        </tr>
-      </table>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -1198,7 +1126,7 @@ From interface
 
 <A NAME="describeContents()"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1213,7 +1141,7 @@ From interface
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1229,9 +1157,9 @@ From interface
 </div>
 
 
-<A NAME="getValue()"></A>
+<A NAME="flatten()"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1239,14 +1167,14 @@ From interface
          
          
          
-        int
+        String
       </span>
-      <span class="sympad">getValue</span>
+      <span class="sympad">flatten</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1256,35 +1184,30 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>integer value corresponding with its brightness value
-</li></ul>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
 
 
-<A NAME="isOverride()"></A>
+<A NAME="fromFloatArray(float[])"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
+        static 
          
          
          
-         
-        boolean
+        <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a>
       </span>
-      <span class="sympad">isOverride</span>
-      <span class="normal">()</span>
+      <span class="sympad">fromFloatArray</span>
+      <span class="normal">(float[] hsic)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1294,20 +1217,320 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Check whether or not the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> overrides user settings.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getContrast()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getContrast</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getHue()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getHue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getIntensity()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getIntensity</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getSaturation()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getSaturation</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getSaturationThreshold()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float
+      </span>
+      <span class="sympad">getSaturationThreshold</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="toFloatArray()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        float[]
+      </span>
+      <span class="sympad">toFloatArray</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="toRGB()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int[]
+      </span>
+      <span class="sympad">toRGB</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="toString()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">toString</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="unflattenFrom(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a>
+      </span>
+      <span class="sympad">unflattenFrom</span>
+      <span class="normal">(String flat)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
   <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>true if override
-</li></ul>
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>NumberFormatException</td>
+            <td></td>
+        </tr>
+      </table>
   </div>
 
     </div>
 </div>
 
 
-<A NAME="setOverride(boolean)"></A>
+<A NAME="writeToParcel(android.os.Parcel, int)"></A>
 
-<div class="jd-details api apilevel-2"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1317,12 +1540,12 @@ From interface
          
         void
       </span>
-      <span class="sympad">setOverride</span>
-      <span class="normal">(boolean override)</span>
+      <span class="sympad">writeToParcel</span>
+      <span class="normal">(Parcel parcel, int i)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1332,60 +1555,7 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set whether or not the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code> should override default user values</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>override</td>
-          <td>boolean override
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<A NAME="setValue(int)"></A>
-
-<div class="jd-details api apilevel-2"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setValue</span>
-      <span class="normal">(int value)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 2</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Set the default value for the <code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.html">AirplaneModeSettings</a></code></p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>value</td>
-          <td><code><a href="../../../reference/cyanogenmod/profiles/AirplaneModeSettings.BooleanState.html#STATE_DISALED">STATE_DISALED</a></code>
-</td>
-        </tr>
-      </table>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
