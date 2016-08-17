@@ -101,7 +101,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
-<title>ThemeChangeRequest | Android Developers</title>
+<title>LiveDisplayConfig | Android Developers</title>
 
 <!-- STYLESHEETS -->
 <link rel="stylesheet"
@@ -144,7 +144,7 @@ type="text/css">
 
 <body class="gc-documentation 
   develop reference" itemscope itemtype="http://schema.org/Article">
-  <div id="doc-api-level" class="5" style="display:none"></div>
+  <div id="doc-api-level" class="6" style="display:none"></div>
   <a name="top"></a>
 
   <div id="header">
@@ -191,7 +191,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/content/package-summary.html">cyanogenmod.content</a></li>
     <li class="api apilevel-4">
   <a href="../../../reference/cyanogenmod/externalviews/package-summary.html">cyanogenmod.externalviews</a></li>
-    <li class="api apilevel-2">
+    <li class="selected api apilevel-2">
   <a href="../../../reference/cyanogenmod/hardware/package-summary.html">cyanogenmod.hardware</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/media/package-summary.html">cyanogenmod.media</a></li>
@@ -205,7 +205,7 @@ type="text/css">
   <a href="../../../reference/cyanogenmod/profiles/package-summary.html">cyanogenmod.profiles</a></li>
     <li class="api apilevel-2">
   <a href="../../../reference/cyanogenmod/providers/package-summary.html">cyanogenmod.providers</a></li>
-    <li class="selected api apilevel-5">
+    <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/themes/package-summary.html">cyanogenmod.themes</a></li>
     <li class="api apilevel-5">
   <a href="../../../reference/cyanogenmod/util/package-summary.html">cyanogenmod.util</a></li>
@@ -228,24 +228,23 @@ type="text/css">
               
     <li><h2>Interfaces</h2>
       <ul>
-          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeManager.ThemeChangeListener.html">ThemeManager.ThemeChangeListener</a></li>
-          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeManager.ThemeProcessingListener.html">ThemeManager.ThemeProcessingListener</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.html">IThermalListenerCallback</a></li>
       </ul>
     </li>
               
     <li><h2>Classes</h2>
       <ul>
-          <li class="selected api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html">ThemeChangeRequest</a></li>
-          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.Builder.html">ThemeChangeRequest.Builder</a></li>
-          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeManager.html">ThemeManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/DisplayMode.html">DisplayMode</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/HSIC.html">HSIC</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/IThermalListenerCallback.Stub.html">IThermalListenerCallback.Stub</a></li>
+          <li class="selected api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html">LiveDisplayConfig</a></li>
+          <li class="api apilevel-6"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayManager.html">LiveDisplayManager</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.html">ThermalListenerCallback</a></li>
+          <li class="api apilevel-2"><a href="../../../reference/cyanogenmod/hardware/ThermalListenerCallback.State.html">ThermalListenerCallback.State</a></li>
       </ul>
     </li>
               
-    <li><h2>Enums</h2>
-      <ul>
-          <li class="api apilevel-5"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.RequestType.html">ThemeChangeRequest.RequestType</a></li>
-      </ul>
-    </li>
               
               
             </ul><br/>
@@ -321,25 +320,19 @@ type="text/css">
 
 Summary:
 
-  <a href="#nestedclasses">Nested Classes</a>
+
+
+
+
+
+  <a href="#inhconstants">Inherited Constants</a>
   
 
 
 
 
-
-  &#124; <a href="#constants">Constants</a>
+  &#124; <a href="#pubctors">Ctors</a>
   
-
-
-  &#124; <a href="#inhconstants">Inherited Constants</a>
-  
-
-
-  &#124; <a href="#lfields">Fields</a>
-  
-
-
 
 
 
@@ -355,7 +348,7 @@ Summary:
 </div><!-- end sum-details-links -->
 <div class="api-level">
   
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a>
   
   
 
@@ -368,10 +361,10 @@ Summary:
 <div id="jd-header">
     public
      
-    final 
+     
     
     class
-<h1 itemprop="name">ThemeChangeRequest</h1>
+<h1 itemprop="name">LiveDisplayConfig</h1>
 
 
 
@@ -398,7 +391,7 @@ Summary:
 
 <div id="naMessage"></div>
 
-<div id="jd-content" class="api apilevel-5">
+<div id="jd-content" class="api apilevel-6">
 <table class="jd-inheritance-table">
 
 
@@ -412,7 +405,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.themes.ThemeChangeRequest</td>
+        <td colspan="1" class="jd-inheritance-class-cell">cyanogenmod.hardware.LiveDisplayConfig</td>
     </tr>
     
 
@@ -426,6 +419,13 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p itemprop="articleBody">Holder class for LiveDisplay static configuration.
+
+ This class holds various defaults and hardware capabilities
+ which are involved with LiveDisplay.
+</p>
 
 
 
@@ -455,45 +455,6 @@ Summary:
 
 
 
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
-
-
-  
-    <tr class="alt-color api apilevel-5" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        class</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.Builder.html">ThemeChangeRequest.Builder</a></td>
-      <td class="jd-descrcol" width="100%">
-        &nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
-    <tr class=" api apilevel-5" >
-      <td class="jd-typecol"><nobr>
-        
-         
-         
-        
-        enum</nobr></td>
-      <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.RequestType.html">ThemeChangeRequest.RequestType</a></td>
-      <td class="jd-descrcol" width="100%">
-        &nbsp;
-        
-    
-
-      </td>
-    </tr>
-    
-    
 
 
 
@@ -502,30 +463,6 @@ Summary:
 
 
 
-
-
-
-
-
-<!-- =========== ENUM CONSTANT SUMMARY =========== -->
-<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
-
-
-    
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol">int</td>
-        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#DEFAULT_WALLPAPER_ID">DEFAULT_WALLPAPER_ID</a></td>
-        <td class="jd-descrcol" width="100%">
-          
-          
-    
-
-        </td>
-    </tr>
-    
-    
-
-</table>
 
 
 
@@ -591,34 +528,34 @@ android.os.Parcelable
 
 
 
-<!-- =========== FIELD SUMMARY =========== -->
-<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
 
 
-    
-      <tr class="alt-color api apilevel-5" >
-          <td class="jd-typecol"><nobr>
-          public
-          static
-          final
-          Creator&lt;<a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html">ThemeChangeRequest</a>&gt;</nobr></td>
-          <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#CREATOR">CREATOR</a></td>
-          <td class="jd-descrcol" width="100%">
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
             
             
-    
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>)">LiveDisplayConfig</a></span>(BitSet capabilities, int defaultMode, int defaultDayTemperature, int defaultNightTemperature, boolean defaultAutoOutdoorMode, boolean defaultAutoContrast, boolean defaultCABC, boolean defaultColorEnhancement, Range&lt;Integer&gt; colorTemperatureRange, Range&lt;Integer&gt; colorBalanceRange, Range&lt;Float&gt; hueRange, Range&lt;Float&gt; saturationRange, Range&lt;Float&gt; intensityRange, Range&lt;Float&gt; contrastRange, Range&lt;Float&gt; saturationThresholdRange)</nobr>
+        
+  </td></tr>
 
-          </td>
-      </tr>
-      
-    
+
 
 </table>
-
-
-
-
-
 
 
 
@@ -631,7 +568,7 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
@@ -641,186 +578,26 @@ android.os.Parcelable
             int</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#describeContents()">describeContents</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#describeContents()">describeContents</a></span>()</nobr>
         
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class=" api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            String</nobr>
+            Range&lt;Integer&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getAlarmThemePackageName()">getAlarmThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getBootanimationThemePackageName()">getBootanimationThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getFontThemePackageName()">getFontThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getIconsThemePackageName()">getIconsThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getLiveLockScreenThemePackageName()">getLiveLockScreenThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getLockWallpaperThemePackageName()">getLockWallpaperThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getNavBarThemePackageName()">getNavBarThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getNotificationThemePackageName()">getNotificationThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            int</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getNumChangesRequested()">getNumChangesRequested</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getOverlayThemePackageName()">getOverlayThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            Map&lt;String,&nbsp;String&gt;</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getPerAppOverlays()">getPerAppOverlays</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getColorBalanceRange()">getColorBalanceRange</a></span>()</nobr>
         
         <div class="jd-descrdiv">
-          Get the mapping for per app themes
+          Get the range of supported color balance
           
     
 
@@ -830,23 +607,399 @@ android.os.Parcelable
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
             
             
             
-            <a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.RequestType.html">ThemeChangeRequest.RequestType</a></nobr>
+            Range&lt;Integer&gt;</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getReqeustType()">getReqeustType</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getColorTemperatureRange()">getColorTemperatureRange</a></span>()</nobr>
         
+        <div class="jd-descrdiv">
+          Get the range of supported color temperatures
+          
+    
+
+        </div>
+  
   </td></tr>
 
 
 	 
-    <tr class=" api apilevel-5" >
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Float&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getContrastRange()">getContrastRange</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the supported range for contrast adjustment
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultAutoContrast()">getDefaultAutoContrast</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the default value for auto contrast
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultAutoOutdoorMode()">getDefaultAutoOutdoorMode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the default value for automatic outdoor mode
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultCABC()">getDefaultCABC</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the default value for CABC
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultColorEnhancement()">getDefaultColorEnhancement</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the default value for color enhancement
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultDayTemperature()">getDefaultDayTemperature</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the default color temperature to use in the daytime.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultMode()">getDefaultMode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the default adaptive mode.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getDefaultNightTemperature()">getDefaultNightTemperature</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Gets the default color temperature to use at night.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Float&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getHueRange()">getHueRange</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the supported range for hue adjustment
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Float&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getIntensityRange()">getIntensityRange</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the supported range for intensity adjustment
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Range&lt;Float&gt;&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getPictureAdjustmentRanges()">getPictureAdjustmentRanges</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Convenience method to get a list of all picture adjustment ranges
+ with a single call.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Float&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getSaturationRange()">getSaturationRange</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the supported range for saturation adjustment
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Range&lt;Float&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#getSaturationThresholdRange()">getSaturationThresholdRange</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Get the supported range for saturation threshold adjustment
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#hasFeature(int)">hasFeature</a></span>(int feature)</nobr>
+        
+        <div class="jd-descrdiv">
+          Checks if a particular feature or mode is supported by the system.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#hasModeSupport()">hasModeSupport</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Checks if LiveDisplay has support for adaptive modes.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-6" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#isAvailable()">isAvailable</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">
+          Checks if LiveDisplay is available for use on this device.
+          
+    
+
+        </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
         <td class="jd-typecol"><nobr>
             
             
@@ -856,77 +1009,13 @@ android.os.Parcelable
             String</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getRingtoneThemePackageName()">getRingtoneThemePackageName</a></span>()</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#toString()">toString</a></span>()</nobr>
         
   </td></tr>
 
 
 	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getStatusBarThemePackageName()">getStatusBarThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            final
-            
-            
-            Map&lt;String,&nbsp;String&gt;</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getThemeComponentsMap()">getThemeComponentsMap</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            long</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getWallpaperId()">getWallpaperId</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-5" >
-        <td class="jd-typecol"><nobr>
-            
-            
-            
-            
-            
-            String</nobr>
-        </td>
-        <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#getWallpaperThemePackageName()">getWallpaperThemePackageName</a></span>()</nobr>
-        
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-5" >
+    <tr class="alt-color api apilevel-6" >
         <td class="jd-typecol"><nobr>
             
             
@@ -936,7 +1025,7 @@ android.os.Parcelable
             void</nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel dest, int flags)</nobr>
+        <span class="sympad"><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(Parcel out, int flags)</nobr>
         
   </td></tr>
 
@@ -1238,79 +1327,35 @@ From interface
 <!-- Constants -->
 
 
-<!-- ========= ENUM CONSTANTS DETAIL ======== -->
-<h2>Constants</h2>
-
-
-
-
-<A NAME="DEFAULT_WALLPAPER_ID"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-        static 
-        final 
-        int
-      </span>
-        DEFAULT_WALLPAPER_ID
-    </h4>
-      <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    
-        <div class="jd-tagdata">
-        <span class="jd-tagtitle">Constant Value: </span>
-        <span>
-            
-                -1
-                (0xffffffff)
-            
-        </span>
-        </div>
-    
-    </div>
-</div>
-
-
-
-
 <!-- Fields -->
 
 
-<!-- ========= FIELD DETAIL ======== -->
-<h2>Fields</h2>
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
 
 
 
+<A NAME="LiveDisplayConfig(java.util.BitSet, int, int, int, boolean, boolean, boolean, boolean, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Integer>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>, android.util.Range<java.lang.Float>)"></A>
 
-<A NAME="CREATOR"></A>
-
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
-        static 
-        final 
-        Creator&lt;<a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.html">ThemeChangeRequest</a>&gt;
+         
+         
+         
+         
+        
       </span>
-        CREATOR
+      <span class="sympad">LiveDisplayConfig</span>
+      <span class="normal">(BitSet capabilities, int defaultMode, int defaultDayTemperature, int defaultNightTemperature, boolean defaultAutoOutdoorMode, boolean defaultAutoContrast, boolean defaultCABC, boolean defaultColorEnhancement, Range&lt;Integer&gt; colorTemperatureRange, Range&lt;Integer&gt; colorBalanceRange, Range&lt;Float&gt; hueRange, Range&lt;Float&gt; saturationRange, Range&lt;Float&gt; intensityRange, Range&lt;Float&gt; contrastRange, Range&lt;Float&gt; saturationThresholdRange)</span>
     </h4>
       <div class="api-level">
-        
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a>
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1322,14 +1367,10 @@ From interface
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
-    
     </div>
 </div>
 
 
-
-
-<!-- Public ctors -->
 
 
 
@@ -1347,7 +1388,7 @@ From interface
 
 <A NAME="describeContents()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1362,7 +1403,7 @@ From interface
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1378,9 +1419,9 @@ From interface
 </div>
 
 
-<A NAME="getAlarmThemePackageName()"></A>
+<A NAME="getColorBalanceRange()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1388,14 +1429,14 @@ From interface
          
          
          
-        String
+        Range&lt;Integer&gt;
       </span>
-      <span class="sympad">getAlarmThemePackageName</span>
+      <span class="sympad">getColorBalanceRange</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1405,15 +1446,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the range of supported color balance</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>linear range which maps into the temperature range curve
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getBootanimationThemePackageName()"></A>
+<A NAME="getColorTemperatureRange()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1421,14 +1467,14 @@ From interface
          
          
          
-        String
+        Range&lt;Integer&gt;
       </span>
-      <span class="sympad">getBootanimationThemePackageName</span>
+      <span class="sympad">getColorTemperatureRange</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1438,15 +1484,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the range of supported color temperatures</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>range in Kelvin
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getFontThemePackageName()"></A>
+<A NAME="getContrastRange()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1454,14 +1505,14 @@ From interface
          
          
          
-        String
+        Range&lt;Float&gt;
       </span>
-      <span class="sympad">getFontThemePackageName</span>
+      <span class="sympad">getContrastRange</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1471,15 +1522,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the supported range for contrast adjustment</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>float range
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getIconsThemePackageName()"></A>
+<A NAME="getDefaultAutoContrast()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1487,14 +1543,14 @@ From interface
          
          
          
-        String
+        boolean
       </span>
-      <span class="sympad">getIconsThemePackageName</span>
+      <span class="sympad">getDefaultAutoContrast</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1504,15 +1560,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for auto contrast</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if enabled
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getLiveLockScreenThemePackageName()"></A>
+<A NAME="getDefaultAutoOutdoorMode()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1520,14 +1581,14 @@ From interface
          
          
          
-        String
+        boolean
       </span>
-      <span class="sympad">getLiveLockScreenThemePackageName</span>
+      <span class="sympad">getDefaultAutoOutdoorMode</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1537,15 +1598,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for automatic outdoor mode</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if enabled
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getLockWallpaperThemePackageName()"></A>
+<A NAME="getDefaultCABC()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1553,14 +1619,14 @@ From interface
          
          
          
-        String
+        boolean
       </span>
-      <span class="sympad">getLockWallpaperThemePackageName</span>
+      <span class="sympad">getDefaultCABC</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1570,15 +1636,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for CABC</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if enabled
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getNavBarThemePackageName()"></A>
+<A NAME="getDefaultColorEnhancement()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1586,14 +1657,14 @@ From interface
          
          
          
-        String
+        boolean
       </span>
-      <span class="sympad">getNavBarThemePackageName</span>
+      <span class="sympad">getDefaultColorEnhancement</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1603,48 +1674,20 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default value for color enhancement</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if enabled
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getNotificationThemePackageName()"></A>
+<A NAME="getDefaultDayTemperature()"></A>
 
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getNotificationThemePackageName</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getNumChangesRequested()"></A>
-
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1654,12 +1697,12 @@ From interface
          
         int
       </span>
-      <span class="sympad">getNumChangesRequested</span>
+      <span class="sympad">getDefaultDayTemperature</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1669,76 +1712,12 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getOverlayThemePackageName()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getOverlayThemePackageName</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getPerAppOverlays()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-        final 
-         
-         
-        Map&lt;String,&nbsp;String&gt;
-      </span>
-      <span class="sympad">getPerAppOverlays</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get the mapping for per app themes</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the default color temperature to use in the daytime. This is typically
+ set to 6500K, however this may not be entirely accurate. Use this value for
+ resetting controls to the default.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>A mapping of apps and the theme to apply for each one. or null if none set.
+      <ul class="nolist"><li>the default day temperature in K
 </li></ul>
   </div>
 
@@ -1746,9 +1725,9 @@ From interface
 </div>
 
 
-<A NAME="getReqeustType()"></A>
+<A NAME="getDefaultMode()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1756,14 +1735,14 @@ From interface
          
          
          
-        <a href="../../../reference/cyanogenmod/themes/ThemeChangeRequest.RequestType.html">ThemeChangeRequest.RequestType</a>
+        int
       </span>
-      <span class="sympad">getReqeustType</span>
+      <span class="sympad">getDefaultMode</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 
@@ -1773,15 +1752,365 @@ From interface
     
 
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get the default adaptive mode.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the default mode
+</li></ul>
+  </div>
 
     </div>
 </div>
 
 
-<A NAME="getRingtoneThemePackageName()"></A>
+<A NAME="getDefaultNightTemperature()"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getDefaultNightTemperature</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the default color temperature to use at night. This is typically set
+ to 4500K, but this may not be entirely accurate. Use this value for resetting
+ controls to defaults.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the default night color temperature
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getHueRange()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Range&lt;Float&gt;
+      </span>
+      <span class="sympad">getHueRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the supported range for hue adjustment</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>float range
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getIntensityRange()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Range&lt;Float&gt;
+      </span>
+      <span class="sympad">getIntensityRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the supported range for intensity adjustment</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>float range
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPictureAdjustmentRanges()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Range&lt;Float&gt;&gt;
+      </span>
+      <span class="sympad">getPictureAdjustmentRanges</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Convenience method to get a list of all picture adjustment ranges
+ with a single call.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>List of float ranges
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSaturationRange()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Range&lt;Float&gt;
+      </span>
+      <span class="sympad">getSaturationRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the supported range for saturation adjustment</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>float range
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSaturationThresholdRange()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Range&lt;Float&gt;
+      </span>
+      <span class="sympad">getSaturationThresholdRange</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the supported range for saturation threshold adjustment</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>float range
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="hasFeature(int)"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">hasFeature</span>
+      <span class="normal">(int feature)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if a particular feature or mode is supported by the system.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if capable
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="hasModeSupport()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">hasModeSupport</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if LiveDisplay has support for adaptive modes.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if adaptive modes are available
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isAvailable()"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isAvailable</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if LiveDisplay is available for use on this device.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if any feature is enabled
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="toString()"></A>
+
+<div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1791,144 +2120,11 @@ From interface
          
         String
       </span>
-      <span class="sympad">getRingtoneThemePackageName</span>
+      <span class="sympad">toString</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getStatusBarThemePackageName()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getStatusBarThemePackageName</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getThemeComponentsMap()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-        final 
-         
-         
-        Map&lt;String,&nbsp;String&gt;
-      </span>
-      <span class="sympad">getThemeComponentsMap</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getWallpaperId()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        long
-      </span>
-      <span class="sympad">getWallpaperId</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-    
-
-      
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
-
-    </div>
-</div>
-
-
-<A NAME="getWallpaperThemePackageName()"></A>
-
-<div class="jd-details api apilevel-5"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        String
-      </span>
-      <span class="sympad">getWallpaperThemePackageName</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+        <div></div>
         
   
 
@@ -1946,7 +2142,7 @@ From interface
 
 <A NAME="writeToParcel(android.os.Parcel, int)"></A>
 
-<div class="jd-details api apilevel-5"> 
+<div class="jd-details api apilevel-6"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
@@ -1957,11 +2153,11 @@ From interface
         void
       </span>
       <span class="sympad">writeToParcel</span>
-      <span class="normal">(Parcel dest, int flags)</span>
+      <span class="normal">(Parcel out, int flags)</span>
     </h4>
       <div class="api-level">
         <div>
-  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 5</a></div>
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a></div>
         
   
 

@@ -172,7 +172,7 @@ type="text/css">
         <div id="api-nav-title">CyanogenMod APIs</div>
         </div><!-- end nav header -->
       <script>
-        var SINCE_DATA = [ '1', '2', '3', '4', '5' ];
+        var SINCE_DATA = [ '1', '2', '3', '4', '5', '6' ];
         buildApiLevelSelector();
       </script>
                   
@@ -549,12 +549,40 @@ Summary:
 
  <p>Applications targeting this or a later version will get access to these
  new features!</p>
+ <ul>
  <li>Weather request api to fetch weather data from providers on the device
  <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></code></li>
  <li>Weather provider api to provide weather data to any listener on the device
  <code><a href="../../../reference/cyanogenmod/weatherservice/WeatherProviderService.html">WeatherProviderService</a></code></li>
  <li>Extended capabilities of the KeyguardExternalView
  interfaces to provide immersive and interactive experiences on the lockscreen.
+          
+    
+
+        </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-6" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/cyanogenmod/os/Build.CM_VERSION_CODES.html#FIG">FIG</a></td>
+        <td class="jd-descrcol" width="100%">
+          August 2016: The 6th iteration of the platform sdk for CyanogenMod
+
+ <p>Applications targeting this or a later version will get access to these
+ new features!</p>
+ <ul>
+ <li>Ability to query and color balance ranges from the
+ <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></code>, as well as do picture adjustment</li>
+ <li>Extended capabilities of the LiveDisplay interfaces, now providing
+ <code><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html">LiveDisplayConfig</a></code> and a dedicated
+ <code><a href="../../../reference/cyanogenmod/hardware/LiveDisplayManager.html">LiveDisplayManager</a></code></li>
+ <li>Added new settings, such as LOCKSCREEN_ROTATION and DISPLAY_LOW_POWER
+ to <code><a href="../../../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></code></li>
+ </ul>
+
+ Signing out, Adnan ✌
+
           
     
 
@@ -1073,6 +1101,7 @@ From class
 
  <p>Applications targeting this or a later version will get access to these
  new features!</p>
+ <ul>
  <li>Weather request api to fetch weather data from providers on the device
  <code><a href="../../../reference/cyanogenmod/weather/CMWeatherManager.html">CMWeatherManager</a></code></li>
  <li>Weather provider api to provide weather data to any listener on the device
@@ -1096,6 +1125,63 @@ From class
             
                 5
                 (0x00000005)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FIG"></A>
+
+<div class="jd-details api apilevel-6"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FIG
+    </h4>
+      <div class="api-level">
+        
+  Added in <a href="../../../guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 6</a>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+    
+
+      
+  <div class="jd-tagdata jd-tagdescr"><p>August 2016: The 6th iteration of the platform sdk for CyanogenMod
+
+ <p>Applications targeting this or a later version will get access to these
+ new features!</p>
+ <ul>
+ <li>Ability to query and color balance ranges from the
+ <code><a href="../../../reference/cyanogenmod/hardware/CMHardwareManager.html">CMHardwareManager</a></code>, as well as do picture adjustment</li>
+ <li>Extended capabilities of the LiveDisplay interfaces, now providing
+ <code><a href="../../../reference/cyanogenmod/hardware/LiveDisplayConfig.html">LiveDisplayConfig</a></code> and a dedicated
+ <code><a href="../../../reference/cyanogenmod/hardware/LiveDisplayManager.html">LiveDisplayManager</a></code></li>
+ <li>Added new settings, such as LOCKSCREEN_ROTATION and DISPLAY_LOW_POWER
+ to <code><a href="../../../reference/cyanogenmod/providers/CMSettings.html">CMSettings</a></code></li>
+ </ul>
+
+ Signing out, Adnan ✌
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                6
+                (0x00000006)
             
         </span>
         </div>
