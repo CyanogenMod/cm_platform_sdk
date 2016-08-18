@@ -132,6 +132,7 @@
     <!-- Boot dexopt dialog -->
     <java-symbol type="bool" name="config_bootDexoptHideAppDetails" />
     <java-symbol type="drawable" name="dexopt_brand_logo" />
+    <java-symbol type="drawable" name="dexopt_brand_logo_alternative" />
     <java-symbol type="drawable" name="ic_device_bg" />
     <java-symbol type="drawable" name="ic_device" />
     <java-symbol type="drawable" name="ic_dexopt_obscured" />
@@ -140,6 +141,7 @@
     <java-symbol type="drawable" name="ic_droid" />
     <java-symbol type="layout" name="dexopt_dialog" />
     <java-symbol type="id" name="dexopt_icon" />
+    <java-symbol type="id" name="dexopt_logo_view" />
     <java-symbol type="id" name="dexopt_message" />
     <java-symbol type="id" name="dexopt_message_detail" />
     <java-symbol type="id" name="dexopt_progress" />
