@@ -29,6 +29,7 @@
         android:elevation="8dp">
 
         <ImageView
+            android:id="@+id/dexopt_logo_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/dexopt_bottom_height"

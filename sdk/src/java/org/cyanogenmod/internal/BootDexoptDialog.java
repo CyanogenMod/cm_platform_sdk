@@ -18,11 +18,13 @@ package org.cyanogenmod.internal;
 
 import android.app.Dialog;
 import android.app.IActivityManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -52,7 +54,14 @@ public class BootDexoptDialog extends Dialog {
 
     public static BootDexoptDialog create(Context context, int windowType) {
         final PackageManager pm = context.getPackageManager();
+        final int brandLogo;
         final int theme;
+        if (Settings.Global.getInt(context.getContentResolver(),
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED , 0) == 1) {
+            brandLogo = R.drawable.dexopt_brand_logo_alternative;
+        } else {
+            brandLogo = R.drawable.dexopt_brand_logo;
+        }
         if (pm.hasSystemFeature(PackageManager.FEATURE_TELEVISION)
                 || pm.hasSystemFeature(PackageManager.FEATURE_LEANBACK)) {
             theme = com.android.internal.R.style.Theme_Micro_Dialog_Alert;
@@ -62,10 +71,11 @@ public class BootDexoptDialog extends Dialog {
             theme = com.android.internal.R.style.Theme_Material_Light;
         }
 
-        return new BootDexoptDialog(context, theme, windowType);
+        return new BootDexoptDialog(context, theme, windowType, brandLogo);
     }
 
-    private BootDexoptDialog(Context context, int themeResId, int windowType) {
+    private BootDexoptDialog(Context context, int themeResId, int windowType,
+            int brandLogoResId) {
         super(context, themeResId);
         mHideAppDetails = context.getResources().getBoolean(
                 R.bool.config_bootDexoptHideAppDetails);
@@ -76,6 +86,10 @@ public class BootDexoptDialog extends Dialog {
         }
 
         setContentView(R.layout.dexopt_dialog);
+
+        final ImageView brandLogo = (ImageView) findViewById(R.id.dexopt_logo_view);
+        brandLogo.setImageResource(brandLogoResId);
+
         mMessage = (TextView) findViewById(R.id.dexopt_message);
         mDetailMsg = (TextView) findViewById(R.id.dexopt_message_detail);
         mAppIcon = (ImageView) findViewById(R.id.dexopt_icon);
