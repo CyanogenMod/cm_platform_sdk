@@ -99,7 +99,7 @@
   <string name="live_display_outdoor_summary">Только уличный режим</string>
   <string name="live_display_hint">LiveDisplay поможет снизить зрительное напряжение и улучшить сон. Нажмите здесь, чтобы попробовать!</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">Сторонний экран блокировки</string>
+  <string name="permlab_thirdPartyKeyguard">cторонний экран блокировки</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Приложение сможет работать в качестве небезопасного метода блокировки экрана.</string>
 </resources>
