@@ -160,9 +160,9 @@
   <string name="permdesc_weather_read">Tillater en app å lese av innholdet fra vær leverandøren.</string>
   <string name="permlab_weather_write">oppdatere vær leverandør</string>
   <string name="permdesc_weather_write">Tillater en app å oppdatere innholdet til vær leverandøren.</string>
-  <string name="permlab_weather_bind">binde seg som en vær leverandør tjeneste</string>
-  <string name="permdesc_weather_bind">Tillater en app å bli identifisert som en vær leverandør tjeneste.</string>
-  <string name="permlab_weather_access_mgr">få tilgang til vær-tjeneste</string>
+  <string name="permlab_weather_bind">bind som en værleverandør tjeneste</string>
+  <string name="permdesc_weather_bind">Tillater en app å bli identifisert som en værleverandør tjeneste.</string>
+  <string name="permlab_weather_access_mgr">få tilgang til værtjeneste</string>
   <string name="permdesc_weather_access_mgr">Tillater en app å få tilgang til værtjenesten i systemet. Skal aldri være nødvendig for normale apper.</string>
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">endre databruk databasen</string>
