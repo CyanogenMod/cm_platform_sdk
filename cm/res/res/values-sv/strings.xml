@@ -148,5 +148,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Teman</string>
   <!-- Custom booot dexopt -->
 </resources>

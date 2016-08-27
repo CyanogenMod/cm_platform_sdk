@@ -178,8 +178,17 @@
   <string name="permlab_observe_audio_sessions">παρατήρηση αλλαγών στις συνεδρίες ήχου</string>
   <string name="permdesc_observe_audio_sessions">Επιτρέπει σε μια εφαρμογή να παρατηρεί τις ροές ήχου να δημιουργούνται και να καταστρέφονται.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">διαχείριση αλλαγών στις συνεδρίες ήχου</string>
+  <string name="permdesc_manage_audio_sessions">Επιτρέπει σε μια εφαρμογή να στέλνει ενημερώσεις στη ροή ήχου.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Θέματα</string>
   <string name="qs_themes_content_description">Προσαρμόστε το θέμα σας</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Εκκίνηση εφαρμογών\u2026</string>
+  <string name="android_upgrading_fstrim">Βελτιστοποίηση αποθ. χώρου\u2026</string>
+  <string name="android_upgrading_complete">Προετοιμασία για εκκίνηση\u2026</string>
+  <string name="android_upgrading_complete_details">Η βελτιστοποίηση ολοκληρώθηκε.</string>
+  <string name="android_preparing_apk">Προετοιμασία %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Προετοιμασία εφαρμογών\u2026</string>
+  <string name="android_upgrading_apk">%1$d από %2$d εφαρμογές</string>
 </resources>
