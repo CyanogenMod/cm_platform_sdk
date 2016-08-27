@@ -179,8 +179,17 @@
   <string name="permlab_observe_audio_sessions">audió munkamenet változásainak megfigyelése</string>
   <string name="permdesc_observe_audio_sessions">Lehetővé teszi az alkalmazás számára, hogy megfigyelje ahogy az audió folyamok létrejönnek és elpusztulnak.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">audió munkamenet változások kezelése</string>
+  <string name="permdesc_manage_audio_sessions">Lehetővé teszi az alkalmazás számára, hogy audio stream frissítéseket küldjön.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Témák</string>
   <string name="qs_themes_content_description">Téma testreszabása</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Alkalmazások indítása\u2026</string>
+  <string name="android_upgrading_fstrim">Tároló optimalizálása\u2026</string>
+  <string name="android_upgrading_complete">Felkészülés az indulásra\u2026</string>
+  <string name="android_upgrading_complete_details">Optimalizálás befejezve.</string>
+  <string name="android_preparing_apk">%1$s előkészítése\u2026</string>
+  <string name="android_preparing_apk_obscured">Alkalmazások előkészítése\u2026</string>
+  <string name="android_upgrading_apk">%1$d / %2$d alkalmazás</string>
 </resources>

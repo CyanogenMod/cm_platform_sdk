@@ -184,4 +184,11 @@
   <string name="qs_themes_label">主题</string>
   <string name="qs_themes_content_description">自定义您的主题</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">正在启动应用\u2026</string>
+  <string name="android_upgrading_fstrim">正在优化存储\u2026</string>
+  <string name="android_upgrading_complete">正在准备启动\u2026</string>
+  <string name="android_upgrading_complete_details">优化完成。</string>
+  <string name="android_preparing_apk">正在准备 %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">正在准备应用\u2026</string>
+  <string name="android_upgrading_apk">%2$d 个中的 %1$d 个应用</string>
 </resources>
