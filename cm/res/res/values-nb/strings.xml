@@ -57,7 +57,7 @@
   <string name="permlab_managePersistentStorage">administrere permanent lager</string>
   <string name="permdesc_managePersistentStorage">Gir en app tilgang til å lese eller skrive egenskaper, som kan overleve gjenoppretting av fabrikkinnstillinger.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
-  <string name="permlab_accessAppSuggestions">tilgang app forslag</string>
+  <string name="permlab_accessAppSuggestions">tilgang til app-forslag</string>
   <string name="permdesc_accessAppSuggestions">Tillat en app tilgang til app forslag.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Egendefinerte flis lytter</string>
@@ -160,9 +160,9 @@
   <string name="permdesc_weather_read">Tillater en app å lese av innholdet fra vær leverandøren.</string>
   <string name="permlab_weather_write">oppdatere vær leverandør</string>
   <string name="permdesc_weather_write">Tillater en app å oppdatere innholdet til vær leverandøren.</string>
-  <string name="permlab_weather_bind">binde seg som en vær leverandør tjeneste</string>
-  <string name="permdesc_weather_bind">Tillater en app å bli identifisert som en vær leverandør tjeneste.</string>
-  <string name="permlab_weather_access_mgr">få tilgang til vær-tjeneste</string>
+  <string name="permlab_weather_bind">bind som en værleverandør tjeneste</string>
+  <string name="permdesc_weather_bind">Tillater en app å bli identifisert som en værleverandør tjeneste.</string>
+  <string name="permlab_weather_access_mgr">få tilgang til værtjeneste</string>
   <string name="permdesc_weather_access_mgr">Tillater en app å få tilgang til værtjenesten i systemet. Skal aldri være nødvendig for normale apper.</string>
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">endre databruk databasen</string>
@@ -185,4 +185,11 @@
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpass temaet ditt</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Starter apper\u2026</string>
+  <string name="android_upgrading_fstrim">Optimaliserer lagring\u2026</string>
+  <string name="android_upgrading_complete">Gjør klar til oppstart\u2026</string>
+  <string name="android_upgrading_complete_details">Optimalisering er fullført.</string>
+  <string name="android_preparing_apk">Gjør klar %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Gjør klar apper\u2026</string>
+  <string name="android_upgrading_apk">%1$d av %2$d apper</string>
 </resources>
