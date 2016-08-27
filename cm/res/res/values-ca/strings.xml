@@ -184,4 +184,11 @@
   <string name="qs_themes_label">Temes</string>
   <string name="qs_themes_content_description">Personalitza els teus temes</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">S\'estan iniciant les aplicacions\u2026</string>
+  <string name="android_upgrading_fstrim">S\'està optimitzant l\'emmagatzematge\u2026</string>
+  <string name="android_upgrading_complete">S\'està preparant per a iniciar\u2026</string>
+  <string name="android_upgrading_complete_details">Optimització completada.</string>
+  <string name="android_preparing_apk">S\'està preparant %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">S\'estan preparant les aplicacions\u2026</string>
+  <string name="android_upgrading_apk">%1$d de %2$d aplicacions</string>
 </resources>

@@ -109,7 +109,7 @@
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay переключён в ночной режим.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay переключён в режим «на улице».</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">Сторонний экран блокировки</string>
+  <string name="permlab_thirdPartyKeyguard">cторонний экран блокировки</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Приложение сможет работать в качестве небезопасного метода блокировки экрана.</string>
   <!-- Device specific settings -->
@@ -145,7 +145,7 @@
   <!-- Access live lock screen manager service permission label -->
   <string name="permlab_accessLiveLockScreenService">доступ к управлению живым экраном блокировки</string>
   <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Позволяет приложению получить доступ к управлению живым экраном блокировки.</string>
+  <string name="permdesc_accessLiveLockScreenService">Приложение сможет получать доступ к службе управления живым экраном блокировки.</string>
   <!-- Privileged access live lock screen manager service permission label -->
   <string name="permlab_accessLiveLockScreenServicePrivate">доступ к управлению живым экраном блокировки</string>
   <!-- Privileged access live lock screen manager service permission description -->
@@ -156,30 +156,39 @@
   <string name="permdesc_accessLiveLockScreenServiceProvider">Позволяет службе предоставить доступ к управлению живым экраном блокировки.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">чтение данных о погоде</string>
-  <string name="permdesc_weather_read">Разрешает приложению читать данные от поставщика погоды.</string>
+  <string name="permdesc_weather_read">Приложение сможет считывать данные от поставщика погоды.</string>
   <string name="permlab_weather_write">обновление поставщика погоды</string>
-  <string name="permdesc_weather_write">Разрешает приложению обновлять данные поставщика погоды.</string>
+  <string name="permdesc_weather_write">Приложение сможет обновлять данные поставщика погоды.</string>
   <string name="permlab_weather_bind">привязать как службу поставщика погоды</string>
-  <string name="permdesc_weather_bind">Разрешает, чтобы приложение определялось как служба поставщика погоды.</string>
+  <string name="permdesc_weather_bind">Приложение сможет выступать в качестве службы поставщика погоды.</string>
   <string name="permlab_weather_access_mgr">доступ к службе погоды</string>
   <string name="permdesc_weather_access_mgr">Приложение сможет получать доступ к службе погоды в системе. Это разрешение не используется обычными приложениями.</string>
   <!-- DataUsageProvider write permission title -->
   <string name="permlab_dataUsageWrite">изменить данные об использовании БД</string>
   <!-- DataUsageProvider write permission description -->
-  <string name="permdesc_dataUsageWrite">Разрешает приложению обновлять данные об использовании БД.</string>
+  <string name="permdesc_dataUsageWrite">Приложение сможет обновлять содержимое БД использования данных.</string>
   <!-- DataUsageProvider read permission title -->
   <string name="permlab_dataUsageRead">чтение данных об использовании БД</string>
   <!-- DataUsageProvider read permission description -->
-  <string name="permdesc_dataUsageRead">Разрешает приложению читать данные об использовании БД.</string>
+  <string name="permdesc_dataUsageRead">Приложение сможет считывать содержимое БД использования данных.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">управление настройками LiveDisplay</string>
-  <string name="permdesc_manageLiveDisplay">Разрешает приложению изменять расширенные настройки экрана.</string>
+  <string name="permdesc_manageLiveDisplay">Приложение сможет изменять расширенные настройки экрана.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">просмотр изменений аудиосеансов</string>
   <string name="permdesc_observe_audio_sessions">Приложение сможет просматривать аудиопотоки, которые создаются или уничтожаются.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">управление изменениями аудиосеансов</string>
+  <string name="permdesc_manage_audio_sessions">Приложение сможет изменять параметры аудиопотоков.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Темы</string>
   <string name="qs_themes_content_description">Настройте свою тему</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Запуск приложений\u2026</string>
+  <string name="android_upgrading_fstrim">Оптимизация накопителя\u2026</string>
+  <string name="android_upgrading_complete">Подготовка к запуску\u2026</string>
+  <string name="android_upgrading_complete_details">Оптимизация завершена.</string>
+  <string name="android_preparing_apk">Подготовка %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Подготовка приложений\u2026</string>
+  <string name="android_upgrading_apk">%1$d из %2$d приложений</string>
 </resources>
