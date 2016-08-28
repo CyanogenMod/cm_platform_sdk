@@ -137,4 +137,11 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">テーマ</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">アプリを開始しています\u2026</string>
+  <string name="android_upgrading_fstrim">ストレージを最適化しています\u2026</string>
+  <string name="android_upgrading_complete">開始するための準備をしています\u2026</string>
+  <string name="android_upgrading_complete_details">最適化が完了しました。</string>
+  <string name="android_preparing_apk">%1$sを準備しています\u2026</string>
+  <string name="android_preparing_apk_obscured">アプリを準備しています\u2026</string>
+  <string name="android_upgrading_apk">%2$d個中%1$d個目のアプリ</string>
 </resources>
