@@ -20,6 +20,7 @@ include $(CLEAR_VARS)
 LOCAL_PACKAGE_NAME := org.cyanogenmod.platform-res
 LOCAL_CERTIFICATE := platform
 LOCAL_AAPT_FLAGS := --auto-add-overlay
+LOCAL_AAPT_FLAGS += --private-symbols org.cyanogenmod.platform.internal
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
 # Tell aapt to create "extending (non-application)" resource IDs,

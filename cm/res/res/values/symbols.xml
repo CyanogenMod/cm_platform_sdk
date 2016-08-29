@@ -15,10 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- We don't want to publish private symbols in cyanogenmod.R as part of the
-         SDK.  Instead, put them here. -->
-    <private-symbols package="org.cyanogenmod.platform.internal" />
-
     <java-symbol type="bool" name="config_enableAppSuggestOverlay"/>
     <java-symbol type="string" name="config_appSuggestProviderPackageName"/>
     <java-symbol type="array" name="config_appSuggestProviderPackageNames"/>
