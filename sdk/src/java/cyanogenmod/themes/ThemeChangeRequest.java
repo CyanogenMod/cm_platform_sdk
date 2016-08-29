@@ -15,7 +15,7 @@
  */
 package cyanogenmod.themes;
 
-import android.content.pm.ThemeUtils;
+//import android.content.pm.ThemeUtils;
 import android.content.res.ThemeConfig;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -313,9 +313,11 @@ public final class ThemeChangeRequest implements Parcelable {
             // Check if there are any per-app overlays using this theme
             final Map<String, ThemeConfig.AppTheme> themes = themeConfig.getAppThemes();
             for (String appPkgName : themes.keySet()) {
+                /*
                 if (ThemeUtils.isPerAppThemeComponent(appPkgName)) {
                     this.setAppOverlay(appPkgName, themes.get(appPkgName).getOverlayPkgName());
                 }
+                */
             }
         }
     }

@@ -625,7 +625,8 @@ public abstract class KeyguardExternalViewProviderService extends Service {
         }
 
         /*package*/ final int getWindowType() {
-            return WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL;
+            //return WindowManager.LayoutParams.TYPE_KEYGUARD_PANEL;
+            return 0;
         }
 
         /*package*/ final int getWindowFlags() {

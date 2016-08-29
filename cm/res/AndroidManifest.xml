@@ -46,7 +46,6 @@
                 android:label="@string/permlab_modifyNetworkSettings"
                 android:description="@string/permdesc_modifyNetworkSettings"
                 android:icon="@drawable/ic_launcher_cyanogenmod"
-                androidprv:allowViaWhitelist="true"
                 android:protectionLevel="signature|privileged" />
 
     <!-- Allows an app to make changes to the interruption mode sound settings -->
@@ -185,8 +184,7 @@
     <permission android:name="cyanogenmod.permission.LIVE_LOCK_SCREEN_MANAGER_ACCESS_PRIVATE"
                 android:label="@string/permlab_accessLiveLockScreenServicePrivate"
                 android:description="@string/permdesc_accessLiveLockScreenServicePrivate"
-                android:protectionLevel="signature|privileged"
-                androidprv:allowViaWhitelist="true" />
+                android:protectionLevel="signature|privileged" />
 
     <!-- Permission required to be held for a service that provides a LiveLockScreenManagerService
         @hide -->
@@ -226,8 +224,7 @@
     <permission android:name="cyanogenmod.permission.MANAGE_AUDIO_SESSIONS"
                 android:label="@string/permlab_manage_audio_sessions"
                 android:description="@string/permdesc_manage_audio_sessions"
-                android:protectionLevel="signature|privileged"
-                androidprv:allowViaWhitelist="true" />
+                android:protectionLevel="signature|privileged" />
 
     <!-- Allows an application to access the weather service.
         <p>Although the protection is normal, this permission should be required ONLY by those apps
