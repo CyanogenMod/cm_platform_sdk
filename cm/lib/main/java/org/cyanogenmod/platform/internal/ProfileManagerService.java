@@ -80,7 +80,7 @@ public class ProfileManagerService extends CMSystemService {
     public static final String KEYGUARD_CLASS = "com.android.systemui.keyguard.KeyguardService";
 
     /* package */ static final File PROFILE_FILE =
-            new File(Environment.getSystemSecureDirectory(), "profiles.xml");
+            new File(Environment.getDataSystemDirectory(), "profiles.xml");
 
     private static final int MSG_SEND_PROFILE_STATE = 10;
 
