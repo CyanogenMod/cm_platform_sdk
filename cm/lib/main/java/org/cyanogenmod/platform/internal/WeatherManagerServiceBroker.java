@@ -103,7 +103,7 @@ public class WeatherManagerServiceBroker extends BrokerableCMSystemService<ICMWe
 
     @Override
     protected ICMWeatherManager getDefaultImplementation() {
-        return new ICMWeatherManager.NoOp();
+        return null;
     }
 
     @Override
