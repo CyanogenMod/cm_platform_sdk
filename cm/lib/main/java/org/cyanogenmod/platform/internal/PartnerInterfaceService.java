@@ -212,7 +212,7 @@ public class PartnerInterfaceService extends CMSystemService {
             if (reboot) {
                 pm.reboot(false, null, false);
             } else {
-                pm.shutdown(false, false);
+                pm.shutdown(false, "User requested", false);
             }
         } catch (RemoteException e) {
             Log.d(TAG, "Unable to shutdown.");
