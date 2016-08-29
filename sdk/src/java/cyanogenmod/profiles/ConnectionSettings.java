@@ -22,7 +22,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.net.wifi.WifiManager;
-import android.net.wimax.WimaxHelper;
 import android.nfc.NfcAdapter;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -88,6 +87,7 @@ public final class ConnectionSettings implements Parcelable {
      * The {@link #PROFILE_CONNECTION_WIMAX} allows for enabling and disabling the WIMAX radio (if exists)
      * on the device. Boolean connection settings {@link BooleanState}
      */
+    @Deprecated
     public static final int PROFILE_CONNECTION_WIMAX = 3;
 
     /**
@@ -351,14 +351,6 @@ public final class ConnectionSettings implements Parcelable {
                         wm.setWifiEnabled(false);
                     }
                     wm.setWifiApEnabled(null, forcedState);
-                }
-                break;
-            case PROFILE_CONNECTION_WIMAX:
-                if (WimaxHelper.isWimaxSupported(context)) {
-                    currentState = WimaxHelper.isWimaxEnabled(context);
-                    if (currentState != forcedState) {
-                        WimaxHelper.setWimaxEnabled(context, forcedState);
-                    }
                 }
                 break;
             case PROFILE_CONNECTION_NFC:
