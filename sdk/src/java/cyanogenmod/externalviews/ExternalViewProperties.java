@@ -84,12 +84,12 @@ public class ExternalViewProperties {
         if (mDecorView != null) {
             mDecorView.getHitRect(mHitRect);
         }
-        boolean visible = mView.getLocalVisibleRect(mHitRect);
-        mVisible = visible;
+        boolean wasVisible = mVisible;
+        mVisible = mView.getLocalVisibleRect(mHitRect);
 
         // Check if anything actually changed
         return previousX != newX || previousY != newY
                 || previousWidth != mWidth || previousHeight != mHeight
-                || mVisible != visible;
+                || mVisible != wasVisible;
     }
 }
