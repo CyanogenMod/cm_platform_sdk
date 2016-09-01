@@ -29,7 +29,9 @@
                  android:process="system"
                  android:killAfterRestore="false"
                  android:allowClearUserData="false"
-                 android:enabled="true">
+                 android:enabled="true"
+                 android:defaultToDeviceProtectedStorage="true"
+                 android:directBootAware="true">
 
         <provider android:name="CMSettingsProvider"
                   android:authorities="cmsettings"
