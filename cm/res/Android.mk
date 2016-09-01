@@ -27,7 +27,7 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 # since these resources will be used by many apps.
 
 # 0x3f/one less than app id
-LOCAL_AAPT_FLAGS += -x
+LOCAL_AAPT_FLAGS += -x 63
 
 LOCAL_MODULE_TAGS := optional
 
