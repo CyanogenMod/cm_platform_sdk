@@ -230,9 +230,19 @@ public abstract class KeyguardExternalViewProviderService extends Service {
             @Override
             public void onLockscreenSlideOffsetChanged(final float swipeProgress)
                     throws RemoteException {
+                final int previousFlags = mParams.flags;
+                if (swipeProgress == 0) {
+                    mParams.flags &= ~WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                } else {
+                    mParams.flags |= WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                }
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
+                        if (mWindow.getDecorView().getVisibility() != View.GONE
+                                && previousFlags != mParams.flags) {
+                            mWindowManager.updateViewLayout(mWindow.getDecorView(), mParams);
+                        }
                         Provider.this.onLockscreenSlideOffsetChanged(swipeProgress);
                     }
                 });
@@ -633,7 +643,8 @@ public abstract class KeyguardExternalViewProviderService extends Service {
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
                     WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN |
                     WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN;
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN |
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
         }
     }
 }
