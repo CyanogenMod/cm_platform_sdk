@@ -43,6 +43,7 @@ public class Build {
         sdkMap.put(CM_VERSION_CODES.DRAGON_FRUIT, "Dragon Fruit");
         sdkMap.put(CM_VERSION_CODES.ELDERBERRY, "Elderberry");
         sdkMap.put(CM_VERSION_CODES.FIG, "Fig");
+        sdkMap.put(CM_VERSION_CODES.GUAVA, "Guava");
     }
 
     /** Various version strings. */
@@ -169,6 +170,11 @@ public class Build {
          * Signing out, Adnan \u270C
          */
         public static final int FIG = 6;
+
+        /**
+         * Unreleased preliminary version starting from CM14
+         */
+        public static final int GUAVA = 7;
     }
 
     /**

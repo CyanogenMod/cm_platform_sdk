@@ -199,10 +199,10 @@ cmplat_docs_java_libraries := \
     org.cyanogenmod.platform.sdk
 
 # SDK version as defined
-cmplat_docs_SDK_VERSION := 13.0
+cmplat_docs_SDK_VERSION := 14.0
 
 # release version
-cmplat_docs_SDK_REL_ID := 6
+cmplat_docs_SDK_REL_ID := 7
 
 cmplat_docs_LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
@@ -278,7 +278,8 @@ LOCAL_DROIDDOC_OPTIONS := \
         -since $(CM_SRC_API_DIR)/3.txt 3 \
         -since $(CM_SRC_API_DIR)/4.txt 4 \
         -since $(CM_SRC_API_DIR)/5.txt 5 \
-        -since $(CM_SRC_API_DIR)/6.txt 6
+        -since $(CM_SRC_API_DIR)/6.txt 6 \
+        -since $(CM_SRC_API_DIR)/7.txt 7
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_DROIDDOC)

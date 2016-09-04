@@ -64,7 +64,7 @@ public final class Concierge {
      * {@link CM_VERSION_CODES}
      * @hide
      */
-    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.FIG;
+    public static final int PARCELABLE_VERSION = CM_VERSION_CODES.GUAVA;
 
     /**
      * Tell the concierge to receive our parcel, so we can get information from it.

@@ -674,6 +674,7 @@ package cyanogenmod.os {
     field public static final int DRAGON_FRUIT = 4; // 0x4
     field public static final int ELDERBERRY = 5; // 0x5
     field public static final int FIG = 6; // 0x6
+    field public static final int GUAVA = 7; // 0x7
   }
 
   public final class Concierge {
