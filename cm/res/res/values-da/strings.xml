@@ -184,4 +184,11 @@
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpas dit tema</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Starter apps\u2026</string>
+  <string name="android_upgrading_fstrim">Optimerer lager\u2026</string>
+  <string name="android_upgrading_complete">Forbereder start\u2026</string>
+  <string name="android_upgrading_complete_details">Optimering afsluttet.</string>
+  <string name="android_preparing_apk">Forbereder %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Forbereder apps\u2026</string>
+  <string name="android_upgrading_apk">%1$d af %2$d apps</string>
 </resources>
