@@ -104,10 +104,10 @@
   <string name="accessibility_quick_settings_live_display_night">LiveDisplay: natt modus.</string>
   <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: utendørs modus.</string>
   <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay slått av.</string>
-  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay byttet til automatisk modus.</string>
-  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay byttet til dag modus.</string>
-  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay byttet til natt modus.</string>
-  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay byttet til utendørs modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay endret til automatisk modus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay endret til dagsmodus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay endret til nattmodus.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay endret til utendørs modus.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjeparts låseskjerm</string>
   <!-- Third party keyguard permission description -->
@@ -174,7 +174,7 @@
   <string name="permdesc_dataUsageRead">Tillater en app å lese av innholdet i databruk databasen.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">behandle LiveDisplay innstillinger</string>
-  <string name="permdesc_manageLiveDisplay">Tillater en app å konfigurere avanserte skjerm innstillinger.</string>
+  <string name="permdesc_manageLiveDisplay">Tillater en app å konfigurere avanserte skjerminnstillinger.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">observere lyd-økt endringer</string>
   <string name="permdesc_observe_audio_sessions">Tillater en app å observere om lyd-strømmer blir lagd eller ødelagt.</string>

@@ -124,7 +124,7 @@
   <string name="theme_install_error_title">No ha pogut instal·lar el tema</string>
   <string name="theme_install_error_message">No s\'ha pogut instal·lar <xliff:g id="theme">%1$s</xliff:g></string>
   <!-- Theme reset notification -->
-  <string name="theme_reset_notification_title">Reestableix el tema</string>
+  <string name="theme_reset_notification_title">Restableix el tema</string>
   <string name="theme_reset_notification_message">El tema del sistema s\'ha restaurat degut a múltiples fallades d\'aplicacions.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permlab_accessThemeService">accés al servei de temes</string>
