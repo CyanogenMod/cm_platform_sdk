@@ -144,17 +144,25 @@
   <string name="permdesc_perfAccessDesc">Hiermee kan de app toegang krijgen tot de prestatieservice. Nooit vereist voor normale apps.</string>
   <!-- Access live lock screen manager service permission label -->
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Hiermee kan de app toegang krijgen tot het geanimeerd vergrendelingsschermbeheer.</string>
   <!-- Privileged access live lock screen manager service permission label -->
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Hiermee kunnen systeemapps toegang tot het geanimeerd vergrendelingsschermbeheer.</string>
   <!-- Live lock screen manager service provider permission label -->
   <!-- Live lock screen manager service provider permission description -->
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">weer lezen</string>
+  <string name="permdesc_weather_read">Hiermee kan de app de inhoud van de weeraanbieder lezen.</string>
+  <string name="permdesc_weather_write">Hiermee kan de app de inhoud van de weeraanbieder vernieuwen.</string>
+  <string name="permdesc_weather_bind">Hiermee kan de app zich identificeren als weeraanbiederservice.</string>
   <string name="permlab_weather_access_mgr">toegang tot weerservice</string>
+  <string name="permdesc_weather_access_mgr">Hiermee kan de app toegang krijgen tot de weerservice van het systeem. Nooit vereist voor normale apps.</string>
   <!-- DataUsageProvider write permission title -->
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Hiermee kan de app de inhoud van de database met gegevensgebruik bijwerken.</string>
   <!-- DataUsageProvider read permission title -->
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Hiermee kan de app de inhoud van de database met gegevensgebruik lezen.</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplay-instellingen beheren</string>
   <string name="permdesc_manageLiveDisplay">Hiermee kan de app geavanceerde beeldscherminstellingen wijzigen.</string>
