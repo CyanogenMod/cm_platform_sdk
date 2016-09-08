@@ -136,12 +136,14 @@ public class CMPartnerInterfaceTest extends AndroidTestCase {
         mNotificationManager = INotificationManager.Stub.asInterface(
                 ServiceManager.getService(Context.NOTIFICATION_SERVICE));
 
+        /*
         mConditionListener = new CountdownConditionListener();
         try {
             mNotificationManager.requestZenModeConditions(mConditionListener, Condition.FLAG_RELEVANT_ALWAYS);
         } catch (RemoteException e) {
             fail("requestZenModeConditions exception " + e);
         }
+        */
     }
 
     private void teardownZenModeTests() {
