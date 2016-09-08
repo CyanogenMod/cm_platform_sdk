@@ -36,7 +36,7 @@ public class CMTelephonyTest extends TestActivity {
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
                     Toast.makeText(CMTelephonyTest.this, "Test default sub active "
                                     + cmTelephonyManager.isSubActive(
-                                    SubscriptionManager.getDefaultSubId()),
+                                    SubscriptionManager.getDefaultSubscriptionId()),
                             Toast.LENGTH_SHORT).show();
                 }
             },
@@ -44,7 +44,7 @@ public class CMTelephonyTest extends TestActivity {
                 public void run() {
                     CMTelephonyManager cmTelephonyManager =
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
-                    cmTelephonyManager.setSubState(SubscriptionManager.getDefaultSubId(), true);
+                    cmTelephonyManager.setSubState(SubscriptionManager.getDefaultSubscriptionId(), true);
                 }
             },
             new Test("test is data enabled on default sub") {
@@ -53,7 +53,7 @@ public class CMTelephonyTest extends TestActivity {
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
                     Toast.makeText(CMTelephonyTest.this, "Test default sub data "
                                     + cmTelephonyManager.isDataConnectionSelectedOnSub(
-                                    SubscriptionManager.getDefaultSubId()),
+                                    SubscriptionManager.getDefaultSubscriptionId()),
                             Toast.LENGTH_SHORT).show();
                 }
             },
@@ -78,7 +78,7 @@ public class CMTelephonyTest extends TestActivity {
                     CMTelephonyManager cmTelephonyManager =
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
                     cmTelephonyManager.setDataConnectionSelectedOnSub(
-                            SubscriptionManager.getDefaultSubId());
+                            SubscriptionManager.getDefaultSubscriptionId());
                 }
             },
             new Test("test setDefaultPhoneSub") {
@@ -86,7 +86,7 @@ public class CMTelephonyTest extends TestActivity {
                     CMTelephonyManager cmTelephonyManager =
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
                     cmTelephonyManager.setDefaultPhoneSub(
-                            SubscriptionManager.getDefaultSubId());
+                            SubscriptionManager.getDefaultSubscriptionId());
                 }
             },
             new Test("test setDefaultSmsSub") {
@@ -94,7 +94,7 @@ public class CMTelephonyTest extends TestActivity {
                     CMTelephonyManager cmTelephonyManager =
                             CMTelephonyManager.getInstance(CMTelephonyTest.this);
                     cmTelephonyManager.setDefaultSmsSub(
-                            SubscriptionManager.getDefaultSubId());
+                            SubscriptionManager.getDefaultSubscriptionId());
                 }
             },
     };
