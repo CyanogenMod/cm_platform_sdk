@@ -780,6 +780,46 @@ package cyanogenmod.power {
 
 }
 
+package cyanogenmod.preference {
+
+  public class CMGlobalSettingSwitchPreference extends SwitchPreference {
+    ctor public CMGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public CMGlobalSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
+  public class CMSecureSettingSwitchPreference extends SwitchPreference {
+    ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public CMSecureSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
+  public class CMSystemSettingSwitchPreference extends SwitchPreference {
+    ctor public CMSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public CMSystemSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
+  public class SystemSettingSwitchPreference extends SwitchPreference {
+    ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SystemSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
+}
+
 package cyanogenmod.profiles {
 
   public final class AirplaneModeSettings implements android.os.Parcelable {

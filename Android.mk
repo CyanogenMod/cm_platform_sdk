@@ -24,7 +24,7 @@ LOCAL_PATH := $(call my-dir)
 cm_platform_res := APPS/org.cyanogenmod.platform-res_intermediates/src
 
 # List of packages used in cm-api-stubs
-cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.externalviews:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.themes:cyanogenmod.util:cyanogenmod.weather:cyanogenmod.weatherservice
+cm_stub_packages := cyanogenmod.alarmclock:cyanogenmod.app:cyanogenmod.content:cyanogenmod.externalviews:cyanogenmod.hardware:cyanogenmod.media:cyanogenmod.os:cyanogenmod.preference:cyanogenmod.profiles:cyanogenmod.providers:cyanogenmod.platform:cyanogenmod.power:cyanogenmod.themes:cyanogenmod.util:cyanogenmod.weather:cyanogenmod.weatherservice
 
 # The CyanogenMod Platform Framework Library
 # ============================================================
@@ -37,9 +37,14 @@ library_src := cm/lib/main/java
 LOCAL_MODULE := org.cyanogenmod.platform
 LOCAL_MODULE_TAGS := optional
 
+cmsdk_LOCAL_JAVA_LIBRARIES := \
+    android-support-v7-preference \
+    android-support-v14-preference
+
 LOCAL_JAVA_LIBRARIES := \
     services \
-    org.cyanogenmod.hardware
+    org.cyanogenmod.hardware \
+    $(cmsdk_LOCAL_JAVA_LIBRARIES)
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, $(cyanogenmod_sdk_src)) \
@@ -124,6 +129,9 @@ cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
 LOCAL_INTERMEDIATE_SOURCES := \
     $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
 
+LOCAL_JAVA_LIBRARIES := \
+    $(cmsdk_LOCAL_JAVA_LIBRARIES)
+
 # Make sure that R.java and Manifest.java are built before we build
 # the source for this library.
 cm_framework_res_R_stamp := \
@@ -184,6 +192,9 @@ cmsdk_LOCAL_INTERMEDIATE_SOURCES := \
 
 LOCAL_INTERMEDIATE_SOURCES := \
     $(cmsdk_LOCAL_INTERMEDIATE_SOURCES)
+
+LOCAL_JAVA_LIBRARIES := \
+    $(cmsdk_LOCAL_JAVA_LIBRARIES)
 
 $(full_target): $(cm_framework_built) $(gen)
 include $(BUILD_STATIC_JAVA_LIBRARY)
