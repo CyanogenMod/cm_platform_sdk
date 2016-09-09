@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.internal.statusbar;
+package cyanogenmod.app;
 
 import cyanogenmod.app.StatusBarPanelCustomTile;
 

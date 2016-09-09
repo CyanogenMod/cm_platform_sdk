@@ -16,9 +16,8 @@
 
 package cyanogenmod.app;
 
+import cyanogenmod.app.IStatusBarCustomTileHolder;
 import cyanogenmod.app.StatusBarPanelCustomTile;
-
-import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
 
 /** @hide */
 oneway interface ICustomTileListener

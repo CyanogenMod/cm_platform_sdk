@@ -40,15 +40,16 @@ import android.util.Log;
 import android.util.Slog;
 
 import com.android.server.SystemService;
+
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CustomTile;
 import cyanogenmod.app.CustomTileListenerService;
 import cyanogenmod.app.StatusBarPanelCustomTile;
 import cyanogenmod.app.ICustomTileListener;
 import cyanogenmod.app.ICMStatusBarManager;
+import cyanogenmod.app.IStatusBarCustomTileHolder;
 
 import org.cyanogenmod.internal.statusbar.ExternalQuickSettingsRecord;
-import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
 
 import java.util.ArrayList;
 
