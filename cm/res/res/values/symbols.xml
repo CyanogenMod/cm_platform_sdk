@@ -48,6 +48,7 @@
 
     <!-- LiveDisplay -->
     <java-symbol type="string" name="live_display_title" />
+    <java-symbol type="string" name="live_display_summary" />
     <java-symbol type="string" name="live_display_hint" />
     <java-symbol type="string" name="live_display_auto" />
     <java-symbol type="string" name="live_display_auto_summary" />

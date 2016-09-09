@@ -109,6 +109,7 @@
 
     <!-- LiveDisplay strings -->
     <string name="live_display_title" translatable="false">LiveDisplay</string>
+    <string name="live_display_summary">Optimize your screen based on time of day and ambient conditions to improve readability and reduce eyestrain</string>
     <string name="live_display_auto">Automatic</string>
     <string name="live_display_auto_summary">Automatically adjust color temperature of screen after sunset and sunrise</string>
     <string name="live_display_off">Off</string>
