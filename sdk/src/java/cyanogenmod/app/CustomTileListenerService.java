@@ -27,9 +27,8 @@ import android.os.ServiceManager;
 import android.util.Log;
 
 import cyanogenmod.app.ICustomTileListener;
+import cyanogenmod.app.IStatusBarCustomTileHolder;
 import cyanogenmod.app.ICMStatusBarManager;
-
-import org.cyanogenmod.internal.statusbar.IStatusBarCustomTileHolder;
 
 /**
  * A service that receives calls from the system when new custom tiles are
