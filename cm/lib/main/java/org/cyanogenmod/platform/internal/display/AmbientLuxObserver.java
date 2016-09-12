@@ -118,6 +118,7 @@ public class AmbientLuxObserver {
                         // check again in case we didn't get any
                         // more readings because the sensor settled
                         if (mRingBuffer.size() > 1) {
+                            removeMessages(MSG_TRANSITION);
                             sendEmptyMessageDelayed(MSG_TRANSITION, mThresholdDuration / 2);
                         }
                         break;
