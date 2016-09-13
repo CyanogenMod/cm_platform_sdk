@@ -15,11 +15,6 @@
  */
 package org.cyanogenmod.platform.internal.display;
 
-import static org.cyanogenmod.platform.internal.display.LiveDisplayService.ALL_CHANGED;
-import static org.cyanogenmod.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
-import static org.cyanogenmod.platform.internal.display.LiveDisplayService.MODE_CHANGED;
-import static org.cyanogenmod.platform.internal.display.LiveDisplayService.TWILIGHT_CHANGED;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
@@ -27,15 +22,19 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.util.Log;
 
-import com.android.server.twilight.TwilightState;
-
 import org.cyanogenmod.platform.internal.common.UserContentObserver;
 import org.cyanogenmod.platform.internal.display.LiveDisplayService.State;
+import org.cyanogenmod.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.PrintWriter;
 import java.util.BitSet;
 
 import cyanogenmod.providers.CMSettings;
+
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.ALL_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.DISPLAY_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.MODE_CHANGED;
+import static org.cyanogenmod.platform.internal.display.LiveDisplayService.TWILIGHT_CHANGED;
 
 public abstract class LiveDisplayFeature {
 

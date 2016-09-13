@@ -15,13 +15,6 @@
  */
 package org.cyanogenmod.platform.internal.display;
 
-import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MODE;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
-import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -45,15 +38,14 @@ import android.view.Display;
 import com.android.internal.util.ArrayUtils;
 import com.android.server.LocalServices;
 import com.android.server.ServiceThread;
-import com.android.server.twilight.TwilightListener;
-import com.android.server.twilight.TwilightManager;
-import com.android.server.twilight.TwilightState;
 
 import org.cyanogenmod.internal.util.QSConstants;
 import org.cyanogenmod.internal.util.QSUtils;
-import org.cyanogenmod.platform.internal.common.UserContentObserver;
 import org.cyanogenmod.platform.internal.CMSystemService;
 import org.cyanogenmod.platform.internal.R;
+import org.cyanogenmod.platform.internal.common.UserContentObserver;
+import org.cyanogenmod.platform.internal.display.TwilightTracker.TwilightListener;
+import org.cyanogenmod.platform.internal.display.TwilightTracker.TwilightState;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -69,6 +61,13 @@ import cyanogenmod.hardware.HSIC;
 import cyanogenmod.hardware.ILiveDisplayService;
 import cyanogenmod.hardware.LiveDisplayConfig;
 import cyanogenmod.providers.CMSettings;
+
+import static cyanogenmod.hardware.LiveDisplayManager.FEATURE_MANAGED_OUTDOOR_MODE;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_DAY;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_FIRST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_LAST;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_OFF;
+import static cyanogenmod.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 /**
  * LiveDisplay is an advanced set of features for improving
@@ -89,7 +88,7 @@ public class LiveDisplayService extends CMSystemService {
 
     private DisplayManager mDisplayManager;
     private ModeObserver mModeObserver;
-    private TwilightManager mTwilightManager;
+    private final TwilightTracker mTwilightTracker;
 
     private boolean mAwaitingNudge = true;
     private boolean mSunset = false;
@@ -143,6 +142,8 @@ public class LiveDisplayService extends CMSystemService {
                 Process.THREAD_PRIORITY_DEFAULT, false /*allowIo*/);
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper());
+
+        mTwilightTracker = new TwilightTracker(context);
 
         updateCustomTileEntries();
     }
@@ -213,11 +214,8 @@ public class LiveDisplayService extends CMSystemService {
             pmi.registerLowPowerModeObserver(mLowPowerModeListener);
             mState.mLowPowerMode = pmi.getLowPowerModeEnabled();
 
-            mTwilightManager = LocalServices.getService(TwilightManager.class);
-            if (mTwilightManager != null) {
-                mTwilightManager.registerListener(mTwilightListener, mHandler);
-                mState.mTwilight = mTwilightManager.getCurrentState();
-            }
+            mTwilightTracker.registerListener(mTwilightListener, mHandler);
+            mState.mTwilight = mTwilightTracker.getCurrentState();
 
             if (mConfig.hasModeSupport()) {
                 mModeObserver = new ModeObserver(mHandler);
@@ -586,7 +584,7 @@ public class LiveDisplayService extends CMSystemService {
     private final TwilightListener mTwilightListener = new TwilightListener() {
         @Override
         public void onTwilightStateChanged() {
-            mState.mTwilight = mTwilightManager.getCurrentState();
+            mState.mTwilight = mTwilightTracker.getCurrentState();
             updateFeatures(TWILIGHT_CHANGED);
             nudge();
         }
@@ -631,7 +629,7 @@ public class LiveDisplayService extends CMSystemService {
      * @param state
      */
     private void nudge() {
-        final TwilightState twilight = mTwilightManager.getCurrentState();
+        final TwilightState twilight = mTwilightTracker.getCurrentState();
         if (!mAwaitingNudge || twilight == null) {
             return;
         }
