@@ -26,6 +26,7 @@
     <protected-broadcast android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
     <protected-broadcast android:name="cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED"
                          android:permission="cyanogenmod.permission.MANAGE_AUDIO_SESSIONS" />
+    <protected-broadcast android:name="com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED" />
 
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
