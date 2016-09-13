@@ -229,9 +229,4 @@
     <!-- Privacy Guard -->
     <string name="privacy_guard_manager_title">Privacy Guard</string>
 
-    <!-- Notification lights -->
-    <string name="lights_label">Lights</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="notification_light_title">Notification light</string>
-
 </resources>

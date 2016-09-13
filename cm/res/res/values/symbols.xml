@@ -127,7 +127,4 @@
 
     <!-- Settings -->
     <java-symbol type="string" name="privacy_guard_manager_title" />
-    <java-symbol type="string" name="lights_label" />
-    <java-symbol type="string" name="battery_light_title" />
-    <java-symbol type="string" name="notification_light_title" />
 </resources>
