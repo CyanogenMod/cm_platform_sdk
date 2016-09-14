@@ -23,6 +23,7 @@ import android.os.FileUtils;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import android.os.SELinux;
 import android.system.ErrnoException;
 import android.system.Os;
 import android.system.StructStat;
@@ -257,7 +258,10 @@ public class ThemeManagerServiceBroker extends BrokerableCMSystemService<IThemeS
     public void onBootPhase(int phase) {
         if (phase == PHASE_SYSTEM_SERVICES_READY) {
             // create the main theme directory for brokered service
-            createDirIfNotExists(ThemeUtils.SYSTEM_THEME_PATH);
+            if (createDirIfNotExists(ThemeUtils.SYSTEM_THEME_PATH)) {
+                // ensure it has the correct selinux label after creation
+                SELinux.restorecon(ThemeUtils.SYSTEM_THEME_PATH);
+            }
 
             if (shouldMigrateFilePermissions()) {
                 migrateFilePermissions();
@@ -354,13 +358,15 @@ public class ThemeManagerServiceBroker extends BrokerableCMSystemService<IThemeS
         return false;
     }
 
-    private static void createDirIfNotExists(String dirPath) {
+    private static boolean createDirIfNotExists(String dirPath) {
         final File dir = new File(dirPath);
         if (!dir.exists()) {
             if (dir.mkdir()) {
                 FileUtils.setPermissions(dir, FileUtils.S_IRWXU |
                         FileUtils.S_IRWXG| FileUtils.S_IRWXO, -1, -1);
+                return true;
             }
         }
+        return false;
     }
 }
