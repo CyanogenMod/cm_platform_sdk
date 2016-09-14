@@ -791,6 +791,15 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
+  public class CMSecureSettingListPreference extends ListPreference {
+    ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet);
+    method public int getIntValue(int);
+    method protected java.lang.String getPersistedString(java.lang.String);
+    method protected boolean isPersisted();
+    method protected boolean persistString(java.lang.String);
+  }
+
   public class CMSecureSettingSwitchPreference extends SwitchPreference {
     ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
@@ -798,6 +807,15 @@ package cyanogenmod.preference {
     method protected boolean getPersistedBoolean(boolean);
     method protected boolean isPersisted();
     method protected boolean persistBoolean(boolean);
+  }
+
+  public class CMSystemSettingListPreference extends ListPreference {
+    ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet);
+    method public int getIntValue(int);
+    method protected java.lang.String getPersistedString(java.lang.String);
+    method protected boolean isPersisted();
+    method protected boolean persistString(java.lang.String);
   }
 
   public class CMSystemSettingSwitchPreference extends SwitchPreference {
