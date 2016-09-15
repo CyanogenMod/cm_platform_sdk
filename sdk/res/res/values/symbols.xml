@@ -1,0 +1,8 @@
+<resources>
+
+    <java-symbol type="attr" name="requiresPackage" />
+    <java-symbol type="attr" name="requiresFeature" />
+    <java-symbol type="attr" name="requiresConfig" />
+    <java-symbol type="attr" name="requiresProperty" />
+
+</resources>
