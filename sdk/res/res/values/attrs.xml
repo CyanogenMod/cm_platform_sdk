@@ -14,12 +14,19 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:cm="http://schemas.android.com/apk/res/cyanogenmod.platform">
     <declare-styleable name="LiveLockScreen">
         <attr name="settingsActivity" format="string" />
         <attr name="type">
             <flag name="experience" value="1"/>
             <flag name="event" value="2"/>
         </attr>
+    </declare-styleable>
+
+    <declare-styleable name="cm:SelfRemovingPreference">
+        <attr name="requiresPackage" format="string" />
+        <attr name="requiresFeature" format="string" />
+        <attr name="requiresConfig" format="string" />
+        <attr name="requiresProperty" format="string" />
     </declare-styleable>
 </resources>

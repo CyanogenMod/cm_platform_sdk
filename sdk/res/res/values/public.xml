@@ -1,0 +1,12 @@
+<resources>
+
+  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:27 -->
+  <public type="attr" name="requiresPackage" id="0x3f010002" />
+  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:28 -->
+  <public type="attr" name="requiresFeature" id="0x3f010003" />
+  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:29 -->
+  <public type="attr" name="requiresConfig" id="0x3f010004" />
+  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:30 -->
+  <public type="attr" name="requiresProperty" id="0x3f010005" />
+
+</resources>

@@ -19,15 +19,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v7.preference.Preference;
 import android.util.AttributeSet;
+
+import cyanogenmod.preference.SelfRemovingPreference;
 
 import static org.cyanogenmod.internal.cmparts.PartsList.ACTION_PART;
 import static org.cyanogenmod.internal.cmparts.PartsList.ACTION_PART_CHANGED;
 import static org.cyanogenmod.internal.cmparts.PartsList.EXTRA_PART;
 import static org.cyanogenmod.internal.cmparts.PartsList.EXTRA_PART_KEY;
 
-public class CMPartsPreference extends Preference {
+public class CMPartsPreference extends SelfRemovingPreference {
 
     private static final String TAG = "CMPartsPreference";
 
@@ -39,6 +40,10 @@ public class CMPartsPreference extends Preference {
         mPart = PartsList.getPartInfo(context, getKey());
         if (mPart == null) {
             throw new RuntimeException("Part not found: " + getKey());
+        }
+
+        if (!mPart.isAvailable()) {
+            setAvailable(false);
         }
 
         Intent i = new Intent(ACTION_PART);
