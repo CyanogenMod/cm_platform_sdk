@@ -737,6 +737,11 @@ package cyanogenmod.platform {
 
   public static final class R.attr {
     ctor public R.attr();
+    field public static final int autoSummary = 1057030150; // 0x3f010006
+    field public static final int requiresConfig = 1057030148; // 0x3f010004
+    field public static final int requiresFeature = 1057030147; // 0x3f010003
+    field public static final int requiresPackage = 1057030146; // 0x3f010002
+    field public static final int requiresProperty = 1057030149; // 0x3f010005
   }
 
   public static final class R.bool {
@@ -745,6 +750,10 @@ package cyanogenmod.platform {
 
   public static final class R.drawable {
     ctor public R.drawable();
+  }
+
+  public static final class R.id {
+    ctor public R.id();
   }
 
   public static final class R.integer {
@@ -782,7 +791,7 @@ package cyanogenmod.power {
 
 package cyanogenmod.preference {
 
-  public class CMGlobalSettingSwitchPreference extends SwitchPreference {
+  public class CMGlobalSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public CMGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMGlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public CMGlobalSettingSwitchPreference(android.content.Context);
@@ -791,7 +800,7 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
-  public class CMSecureSettingListPreference extends ListPreference {
+  public class CMSecureSettingListPreference extends cyanogenmod.preference.SelfRemovingListPreference {
     ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet);
     method public int getIntValue(int);
@@ -800,7 +809,7 @@ package cyanogenmod.preference {
     method protected boolean persistString(java.lang.String);
   }
 
-  public class CMSecureSettingSwitchPreference extends SwitchPreference {
+  public class CMSecureSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public CMSecureSettingSwitchPreference(android.content.Context);
@@ -809,7 +818,7 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
-  public class CMSystemSettingListPreference extends ListPreference {
+  public class CMSystemSettingListPreference extends cyanogenmod.preference.SelfRemovingListPreference {
     ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet);
     method public int getIntValue(int);
@@ -818,7 +827,7 @@ package cyanogenmod.preference {
     method protected boolean persistString(java.lang.String);
   }
 
-  public class CMSystemSettingSwitchPreference extends SwitchPreference {
+  public class CMSystemSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public CMSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public CMSystemSettingSwitchPreference(android.content.Context);
@@ -827,7 +836,22 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
-  public class SystemSettingSwitchPreference extends SwitchPreference {
+  public class SelfRemovingListPreference extends ListPreference {
+    ctor public SelfRemovingListPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SelfRemovingListPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SelfRemovingListPreference(android.content.Context);
+    method protected void notifyChanged();
+    method protected void onAttachedToHierarchy(PreferenceManager);
+  }
+
+  public class SelfRemovingSwitchPreference extends SwitchPreference {
+    ctor public SelfRemovingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SelfRemovingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SelfRemovingSwitchPreference(android.content.Context);
+    method protected void onAttachedToHierarchy(PreferenceManager);
+  }
+
+  public class SystemSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public SystemSettingSwitchPreference(android.content.Context);

@@ -16,13 +16,13 @@
 package cyanogenmod.preference;
 
 import android.content.Context;
-import android.support.v7.preference.ListPreference;
 import android.util.AttributeSet;
 
 import cyanogenmod.providers.CMSettings;
 
 
-public class CMSecureSettingListPreference extends ListPreference {
+public class CMSecureSettingListPreference extends SelfRemovingListPreference {
+
     public CMSecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }

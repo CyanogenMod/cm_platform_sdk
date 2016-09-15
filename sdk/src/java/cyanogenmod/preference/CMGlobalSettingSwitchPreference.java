@@ -17,12 +17,12 @@
 package cyanogenmod.preference;
 
 import android.content.Context;
-import android.support.v14.preference.SwitchPreference;
 import android.util.AttributeSet;
 
 import cyanogenmod.providers.CMSettings;
 
-public class CMGlobalSettingSwitchPreference extends SwitchPreference {
+public class CMGlobalSettingSwitchPreference extends SelfRemovingSwitchPreference {
+
     public CMGlobalSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
