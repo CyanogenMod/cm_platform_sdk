@@ -16,6 +16,7 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_USE_AAPT2 := true
 
 src_dir := src
 res_dir := res
@@ -27,7 +28,7 @@ LOCAL_PACKAGE_NAME := CMSettingsProvider
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
-LOCAL_STATIC_JAVA_LIBRARIES := \
+LOCAL_STATIC_ANDROID_LIBRARIES := \
     org.cyanogenmod.platform.internal
 
 include $(BUILD_PACKAGE)
