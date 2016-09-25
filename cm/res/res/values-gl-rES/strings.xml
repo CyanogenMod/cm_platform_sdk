@@ -98,6 +98,16 @@
   <string name="live_display_outdoor">Exteriores (iluminado)</string>
   <string name="live_display_outdoor_summary">Utilizar tan só os axustes de exteriores</string>
   <string name="live_display_hint">O modo LiveDisplay pode axudar coa dor de ollos e a conciliar o sono. Preme aquí para probalo!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay desactivado.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: modo día.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: modo noite.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: modo exteriores.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay desactivado.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay mudado ao modo automático.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay mudado ao modo día.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay mudado ao modo noite.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay mudado ao modo exteriores.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">bloqueo de pantalla de terceiros</string>
   <!-- Third party keyguard permission description -->
@@ -105,34 +115,81 @@
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Axustes avanzados</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Xestos</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Extras</string>
   <string name="touchscreen_gesture_haptic_feedback">Resposta háptica</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibrar cando un xesto é detectado</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Non se puido instalar o tema</string>
+  <string name="theme_install_error_message">Non se puido instalar <xliff:g id="theme">%1$s</xliff:g></string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Restabelecer o tema</string>
+  <string name="theme_reset_notification_message">Restableceuse o tema debido a varios fallos da aplicación.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">acceso ao servizo de temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Permitir que unha aplicación acceda aos temas. Non debería ser necesario para aplicacións normais.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">ler a información do seu tema</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Permitir que a aplicación lea os seus temas e 
+       determine cal deles está en uso.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">modificar os seus temas</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Permitir que a aplicación insira novos temas e modifique o que estea en uso.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">acceso ao xestor de rendemento</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Permite que unha aplicación acceda ao servizo de rendemento. Non debería ser necesario para aplicación normais.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">acceder ao administrador de servizos de pantalla animada bloqueada</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Permite a un aplicativo acceder ao servizo de administración de pantalla animada bloqueada.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">acceder ao administrador de servizo de pantalla animada bloqueada</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Permite ás aplicacións do sistema acceder ao servizo de administración de pantalla animada bloqueada.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">fornecer o servizo de administración de pantalla de bloqueo</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Permite a un servizo fornecer o servizo de administración de pantalla animada bloqueada.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">ler o tempo</string>
+  <string name="permdesc_weather_read">Permite que unha aplicación ler o contido desde o fornecedor de clima.</string>
+  <string name="permlab_weather_write">actualizar o fornecedor de clima</string>
+  <string name="permdesc_weather_write">Permite que unha aplicación actualice o contido do fornecedor do clima.</string>
+  <string name="permlab_weather_bind">establecer como un servizo fornecedor de clima</string>
+  <string name="permdesc_weather_bind">Permite que unha aplicación poida ser identificada como un servizo fornecedor de clima.</string>
+  <string name="permlab_weather_access_mgr">acceder ao servizo de clima</string>
+  <string name="permdesc_weather_access_mgr">Permite que unha aplicación acceder ao servizo de clima do sistema. Nunca debería ser necesario para aplicacións normais.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modificar os datos de uso da base de datos</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Permite que unha aplicación poida actualizar os datos do contido da base de datos.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">ler os datos de uso da base de datos</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Permite que unha aplicación poida ler os contidos da base de datos de uso de datos.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">xestionar os axustes de LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Permite que unha aplicación poida configurar os axustes de pantalla avanzados.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">observar os cambios na sesión de son</string>
+  <string name="permdesc_observe_audio_sessions">Permite a unha aplicación observar os fluxos de son que se crean e se destrúen.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">xestionar os trocos da sesión de son</string>
+  <string name="permdesc_manage_audio_sessions">Permite a unha aplicación enviar actualizacións de fluxo de son.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Temas</string>
+  <string name="qs_themes_content_description">Personalice o seu tema</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Iniciando as aplicacións\u2026</string>
+  <string name="android_upgrading_fstrim">Optimizando o almacenamento\u2026</string>
+  <string name="android_upgrading_complete">Preparando para iniciar\u2026</string>
+  <string name="android_upgrading_complete_details">Optimización completada.</string>
+  <string name="android_preparing_apk">Preparando %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Preparando aplicacións\u2026</string>
+  <string name="android_upgrading_apk">%1$d de %2$d aplicacións</string>
 </resources>
