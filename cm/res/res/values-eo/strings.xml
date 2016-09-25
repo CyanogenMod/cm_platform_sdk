@@ -17,7 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
-  <string name="cyanogenmod_system_label">CyanogenMod sistemo</string>
   <string name="permlab_publishCustomTile">Krei propran kahelon en la rapida agordilo</string>
   <string name="permdesc_publishCustomTile">Permesas aplikaĵon publikigi rapidan agordilan kahelon.</string>
   <string name="permlab_bindCustomTileListenerService">ligita al propra kahela aŭskultada servo</string>

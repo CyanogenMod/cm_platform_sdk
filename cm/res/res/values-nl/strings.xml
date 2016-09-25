@@ -143,16 +143,21 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Hiermee kan de app toegang krijgen tot de prestatieservice. Nooit vereist voor normale apps.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">toegang tot geanimeerd vergrendelingsschermbeheer</string>
   <!-- Access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenService">Hiermee kan de app toegang krijgen tot het geanimeerd vergrendelingsschermbeheer.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">toegang tot geanimeerd vergrendelingsschermbeheer</string>
   <!-- Privileged access live lock screen manager service permission description -->
   <string name="permdesc_accessLiveLockScreenServicePrivate">Hiermee kunnen systeemapps toegang tot het geanimeerd vergrendelingsschermbeheer.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">geanimeerd vergrendelingsschermbeheer aanbieden</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Hiermee kan een service het geanimeerd vergrendelingsschermbeheer aanbieden.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">weer lezen</string>
   <string name="permdesc_weather_read">Hiermee kan de app de inhoud van de weeraanbieder lezen.</string>
+  <string name="permlab_weather_write">weeraanbieder vernieuwen</string>
   <string name="permdesc_weather_write">Hiermee kan de app de inhoud van de weeraanbieder vernieuwen.</string>
   <string name="permdesc_weather_bind">Hiermee kan de app zich identificeren als weeraanbiederservice.</string>
   <string name="permlab_weather_access_mgr">toegang tot weerservice</string>
