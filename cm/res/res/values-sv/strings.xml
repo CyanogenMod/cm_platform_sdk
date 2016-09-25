@@ -98,6 +98,10 @@
   <string name="live_display_outdoor">Utomhus (stark sol)</string>
   <string name="live_display_outdoor_summary">Använd endast utomhusläge</string>
   <string name="live_display_hint">LiveDisplay kan minska överansträngning av ögonen och hjälpa dig med nattsömnen. Klicka här för att prova!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay av.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatiskt läge.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: dagläge.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nattläge.</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">tredjepartslåsskärm</string>
   <!-- Third party keyguard permission description -->
@@ -150,4 +154,7 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Teman</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Startar appar\u2026</string>
+  <string name="android_preparing_apk_obscured">Förbereder appar\u2026</string>
+  <string name="android_upgrading_apk">%1$d av %2$d appar</string>
 </resources>

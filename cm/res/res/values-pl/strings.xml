@@ -184,4 +184,9 @@
   <string name="qs_themes_label">Motywy</string>
   <string name="qs_themes_content_description">Dostosuj swój motyw</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Uruchamianie aplikacji\u2026</string>
+  <string name="android_upgrading_complete">Przygotowywanie do uruchomienia\u2026</string>
+  <string name="android_preparing_apk">Przygotowywanie %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Przygotowywanie aplikacji\u2026</string>
+  <string name="android_upgrading_apk">%1$d z %2$d aplikacji</string>
 </resources>
