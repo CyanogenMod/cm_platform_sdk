@@ -4,5 +4,6 @@
     <java-symbol type="attr" name="requiresFeature" />
     <java-symbol type="attr" name="requiresConfig" />
     <java-symbol type="attr" name="requiresProperty" />
+    <java-symbol type="attr" name="requiresOwner" />
 
 </resources>

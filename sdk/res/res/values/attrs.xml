@@ -28,5 +28,6 @@
         <attr name="requiresFeature" format="string" />
         <attr name="requiresConfig" format="string" />
         <attr name="requiresProperty" format="string" />
+        <attr name="requiresOwner" format="boolean" />
     </declare-styleable>
 </resources>

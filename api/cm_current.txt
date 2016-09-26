@@ -739,6 +739,7 @@ package cyanogenmod.platform {
     ctor public R.attr();
     field public static final int requiresConfig = 1057030148; // 0x3f010004
     field public static final int requiresFeature = 1057030147; // 0x3f010003
+    field public static final int requiresOwner = 1057030150; // 0x3f010006
     field public static final int requiresPackage = 1057030146; // 0x3f010002
     field public static final int requiresProperty = 1057030149; // 0x3f010005
   }

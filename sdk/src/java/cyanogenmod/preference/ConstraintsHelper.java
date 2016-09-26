@@ -21,6 +21,7 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.telephony.TelephonyManager;
@@ -99,6 +100,12 @@ public class ConstraintsHelper {
                 R.styleable.cm_SelfRemovingPreference);
 
         try {
+
+            // Check if the current user is an owner
+            boolean rOwner = a.getBoolean(R.styleable.cm_SelfRemovingPreference_requiresOwner, false);
+            if (rOwner && UserHandle.myUserId() != UserHandle.USER_OWNER) {
+                return false;
+            }
 
             // Check if a specific package is installed
             String rPackage = a.getString(R.styleable.cm_SelfRemovingPreference_requiresPackage);

@@ -8,5 +8,7 @@
   <public type="attr" name="requiresConfig" id="0x3f010004" />
   <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:30 -->
   <public type="attr" name="requiresProperty" id="0x3f010005" />
+  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:31 -->
+  <public type="attr" name="requiresOwner" id="0x3f010006" />
 
 </resources>
