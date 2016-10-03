@@ -128,6 +128,39 @@ public class Intent {
             "cyanogenmod.intent.action.THEME_REMOVED";
 
     /**
+     * Broadcast Action:  A theme's resources were cached.  Includes two extra fields,
+     * {@link #EXTRA_THEME_PACKAGE_NAME}, containing the package name of the theme that was
+     * processed, and {@link #EXTRA_THEME_RESULT}, containing the result code.
+     *
+     * <p class="note">This is a protected intent that can only be sent
+     * by the system.</p>
+     *
+     * @hide
+     */
+    public static final String ACTION_THEME_RESOURCES_CACHED =
+            "cyanogenmod.intent.action.THEME_RESOURCES_CACHED";
+
+    /**
+     * Extra for {@link #ACTION_THEME_RESOURCES_CACHED} that provides the return value
+     * from processThemeResources. A value of 0 indicates a successful caching of resources.
+     * Error results are:
+     * {@link android.content.pm.PackageManager#INSTALL_FAILED_THEME_AAPT_ERROR}
+     * {@link android.content.pm.PackageManager#INSTALL_FAILED_THEME_IDMAP_ERROR}
+     * {@link android.content.pm.PackageManager#INSTALL_FAILED_THEME_UNKNOWN_ERROR}
+     *
+     * @hide
+     */
+    public static final String EXTRA_THEME_RESULT = "cyanogenmod.intent.extra.RESULT";
+
+    /**
+     * Extra for {@link #ACTION_THEME_RESOURCES_CACHED} that provides the package name of the
+     * theme that was processed.
+     *
+     * @hide
+     */
+    public static final String EXTRA_THEME_PACKAGE_NAME = "cyanogenmod.intent.extra.PACKAGE_NAME";
+
+    /**
      * Uri scheme used to broadcast the theme's package name when broadcasting
      * {@link Intent#ACTION_THEME_INSTALLED} or
      * {@link Intent#ACTION_THEME_REMOVED}
