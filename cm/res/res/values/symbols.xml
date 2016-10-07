@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources>
+    <java-symbol type="drawable" name="ic_launcher_cyanogenmod" />
+
     <java-symbol type="bool" name="config_enableAppSuggestOverlay"/>
     <java-symbol type="string" name="config_appSuggestProviderPackageName"/>
     <java-symbol type="array" name="config_appSuggestProviderPackageNames"/>

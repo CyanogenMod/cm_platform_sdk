@@ -30,4 +30,11 @@
         <attr name="requiresProperty" format="string" />
         <attr name="requiresOwner" format="boolean" />
     </declare-styleable>
+
+    <!--Settings search providers-->
+    <declare-styleable name="cm:Searchable">
+        <attr name="keywords" format="string" />
+        <attr name="resource" format="reference" />
+    </declare-styleable>
+
 </resources>

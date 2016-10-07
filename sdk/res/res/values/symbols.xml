@@ -6,4 +6,7 @@
     <java-symbol type="attr" name="requiresProperty" />
     <java-symbol type="attr" name="requiresOwner" />
 
+    <java-symbol type="attr" name="resource" />
+    <java-symbol type="attr" name="keywords" />
+
 </resources>

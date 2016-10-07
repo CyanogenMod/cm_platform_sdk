@@ -34,6 +34,11 @@ public class PartInfo implements Parcelable {
 
     private boolean mAvailable = true;
 
+    /* for search provider */
+    private String mKeywords = null;
+
+    private int mResource = 0;
+
     public PartInfo(String name, String title, String summary) {
         mName = name;
         mTitle = title;
@@ -54,6 +59,8 @@ public class PartInfo implements Parcelable {
         mFragmentClass = parcel.readString();
         mIconRes = parcel.readInt();
         mAvailable = parcel.readInt() == 1;
+        mKeywords = parcel.readString();
+        mResource = parcel.readInt();
     }
 
     public String getName() {
@@ -88,6 +95,14 @@ public class PartInfo implements Parcelable {
 
     public void setAvailable(boolean available) { mAvailable = available; }
 
+    public String getKeywords() { return mKeywords; }
+
+    public void setKeywords(String keywords) { mKeywords = keywords; }
+
+    public int getResource() { return mResource; }
+
+    public void setResource(int resource) { mResource = resource; }
+
     public void updateFrom(PartInfo other) {
         if (other == null) {
             return;
@@ -100,12 +115,14 @@ public class PartInfo implements Parcelable {
         setFragmentClass(other.getFragmentClass());
         setIconRes(other.getIconRes());
         setAvailable(other.isAvailable());
+        setKeywords(other.getKeywords());
+        setResource(other.getResource());
     }
 
     @Override
     public String toString() {
-        return String.format("PartInfo=[ name=%s title=%s summary=%s fragment=%s ]",
-                mName, mTitle, mSummary, mFragmentClass);
+        return String.format("PartInfo=[ name=%s title=%s summary=%s fragment=%s xml=%x ]",
+                mName, mTitle, mSummary, mFragmentClass, mResource);
     }
 
     @Override
@@ -123,7 +140,8 @@ public class PartInfo implements Parcelable {
         out.writeString(mFragmentClass);
         out.writeInt(mIconRes);
         out.writeInt(mAvailable ? 1 : 0);
-
+        out.writeString(mKeywords);
+        out.writeInt(mResource);
         parcelInfo.complete();
     }
 
