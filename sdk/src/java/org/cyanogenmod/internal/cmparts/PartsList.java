@@ -15,6 +15,7 @@
  */
 package org.cyanogenmod.internal.cmparts;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -32,6 +33,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static com.android.internal.R.styleable.Preference;
@@ -41,6 +43,8 @@ import static com.android.internal.R.styleable.Preference_key;
 import static com.android.internal.R.styleable.Preference_summary;
 import static com.android.internal.R.styleable.Preference_title;
 
+import static cyanogenmod.platform.R.styleable.cm_Searchable;
+import static cyanogenmod.platform.R.styleable.cm_Searchable_xmlRes;
 
 public class PartsList {
 
@@ -50,9 +54,12 @@ public class PartsList {
     public static final String EXTRA_PART_KEY = "key";
 
     public static final String CMPARTS_PACKAGE = "org.cyanogenmod.cmparts";
+    public static final ComponentName CMPARTS_ACTIVITY = new ComponentName(
+            CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".PartsActivity");
+
     public static final String PARTS_ACTION_PREFIX = CMPARTS_PACKAGE + ".parts";
 
-    private static final Map<String, PartInfo> sParts = new ArrayMap<String, PartInfo>();
+    private static final Map<String, PartInfo> sParts = new ArrayMap<>();
 
     private static final AtomicBoolean sCatalogLoaded = new AtomicBoolean(false);
 
@@ -75,6 +82,15 @@ public class PartsList {
             } catch (PackageManager.NameNotFoundException e) {
                 // no cmparts installed
             }
+        }
+    }
+
+    public static Set<String> getPartsList(Context context) {
+        synchronized (sParts) {
+            if (!sCatalogLoaded.get()) {
+                loadParts(context);
+            }
+            return sParts.keySet();
         }
     }
 
@@ -172,6 +188,10 @@ public class PartsList {
 
                     info.setFragmentClass(sa.getString(Preference_fragment));
                     info.setIconRes(sa.getResourceId(Preference_icon, 0));
+
+                    sa = res.obtainAttributes(attrs, cm_Searchable);
+                    info.setXmlRes(sa.getResourceId(cm_Searchable_xmlRes, 0));
+
                     sa.recycle();
 
                     target.put(key, info);

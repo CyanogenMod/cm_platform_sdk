@@ -30,4 +30,10 @@
         <attr name="requiresProperty" format="string" />
         <attr name="requiresOwner" format="boolean" />
     </declare-styleable>
+
+    <!--Settings search providers-->
+    <declare-styleable name="cm:Searchable">
+        <attr name="xmlRes" format="reference" />
+    </declare-styleable>
+
 </resources>

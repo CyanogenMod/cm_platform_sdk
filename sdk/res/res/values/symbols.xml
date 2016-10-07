@@ -6,4 +6,6 @@
     <java-symbol type="attr" name="requiresProperty" />
     <java-symbol type="attr" name="requiresOwner" />
 
+    <java-symbol type="attr" name="xmlRes" />
+
 </resources>
