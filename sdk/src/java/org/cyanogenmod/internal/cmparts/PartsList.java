@@ -32,6 +32,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static com.android.internal.R.styleable.Preference;
@@ -41,6 +42,8 @@ import static com.android.internal.R.styleable.Preference_key;
 import static com.android.internal.R.styleable.Preference_summary;
 import static com.android.internal.R.styleable.Preference_title;
 
+import static org.cyanogenmod.platform.internal.R.styleable.Preference_keywords;
+import static org.cyanogenmod.platform.internal.R.styleable.Preference_resource;
 
 public class PartsList {
 
@@ -75,6 +78,15 @@ public class PartsList {
             } catch (PackageManager.NameNotFoundException e) {
                 // no cmparts installed
             }
+        }
+    }
+
+    public static Set<String> getPartsList(Context context) {
+        synchronized (sParts) {
+            if (!sCatalogLoaded.get()) {
+                loadParts(context);
+            }
+            return sParts.keySet();
         }
     }
 
@@ -172,6 +184,10 @@ public class PartsList {
 
                     info.setFragmentClass(sa.getString(Preference_fragment));
                     info.setIconRes(sa.getResourceId(Preference_icon, 0));
+
+                    info.setKeywords(sa.getString(Preference_keywords));
+                    info.setResource(sa.getResourceId(Preference_resource, 0));
+
                     sa.recycle();
 
                     target.put(key, info);
