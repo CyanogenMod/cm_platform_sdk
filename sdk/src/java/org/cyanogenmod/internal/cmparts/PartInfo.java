@@ -34,6 +34,11 @@ public class PartInfo implements Parcelable {
 
     private boolean mAvailable = true;
 
+    /* for search provider */
+    private String mKeywords;
+
+    private int mResource;
+
     public PartInfo(String name, String title, String summary) {
         mName = name;
         mTitle = title;
@@ -87,6 +92,14 @@ public class PartInfo implements Parcelable {
     public boolean isAvailable() { return mAvailable; }
 
     public void setAvailable(boolean available) { mAvailable = available; }
+
+    public String getKeywords() { return mKeywords; }
+
+    public void setKeywords(String keywords) { mKeywords = keywords; }
+
+    public int getResource() { return mResource; }
+
+    public void setResource(int resource) { mResource = resource; }
 
     public void updateFrom(PartInfo other) {
         if (other == null) {
