@@ -27,6 +27,7 @@ import cyanogenmod.hardware.HSIC;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.IllegalArgumentException;
+import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
@@ -225,6 +226,26 @@ public final class CMHardwareManager {
         return feature == (getSupportedFeatures() & feature);
     }
 
+    /**
+     * String version for preference constraints
+     *
+     * @hide
+     */
+    public boolean isSupported(String feature) {
+        if (!feature.startsWith("FEATURE_")) {
+            return false;
+        }
+        try {
+            Field f = getClass().getField(feature);
+            if (f != null) {
+                return isSupported((int) f.get(null));
+            }
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            // ignore
+        }
+
+        return false;
+    }
     /**
      * Determine if the given feature is enabled or disabled.
      *
