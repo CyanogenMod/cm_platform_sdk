@@ -29,6 +29,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
+import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.platform.R;
 
 
@@ -115,8 +116,15 @@ public class ConstraintsHelper {
 
             // Check if a system feature is available
             String rFeature = a.getString(R.styleable.cm_SelfRemovingPreference_requiresFeature);
-            if (rFeature != null && !hasSystemFeature(mContext, rFeature)) {
-                return false;
+            if (rFeature != null) {
+                if (rFeature.startsWith("cmhardware:")) {
+                    if (!CMHardwareManager.getInstance(mContext).isSupported(
+                            rFeature.substring("cmhardware:".length()))) {
+                        return false;
+                    }
+                } else if (!hasSystemFeature(mContext, rFeature)) {
+                    return false;
+                }
             }
 
             // Check a boolean system property
