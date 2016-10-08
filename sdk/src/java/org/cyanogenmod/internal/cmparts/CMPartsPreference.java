@@ -23,7 +23,6 @@ import android.util.AttributeSet;
 
 import cyanogenmod.preference.SelfRemovingPreference;
 
-import static org.cyanogenmod.internal.cmparts.PartsList.ACTION_PART;
 import static org.cyanogenmod.internal.cmparts.PartsList.ACTION_PART_CHANGED;
 import static org.cyanogenmod.internal.cmparts.PartsList.EXTRA_PART;
 import static org.cyanogenmod.internal.cmparts.PartsList.EXTRA_PART_KEY;
@@ -46,9 +45,7 @@ public class CMPartsPreference extends SelfRemovingPreference {
             setAvailable(false);
         }
 
-        Intent i = new Intent(ACTION_PART);
-        i.putExtra(EXTRA_PART_KEY, mPart.getName());
-        setIntent(i);
+        setIntent(mPart.getIntentForActivity());
         update();
     }
 

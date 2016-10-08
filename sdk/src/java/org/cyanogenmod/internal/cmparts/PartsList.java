@@ -44,13 +44,13 @@ import static com.android.internal.R.styleable.Preference_title;
 
 public class PartsList {
 
-    public static final String ACTION_PART = "org.cyanogenmod.cmparts.PART";
     public static final String ACTION_PART_CHANGED = "org.cyanogenmod.cmparts.PART_CHANGED";
 
     public static final String EXTRA_PART = "part";
     public static final String EXTRA_PART_KEY = "key";
 
     public static final String CMPARTS_PACKAGE = "org.cyanogenmod.cmparts";
+    public static final String PARTS_ACTION_PREFIX = CMPARTS_PACKAGE + ".parts";
 
     private static final Map<String, PartInfo> sParts = new ArrayMap<String, PartInfo>();
 
