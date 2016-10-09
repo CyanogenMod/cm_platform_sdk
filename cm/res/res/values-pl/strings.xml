@@ -178,8 +178,15 @@
   <string name="permlab_observe_audio_sessions">obserwuj zmiany sesji audio</string>
   <string name="permdesc_observe_audio_sessions">Zezwalaj aplikacji na obserwowanie utworzenia lub zamknięcia strumienia dźwięku.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">zarządza zmianami sesji audio</string>
+  <string name="permdesc_manage_audio_sessions">Pozwala aplikacji na wysyłanie aktualizacji strumienia audio.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Motywy</string>
   <string name="qs_themes_content_description">Dostosuj swój motyw</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Uruchamianie aplikacji\u2026</string>
+  <string name="android_upgrading_complete">Przygotowywanie do uruchomienia\u2026</string>
+  <string name="android_preparing_apk">Przygotowywanie %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Przygotowywanie aplikacji\u2026</string>
+  <string name="android_upgrading_apk">%1$d z %2$d aplikacji</string>
 </resources>
