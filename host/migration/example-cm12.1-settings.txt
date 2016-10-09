@@ -60,6 +60,7 @@ Row: 56 name=camera_wake_screen, type=s, value=0, type=s
 Row: 57 name=volume_wake_screen, type=s, value=0, type=s
 Row: 58 name=volbtn_music_controls, type=s, value=1, type=s
 Row: 59 name=volume_keys_control_ring_stream, type=s, value=1, type=s
+Row: 60 name=stylus_icon_enabled, type=s, value=1, type=s
 Row: 60 name=swap_volume_keys_on_rotation, type=s, value=0, type=s
 Row: 61 name=status_bar_brightness_control, type=s, value=0, type=s
 Row: 62 name=status_bar_notif_count, type=s, value=1, type=s
