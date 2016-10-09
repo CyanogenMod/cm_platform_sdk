@@ -389,6 +389,9 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
             loadBooleanSetting(stmt, CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                     R.bool.def_notification_pulse_custom_enable);
 
+            loadBooleanSetting(stmt, CMSettings.System.STYLUS_ICON_ENABLED,
+                    R.bool.def_stylus_icon_enabled);
+
             loadBooleanSetting(stmt, CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                     R.bool.def_swap_volume_keys_on_rotation);
 

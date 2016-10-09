@@ -74,6 +74,9 @@ public class CMSettingsProviderDefaultsTest extends AndroidTestCase {
                 CMSettings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE,
                 "R.bool.def_notification_pulse_custom_enable"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
+                CMSettings.System.STYLUS_ICON_ENABLED,
+                "R.bool.def_stylus_icon_enabled"));
+        SYSTEM_SETTINGS_DEFAULTS.add(new Setting(
                 CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                 "R.bool.def_swap_volume_keys_on_rotation"));
         SYSTEM_SETTINGS_DEFAULTS.add(new Setting(

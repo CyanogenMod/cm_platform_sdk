@@ -268,6 +268,13 @@ public final class CMSettings {
         public static final String CAMERA_LAUNCH = "camera_launch";
 
         /**
+         * Show icon when stylus is used
+         * The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String STYLUS_ICON_ENABLED = "stylus_icon_enabled";
+
+        /**
          * Swap volume buttons when the screen is rotated
          * 0 - Disabled
          * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
@@ -660,6 +667,7 @@ public final class CMSettings {
                 CMSettings.System.CAMERA_WAKE_SCREEN,
                 CMSettings.System.CAMERA_SLEEP_ON_RELEASE,
                 CMSettings.System.CAMERA_LAUNCH,
+                CMSettings.System.STYLUS_ICON_ENABLED,
                 CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION,
                 CMSettings.System.BATTERY_LIGHT_ENABLED,
                 CMSettings.System.BATTERY_LIGHT_PULSE,
