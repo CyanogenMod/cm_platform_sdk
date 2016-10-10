@@ -42,20 +42,24 @@ import static com.android.internal.R.styleable.Preference_icon;
 import static com.android.internal.R.styleable.Preference_key;
 import static com.android.internal.R.styleable.Preference_summary;
 import static com.android.internal.R.styleable.Preference_title;
-
 import static cyanogenmod.platform.R.styleable.cm_Searchable;
 import static cyanogenmod.platform.R.styleable.cm_Searchable_xmlRes;
 
 public class PartsList {
 
     public static final String ACTION_PART_CHANGED = "org.cyanogenmod.cmparts.PART_CHANGED";
+    public static final String ACTION_REFRESH_PART = "org.cyanogenmod.cmparts.REFRESH_PART";
 
     public static final String EXTRA_PART = "part";
     public static final String EXTRA_PART_KEY = "key";
 
     public static final String CMPARTS_PACKAGE = "org.cyanogenmod.cmparts";
+
     public static final ComponentName CMPARTS_ACTIVITY = new ComponentName(
             CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".PartsActivity");
+
+    public static  final ComponentName CMPARTS_REFRESHER = new ComponentName(
+            CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".PartsRefresher");
 
     public static final String PARTS_ACTION_PREFIX = CMPARTS_PACKAGE + ".parts";
 
