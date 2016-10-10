@@ -26,7 +26,11 @@
     <protected-broadcast android:name="cyanogenmod.intent.action.INITIALIZE_CM_HARDWARE" />
     <protected-broadcast android:name="cyanogenmod.intent.action.ACTION_AUDIO_SESSIONS_CHANGED"
                          android:permission="cyanogenmod.permission.MANAGE_AUDIO_SESSIONS" />
+    <protected-broadcast android:name="cyanogenmod.platform.intent.action.PROFILE_SELECTED" />
     <protected-broadcast android:name="com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED" />
+
+    <protected-broadcast android:name="org.cyanogenmod.settings.REFRESH_SUMMARY" />
+    <protected-broadcast android:name="org.cyanogenmod.cmparts.REFRESH_PART" />
 
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
@@ -274,5 +278,12 @@
                 android:label="@string/permlab_dataUsageWrite"
                 android:description="@string/permdesc_dataUsageWrite"
                 android:protectionLevel="signature|privileged" />
+
+    <!-- Permission for managing remote parts -->
+    <permission android:name="cyanogenmod.permission.MANAGE_PARTS"
+                android:label="@string/permlab_manageParts"
+                android:description="@string/permdesc_manageParts"
+                android:protectionLevel="signature|privileged" />
+
 
 </manifest>

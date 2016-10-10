@@ -15,14 +15,18 @@
  */
 package org.cyanogenmod.internal.cmparts;
 
-import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Objects;
+
 import cyanogenmod.os.Concierge;
 
 public class PartInfo implements Parcelable {
+
+    private static final String TAG = PartInfo.class.getSimpleName();
 
     private final String mName;
 
@@ -82,28 +86,44 @@ public class PartInfo implements Parcelable {
         return mSummary;
     }
 
-    public String getFragmentClass() { return mFragmentClass; }
+    public String getFragmentClass() {
+        return mFragmentClass;
+    }
 
-    public void setFragmentClass(String fragmentClass) { mFragmentClass = fragmentClass; };
+    public void setFragmentClass(String fragmentClass) {
+        mFragmentClass = fragmentClass;
+    }
 
-    public int getIconRes() { return mIconRes; }
+    public int getIconRes() {
+        return mIconRes;
+    }
 
-    public void setIconRes(int iconRes) { mIconRes = iconRes; }
+    public void setIconRes(int iconRes) {
+        mIconRes = iconRes;
+    }
 
-    public boolean isAvailable() { return mAvailable; }
+    public boolean isAvailable() {
+        return mAvailable;
+    }
 
-    public void setAvailable(boolean available) { mAvailable = available; }
+    public void setAvailable(boolean available) {
+        mAvailable = available;
+    }
 
-    public int getXmlRes() { return mXmlRes; }
+    public int getXmlRes() {
+        return mXmlRes;
+    }
 
-    public void setXmlRes(int xmlRes) { mXmlRes = xmlRes; }
+    public void setXmlRes(int xmlRes) {
+        mXmlRes = xmlRes;
+    }
 
-    public void updateFrom(PartInfo other) {
+    public boolean updateFrom(PartInfo other) {
         if (other == null) {
-            return;
+            return false;
         }
-        if (other.getName().equals(getName())) {
-            return;
+        if (other.equals(this)) {
+            return false;
         }
         setTitle(other.getTitle());
         setSummary(other.getSummary());
@@ -111,6 +131,7 @@ public class PartInfo implements Parcelable {
         setIconRes(other.getIconRes());
         setAvailable(other.isAvailable());
         setXmlRes(other.getXmlRes());
+        return true;
     }
 
     @Override
@@ -138,6 +159,22 @@ public class PartInfo implements Parcelable {
         parcelInfo.complete();
     }
 
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+        if (getClass() != other.getClass()) {
+            return false;
+        }
+        PartInfo o = (PartInfo) other;
+        return Objects.equals(mName, o.mName) && Objects.equals(mTitle, o.mTitle) &&
+                Objects.equals(mSummary, o.mSummary) && Objects.equals(mFragmentClass, o.mFragmentClass) &&
+                Objects.equals(mIconRes, o.mIconRes) && Objects.equals(mAvailable, o.mAvailable) &&
+                Objects.equals(mXmlRes, o.mXmlRes);
+    }
+
     public String getAction() {
         return PartsList.PARTS_ACTION_PREFIX + "." + mName;
     }
@@ -148,16 +185,28 @@ public class PartInfo implements Parcelable {
         return i;
     }
 
-    public static final Parcelable.Creator<PartInfo> CREATOR =
-            new Parcelable.Creator<PartInfo>() {
-                @Override
-                public PartInfo createFromParcel(Parcel in) {
-                    return new PartInfo(in);
-                }
+    public interface RemotePart {
+        public void onRefresh(Context context, PartInfo info);
+    }
 
-                @Override
-                public PartInfo[] newArray(int size) {
-                    return new PartInfo[size];
-                }
-            };
+    public void registerRemote(Context context, final RemotePart remote) {
+        PartsList.get(context).registerRemotePart(mName, remote);
+    }
+
+    public void unregisterRemote(Context context, final RemotePart remote) {
+        PartsList.get(context).unregisterRemotePart(mName, remote);
+    }
+
+    public static final Parcelable.Creator<PartInfo> CREATOR = new Parcelable.Creator<PartInfo>() {
+        @Override
+        public PartInfo createFromParcel(Parcel in) {
+            return new PartInfo(in);
+        }
+
+        @Override
+        public PartInfo[] newArray(int size) {
+            return new PartInfo[size];
+        }
+    };
 }
+

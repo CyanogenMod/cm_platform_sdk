@@ -15,14 +15,22 @@
  */
 package org.cyanogenmod.internal.cmparts;
 
+import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
+import android.os.Bundle;
+import android.os.UserHandle;
 import android.util.ArrayMap;
+import android.util.ArraySet;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
 
@@ -34,7 +42,8 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
+
+import cyanogenmod.platform.Manifest;
 
 import static com.android.internal.R.styleable.Preference;
 import static com.android.internal.R.styleable.Preference_fragment;
@@ -42,34 +51,58 @@ import static com.android.internal.R.styleable.Preference_icon;
 import static com.android.internal.R.styleable.Preference_key;
 import static com.android.internal.R.styleable.Preference_summary;
 import static com.android.internal.R.styleable.Preference_title;
-
 import static cyanogenmod.platform.R.styleable.cm_Searchable;
 import static cyanogenmod.platform.R.styleable.cm_Searchable_xmlRes;
 
 public class PartsList {
 
+    private static final String TAG = PartsList.class.getSimpleName();
+
+    private static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+
     public static final String ACTION_PART_CHANGED = "org.cyanogenmod.cmparts.PART_CHANGED";
+    public static final String ACTION_REFRESH_PART = "org.cyanogenmod.cmparts.REFRESH_PART";
 
     public static final String EXTRA_PART = "part";
     public static final String EXTRA_PART_KEY = "key";
+    public static final String EXTRA_PART_SUMMARY = "summary";
 
     public static final String CMPARTS_PACKAGE = "org.cyanogenmod.cmparts";
+
     public static final ComponentName CMPARTS_ACTIVITY = new ComponentName(
             CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".PartsActivity");
 
+    public static  final ComponentName CMPARTS_REFRESHER = new ComponentName(
+            CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".RefreshReceiver");
+
     public static final String PARTS_ACTION_PREFIX = CMPARTS_PACKAGE + ".parts";
 
-    private static final Map<String, PartInfo> sParts = new ArrayMap<>();
+    private final Map<String, PartInfo> mParts = new ArrayMap<>();
 
-    private static final AtomicBoolean sCatalogLoaded = new AtomicBoolean(false);
+    private final Map<String, Set<PartInfo.RemotePart>> mRemotes = new ArrayMap<>();
 
-    public static void loadParts(Context context) {
-        synchronized (sParts) {
-            if (sCatalogLoaded.get()) {
-                return;
+    private final Context mContext;
+
+    private static PartsList sInstance;
+    private static final Object sInstanceLock = new Object();
+
+    private PartsList(Context context) {
+        mContext = context;
+        loadParts();
+    }
+
+    public static PartsList get(Context context) {
+        synchronized (sInstanceLock) {
+            if (sInstance == null) {
+                sInstance = new PartsList(context);
             }
+            return sInstance;
+        }
+    }
 
-            final PackageManager pm = context.getPackageManager();
+    private void loadParts() {
+        synchronized (mParts) {
+            final PackageManager pm = mContext.getPackageManager();
             try {
                 final Resources r = pm.getResourcesForApplication(CMPARTS_PACKAGE);
                 if (r == null) {
@@ -77,7 +110,7 @@ public class PartsList {
                 }
                 int resId = r.getIdentifier("parts_catalog", "xml", CMPARTS_PACKAGE);
                 if (resId > 0) {
-                    loadPartsFromResourceLocked(r, resId, sParts);
+                    loadPartsFromResourceLocked(r, resId, mParts);
                 }
             } catch (PackageManager.NameNotFoundException e) {
                 // no cmparts installed
@@ -85,30 +118,21 @@ public class PartsList {
         }
     }
 
-    public static Set<String> getPartsList(Context context) {
-        synchronized (sParts) {
-            if (!sCatalogLoaded.get()) {
-                loadParts(context);
-            }
-            return sParts.keySet();
+    public Set<String> getPartsList() {
+        synchronized (mParts) {
+            return mParts.keySet();
         }
     }
 
-    public static PartInfo getPartInfo(Context context, String key) {
-        synchronized (sParts) {
-            if (!sCatalogLoaded.get()) {
-                loadParts(context);
-            }
-            return sParts.get(key);
+    public PartInfo getPartInfo(String key) {
+        synchronized (mParts) {
+            return mParts.get(key);
         }
     }
 
-    public static final PartInfo getPartInfoForClass(Context context, String clazz) {
-        synchronized (sParts) {
-            if (!sCatalogLoaded.get()) {
-                loadParts(context);
-            }
-            for (PartInfo info : sParts.values()) {
+    public final PartInfo getPartInfoForClass(String clazz) {
+        synchronized (mParts) {
+            for (PartInfo info : mParts.values()) {
                 if (info.getFragmentClass() != null && info.getFragmentClass().equals(clazz)) {
                     return info;
                 }
@@ -117,12 +141,8 @@ public class PartsList {
         }
     }
 
-    private static void loadPartsFromResourceLocked(Resources res, int resid,
-                                                    Map<String, PartInfo> target) {
-        if (sCatalogLoaded.get()) {
-            return;
-        }
-
+    private void loadPartsFromResourceLocked(Resources res, int resid,
+                                             Map<String, PartInfo> target) {
         XmlResourceParser parser = null;
 
         try {
@@ -138,7 +158,7 @@ public class PartsList {
             String nodeName = parser.getName();
             if (!"parts-catalog".equals(nodeName)) {
                 throw new RuntimeException(
-                        "XML document must start with <parts-catalog> tag; found"
+                        "XML document must start with <parts-catalog> tag; found "
                                 + nodeName + " at " + parser.getPositionDescription());
             }
 
@@ -207,6 +227,99 @@ public class PartsList {
         } finally {
             if (parser != null) parser.close();
         }
-        sCatalogLoaded.set(true);
     }
+
+    public void registerRemotePart(final String key, final PartInfo.RemotePart remote) {
+        synchronized (mParts) {
+            if (DEBUG) {
+                Log.v(TAG, "registerRemotePart part=" + key + " remote=" + remote.toString());
+            }
+            if (mRemotes.size() == 0) {
+                final IntentFilter filter = new IntentFilter(ACTION_PART_CHANGED);
+                mContext.registerReceiver(mPartChangedReceiver, filter,
+                        Manifest.permission.MANAGE_PARTS, null);
+            }
+
+            Set<PartInfo.RemotePart> remotes = mRemotes.get(key);
+            if (remotes == null) {
+                remotes = new ArraySet<PartInfo.RemotePart>();
+                mRemotes.put(key, remotes);
+            }
+            remotes.add(remote);
+
+            final Intent i = new Intent(ACTION_REFRESH_PART);
+            i.setComponent(PartsList.CMPARTS_REFRESHER);
+
+            i.putExtra(EXTRA_PART_KEY, key);
+
+            // Send an ordered broadcast to request a refresh and receive the reply
+            // on the BroadcastReceiver.
+            mContext.sendOrderedBroadcastAsUser(i, UserHandle.CURRENT,
+                    Manifest.permission.MANAGE_PARTS,
+                    new BroadcastReceiver() {
+                        @Override
+                        public void onReceive(Context context, Intent intent) {
+                            synchronized (mParts) {
+                                refreshPartFromBundleLocked(getResultExtras(true));
+                            }
+                        }
+                    }, null, Activity.RESULT_OK, null, null);
+        }
+    }
+
+
+    private void refreshPartFromBundleLocked(Bundle result) {
+        PartInfo info = mParts.get(result.getString(EXTRA_PART_KEY));
+        if (info != null) {
+            PartInfo updatedPart = (PartInfo) result.getParcelable(EXTRA_PART);
+            if (updatedPart != null) {
+                if (info.updateFrom(updatedPart)) {
+                    Set<PartInfo.RemotePart> remotes = mRemotes.get(info.getName());
+                    if (remotes != null && remotes.size() > 0) {
+                        for (PartInfo.RemotePart remote : remotes) {
+                            if (DEBUG) {
+                                Log.d(TAG, "refresh remote=" + remote.toString() +
+                                           " info=" + info.toString());
+                            }
+                            remote.onRefresh(mContext, info);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void unregisterRemotePart(String key, final PartInfo.RemotePart remote) {
+        synchronized (mParts) {
+            if (DEBUG) {
+                Log.d(TAG, "unregisterRemotePart: " + key + " remote=" + remote.toString());
+            }
+            Set<PartInfo.RemotePart> remotes = mRemotes.get(key);
+            if (remotes != null) {
+                remotes.remove(remote);
+                if (remotes.size() == 0) {
+                    mRemotes.remove(key);
+                    if (mRemotes.size() == 0) {
+                        mContext.unregisterReceiver(mPartChangedReceiver);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Receiver for asynchronous updates
+     */
+    private final BroadcastReceiver mPartChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            synchronized (mParts) {
+                if (DEBUG) {
+                    Log.d(TAG, "PART_CHANGED: " + intent.toString() +
+                            " bundle: " + intent.getExtras().toString());
+                }
+                refreshPartFromBundleLocked(intent.getExtras());
+            }
+        }
+    };
 }
