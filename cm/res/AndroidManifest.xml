@@ -275,4 +275,11 @@
                 android:description="@string/permdesc_dataUsageWrite"
                 android:protectionLevel="signature|privileged" />
 
+    <!-- Permission for managing remote parts -->
+    <permission android:name="cyanogenmod.permission.MANAGE_PARTS"
+                android:label="@string/permlab_manageParts"
+                android:description="@string/permdesc_manageParts"
+                android:protectionLevel="signature|privileged" />
+
+
 </manifest>
