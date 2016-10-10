@@ -15,10 +15,11 @@
  */
 package org.cyanogenmod.internal.cmparts;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.Objects;
 
 import cyanogenmod.os.Concierge;
 
@@ -98,12 +99,12 @@ public class PartInfo implements Parcelable {
 
     public void setXmlRes(int xmlRes) { mXmlRes = xmlRes; }
 
-    public void updateFrom(PartInfo other) {
+    public boolean updateFrom(PartInfo other) {
         if (other == null) {
-            return;
+            return false;
         }
-        if (other.getName().equals(getName())) {
-            return;
+        if (other.equals(this)) {
+            return false;
         }
         setTitle(other.getTitle());
         setSummary(other.getSummary());
@@ -111,6 +112,7 @@ public class PartInfo implements Parcelable {
         setIconRes(other.getIconRes());
         setAvailable(other.isAvailable());
         setXmlRes(other.getXmlRes());
+        return true;
     }
 
     @Override
@@ -136,6 +138,21 @@ public class PartInfo implements Parcelable {
         out.writeInt(mAvailable ? 1 : 0);
         out.writeInt(mXmlRes);
         parcelInfo.complete();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == null) {
+            return false;
+        }
+        if (getClass() != other.getClass()) {
+            return false;
+        }
+        PartInfo o = (PartInfo) other;
+        return Objects.equals(mName, o.mName) && Objects.equals(mTitle, o.mTitle) &&
+               Objects.equals(mSummary, o.mSummary) && Objects.equals(mFragmentClass, o.mFragmentClass) &&
+               Objects.equals(mIconRes, o.mIconRes) && Objects.equals(mAvailable, o.mAvailable) &&
+               Objects.equals(mXmlRes, o.mXmlRes);
     }
 
     public String getAction() {
