@@ -796,6 +796,12 @@ public class ThemesContract {
         public static final String PACKAGE_NAME = "package_name";
 
         /**
+         * The original id associated with the theme in the themes table.
+         * <P>Type: TEXT</P>
+         */
+        public static final String THEME_ID = "theme_id";
+
+        /**
          * The name of the theme associated with this entry.
          * <P>Type: TEXT</P>
          */
