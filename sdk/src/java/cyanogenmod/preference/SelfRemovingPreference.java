@@ -28,6 +28,13 @@ public class SelfRemovingPreference extends Preference {
 
     private final ConstraintsHelper mConstraints;
 
+
+    public SelfRemovingPreference(Context context, AttributeSet attrs,
+                                  int defStyle, int defStyleRes) {
+        super(context, attrs, defStyle, defStyleRes);
+        mConstraints = new ConstraintsHelper(context, attrs, this);
+    }
+
     public SelfRemovingPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mConstraints = new ConstraintsHelper(context, attrs, this);

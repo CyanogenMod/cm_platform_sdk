@@ -29,6 +29,7 @@
         <attr name="requiresConfig" format="string" />
         <attr name="requiresProperty" format="string" />
         <attr name="requiresOwner" format="boolean" />
+        <attr name="requiresAction" format="string" />
     </declare-styleable>
 
     <!--Settings search providers-->
