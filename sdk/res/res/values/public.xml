@@ -1,16 +1,13 @@
 <resources>
 
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:27 -->
   <public type="attr" name="requiresPackage" id="0x3f010002" />
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:28 -->
   <public type="attr" name="requiresFeature" id="0x3f010003" />
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:29 -->
   <public type="attr" name="requiresConfig" id="0x3f010004" />
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:30 -->
   <public type="attr" name="requiresProperty" id="0x3f010005" />
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:31 -->
   <public type="attr" name="requiresOwner" id="0x3f010006" />
-  <!-- Declared at vendor/cmsdk/cm/res/../../sdk/res/res/values/attrs.xml:32 -->
   <public type="attr" name="xmlRes" id="0x3f010007" />
+  <public type="attr" name="requiresAction" id="0x3f010008" />
+  <public type="attr" name="replacesKey" id="0x3f010009" />
+  <public type="attr" name="minSummaryLines" id="0x3f01000a" />
 
 </resources>

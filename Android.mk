@@ -39,6 +39,7 @@ LOCAL_MODULE_TAGS := optional
 
 cmsdk_LOCAL_JAVA_LIBRARIES := \
     android-support-v7-preference \
+    android-support-v7-recyclerview \
     android-support-v14-preference
 
 LOCAL_JAVA_LIBRARIES := \
