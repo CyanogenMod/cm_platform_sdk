@@ -895,6 +895,22 @@ package cyanogenmod.preference {
     method public void setAvailable(boolean);
   }
 
+  public class SettingsHelper {
+    method public static synchronized cyanogenmod.preference.SettingsHelper get(android.content.Context);
+    method public boolean getBoolean(android.net.Uri, boolean);
+    method public int getInt(android.net.Uri, int);
+    method public java.lang.String getString(android.net.Uri);
+    method public void putBoolean(android.net.Uri, boolean);
+    method public void putInt(android.net.Uri, int);
+    method public void putString(android.net.Uri, java.lang.String);
+    method public void startWatching(cyanogenmod.preference.SettingsHelper.OnSettingsChangeListener, android.net.Uri...);
+    method public void stopWatching(cyanogenmod.preference.SettingsHelper.OnSettingsChangeListener);
+  }
+
+  public static abstract interface SettingsHelper.OnSettingsChangeListener {
+    method public abstract void onSettingsChanged(android.net.Uri);
+  }
+
   public class SystemSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
