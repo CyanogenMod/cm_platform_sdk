@@ -18,6 +18,7 @@ package cyanogenmod.preference;
 import android.content.Context;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceViewHolder;
+import android.support.v7.preference.R;
 import android.util.AttributeSet;
 
 /**
@@ -28,28 +29,36 @@ public class SelfRemovingPreference extends Preference {
 
     private final ConstraintsHelper mConstraints;
 
-    public SelfRemovingPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public SelfRemovingPreference(Context context, AttributeSet attrs,
+                                  int defStyle, int defStyleRes) {
+        super(context, attrs, defStyle, defStyleRes);
         mConstraints = new ConstraintsHelper(context, attrs, this);
+    }
+
+    public SelfRemovingPreference(Context context, AttributeSet attrs, int defStyle) {
+        this(context, attrs, defStyle, 0);
     }
 
     public SelfRemovingPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mConstraints = new ConstraintsHelper(context, attrs, this);
+        this(context, attrs, ConstraintsHelper.getAttr(
+                context, R.attr.preferenceStyle, android.R.attr.preferenceStyle));
     }
 
     public SelfRemovingPreference(Context context) {
-        super(context);
-        mConstraints = new ConstraintsHelper(context, null, this);
+        this(context, null);
     }
 
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
-        mConstraints.applyConstraints();
+        mConstraints.onBindViewHolder(holder);
     }
 
-    protected void setAvailable(boolean available) {
+    public void setAvailable(boolean available) {
         mConstraints.setAvailable(available);
+    }
+
+    public boolean isAvailable() {
+        return mConstraints.isAvailable();
     }
 }

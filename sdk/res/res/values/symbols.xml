@@ -5,7 +5,10 @@
     <java-symbol type="attr" name="requiresConfig" />
     <java-symbol type="attr" name="requiresProperty" />
     <java-symbol type="attr" name="requiresOwner" />
+    <java-symbol type="attr" name="requiresAction" />
+    <java-symbol type="attr" name="replacesKey" />
 
     <java-symbol type="attr" name="xmlRes" />
+    <java-symbol type="attr" name="minSummaryLines" />
 
 </resources>

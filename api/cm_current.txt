@@ -738,6 +738,9 @@ package cyanogenmod.platform {
 
   public static final class R.attr {
     ctor public R.attr();
+    field public static final int minSummaryLines = 1057030154; // 0x3f01000a
+    field public static final int replacesKey = 1057030153; // 0x3f010009
+    field public static final int requiresAction = 1057030152; // 0x3f010008
     field public static final int requiresConfig = 1057030148; // 0x3f010004
     field public static final int requiresFeature = 1057030147; // 0x3f010003
     field public static final int requiresOwner = 1057030150; // 0x3f010006
@@ -855,53 +858,47 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
-  public class ConstraintsHelper {
-    ctor public ConstraintsHelper(android.content.Context, android.util.AttributeSet, Preference);
-    method public void applyConstraints();
-    method public static boolean hasSystemFeature(android.content.Context, java.lang.String);
-    method public static boolean isDozeAvailable(android.content.Context);
-    method public static boolean isPackageInstalled(android.content.Context, java.lang.String, boolean);
-    method public static boolean isVoiceCapable(android.content.Context);
-    method public void setAvailable(boolean);
+  public class SecureSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
+    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SecureSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
   }
 
   public class SelfRemovingListPreference extends ListPreference {
     ctor public SelfRemovingListPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SelfRemovingListPreference(android.content.Context, android.util.AttributeSet);
     ctor public SelfRemovingListPreference(android.content.Context);
+    method public boolean isAvailable();
     method public void onBindViewHolder(PreferenceViewHolder);
-    method protected void setAvailable(boolean);
+    method public void setAvailable(boolean);
   }
 
   public class SelfRemovingPreference extends Preference {
+    ctor public SelfRemovingPreference(android.content.Context, android.util.AttributeSet, int, int);
     ctor public SelfRemovingPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SelfRemovingPreference(android.content.Context, android.util.AttributeSet);
     ctor public SelfRemovingPreference(android.content.Context);
+    method public boolean isAvailable();
     method public void onBindViewHolder(PreferenceViewHolder);
-    method protected void setAvailable(boolean);
+    method public void setAvailable(boolean);
   }
 
   public class SelfRemovingSwitchPreference extends SwitchPreference {
     ctor public SelfRemovingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SelfRemovingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public SelfRemovingSwitchPreference(android.content.Context);
+    method public boolean isAvailable();
     method public void onBindViewHolder(PreferenceViewHolder);
-    method protected void setAvailable(boolean);
+    method public void setAvailable(boolean);
   }
 
   public class SystemSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SystemSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
     ctor public SystemSettingSwitchPreference(android.content.Context);
-    method protected boolean getPersistedBoolean(boolean);
-    method protected boolean isPersisted();
-    method protected boolean persistBoolean(boolean);
-  }
-
-  public class SecureSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
-    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
-    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
-    ctor public SecureSettingSwitchPreference(android.content.Context);
     method protected boolean getPersistedBoolean(boolean);
     method protected boolean isPersisted();
     method protected boolean persistBoolean(boolean);

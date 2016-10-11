@@ -20,6 +20,10 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.PreferenceViewHolder;
 import android.util.AttributeSet;
 
+/**
+ * A Preference which can automatically remove itself from the hierarchy
+ * based on constraints set in XML.
+ */
 public class SelfRemovingListPreference extends ListPreference {
 
     private final ConstraintsHelper mConstraints;
@@ -42,10 +46,15 @@ public class SelfRemovingListPreference extends ListPreference {
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
-        mConstraints.applyConstraints();
+        mConstraints.onBindViewHolder(holder);
     }
 
-    protected void setAvailable(boolean available) {
+    public void setAvailable(boolean available) {
         mConstraints.setAvailable(available);
     }
+
+    public boolean isAvailable() {
+        return mConstraints.isAvailable();
+    }
+
 }
