@@ -16,18 +16,25 @@
 package cyanogenmod.preference;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceViewHolder;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.widget.TextView;
+
+import java.util.List;
 
 import cyanogenmod.hardware.CMHardwareManager;
 import cyanogenmod.platform.R;
@@ -48,25 +55,46 @@ public class ConstraintsHelper {
 
     private boolean mAvailable = true;
 
+    private boolean mVerifyIntent = false;
+
+    private int mSummaryMinLines = -1;
+
     public ConstraintsHelper(Context context, AttributeSet attrs, Preference pref) {
         mContext = context;
         mAttrs = attrs;
         mPref = pref;
+
+        TypedArray a = context.getResources().obtainAttributes(attrs,
+                R.styleable.cm_SelfRemovingPreference);
+        mSummaryMinLines = a.getInteger(R.styleable.cm_SelfRemovingPreference_minSummaryLines, -1);
 
         mAvailable = checkConstraints();
     }
 
     public void setAvailable(boolean available) {
         mAvailable = available;
+        applyConstraints();
+    }
+
+    public boolean isAvailable() {
+        return mAvailable;
+    }
+
+    public void setVerifyIntent(boolean verifyIntent) {
+        mVerifyIntent = verifyIntent;
+    }
+
+    private void removePreference() {
+        final PreferenceGroup group = getParent(mPref);
+        group.removePreference(mPref);
+        if (group.getPreferenceCount() == 0) {
+            getParent(group).removePreference(group);
+        }
     }
 
     public void applyConstraints() {
         if (!mAvailable) {
-            final PreferenceGroup group = getParent(mPref);
-            group.removePreference(mPref);
-            if (group.getPreferenceCount() == 0) {
-                getParent(group).removePreference(group);
-            }
+            removePreference();
         }
     }
 
@@ -92,6 +120,10 @@ public class ConstraintsHelper {
         return null;
     }
 
+    private boolean isNegated(String key) {
+        return key != null && key.startsWith("!");
+    }
+
     private boolean checkConstraints() {
         if (mAttrs == null) {
             return true;
@@ -102,6 +134,15 @@ public class ConstraintsHelper {
 
         try {
 
+            if (mVerifyIntent) {
+                Intent i = mPref.getIntent();
+                if (i != null) {
+                    if (!resolveIntent(mContext, i)) {
+                        return false;
+                    }
+                }
+            }
+
             // Check if the current user is an owner
             boolean rOwner = a.getBoolean(R.styleable.cm_SelfRemovingPreference_requiresOwner, false);
             if (rOwner && UserHandle.myUserId() != UserHandle.USER_OWNER) {
@@ -110,19 +151,42 @@ public class ConstraintsHelper {
 
             // Check if a specific package is installed
             String rPackage = a.getString(R.styleable.cm_SelfRemovingPreference_requiresPackage);
-            if (rPackage != null && !isPackageInstalled(mContext, rPackage, false)) {
-                return false;
+            if (rPackage != null) {
+                boolean negated = isNegated(rPackage);
+                if (negated) {
+                    rPackage = rPackage.substring(1);
+                }
+                boolean available = isPackageInstalled(mContext, rPackage, false);
+                if (available == negated) {
+                    return false;
+                }
+            }
+
+            // Check if an intent can be resolved to handle the given action
+            String rAction = a.getString(R.styleable.cm_SelfRemovingPreference_requiresAction);
+            if (rAction != null) {
+                boolean negated = isNegated(rAction);
+                if (negated) {
+                    rAction = rAction.substring(1);
+                }
+                boolean available = resolveIntent(mContext, rAction);
+                if (available == negated) {
+                    return false;
+                }
             }
 
             // Check if a system feature is available
             String rFeature = a.getString(R.styleable.cm_SelfRemovingPreference_requiresFeature);
             if (rFeature != null) {
-                if (rFeature.startsWith("cmhardware:")) {
-                    if (!CMHardwareManager.getInstance(mContext).isSupported(
-                            rFeature.substring("cmhardware:".length()))) {
-                        return false;
-                    }
-                } else if (!hasSystemFeature(mContext, rFeature)) {
+                boolean negated = isNegated(rFeature);
+                if (negated) {
+                    rFeature = rFeature.substring(1);
+                }
+                boolean available = rFeature.startsWith("cmhardware:") ?
+                        CMHardwareManager.getInstance(mContext).isSupported(
+                            rFeature.substring("cmhardware:".length())) :
+                        hasSystemFeature(mContext, rFeature);
+                if (available == negated) {
                     return false;
                 }
             }
@@ -130,8 +194,13 @@ public class ConstraintsHelper {
             // Check a boolean system property
             String rProperty = a.getString(R.styleable.cm_SelfRemovingPreference_requiresProperty);
             if (rProperty != null) {
+                boolean negated = isNegated(rProperty);
+                if (negated) {
+                    rProperty = rFeature.substring(1);
+                }
                 String value = SystemProperties.get(rProperty);
-                if (value == null || !Boolean.parseBoolean(value)) {
+                boolean available = value != null && Boolean.parseBoolean(value);
+                if (available == negated) {
                     return false;
                 }
             }
@@ -207,5 +276,41 @@ public class ConstraintsHelper {
                     com.android.internal.R.string.config_dozeComponent);
         }
         return !TextUtils.isEmpty(name);
+    }
+
+    /**
+     * Checks if a package is available to handle the given action.
+     */
+    public static boolean resolveIntent(Context context, Intent intent) {
+        // check whether the target handler exist in system
+        PackageManager pm = context.getPackageManager();
+        List<ResolveInfo> list = pm.queryIntentActivities(intent, 0);
+        for (ResolveInfo resolveInfo : list){
+            // check is it installed in system.img, exclude the application
+            // installed by user
+            if ((resolveInfo.activityInfo.applicationInfo.flags &
+                    ApplicationInfo.FLAG_SYSTEM) != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean resolveIntent(Context context, String action) {
+        return resolveIntent(context, new Intent(action));
+    }
+
+    public void onBindViewHolder(PreferenceViewHolder holder) {
+        applyConstraints();
+        if (!isAvailable()) {
+            return;
+        }
+
+        if (mSummaryMinLines > 0) {
+            TextView textView = (TextView) holder.itemView.findViewById(android.R.id.summary);
+            if (textView != null) {
+                textView.setMinLines(mSummaryMinLines);
+            }
+        }
     }
 }

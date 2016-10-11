@@ -46,7 +46,7 @@ public class SelfRemovingSwitchPreference extends SwitchPreference {
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
-        mConstraints.applyConstraints();
+        mConstraints.onBindViewHolder(holder);
     }
 
     protected void setAvailable(boolean available) {

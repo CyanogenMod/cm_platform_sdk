@@ -28,6 +28,13 @@ public class SelfRemovingPreference extends Preference {
 
     private final ConstraintsHelper mConstraints;
 
+
+    public SelfRemovingPreference(Context context, AttributeSet attrs,
+                                  int defStyle, int defStyleRes) {
+        super(context, attrs, defStyle, defStyleRes);
+        mConstraints = new ConstraintsHelper(context, attrs, this);
+    }
+
     public SelfRemovingPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mConstraints = new ConstraintsHelper(context, attrs, this);
@@ -46,10 +53,18 @@ public class SelfRemovingPreference extends Preference {
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
-        mConstraints.applyConstraints();
+        mConstraints.onBindViewHolder(holder);
     }
 
-    protected void setAvailable(boolean available) {
+    public void setAvailable(boolean available) {
         mConstraints.setAvailable(available);
+    }
+
+    public boolean isAvailable() {
+        return mConstraints.isAvailable();
+    }
+
+    public void setVerifyIntent(boolean verifyIntent) {
+        mConstraints.setVerifyIntent(verifyIntent);
     }
 }
