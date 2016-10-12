@@ -21,6 +21,7 @@ import android.test.suitebuilder.annotation.SmallTest;
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.power.IPerformanceManager;
 import cyanogenmod.power.PerformanceManager;
+import cyanogenmod.power.PerformanceProfile;
 
 /**
  * Code coverage for public facing {@link PerformanceManager} interfaces.
@@ -31,7 +32,7 @@ public class PerfomanceManagerTest extends AndroidTestCase {
     private static final String TAG = PerfomanceManagerTest.class.getSimpleName();
     private static final int IMPOSSIBLE_POWER_PROFILE = -1;
     private PerformanceManager mCMPerformanceManager;
-    private int mSavedPerfProfile;
+    private PerformanceProfile mSavedPerfProfile;
 
     @Override
     protected void setUp() throws Exception {
@@ -41,7 +42,8 @@ public class PerfomanceManagerTest extends AndroidTestCase {
                 CMContextConstants.Features.PERFORMANCE));
         mCMPerformanceManager = PerformanceManager.getInstance(mContext);
         // Save the perf profile for later restore.
-        mSavedPerfProfile = mCMPerformanceManager.getPowerProfile();
+        mSavedPerfProfile = mCMPerformanceManager.getPowerProfile(
+                mCMPerformanceManager.getPowerProfile());
     }
 
     @SmallTest
@@ -104,6 +106,6 @@ public class PerfomanceManagerTest extends AndroidTestCase {
     protected void tearDown() throws Exception {
         super.tearDown();
         // Reset
-        mCMPerformanceManager.setPowerProfile(mSavedPerfProfile);
+        mCMPerformanceManager.setPowerProfile(mSavedPerfProfile.getId());
     }
 }

@@ -107,6 +107,14 @@
     <string name="perf_profile_bias_power">Efficiency</string>
     <string name="perf_profile_bias_perf">Quick</string>
 
+    <!-- Performance profiles -->
+    <string name="perf_profile_pwrsv_summary">Power save</string>
+    <string name="perf_profile_bal_summary">Balanced</string>
+    <string name="perf_profile_perf_summary">Performance</string>
+    <string name="perf_profile_bias_power_summary">Efficiency</string>
+    <string name="perf_profile_bias_perf_summary">Quick</string>
+
+
     <!-- LiveDisplay strings -->
     <string name="live_display_title" translatable="false">LiveDisplay</string>
     <string name="live_display_auto">Automatic</string>

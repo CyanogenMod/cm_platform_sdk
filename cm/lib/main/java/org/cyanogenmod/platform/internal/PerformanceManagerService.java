@@ -16,9 +16,15 @@
 
 package org.cyanogenmod.platform.internal;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
@@ -26,36 +32,53 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManagerInternal;
 import android.os.Process;
-import android.util.Log;
+import android.os.RemoteException;
+import android.util.ArrayMap;
 import android.util.Slog;
 
 import com.android.server.ServiceThread;
-import com.android.server.SystemService;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.ArrayDeque;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.power.IPerformanceManager;
-import cyanogenmod.power.PerformanceManager;
 import cyanogenmod.power.PerformanceManagerInternal;
-import cyanogenmod.providers.CMSettings;
+import cyanogenmod.power.PerformanceProfile;
 
-/** @hide */
+import static cyanogenmod.power.PerformanceManager.PROFILE_BALANCED;
+import static cyanogenmod.power.PerformanceManager.PROFILE_HIGH_PERFORMANCE;
+import static cyanogenmod.power.PerformanceManager.PROFILE_POWER_SAVE;
+import static cyanogenmod.providers.CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED;
+import static cyanogenmod.providers.CMSettings.Secure.PERFORMANCE_PROFILE;
+import static cyanogenmod.providers.CMSettings.Secure.getInt;
+import static cyanogenmod.providers.CMSettings.Secure.getUriFor;
+import static cyanogenmod.providers.CMSettings.Secure.putInt;
+
+/**
+ * @hide
+ */
 public class PerformanceManagerService extends CMSystemService {
 
     private static final String TAG = "PerformanceManager";
 
+    private static final boolean DEBUG = false;
+
     private final Context mContext;
 
-    private Pattern[] mPatterns = null;
-    private int[] mProfiles = null;
+    private final LinkedHashMap<Pattern, Integer>    mAppProfiles = new LinkedHashMap<>();
+    private final ArrayMap<Integer, PerformanceProfile> mProfiles = new ArrayMap<>();
 
-    /** Active profile that based on low power mode, user and app rules */
-    private int mCurrentProfile = -1;
     private int mNumProfiles = 0;
 
     private final ServiceThread mHandlerThread;
-    private final PerformanceManagerHandler mHandler;
+    private final BoostHandler mHandler;
 
     // keep in sync with hardware/libhardware/include/hardware/power.h
     private final int POWER_HINT_CPU_BOOST    = 0x00000010;
@@ -65,44 +88,109 @@ public class PerformanceManagerService extends CMSystemService {
     private final int POWER_FEATURE_SUPPORTED_PROFILES = 0x00001000;
 
     private PowerManagerInternal mPm;
-    private boolean mLowPowerModeEnabled = false;
-    private String mCurrentActivityName = null;
+
+    // Observes user-controlled settings
+    private PerformanceSettingsObserver mObserver;
 
     // Max time (microseconds) to allow a CPU boost for
     private static final int MAX_CPU_BOOST_TIME = 5000000;
-    private static final boolean DEBUG = false;
+
+    // Standard weights
+    private static final float WEIGHT_POWER_SAVE       = 0.0f;
+    private static final float WEIGHT_BALANCED         = 0.5f;
+    private static final float WEIGHT_HIGH_PERFORMANCE = 1.0f;
+
+    // Take lock when accessing mProfiles
+    private final Object mLock = new Object();
+
+    // Manipulate state variables under lock
+    private boolean mLowPowerModeEnabled = false;
+    private boolean mSystemReady         = false;
+    private boolean mBoostEnabled        = true;
+    private int     mUserProfile         = -1;
+    private int     mActiveProfile       = -1;
+    private String  mCurrentActivityName = null;
+
+    // Dumpable circular buffer for boost logging
+    private final BoostLog mBoostLog = new BoostLog();
+
+    // Events on the handler
+    private static final int MSG_CPU_BOOST    = 1;
+    private static final int MSG_LAUNCH_BOOST = 2;
+    private static final int MSG_SET_PROFILE  = 3;
 
     public PerformanceManagerService(Context context) {
         super(context);
 
         mContext = context;
+        Resources res = context.getResources();
 
-        String[] activities = context.getResources().getStringArray(
-                R.array.config_auto_perf_activities);
+        String[] activities = res.getStringArray(R.array.config_auto_perf_activities);
         if (activities != null && activities.length > 0) {
-            mPatterns = new Pattern[activities.length];
-            mProfiles = new int[activities.length];
             for (int i = 0; i < activities.length; i++) {
                 String[] info = activities[i].split(",");
                 if (info.length == 2) {
-                    mPatterns[i] = Pattern.compile(info[0]);
-                    mProfiles[i] = Integer.valueOf(info[1]);
+                    mAppProfiles.put(Pattern.compile(info[0]), Integer.valueOf(info[1]));
                     if (DEBUG) {
                         Slog.d(TAG, String.format("App profile #%d: %s => %s",
-                            i, info[0], info[1]));
+                                i, info[0], info[1]));
                     }
                 }
             }
         }
 
-        // We need a high priority thread to handle these requests in front of
+        // We need a higher priority thread to handle these requests in front of
         // everything else asynchronously
         mHandlerThread = new ServiceThread(TAG,
-                Process.THREAD_PRIORITY_URGENT_DISPLAY + 1, false /*allowIo*/);
+                Process.THREAD_PRIORITY_DISPLAY, false /*allowIo*/);
         mHandlerThread.start();
 
-        mHandler = new PerformanceManagerHandler(mHandlerThread.getLooper());
+        mHandler = new BoostHandler(mHandlerThread.getLooper());
     }
+
+    private class PerformanceSettingsObserver extends ContentObserver {
+
+        private final Uri APP_PERFORMANCE_PROFILES_ENABLED_URI =
+                getUriFor(APP_PERFORMANCE_PROFILES_ENABLED);
+
+        private final Uri PERFORMANCE_PROFILE_URI =
+                getUriFor(PERFORMANCE_PROFILE);
+
+        private final ContentResolver mCR;
+
+        public PerformanceSettingsObserver(Context context, Handler handler) {
+            super(handler);
+            mCR = context.getContentResolver();
+        }
+
+        public void observe(boolean enabled) {
+            if (enabled) {
+                mCR.registerContentObserver(APP_PERFORMANCE_PROFILES_ENABLED_URI, false, this);
+                mCR.registerContentObserver(PERFORMANCE_PROFILE_URI, false, this);
+                onChange(false);
+
+            } else {
+                mCR.unregisterContentObserver(this);
+            }
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            int profile = getInt(mCR, PERFORMANCE_PROFILE, PROFILE_BALANCED);
+            boolean boost = getInt(mCR, APP_PERFORMANCE_PROFILES_ENABLED, 1) == 1;
+
+            synchronized (mLock) {
+                if (hasProfiles() && mProfiles.containsKey(profile)) {
+                    boost = boost && mProfiles.get(profile).isBoostEnabled();
+                }
+
+                mBoostEnabled = boost;
+                if (mUserProfile < 0) {
+                    mUserProfile = profile;
+                }
+            }
+        }
+    };
 
     @Override
     public String getFeatureDeclaration() {
@@ -115,85 +203,94 @@ public class PerformanceManagerService extends CMSystemService {
         publishLocalService(PerformanceManagerInternal.class, new LocalService());
     }
 
+    private void populateProfilesLocked() {
+        mProfiles.clear();
+
+        Resources res = mContext.getResources();
+        String[] profileNames = res.getStringArray(R.array.perf_profile_entries);
+        int[] profileIds = res.getIntArray(R.array.perf_profile_values);
+        String[] profileWeights = res.getStringArray(R.array.perf_profile_weights);
+        String[] profileDescs = res.getStringArray(R.array.perf_profile_summaries);
+
+        for (int i = 0; i < profileIds.length; i++) {
+            if (profileIds[i] >= mNumProfiles) {
+                continue;
+            }
+            float weight = Float.valueOf(profileWeights[i]);
+            mProfiles.put(profileIds[i], new PerformanceProfile(profileIds[i],
+                    weight, profileNames[i], profileDescs[i], shouldUseOptimizations(weight)));
+        }
+    }
+
     @Override
     public void onBootPhase(int phase) {
-        if (phase == PHASE_SYSTEM_SERVICES_READY) {
-            synchronized (this) {
+        if (phase == PHASE_SYSTEM_SERVICES_READY && !mSystemReady) {
+            synchronized (mLock) {
                 mPm = getLocalService(PowerManagerInternal.class);
                 mNumProfiles = mPm.getFeature(POWER_FEATURE_SUPPORTED_PROFILES);
-                if (mNumProfiles > 0) {
-                    int profile = getUserProfile();
-                    if (profile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
-                        Slog.i(TAG, String.format("Reverting profile %d to %d",
-                            profile, PerformanceManager.PROFILE_BALANCED));
-                        setPowerProfileInternal(
-                            PerformanceManager.PROFILE_BALANCED, true);
+
+                if (hasProfiles()) {
+                    populateProfilesLocked();
+
+                    mObserver = new PerformanceSettingsObserver(mContext, mHandler);
+                    mObserver.observe(true);
+                }
+
+                mSystemReady = true;
+
+                if (hasProfiles()) {
+                    if (mUserProfile == PROFILE_HIGH_PERFORMANCE) {
+                        Slog.w(TAG, "Reverting profile HIGH_PERFORMANCE to BALANCED");
+                        setPowerProfileLocked(PROFILE_BALANCED, true);
                     } else {
-                        setPowerProfileInternal(profile, false);
+                        setPowerProfileLocked(mUserProfile, true);
                     }
 
                     mPm.registerLowPowerModeObserver(mLowPowerModeListener);
+                    mContext.registerReceiver(mLocaleChangedReceiver,
+                            new IntentFilter(Intent.ACTION_LOCALE_CHANGED));
                 }
             }
         }
     }
 
+    private boolean hasProfiles() {
+        return mNumProfiles > 0;
+    }
+
     private boolean hasAppProfiles() {
-        return mNumProfiles > 0 && mPatterns != null &&
-               (CMSettings.Secure.getInt(mContext.getContentResolver(),
-                       CMSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED, 1) == 1);
-    }
-
-    private boolean getProfileHasAppProfilesInternal(int profile) {
-        if (profile < 0 || profile > mNumProfiles) {
-            Slog.e(TAG, "Invalid profile: " + profile);
-            return false;
-        }
-
-        if (profile == PerformanceManager.PROFILE_BALANCED) {
-            return mPatterns != null;
-        }
-
-        return false;
-    }
-
-    /**
-     * Get the profile saved by the user
-     */
-    private int getUserProfile() {
-        return CMSettings.Secure.getInt(mContext.getContentResolver(),
-                CMSettings.Secure.PERFORMANCE_PROFILE,
-                PerformanceManager.PROFILE_BALANCED);
+        return hasProfiles() && mBoostEnabled && mAppProfiles.size() > 0;
     }
 
     /**
      * Apply a power profile and persist if fromUser = true
+     * <p>
+     * Must call with lock held.
      *
-     * @param  profile  power profile
-     * @param  fromUser true to persist the profile
-     * @return          true if the active profile changed
+     * @param profile  power profile
+     * @param fromUser true to persist the profile
+     * @return true if the active profile changed
      */
-    private synchronized boolean setPowerProfileInternal(int profile, boolean fromUser) {
+    private boolean setPowerProfileLocked(int profile, boolean fromUser) {
         if (DEBUG) {
-            Slog.v(TAG, String.format(
-                "setPowerProfileInternal(profile=%d, fromUser=%b)",
-                profile, fromUser));
+            Slog.v(TAG, String.format("setPowerProfileL(%d, fromUser=%b)", profile, fromUser));
         }
-        if (mPm == null) {
+
+        if (!mSystemReady) {
             Slog.e(TAG, "System is not ready, dropping profile request");
             return false;
         }
-        if (profile < 0 || profile > mNumProfiles) {
+
+        if (!mProfiles.containsKey(profile)) {
             Slog.e(TAG, "Invalid profile: " + profile);
             return false;
         }
 
-        boolean isProfileSame = profile == mCurrentProfile;
+        boolean isProfileSame = profile == mActiveProfile;
 
         if (!isProfileSame) {
-            if (profile == PerformanceManager.PROFILE_POWER_SAVE) {
-                // Handle the case where toggle power saver mode
-                // failed
+            if (profile == PROFILE_POWER_SAVE) {
+                // Handle the case where toggle power saver mode failed
                 long token = Binder.clearCallingIdentity();
                 try {
                     if (!mPm.setPowerSaveMode(true)) {
@@ -202,7 +299,7 @@ public class PerformanceManagerService extends CMSystemService {
                 } finally {
                     Binder.restoreCallingIdentity(token);
                 }
-            } else if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
+            } else if (mActiveProfile == PROFILE_POWER_SAVE) {
                 long token = Binder.clearCallingIdentity();
                 mPm.setPowerSaveMode(false);
                 Binder.restoreCallingIdentity(token);
@@ -215,8 +312,8 @@ public class PerformanceManagerService extends CMSystemService {
          * early if there is no work to be done.
          */
         if (fromUser) {
-            CMSettings.Secure.putInt(mContext.getContentResolver(),
-                    CMSettings.Secure.PERFORMANCE_PROFILE, profile);
+            putInt(mContext.getContentResolver(), PERFORMANCE_PROFILE, profile);
+            mUserProfile = profile;
         }
 
         if (isProfileSame) {
@@ -229,10 +326,10 @@ public class PerformanceManagerService extends CMSystemService {
 
         long token = Binder.clearCallingIdentity();
 
-        mCurrentProfile = profile;
+        mActiveProfile = profile;
 
         mHandler.obtainMessage(MSG_SET_PROFILE, profile,
-                               (fromUser ? 1 : 0)).sendToTarget();
+                (fromUser ? 1 : 0)).sendToTarget();
 
         Binder.restoreCallingIdentity(token);
 
@@ -240,69 +337,78 @@ public class PerformanceManagerService extends CMSystemService {
     }
 
     private int getProfileForActivity(String componentName) {
+        int profile = -1;
         if (componentName != null) {
-            for (int i = 0; i < mPatterns.length; i++) {
-                if (mPatterns[i].matcher(componentName).matches()) {
-                    return mProfiles[i];
+            for (Map.Entry<Pattern, Integer> entry : mAppProfiles.entrySet()) {
+                if (entry.getKey().matcher(componentName).matches()) {
+                    profile = entry.getValue();
+                    break;
                 }
             }
         }
-        return PerformanceManager.PROFILE_BALANCED;
+        if (DEBUG) {
+            Slog.d(TAG, "getProfileForActivity: activity=" + componentName + " profile=" + profile);
+        }
+        return profile < 0 ? mUserProfile : profile;
+    }
+
+    private static boolean shouldUseOptimizations(float weight) {
+        return weight >= (WEIGHT_BALANCED / 2) &&
+               weight <= (WEIGHT_BALANCED + (WEIGHT_BALANCED / 2));
     }
 
     private void cpuBoostInternal(int duration) {
-        synchronized (PerformanceManagerService.this) {
-            if (mPm == null) {
-                Slog.e(TAG, "System is not ready, dropping cpu boost request");
-                return;
-            }
+        if (!mSystemReady) {
+            Slog.e(TAG, "System is not ready, dropping cpu boost request");
+            return;
         }
+
+        if (!mBoostEnabled) {
+            return;
+        }
+
         if (duration > 0 && duration <= MAX_CPU_BOOST_TIME) {
-            // Don't send boosts if we're in another power profile
-            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE ||
-                    mCurrentProfile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
-                return;
-            }
             mHandler.obtainMessage(MSG_CPU_BOOST, duration, 0).sendToTarget();
         } else {
             Slog.e(TAG, "Invalid boost duration: " + duration);
         }
     }
 
-    private void applyProfile(boolean fromUser) {
-        if (mNumProfiles < 1) {
+    private void applyAppProfileLocked(boolean fromUser) {
+        if (!hasProfiles()) {
             // don't have profiles, bail.
             return;
         }
 
-        int profile;
+        final int profile;
         if (mLowPowerModeEnabled) {
             // LPM always wins
-            profile = PerformanceManager.PROFILE_POWER_SAVE;
-        } else if (fromUser && mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE) {
-            profile = PerformanceManager.PROFILE_BALANCED;
+            profile = PROFILE_POWER_SAVE;
+        } else if (fromUser && mActiveProfile == PROFILE_POWER_SAVE) {
+            // leaving LPM
+            profile = PROFILE_BALANCED;
+        } else if (hasAppProfiles()) {
+            profile = getProfileForActivity(mCurrentActivityName);
         } else {
-            profile = getUserProfile();
-            // use app specific rules if profile is balanced
-            if (hasAppProfiles() && getProfileHasAppProfilesInternal(profile)) {
-                profile = getProfileForActivity(mCurrentActivityName);
-            }
+            profile = mUserProfile;
         }
-        setPowerProfileInternal(profile, fromUser);
+
+        setPowerProfileLocked(profile, fromUser);
     }
 
     private final IBinder mBinder = new IPerformanceManager.Stub() {
 
         @Override
         public boolean setPowerProfile(int profile) {
-            return setPowerProfileInternal(profile, true);
+            synchronized (mLock) {
+                return setPowerProfileLocked(profile, true);
+            }
         }
 
         /**
          * Boost the CPU
          *
          * @param duration Duration to boost the CPU for, in milliseconds.
-         * @hide
          */
         @Override
         public void cpuBoost(int duration) {
@@ -311,7 +417,23 @@ public class PerformanceManagerService extends CMSystemService {
 
         @Override
         public int getPowerProfile() {
-            return getUserProfile();
+            synchronized (mLock) {
+                return mUserProfile;
+            }
+        }
+
+        @Override
+        public PerformanceProfile getPowerProfileById(int profile) {
+            synchronized (mLock) {
+                return mProfiles.get(profile);
+            }
+        }
+
+        @Override
+        public PerformanceProfile getActivePowerProfile() {
+            synchronized (mLock) {
+                return mProfiles.get(mUserProfile);
+            }
         }
 
         @Override
@@ -320,8 +442,45 @@ public class PerformanceManagerService extends CMSystemService {
         }
 
         @Override
-        public boolean getProfileHasAppProfiles(int profile) {
-            return getProfileHasAppProfilesInternal(profile);
+        public PerformanceProfile[] getPowerProfiles() throws RemoteException {
+            synchronized (mLock) {
+                return mProfiles.values().toArray(
+                        new PerformanceProfile[mProfiles.size()]);
+            }
+        }
+
+        @Override
+        public void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
+            mContext.enforceCallingOrSelfPermission(android.Manifest.permission.DUMP, TAG);
+
+            synchronized (mLock) {
+                pw.println();
+                pw.println("PerformanceManager Service State:");
+                pw.println();
+                pw.println(" Boost enabled: " + mBoostEnabled);
+
+                if (!hasProfiles()) {
+                    pw.println(" No profiles available.");
+                } else {
+                    pw.println(" User-selected profile: " +
+                            Objects.toString(mProfiles.get(mUserProfile)));
+                    if (mUserProfile != mActiveProfile) {
+                        pw.println(" System-selected profile: " +
+                                Objects.toString(mProfiles.get(mActiveProfile)));
+                    }
+                    pw.println();
+                    pw.println(" Supported profiles:");
+                    for (Map.Entry<Integer, PerformanceProfile> profile : mProfiles.entrySet()) {
+                        pw.println("  " + profile.getKey() + ": " + profile.getValue().toString());
+                    }
+                    if (hasAppProfiles()) {
+                        pw.println();
+                        pw.println(" App trigger count: " + mAppProfiles.size());
+                    }
+                    pw.println();
+                    mBoostLog.dump(pw);
+                }
+            }
         }
     };
 
@@ -334,15 +493,11 @@ public class PerformanceManagerService extends CMSystemService {
 
         @Override
         public void launchBoost(int pid, String packageName) {
-            synchronized (PerformanceManagerService.this) {
-                if (mPm == null) {
-                    Slog.e(TAG, "System is not ready, dropping launch boost request");
-                    return;
-                }
+            if (!mSystemReady) {
+                Slog.e(TAG, "System is not ready, dropping launch boost request");
+                return;
             }
-            // Don't send boosts if we're in another power profile
-            if (mCurrentProfile == PerformanceManager.PROFILE_POWER_SAVE ||
-                    mCurrentProfile == PerformanceManager.PROFILE_HIGH_PERFORMANCE) {
+            if (!mBoostEnabled) {
                 return;
             }
             mHandler.obtainMessage(MSG_LAUNCH_BOOST, pid, 0, packageName).sendToTarget();
@@ -358,20 +513,65 @@ public class PerformanceManagerService extends CMSystemService {
                 }
             }
 
-            mCurrentActivityName = activityName;
-            applyProfile(false);
+            synchronized (mLock) {
+                mCurrentActivityName = activityName;
+                applyAppProfileLocked(false);
+            }
         }
     }
 
-    private static final int MSG_CPU_BOOST = 1;
-    private static final int MSG_LAUNCH_BOOST = 2;
-    private static final int MSG_SET_PROFILE = 3;
+    private static class BoostLog {
+        static final int APP_PROFILE  = 0;
+        static final int CPU_BOOST    = 1;
+        static final int LAUNCH_BOOST = 2;
+        static final int USER_PROFILE = 3;
+
+        static final String[] EVENTS = new String[] {
+                "APP_PROFILE", "CPU_BOOST", "LAUNCH_BOOST", "USER_PROFILE" };
+
+        private static final int LOG_BUF_SIZE = 25;
+
+        static class Entry {
+            private final long timestamp;
+            private final int event;
+            private final String info;
+
+            Entry(long timestamp_, int event_, String info_) {
+                timestamp = timestamp_;
+                event = event_;
+                info = info_;
+            }
+        }
+
+        private final ArrayDeque<Entry> mBuffer = new ArrayDeque<>(LOG_BUF_SIZE);
+
+        void log(int event, String info) {
+            synchronized (mBuffer) {
+                mBuffer.add(new Entry(System.currentTimeMillis(), event, info));
+                if (mBuffer.size() >= LOG_BUF_SIZE) {
+                    mBuffer.poll();
+                }
+            }
+        }
+
+        void dump(PrintWriter pw) {
+            synchronized (mBuffer) {
+                pw.println(" Boost log:");
+                for (Entry entry : mBuffer) {
+                    pw.println(String.format("  %1$tH:%1$tM:%1$tS.%1$tL: %2$14s  %3$s",
+                            new Date(entry.timestamp), EVENTS[entry.event], entry.info));
+                }
+                pw.println();
+            }
+        }
+    }
 
     /**
      * Handler for asynchronous operations performed by the performance manager.
      */
-    private final class PerformanceManagerHandler extends Handler {
-        public PerformanceManagerHandler(Looper looper) {
+    private final class BoostHandler extends Handler {
+
+        public BoostHandler(Looper looper) {
             super(looper, null, true /*async*/);
         }
 
@@ -380,6 +580,7 @@ public class PerformanceManagerService extends CMSystemService {
             switch (msg.what) {
                 case MSG_CPU_BOOST:
                     mPm.powerHint(POWER_HINT_CPU_BOOST, msg.arg1);
+                    mBoostLog.log(BoostLog.CPU_BOOST, "duration=" + msg.arg1);
                     break;
                 case MSG_LAUNCH_BOOST:
                     int pid = msg.arg1;
@@ -387,9 +588,12 @@ public class PerformanceManagerService extends CMSystemService {
                     if (NativeHelper.isNativeLibraryAvailable() && packageName != null) {
                         native_launchBoost(pid, packageName);
                     }
+                    mBoostLog.log(BoostLog.LAUNCH_BOOST, "package=" + packageName);
                     break;
                 case MSG_SET_PROFILE:
                     mPm.powerHint(POWER_HINT_SET_PROFILE, msg.arg1);
+                    mBoostLog.log((msg.arg2 == 1 ? BoostLog.USER_PROFILE : BoostLog.APP_PROFILE),
+                            "profile=" + msg.arg1);
                     break;
             }
         }
@@ -400,16 +604,27 @@ public class PerformanceManagerService extends CMSystemService {
 
                 @Override
                 public void onLowPowerModeChanged(boolean enabled) {
-                    if (enabled == mLowPowerModeEnabled) {
-                        return;
+                    synchronized (mLock) {
+                        if (enabled == mLowPowerModeEnabled) {
+                            return;
+                        }
+                        if (DEBUG) {
+                            Slog.d(TAG, "low power mode enabled: " + enabled);
+                        }
+                        mLowPowerModeEnabled = enabled;
+                        applyAppProfileLocked(true);
                     }
-                    if (DEBUG) {
-                        Slog.d(TAG, "low power mode enabled: " + enabled);
-                    }
-                    mLowPowerModeEnabled = enabled;
-                    applyProfile(true);
                 }
             };
+
+    private final BroadcastReceiver mLocaleChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            synchronized (mLock) {
+                populateProfilesLocked();
+            }
+        }
+    };
 
     private native final void native_launchBoost(int pid, String packageName);
 }

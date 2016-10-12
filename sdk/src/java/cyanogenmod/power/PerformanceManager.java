@@ -21,6 +21,11 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import cyanogenmod.app.CMContextConstants;
 
 /**
@@ -178,9 +183,30 @@ public class PerformanceManager {
     }
 
     /**
+     * Set the system power profile
+     *
+     * @throws IllegalArgumentException if invalid
+     */
+    public boolean setPowerProfile(PerformanceProfile profile) {
+        if (mNumberOfProfiles < 1) {
+            throw new IllegalArgumentException("Power profiles not enabled on this system!");
+        }
+
+        boolean changed = false;
+        try {
+            if (checkService()) {
+                changed = sService.setPowerProfile(profile.getId());
+            }
+        } catch (RemoteException e) {
+            throw new IllegalArgumentException(e);
+        }
+        return changed;
+    }
+
+    /**
      * Gets the current power profile
      *
-     * Returns null if power profiles are not enabled
+     * Returns -1 if power profiles are not enabled
      */
     public int getPowerProfile() {
         int ret = -1;
@@ -197,6 +223,43 @@ public class PerformanceManager {
     }
 
     /**
+     * Gets the specified power profile
+     *
+     * Returns null if power profiles are not enabled or the profile was not found
+     */
+    public PerformanceProfile getPowerProfile(int profile) {
+        PerformanceProfile ret = null;
+        if (mNumberOfProfiles > 0) {
+            try {
+                if (checkService()) {
+                    ret = sService.getPowerProfileById(profile);
+                }
+            } catch (RemoteException e) {
+                // nothing
+            }
+        }
+        return ret;
+    }
+
+    /**
+     * Gets the currently active performance profile
+     *
+     * Returns null if no profiles are available.
+     */
+    public PerformanceProfile getActivePowerProfile() {
+        PerformanceProfile ret = null;
+        if (mNumberOfProfiles > 0) {
+            try {
+                if (checkService()) {
+                    ret = sService.getActivePowerProfile();
+                }
+            } catch (RemoteException e) {
+                // nothing
+            }
+        }
+        return ret;
+    }
+    /**
      * Check if profile has app-specific profiles
      *
      * Returns true if profile has app-specific profiles.
@@ -206,12 +269,34 @@ public class PerformanceManager {
         if (mNumberOfProfiles > 0) {
             try {
                 if (checkService()) {
-                    ret = sService.getProfileHasAppProfiles(profile);
+                    ret = sService.getPowerProfileById(profile).isBoostEnabled();
                 }
             } catch (RemoteException e) {
                 // nothing
             }
         }
         return ret;
+    }
+
+    /**
+     * Gets a set, sorted by weight, of all supported power profiles
+     *
+     * Returns an empty set if power profiles are not enabled
+     */
+    public SortedSet<PerformanceProfile> getPowerProfiles() {
+        final SortedSet<PerformanceProfile> profiles = new TreeSet<PerformanceProfile>();
+        if (mNumberOfProfiles > 0) {
+            try {
+                if (checkService()) {
+                    PerformanceProfile[] p = sService.getPowerProfiles();
+                    if (p != null) {
+                        profiles.addAll(Arrays.asList(p));
+                    }
+                }
+            } catch (RemoteException e) {
+                // nothing
+            }
+        }
+        return Collections.unmodifiableSortedSet(profiles);
     }
 }

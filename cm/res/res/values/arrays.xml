@@ -36,6 +36,26 @@
         <item>2</item>
     </integer-array>
 
+    <!-- Weights for each performance profile, 0 being lowest (powersave) and 1 being
+         highest (performance). Used for sorting -->
+    <string-array name="perf_profile_weights" translatable="false">
+        <item>0.0</item>
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>0.75</item>
+        <item>1.0</item>
+    </string-array>
+
+    <!-- Summary of each profile -->
+    <string-array name="perf_profile_summaries" translatable="false">
+        <item>@string/perf_profile_pwrsv_summary</item>
+        <item>@string/perf_profile_bias_power_summary</item>
+        <item>@string/perf_profile_bal_summary</item>
+        <item>@string/perf_profile_bias_perf_summary</item>
+        <item>@string/perf_profile_perf_summary</item>
+    </string-array>
+
+
     <!-- LiveDisplay -->
     <string-array name="live_display_entries" translatable="false">
         <item>@string/live_display_auto</item>

@@ -775,11 +775,15 @@ package cyanogenmod.platform {
 package cyanogenmod.power {
 
   public class PerformanceManager {
+    method public cyanogenmod.power.PerformanceProfile getActivePowerProfile();
     method public static cyanogenmod.power.PerformanceManager getInstance(android.content.Context);
     method public int getNumberOfProfiles();
     method public int getPowerProfile();
+    method public cyanogenmod.power.PerformanceProfile getPowerProfile(int);
+    method public java.util.SortedSet<cyanogenmod.power.PerformanceProfile> getPowerProfiles();
     method public boolean getProfileHasAppProfiles(int);
     method public boolean setPowerProfile(int);
+    method public boolean setPowerProfile(cyanogenmod.power.PerformanceProfile);
     field public static final java.lang.String POWER_PROFILE_CHANGED = "cyanogenmod.power.PROFILE_CHANGED";
     field public static final int PROFILE_BALANCED = 1; // 0x1
     field public static final int PROFILE_BIAS_PERFORMANCE = 4; // 0x4
@@ -787,6 +791,19 @@ package cyanogenmod.power {
     field public static final int PROFILE_HIGH_PERFORMANCE = 2; // 0x2
     field public static final int PROFILE_POWER_SAVE = 0; // 0x0
     field public static final java.lang.String TAG = "PerformanceManager";
+  }
+
+  public class PerformanceProfile implements java.lang.Comparable android.os.Parcelable {
+    ctor public PerformanceProfile(int, float, java.lang.String, java.lang.String, boolean);
+    method public int compareTo(cyanogenmod.power.PerformanceProfile);
+    method public int describeContents();
+    method public java.lang.String getDescription();
+    method public int getId();
+    method public java.lang.String getName();
+    method public float getWeight();
+    method public boolean isBoostEnabled();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<cyanogenmod.power.PerformanceProfile> CREATOR;
   }
 
 }

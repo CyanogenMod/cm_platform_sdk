@@ -16,6 +16,8 @@
 
 package cyanogenmod.power;
 
+import cyanogenmod.power.PerformanceProfile;
+
 /** @hide */
 interface IPerformanceManager {
 
@@ -27,5 +29,9 @@ interface IPerformanceManager {
 
     int getNumberOfProfiles();
 
-    boolean getProfileHasAppProfiles(int profile);
+    PerformanceProfile[] getPowerProfiles();
+
+    PerformanceProfile getPowerProfileById(int profile);
+
+    PerformanceProfile getActivePowerProfile();
 }
