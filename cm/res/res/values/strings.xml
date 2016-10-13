@@ -108,11 +108,11 @@
     <string name="perf_profile_bias_perf">Quick</string>
 
     <!-- Performance profiles -->
-    <string name="perf_profile_pwrsv_summary">Power save</string>
-    <string name="perf_profile_bal_summary">Balanced</string>
-    <string name="perf_profile_perf_summary">Performance</string>
-    <string name="perf_profile_bias_power_summary">Efficiency</string>
-    <string name="perf_profile_bias_perf_summary">Quick</string>
+    <string name="perf_profile_pwrsv_summary">Maximum power savings. Reduces device performance, disables background tasks and data, disables animations, and reduces display frame rate</string>
+    <string name="perf_profile_bal_summary">Balance of optimal performance and power characteristics</string>
+    <string name="perf_profile_perf_summary">High performance mode. Useful for applications requiring low latency and highest throughput when power consumption is not a concern</string>
+    <string name="perf_profile_bias_power_summary">Favor power savings. Limit maximum CPU power and optimize for power saving at the cost of higher latency</string>
+    <string name="perf_profile_bias_perf_summary">Favor performance. Reduces latency with slightly increased power consumption</string>
 
 
     <!-- LiveDisplay strings -->
