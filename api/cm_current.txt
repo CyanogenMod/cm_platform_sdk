@@ -898,6 +898,15 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
+  public class SecureSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
+    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SecureSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
 }
 
 package cyanogenmod.profiles {
