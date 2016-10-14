@@ -1118,6 +1118,15 @@ public final class CMSettings {
          * @hide
          */
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
+
+        /**
+         * Defines global runtime overrides to window policy style.
+         *
+         * See {@link android.view.WindowManagerPolicyControl} for value definitions.
+         *
+         * @hide
+         */
+        public static final String POLICY_CONTROL_STYLE = "policy_control_style";
         // endregion
 
         /**
@@ -1129,7 +1138,9 @@ public final class CMSettings {
                 CMSettings.Global.POWER_NOTIFICATIONS_VIBRATE,
                 CMSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                 CMSettings.Global.ZEN_DISABLE_DUCKING_DURING_MEDIA_PLAYBACK,
-                CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION};
+                CMSettings.Global.WIFI_AUTO_PRIORITIES_CONFIGURATION,
+                CMSettings.Global.POLICY_CONTROL_STYLE
+        };
 
         /**
          * @hide
