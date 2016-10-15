@@ -873,6 +873,31 @@ package cyanogenmod.preference {
     method public void setVerifyIntent(boolean);
   }
 
+  public class RemotePreference extends cyanogenmod.preference.SelfRemovingPreference {
+    ctor public RemotePreference(android.content.Context, android.util.AttributeSet, int, int);
+    ctor public RemotePreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public RemotePreference(android.content.Context, android.util.AttributeSet);
+    method public android.content.Intent getReceiverIntent();
+    method protected java.lang.String getRemoteKey(android.os.Bundle);
+    method public void onAttached();
+    method public void onDetached();
+    method public void onRemoteUpdated(android.os.Bundle);
+    field public static final java.lang.String ACTION_REFRESH_PREFERENCE = "cyanogenmod.intent.action.REFRESH_PREFERENCE";
+    field public static final java.lang.String ACTION_UPDATE_PREFERENCE = "cyanogenmod.intent.action.UPDATE_PREFERENCE";
+    field public static final java.lang.String EXTRA_ENABLED = ":cm:pref_enabled";
+    field public static final java.lang.String EXTRA_KEY = ":cm:pref_key";
+    field public static final java.lang.String EXTRA_SUMMARY = ":cm:pref_summary";
+    field protected final android.content.Context mContext;
+  }
+
+  public class RemotePreferenceUpdater extends android.content.BroadcastReceiver {
+    ctor public RemotePreferenceUpdater();
+    method protected boolean fillResultExtras(android.content.Context, java.lang.String, android.os.Bundle);
+    method protected java.lang.String getSummary(android.content.Context, java.lang.String);
+    method public static void notifyChanged(android.content.Context, java.lang.String);
+    method public void onReceive(android.content.Context, android.content.Intent);
+  }
+
   public class SecureSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
     ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public SecureSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
