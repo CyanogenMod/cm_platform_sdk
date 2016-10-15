@@ -29,8 +29,8 @@
     <protected-broadcast android:name="cyanogenmod.platform.intent.action.PROFILE_SELECTED" />
     <protected-broadcast android:name="com.cyanogenmod.intent.action.HOTWORD_INPUT_CHANGED" />
 
-    <protected-broadcast android:name="org.cyanogenmod.settings.REFRESH_SUMMARY" />
-    <protected-broadcast android:name="org.cyanogenmod.cmparts.REFRESH_PART" />
+    <protected-broadcast android:name="cyanogenmod.intent.action.UPDATE_PREFERENCE" />
+    <protected-broadcast android:name="cyanogenmod.intent.action.REFRESH_PREFERENCE" />
 
     <!-- Must be required by an, to ensure that only the system can bind to it.
          @hide -->
@@ -279,11 +279,10 @@
                 android:description="@string/permdesc_dataUsageWrite"
                 android:protectionLevel="signature|privileged" />
 
-    <!-- Permission for managing remote parts -->
-    <permission android:name="cyanogenmod.permission.MANAGE_PARTS"
-                android:label="@string/permlab_manageParts"
-                android:description="@string/permdesc_manageParts"
+    <!-- Permission for managing remote preferences -->
+    <permission android:name="cyanogenmod.permission.MANAGE_REMOTE_PREFERENCES"
+                android:label="@string/permlab_manageRemotePrefs"
+                android:description="@string/permdesc_manageRemotePrefs"
                 android:protectionLevel="signature|privileged" />
-
 
 </manifest>

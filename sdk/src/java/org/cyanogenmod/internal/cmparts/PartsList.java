@@ -237,7 +237,7 @@ public class PartsList {
             if (mRemotes.size() == 0) {
                 final IntentFilter filter = new IntentFilter(ACTION_PART_CHANGED);
                 mContext.registerReceiver(mPartChangedReceiver, filter,
-                        Manifest.permission.MANAGE_PARTS, null);
+                        Manifest.permission.MANAGE_REMOTE_PREFERENCES, null);
             }
 
             Set<PartInfo.RemotePart> remotes = mRemotes.get(key);
@@ -255,7 +255,7 @@ public class PartsList {
             // Send an ordered broadcast to request a refresh and receive the reply
             // on the BroadcastReceiver.
             mContext.sendOrderedBroadcastAsUser(i, UserHandle.CURRENT,
-                    Manifest.permission.MANAGE_PARTS,
+                    Manifest.permission.MANAGE_REMOTE_PREFERENCES,
                     new BroadcastReceiver() {
                         @Override
                         public void onReceive(Context context, Intent intent) {
