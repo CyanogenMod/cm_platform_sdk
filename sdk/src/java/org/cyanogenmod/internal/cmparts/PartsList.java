@@ -15,20 +15,13 @@
  */
 package org.cyanogenmod.internal.cmparts;
 
-import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.os.Bundle;
-import android.os.UserHandle;
 import android.util.ArrayMap;
-import android.util.ArraySet;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -42,8 +35,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
-
-import cyanogenmod.platform.Manifest;
 
 import static com.android.internal.R.styleable.Preference;
 import static com.android.internal.R.styleable.Preference_fragment;
@@ -60,26 +51,16 @@ public class PartsList {
 
     private static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
 
-    public static final String ACTION_PART_CHANGED = "org.cyanogenmod.cmparts.PART_CHANGED";
-    public static final String ACTION_REFRESH_PART = "org.cyanogenmod.cmparts.REFRESH_PART";
-
-    public static final String EXTRA_PART = "part";
-    public static final String EXTRA_PART_KEY = "key";
-    public static final String EXTRA_PART_SUMMARY = "summary";
+    public static final String EXTRA_PART = ":cm:part";
 
     public static final String CMPARTS_PACKAGE = "org.cyanogenmod.cmparts";
 
     public static final ComponentName CMPARTS_ACTIVITY = new ComponentName(
             CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".PartsActivity");
 
-    public static  final ComponentName CMPARTS_REFRESHER = new ComponentName(
-            CMPARTS_PACKAGE, CMPARTS_PACKAGE + ".RefreshReceiver");
-
     public static final String PARTS_ACTION_PREFIX = CMPARTS_PACKAGE + ".parts";
 
     private final Map<String, PartInfo> mParts = new ArrayMap<>();
-
-    private final Map<String, Set<PartInfo.RemotePart>> mRemotes = new ArrayMap<>();
 
     private final Context mContext;
 
@@ -228,98 +209,4 @@ public class PartsList {
             if (parser != null) parser.close();
         }
     }
-
-    public void registerRemotePart(final String key, final PartInfo.RemotePart remote) {
-        synchronized (mParts) {
-            if (DEBUG) {
-                Log.v(TAG, "registerRemotePart part=" + key + " remote=" + remote.toString());
-            }
-            if (mRemotes.size() == 0) {
-                final IntentFilter filter = new IntentFilter(ACTION_PART_CHANGED);
-                mContext.registerReceiver(mPartChangedReceiver, filter,
-                        Manifest.permission.MANAGE_PARTS, null);
-            }
-
-            Set<PartInfo.RemotePart> remotes = mRemotes.get(key);
-            if (remotes == null) {
-                remotes = new ArraySet<PartInfo.RemotePart>();
-                mRemotes.put(key, remotes);
-            }
-            remotes.add(remote);
-
-            final Intent i = new Intent(ACTION_REFRESH_PART);
-            i.setComponent(PartsList.CMPARTS_REFRESHER);
-
-            i.putExtra(EXTRA_PART_KEY, key);
-
-            // Send an ordered broadcast to request a refresh and receive the reply
-            // on the BroadcastReceiver.
-            mContext.sendOrderedBroadcastAsUser(i, UserHandle.CURRENT,
-                    Manifest.permission.MANAGE_PARTS,
-                    new BroadcastReceiver() {
-                        @Override
-                        public void onReceive(Context context, Intent intent) {
-                            synchronized (mParts) {
-                                refreshPartFromBundleLocked(getResultExtras(true));
-                            }
-                        }
-                    }, null, Activity.RESULT_OK, null, null);
-        }
-    }
-
-
-    private void refreshPartFromBundleLocked(Bundle result) {
-        PartInfo info = mParts.get(result.getString(EXTRA_PART_KEY));
-        if (info != null) {
-            PartInfo updatedPart = (PartInfo) result.getParcelable(EXTRA_PART);
-            if (updatedPart != null) {
-                if (info.updateFrom(updatedPart)) {
-                    Set<PartInfo.RemotePart> remotes = mRemotes.get(info.getName());
-                    if (remotes != null && remotes.size() > 0) {
-                        for (PartInfo.RemotePart remote : remotes) {
-                            if (DEBUG) {
-                                Log.d(TAG, "refresh remote=" + remote.toString() +
-                                           " info=" + info.toString());
-                            }
-                            remote.onRefresh(mContext, info);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public void unregisterRemotePart(String key, final PartInfo.RemotePart remote) {
-        synchronized (mParts) {
-            if (DEBUG) {
-                Log.d(TAG, "unregisterRemotePart: " + key + " remote=" + remote.toString());
-            }
-            Set<PartInfo.RemotePart> remotes = mRemotes.get(key);
-            if (remotes != null) {
-                remotes.remove(remote);
-                if (remotes.size() == 0) {
-                    mRemotes.remove(key);
-                    if (mRemotes.size() == 0) {
-                        mContext.unregisterReceiver(mPartChangedReceiver);
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * Receiver for asynchronous updates
-     */
-    private final BroadcastReceiver mPartChangedReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            synchronized (mParts) {
-                if (DEBUG) {
-                    Log.d(TAG, "PART_CHANGED: " + intent.toString() +
-                            " bundle: " + intent.getExtras().toString());
-                }
-                refreshPartFromBundleLocked(intent.getExtras());
-            }
-        }
-    };
 }
