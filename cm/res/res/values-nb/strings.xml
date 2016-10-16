@@ -185,11 +185,4 @@
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpass temaet ditt</string>
   <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Starter apper\u2026</string>
-  <string name="android_upgrading_fstrim">Optimaliserer lagring\u2026</string>
-  <string name="android_upgrading_complete">Gjør klar til oppstart\u2026</string>
-  <string name="android_upgrading_complete_details">Optimalisering er fullført.</string>
-  <string name="android_preparing_apk">Gjør klar %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Gjør klar apper\u2026</string>
-  <string name="android_upgrading_apk">%1$d av %2$d apper</string>
 </resources>

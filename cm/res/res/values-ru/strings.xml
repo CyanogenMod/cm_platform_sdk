@@ -184,11 +184,4 @@
   <string name="qs_themes_label">Темы</string>
   <string name="qs_themes_content_description">Настройте свою тему</string>
   <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Запуск приложений\u2026</string>
-  <string name="android_upgrading_fstrim">Оптимизация накопителя\u2026</string>
-  <string name="android_upgrading_complete">Подготовка к запуску\u2026</string>
-  <string name="android_upgrading_complete_details">Оптимизация завершена.</string>
-  <string name="android_preparing_apk">Подготовка %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Подготовка приложений\u2026</string>
-  <string name="android_upgrading_apk">%1$d из %2$d приложений</string>
 </resources>
