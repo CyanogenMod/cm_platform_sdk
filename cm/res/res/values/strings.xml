@@ -240,5 +240,12 @@
     <!-- Permissions used by CMParts -->
     <string name="permlab_manageParts">manage remote settings</string>
     <string name="permdesc_manageParts">Allows an app to manage CyanogenMod settings</string>
+    <string name="android_preparing_apk">preparing %1$s…</string>
+    <string name="android_preparing_apk_obscured">Preparing apps...</string>
+    <string name="android_upgrading_apk">%1$d of %2$d Apps</string>
+    <string name="android_upgrading_complete">Preparing to start...</string>
+    <string name="android_upgrading_complete_details">Optimization completed.</string>
+    <string name="android_upgrading_fstrim">Optimizing storage...</string>
+    <string name="android_upgrading_starting_apps">Starting apps...</string>
 
 </resources>
