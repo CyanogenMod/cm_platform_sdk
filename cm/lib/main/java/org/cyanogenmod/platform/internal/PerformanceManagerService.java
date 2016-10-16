@@ -43,6 +43,7 @@ import java.io.PrintWriter;
 import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -132,7 +133,7 @@ public class PerformanceManagerService extends CMSystemService {
                 if (info.length == 2) {
                     mAppProfiles.put(Pattern.compile(info[0]), Integer.valueOf(info[1]));
                     if (DEBUG) {
-                        Slog.d(TAG, String.format("App profile #%d: %s => %s",
+                        Slog.d(TAG, String.format(Locale.US,"App profile #%d: %s => %s",
                                 i, info[0], info[1]));
                     }
                 }
@@ -273,7 +274,7 @@ public class PerformanceManagerService extends CMSystemService {
      */
     private boolean setPowerProfileLocked(int profile, boolean fromUser) {
         if (DEBUG) {
-            Slog.v(TAG, String.format("setPowerProfileL(%d, fromUser=%b)", profile, fromUser));
+            Slog.v(TAG, String.format(Locale.US,"setPowerProfileL(%d, fromUser=%b)", profile, fromUser));
         }
 
         if (!mSystemReady) {

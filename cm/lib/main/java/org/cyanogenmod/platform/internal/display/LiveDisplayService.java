@@ -53,6 +53,7 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.app.CMStatusBarManager;
@@ -124,7 +125,7 @@ public class LiveDisplayService extends CMSystemService {
 
         @Override
         public String toString() {
-            return String.format(
+            return String.format(Locale.US,
                     "[mLowPowerMode=%b, mScreenOn=%b, mMode=%d, mTwilight=%s",
                     mLowPowerMode, mScreenOn, mMode,
                     (mTwilight == null ? "NULL" : mTwilight.toString()));
