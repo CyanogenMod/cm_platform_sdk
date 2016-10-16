@@ -100,21 +100,6 @@
     <!-- Name of wildcard profile. -->
     <string name="wildcardProfile">Other</string>
 
-    <!-- Performance profiles -->
-    <string name="perf_profile_pwrsv">Power save</string>
-    <string name="perf_profile_bal">Balanced</string>
-    <string name="perf_profile_perf">Performance</string>
-    <string name="perf_profile_bias_power">Efficiency</string>
-    <string name="perf_profile_bias_perf">Quick</string>
-
-    <!-- Performance profiles -->
-    <string name="perf_profile_pwrsv_summary">Maximum power savings. Reduces device performance, disables background tasks and data, disables animations, and reduces display frame rate</string>
-    <string name="perf_profile_bal_summary">Balance of optimal performance and power characteristics</string>
-    <string name="perf_profile_perf_summary">High performance mode. Useful for applications requiring low latency and highest throughput when power consumption is not a concern</string>
-    <string name="perf_profile_bias_power_summary">Favor power savings. Limit maximum CPU power and optimize for power saving at the cost of higher latency</string>
-    <string name="perf_profile_bias_perf_summary">Favor performance. Reduces latency with slightly increased power consumption</string>
-
-
     <!-- LiveDisplay strings -->
     <string name="live_display_title" translatable="false">LiveDisplay</string>
     <string name="live_display_auto">Automatic</string>
