@@ -132,6 +132,7 @@
   <string name="permlab_perfAccess">ઍક્સેસ કામગીરી મેનેજર</string>
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">ઍપ ને કામગીરી સેવા ઍક્સેસ કરવાની છૂટ આપે છે. સામાન્ય એપ્સ માટે ક્યારેય જરૂર પડવી જોઈએ નહી.</string>
+  <string name="android_preparing_apk"></string>
   <!-- Access live lock screen manager service permission label -->
   <!-- Access live lock screen manager service permission description -->
   <!-- Privileged access live lock screen manager service permission label -->
