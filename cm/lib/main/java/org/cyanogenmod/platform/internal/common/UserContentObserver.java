@@ -64,7 +64,7 @@ public abstract class UserContentObserver extends ContentObserver {
 
     protected void observe() {
         try {
-            ActivityManagerNative.getDefault().registerUserSwitchObserver(mUserSwitchObserver);
+            ActivityManagerNative.getDefault().registerUserSwitchObserver(mUserSwitchObserver, TAG);
         } catch (RemoteException e) {
             Log.w(TAG, "Unable to register user switch observer!", e);
         }

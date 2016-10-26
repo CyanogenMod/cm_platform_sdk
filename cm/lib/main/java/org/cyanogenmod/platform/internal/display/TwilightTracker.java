@@ -34,8 +34,6 @@ import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.Slog;
 
-import com.android.server.TwilightCalculator;
-
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
