@@ -17,10 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
-  <string name="permlab_publishCustomTile">Krei propran kahelon en la rapida agordilo</string>
-  <string name="permdesc_publishCustomTile">Permesas aplikaĵon publikigi rapidan agordilan kahelon.</string>
-  <string name="permlab_bindCustomTileListenerService">ligita al propra kahela aŭskultada servo</string>
-  <string name="permdesc_bindCustomTileListenerService">Permesas al la aplikaĵo ligiĝi la la ĉefa interfaco de tajlorita kahela aŭskultada servo.</string>
   <!-- Labels for the READ_MSIM_PHONE_STATE permission. -->
   <!-- Labels for the MODIFY_MSIM_PHONE_STATE permission. -->
   <!-- Labels for the MODIFY_PROFILES permission. -->
@@ -33,7 +29,6 @@
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
-  <string name="custom_tile_listener_binding_label">Propra kahela aŭskultilo</string>
   <!-- Labels for the PROTECTED_APP permission. -->
   <!-- Profiles -->
   <!-- Names of default profiles. -->
@@ -41,10 +36,10 @@
   <!-- Name of wildcard profile. -->
   <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
+  <string name="live_display_day">Tago</string>
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
   <!-- Device specific settings -->
-  <string name="device_settings_app_name">Altnivelaj agordoj</string>
   <!-- Touchscreen gestures -->
   <!-- Touchscreen gesture haptic feedback -->
   <!-- Theme installation error notification -->
@@ -72,5 +67,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Etosoj</string>
   <!-- Custom booot dexopt -->
 </resources>
