@@ -107,26 +107,15 @@ public class ProfileTriggerHelper extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)) {
-            Bundle extras = intent.getExtras();
-            WifiInfo wifiInfo = extras.getParcelable(WifiManager.EXTRA_WIFI_INFO);
-            if (wifiInfo != null) {
-                String ssid = wifiInfo.getSSID();
-                if (ssid != null) {
-                    // SSID will be surrounded by double quotation marks if it can be decoded
-                    // as UTF-8
-                    if (ssid.startsWith("\"") && ssid.endsWith("\"")) {
-                        ssid = ssid.substring(1, ssid.length()-1);
-                    }
-                    if (TextUtils.equals(ssid, WifiSsid.NONE)) {
-                        checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
-                                Profile.TriggerState.ON_DISCONNECT);
-                        mLastConnectedSSID = WifiSsid.NONE;
-                    } else if (!TextUtils.equals(mLastConnectedSSID, ssid)) {
-                        mLastConnectedSSID = ssid;
-                        checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
-                                Profile.TriggerState.ON_CONNECT);
-                    }
-                }
+            String ssid = getActiveSSID();
+            if (ssid == null || TextUtils.equals(ssid, WifiSsid.NONE)) {
+                checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
+                        Profile.TriggerState.ON_DISCONNECT);
+                mLastConnectedSSID = WifiSsid.NONE;
+            } else if (!TextUtils.equals(mLastConnectedSSID, ssid)) {
+                mLastConnectedSSID = ssid;
+                checkTriggers(Profile.TriggerType.WIFI, mLastConnectedSSID,
+                        Profile.TriggerState.ON_CONNECT);
             }
         } else if (action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)
                 || action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
