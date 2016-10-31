@@ -149,10 +149,12 @@
   <string name="permdesc_weather_read">Hiermee kan de app de inhoud van de weeraanbieder lezen.</string>
   <string name="permlab_weather_write">weeraanbieder vernieuwen</string>
   <string name="permdesc_weather_write">Hiermee kan de app de inhoud van de weeraanbieder vernieuwen.</string>
+  <string name="permlab_weather_bind">koppelen als weeraanbiederservice</string>
   <string name="permdesc_weather_bind">Hiermee kan de app zich identificeren als weeraanbiederservice.</string>
   <string name="permlab_weather_access_mgr">toegang tot weerservice</string>
   <string name="permdesc_weather_access_mgr">Hiermee kan de app toegang krijgen tot de weerservice van het systeem. Nooit vereist voor normale apps.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">gegevensgebruik-database aanpassen</string>
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Hiermee kan de app de inhoud van de database met gegevensgebruik bijwerken.</string>
   <!-- DataUsageProvider read permission title -->
