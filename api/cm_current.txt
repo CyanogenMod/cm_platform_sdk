@@ -840,6 +840,15 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
+  public class CMSystemSettingDropDownPreference extends cyanogenmod.preference.SelfRemovingDropDownPreference {
+    ctor public CMSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSystemSettingDropDownPreference(android.content.Context, android.util.AttributeSet);
+    method public int getIntValue(int);
+    method protected java.lang.String getPersistedString(java.lang.String);
+    method protected boolean isPersisted();
+    method protected boolean persistString(java.lang.String);
+  }
+
   public class CMSystemSettingListPreference extends cyanogenmod.preference.SelfRemovingListPreference {
     ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSystemSettingListPreference(android.content.Context, android.util.AttributeSet);
@@ -892,6 +901,15 @@ package cyanogenmod.preference {
     method protected boolean getPersistedBoolean(boolean);
     method protected boolean isPersisted();
     method protected boolean persistBoolean(boolean);
+  }
+
+  public class SelfRemovingDropDownPreference extends DropDownPreference {
+    ctor public SelfRemovingDropDownPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public SelfRemovingDropDownPreference(android.content.Context, android.util.AttributeSet);
+    ctor public SelfRemovingDropDownPreference(android.content.Context);
+    method public boolean isAvailable();
+    method public void onBindViewHolder(PreferenceViewHolder);
+    method public void setAvailable(boolean);
   }
 
   public class SelfRemovingListPreference extends ListPreference {
