@@ -82,9 +82,9 @@ public class PerformanceManagerService extends CMSystemService {
     private final BoostHandler mHandler;
 
     // keep in sync with hardware/libhardware/include/hardware/power.h
-    private final int POWER_HINT_CPU_BOOST    = 0x00000010;
-    private final int POWER_HINT_LAUNCH_BOOST = 0x00000011;
-    private final int POWER_HINT_SET_PROFILE  = 0x00000030;
+    private final int POWER_HINT_CPU_BOOST    = 0x00000110;
+    private final int POWER_HINT_LAUNCH_BOOST = 0x00000111;
+    private final int POWER_HINT_SET_PROFILE  = 0x00000113;
 
     private final int POWER_FEATURE_SUPPORTED_PROFILES = 0x00001000;
 
