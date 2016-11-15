@@ -158,7 +158,10 @@
   <!-- DataUsageProvider write permission description -->
   <string name="permdesc_dataUsageWrite">Hiermee kan de app de inhoud van de database met gegevensgebruik bijwerken.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">gegevensgebruik-database lezen</string>
   <!-- DataUsageProvider read permission description -->
   <string name="permdesc_dataUsageRead">Hiermee kan de app de inhoud van de database met gegevensgebruik lezen.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">wijzigingen in audiosessie observeren</string>
+  <string name="permdesc_observe_audio_sessions">Hiermee kan de app de aanmaak en vernietiging van audiostreams observeren.</string>
 </resources>
