@@ -1160,6 +1160,10 @@ package cyanogenmod.providers {
     field public static final java.lang.String DISPLAY_TEMPERATURE_MODE = "display_temperature_mode";
     field public static final java.lang.String DISPLAY_TEMPERATURE_NIGHT = "display_temperature_night";
     field public static final java.lang.String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+    field public static final java.lang.String MOTION_BEHAVIOR = "motion_behavior";
+    field public static final int MOTION_BEHAVIOR_NOTHING = 0x0;
+    field public static final int MOTION_BEHAVIOR_FLIP_TO_MUTE_INCOMING_CALL = 0x1;
+    field public static final int MOTION_BEHAVIOR_DEFAULT = 0x1;
     field public static final java.lang.String ENABLE_FORWARD_LOOKUP = "enable_forward_lookup";
     field public static final java.lang.String ENABLE_PEOPLE_LOOKUP = "enable_people_lookup";
     field public static final java.lang.String ENABLE_REVERSE_LOOKUP = "enable_reverse_lookup";
@@ -1757,4 +1761,3 @@ package cyanogenmod.weatherservice {
   }
 
 }
-
