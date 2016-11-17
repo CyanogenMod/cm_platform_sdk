@@ -142,6 +142,10 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_PICTURE_ADJUSTMENT = 0x40000;
 
+    /**
+     * Touchscreen gesture
+     */
+    public static final int FEATURE_TOUCHSCREEN_GESTURES = 0x80000;
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -999,6 +1003,46 @@ public final class CMHardwareManager {
         try {
             if (checkService()) {
                 return sService.unRegisterThermalListener(thermalCallback);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    /**
+     * @return a list of available touchscreen gestures on the devices
+     */
+    public TouchscreenGesture[] getTouchscreenGestures() {
+        try {
+            if (checkService()) {
+                return sService.getTouchscreenGestures();
+            }
+        } catch (RemoteException e) {
+        }
+        return null;
+    }
+
+    /**
+     * @return true if the touchscreen gesture is enabled
+     */
+    public boolean isTouchscreenGestureEnabled(TouchscreenGesture gesture) {
+        try {
+            if (checkService()) {
+                return sService.isTouchscreenGestureEnabled(gesture);
+            }
+        } catch (RemoteException e) {
+        }
+        return false;
+    }
+
+    /**
+     * @return true if setting the activation status was successful
+     */
+    public boolean setTouchscreenGestureEnabled(
+            TouchscreenGesture gesture, boolean state) {
+        try {
+            if (checkService()) {
+                return sService.setTouchscreenGestureEnabled(gesture, state);
             }
         } catch (RemoteException e) {
         }
