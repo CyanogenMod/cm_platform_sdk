@@ -130,4 +130,9 @@
 
     <!-- The CMSystemServer class that is invoked from Android's SystemServer -->
     <string name="config_externalSystemServer" translatable="false">org.cyanogenmod.platform.internal.CMSystemServer</string>
+
+    <!-- Default action ids for a device's touchscreen gestures
+         The array should be sorted in the same order as the
+         touchscreen gestures advertised by the device's CMHW -->
+    <integer-array name="config_defaultTouchsceenGestureActions" />
 </resources>

@@ -134,4 +134,7 @@
 
     <!-- Settings -->
     <java-symbol type="string" name="privacy_guard_manager_title" />
+
+    <!-- Touchscreen gestures -->
+    <java-symbol type="array" name="config_defaultTouchsceenGestureActions" />
 </resources>
