@@ -474,6 +474,7 @@ package cyanogenmod.hardware {
     method public java.lang.String getSerialNumber();
     method public int getSupportedFeatures();
     method public int getThermalState();
+    method public cyanogenmod.hardware.TouchscreenGesture[] getTouchscreenGestures();
     method public java.lang.String getUniqueDeviceId();
     method public int getVibratorDefaultIntensity();
     method public int getVibratorIntensity();
@@ -482,6 +483,7 @@ package cyanogenmod.hardware {
     method public int getVibratorWarningIntensity();
     method public boolean isSunlightEnhancementSelfManaged();
     method public boolean isSupported(int);
+    method public boolean isTouchscreenGestureEnabled(cyanogenmod.hardware.TouchscreenGesture);
     method public byte[] readPersistentBytes(java.lang.String);
     method public int readPersistentInt(java.lang.String);
     method public java.lang.String readPersistentString(java.lang.String);
@@ -493,6 +495,7 @@ package cyanogenmod.hardware {
     method public deprecated boolean setDisplayGammaCalibration(int, int[]);
     method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
     method public boolean setPictureAdjustment(cyanogenmod.hardware.HSIC);
+    method public boolean setTouchscreenGestureEnabled(cyanogenmod.hardware.TouchscreenGesture, boolean);
     method public boolean setVibratorIntensity(int);
     method public boolean unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
     method public boolean writePersistentBytes(java.lang.String, byte[]);
@@ -514,6 +517,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 256; // 0x100
     field public static final int FEATURE_TAP_TO_WAKE = 512; // 0x200
     field public static final int FEATURE_THERMAL_MONITOR = 32768; // 0x8000
+    field public static final int FEATURE_TOUCHSCREEN_GESTURES = 524288; // 0x80000
     field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
     field public static final int FEATURE_UNIQUE_DEVICE_ID = 65536; // 0x10000
     field public static final int FEATURE_VIBRATOR = 1024; // 0x400
@@ -631,6 +635,25 @@ package cyanogenmod.hardware {
     field public static final int STATE_UNKNOWN = -1; // 0xffffffff
     field public static final int STATE_WARM_FALLING = 1; // 0x1
     field public static final int STATE_WARM_RISING = 2; // 0x2
+  }
+
+  public class TouchscreenGesture implements android.os.Parcelable {
+    ctor public TouchscreenGesture(int, java.lang.String, int);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final int ID_CIRCLE = 0; // 0x0
+    field public static final int ID_LEFTWARDS_ARROW = 2; // 0x2
+    field public static final int ID_LETTER_C = 4; // 0x4
+    field public static final int ID_LETTER_E = 5; // 0x5
+    field public static final int ID_LETTER_S = 6; // 0x6
+    field public static final int ID_LETTER_V = 7; // 0x7
+    field public static final int ID_LETTER_W = 8; // 0x8
+    field public static final int ID_LETTER_Z = 9; // 0x9
+    field public static final int ID_RIGHTWARDS_ARROW = 3; // 0x3
+    field public static final int ID_TWO_FINGERS_DOWNWARDS = 1; // 0x1
+    field public final int id;
+    field public final int keycode;
+    field public final java.lang.String path;
   }
 
 }
@@ -1160,10 +1183,6 @@ package cyanogenmod.providers {
     field public static final java.lang.String DISPLAY_TEMPERATURE_MODE = "display_temperature_mode";
     field public static final java.lang.String DISPLAY_TEMPERATURE_NIGHT = "display_temperature_night";
     field public static final java.lang.String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
-    field public static final java.lang.String MOTION_BEHAVIOR = "motion_behavior";
-    field public static final int MOTION_BEHAVIOR_NOTHING = 0x0;
-    field public static final int MOTION_BEHAVIOR_FLIP_TO_MUTE_INCOMING_CALL = 0x1;
-    field public static final int MOTION_BEHAVIOR_DEFAULT = 0x1;
     field public static final java.lang.String ENABLE_FORWARD_LOOKUP = "enable_forward_lookup";
     field public static final java.lang.String ENABLE_PEOPLE_LOOKUP = "enable_people_lookup";
     field public static final java.lang.String ENABLE_REVERSE_LOOKUP = "enable_reverse_lookup";
@@ -1761,3 +1780,4 @@ package cyanogenmod.weatherservice {
   }
 
 }
+
