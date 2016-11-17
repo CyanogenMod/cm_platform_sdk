@@ -19,6 +19,7 @@ package cyanogenmod.hardware;
 import cyanogenmod.hardware.DisplayMode;
 import cyanogenmod.hardware.HSIC;
 import cyanogenmod.hardware.IThermalListenerCallback;
+import cyanogenmod.hardware.TouchscreenGesture;
 
 /** @hide */
 interface ICMHardwareService {
@@ -70,4 +71,6 @@ interface ICMHardwareService {
     boolean setPictureAdjustment(in HSIC hsic);
     float[] getPictureAdjustmentRanges();
 
+    TouchscreenGesture[] getTouchscreenGestures();
+    boolean setTouchscreenGestureEnabled(in TouchscreenGesture gesture, boolean state);
 }
