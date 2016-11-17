@@ -464,6 +464,7 @@ package cyanogenmod.hardware {
     method public deprecated int getDisplayGammaCalibrationMax();
     method public deprecated int getDisplayGammaCalibrationMin();
     method public cyanogenmod.hardware.DisplayMode[] getDisplayModes();
+    method public cyanogenmod.hardware.TouchscreenGesture[] getTouchscreenGestures();
     method public static cyanogenmod.hardware.CMHardwareManager getInstance(android.content.Context);
     method public java.lang.String getLtoDestination();
     method public long getLtoDownloadInterval();
@@ -482,6 +483,7 @@ package cyanogenmod.hardware {
     method public int getVibratorWarningIntensity();
     method public boolean isSunlightEnhancementSelfManaged();
     method public boolean isSupported(int);
+    method public boolean isTouchscreenGestureEnabled(cyanogenmod.hardware.TouchscreenGesture);
     method public byte[] readPersistentBytes(java.lang.String);
     method public int readPersistentInt(java.lang.String);
     method public java.lang.String readPersistentString(java.lang.String);
@@ -493,6 +495,7 @@ package cyanogenmod.hardware {
     method public deprecated boolean setDisplayGammaCalibration(int, int[]);
     method public boolean setDisplayMode(cyanogenmod.hardware.DisplayMode, boolean);
     method public boolean setPictureAdjustment(cyanogenmod.hardware.HSIC);
+    method public boolean setTouchscreenGestureEnabled(cyanogenmod.hardware.TouchscreenGesture, boolean);
     method public boolean setVibratorIntensity(int);
     method public boolean unRegisterThermalListener(cyanogenmod.hardware.ThermalListenerCallback);
     method public boolean writePersistentBytes(java.lang.String, byte[]);
@@ -515,6 +518,7 @@ package cyanogenmod.hardware {
     field public static final deprecated int FEATURE_TAP_TO_WAKE = 512; // 0x200
     field public static final int FEATURE_THERMAL_MONITOR = 32768; // 0x8000
     field public static final int FEATURE_TOUCH_HOVERING = 2048; // 0x800
+    field public static final int FEATURE_TOUCHSCREEN_GESTURES = 524288; // 0x80000
     field public static final int FEATURE_UNIQUE_DEVICE_ID = 65536; // 0x10000
     field public static final int FEATURE_VIBRATOR = 1024; // 0x400
   }
@@ -541,6 +545,14 @@ package cyanogenmod.hardware {
     method public int[] toRGB();
     method public static cyanogenmod.hardware.HSIC unflattenFrom(java.lang.String) throws java.lang.NumberFormatException;
     method public void writeToParcel(android.os.Parcel, int);
+  }
+
+  public class TouchscreenGesture implements android.os.Parcelable {
+    ctor public TouchscreenGesture(int, java.lang.String);
+    method public int describeContents();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public final int id;
+    field public final java.lang.String name;
   }
 
   public abstract interface IThermalListenerCallback implements android.os.IInterface {
