@@ -111,7 +111,10 @@ public final class CMHardwareManager {
 
     /**
      * Double-tap the touch panel to wake up the device
+     *
+     * @deprecated As of CM 13.0, replaced with AOSP's implementation
      */
+    @Deprecated
     @VisibleForTesting
     public static final int FEATURE_TAP_TO_WAKE = 0x200;
 
