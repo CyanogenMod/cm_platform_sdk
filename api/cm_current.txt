@@ -1216,6 +1216,7 @@ package cyanogenmod.providers {
     field public static final java.lang.String STATUS_BAR_SHOW_WEATHER = "status_bar_show_weather";
     field public static final java.lang.String STYLUS_ICON_ENABLED = "stylus_icon_enabled";
     field public static final java.lang.String SWAP_VOLUME_KEYS_ON_ROTATION = "swap_volume_keys_on_rotation";
+    field public static final java.lang.String TORCH_LONG_PRESS_POWER_GESTURE = "torch_long_press_power_gesture";
     field public static final java.lang.String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
     field public static final java.lang.String SYS_PROP_CM_SETTING_VERSION = "sys.cm_settings_system_version";
     field public static final java.lang.String T9_SEARCH_INPUT_LOCALE = "t9_search_input_locale";
