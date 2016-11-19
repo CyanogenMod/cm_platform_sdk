@@ -1190,6 +1190,17 @@ public final class CMSettings {
                 new InclusiveIntegerRangeValidator(0, 2);
 
         /**
+         * Activate torchlight when power button is
+         * long-pressed while the display is off
+         * The value is boolean (1 or 0).
+         */
+        public static final String TORCH_LONG_PRESS_POWER_GESTURE =
+                "torch_long_press_power_gesture";
+
+        /** @hide */
+        public static final Validator TORCH_LONG_PRESS_POWER_GESTURE = sBooleanValidator;
+
+        /**
          * Whether the battery light should be enabled (if hardware supports it)
          * The value is boolean (1 or 0).
          */
