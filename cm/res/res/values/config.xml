@@ -82,19 +82,20 @@
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">false</bool>
 
-    <!-- Is the notification LED brightness adjustable ?
-         Used to decide if the user can set LED brightness -->
-    <bool name="config_adjustableNotificationLedBrightness">false</bool>
+    <!-- All the capabilities of the LEDs on this device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following capabilities present:
 
-    <!-- Does the device have multiple LEDs ?
-         Used to decide if the user can change the multiple LEDs settings -->
-    <bool name="config_multipleNotificationLeds">false</bool>
+         LIGHTS_RGB_NOTIFICATION_LED = 1
+         LIGHTS_RGB_BATTERY_LED = 2
+         LIGHTS_MULTIPLE_NOTIFICATION_LED = 4
+         LIGHTS_PULSATING_LED = 8
+         LIGHTS_SEGMENTED_BATTERY_LED = 16
+         LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS = 32
 
-    <!-- Should we send the battery level to the HAL as the alpha channel
-         of the color?  This should only be used if the HAL does special
-         handling of the value- a use case for this would be a segmented
-         LED that can function as a range bar -->
-    <bool name="config_useSegmentedBatteryLed">false</bool>
+         For example, a device support pulsating, RGB notification and
+         battery LEDs would set this config to 11. -->
+    <integer name="config_deviceLightCapabilities" />
 
     <!-- Default, comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
     <string name="config_defaultQuickSettingsTiles">wifi,bt,dnd,cell,airplane,rotation,location,edit,flashlight,cast,hotspot,inversion,live_display</string>
