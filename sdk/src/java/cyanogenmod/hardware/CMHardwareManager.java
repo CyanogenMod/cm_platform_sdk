@@ -235,17 +235,62 @@ public final class CMHardwareManager {
         if (!feature.startsWith("FEATURE_")) {
             return false;
         }
-        try {
-            Field f = getClass().getField(feature);
-            if (f != null) {
-                return isSupported((int) f.get(null));
-            }
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            // ignore
+        int id = getFeatureFromString(feature);
+        if (id > 0) {
+            return isSupported(id);
         }
 
         return false;
     }
+
+    /**
+     * @hide
+     */
+    private int getFeatureFromString(String feature) {
+        switch (feature) {
+            case "FEATURE_ADAPTIVE_BACKLIGHT":
+                return FEATURE_ADAPTIVE_BACKLIGHT;
+            case "FEATURE_COLOR_ENHANCEMENT":
+                return FEATURE_COLOR_ENHANCEMENT;
+            case "FEATURE_DISPLAY_COLOR_CALIBRATION":
+                return FEATURE_DISPLAY_COLOR_CALIBRATION;
+            case "FEATURE_DISPLAY_GAMMA_CALIBRATION":
+                return FEATURE_DISPLAY_GAMMA_CALIBRATION;
+            case "FEATURE_HIGH_TOUCH_SENSITIVITY":
+                return FEATURE_HIGH_TOUCH_SENSITIVITY;
+            case "FEATURE_KEY_DISABLE":
+                return FEATURE_KEY_DISABLE;
+            case "FEATURE_LONG_TERM_ORBITS":
+                return FEATURE_LONG_TERM_ORBITS;
+            case "FEATURE_SERIAL_NUMBER":
+                return FEATURE_SERIAL_NUMBER;
+            case "FEATURE_SUNLIGHT_ENHANCEMENT":
+                return FEATURE_SUNLIGHT_ENHANCEMENT;
+            case "FEATURE_TAP_TO_WAKE":
+                return FEATURE_TAP_TO_WAKE;
+            case "FEATURE_VIBRATOR":
+                return FEATURE_VIBRATOR;
+            case "FEATURE_TOUCH_HOVERING":
+                return FEATURE_TOUCH_HOVERING;
+            case "FEATURE_AUTO_CONTRAST":
+                return FEATURE_AUTO_CONTRAST;
+            case "FEATURE_DISPLAY_MODES":
+                return FEATURE_DISPLAY_MODES;
+            case "FEATURE_PERSISTENT_STORAGE":
+                return FEATURE_PERSISTENT_STORAGE;
+            case "FEATURE_THERMAL_MONITOR":
+                return FEATURE_THERMAL_MONITOR;
+            case "FEATURE_UNIQUE_DEVICE_ID":
+                return FEATURE_UNIQUE_DEVICE_ID;
+            case "FEATURE_COLOR_BALANCE":
+                return FEATURE_COLOR_BALANCE;
+            case "FEATURE_PICTURE_ADJUSTMENT":
+                return FEATURE_PICTURE_ADJUSTMENT;
+            default:
+                return 0;
+        }
+    }
+
     /**
      * Determine if the given feature is enabled or disabled.
      *
