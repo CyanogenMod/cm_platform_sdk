@@ -22,6 +22,8 @@ import android.os.ServiceManager;
 import android.util.Log;
 import android.util.Range;
 
+import com.android.internal.annotations.VisibleForTesting;
+
 import cyanogenmod.app.CMContextConstants;
 import cyanogenmod.hardware.HSIC;
 
@@ -46,102 +48,126 @@ public final class CMHardwareManager {
     private static ICMHardwareService sService;
 
     private Context mContext;
+
+    /* The VisibleForTesting annotation is to ensure Proguard doesn't remove these
+     * fields, as they might be used via reflection. When the @Keep annotation in
+     * the support library is properly handled in the platform, we should change this.
+     */
+
     /**
      * Adaptive backlight support (this refers to technologies like NVIDIA SmartDimmer,
      * QCOM CABL or Samsung CABC)
      */
+    @VisibleForTesting
     public static final int FEATURE_ADAPTIVE_BACKLIGHT = 0x1;
 
     /**
      * Color enhancement support
      */
+    @VisibleForTesting
     public static final int FEATURE_COLOR_ENHANCEMENT = 0x2;
 
     /**
      * Display RGB color calibration
      */
+    @VisibleForTesting
     public static final int FEATURE_DISPLAY_COLOR_CALIBRATION = 0x4;
 
     /**
      * Display gamma calibration
      */
+    @VisibleForTesting
     public static final int FEATURE_DISPLAY_GAMMA_CALIBRATION = 0x8;
 
     /**
      * High touch sensitivity for touch panels
      */
+    @VisibleForTesting
     public static final int FEATURE_HIGH_TOUCH_SENSITIVITY = 0x10;
 
     /**
      * Hardware navigation key disablement
      */
+    @VisibleForTesting
     public static final int FEATURE_KEY_DISABLE = 0x20;
 
     /**
      * Long term orbits (LTO)
      */
+    @VisibleForTesting
     public static final int FEATURE_LONG_TERM_ORBITS = 0x40;
 
     /**
      * Serial number other than ro.serialno
      */
+    @VisibleForTesting
     public static final int FEATURE_SERIAL_NUMBER = 0x80;
 
     /**
      * Increased display readability in bright light
      */
+    @VisibleForTesting
     public static final int FEATURE_SUNLIGHT_ENHANCEMENT = 0x100;
 
     /**
      * Double-tap the touch panel to wake up the device
      */
+    @VisibleForTesting
     public static final int FEATURE_TAP_TO_WAKE = 0x200;
 
     /**
      * Variable vibrator intensity
      */
+    @VisibleForTesting
     public static final int FEATURE_VIBRATOR = 0x400;
 
     /**
      * Touchscreen hovering
      */
+    @VisibleForTesting
     public static final int FEATURE_TOUCH_HOVERING = 0x800;
 
     /**
      * Auto contrast
      */
+    @VisibleForTesting
     public static final int FEATURE_AUTO_CONTRAST = 0x1000;
 
     /**
      * Display modes
      */
+    @VisibleForTesting
     public static final int FEATURE_DISPLAY_MODES = 0x2000;
 
     /**
      * Persistent storage
      */
+    @VisibleForTesting
     public static final int FEATURE_PERSISTENT_STORAGE = 0x4000;
 
     /**
      * Thermal change monitor
      */
+    @VisibleForTesting
     public static final int FEATURE_THERMAL_MONITOR = 0x8000;
 
     /**
      * Unique device ID
      */
+    @VisibleForTesting
     public static final int FEATURE_UNIQUE_DEVICE_ID = 0x10000;
 
     /**
      * Color balance
      */
+    @VisibleForTesting
     public static final int FEATURE_COLOR_BALANCE = 0x20000;
 
     /**
      * HSIC picture adjustment
      */
+    @VisibleForTesting
     public static final int FEATURE_PICTURE_ADJUSTMENT = 0x40000;
-
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,
@@ -241,7 +267,7 @@ public final class CMHardwareManager {
                 return isSupported((int) f.get(null));
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            // ignore
+            Log.d(TAG, e.getMessage(), e);
         }
 
         return false;

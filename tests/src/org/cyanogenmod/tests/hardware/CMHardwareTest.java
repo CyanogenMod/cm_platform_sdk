@@ -51,6 +51,23 @@ public class CMHardwareTest extends TestActivity {
             CMHardwareManager.FEATURE_PERSISTENT_STORAGE
     );
 
+    private static final List<String> FEATURE_STRINGS = Arrays.asList(
+            "FEATURE_ADAPTIVE_BACKLIGHT",
+            "FEATURE_COLOR_ENHANCEMENT",
+            "FEATURE_DISPLAY_COLOR_CALIBRATION",
+            "FEATURE_DISPLAY_GAMMA_CALIBRATION",
+            "FEATURE_HIGH_TOUCH_SENSITIVITY",
+            "FEATURE_KEY_DISABLE",
+            "FEATURE_LONG_TERM_ORBITS",
+            "FEATURE_SERIAL_NUMBER",
+            "FEATURE_SUNLIGHT_ENHANCEMENT",
+            "FEATURE_TAP_TO_WAKE",
+            "FEATURE_TOUCH_HOVERING",
+            "FEATURE_AUTO_CONTRAST",
+            "FEATURE_DISPLAY_MODES",
+            "FEATURE_PERSISTENT_STORAGE"
+    );
+
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
             CMHardwareManager.FEATURE_ADAPTIVE_BACKLIGHT,
             CMHardwareManager.FEATURE_COLOR_ENHANCEMENT,
@@ -160,10 +177,15 @@ public class CMHardwareTest extends TestActivity {
                 @Override
                 protected void run() {
                     StringBuilder builder = new StringBuilder();
+                    int i = 0;
                     for (int feature : FEATURES) {
+                        boolean supported = mHardwareManager.isSupported(feature);
+                        if (mHardwareManager.isSupported(FEATURE_STRINGS.get(i)) != supported) {
+                            throw new RuntimeException("Internal error, feature string lookup failed");
+                        }
+                        i++;
                         builder.append("Feature " + feature + "\n")
-                                .append("is supported " + mHardwareManager.isSupported(feature)
-                                        + "\n");
+                                .append("is supported " + supported + "\n");
                     }
                     Toast.makeText(CMHardwareTest.this, "Supported features " +
                                     builder.toString(),
