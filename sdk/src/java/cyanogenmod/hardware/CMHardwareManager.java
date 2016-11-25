@@ -142,6 +142,10 @@ public final class CMHardwareManager {
      */
     public static final int FEATURE_PICTURE_ADJUSTMENT = 0x40000;
 
+    /**
+     * Flip Cover
+     */
+    public static final int FEATURE_FLIP_COVER = 0x100000;
 
     private static final List<Integer> BOOLEAN_FEATURES = Arrays.asList(
         FEATURE_ADAPTIVE_BACKLIGHT,

@@ -47,6 +47,7 @@ import org.cyanogenmod.hardware.ColorEnhancement;
 import org.cyanogenmod.hardware.DisplayColorCalibration;
 import org.cyanogenmod.hardware.DisplayGammaCalibration;
 import org.cyanogenmod.hardware.DisplayModeControl;
+import org.cyanogenmod.hardware.FlipCover;
 import org.cyanogenmod.hardware.HighTouchSensitivity;
 import org.cyanogenmod.hardware.KeyDisabler;
 import org.cyanogenmod.hardware.LongTermOrbits;
@@ -163,6 +164,8 @@ public class CMHardwareService extends CMSystemService implements ThermalUpdateC
                 mSupportedFeatures |= CMHardwareManager.FEATURE_COLOR_BALANCE;
             if (PictureAdjustment.isSupported())
                 mSupportedFeatures |= CMHardwareManager.FEATURE_PICTURE_ADJUSTMENT;
+            if (FlipCover.isSupported())
+                mSupportedFeatures |= CMHardwareManager.FEATURE_FLIP_COVER;
         }
 
         public int getSupportedFeatures() {
