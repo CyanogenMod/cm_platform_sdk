@@ -141,4 +141,18 @@ public class Intent {
     public static final String ACTION_OPEN_LIVE_LOCKSCREEN_SETTINGS =
             "cyanogenmod.intent.action.OPEN_LIVE_LOCKSCREEN_SETTINGS";
 
+    /**
+     * Implicit action to launch Lid Cover app
+     * @hide
+     */
+    public static final String ACTION_COVER_CHANGE =
+            "cyanogenmod.intent.action.COVER_CHANGE";
+
+    /**
+     * This field is part of the intent {@link #ACTION_COVER_CHANGE}.
+     * Intent extra field for the state of lid/cover
+     */
+    public static final String EXTRA_COVER_STATE =
+            "cyanogenmod.intent.extra.COVER_STATE";
+
 }
