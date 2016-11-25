@@ -408,6 +408,7 @@ package cyanogenmod.content {
     field public static final java.lang.String ACTION_THEME_REMOVED = "cyanogenmod.intent.action.THEME_REMOVED";
     field public static final java.lang.String ACTION_THEME_UPDATED = "cyanogenmod.intent.action.THEME_UPDATED";
     field public static final java.lang.String CATEGORY_THEME_PACKAGE_INSTALLED_STATE_CHANGE = "cyanogenmod.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE";
+    field public static final java.lang.String EXTRA_COVER_STATE = "cyanogenmod.intent.extra.COVER_STATE";
     field public static final java.lang.String EXTRA_PROTECTED_COMPONENTS = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_COMPONENTS";
     field public static final java.lang.String EXTRA_PROTECTED_STATE = "cyanogenmod.intent.extra.PACKAGE_PROTECTED_STATE";
     field public static final java.lang.String URI_SCHEME_PACKAGE = "package";
@@ -505,6 +506,7 @@ package cyanogenmod.hardware {
     field public static final int FEATURE_DISPLAY_COLOR_CALIBRATION = 4; // 0x4
     field public static final int FEATURE_DISPLAY_GAMMA_CALIBRATION = 8; // 0x8
     field public static final int FEATURE_DISPLAY_MODES = 8192; // 0x2000
+    field public static final int FEATURE_FLIP_COVER = 1048576; // 0x100000
     field public static final int FEATURE_HIGH_TOUCH_SENSITIVITY = 16; // 0x10
     field public static final int FEATURE_KEY_DISABLE = 32; // 0x20
     field public static final int FEATURE_LONG_TERM_ORBITS = 64; // 0x40
