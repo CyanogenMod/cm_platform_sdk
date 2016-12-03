@@ -109,9 +109,9 @@
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay cambiato in modalità notte.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiato in modalità all\'aperto.</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">schermata di blocco di terzi</string>
+  <string name="permlab_thirdPartyKeyguard">blocco schermo di terzi</string>
   <!-- Third party keyguard permission description -->
-  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come una schermata di blocco non sicura.</string>
+  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come blocco schermo non sicuro.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Impostazioni avanzate</string>
   <!-- Touchscreen gestures -->
@@ -143,17 +143,17 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Consente ad un\'app di accedere alla gestione performances. Non dovrebbe essere mai richiesto per le normali app.</string>
   <!-- Access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione schermata di blocco animata</string>
+  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione blocco schermo animato</string>
   <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione schermata di blocco animata</string>
+  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione blocco schermo animato</string>
   <!-- Privileged access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Live lock screen manager service provider permission label -->
   <string name="permlab_accessLiveLockScreenServiceProvider">accedi al servizio di gestione schermata di blocco animata</string>
   <!-- Live lock screen manager service provider permission description -->
-  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">leggi meteo</string>
   <string name="permdesc_weather_read">Consenti ad un\'app di leggere contenuti dal provider meteo.</string>

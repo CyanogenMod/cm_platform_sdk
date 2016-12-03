@@ -173,7 +173,7 @@
   <string name="permdesc_dataUsageRead">データ使用量データベースからのコンテンツの読み取りをアプリに許可します。</string>
   <!-- LiveDisplay manager permission -->
   <string name="permlab_manageLiveDisplay">LiveDisplayの設定の管理</string>
-  <string name="permdesc_manageLiveDisplay">高度なディスプレイの設定をアプリに許可します。</string>
+  <string name="permdesc_manageLiveDisplay">ディスプレイの詳細設定をアプリに許可します。</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_observe_audio_sessions">オーディオセッションの変更の監視</string>
   <string name="permdesc_observe_audio_sessions">オーディオストリームの作成および破棄の監視をアプリに許可します。</string>

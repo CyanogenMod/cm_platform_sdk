@@ -18,8 +18,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
-  <string name="permlab_publishCustomTile">ustvari ploščico po meri na plošči za hitre nastavitve</string>
-  <string name="permdesc_publishCustomTile">Dovoli aplikaciji, da objavi ploščico za hitre nastavitve.</string>
+  <string name="permlab_publishCustomTile">ustvarjanje ploščice po meri na plošči za Hitre nastavitve</string>
+  <string name="permdesc_publishCustomTile">Dovoli aplikaciji, da objavi ploščico za Hitre nastavitve.</string>
   <string name="permlab_modifyNetworkSettings">spreminjanje sistemskih nastavitev omrežja</string>
   <string name="permdesc_modifyNetworkSettings">Dovoli aplikaciji, da naredi spremembe v načinu za letalo in nastavitvah omrežja mobilnih podatkov.</string>
   <string name="permlab_modifySoundSettings">spreminjanje sistemskih nastavitev zvoka</string>
@@ -158,7 +158,7 @@
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">branje vremena</string>
   <string name="permdesc_weather_read">Dovoli aplikaciji branje vsebine iz ponudnika vremena.</string>
-  <string name="permlab_weather_write">posodobitev ponudnika vremena</string>
+  <string name="permlab_weather_write">posodabljanje ponudnika vremena</string>
   <string name="permdesc_weather_write">Dovoli aplikaciji posodobitev vsebine ponudnika vremena.</string>
   <string name="permlab_weather_bind">vezava kot storitev ponudnika vremena</string>
   <string name="permdesc_weather_bind">Dovoli aplikaciji, da se identificira kot storitev ponudnika vremena.</string>
