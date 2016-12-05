@@ -94,6 +94,16 @@ public final class FileUtils {
     }
 
     /**
+     * Checks whether the given file exists
+     *
+     * @return true if exists, false if not
+     */
+    public static boolean fileExists(String fileName) {
+        final File file = new File(fileName);
+        return file.exists();
+    }
+
+    /**
      * Checks whether the given file is readable
      *
      * @return true if readable, false if not
