@@ -135,4 +135,14 @@
          The array should be sorted in the same order as the
          touchscreen gestures advertised by the device's CMHW -->
     <integer-array name="config_defaultTouchsceenGestureActions" />
+
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/priv-app/CMParts/CMParts.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.cyanogenmod.cmparts.gestures.KeyHandler</item>
+    </string-array>
 </resources>
