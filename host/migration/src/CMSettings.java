@@ -693,6 +693,7 @@ public final class CMSettings {
                 CMSettings.System.DISPLAY_COLOR_ADJUSTMENT,
                 CMSettings.System.LIVE_DISPLAY_HINTED,
                 CMSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
+                CMSettings.System.FLIP_TO_MUTE_GESTURE,
                 CMSettings.System.STATUS_BAR_SHOW_WEATHER,
                 CMSettings.System.RECENTS_SHOW_SEARCH_BAR,
                 CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
