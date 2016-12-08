@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.nfc.NfcAdapter;
 import android.os.Parcel;
@@ -250,6 +251,8 @@ public final class ConnectionSettings implements Parcelable {
         BluetoothAdapter bta = BluetoothAdapter.getDefaultAdapter();
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         TelephonyManager tm = (TelephonyManager)
                 context.getSystemService(Context.TELEPHONY_SERVICE);
         NfcAdapter nfcAdapter = null;
@@ -336,21 +339,21 @@ public final class ConnectionSettings implements Parcelable {
                     // Disable wifi tether
                     if (forcedState && (wifiApState == WifiManager.WIFI_AP_STATE_ENABLING) ||
                             (wifiApState == WifiManager.WIFI_AP_STATE_ENABLED)) {
-                        wm.setWifiApEnabled(null, false);
+                        cm.stopTethering(ConnectivityManager.TETHERING_WIFI);
                     }
                     wm.setWifiEnabled(forcedState);
                 }
                 break;
             case PROFILE_CONNECTION_WIFIAP:
-                int wifiState = wm.getWifiState();
                 currentState = wm.isWifiApEnabled();
                 if (currentState != forcedState) {
-                    // Disable wifi
-                    if (forcedState && (wifiState == WifiManager.WIFI_STATE_ENABLING) ||
-                            (wifiState == WifiManager.WIFI_STATE_ENABLED)) {
-                        wm.setWifiEnabled(false);
+                    // ConnectivityManager will disable wifi
+                    if (forcedState) {
+                        cm.startTethering(ConnectivityManager.TETHERING_WIFI,
+                                false, new OnStartTetheringCallback());
+                    } else {
+                        cm.stopTethering(ConnectivityManager.TETHERING_WIFI);
                     }
-                    wm.setWifiApEnabled(null, forcedState);
                 }
                 break;
             case PROFILE_CONNECTION_NFC:
@@ -463,5 +466,18 @@ public final class ConnectionSettings implements Parcelable {
 
         // Complete parcel info for the concierge
         parcelInfo.complete();
+    }
+
+    private static final class OnStartTetheringCallback
+            extends ConnectivityManager.OnStartTetheringCallback {
+        @Override
+        public void onTetheringStarted() {
+            // Do nothing
+        }
+
+        @Override
+        public void onTetheringFailed() {
+            // Do nothing
+        }
     }
 }
