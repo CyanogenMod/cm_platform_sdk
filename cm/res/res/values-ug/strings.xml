@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">ئىقتىدار</string>
   <string name="perf_profile_bias_power">ئۈنۈمى</string>
   <string name="perf_profile_bias_perf">تىز</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">ئاپتوماتېك</string>
   <string name="live_display_auto_summary">كۈن چىققان ۋە كۈن پاتقاندىن كېيىن ئېكران رەڭ تېمپېراتورىسىنى ئۆزلۈكىدىن تەڭشەيدۇ</string>
@@ -147,5 +148,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Hiệu suất cao</string>
   <string name="perf_profile_bias_power">Hiệu quả</string>
   <string name="perf_profile_bias_perf">Nhanh</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Tự động</string>
   <string name="live_display_auto_summary">Tự động chỉnh nhiệt độ màu của màn hình theo ngày và đêm</string>
@@ -181,5 +182,6 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Chủ đề</string>
   <string name="qs_themes_content_description">Tùy chỉnh chủ đề của bạn</string>
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

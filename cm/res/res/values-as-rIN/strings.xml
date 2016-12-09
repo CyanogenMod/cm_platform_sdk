@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">কাৰ্য্যকাৰিতা</string>
   <string name="perf_profile_bias_power">কাৰ্যকাৰিতা</string>
   <string name="perf_profile_bias_perf">দ্ৰুত</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">স্বয়ংক্ৰিয়</string>
   <string name="live_display_auto_summary">সূৰ্যাস্ত আৰু সূৰ্যোদয়ৰ পাছত স্বয়ংক্ৰিয়ভাবে স্ক্ৰীণৰ ৰং তাপমাত্ৰা মিলাওক।</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

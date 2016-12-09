@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Werkverrigting</string>
   <string name="perf_profile_bias_power">Doeltreffendheid</string>
   <string name="perf_profile_bias_perf">Vinnige</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Outomaties</string>
   <string name="live_display_auto_summary">Kleurtemperatuur van die skerm sal outomaties aanpas na sononder en sonop</string>
@@ -144,20 +145,46 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Laat \'n toep toe om toegang na die prestasie diens te verkry. Moet nooit nodig wees vir normale programme nie.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">toegang na lewendige slotskerm se bestuurder diens</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Laat \'n toepassing toegang die lewendige Slotskerm se bestuurder diens.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">toegang na lewendige slotskerm se bestuurder diens</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Laat stelsel toepassings toegang na die lewendige slotskerm se bestuurder diens.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">toegang na lewendige slotskerm se bestuurder diens</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Laat \'n diens toegang na die lewendige slotskerm se bestuurder diens.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">lees weer</string>
+  <string name="permdesc_weather_read">Laat \'n toep toe om inhoud te lees vanaf die weer verskaffer.</string>
+  <string name="permlab_weather_write">opdateer weer verskaffer</string>
+  <string name="permdesc_weather_write">Laat \'n toep toe om inhoud van die weer verskaffer by te werk.</string>
+  <string name="permlab_weather_bind">bind as \'n weer verskaffer diens</string>
+  <string name="permdesc_weather_bind">Laat \'n toep toe om as \'n weer diens verskaffer geïdentifiseer te word.</string>
   <string name="permlab_weather_access_mgr">toegang na weer diens</string>
+  <string name="permdesc_weather_access_mgr">Laat \'n toep om toegang te verkry tot die weer diens in die stelsel. Moet nooit nodig wees vir die normale toepassings.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">modifiseer data gebruik databasis</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Laat \'n toep toe om die inhoud opdateer van die data gebruik databasis.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">lees data gebruik databasis</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Laat \'n toep toe om inhoud te lees van die data gebruik databasis.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">bestuur LiveDisplay instellings</string>
+  <string name="permdesc_manageLiveDisplay">Laat \'n toep toe om gevorderde skerm instellings te konfigureer.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">neem oudio-sessie verandering waar</string>
+  <string name="permdesc_observe_audio_sessions">Laat \'n toep toe, om oudio-strome wat geskep en vernietig word, waar te neem.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">bestuur oudio-sessie veranderinge</string>
+  <string name="permdesc_manage_audio_sessions">Laat \'n toep toe om oudio-stroom bywerkings te stuur.</string>
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <string name="qs_themes_label">Temas</string>
+  <string name="qs_themes_content_description">Verpersoonlik jou tema</string>
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

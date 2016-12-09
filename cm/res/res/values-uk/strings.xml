@@ -81,6 +81,7 @@
   <string name="perf_profile_perf">Продуктивність</string>
   <string name="perf_profile_bias_power">Ефективність</string>
   <string name="perf_profile_bias_perf">Швидко</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Автоматично</string>
   <string name="live_display_auto_summary">Автоматичне підлаштування температури кольору екрана після сходу та заходу сонця</string>
@@ -130,5 +131,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

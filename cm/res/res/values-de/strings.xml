@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Mehr Leistung</string>
   <string name="perf_profile_bias_power">Effizient</string>
   <string name="perf_profile_bias_perf">Schnell</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Maximale Energieeinsparung. Reduziert die Geräteleistung. Hintergrunddienste, Daten und Animationen werden deaktiviert sowie die Bildwiederholrate des Displays reduziert</string>
+  <string name="perf_profile_bal_summary">Balance zwischen optimaler Leistung und Energieverbrauch</string>
+  <string name="perf_profile_perf_summary">Hochleistungsmodus. Nützlich für Anwendungen die niedrige Latenzen und den höchsten Durchsatz benötigen und der Energiebedarf nicht von Belang ist</string>
+  <string name="perf_profile_bias_power_summary">Auf Energiesparen ausrichten. Verringert die maximale CPU-Leistung auf Kosten höherer Latenz</string>
+  <string name="perf_profile_bias_perf_summary">Auf Leistung ausrichten. Reduziert die Latenz und erhöht den Stromverbrauch leicht</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatisch</string>
   <string name="live_display_auto_summary">Farbtemperatur des Bildschirms nach Sonnenaufgang und Sonnenuntergang automatisch anpassen</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Designs</string>
   <string name="qs_themes_content_description">Passen Sie Ihr Design an</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Apps werden gestartet\u2026</string>
-  <string name="android_upgrading_fstrim">Speicher wird optimiert\u2026</string>
-  <string name="android_upgrading_complete">Start wird vorbereitet\u2026</string>
-  <string name="android_upgrading_complete_details">Optimierung abgeschlossen.</string>
-  <string name="android_preparing_apk">%1$s wird vorbereitet\u2026</string>
-  <string name="android_preparing_apk_obscured">Apps werden vorbereitet\u2026</string>
-  <string name="android_upgrading_apk">%1$d von %2$d Apps</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Datenschutz</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">Remote-Einstellungen verwalten</string>
+  <string name="permdesc_manageRemotePrefs">Ermöglicht der App, Remote-Einstellungen zu verwalten</string>
 </resources>

@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Перформансе</string>
   <string name="perf_profile_bias_power">Ефикасност</string>
   <string name="perf_profile_bias_perf">Брзина</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Аутоматски</string>
   <string name="live_display_auto_summary">Аутоматски прилагоди температуру боје екрана после сумрака и свитања</string>
@@ -179,8 +180,10 @@
   <string name="permdesc_observe_audio_sessions">Дозвољава апликацији да посматра ток аудиа док је креиран и прекинут.</string>
   <!-- CMAudioService - observe session changes permission -->
   <string name="permlab_manage_audio_sessions">управљај променама аудио сесије</string>
+  <string name="permdesc_manage_audio_sessions">Дозвола апликацији да шаље ажурирања тока аудио записа.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Теме</string>
   <string name="qs_themes_content_description">Прилагодите вашу тему</string>
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

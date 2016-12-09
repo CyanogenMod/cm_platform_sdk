@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Performance</string>
   <string name="perf_profile_bias_power">Efficiency</string>
   <string name="perf_profile_bias_perf">Quick</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatic</string>
   <string name="live_display_auto_summary">Automatically adjust color temperature of screen after sunset and sunrise</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

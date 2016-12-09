@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Επιδόσεις</string>
   <string name="perf_profile_bias_power">Αποδοτικό</string>
   <string name="perf_profile_bias_perf">Γρήγορο</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Αυτόματο</string>
   <string name="live_display_auto_summary">Αυτόματη ρύθμιση της θερμοκρασίας χρώματος της οθόνης μετά το ηλιοβασίλεμα και την ανατολή του ηλίου</string>
@@ -183,12 +184,6 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Θέματα</string>
   <string name="qs_themes_content_description">Προσαρμόστε το θέμα σας</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Εκκίνηση εφαρμογών\u2026</string>
-  <string name="android_upgrading_fstrim">Βελτιστοποίηση αποθ. χώρου\u2026</string>
-  <string name="android_upgrading_complete">Προετοιμασία για εκκίνηση\u2026</string>
-  <string name="android_upgrading_complete_details">Η βελτιστοποίηση ολοκληρώθηκε.</string>
-  <string name="android_preparing_apk">Προετοιμασία %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Προετοιμασία εφαρμογών\u2026</string>
-  <string name="android_upgrading_apk">%1$d από %2$d εφαρμογές</string>
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

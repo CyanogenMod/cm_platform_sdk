@@ -38,6 +38,7 @@
   <!-- Names of application groups. -->
   <!-- Name of wildcard profile. -->
   <!-- Performance profiles -->
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
@@ -69,5 +70,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

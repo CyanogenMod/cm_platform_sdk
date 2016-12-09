@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Prestazioni</string>
   <string name="perf_profile_bias_power">Efficiente</string>
   <string name="perf_profile_bias_perf">Rapido</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Massimo risparmio energetico. Riduce le performance del dispositivo, disattiva dati e operazioni in background e riduce il frame rate del display</string>
+  <string name="perf_profile_bal_summary">Performance e utilizzo batteria bilanciati</string>
+  <string name="perf_profile_perf_summary">Modalità performance. Utile per applicazioni che richiedono bassa latenza e ottimo rendimento quando i consumi energetici non sono un problema</string>
+  <string name="perf_profile_bias_power_summary">Efficienza. I risparmi energetici vengono favoriti limitando la potenza massima della CPU al costo di una latenza maggiore</string>
+  <string name="perf_profile_bias_perf_summary">Rapidità. Le performances vengono preferite riducendo la latenza al costo di un consumo energetico maggiore</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatico</string>
   <string name="live_display_auto_summary">Regola automaticamente la temperatura del colore dello schermo dopo il tramonto e l\'alba</string>
@@ -109,9 +115,9 @@
   <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay cambiato in modalità notte.</string>
   <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay cambiato in modalità all\'aperto.</string>
   <!-- Third party keyguard permission label -->
-  <string name="permlab_thirdPartyKeyguard">schermata di blocco di terzi</string>
+  <string name="permlab_thirdPartyKeyguard">blocco schermo di terzi</string>
   <!-- Third party keyguard permission description -->
-  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come una schermata di blocco non sicura.</string>
+  <string name="permdesc_thirdPartyKeyguard">Consenti ad un\'app di essere usata come blocco schermo non sicuro.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Impostazioni avanzate</string>
   <!-- Touchscreen gestures -->
@@ -143,17 +149,17 @@
   <!-- Performance manager permission description -->
   <string name="permdesc_perfAccessDesc">Consente ad un\'app di accedere alla gestione performances. Non dovrebbe essere mai richiesto per le normali app.</string>
   <!-- Access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione schermata di blocco animata</string>
+  <string name="permlab_accessLiveLockScreenService">accesso al servizio gestione blocco schermo animato</string>
   <!-- Access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenService">Consenti ad un\'app di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Privileged access live lock screen manager service permission label -->
-  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione schermata di blocco animata</string>
+  <string name="permlab_accessLiveLockScreenServicePrivate">accesso al servizio gestione blocco schermo animato</string>
   <!-- Privileged access live lock screen manager service permission description -->
-  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Consenti alle app di sistema di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Live lock screen manager service provider permission label -->
   <string name="permlab_accessLiveLockScreenServiceProvider">accedi al servizio di gestione schermata di blocco animata</string>
   <!-- Live lock screen manager service provider permission description -->
-  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione della schermata di blocco animata.</string>
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Consenti ad un servizio di accedere al servizio di gestione del blocco schermo animato.</string>
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">leggi meteo</string>
   <string name="permdesc_weather_read">Consenti ad un\'app di leggere contenuti dal provider meteo.</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temi</string>
   <string name="qs_themes_content_description">Personalizza il tuo tema</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Avvio app\u2026</string>
-  <string name="android_upgrading_fstrim">Ottimizzazione memoria\u2026</string>
-  <string name="android_upgrading_complete">Preparazione avvio\u2026</string>
-  <string name="android_upgrading_complete_details">Ottimizzazione completata.</string>
-  <string name="android_preparing_apk">Preparazione %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Preparazione app\u2026</string>
-  <string name="android_upgrading_apk">%1$d di %2$d app</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Privacy Guard</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">gestisci impostazioni remote</string>
+  <string name="permdesc_manageRemotePrefs">Consenti ad un\'app di gestire le impostazioni remote</string>
 </resources>

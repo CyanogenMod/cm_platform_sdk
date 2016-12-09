@@ -59,6 +59,7 @@
   <string name="perf_profile_perf">Rindimientu</string>
   <string name="perf_profile_bias_power">Eficiencia</string>
   <string name="perf_profile_bias_perf">Rápidu</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automáticu</string>
   <string name="live_display_auto_summary">Axusta automáticamente la temperatura de color de la pantalla dempués del tapecer y l\'aséu</string>
@@ -155,5 +156,6 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temes</string>
   <string name="qs_themes_content_description">Personaliza\'l to tema</string>
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

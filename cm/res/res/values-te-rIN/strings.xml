@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">పనితీరు</string>
   <string name="perf_profile_bias_power">సమర్థత</string>
   <string name="perf_profile_bias_perf">త్వరగా</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">స్వయంచాలకం</string>
   <string name="live_display_auto_summary">సూర్యాస్తమయం మరియు సూర్యోదయం తరువాత స్వయంచాలకంగా స్క్రీన్ యొక్క వర్ణ ఉష్ణోగ్రతను సవరించుము.</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

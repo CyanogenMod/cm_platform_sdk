@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Performanse</string>
   <string name="perf_profile_bias_power">Učinkovitost</string>
   <string name="perf_profile_bias_perf">Brzo</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Maksimalna ušteda energije. Smanjuje performanse uređaja, onemogućava pozadinske zadatke i podatke, onemogućava animacije i smanjuje prikaz sličica.</string>
+  <string name="perf_profile_bal_summary">Ravnoteža optimalnih performansi i karakteristika energije</string>
+  <string name="perf_profile_perf_summary">Način rada visokih performansi. Korisno za aplikacije koje zahtijevaju niske latencije i najveću propusnost kada potrošnja energije nije bitna.</string>
+  <string name="perf_profile_bias_power_summary">Naklonost uštedi energije. Ograničuje maksimalnu upotrebu CPU-a i optimizira za uštedu energije po cijeni više latencije.</string>
+  <string name="perf_profile_bias_perf_summary">Naklonost performansama. Smanjuje latenciju s nešto povećanom potrošnjom energije.</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatski</string>
   <string name="live_display_auto_summary">Automatski prilagodi temperaturu boje zaslona nakon zalaska i izlaska sunca</string>
@@ -119,7 +125,7 @@
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Dodatno</string>
   <string name="touchscreen_gesture_haptic_feedback">Dodirna povratna informacija</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibriraj kad je gesta prepoznata</string>
+  <string name="touchscreen_gesture_haptic_feedback_summary">Vibracija kada se gesta prepozna.</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Instalacija teme nije uspjela</string>
   <string name="theme_install_error_message">Nije uspjela instalacija teme <xliff:g id="theme">%1$s</xliff:g></string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Teme</string>
   <string name="qs_themes_content_description">Prilagodite svoju temu</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Pokretanje aplikacija\u2026</string>
-  <string name="android_upgrading_fstrim">Optimiziranje pohrane\u2026</string>
-  <string name="android_upgrading_complete">Priprema za pokretanje\u2026</string>
-  <string name="android_upgrading_complete_details">Optimizacija dovršena.</string>
-  <string name="android_preparing_apk">Priprema %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Priprema aplikacija\u2026</string>
-  <string name="android_upgrading_apk">%1$d od %2$d aplikacija</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Nadzor privatnosti</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">upravljanje udaljenim postavkama</string>
+  <string name="permdesc_manageRemotePrefs">Omogućuje aplikaciji upravljanje udaljenim postavkama</string>
 </resources>

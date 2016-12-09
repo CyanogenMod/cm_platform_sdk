@@ -66,7 +66,7 @@
   <string name="permdesc_protectedApp">Mengizinkan aplikasi untuk menandai aplikasi lain sebagai aplikasi yang dilindungi dan menguncinya.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
-  <string name="profileNameDefault">Baku</string>
+  <string name="profileNameDefault">Standar</string>
   <string name="profileNameWork">Kerja</string>
   <string name="profileNameHome">Beranda</string>
   <string name="profileNameSilent">Senyap</string>
@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Kinerja</string>
   <string name="perf_profile_bias_power">Efisiensi</string>
   <string name="perf_profile_bias_perf">Cepat</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Maksimal penghematan daya. Mengurangi kinerja perangkat, mematikan latar belakang tugas dan data, mematikan animasi, dan mengurangi laju bingkai tampilan</string>
+  <string name="perf_profile_bal_summary">Keseimbangan kinerja yang optimal dan kekuatan karakteristik</string>
+  <string name="perf_profile_perf_summary">Mode kinerja tinggi. Berguna untuk aplikasi yang memerlukan latency rendah dan tertinggi throughput ketika konsumsi daya tidak perhatian</string>
+  <string name="perf_profile_bias_power_summary">Mendukung penghematan daya. Batas maksimum power CPU dan mengoptimalkan untuk penghematan biaya latensi lebih tinggi daya</string>
+  <string name="perf_profile_bias_perf_summary">Mendukung kinerja. Mengurangi latensi dengan konsumsi daya yang sedikit meningkat</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Otomatis</string>
   <string name="live_display_auto_summary">Menyesuaikan suhu warna layar secara otomatis setelah matahari terbenam dan terbit</string>
@@ -178,8 +184,14 @@
   <string name="permlab_observe_audio_sessions">pantau perubahan sesi audio</string>
   <string name="permdesc_observe_audio_sessions">Izinkan aplikasi untuk memantau pengaliran audio yang dibuat dan dihilangkan.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">kelola perubahan sesi audio</string>
+  <string name="permdesc_manage_audio_sessions">Memungkinkan aplikasi untuk mengirim pembaruan stream audio.</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Tema</string>
   <string name="qs_themes_content_description">Sesuaikan tema Anda</string>
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Penjaga Privasi</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">mengelola pengaturan jarak jauh</string>
+  <string name="permdesc_manageRemotePrefs">Memungkinkan aplikasi untuk mengelola pengaturan jarak jauh</string>
 </resources>

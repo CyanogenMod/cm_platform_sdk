@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">परफॉर्मन्स</string>
   <string name="perf_profile_bias_power">क्षमता</string>
   <string name="perf_profile_bias_perf">जलद</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">स्वयंचलित</string>
   <string name="live_display_auto_summary">सूर्यास्त व सूर्योदयानंतर स्क्रीनचे रंग तापमान स्वयंचलितपणे समायोजित करा</string>
@@ -147,5 +148,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

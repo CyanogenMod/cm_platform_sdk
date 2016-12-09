@@ -36,7 +36,7 @@
   <string name="permlab_modifyProfiles">modificar os perfis de sistema</string>
   <string name="permdesc_modifyProfiles">Permite que uma aplicação modifique os perfis do sistema.</string>
   <!-- Labels for the HARDWARE_ABSTRACTION_ACCESS permission. -->
-  <string name="permlab_useHardwareFramework">utilizar a estrutura de hardware</string>
+  <string name="permlab_useHardwareFramework">utilizar a framework de hardware</string>
   <string name="permdesc_useHardwareFramework">Permite que uma aplicação aceda à framework de hardware CM.</string>
   <!-- Labels for the WRITE_ALARMS permission. -->
   <string name="permlab_write_alarms">alterar diretamente os alarmes</string>
@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Desempenho</string>
   <string name="perf_profile_bias_power">Eficiência</string>
   <string name="perf_profile_bias_perf">Rápido</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Poupança de energia máxima. Reduz o desempenho do dispositivo, desativa dados e tarefas em segundo plano, desativa animações e reduz a taxa de frames do ecrã</string>
+  <string name="perf_profile_bal_summary">Equilíbrio entre desempenho e consumo de energia</string>
+  <string name="perf_profile_perf_summary">Modo de alto desempenho. Útil para aplicações que necessitam de baixa latência e taxa de transferências mais altas, quando o consumo de energia não é uma preocupação</string>
+  <string name="perf_profile_bias_power_summary">Favorece a poupança de energia. Limita a potência máxima da CPU e otimiza a poupança de energia, resultando num aumento da latência</string>
+  <string name="perf_profile_bias_perf_summary">Favorece o desempenho. Reduz a latência com um aumento ligeiro do consumo de energia</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automático</string>
   <string name="live_display_auto_summary">Ajusta automaticamente a temperatura de cor do ecrã após o pôr do sol e o nascer do sol</string>
@@ -184,12 +190,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temas</string>
   <string name="qs_themes_content_description">Personalize o seu tema</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">A iniciar as aplicações\u2026</string>
-  <string name="android_upgrading_fstrim">A otimizar o armazenamento\u2026</string>
-  <string name="android_upgrading_complete">A preparar para iniciar\u2026</string>
-  <string name="android_upgrading_complete_details">Otimização concluída.</string>
-  <string name="android_preparing_apk">A preparar %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">A preparar as aplicações\u2026</string>
-  <string name="android_upgrading_apk">%1$d de %2$d aplicações</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Proteção da Privacidade</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">gerir definições remotas</string>
+  <string name="permdesc_manageRemotePrefs">Permite que uma aplicação possa gerir definições remotas</string>
 </resources>

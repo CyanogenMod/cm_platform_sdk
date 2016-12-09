@@ -61,6 +61,7 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Muud</string>
   <!-- Performance profiles -->
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_night">Öö</string>
   <!-- Third party keyguard permission label -->
@@ -98,5 +99,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

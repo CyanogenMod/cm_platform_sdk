@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Ytelse</string>
   <string name="perf_profile_bias_power">Effektivitet</string>
   <string name="perf_profile_bias_perf">Rask</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Maksimum strømsparing. Reduserer ytelsen, deaktiverer bakgrunsoppgaver og data, deaktiverer animasjoner og reduserer bildefrekvens</string>
+  <string name="perf_profile_bal_summary">Balanse av best ytelse og strømegenskaper</string>
+  <string name="perf_profile_perf_summary">Høy ytelse modus. Nyttig for programmer som krever lav latens og høyeste gjennomstrømningen når strømforbruket ikke er en bekymring</string>
+  <string name="perf_profile_bias_power_summary">Favoriserer strømsparing. Begrenser prossesor-kraft og optimaliserer for strømsparing på bekostning av høyere latens</string>
+  <string name="perf_profile_bias_perf_summary">Favoriserer ytelse. Reduserer latens med litt mer strømbruk</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatisk</string>
   <string name="live_display_auto_summary">Juster fargetemperatur på skjermen etter solnedgang og soloppgang</string>
@@ -184,12 +190,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temaer</string>
   <string name="qs_themes_content_description">Tilpass temaet ditt</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Starter apper\u2026</string>
-  <string name="android_upgrading_fstrim">Optimaliserer lagring\u2026</string>
-  <string name="android_upgrading_complete">Gjør klar til oppstart\u2026</string>
-  <string name="android_upgrading_complete_details">Optimalisering er fullført.</string>
-  <string name="android_preparing_apk">Gjør klar %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Gjør klar apper\u2026</string>
-  <string name="android_upgrading_apk">%1$d av %2$d apper</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Personvernvakt</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">administrer fjernkontroll innstillinger</string>
+  <string name="permdesc_manageRemotePrefs">Gir en app tilgang til å endre fjernkontroll innstillingene</string>
 </resources>

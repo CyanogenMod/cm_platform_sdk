@@ -83,6 +83,7 @@
   <string name="perf_profile_perf">Performanță</string>
   <string name="perf_profile_bias_power">Eficiență</string>
   <string name="perf_profile_bias_perf">Rapid</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automat</string>
   <string name="live_display_off">Oprit</string>
@@ -134,5 +135,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

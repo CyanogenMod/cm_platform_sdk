@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">성능</string>
   <string name="perf_profile_bias_power">효율</string>
   <string name="perf_profile_bias_perf">성능</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">자동</string>
   <string name="live_display_auto_summary">일출 및 일몰 후 화면의 색 온도를 자동으로 조정</string>
@@ -179,5 +180,6 @@
   <string name="permdesc_observe_audio_sessions">앱이 오디오 스트림이 생성되고 제거되는 것을 관찰할 수 있도록 허용합니다.</string>
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

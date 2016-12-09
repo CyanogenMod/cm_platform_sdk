@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">പ്രകടനം</string>
   <string name="perf_profile_bias_power">കാര്യക്ഷമത</string>
   <string name="perf_profile_bias_perf">പെട്ടെന്ന്</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">യാന്ത്രികമായി</string>
   <string name="live_display_auto_summary">സൂര്യാസ്തമയത്തിനും സൂര്യോദയത്തിനും ശേഷം സ്ക്രീനിന്റെ കളര്‍ താപനില സ്വയം ക്രമീകരിക്കുക</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

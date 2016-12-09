@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">パフォーマンス</string>
   <string name="perf_profile_bias_power">効率</string>
   <string name="perf_profile_bias_perf">クイック</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">最大限に省電力化します。端末のパフォーマンスとディスプレイのフレームレートを制限し、バックグラウンドのタスク、通信、アニメーションを無効にします。</string>
+  <string name="perf_profile_bal_summary">最適なパフォーマンスと電力特性のバランスを保ちます</string>
+  <string name="perf_profile_perf_summary">高パフォーマンスモードです。電力消費を気にしなければ、低遅延と高処理を必要とするアプリケーションに最適です。</string>
+  <string name="perf_profile_bias_power_summary">省電力化を優先します。遅延が起こりやすくなりますが、最大CPU電力を制限して、省電力に最適化します。</string>
+  <string name="perf_profile_bias_perf_summary">パフォーマンスを優先します。わずかに電力消費が増えますが、遅延が軽減されます。</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">自動</string>
   <string name="live_display_auto_summary">日中に画面の色温度を自動的に調整する</string>
@@ -98,6 +104,16 @@
   <string name="live_display_outdoor">屋外（日光）</string>
   <string name="live_display_outdoor_summary">屋外の設定のみを使用する</string>
   <string name="live_display_hint">LiveDisplayは目の疲れを軽減し、夜の睡眠を邪魔しません。ここをタップして試してみてください。</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplayはOFFです。</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: 自動モードです。</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: 昼モードです。</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: 夜モードです。</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: 屋外モードです。</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplayがOFFになりました。</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplayが自動モードに変更されました。</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplayが昼モードに変更されました。</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplayが夜モードに変更されました。</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplayが屋外モードに変更されました。</string>
   <!-- Third party keyguard permission label -->
   <string name="permlab_thirdPartyKeyguard">サードパーティのロック画面</string>
   <!-- Third party keyguard permission description -->
@@ -111,37 +127,71 @@
   <string name="touchscreen_gesture_haptic_feedback">タッチ操作バイブ</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">ジェスチャーを検出したときに振動する</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">テーマをインストールできませんでした</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g>をインストールできませんでした</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">テーマのリセット</string>
+  <string name="theme_reset_notification_message">複数のアプリがクラッシュしたため、システムのテーマが復元されました。</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">テーマサービスへのアクセス</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">テーマサービスへのアクセスをアプリに許可します。通常のアプリで必要とされることはありません。</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">テーマ情報の読み取り</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">テーマの読み取りや適用しているテーマの特定をアプリに許可します。</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">テーマの変更</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">新しいテーマの挿入や適用しているテーマの変更をアプリに許可します。</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">パフォーマンスマネージャーへのアクセス</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">パフォーマンスサービスへのアクセスをアプリに許可します。通常のアプリで必要とされることはありません。</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">ライブロック画面マネージャサービスへのアクセス</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">ライブロック画面マネージャサービスへのアクセスをアプリに許可します。</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">ライブロック画面マネージャサービスへのアクセス</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">ライブロック画面マネージャサービスへのアクセスをシステムアプリに許可します。</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">ライブロック画面マネージャサービスの提供</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">ライブロック画面マネージャサービスの提供をサービスに許可します。</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">天気の読み取り</string>
+  <string name="permdesc_weather_read">天気プロバイダからのコンテンツの読み取りをアプリに許可します。</string>
+  <string name="permlab_weather_write">天気プロバイダの更新</string>
+  <string name="permdesc_weather_write">天気プロバイダのコンテンツの更新をアプリに許可します。</string>
+  <string name="permlab_weather_bind">天気プロバイダサービスとしてのバインド</string>
+  <string name="permdesc_weather_bind">天気プロバイダサービスとして識別されることをアプリに許可します。</string>
+  <string name="permlab_weather_access_mgr">天気サービスへのアクセス</string>
+  <string name="permdesc_weather_access_mgr">システムの天気サービスへのアクセスをアプリに許可します。通常のアプリで必要とされることはありません。</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">データ使用量データベースの変更</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">データ使用量データベースのコンテンツの更新をアプリに許可します。</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">データ使用量データベースの読み取り</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">データ使用量データベースからのコンテンツの読み取りをアプリに許可します。</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">LiveDisplayの設定の管理</string>
+  <string name="permdesc_manageLiveDisplay">ディスプレイの詳細設定をアプリに許可します。</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">オーディオセッションの変更の監視</string>
+  <string name="permdesc_observe_audio_sessions">オーディオストリームの作成および破棄の監視をアプリに許可します。</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">オーディオセッションの変更の管理</string>
+  <string name="permdesc_manage_audio_sessions">オーディオストリームの更新の送信をアプリに許可します。</string>
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">テーマ</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">アプリを開始しています\u2026</string>
-  <string name="android_upgrading_fstrim">ストレージを最適化しています\u2026</string>
-  <string name="android_upgrading_complete">開始するための準備をしています\u2026</string>
-  <string name="android_upgrading_complete_details">最適化が完了しました。</string>
-  <string name="android_preparing_apk">%1$sを準備しています\u2026</string>
-  <string name="android_preparing_apk_obscured">アプリを準備しています\u2026</string>
-  <string name="android_upgrading_apk">%2$d個中%1$d個目のアプリ</string>
+  <string name="qs_themes_content_description">テーマをカスタマイズする</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">プライバシーガード</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">リモートの設定の管理</string>
+  <string name="permdesc_manageRemotePrefs">リモートの設定を管理することをアプリに許可します。</string>
 </resources>

@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">ସଂଚାଳନକାରିତା</string>
   <string name="perf_profile_bias_power">ଉପାଦେୟତା</string>
   <string name="perf_profile_bias_perf">ଦ୍ରୁତ</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">ସ୍ୱତଃସ୍ପୃତ</string>
   <string name="live_display_auto_summary">ସୂର୍ଯ୍ୟାସ୍ତ ଓ ସୂର୍ଯ୍ୟୋଦୟ ପରେ ରଙ୍ଗ ତାପମାତ୍ରା ସ୍ୱତଃ ଆଡ୍‍ଜଷ୍ଟ କରନ୍ତୁ</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

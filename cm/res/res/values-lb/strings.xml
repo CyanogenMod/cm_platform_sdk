@@ -61,6 +61,7 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Aner</string>
   <!-- Performance profiles -->
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_off">Aus</string>
   <string name="live_display_day">Dag</string>
@@ -111,5 +112,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

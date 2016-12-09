@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">Teljesítmény</string>
   <string name="perf_profile_bias_power">Hatékonyság</string>
   <string name="perf_profile_bias_perf">Gyors</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatikus</string>
   <string name="live_display_auto_summary">Automatikusan beállítja a képernyő színhőmérsékletét napnyugta és napkelte után</string>
@@ -184,12 +185,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Témák</string>
   <string name="qs_themes_content_description">Téma testreszabása</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Alkalmazások indítása\u2026</string>
-  <string name="android_upgrading_fstrim">Tároló optimalizálása\u2026</string>
-  <string name="android_upgrading_complete">Felkészülés az indulásra\u2026</string>
-  <string name="android_upgrading_complete_details">Optimalizálás befejezve.</string>
-  <string name="android_preparing_apk">%1$s előkészítése\u2026</string>
-  <string name="android_preparing_apk_obscured">Alkalmazások előkészítése\u2026</string>
-  <string name="android_upgrading_apk">%1$d / %2$d alkalmazás</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Adatvédelmi beállítások</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">távoli beállítások kezelése</string>
+  <string name="permdesc_manageRemotePrefs">Lehetővé teszi az alkalmazások számára a távoli beállítások kezelését</string>
 </resources>

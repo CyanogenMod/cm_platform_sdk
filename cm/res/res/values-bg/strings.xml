@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Високопроизводителен</string>
   <string name="perf_profile_bias_power">Ефикасен</string>
   <string name="perf_profile_bias_perf">Бърз</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Максимална икономия на енергия. Намалява ефективността на устройството, забранява задачи във фонов режим и данни, забранява анимациите и намалява скоростта на кадрите</string>
+  <string name="perf_profile_bal_summary">Баланс между оптимална производителност и енергопотребление</string>
+  <string name="perf_profile_perf_summary">Режим на висока производителност. Полезни за приложения, изискващи ниска латентност и най-високата производителност, когато консумацията на енергия не е проблем</string>
+  <string name="perf_profile_bias_power_summary">Предпочитане за спестяване на енергия. Ограничаване на максималната мощност на Процесора и оптимизиране за енергоспестяване с цената на по-висока латентност</string>
+  <string name="perf_profile_bias_perf_summary">Предпочитане за производителност. Намалява латентност с леко повишена консумация на енергия</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Автоматичен</string>
   <string name="live_display_auto_summary">Автоматично регулиране на цветовата температура след залез/изгрев</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Теми</string>
   <string name="qs_themes_content_description">Персонализирайте вашата тема</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Стартиране на приложения \u2026</string>
-  <string name="android_upgrading_fstrim">Оптимизиране на хранилището\u2026</string>
-  <string name="android_upgrading_complete">Начало на подготовката \u2026</string>
-  <string name="android_upgrading_complete_details">Оптимизацията е завършена.</string>
-  <string name="android_preparing_apk">Подготовка на %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Подготовка на приложенията\u2026</string>
-  <string name="android_upgrading_apk">%1$d от %2$d приложения</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Защитен режим</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">управление на отдалечени настройки</string>
+  <string name="permdesc_manageRemotePrefs">Позволява на приложението да управлява отдалечени настройки</string>
 </resources>

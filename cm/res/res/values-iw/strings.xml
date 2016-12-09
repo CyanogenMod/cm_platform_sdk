@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">ביצועים</string>
   <string name="perf_profile_bias_power">יעילות</string>
   <string name="perf_profile_bias_perf">מהיר</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">אוטומטי</string>
   <string name="live_display_auto_summary">התאם אוטומטית את טמפרטורת הצבע של המסך לאחר הזריחה והשקיעה</string>
@@ -183,12 +184,6 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">ערכות עיצוב</string>
   <string name="qs_themes_content_description">התאם אישית את ערכת הנושא שלך</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">מפעיל יישומים\u2026</string>
-  <string name="android_upgrading_fstrim">מבצע אופטימיזציה לאחסון\u2026</string>
-  <string name="android_upgrading_complete">מתכונן להפעלה\u2026</string>
-  <string name="android_upgrading_complete_details">אופטימיזציה הושלמה.</string>
-  <string name="android_preparing_apk">מכין את %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">מכין יישומים\u2026</string>
-  <string name="android_upgrading_apk">%1$d מתוך %2$d יישומים</string>
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

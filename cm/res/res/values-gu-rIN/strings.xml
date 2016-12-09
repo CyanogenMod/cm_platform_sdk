@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">પ્રદર્શન</string>
   <string name="perf_profile_bias_power">કાર્યક્ષમતા</string>
   <string name="perf_profile_bias_perf">ઝડપી</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">સ્વચલિત</string>
   <string name="live_display_auto_summary">સૂર્યોદય અને સૂર્યાસ્ત પછી સ્ક્રીનના રંગ તાપમાનને સ્વયંચાલિત રીતે સમાયોજિત કરો</string>
@@ -147,5 +148,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

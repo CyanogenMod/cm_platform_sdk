@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">செயல்திறன்</string>
   <string name="perf_profile_bias_power">செயல்திறன்</string>
   <string name="perf_profile_bias_perf">விரைவு</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">தானியங்கு</string>
   <string name="live_display_auto_summary">சூரிய மறைவு மற்றும் சூரிய உதயத்திற்கு பிறகு தானாகவே திரையின் வண்ன தட்பவெப்பங்களை சரிசெய்</string>
@@ -135,5 +136,6 @@
   <!-- CMAudioService - observe session changes permission -->
   <!-- CMAudioService - observe session changes permission -->
   <!-- QuickSettings: Themes tile -->
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>

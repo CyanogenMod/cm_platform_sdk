@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Rendiment</string>
   <string name="perf_profile_bias_power">Eficiència</string>
   <string name="perf_profile_bias_perf">Ràpid</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Estalvi d\'energia màxim. Redueix el rendiment del dispositiu, deshabilitat tasques i dades en segon pla, inhabilita les animacions, i redueix la freqüència de la imatge de la pantalla</string>
+  <string name="perf_profile_bal_summary">Equilibri entre rendiment òptim i característiques d\'estalvi d\'energia</string>
+  <string name="perf_profile_perf_summary">Mode d\'alt rendiment. Útil per a aplicacions que requereixen una latència baixa i el millor rendiment quan el consum d\'energia no és una preocupació</string>
+  <string name="perf_profile_bias_power_summary">Afavoreix l\'estalvi d\'energia. Limita el rendiment màxim de la CPU i optimitza\'l per a l\'estalvi d\'energia a costa d\'una latència més alta</string>
+  <string name="perf_profile_bias_perf_summary">Afavoreix el rendiment. Redueix la latència amb un consum lleugerament més alt</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automàtic</string>
   <string name="live_display_auto_summary">Ajusta automàticament la temperatura de color de la pantalla després de la posta de sol i de l\'alba</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Temes</string>
   <string name="qs_themes_content_description">Personalitza els teus temes</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">S\'estan iniciant les aplicacions\u2026</string>
-  <string name="android_upgrading_fstrim">S\'està optimitzant l\'emmagatzematge\u2026</string>
-  <string name="android_upgrading_complete">S\'està preparant per a iniciar\u2026</string>
-  <string name="android_upgrading_complete_details">Optimització completada.</string>
-  <string name="android_preparing_apk">S\'està preparant %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">S\'estan preparant les aplicacions\u2026</string>
-  <string name="android_upgrading_apk">%1$d de %2$d aplicacions</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Guarda de privacitat</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">gestiona la configuració remota</string>
+  <string name="permdesc_manageRemotePrefs">Permet a una aplicació gestionar la configuració remota</string>
 </resources>

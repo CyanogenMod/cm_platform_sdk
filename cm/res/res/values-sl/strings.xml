@@ -18,8 +18,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Label for the CyanogenMod system components when they are shown to the user. -->
   <string name="cyanogenmod_system_label">Sistem CyanogenMod</string>
-  <string name="permlab_publishCustomTile">ustvari ploščico po meri na plošči za hitre nastavitve</string>
-  <string name="permdesc_publishCustomTile">Dovoli aplikaciji, da objavi ploščico za hitre nastavitve.</string>
+  <string name="permlab_publishCustomTile">ustvarjanje ploščice po meri na plošči za Hitre nastavitve</string>
+  <string name="permdesc_publishCustomTile">Dovoli aplikaciji, da objavi ploščico za Hitre nastavitve.</string>
   <string name="permlab_modifyNetworkSettings">spreminjanje sistemskih nastavitev omrežja</string>
   <string name="permdesc_modifyNetworkSettings">Dovoli aplikaciji, da naredi spremembe v načinu za letalo in nastavitvah omrežja mobilnih podatkov.</string>
   <string name="permlab_modifySoundSettings">spreminjanje sistemskih nastavitev zvoka</string>
@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Zmogljivost</string>
   <string name="perf_profile_bias_power">Učinkovitost</string>
   <string name="perf_profile_bias_perf">Hitro</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Največji prihranek energije. Zmanjša zmogljivost naprave, onemogoči opravila in podatke v ozadju, onemogoči animacije in zmanjša hitrost sličic zaslona</string>
+  <string name="perf_profile_bal_summary">Uravnotežena optimalna zmogljivost in poraba energije</string>
+  <string name="perf_profile_perf_summary">Visokozmogljivostni način. Uporabno za aplikacije, ki zahtevajo majhne zakasnitve in visoko prepustnost, kadar poraba energije ni bistvena</string>
+  <string name="perf_profile_bias_power_summary">Naklonjeno varčevanju z energijo. Omeji največjo porabo energije CPE-ja in optimizira za varčevanje z energijo na račun višjih zakasnitev</string>
+  <string name="perf_profile_bias_perf_summary">Naklonjeno zmogljivosti. Zmanjša zakasnitve z rahlo povečano porabo energije</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Samodejno</string>
   <string name="live_display_auto_summary">Samodejno nastavi barvno temperaturo zaslona po sončnem zahodu in vzhodu</string>
@@ -158,7 +164,7 @@
   <!-- Weather Service strings -->
   <string name="permlab_weather_read">branje vremena</string>
   <string name="permdesc_weather_read">Dovoli aplikaciji branje vsebine iz ponudnika vremena.</string>
-  <string name="permlab_weather_write">posodobitev ponudnika vremena</string>
+  <string name="permlab_weather_write">posodabljanje ponudnika vremena</string>
   <string name="permdesc_weather_write">Dovoli aplikaciji posodobitev vsebine ponudnika vremena.</string>
   <string name="permlab_weather_bind">vezava kot storitev ponudnika vremena</string>
   <string name="permdesc_weather_bind">Dovoli aplikaciji, da se identificira kot storitev ponudnika vremena.</string>
@@ -184,12 +190,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Teme</string>
   <string name="qs_themes_content_description">Prilagodite svojo temo</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Zaganjanje aplikacij \u2026</string>
-  <string name="android_upgrading_fstrim">Optimiziranje pomnilniške naprave \u2026</string>
-  <string name="android_upgrading_complete">Pripravljanje na zagon \u2026</string>
-  <string name="android_upgrading_complete_details">Optimizacija končana.</string>
-  <string name="android_preparing_apk">Pripravljanje %1$s \u2026</string>
-  <string name="android_preparing_apk_obscured">Pripravljanje aplikacij \u2026</string>
-  <string name="android_upgrading_apk">%1$d od %2$d aplikacij</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Zaščita zasebnosti</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">upravljanje oddaljenih nastavitev</string>
+  <string name="permdesc_manageRemotePrefs">Dovoli aplikaciji upravljanje oddaljenih nastavitev</string>
 </resources>

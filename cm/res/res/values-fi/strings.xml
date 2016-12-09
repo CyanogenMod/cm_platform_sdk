@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Suorituskyky</string>
   <string name="perf_profile_bias_power">Tehokkuus</string>
   <string name="perf_profile_bias_perf">Nopea</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Suurin virransäästö. Heikentää laitteen suorituskykyä, poistaa taustatehtävät ja -datan käytöstä, poistaa animaatiot käytöstä ja heikentää näytön kuvataajuutta</string>
+  <string name="perf_profile_bal_summary">Tasapainottaa suorituskyvyn ja virrankulutuksen</string>
+  <string name="perf_profile_perf_summary">Korken suorituskyvyn tila. Hyödyllinen sovelluksiin, jotka vaativat alhaisen latenssin ja nopeimman ulostulon kun virrankulutuksella ei ole väliä</string>
+  <string name="perf_profile_bias_power_summary">Suosii virransäästöä. Rajoittaa prosessorin tehoa ja optimoi virran säästämiseksi hieman pidemmällä latenssilla</string>
+  <string name="perf_profile_bias_perf_summary">Suosii suorituskykyä. Vähentää latenssia ja lisää hieman virrankulutusta</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automaattinen</string>
   <string name="live_display_auto_summary">Säädä näytön värilämpötilaa automaattisesti auringonlaskun ja -nousun jälkeen</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Teemat</string>
   <string name="qs_themes_content_description">Muokkaa teemaa</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Käynnistetään sovelluksia\u2026</string>
-  <string name="android_upgrading_fstrim">Optimoidaan tallennustilaa\u2026</string>
-  <string name="android_upgrading_complete">Valmistellaan käynnistystä\u2026</string>
-  <string name="android_upgrading_complete_details">Optimointi valmis.</string>
-  <string name="android_preparing_apk">Valmistellaan sovellusta %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Valmistellaan sovelluksia\u2026</string>
-  <string name="android_upgrading_apk">%1$d/%2$d sovellusta</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Yksityisyyden suojaus</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">hallitse etäkäytön asetuksia</string>
+  <string name="permdesc_manageRemotePrefs">Sallii sovellluksen hallita etäasetuksia</string>
 </resources>

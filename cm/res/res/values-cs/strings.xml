@@ -86,6 +86,12 @@
   <string name="perf_profile_perf">Výkon</string>
   <string name="perf_profile_bias_power">Efektivita</string>
   <string name="perf_profile_bias_perf">Rychlý</string>
+  <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Maximální úspora energie. Snižuje výkon zařízení, zakáže data, úlohy na pozadí, animaci a sníží snímkovací frekvenci</string>
+  <string name="perf_profile_bal_summary">Optimální výkon a výkonové charakteristiky</string>
+  <string name="perf_profile_perf_summary">Režim Vysoký výkon. Vhodné pro aplikace vyžadující nízkou latenci a vysoký výkon. Zvyšuje se spotřeba energie</string>
+  <string name="perf_profile_bias_power_summary">Preferování úspory energie. Omezení maximálního výkonu procesoru, optimalizace úspory energie za cenu vyšší latence</string>
+  <string name="perf_profile_bias_perf_summary">Preferování výkonu. Snižuje latenci a zvyšuje spotřebu energie</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatické</string>
   <string name="live_display_auto_summary">Automaticky upravit teplotu barev obrazovky po západu a východu slunce</string>
@@ -183,12 +189,9 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Motivy</string>
   <string name="qs_themes_content_description">Vlastní nastavení motivu</string>
-  <!-- Custom booot dexopt -->
-  <string name="android_upgrading_starting_apps">Spouštění aplikací\u2026</string>
-  <string name="android_upgrading_fstrim">Optimalizace úložiště\u2026</string>
-  <string name="android_upgrading_complete">Příprava spuštění\u2026</string>
-  <string name="android_upgrading_complete_details">Optimalizace dokončena.</string>
-  <string name="android_preparing_apk">Příprava aplikace %1$s\u2026</string>
-  <string name="android_preparing_apk_obscured">Příprava aplikací\u2026</string>
-  <string name="android_upgrading_apk">%1$d z %2$d aplikací</string>
+  <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Ochrana soukromí</string>
+  <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">správa vzdálených nastavení</string>
+  <string name="permdesc_manageRemotePrefs">Umožňuje spravovat vzdálené nastavení</string>
 </resources>

@@ -86,6 +86,7 @@
   <string name="perf_profile_perf">ประสิทธิภาพ</string>
   <string name="perf_profile_bias_power">พลังงานต่ำ</string>
   <string name="perf_profile_bias_perf">รวดเร็ว</string>
+  <!-- Performance profiles -->
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">อัตโนมัติ</string>
   <string name="live_display_auto_summary">ตั้งอุณหภูมิสีอัตโนมัติเมื่อดวงอาทิตย์ขึ้นหรือตก</string>
@@ -181,5 +182,6 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">รูปแบบธีม</string>
   <string name="qs_themes_content_description">กำหนดรูปแบบธีมเอง</string>
-  <!-- Custom booot dexopt -->
+  <!-- Privacy Guard -->
+  <!-- Permissions used by remote preferences -->
 </resources>
