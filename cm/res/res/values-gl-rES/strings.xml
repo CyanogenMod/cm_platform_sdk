@@ -87,6 +87,11 @@
   <string name="perf_profile_bias_power">Eficiencia</string>
   <string name="perf_profile_bias_perf">Veloz</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Aforro de enerxía máximo. Reduce o rendemento do dispositivo, desactiva as tarefas e datos en segundo plano, desactiva as animacións e reduce o taxa de refresco da pantalla</string>
+  <string name="perf_profile_bal_summary">Equilibrio entre un rendemento óptimo e características de aforro de enerxía</string>
+  <string name="perf_profile_perf_summary">Modo de alto rendemento. Útil para as aplicacións que requiren dunha baixa latencia e o un gran rendemento cando o consumo de enerxía non é unha preocupación</string>
+  <string name="perf_profile_bias_power_summary">Favorece o aforro de enerxía. Limita o rendemento máximo da CPU e a optimiza para poder aforrar perante unha maior latencia</string>
+  <string name="perf_profile_bias_perf_summary">Favorece o rendemento. Reduce a latencia cun consumo lixeiramente máis alto</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automático</string>
   <string name="live_display_auto_summary">Axustar automaticamente as cores de pantalla ao mencer e ao solpor</string>
@@ -186,5 +191,8 @@
   <string name="qs_themes_label">Temas</string>
   <string name="qs_themes_content_description">Personalice o seu tema</string>
   <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Proteción da Privacidade</string>
   <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">xestionar axustes remotos</string>
+  <string name="permdesc_manageRemotePrefs">Permitir a unha aplicación xestionar os axustes remotos</string>
 </resources>
