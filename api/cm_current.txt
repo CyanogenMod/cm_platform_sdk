@@ -867,6 +867,15 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
+  public class GlobalSettingSwitchPreference extends cyanogenmod.preference.SelfRemovingSwitchPreference {
+    ctor public GlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public GlobalSettingSwitchPreference(android.content.Context, android.util.AttributeSet);
+    ctor public GlobalSettingSwitchPreference(android.content.Context);
+    method protected boolean getPersistedBoolean(boolean);
+    method protected boolean isPersisted();
+    method protected boolean persistBoolean(boolean);
+  }
+
   public class RemotePreference extends cyanogenmod.preference.SelfRemovingPreference {
     ctor public RemotePreference(android.content.Context, android.util.AttributeSet, int, int);
     ctor public RemotePreference(android.content.Context, android.util.AttributeSet, int);
