@@ -2857,8 +2857,21 @@ public final class CMSettings {
         /**
          * Whether lock screen bluring is enabled on devices that support this feature
          * @hide
+         * @deprecated Use {@link cyanogenmod.providers.CMSettings.Secure#LOCK_SCREEN_BLUR} instead
          */
+        @Deprecated
         public static final String LOCK_SCREEN_BLUR_ENABLED = "lock_screen_blur_enabled";
+
+        /**
+         * The type of lock screen blurring that is enabled.
+         * Available values:
+         * 0 - Don't blur
+         * 1 - Blur the wallpaper
+         * 2 - Blur the top-most app (default)
+         *
+         * @hide
+         */
+        public static final String LOCK_SCREEN_BLUR = "lock_screen_blur";
 
         /**
          * Whether to display weather information on the lock screen
