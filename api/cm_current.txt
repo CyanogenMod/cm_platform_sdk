@@ -822,6 +822,15 @@ package cyanogenmod.preference {
     method protected boolean persistBoolean(boolean);
   }
 
+  public class CMSecureSettingDropDownPreference extends cyanogenmod.preference.SelfRemovingDropDownPreference {
+    ctor public CMSecureSettingDropDownPreference(android.content.Context, android.util.AttributeSet, int);
+    ctor public CMSecureSettingDropDownPreference(android.content.Context, android.util.AttributeSet);
+    method public int getIntValue(int);
+    method protected java.lang.String getPersistedString(java.lang.String);
+    method protected boolean isPersisted();
+    method protected boolean persistString(java.lang.String);
+  }
+
   public class CMSecureSettingListPreference extends cyanogenmod.preference.SelfRemovingListPreference {
     ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet, int);
     ctor public CMSecureSettingListPreference(android.content.Context, android.util.AttributeSet);
