@@ -87,6 +87,11 @@
   <string name="perf_profile_bias_power">Эфектыўны</string>
   <string name="perf_profile_bias_perf">Хуткі</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Найбольшае энэргазахаваньне. Найменьша працаздольнасьць прылады, забараняе выкарыстаньне схаваных дадаткаў, а таксама дадзеных сеціва. Адсутнічае анімацыя і найменьшая часьціня абнаўленьня экрану</string>
+  <string name="perf_profile_bal_summary">Пэўная раўнавага паміж працаздольнасьцьцю і энэргазахаваньнем</string>
+  <string name="perf_profile_perf_summary">Высокая працаздольнасьць. Карысна падчас працы з дадаткамі, для якіх неабходны найменьшы час адказу й найвышэйша хуткасьць дадзеных, а таксама, калі энэргазахаваньне не вельмі неаходнае</string>
+  <string name="perf_profile_bias_power_summary">Намагацца заховаць энэргію. Абмяжоўваньне найбольшае магутнасьці коштам найбольшага часу адказваньня сістэмы</string>
+  <string name="perf_profile_bias_perf_summary">Падвышаная працаздольнасьць. Зьменшаны час адказу коштам падвышаным энэргаспажываньнем</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Аўтаматычна</string>
   <string name="live_display_auto_summary">Аўтаматычная падладка колеравай тэмпературы экрана пасля заходу і ўзыходу сонца</string>
@@ -159,5 +164,8 @@
   <!-- QuickSettings: Themes tile -->
   <string name="qs_themes_label">Знешні выгляд</string>
   <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Ахова</string>
   <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">кіраваньне аддаленнымі наладамі</string>
+  <string name="permdesc_manageRemotePrefs">Дадатак зможа кіраваць аддаленымі наладамі</string>
 </resources>
