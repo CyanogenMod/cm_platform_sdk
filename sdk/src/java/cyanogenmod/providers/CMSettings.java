@@ -2861,6 +2861,12 @@ public final class CMSettings {
         public static final String LOCK_SCREEN_BLUR_ENABLED = "lock_screen_blur_enabled";
 
         /**
+         * Whether lock screen bluring is applied to the wallpaper or the topmost app
+         * @hide
+         */
+        public static final String LOCK_SCREEN_BLUR_WALLPAPER = "lock_screen_blur_wallpaper";
+
+        /**
          * Whether to display weather information on the lock screen
          * @hide
          */
