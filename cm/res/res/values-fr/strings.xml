@@ -87,6 +87,8 @@
   <string name="perf_profile_bias_power">Efficace</string>
   <string name="perf_profile_bias_perf">Rapide</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv_summary">Économies d’énergie maximales. Réduit les performances de l’appareil, désactive les données et les tâches en arrière-plan, désactive les animations et réduit la fréquence de rafraichissement</string>
+  <string name="perf_profile_perf_summary">Mode haute performance. Utile pour les applications nécessitant un débit plus élevé et à faible latence lorsque la consommation d’énergie n’est pas un problème</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatique</string>
   <string name="live_display_auto_summary">Ajuster automatiquement la température des couleurs de l\'écran après le coucher et le lever du soleil</string>
