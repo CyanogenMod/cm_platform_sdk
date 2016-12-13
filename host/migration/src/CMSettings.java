@@ -58,13 +58,11 @@ public final class CMSettings {
         public static final String SYSTEM_PROFILES_ENABLED = "system_profiles_enabled";
 
         /**
-         * Whether to hide the clock, show it in the right or left
-         * position or show it in the center
-         * 0: don't show the clock
-         * 1: show the clock in the right position (LTR)
-         * 2: show the clock in the center
-         * 3: show the clock in the left position (LTR)
-         * default: 1
+         * Whether to show the clock in the right or left position or show it in the center
+         * 0: show the clock in the right position (LTR)
+         * 1: show the clock in the center
+         * 2: show the clock in the left position (LTR)
+         * default: 0
          * @hide
          */
         public static final String STATUS_BAR_CLOCK = "status_bar_clock";
