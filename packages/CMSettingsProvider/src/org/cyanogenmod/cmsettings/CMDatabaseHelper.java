@@ -33,6 +33,8 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import com.android.systemui.statusbar.phone.StatusBarIconController;
+import com.android.systemui.tuner.TunerService;
 import cyanogenmod.providers.CMSettings;
 
 import java.io.File;
@@ -46,7 +48,7 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
     private static final boolean LOCAL_LOGV = false;
 
     private static final String DATABASE_NAME = "cmsettings.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     public static class CMTableNames {
         public static final String TABLE_SYSTEM = "system";
@@ -231,6 +233,36 @@ public class CMDatabaseHelper extends SQLiteOpenHelper{
                 }, true);
             }
             upgradeVersion = 6;
+        }
+
+        if (upgradeVersion < 7) {
+            if (mUserHandle == UserHandle.USER_OWNER) {
+               db.beginTransaction();
+                SQLiteStatement stmt = null;
+                try {
+                    stmt = db.compileStatement("SELECT value FROM system WHERE name=?");
+                    stmt.bindString(1, CMSettings.System.STATUS_BAR_CLOCK);
+                    long value = stmt.simpleQueryForLong();
+
+                    if (value == 0) {
+                        ArraySet<String> blacklist = StatusBarIconController.getIconBlacklist(
+                                TunerService.get(mContext).getValue(
+                                    StatusBarIconController.ICON_BLACKLIST));
+                        blacklist.add(mContext.getString(
+                                    com.android.internal.R.string.status_bar_clock));
+                        TunerService.get(mContext).setValue(StatusBarIconController.ICON_BLACKLIST,
+                                TextUtils.join(",", blacklist));
+                    } else {
+                        stmt = db.compileStatement("UPDATE system SET value=? WHERE name=?");
+                        loadSetting(stmt, CMSettings.System.STATUS_BAR_CLOCK, value - 1);
+                    }
+                    db.setTransactionSuccessful();
+                } finally {
+                    if (stmt != null) stmt.close();
+                    db.endTransaction();
+                }
+            }
+            upgradeVersion = 7;
         }
         // *** Remember to update DATABASE_VERSION above!
 
