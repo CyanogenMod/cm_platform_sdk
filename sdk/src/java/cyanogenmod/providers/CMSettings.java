@@ -834,9 +834,8 @@ public final class CMSettings {
                 sBooleanValidator;
 
         /**
-         * Whether to hide the clock, show it in the right or left
-         * position or show it in the center
-         * 0: don't show the clock
+         * Whether to show the clock in the right or left position or show it in the center
+         * 0: unused
          * 1: show the clock in the right position (LTR)
          * 2: show the clock in the center
          * 3: show the clock in the left position (LTR)
