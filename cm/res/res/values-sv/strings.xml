@@ -107,14 +107,6 @@
   <string name="permlab_thirdPartyKeyguard">tredjepartslåsskärm</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Tillåter en applikation att användas som osäker låsskärm.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Avancerade inställningar</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gester</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extra</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptisk feedback</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrera när en gest upptäcktes</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Kunde inte installera tema</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> kunde inte installeras</string>

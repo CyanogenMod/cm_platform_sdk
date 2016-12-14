@@ -82,13 +82,6 @@
   <string name="live_display_night">شب</string>
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">تنظیمات پیشرفته</string>
-  <!-- Touchscreen gestures -->
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">موارد اضافی</string>
-  <string name="touchscreen_gesture_haptic_feedback">بازخورد لمسی</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">لرزیدن هنگام تشخیص حرکت</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

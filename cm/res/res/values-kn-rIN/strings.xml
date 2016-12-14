@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">ಥರ್ಡ್‌ ಪಾರ್ಟಿ ಲಾಕ್ ಸ್ಕ್ರೀನ್‌</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">ಅಸುರಕ್ಷಿತ ಲಾಕ್‌ ಸ್ಕ್ರೀನ್‌ ಎಂಬುದಾಗಿ ಒಂದು ಅಪ್ಲಿ ಗಳನ್ನು ಬಳಸಲು ಒಂದು ಅಪ್ಲಿಕೇಶನ್‌ ಅನುವು ಮಾಡುತ್ತದೆ.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">ಸುಧಾರಿತ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">ಸನ್ನೆ</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">ಹೆಚ್ಚುವರಿ</string>
-  <string name="touchscreen_gesture_haptic_feedback">ಸ್ಪಾರ್ಶ ಪ್ರತಿಕ್ರಿಯೆ</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">ಸನ್ನೆ ಪತ್ತೆಯಾದಾಗ ಕಂಪಿಸು</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

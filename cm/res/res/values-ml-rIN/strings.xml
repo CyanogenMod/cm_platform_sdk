@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">മൂന്നാം കക്ഷി ലോക്ക് സ്ക്രീൻ</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">സുരക്ഷിതമല്ലാത്ത ലോക്ക് സ്ക്രീന്‍ ആയി ഉപയോഗിക്കുവാന്‍ ഒരു ആപ്ലിക്കേഷനെ അനുവദിക്കുന്നു.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">നൂതനമായ ക്രമീകരണം</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">ഗസ്റ്ററുകൾ</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">എക്സ്ട്രാസ്</string>
-  <string name="touchscreen_gesture_haptic_feedback">ഹാപ്ടിക പ്രതികരണം</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">ആംഗ്യമുണ്ടെങ്കിൽ വൈബ്രേട്ടു ചെയ്യുക</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

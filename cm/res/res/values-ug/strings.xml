@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">ئۈچىنچى تەرەپ ئېكران قۇلۇپى</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">ئەپنىڭ تۇراقسىز ئىكران قۇلۇپى بۇلۇپ ئىشلىتىلىشىگە رۇخسەت قىلىش.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">ئالىي تەڭشەكلەر</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">قول ئىشارەت</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">قوشۇمچە ئىقتىدار</string>
-  <string name="touchscreen_gesture_haptic_feedback">تېگىش ئىنكاسى</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">قوش ئىشارىتىنى بايقىغاندا تىتىرەيدۇ</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">ئۆرنەك ئورنىتالمىدى</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> ئورنىتىش مەغلۇب بولدى</string>

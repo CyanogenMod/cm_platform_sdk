@@ -70,14 +70,6 @@
   <string name="permlab_thirdPartyKeyguard">Spärschierm vun Drëttubidder</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Erlaabt der App, als onséchere Spärschierm benotzt ze ginn.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Erweidert Astellungen</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gesten</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extraen</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptesche Feedback</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibréieren, wann e Gest erkannt gëtt</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Design konnt net installéiert ginn</string>
   <!-- Theme reset notification -->

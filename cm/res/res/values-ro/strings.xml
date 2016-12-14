@@ -96,14 +96,6 @@
   <string name="permlab_thirdPartyKeyguard">ecran de blocare terț</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Permite unei aplicații să fie utilizată ca ecran de blocare nesigur.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Setări avansate</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gesturi</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Mai multe</string>
-  <string name="touchscreen_gesture_haptic_feedback">Reacție tactilă</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrează când s-a detectat un gest</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Instalarea temei a eșuat</string>
   <!-- Theme reset notification -->

@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">మూడవ పక్షం లాక్ స్క్రీన్</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">ఒక ప్రోగ్రాం అసురక్షిత లాక్ స్క్రీనుగా ఉపయోగించబడడానికి అనుమతినిస్తుంది.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">ఆధునిక సెట్టింగులు</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">సైగలు</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">అధికమైనవి</string>
-  <string name="touchscreen_gesture_haptic_feedback">స్పర్శతో అభిప్రాయం</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">ఎప్పుడు ఒక జెస్చర్ ప్రకంపనాలను కనుగొనబడలేదు </string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

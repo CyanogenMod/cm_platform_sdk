@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">மூன்றாம் தரப்பு பூட்டுத் திரை</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">பாதுகாப்பற்ற பூட்டுத் திரையாக பயன்படுத்தப்பட ஒரு பயன்பாட்டை அனுமதிக்கிறது.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">மேம்பட்ட அமைப்புகள்</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">சைகைகள்</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">உதிரிகள்</string>
-  <string name="touchscreen_gesture_haptic_feedback">தீண்டும் பின்னூட்டம்</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">குறிப்புணர்வு ஒன்று கண்டுபிடிக்கப்படும்போது அதிர்</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

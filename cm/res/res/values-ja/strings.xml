@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">サードパーティのロック画面</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">パスワードのないロック画面として使用されることをアプリに許可します。</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">詳細設定</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">ジェスチャー</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">その他</string>
-  <string name="touchscreen_gesture_haptic_feedback">タッチ操作バイブ</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">ジェスチャーを検出したときに振動する</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">テーマをインストールできませんでした</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g>をインストールできませんでした</string>

@@ -113,14 +113,6 @@
   <string name="permlab_thirdPartyKeyguard">χρήση ως οθόνη κλειδώματος</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Επιτρέπει σε μια εφαρμογή να χρησιμοποιηθεί ως μια ανασφαλής οθόνη κλειδώματος.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Προηγμένες ρυθμίσεις</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Χειρονομίες</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Επιπλέον ρυθμίσεις</string>
-  <string name="touchscreen_gesture_haptic_feedback">Απτική ανάδραση</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Δόνηση κατά τον εντοπισμό μιας χειρονομίας</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Αποτυχία εγκατάστασης του θέματος</string>
   <string name="theme_install_error_message">Απέτυχε η εγκατάσταση του <xliff:g id="theme">%1$s</xliff:g></string>

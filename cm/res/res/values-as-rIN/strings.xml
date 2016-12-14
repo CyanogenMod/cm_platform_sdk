@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">তৃতীয় পক্ষৰ লক স্ক্ৰীণ</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">এটা এপ্প্‌ক অসুৰক্ষিত লক স্ক্ৰীণ হিচাপে ব্যৱহাৰ কৰিবলৈ অনুমতি দিয়ে।</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">এডভান্স ছেটিংসমূহ</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">ভঙ্গিমা</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">অতিৰিক্তবোৰ</string>
-  <string name="touchscreen_gesture_haptic_feedback">হেপটিক ফীডবেক</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">ভঙ্গিমা চিনাক্ত কৰিব নোৱাৰিলে কম্পন কৰক</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

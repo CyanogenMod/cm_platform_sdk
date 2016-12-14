@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">tela de bloqueio de terceiros</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Permite que um aplicativo para ser usado como uma tela de bloqueio insegura.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Configurações avançadas</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gestos</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extras</string>
-  <string name="touchscreen_gesture_haptic_feedback">Retorno tátil</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrar quando um gesto for detectado</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Falha ao instalar o tema</string>
   <string name="theme_install_error_message">Falha ao instalar <xliff:g id="theme">%1$s</xliff:g></string>

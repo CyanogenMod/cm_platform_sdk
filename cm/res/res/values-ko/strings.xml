@@ -113,14 +113,6 @@
   <string name="permlab_thirdPartyKeyguard">서드 파티 잠금 화면</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">앱을 안전하지 않은 잠금 화면으로 사용할 수 있도록 허용합니다.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">고급 설정</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">제스처</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">추가 기능</string>
-  <string name="touchscreen_gesture_haptic_feedback">햅틱 반응</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">제스처가 감지되면 진동합니다</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">테마 설치 실패</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> 설치 실패</string>

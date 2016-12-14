@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">layar kunci pihak ketiga</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Mengizinkan sebuah aplikasi untuk digunakan sebagai layar kunci yang tidak aman.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Pengaturan lanjut</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gerakan</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Tambahan</string>
-  <string name="touchscreen_gesture_haptic_feedback">Loloh balik haptic</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Bergetar pada saat gerakan terdeteksi</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Gagal menginstal tema</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> gagal diinstal</string>

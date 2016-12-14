@@ -98,14 +98,6 @@
   <string name="permlab_thirdPartyKeyguard">Нетиповий екран блокування</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Дозволяє використати програму як незахищене блокування екрану.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Додаткові налаштування</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Жести</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Додатково</string>
-  <string name="touchscreen_gesture_haptic_feedback">Вібро-відгук</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Вібрувати, коли виявлено жест</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

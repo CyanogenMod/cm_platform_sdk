@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">第三方锁屏</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">允许应用用作不安全锁屏。</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">高级设置</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">手势</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">附加功能</string>
-  <string name="touchscreen_gesture_haptic_feedback">触觉反馈</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">检测到手势时振动</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">安装主题失败</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> 安装失败</string>

@@ -115,14 +115,6 @@
   <string name="permlab_thirdPartyKeyguard">blokada ekranu zewnętrznego dostawcy</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Pozwala na wykorzystanie aplikacji jako niezabezpieczonego ekranu blokady.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Ustawienia zaawansowane</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gesty</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Dodatki</string>
-  <string name="touchscreen_gesture_haptic_feedback">Wibracja przy dotknięciu</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Zawibruj, gdy gest zostanie wykryty</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Nie udało się zainstalować motywu</string>
   <string name="theme_install_error_message">Nie udało się zainstalować motywu: <xliff:g id="theme">%1$s </xliff:g></string>

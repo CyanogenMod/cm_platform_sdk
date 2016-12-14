@@ -78,11 +78,6 @@
   <string name="permlab_thirdPartyKeyguard">第三方鎖定畫面</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">允許應用程式用作不安全的鎖定畫面。</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">進階設定</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">手勢操作</string>
-  <!-- Touchscreen gesture haptic feedback -->
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->

@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">Защитен екран от друг автор</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Позволява приложението да бъде ползвано като незаключен защитен екран.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Допълнителни настройки</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Жестове</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Екстри</string>
-  <string name="touchscreen_gesture_haptic_feedback">Вибрация при докосване (обратна връзка)</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Вибрирай, когато се засече жест</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Неуспешно инсталиране на темата</string>
   <string name="theme_install_error_message">Инсталирането на <xliff:g id="theme">%1$s</xliff:g>е неуспешно</string>

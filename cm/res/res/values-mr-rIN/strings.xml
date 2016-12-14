@@ -103,14 +103,6 @@
   <string name="permlab_thirdPartyKeyguard">त्रयस्थ पक्ष लॉक स्क्रीन</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">अनुप्रयोगाला एक असुरक्षित लॉक स्क्रीन वापरू देते.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">सुधारीत सेटिंग्स</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">गेश्चर्स</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">अधिक</string>
-  <string name="touchscreen_gesture_haptic_feedback">स्पर्शाने दिलेला अभिप्राय</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">जेव्हा गेश्चर हटकले जाइल टेव्हा कंपन व्हावे</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">थीम स्थापित करण्यात अपयशी</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> इंस्टॉल करण्यास अयशस्वी</string>

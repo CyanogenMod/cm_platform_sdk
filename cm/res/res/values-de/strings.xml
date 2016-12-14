@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">Sperrbildschirm eines Drittanbieters</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Ermöglicht der App, als unsicherer Sperrbildschirm genutzt zu werden.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Erweiterte Einstellungen</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Gesten</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Extras</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptisches Feedback</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibrieren, wenn eine Geste erkannt wurde</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Design konnte nicht installiert werden</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> konnte nicht installiert werden.</string>

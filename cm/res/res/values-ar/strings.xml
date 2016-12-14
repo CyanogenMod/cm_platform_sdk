@@ -113,14 +113,6 @@
   <string name="permlab_thirdPartyKeyguard">شاشة تأمين جهة أخرى</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">السماح باستخدام تطبيق كشاشة تأمين غير آمنة.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">الإعدادات المتقدمة</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">الإيماءت</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">إضافات</string>
-  <string name="touchscreen_gesture_haptic_feedback">التعليقات اللمسية</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">الاهتزاز عند اكتشاف إيماءة</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">فشل تثبيت السمة</string>
   <string name="theme_install_error_message"><xliff:g id="theme">%1$s</xliff:g> فشل التثبيت</string>

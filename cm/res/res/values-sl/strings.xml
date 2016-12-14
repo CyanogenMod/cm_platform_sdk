@@ -118,14 +118,6 @@
   <string name="permlab_thirdPartyKeyguard">zaklenjen zaslon tretjih oseb</string>
   <!-- Third party keyguard permission description -->
   <string name="permdesc_thirdPartyKeyguard">Dovoli, da se aplikacija lahko uporabi kot nezanesljiv zaklenjen zaslon.</string>
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Napredne nastavitve</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Poteze</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Dodatki</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptično zaznavanje</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibriraj ob zaznavi poteze</string>
   <!-- Theme installation error notification -->
   <string name="theme_install_error_title">Namestitev teme je spodletela</string>
   <string name="theme_install_error_message">Namestitev <xliff:g id="theme">%1$s</xliff:g> je spodletela</string>

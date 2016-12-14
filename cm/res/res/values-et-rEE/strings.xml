@@ -66,14 +66,6 @@
   <string name="live_display_night">Öö</string>
   <!-- Third party keyguard permission label -->
   <!-- Third party keyguard permission description -->
-  <!-- Device specific settings -->
-  <string name="device_settings_app_name">Täpsemad seaded</string>
-  <!-- Touchscreen gestures -->
-  <string name="screen_gestures_panel_title">Žestid</string>
-  <!-- Touchscreen gesture haptic feedback -->
-  <string name="touchscreen_gesture_extras">Lisad</string>
-  <string name="touchscreen_gesture_haptic_feedback">Haptiline tagasiside</string>
-  <string name="touchscreen_gesture_haptic_feedback_summary">Vibreeri kui žest avastati</string>
   <!-- Theme installation error notification -->
   <!-- Theme reset notification -->
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
