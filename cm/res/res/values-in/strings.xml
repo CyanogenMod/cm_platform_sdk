@@ -63,7 +63,7 @@
   <string name="custom_tile_listener_binding_label">Pendengar ubin khusus</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
-  <string name="profileNameDefault">Baku</string>
+  <string name="profileNameDefault">Standar</string>
   <string name="profileNameWork">Kerja</string>
   <string name="profileNameHome">Beranda</string>
   <string name="profileNameSilent">Senyap</string>

@@ -52,7 +52,7 @@
   <string name="permdesc_writeSettings">Gir en app tilgang til å endre CMs systeminnstillinger.</string>
   <!-- Labels for the WRITE_SECURE_SETTINGS permission -->
   <string name="permlab_writeSecureSettings">endre CM sikker systeminnstillinger</string>
-  <string name="permdesc_writeSecureSettings">Gir en app tilgang til å endre CM sikkerhets-systeminnstillinger. Tilgangen bør ikke gis til normale apps.</string>
+  <string name="permdesc_writeSecureSettings">Gir en app tilgang til å endre CM sikkerhets-systeminnstillinger. Tilgangen bør ikke gis til normale apper.</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
   <string name="permlab_managePersistentStorage">administrere permanent lager</string>
   <string name="permdesc_managePersistentStorage">Gir en app tilgang til å lese eller skrive egenskaper, som kan overleve gjenoppretting av fabrikkinnstillinger.</string>

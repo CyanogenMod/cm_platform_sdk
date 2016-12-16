@@ -54,11 +54,11 @@
   <string name="permlab_writeSecureSettings">CMセキュアシステム設定の変更</string>
   <string name="permdesc_writeSecureSettings">CMセキュアシステム設定の変更をアプリに許可します。通常のアプリ用ではありません。</string>
   <!-- Labels for the MANAGE_PERSISTENT_STORAGE permission. -->
-  <string name="permlab_managePersistentStorage">持続的ストレージの管理</string>
-  <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても持続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
+  <string name="permlab_managePersistentStorage">永続ストレージの管理</string>
+  <string name="permdesc_managePersistentStorage">工場出荷時の状態に戻しても永続する可能性のあるプロパティの読み取りまたは書き込みをアプリに許可します。</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
   <string name="permlab_accessAppSuggestions">アプリケーションの候補へのアクセス</string>
-  <string name="permdesc_accessAppSuggestions">アプリケーションの候補にアクセスすることを許可します。</string>
+  <string name="permdesc_accessAppSuggestions">アプリケーションの候補へのアクセスを許可します。</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">カスタムタイルリスナー</string>
   <!-- Profiles -->
