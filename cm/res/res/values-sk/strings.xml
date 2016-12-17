@@ -57,9 +57,13 @@
   <string name="permlab_managePersistentStorage">spravovať trvalé úložisko</string>
   <string name="permdesc_managePersistentStorage">Umožňuje aplikácii čítanie alebo zápis vlastností, ktoré môžu pretrvávať po obnove továrenských nastavení.</string>
   <!-- Labels for the ACCESS_APP_SUGGESTIONS permission -->
+  <string name="permlab_accessAppSuggestions">prístup k návrhom aplikácií</string>
+  <string name="permdesc_accessAppSuggestions">Umožní aplikácii prístup k návrhom aplikácií.</string>
   <!-- Label to show for a service that is running because it is observing the user's custom tiles. -->
   <string name="custom_tile_listener_binding_label">Služba vlastnej dlaždice</string>
   <!-- Labels for the PROTECTED_APP permission. -->
+  <string name="permlab_protectedApp">pridať a odobrať aplikácie z chránených aplikácií</string>
+  <string name="permdesc_protectedApp">Umožní aplikácii označiť iné aplikácie ako chránené a zamknúť ich.</string>
   <!-- Profiles -->
   <!-- Names of default profiles. -->
   <string name="profileNameDefault">Predvolený</string>
@@ -77,41 +81,114 @@
   <!-- Name of wildcard profile. -->
   <string name="wildcardProfile">Iný</string>
   <!-- Performance profiles -->
+  <string name="perf_profile_pwrsv">Úspora energie</string>
+  <string name="perf_profile_bal">Vyvážený</string>
+  <string name="perf_profile_perf">Výkon</string>
+  <string name="perf_profile_bias_power">Efektívny</string>
+  <string name="perf_profile_bias_perf">Rýchly</string>
   <!-- LiveDisplay strings -->
+  <string name="live_display_auto">Automaticky</string>
+  <string name="live_display_auto_summary">Automaticky upraviť teplotu farieb obrazovky po západe a východe slnka</string>
+  <string name="live_display_off">Vypnuté</string>
+  <string name="live_display_off_summary">Zakázať všetky úpravy</string>
+  <string name="live_display_day">Deň</string>
+  <string name="live_display_day_summary">Použiť len nastavenia pre deň</string>
   <string name="live_display_night">Noc</string>
+  <string name="live_display_night_summary">Použiť len nastavenia pre noc</string>
+  <string name="live_display_outdoor">Vonku (slnečno)</string>
+  <string name="live_display_outdoor_summary">Používať len nastavenia pre vonkajšie prostredie</string>
+  <string name="live_display_hint">LiveDisplay môže pomôcť znížiť únavu očí a pomôže vám spať v noci. Kliknite sem a vyskúšajte túto funkciu!</string>
+  <string name="accessibility_quick_settings_live_display_off">LiveDisplay vyp.</string>
+  <string name="accessibility_quick_settings_live_display_auto">LiveDisplay: automatický režim.</string>
+  <string name="accessibility_quick_settings_live_display_day">LiveDisplay: denný režim.</string>
+  <string name="accessibility_quick_settings_live_display_night">LiveDisplay: nočný režim.</string>
+  <string name="accessibility_quick_settings_live_display_outdoor">LiveDisplay: režim vonku.</string>
+  <string name="accessibility_quick_settings_live_display_changed_off">LiveDisplay vypnutý.</string>
+  <string name="accessibility_quick_settings_live_display_changed_auto">LiveDisplay sa zmenil na automatický režim.</string>
+  <string name="accessibility_quick_settings_live_display_changed_day">LiveDisplay sa zmenil na denný režim.</string>
+  <string name="accessibility_quick_settings_live_display_changed_night">LiveDisplay sa zmenil na nočný režim.</string>
+  <string name="accessibility_quick_settings_live_display_changed_outdoor">LiveDisplay sa zmenil na režim vonku.</string>
   <!-- Third party keyguard permission label -->
+  <string name="permlab_thirdPartyKeyguard">zámok obrazovky tretej strany</string>
   <!-- Third party keyguard permission description -->
+  <string name="permdesc_thirdPartyKeyguard">Umožňuje použiť aplikáciu ako nezabezpečený zámok obrazovky.</string>
   <!-- Device specific settings -->
   <string name="device_settings_app_name">Rozšírené nastavenia</string>
   <!-- Touchscreen gestures -->
+  <string name="screen_gestures_panel_title">Gestá</string>
   <!-- Touchscreen gesture haptic feedback -->
   <string name="touchscreen_gesture_extras">Doplnky</string>
   <string name="touchscreen_gesture_haptic_feedback">Hmatová spätná väzba</string>
   <string name="touchscreen_gesture_haptic_feedback_summary">Vibrovať pri zistení gesta</string>
   <!-- Theme installation error notification -->
+  <string name="theme_install_error_title">Inštalácia témy zlyhala</string>
+  <string name="theme_install_error_message"><xliff:g id="theme">%1$s </xliff:g> sa nepodarilo nainštalovať</string>
   <!-- Theme reset notification -->
+  <string name="theme_reset_notification_title">Obnoviť tému</string>
+  <string name="theme_reset_notification_message">Systémová téma sa obnovila z dôvodu viacerých pádov aplikácií.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_accessThemeService">prístup k službe tém</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_accessThemeService">Umožňuje aplikácii prístup k službe na správu tém. Toto povolenie nie je bežné pre štandardné aplikácie.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_readThemes">čítať informácie vašej témy</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_readThemesDesc">Umožňuje aplikácii čítať vaše témy a určiť, ktorú tému ste použili.</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_writeThemes">upraviť vaše témy</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_writeThemesDesc">Umožňuje aplikácii vkladať nové témy a upraviť tému, ktorú ste použili.</string>
   <!-- Performance manager permission title -->
+  <string name="permlab_perfAccess">prístup k správe výkonu</string>
   <!-- Performance manager permission description -->
+  <string name="permdesc_perfAccessDesc">Umožňuje aplikácii prístup k správe výkonu. Toto povolenie nie je bežné pre štandardné aplikácie.</string>
   <!-- Access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenService">prístup k službe správcu živých uzamykacích obrazoviek</string>
   <!-- Access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenService">Umožní aplikácii prístup k správcovi služby živých uzamykacích obrazoviek.</string>
   <!-- Privileged access live lock screen manager service permission label -->
+  <string name="permlab_accessLiveLockScreenServicePrivate">prístup k službe správcu živých uzamykacích obrazoviek</string>
   <!-- Privileged access live lock screen manager service permission description -->
+  <string name="permdesc_accessLiveLockScreenServicePrivate">Umožní systémovým aplikáciám prístup k správcovi služby živých uzamykacích obrazoviek.</string>
   <!-- Live lock screen manager service provider permission label -->
+  <string name="permlab_accessLiveLockScreenServiceProvider">poskytnúť správcu služby živých uzamykacích obrazoviek</string>
   <!-- Live lock screen manager service provider permission description -->
+  <string name="permdesc_accessLiveLockScreenServiceProvider">Umožní službe poskytnúť správcu služby živých uzamykacích obrazoviek.</string>
   <!-- Weather Service strings -->
+  <string name="permlab_weather_read">čítať počasie</string>
+  <string name="permdesc_weather_read">Umožní aplikácii čítať obsah z poskytovateľa počasia.</string>
+  <string name="permlab_weather_write">aktualizovať poskytovateľa počasia</string>
+  <string name="permdesc_weather_write">Umožní aplikácii aktualizovať obsah poskytovateľa počasia.</string>
+  <string name="permlab_weather_bind">viazať sa ako služba poskytovateľa počasia</string>
+  <string name="permdesc_weather_bind">Umožní aplikácii identifikovať sa ako služba poskytovateľa počasia.</string>
+  <string name="permlab_weather_access_mgr">prístup k meteorologickej službe</string>
+  <string name="permdesc_weather_access_mgr">Povoliť aplikácií prístup k meteorologickej službe v systéme. Bežné aplikácie by to nemali nikdy vyžadovať.</string>
   <!-- DataUsageProvider write permission title -->
+  <string name="permlab_dataUsageWrite">meniť databázu využitia dát</string>
   <!-- DataUsageProvider write permission description -->
+  <string name="permdesc_dataUsageWrite">Umožní aplikácii aktualizovať obsah databázy využitia dát.</string>
   <!-- DataUsageProvider read permission title -->
+  <string name="permlab_dataUsageRead">čítať databázu využitia dát</string>
   <!-- DataUsageProvider read permission description -->
+  <string name="permdesc_dataUsageRead">Umožní aplikácii čítať obsah z databázy použitia dát.</string>
   <!-- LiveDisplay manager permission -->
+  <string name="permlab_manageLiveDisplay">spravovať nastavenia LiveDisplay</string>
+  <string name="permdesc_manageLiveDisplay">Umožní aplikácii nastavovať pokročilé nastavenia obrazovky.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_observe_audio_sessions">pozorovať zmeny audio sedenia</string>
+  <string name="permdesc_observe_audio_sessions">Umožní aplikácii sledovať vytváranie a rušenie zvukových zdrojov.</string>
   <!-- CMAudioService - observe session changes permission -->
+  <string name="permlab_manage_audio_sessions">spravovať zmeny audio relácie</string>
+  <string name="permdesc_manage_audio_sessions">Umožňuje aktualizovať zvukové relácie.</string>
   <!-- QuickSettings: Themes tile -->
+  <string name="qs_themes_label">Témy</string>
+  <string name="qs_themes_content_description">Prispôsobiť vašu tému</string>
   <!-- Custom booot dexopt -->
+  <string name="android_upgrading_starting_apps">Spustenie aplikácií\u2026</string>
+  <string name="android_upgrading_fstrim">Optimalizácia úložiska\u2026</string>
+  <string name="android_upgrading_complete">Príprava spustenia\u2026</string>
+  <string name="android_upgrading_complete_details">Optimalizácia dokončená.</string>
+  <string name="android_preparing_apk">Príprava aplikácie %1$s\u2026</string>
+  <string name="android_preparing_apk_obscured">Príprava aplikácií %1$s\u2026</string>
+  <string name="android_upgrading_apk">%1$d z %2$d</string>
 </resources>
