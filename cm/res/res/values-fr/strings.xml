@@ -88,7 +88,10 @@
   <string name="perf_profile_bias_perf">Rapide</string>
   <!-- Performance profiles -->
   <string name="perf_profile_pwrsv_summary">Économies d’énergie maximales. Réduit les performances de l’appareil, désactive les données et les tâches en arrière-plan, désactive les animations et réduit la fréquence de rafraichissement</string>
+  <string name="perf_profile_bal_summary">Équilibre entre performances optimales et économies d\'énergie</string>
   <string name="perf_profile_perf_summary">Mode haute performance. Utile pour les applications nécessitant un débit plus élevé et à faible latence lorsque la consommation d’énergie n’est pas un problème</string>
+  <string name="perf_profile_bias_power_summary">Favorise les économies d’énergie. Limite la puissance du processeur et l\'optimise pour des économies d\'énergie maximales, entraînant une latence plus élevée</string>
+  <string name="perf_profile_bias_perf_summary">Favorise les performances. Réduit la latence, mais augmente légèrement la consommation énergique</string>
   <!-- LiveDisplay strings -->
   <string name="live_display_auto">Automatique</string>
   <string name="live_display_auto_summary">Ajuster automatiquement la température des couleurs de l\'écran après le coucher et le lever du soleil</string>
@@ -173,5 +176,8 @@
   <string name="qs_themes_label">Thèmes</string>
   <string name="qs_themes_content_description">Personnaliser votre thème</string>
   <!-- Privacy Guard -->
+  <string name="privacy_guard_manager_title">Protection des données</string>
   <!-- Permissions used by remote preferences -->
+  <string name="permlab_manageRemotePrefs">gérer les paramètres distants</string>
+  <string name="permdesc_manageRemotePrefs">Autoriser une application à gérer les paramètres distants</string>
 </resources>
