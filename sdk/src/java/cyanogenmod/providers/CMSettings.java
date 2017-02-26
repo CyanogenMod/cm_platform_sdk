@@ -1,5 +1,6 @@
 /**
  * Copyright (c) 2015, The CyanogenMod Project
+ * Copyright (c) 2016, The SudaMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1002,7 +1003,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_HOME_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the home key is double-tapped.
@@ -1013,7 +1014,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_HOME_DOUBLE_TAP_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Whether to wake the screen with the back key, the value is boolean.
@@ -1053,7 +1054,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the menu key is long-pressed.
@@ -1064,7 +1065,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_MENU_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the assistant (search) key is pressed. (Default is 3)
@@ -1074,7 +1075,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the assistant (search) key is long-pressed. (Default is 4)
@@ -1084,7 +1085,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_ASSIST_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
@@ -1094,7 +1095,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Action to perform when the app switch key is long-pressed. (Default is 0)
@@ -1104,7 +1105,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator KEY_APP_SWITCH_LONG_PRESS_ACTION_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 8);
+                new InclusiveIntegerRangeValidator(0, 10);
 
         /**
          * Whether to wake the screen with the home key, the value is boolean.
